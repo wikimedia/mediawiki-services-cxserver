@@ -5,15 +5,17 @@ var assert = require( 'assert' ),
 	tests = require( './SegmentationTests.json' );
 
 for ( var lang in tests ) {
-	var languageTests = tests[lang];
+	var languageTests = tests[ lang ];
 	for ( var i in languageTests ) {
-		var test = languageTests[i],
+		var test = languageTests[ i ],
 			segmenter;
 		segmenter = new CXSegmenter( test.source, lang );
 		segmenter.segment();
 		var result = segmenter.getSegmentedContent();
 		result = result.replace( /(\r\n|\n|\t|\r)/gm, '' );
-		console.log( test.result + '\n' + result );
+		console.log( 'Test' + ': ' + test.source );
+		console.log( 'Expected' + ': ' + test.result );
+		console.log( 'Actual' + ': ' + result );
 		assert.equal( test.result, result );
 	}
 }
