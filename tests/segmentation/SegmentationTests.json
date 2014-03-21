@@ -27,6 +27,10 @@
 		{
 			"source": "<p><a href=\"#\">Hydrogen</a> is a <a href=\"#\">gas</a></p>",
 			"result": "<p id=\"0\"><span class=\"cx-segment\" data-segmentid=\"1\"><a class=\"cx-link\" data-linkid=\"2\" href=\"#\">Hydrogen</a> is a <a class=\"cx-link\" data-linkid=\"3\" href=\"#\">gas</a></span></p>"
+		},
+		{
+			"source": "<figure><a href=\"#\"><img src=\"img.png\"></a><figcaption>Figure caption</figcaption></figure>",
+			"result": "<figure id=\"0\"><a class=\"cx-link\" data-linkid=\"1\" href=\"#\"><img src=\"img.png\"></img></a><figcaption id=\"2\"><span class=\"cx-segment\" data-segmentid=\"3\">Figure caption</span></figcaption></figure>"
 		}
 	],
 	"hi": [
