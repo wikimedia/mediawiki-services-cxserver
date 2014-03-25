@@ -54,7 +54,9 @@ Rot13Service.prototype.prepareParser = function () {
 	 * Entity handler
 	 */
 	function entity( str ) {
-		return str.replace( '"', '&quot;' );
+		return str.replace( /["'&<>]/g, function ( ch ) {
+			return '&#' + ch.charCodeAt( 0 ) + ';';
+		} );
 	}
 
 	parser.onopentag = function ( tag ) {

@@ -68,7 +68,9 @@ CXParser.prototype.print = function ( content ) {
  * Entity handler
  */
 function entity( str ) {
-	return str.replace( '"', '&quot;' );
+	return str.replace( /["'&<>]/g, function ( ch ) {
+		return '&#' + ch.charCodeAt( 0 ) + ';';
+	} );
 }
 
 /**
@@ -166,12 +168,6 @@ CXParser.prototype.onopentag = function ( tag ) {
 	}
 
 	for ( attrName in tag.attributes ) {
-		if ( attrName === 'data-parsoid' || attrName === 'data-mw' ) {
-			// Parsoid gives the html with these attributes and has
-			// values as big escaped htmls. The parser has trouble in
-			// not leaking it to the text. So ignore these attributes.
-			continue;
-		}
 		this.print( ' ' + attrName + '="' + entity( tag.attributes[ attrName ] ) + '"' );
 	}
 
