@@ -24,6 +24,21 @@ CXParser.prototype.init = function () {
 	this.links = {};
 };
 
+CXParser.prototype.sectionTypes = [
+	'div', 'p',
+	// tables
+	'table', 'tbody', 'thead', 'tfoot', 'caption', 'th', 'tr', 'td',
+	// lists
+	'ul', 'ol', 'li', 'dl', 'dt', 'dd',
+	// HTML5 heading content
+	'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hgroup',
+	// HTML5 sectioning content
+	'article', 'aside', 'body', 'nav', 'section', 'footer', 'header', 'figure',
+	'figcaption', 'fieldset', 'details', 'blockquote',
+	// other
+	'hr', 'button', 'canvas', 'center', 'col', 'colgroup', 'embed',
+	'map', 'object', 'pre', 'progress', 'video'
+ ];
 /**
  * Error handler
  */
@@ -91,8 +106,8 @@ CXParser.prototype.ontext = function ( text ) {
 
 		replacement = prevWord + sentenceSeperator;
 		//console.log([match, prevWord, sentenceSeperator, offset]);
-		nextLetter = sentence[offset + match.length];
-		if ( prevWord && prevWord.length < 3 && prevWord[0].toUpperCase() === prevWord[0] ||
+		nextLetter = sentence[ offset + match.length ];
+		if ( prevWord && prevWord.length < 3 && prevWord[ 0 ].toUpperCase() === prevWord[ 0 ] ||
 			nextLetter && nextLetter.toLowerCase() === nextLetter ) {
 			// abbreviation?
 			return replacement;
@@ -118,7 +133,7 @@ CXParser.prototype.linkHandler = function ( href ) {
 	if ( !this.inSentence ) {
 		this.print( this.startSentence() );
 	}
-	this.links[this.segmentCount] = {
+	this.links[ this.segmentCount ] = {
 		href: href
 	};
 	this.print( ' class="cx-link" data-linkid="' + ( this.segmentCount++ ) + '"' );
@@ -130,8 +145,14 @@ CXParser.prototype.linkHandler = function ( href ) {
  */
 CXParser.prototype.onopentag = function ( tag ) {
 	var attrName,
-		section = /[ph1-6]|figure|ul|div/;
+		section = /[ph1-6]|figure|figcaption|ul|div/;
 
+	if ( this.sectionTypes.indexOf( tag.name ) >= 0 ) {
+		if ( this.inSentence ) {
+			// Avoid dangling sentence.
+			this.print( this.endSentence() );
+		}
+	}
 	if ( tag.name === 'a' && !this.inSentence ) {
 		// sentences starting with a link
 		this.print( this.startSentence() );
@@ -151,7 +172,7 @@ CXParser.prototype.onopentag = function ( tag ) {
 			// not leaking it to the text. So ignore these attributes.
 			continue;
 		}
-		this.print( ' ' + attrName + '="' + entity( tag.attributes[attrName] ) + '"' );
+		this.print( ' ' + attrName + '="' + entity( tag.attributes[ attrName ] ) + '"' );
 	}
 
 	// Sections
@@ -175,8 +196,7 @@ CXParser.prototype.onopentag = function ( tag ) {
  * @param {string} tag
  */
 CXParser.prototype.onclosetag = function ( tag ) {
-	var section = /[ph1-6]|figure|ul|div/;
-	if ( tag.match( section ) ) {
+	if ( this.sectionTypes.indexOf( tag ) >= 0 ) {
 		if ( this.inSentence ) {
 			// Avoid dangling sentence.
 			this.print( this.endSentence() );
