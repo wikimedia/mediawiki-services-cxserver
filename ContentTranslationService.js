@@ -65,7 +65,7 @@ io.sockets.on( 'connection', function ( socket ) {
 	} );
 
 	socket.on( 'disconnect', function () {
-		console.warn( '[CX] Dsconnecting from redis' );
+		console.warn( '[CX] Disconnecting from redis' );
 		redisSub.quit();
 	} );
 
