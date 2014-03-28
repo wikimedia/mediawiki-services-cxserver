@@ -45,3 +45,9 @@ To run the ContentTranslation server:
 It will open Chrome developer tools with the ContentTranslation source code.
 You can debug the code just like a web application. You can also edit the code
 and save from the debugger.
+
+Testing
+-------
+To run the tests:
+
+```$ npm test```

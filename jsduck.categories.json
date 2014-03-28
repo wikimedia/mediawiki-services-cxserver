@@ -1,0 +1,29 @@
+[
+	{
+		"name": "General",
+		"groups": [
+			{
+				"name": "Segmentation",
+				"classes": ["CXParserFactory", "CXSegmenter", "CXParser", "CXParserHi"]
+			}
+		]
+	},
+	{
+		"name": "Upstream",
+		"groups": [
+			{
+				"name": "JavaScript",
+				"classes": [
+					"Array",
+					"Boolean",
+					"Date",
+					"Function",
+					"Number",
+					"Object",
+					"RegExp",
+					"String"
+				]
+			}
+		]
+	}
+]

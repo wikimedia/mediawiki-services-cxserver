@@ -1,5 +1,5 @@
 {
-	"name": "mediawiki-content-translation",
+	"name": "mediawiki-contenttranslation",
 	"description": "Server for Content Translation",
 	"version": "0.1.0",
 	"dependencies": {
@@ -20,9 +20,14 @@
 	},
 	"scripts": {
 		"start": "node Server.js",
-		"debug": "node-debug ContentTranslationService.js"
+		"debug": "node-debug ContentTranslationService.js",
+		"test": "grunt test && node tests"
 	},
-	"repository": {
-		"type": "git"
+	"main": "./index.js",
+	"devDependencies": {
+		"qunit": "0.5.17",
+		"grunt": "0.4.2",
+		"grunt-contrib-jshint": "0.9.2",
+		"grunt-jscs-checker": "0.3.2"
 	}
 }

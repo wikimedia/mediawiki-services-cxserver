@@ -1,0 +1,11 @@
+{
+	"--title": "ContentTranslation - Documentation",
+	"--footer": "Documentation for ContentTranslation.",
+	"--output": "docs",
+	"--categories": "./jsduck.categories.json",
+	"--warnings-exit-nonzero": true,
+	"--builtin-classes": true,
+	"--": [
+		"segmentation"
+	]
+}

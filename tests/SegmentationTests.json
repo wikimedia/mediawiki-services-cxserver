@@ -1,8 +1,8 @@
 {
 	"en": [
 		{
-			"source": "<p>A simple paragraph</p>",
-			"result": "<p id=\"0\"><span class=\"cx-segment\" data-segmentid=\"1\">A simple paragraph</span></p>"
+			"source": "<p>A simple paragraph.</p>",
+			"result": "<p id=\"0\"><span class=\"cx-segment\" data-segmentid=\"1\">A simple paragraph.</span></p>"
 		},
 		{
 			"source": "<p>Hello! Mr. D. John, How are you?</p>",
