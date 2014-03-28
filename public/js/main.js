@@ -19,7 +19,7 @@
 		socket.on( 'cx.data.update', function ( data ) {
 			cxdata = data;
 			$( 'progress' ).hide();
-			$( '.status' ).text( 'Recieved version '+ cxdata.version + '. Click on the content segments to inspect.');
+			$( '.status' ).text( 'Received version '+ cxdata.version + '. Click on the content segments to inspect.');
 			$( '.article' ).html( cxdata.segmentedContent );
 			console.log( cxdata );
 		} );

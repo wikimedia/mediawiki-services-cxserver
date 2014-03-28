@@ -14,7 +14,7 @@ try {
 	// TODO: Have an example configuration file.
 	config = require( __dirname + '/../config.js' );
 } catch ( e ) {
-	// TODO: define this configuration in betterway
+	// TODO: define this configuration in better way
 	config = {
 		pageloaderservice: 'parsoid',
 		pageloaderservices: {
