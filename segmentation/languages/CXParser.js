@@ -103,11 +103,11 @@ CXParser.prototype.ontext = function ( text ) {
 		this.print( this.startSentence() );
 	}
 
-	function textSplit( match, prevWord, sentenceSeperator, offset, sentence ) {
+	function textSplit( match, prevWord, sentenceSeparator, offset, sentence ) {
 		var replacement, nextLetter;
 
-		replacement = prevWord + sentenceSeperator;
-		//console.log([match, prevWord, sentenceSeperator, offset]);
+		replacement = prevWord + sentenceSeparator;
+		//console.log([match, prevWord, sentenceSeparator, offset]);
 		nextLetter = sentence[ offset + match.length ];
 		if ( prevWord && prevWord.length < 3 && prevWord[ 0 ].toUpperCase() === prevWord[ 0 ] ||
 			nextLetter && nextLetter.toLowerCase() === nextLetter ) {

@@ -23,10 +23,10 @@ CXParserHi.prototype.ontext = function ( text ) {
 		this.print( this.startSentence() );
 	}
 
-	function textSplit( match, prevWord, sentenceSeperator, offset, sentence ) {
+	function textSplit( match, prevWord, sentenceSeparator, offset, sentence ) {
 		var replacement, nextLetter;
-		replacement = prevWord + sentenceSeperator;
-		nextLetter = sentence[offset + match.length];
+		replacement = prevWord + sentenceSeparator;
+		nextLetter = sentence[ offset + match.length ];
 		replacement += parser.endSentence();
 		replacement += parser.startSentence();
 		return replacement;
