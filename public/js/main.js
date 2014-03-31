@@ -3,12 +3,12 @@
 
 	var cxdata;
 	$( '.article' ).on( 'click', '.cx-segment', function () {
-		var segment = cxdata.segments[$( this ).data( 'segmentid' )];
+		var segment = cxdata.segments[ $( this ).data( 'segmentid' ) ];
 		console.log( segment );
 	} );
 
 	$( '.article' ).on( 'click', '.cx-link', function () {
-		var linkid = cxdata.links[$( this ).data( 'linkid' )];
+		var linkid = cxdata.links[ $( this ).data( 'linkid' ) ];
 		console.log( linkid );
 	} );
 
@@ -19,7 +19,7 @@
 		socket.on( 'cx.data.update', function ( data ) {
 			cxdata = data;
 			$( 'progress' ).hide();
-			$( '.status' ).text( 'Received version '+ cxdata.version + '. Click on the content segments to inspect.');
+			$( '.status' ).text( 'Received version ' + cxdata.version + '. Click on the content segments to inspect.' );
 			$( '.article' ).html( cxdata.segmentedContent );
 			console.log( cxdata );
 		} );

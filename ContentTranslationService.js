@@ -14,19 +14,18 @@
 
 'use strict';
 
-var instanceName, context,
-	express = require( 'express' ),
-	args = require( 'minimist' )( process.argv.slice( 2 ) );
+var instanceName, context, port, app, server, io, redis, express, RedisStore, args;
 
-var port = args.port || 8000;
-
-var app = express();
-var server = require( 'http' ).createServer( app );
-var io = require( 'socket.io' ).listen( server );
-var redis = require( 'redis' );
+express = require( 'express' );
+args = require( 'minimist' )( process.argv.slice( 2 ) );
+port = args.port || 8000;
+app = express();
+server = require( 'http' ).createServer( app );
+io = require( 'socket.io' ).listen( server );
+redis = require( 'redis' );
 
 // Use Redis as the store for socket.io
-var RedisStore = require( 'socket.io/lib/stores/redis' );
+RedisStore = require( 'socket.io/lib/stores/redis' );
 io.set( 'store',
 	new RedisStore( {
 		redisPub: redis.createClient(),
