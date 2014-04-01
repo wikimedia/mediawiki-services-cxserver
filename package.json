@@ -27,6 +27,7 @@
 	"devDependencies": {
 		"qunit": "0.5.17",
 		"grunt": "0.4.2",
+		"grunt-contrib-watch": "0.6.1",
 		"grunt-contrib-jshint": "0.9.2",
 		"grunt-jscs-checker": "0.3.2"
 	}
