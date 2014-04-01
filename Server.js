@@ -32,7 +32,7 @@ if ( cluster.isMaster ) {
 		var workers = cluster.workers;
 		Object.keys( workers ).forEach( function ( id ) {
 			console.log( 'Killing worker ' + id );
-			workers[id].destroy();
+			workers[ id ].destroy();
 		} );
 		console.log( 'Done killing workers, bye' );
 		process.exit( 1 );
