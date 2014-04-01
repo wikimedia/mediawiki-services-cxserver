@@ -1,6 +1,9 @@
 {
 	"name": "mediawiki-contenttranslation",
 	"description": "Server for Content Translation",
+	"repository": {
+		"url": "https://git.wikimedia.org/git/mediawiki/services/cxserver.git"
+	},
 	"version": "0.1.0",
 	"dependencies": {
 		"express": "3.x",
