@@ -14,16 +14,23 @@
 
 'use strict';
 
-var instanceName, context, port, app, server, io, redis, express, RedisStore, args;
+var instanceName, context, port, app, server, io, redis, express, RedisStore, logger, args;
 
+logger = require( __dirname + '/utils/Logger.js' );
 express = require( 'express' );
 args = require( 'minimist' )( process.argv.slice( 2 ) );
 port = args.port || 8000;
 app = express();
 server = require( 'http' ).createServer( app );
-io = require( 'socket.io' ).listen( server );
+io = require( 'socket.io' ).listen( server, {
+	logger: {
+		debug: logger.debug,
+		info: logger.info,
+		error: logger.error,
+		warn: logger.warn
+	}
+} );
 redis = require( 'redis' );
-
 // Use Redis as the store for socket.io
 RedisStore = require( 'socket.io/lib/stores/redis' );
 io.set( 'store',
@@ -33,7 +40,6 @@ io.set( 'store',
 		redisClient: redis.createClient()
 	} )
 );
-
 instanceName = 'worker(' + process.pid + ')';
 // socket.io connection establishment
 io.sockets.on( 'connection', function ( socket ) {
@@ -41,11 +47,11 @@ io.sockets.on( 'connection', function ( socket ) {
 		CXDataModelManager,
 		redisSub = redis.createClient();
 
-	console.log( '[CX] Client connected to ' + instanceName + '). Socket: ' + socket.id );
+	logger.debug( 'Client connected to ' + instanceName + '. Socket: ' + socket.id );
 	redisSub.subscribe( 'cx' );
 	redisSub.on( 'message', function ( channel, message ) {
 		socket.emit( 'cx.data.update', JSON.parse( message ) );
-		console.log( '[CX] Received from channel #' + channel + ':' + message );
+		logger.debug( 'Received from channel #' + channel + ':' + message );
 	} );
 
 	socket.on( 'cx.init', function ( data ) {
@@ -64,7 +70,7 @@ io.sockets.on( 'connection', function ( socket ) {
 	} );
 
 	socket.on( 'disconnect', function () {
-		console.warn( '[CX] Disconnecting from redis' );
+		logger.debug( 'Disconnecting from redis' );
 		redisSub.quit();
 	} );
 
@@ -72,7 +78,7 @@ io.sockets.on( 'connection', function ( socket ) {
 
 // Everything else goes through this.
 app.use( express.static( __dirname + '/public' ) );
-console.log( '[CX] ' + instanceName + ' ready. Listening on port: ' + port );
+logger.info( instanceName + ' ready. Listening on port: ' + port );
 server.listen( port );
 
 module.exports = app;

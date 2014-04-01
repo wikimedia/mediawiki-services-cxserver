@@ -6,7 +6,8 @@
 
 'use strict';
 
-var cluster = require( 'cluster' );
+var cluster = require( 'cluster' ),
+	logger = require( __dirname + '/utils/Logger.js' );
 
 if ( cluster.isMaster ) {
 	// Start a few more workers than there are cpus visible to the OS, so that we
@@ -21,26 +22,26 @@ if ( cluster.isMaster ) {
 	cluster.on( 'exit', function ( worker /*, code, signal */ ) {
 		if ( !worker.suicide ) {
 			var exitCode = worker.process.exitCode;
-			console.log( 'worker', worker.process.pid,
+			logger.warn( 'worker', worker.process.pid,
 				'died (' + exitCode + '), restarting.' );
 			cluster.fork();
 		}
 	} );
 
 	process.on( 'SIGTERM', function () {
-		console.log( 'master shutting down, killing workers' );
+		logger.warn( 'master shutting down, killing workers' );
 		var workers = cluster.workers;
 		Object.keys( workers ).forEach( function ( id ) {
-			console.log( 'Killing worker ' + id );
+			logger.info( 'Killing worker ' + id );
 			workers[ id ].destroy();
 		} );
-		console.log( 'Done killing workers, bye' );
+		logger.info( 'Done killing workers, bye' );
 		process.exit( 1 );
 	} );
 } else {
 	// Worker.
 	process.on( 'SIGTERM', function () {
-		console.log( 'Worker shutting down' );
+		logger.warn( 'Worker shutting down' );
 		process.exit( 1 );
 	} );
 
@@ -50,7 +51,7 @@ if ( cluster.isMaster ) {
 	// For 0.10: npm install heapdump
 	process.on( 'SIGUSR2', function () {
 		var heapdump = require( 'heapdump' );
-		console.error( 'SIGUSR2 received! Writing snapshot.' );
+		logger.error( 'SIGUSR2 received! Writing snapshot.' );
 		process.chdir( '/tmp' );
 		heapdump.writeSnapshot();
 	} );
