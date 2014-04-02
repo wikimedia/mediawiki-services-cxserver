@@ -4,6 +4,7 @@
 .*.swp
 .idea
 .bundle/
+*.log
 config.js
 docs
 node_modules
