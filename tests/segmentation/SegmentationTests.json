@@ -31,6 +31,11 @@
 		{
 			"source": "<figure><a href=\"#\"><img src=\"img.png\"></a><figcaption>Figure caption</figcaption></figure>",
 			"result": "<figure id=\"0\"><span class=\"cx-segment\" data-segmentid=\"1\"><a class=\"cx-link\" data-linkid=\"2\" href=\"#\"><img src=\"img.png\"></img></a></span><figcaption id=\"3\"><span class=\"cx-segment\" data-segmentid=\"4\">Figure caption</span></figcaption></figure>"
+		},
+		{
+			"desc": "References can appear after period. Example: Hydrogen is a gas. [1] It is ...",
+			"source": "<p>Sentence one. <a href=\"#\">reference</a> Starts with reference</p>",
+			"result": "<p id=\"0\"><span class=\"cx-segment\" data-segmentid=\"1\">Sentence one. </span><span class=\"cx-segment\" data-segmentid=\"2\"><a class=\"cx-link\" data-linkid=\"3\" href=\"#\">reference</a> Starts with reference</span></p>"
 		}
 	],
 	"hi": [
