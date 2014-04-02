@@ -51,3 +51,7 @@ Testing
 To run the tests:
 
 ```$ npm test```
+
+To run individual test:
+
+```$ node tests tests/segmentation/CXSegmenter.test.js```
