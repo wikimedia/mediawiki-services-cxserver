@@ -14,7 +14,7 @@ qunit.run( {
 		namespace: 'CX'
 	},
 	tests: [
-		'./tests/CXSegmenter.test.js',
+		'./tests/segmentation/CXSegmenter.test.js',
 		'./tests/mt/Rot13/Rot13.test.js',
 	]
 }, function ( err, report ) {
