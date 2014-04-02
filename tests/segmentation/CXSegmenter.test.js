@@ -17,7 +17,7 @@ QUnit.test( 'Segmentation tests', function ( assert ) {
 			segmenter.segment();
 			result = segmenter.getSegmentedContent();
 			result = result.replace( /(\r\n|\n|\t|\r)/gm, '' );
-			assert.strictEqual( result, test.result );
+			assert.strictEqual( result, test.result, test.desc || '' );
 		}
 	}
 } );
