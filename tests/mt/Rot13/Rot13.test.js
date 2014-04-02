@@ -8,8 +8,9 @@ QUnit.test( 'Rot13 tests', function ( assert ) {
 	QUnit.stop();
 	rot13.translate( tests.source ).then( function ( result ) {
 		var segmentId;
+
 		for ( segmentId in tests.source ) {
-			assert.strictEqual( tests.result[segmentId], result[segmentId] );
+			assert.strictEqual( result[ segmentId ], tests.result[ segmentId ] );
 		}
 		QUnit.start();
 	} );
