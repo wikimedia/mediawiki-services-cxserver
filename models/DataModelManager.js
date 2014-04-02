@@ -10,7 +10,8 @@
 'use strict';
 
 var CXSegmenter = require( __dirname + '/../segmentation/CXSegmenter.js' ).CXSegmenter,
-	CXMTInterface = require( __dirname + '/../mt/CXMTInterface.js' ).CXMTInterface;
+	CXMTInterface = require( __dirname + '/../mt/CXMTInterface.js' ).CXMTInterface,
+	logger = require( __dirname + '/../utils/Logger.js' );
 /**
  * CXDataModelManager
  * @class
@@ -40,7 +41,7 @@ CXDataModelManager.prototype.init = function () {
 			PageLoader = require( __dirname + '/../pageloader/PageLoader.js' ).PageLoader;
 			pageloader = new PageLoader( dataModelManager.context.sourcePage );
 			pageloader.load().then( function ( data ) {
-				console.log( '[CX] Page fetched' );
+				logger.debug( 'Page fetched' );
 				dataModelManager.context.sourceText = data;
 				segmenter = new CXSegmenter( dataModelManager.context.sourceText );
 				segmenter.segment();
@@ -62,7 +63,7 @@ CXDataModelManager.prototype.init = function () {
 					dataModelManager.publish();
 				} );
 			}, function () {
-				console.error( '[CX] Error in retrieving the page ' +
+				logger.error( 'Error in retrieving the page ' +
 					dataModelManager.context.sourcePage );
 			} );
 
@@ -83,7 +84,7 @@ CXDataModelManager.prototype.publish = function () {
 	this.context.store.set( this.dataModel.sourcePage, data, function () {
 		dataModelManager.context.pub.publish( 'cx', data );
 	} );
-	console.log( '[CX] Sending data. Version: ' + this.dataModel.version );
+	logger.debug( 'Sending data. Version: ' + this.dataModel.version );
 	this.incrementVersionNumber();
 };
 
