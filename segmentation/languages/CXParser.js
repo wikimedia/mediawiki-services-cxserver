@@ -146,8 +146,7 @@ CXParser.prototype.linkHandler = function ( href ) {
  * @param {Object} tag
  */
 CXParser.prototype.onopentag = function ( tag ) {
-	var attrName,
-		section = /[ph1-6]|figure|figcaption|ul|div/;
+	var attrName;
 
 	if ( this.sectionTypes.indexOf( tag.name ) >= 0 ) {
 		if ( this.inSentence ) {
@@ -172,7 +171,7 @@ CXParser.prototype.onopentag = function ( tag ) {
 	}
 
 	// Sections
-	if ( tag.name.match( section ) ) {
+	if ( this.sectionTypes.indexOf( tag.name ) >= 0 ) {
 		if ( !tag.attributes.id ) {
 			this.print( ' id="' + ( this.segmentCount++ ) + '"' );
 		}
@@ -182,7 +181,7 @@ CXParser.prototype.onopentag = function ( tag ) {
 	this.print( '>' );
 
 	// Start the first segment of the section
-	if ( tag.name.match( section ) ) {
+	if ( this.sectionTypes.indexOf( tag.name ) >= 0 ) {
 		this.print( this.startSentence() );
 	}
 };
