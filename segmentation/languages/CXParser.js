@@ -122,7 +122,8 @@ CXParser.prototype.ontext = function ( text ) {
 	text = text.replace( /(\w*)([.!?][\s])/g, textSplit );
 	// content terminating with [.|!|?]
 	text = text.replace( /([.!?])$/, function ( match, p1 ) {
-		return p1 + parser.endSentence();
+		parser.seenSentenceEnd = true;
+		return p1; // + parser.endSentence();
 	} );
 	this.print( text );
 };
@@ -159,6 +160,13 @@ CXParser.prototype.onopentag = function ( tag ) {
 		this.print( this.startSentence() );
 	}
 
+	if ( tag.name === 'span' && this.seenSentenceEnd &&
+		tag.attributes.class === 'reference' && this.inSentence ) {
+		// Sentences staring with reference links.
+		// Example: Sentence one.[1] Sentence two
+		// Here [1] is not part of Sentence two. It is reference for Sentence one.
+		this.inReference = true;
+	}
 	// Start of tag
 	this.print( '<' + tag.name );
 
@@ -199,6 +207,10 @@ CXParser.prototype.onclosetag = function ( tag ) {
 		this.print( '</' + tag + '>\n' );
 	} else {
 		this.print( '</' + tag + '>' );
+	}
+
+	if ( tag === 'span' && this.inReference ) {
+		this.print( this.endSentence() );
 	}
 };
 
