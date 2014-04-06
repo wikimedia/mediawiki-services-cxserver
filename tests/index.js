@@ -1,7 +1,8 @@
 /*jshint node:true */
 var qunit = require( 'qunit' ),
 	tests = [
-		'./tests/segmentation/CXSegmenter.test.js'
+		'./tests/segmentation/CXSegmenter.test.js',
+		'./tests/lineardoc/LinearDoc.test.js'
 	];
 
 qunit.setup( {

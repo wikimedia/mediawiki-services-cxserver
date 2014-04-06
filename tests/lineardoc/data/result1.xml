@@ -1,0 +1,54 @@
+<html>
+<cxblockspace/>
+<head>
+<meta charset="UTF-8" />
+<style>cxtextblock { border: solid #88f 1px }
+cxtextchunk { border-right: solid #f88 1px }</style>
+<cxblockspace/>
+<meta>
+</meta>
+<cxblockspace/>
+<title>
+<cxtextblock>
+  <cxtextchunk>test</cxtextchunk>
+</cxtextblock>
+</title>
+<cxblockspace/>
+</head>
+<cxblockspace/>
+<body>
+<cxblockspace/>
+<p>
+<cxtextblock>
+  <cxtextchunk tags="a:href=Conway">Conway</cxtextchunk>
+  <cxtextchunk> stated</cxtextchunk>
+  <cxinlineelement>
+    <br/>
+  </cxinlineelement>
+  <cxtextchunk>that young </cxtextchunk>
+  <cxtextchunk tags="a:href=children">children</cxtextchunk>
+  <cxtextchunk> </cxtextchunk>
+  <cxtextchunk tags="i">“understand </cxtextchunk>
+  <cxtextchunk tags="i a:href=Object_permanence">object permanence</cxtextchunk>
+  <cxtextchunk tags="i">. </cxtextchunk>
+  <cxtextchunk tags="i a:href=Concealment">Concealed</cxtextchunk>
+  <cxtextchunk tags="i"> </cxtextchunk>
+  <cxtextchunk tags="i a:href=Object">objects</cxtextchunk>
+  <cxtextchunk tags="i"> feature in their awareness.”</cxtextchunk>
+  <cxinlineelement>
+    <cxwrapper>
+    <cxtextblock>
+      <cxtextchunk tags="a:href=#ref-5">[5]</cxtextchunk>
+    </cxtextblock>
+    </cxwrapper>
+  </cxinlineelement>
+  <cxtextchunk> </cxtextchunk>
+  <cxtextchunk tags="b">(</cxtextchunk>
+  <cxtextchunk tags="b a:href=Nielsen">Nielsen</cxtextchunk>
+  <cxtextchunk tags="b"> equivalence is similar. See below).</cxtextchunk>
+</cxtextblock>
+</p>
+<cxblockspace/>
+</body>
+<cxblockspace/>
+</html>
