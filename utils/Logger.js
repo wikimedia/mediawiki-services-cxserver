@@ -21,12 +21,12 @@ logger = new( winston.Logger )( {
 			filename: logDir + '/cx-logs.log',
 			maxsize: 1024 * 1024 * 10 // 10MB
 		} )
-    ],
+	],
 	exceptionHandlers: [
 		new winston.transports.File( {
 			filename: 'log/exceptions.log'
 		} )
-    ]
+	]
 } );
 
 module.exports = logger;
