@@ -30,6 +30,30 @@ io = require( 'socket.io' ).listen( server, {
 		warn: logger.warn
 	}
 } );
+
+// Production log configuration.
+io.configure( 'production', function () {
+	io.set( 'log level', 1 ); // reduce logging
+	io.enable( 'browser client minification' ); // send minified client
+	io.enable( 'browser client etag' ); // apply etag caching logic based on version number
+	io.enable( 'browser client gzip' ); // gzip the file
+
+	// enable all transports
+	io.set( 'transports', [
+		'websocket',
+		'flashsocket',
+		'htmlfile',
+		'xhr-polling',
+		'jsonp-polling'
+	] );
+} );
+
+// Development log configuration.
+io.configure( 'development', function () {
+	io.enable( 'browser client gzip' ); // gzip the file, reduce the log size
+	io.set( 'transports', [ 'websocket' ] );
+} );
+
 redis = require( 'redis' );
 // Use Redis as the store for socket.io
 RedisStore = require( 'socket.io/lib/stores/redis' );
