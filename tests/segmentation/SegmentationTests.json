@@ -33,14 +33,34 @@
 			"result": "<figure id=\"0\"><span class=\"cx-segment\" data-segmentid=\"1\"><a class=\"cx-link\" data-linkid=\"2\" href=\"#\"><img src=\"img.png\"></img></a></span><figcaption id=\"3\"><span class=\"cx-segment\" data-segmentid=\"4\">Figure caption</span></figcaption></figure>"
 		},
 		{
-			"desc": "References can appear after period. Example: Hydrogen is a gas. [1] It is ...",
-			"source": "<p>Sentence one. <span class=\"reference\"><a href=\"#\">reference</a></span> Starts with reference</p>",
-			"result": "<p id=\"0\"><span class=\"cx-segment\" data-segmentid=\"1\">Sentence one. </span><span class=\"cx-segment\" data-segmentid=\"2\"><span class=\"reference\"><a class=\"cx-link\" data-linkid=\"3\" href=\"#\">reference</a></span> Starts with reference</span></p>"
-		},
-		{
 			"desc": "References can appear after period without space. Example: Hydrogen is a gas.[1] It is ...",
 			"source": "<p>Sentence one.<span class=\"reference\"><a href=\"#\">reference</a></span> Starts with reference</p>",
 			"result": "<p id=\"0\"><span class=\"cx-segment\" data-segmentid=\"1\">Sentence one.<span class=\"reference\"><a class=\"cx-link\" data-linkid=\"2\" href=\"#\">reference</a></span></span><span class=\"cx-segment\" data-segmentid=\"3\"> Starts with reference</span></p>"
+		},
+		{
+			"desc": "References can appear after period without space, repeated. Example: Hydrogen is a gas.[1][2][3] It is ...",
+			"source": "<p>Sentence one.<span class=\"reference\"><a href=\"#\">1</a></span><span class=\"reference\"><a href=\"#\">2</a></span><span class=\"reference\"><a href=\"#\">3</a></span> Starts with reference</p>",
+			"result": "<p id=\"0\"><span class=\"cx-segment\" data-segmentid=\"1\">Sentence one.<span class=\"reference\"><a class=\"cx-link\" data-linkid=\"2\" href=\"#\">1</a></span><span class=\"reference\"><a class=\"cx-link\" data-linkid=\"3\" href=\"#\">2</a></span><span class=\"reference\"><a class=\"cx-link\" data-linkid=\"4\" href=\"#\">3</a></span></span><span class=\"cx-segment\" data-segmentid=\"5\"> Starts with reference</span></p>"
+		},
+		{
+			"desc": "References can appear inside a sentence. Example: Hydrogen is a gas[1] and it is ...",
+			"source": "<p>Sentence one<span class=\"reference\"><a href=\"#\">1</a></span> and rest of sentence</p>",
+			"result": "<p id=\"0\"><span class=\"cx-segment\" data-segmentid=\"1\">Sentence one<span class=\"reference\"><a class=\"cx-link\" data-linkid=\"2\" href=\"#\">1</a></span> and rest of sentence</span></p>"
+		},
+		{
+			"desc": "References can appear inside a sentence. Example:Hydrogen's atomic number is one. Hydrogen is a gas[1] and it is ..... Test the flags are reset properly",
+			"source": "<p>Hydrogen's atomic number is one.<span class=\"reference\"><a href=\"#\">1</a></span> Hydrogen is a gas<span class=\"reference\"><a href=\"#\">2</a></span> and it is</p>",
+			"result": "<p id=\"0\"><span class=\"cx-segment\" data-segmentid=\"1\">Hydrogen's atomic number is one.<span class=\"reference\"><a class=\"cx-link\" data-linkid=\"2\" href=\"#\">1</a></span></span><span class=\"cx-segment\" data-segmentid=\"3\"> Hydrogen is a gas<span class=\"reference\"><a class=\"cx-link\" data-linkid=\"4\" href=\"#\">2</a></span> and it is</span></p>"
+		},
+		{
+			"desc": "References can appear repeated inside a sentence. Example: Hydrogen is a gas[1][2][3] and it is ...",
+			"source": "<p>Sentence one<span class=\"reference\"><a href=\"#\">1</a></span><span class=\"reference\"><a href=\"#\">2</a></span><span class=\"reference\"><a href=\"#\">3</a></span> and rest of sentence</p>",
+			"result": "<p id=\"0\"><span class=\"cx-segment\" data-segmentid=\"1\">Sentence one<span class=\"reference\"><a class=\"cx-link\" data-linkid=\"2\" href=\"#\">1</a></span><span class=\"reference\"><a class=\"cx-link\" data-linkid=\"3\" href=\"#\">2</a></span><span class=\"reference\"><a class=\"cx-link\" data-linkid=\"4\" href=\"#\">3</a></span> and rest of sentence</span></p>"
+		},
+		{
+			"desc": "References can appear after period and space. Example: Hydrogen is a gas. [1] It is .... In this case we dont have any choice than considering [1] as part of second sentence",
+			"source": "<p>Sentence one. <span class=\"reference\"><a href=\"#\">reference</a></span> Starts with reference</p>",
+			"result": "<p id=\"0\"><span class=\"cx-segment\" data-segmentid=\"1\">Sentence one. </span><span class=\"cx-segment\" data-segmentid=\"2\"><span class=\"reference\"><a class=\"cx-link\" data-linkid=\"3\" href=\"#\">reference</a></span> Starts with reference</span></p>"
 		}
 	],
 	"hi": [

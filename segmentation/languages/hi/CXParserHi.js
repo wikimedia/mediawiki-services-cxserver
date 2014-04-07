@@ -32,9 +32,12 @@ CXParserHi.prototype.ontext = function ( text ) {
 		return replacement;
 	}
 	text = text.replace( /([a-zA-Zअ-ह]*)([।!?][\s])/g, textSplit );
-	// content terminating with [.|!|?]
-	text = text.replace( /([।!?])$/, function ( match, p1 ) {
-		return p1 + parser.endSentence();
+	// content terminating with [.|!|?]. But defer the decision of sentence break
+	// to handle cases like: "Hydrogen is a gas.[1] It is an..". References part of
+	// the sentence appear after the period.
+	text = text.replace( /([.!?])$/, function ( match, p1 ) {
+		parser.sawSentenceEndCandidate = true;
+		return p1;
 	} );
 	this.print( text );
 };
