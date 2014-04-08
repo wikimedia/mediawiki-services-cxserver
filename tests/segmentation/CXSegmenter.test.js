@@ -1,8 +1,9 @@
 QUnit.module( 'CXSegmenter' );
 
+var fs = require( 'fs' );
 QUnit.test( 'Segmentation tests', function ( assert ) {
 	var i, len, lang, test, tests, segmenter, result,
-		count = 0,
+		count = 0,testData,expectedResultData,
 		allTests = require( './SegmentationTests.json' );
 
 	for ( lang in allTests ) {
@@ -13,11 +14,14 @@ QUnit.test( 'Segmentation tests', function ( assert ) {
 		tests = allTests[ lang ];
 		for ( i = 0, len = allTests[ lang ].length; i < len; i++ ) {
 			test = tests[ i ];
-			segmenter = new CX.Segmenter( test.source, lang );
+			testData = fs.readFileSync( __dirname + '/data/' + test.source, 'utf8' );
+			segmenter = new CX.Segmenter( testData, lang );
 			segmenter.segment();
 			result = segmenter.getSegmentedContent();
 			result = result.replace( /(\r\n|\n|\t|\r)/gm, '' );
-			assert.strictEqual( result, test.result, test.desc || '' );
+			expectedResultData = fs.readFileSync( __dirname + '/data/' + test.result, 'utf8' );
+			expectedResultData = expectedResultData.replace( /(\r\n|\n|\t|\r)/gm, '' );
+			assert.strictEqual( result, expectedResultData, test.desc || '' );
 		}
 	}
 } );
