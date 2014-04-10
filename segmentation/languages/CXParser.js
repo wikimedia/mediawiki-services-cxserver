@@ -1,6 +1,7 @@
 'use strict';
 
 var SAXParser = require( 'sax' ).SAXParser,
+	logger = require( __dirname + '/../../utils/Logger.js' ),
 	util = require( 'util' );
 
 /**
@@ -79,6 +80,7 @@ function entity( str ) {
 CXParser.prototype.startSentence = function () {
 	this.inSentence = true;
 	this.sawSentenceEndCandidate = false;
+	this.inReference = false;
 	return '\n\t<span class="cx-segment" data-segmentid="' + ( this.segmentCount++ ) + '">';
 };
 
@@ -94,8 +96,15 @@ CXParser.prototype.endSentence = function () {
  * Undo end a sentence
  */
 CXParser.prototype.undoEndSentence = function () {
+	var lastClose;
 	this.inSentence = true;
-	this.segmentedContent = this.segmentedContent.substr( 0, this.segmentedContent.length - 7 );
+	lastClose = this.segmentedContent.substr( this.segmentedContent.length - 7, this.segmentedContent.length );
+	// Make sure we are not deleting anything other than close tag.
+	if ( lastClose === '</span>' ) {
+		this.segmentedContent = this.segmentedContent.substr( 0, this.segmentedContent.length - 7 );
+	} else {
+		logger.warn( 'Error in undoEndSentence. Attempted deleting content' );
+	}
 };
 
 /**
@@ -174,7 +183,7 @@ CXParser.prototype.onopentag = function ( tag ) {
 
 	if ( this.sawSentenceEndCandidate ) {
 		if ( tag.name === 'span' &&
-			tag.attributes.class === 'reference' && ( this.inSentence || this.inReference ) && this.sawSentenceEndCandidate ) {
+			tag.attributes.class === 'reference' && ( this.inSentence || this.inReference ) ) {
 			// Sentences staring with reference links.
 			// Example: Sentence one.[1] Sentence two
 			// Here [1] is not part of Sentence two. It is reference for Sentence one.
@@ -188,14 +197,13 @@ CXParser.prototype.onopentag = function ( tag ) {
 			}
 			this.inReference = true;
 		}
-
-		// Check if we need to reset inReference state. References contains an 'a' tag
-		// inside 'span' tag
-		if ( this.inReference && !( tag.name === 'a' || tag.name === 'span' ) ) {
-			// Reset inReference
-			this.inReference = false;
-			this.sawSentenceEndCandidate = false;
-		}
+	}
+	// Check if we need to reset inReference state. References contains an 'a' tag
+	// inside 'span' tag
+	if ( this.inReference && tag.name !== 'a' && tag.name !== 'span' ) {
+		// Reset inReference
+		this.inReference = false;
+		this.sawSentenceEndCandidate = false;
 	}
 	// Start of tag
 	this.print( '<' + tag.name );
