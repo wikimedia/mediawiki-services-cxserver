@@ -32,15 +32,18 @@ Rot13Service.prototype.translate = function ( segments ) {
 	setTimeout( function () {
 		var translation,
 			segmentId;
+
 		for ( segmentId in segments ) {
 			rot13.parser = new SAXParser();
 			rot13.prepareParser();
+
 			// Wrap the source with <p> to make it valid dom fragment
 			rot13.parser.write( '<p>' + segments[ segmentId ].source + '</p>' );
 			translation = rot13.parser.parsedText;
 			translation = translation.substr( 3, translation.length - 7 );
 			mt[ segmentId ] = translation;
 		}
+
 		deferred.resolve( mt );
 	}, 1000 );
 
@@ -49,7 +52,9 @@ Rot13Service.prototype.translate = function ( segments ) {
 
 Rot13Service.prototype.prepareParser = function () {
 	var parser = this.parser;
+
 	parser.parsedText = '';
+
 	/**
 	 * Entity handler
 	 */
@@ -61,10 +66,13 @@ Rot13Service.prototype.prepareParser = function () {
 
 	parser.onopentag = function ( tag ) {
 		var attrName;
+
 		parser.parsedText += '<' + tag.name;
+
 		for ( attrName in tag.attributes ) {
 			parser.parsedText += ' ' + attrName + '="' + entity( tag.attributes[ attrName ] ) + '"';
 		}
+
 		parser.parsedText += '>';
 	};
 

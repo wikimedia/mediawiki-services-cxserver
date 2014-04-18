@@ -40,18 +40,21 @@ PageLoader.prototype.load = function () {
 
 	// FIXME This way of getting tile is not reliable
 	title = this.page.split( '/' ).pop();
+
 	if ( config.pageloaderservice === 'parsoid' ) {
 		ParsoidPageLoader = require( __dirname + '/ParsoidPageLoader.js' ).ParsoidPageLoader;
 		// FIXME It should be possible to fetch articles from any wiki.
 		loader = new ParsoidPageLoader( config.pageloaderservices.parsoid.api, 'enwiki' );
 		promise = loader.load( title );
 	}
+
 	if ( config.pageloaderservice === 'mediawiki' ) {
 		MediaWikiApiPageLoader = require( __dirname + '/MediaWikiApiPageLoader.js' )
 			.MediaWikiApiPageLoader;
 		loader = new MediaWikiApiPageLoader( config.pageloaderservices.mediawiki.api );
 		promise = loader.load( title );
 	}
+
 	return promise;
 };
 

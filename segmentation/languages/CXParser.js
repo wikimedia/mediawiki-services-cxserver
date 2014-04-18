@@ -39,7 +39,8 @@ CXParser.prototype.sectionTypes = [
 	// other
 	'hr', 'button', 'canvas', 'center', 'col', 'colgroup', 'embed',
 	'map', 'object', 'pre', 'progress', 'video'
- ];
+];
+
 /**
  * Error handler
  */
@@ -97,8 +98,10 @@ CXParser.prototype.endSentence = function () {
  */
 CXParser.prototype.undoEndSentence = function () {
 	var lastClose;
+
 	this.inSentence = true;
 	lastClose = this.segmentedContent.substr( this.segmentedContent.length - 7, this.segmentedContent.length );
+
 	// Make sure we are not deleting anything other than close tag.
 	if ( lastClose === '</span>' ) {
 		this.segmentedContent = this.segmentedContent.substr( 0, this.segmentedContent.length - 7 );
@@ -117,6 +120,7 @@ CXParser.prototype.ontext = function ( text ) {
 	if ( !text.trim() ) {
 		return;
 	}
+
 	if ( !this.inSentence ) {
 		// Avoid dangling sentence.
 		this.print( this.startSentence() );
@@ -127,24 +131,30 @@ CXParser.prototype.ontext = function ( text ) {
 
 		replacement = prevWord + sentenceSeparator;
 		nextLetter = sentence[ offset + match.length ];
+
 		if ( prevWord && prevWord.length < 3 && prevWord[ 0 ].toUpperCase() === prevWord[ 0 ] ||
 			nextLetter && nextLetter.toLowerCase() === nextLetter ) {
 			// abbreviation?
 			return replacement;
 		}
+
 		replacement += parser.endSentence();
 		replacement += parser.startSentence();
+
 		return replacement;
 	}
 
 	text = text.replace( /(\w*)([.!?][\s])/g, textSplit );
-	// content terminating with [.|!|?]. But defer the decision of sentence break
-	// to handle cases like: "Hydrogen is a gas.[1] It is an..". References part of
-	// the sentence appear after the period.
+
+	// The content terminates with [.|!|?], but defer the decision of sentence break
+	// to handle cases like: "Hydrogen is a gas.[1] It is an ...".
+	// References part of the sentence appear after the period.
 	text = text.replace( /([.!?])$/, function ( match, p1 ) {
 		parser.sawSentenceEndCandidate = true;
+
 		return p1;
 	} );
+
 	this.print( text );
 };
 
@@ -246,6 +256,7 @@ CXParser.prototype.onclosetag = function ( tag ) {
 	} else {
 		this.print( '</' + tag + '>' );
 	}
+
 	// See if we have to print the left over </span>
 	// from reference handling
 	if ( tag === 'span' && this.inReference && this.sawSentenceEndCandidate ) {

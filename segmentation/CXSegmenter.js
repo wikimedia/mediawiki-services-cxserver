@@ -43,6 +43,7 @@ CXSegmenter.prototype.extractSegments = function () {
 	$container.find( '.cx-segment' ).each( function ( index, section ) {
 		var $section = $( section ),
 			segmentId = $section.data( 'segmentid' );
+
 		segmenter.segments[segmentId] = {
 			source: $section.html()
 		};

@@ -10,6 +10,7 @@ winston.addColors( winston.config.npm.colors );
 if ( !fs.existsSync( logDir ) ) {
 	fs.mkdirSync( logDir );
 }
+
 logger = new( winston.Logger )( {
 	transports: [
 		new winston.transports.Console( {

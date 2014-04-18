@@ -12,6 +12,7 @@
 var CXSegmenter = require( __dirname + '/../segmentation/CXSegmenter.js' ).CXSegmenter,
 	CXMTInterface = require( __dirname + '/../mt/CXMTInterface.js' ).CXMTInterface,
 	logger = require( __dirname + '/../utils/Logger.js' );
+
 /**
  * CXDataModelManager
  * @class
@@ -34,17 +35,20 @@ CXDataModelManager.prototype.init = function () {
 	// TODO: refactor this
 	this.context.store.get( this.context.sourcePage, function ( err, data ) {
 		dataModelManager.dataModel = JSON.parse( data );
+
 		if ( dataModelManager.dataModel ) {
 			// data model present in redis store
 			dataModelManager.publish();
 		} else {
 			PageLoader = require( __dirname + '/../pageloader/PageLoader.js' ).PageLoader;
 			pageloader = new PageLoader( dataModelManager.context.sourcePage );
+
 			pageloader.load().then( function ( data ) {
 				logger.debug( 'Page fetched' );
 				dataModelManager.context.sourceText = data;
 				segmenter = new CXSegmenter( dataModelManager.context.sourceText );
 				segmenter.segment();
+
 				dataModelManager.dataModel = {
 					version: 0,
 					sourceLanguage: dataModelManager.context.sourceLanguage,
@@ -54,7 +58,9 @@ CXDataModelManager.prototype.init = function () {
 					segmentedContent: segmenter.getSegmentedContent(),
 					links: segmenter.getLinks()
 				};
+
 				dataModelManager.publish();
+
 				// TODO: Dispatch the context to a number of task runners
 				// Once each task runners finish, publish.
 				mtInterface = new CXMTInterface( dataModelManager.context );
@@ -66,7 +72,6 @@ CXDataModelManager.prototype.init = function () {
 				logger.error( 'Error in retrieving the page ' +
 					dataModelManager.context.sourcePage );
 			} );
-
 		}
 	} );
 };
@@ -84,7 +89,9 @@ CXDataModelManager.prototype.publish = function () {
 	this.context.store.set( this.dataModel.sourcePage, data, function () {
 		dataModelManager.context.pub.publish( 'cx', data );
 	} );
+
 	logger.debug( 'Sending data. Version: ' + this.dataModel.version );
+
 	this.incrementVersionNumber();
 };
 
