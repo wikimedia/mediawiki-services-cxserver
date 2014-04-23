@@ -82,7 +82,7 @@ CXParser.prototype.startSentence = function () {
 	this.inSentence = true;
 	this.sawSentenceEndCandidate = false;
 	this.inReference = false;
-	return '\n\t<span class="cx-segment" data-segmentid="' + ( this.segmentCount++ ) + '">';
+	return '<span class="cx-segment" data-segmentid="' + ( this.segmentCount++ ) + '">';
 };
 
 /**
@@ -252,10 +252,8 @@ CXParser.prototype.onclosetag = function ( tag ) {
 			// Avoid dangling sentence.
 			this.print( this.endSentence() );
 		}
-		this.print( '</' + tag + '>\n' );
-	} else {
-		this.print( '</' + tag + '>' );
 	}
+	this.print( '</' + tag + '>' );
 
 	// See if we have to print the left over </span>
 	// from reference handling
