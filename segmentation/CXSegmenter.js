@@ -14,7 +14,6 @@ var CXParserFactory = require( __dirname + '/CXParserFactory.js' ).CXParserFacto
 
 function CXSegmenter( content, language ) {
 	this.content = content;
-	this.segmentCount = 0;
 	this.segments = {};
 	this.segmentedContent = null;
 	this.links = {};
@@ -48,10 +47,6 @@ CXSegmenter.prototype.extractSegments = function () {
 			source: $section.html()
 		};
 	} );
-};
-
-CXSegmenter.prototype.getSegmentCount = function () {
-	return this.segmentCount;
 };
 
 CXSegmenter.prototype.getSegments = function () {
