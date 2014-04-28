@@ -14,14 +14,26 @@
 
 'use strict';
 
-var instanceName, context, port, app, server, io, redis, express, RedisStore, logger, args;
+var instanceName, context, port, app, server, io, fs, redis, express,
+	 RedisStore, logger, args, privateKey, certificate, credentials;
 
 logger = require( __dirname + '/utils/Logger.js' );
 express = require( 'express' );
+fs = require( 'fs' );
 args = require( 'minimist' )( process.argv.slice( 2 ) );
 port = args.port || 8000;
 app = express();
-server = require( 'http' ).createServer( app );
+
+// Starts https server only if all needed args provided, else starts http server.
+if ( args.secure && args.key && args.cert ) {
+	privateKey  = fs.readFileSync( args.key, 'utf8' );
+	certificate = fs.readFileSync( args.cert, 'utf8' );
+	credentials = { key: privateKey, cert: certificate };
+	server = require( 'https' ).createServer( credentials, app );
+} else {
+	server = require( 'http' ).createServer( app );
+}
+
 io = require( 'socket.io' ).listen( server, {
 	logger: {
 		debug: logger.debug,
