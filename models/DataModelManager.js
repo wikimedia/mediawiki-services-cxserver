@@ -10,7 +10,6 @@
 'use strict';
 
 var CXSegmenter = require( __dirname + '/../segmentation/CXSegmenter.js' ).CXSegmenter,
-	CXMTInterface = require( __dirname + '/../mt/CXMTInterface.js' ).CXMTInterface,
 	logger = require( __dirname + '/../utils/Logger.js' );
 
 /**
@@ -29,7 +28,6 @@ function CXDataModelManager( context ) {
 CXDataModelManager.prototype.init = function () {
 	var dataModelManager = this,
 		segmenter,
-		mtInterface,
 		PageLoader, pageloader;
 
 	// TODO: refactor this
@@ -60,14 +58,6 @@ CXDataModelManager.prototype.init = function () {
 				};
 
 				dataModelManager.publish();
-
-				// TODO: Dispatch the context to a number of task runners
-				// Once each task runners finish, publish.
-				mtInterface = new CXMTInterface( dataModelManager.context );
-				mtInterface.translate( dataModelManager.dataModel.segments ).then( function ( translations ) {
-					dataModelManager.dataModel.mt = translations;
-					dataModelManager.publish();
-				} );
 			}, function () {
 				logger.error( 'Error in retrieving the page ' +
 					dataModelManager.context.sourcePage );
