@@ -10,22 +10,8 @@ Install the dependencies:
 
 ```$ npm install```
 
-You need a Redis server on your machine. Install it using your OS package
-manager:
-
-Debian: ```sudo apt-get install redis-server```
-
-Fedora: ```sudo yum install redis```
-
 Running the server
 ------------------
-First, make sure that the Redis server is running:
-
-Debian: ```sudo service redis-server start```
-
-Fedora: ```sudo service redis start```
-
-### Running it in non-secure mode (http)
 
 #### Using ```node```
 
@@ -53,7 +39,7 @@ Subsequently, just use following to start the server.
 $ cxserver
 ```
 
-Then browse to ```http://localhost:8000/```. You'll see the server playground page.
+Then browse to ```http://localhost:8080/```. You'll see the server playground page.
 
 ### Running it in secure mode (https)
 
@@ -79,7 +65,7 @@ Subsequently, just use following to start the server.
 $ cxserver --secure --key key.pem --cert cert.pem
 ```
 
-Then browse to ```https://localhost:8000/```. You'll see the server playground page.
+Then browse to ```https://localhost:8080/```. You'll see the server playground page.
 
 
 Configuration

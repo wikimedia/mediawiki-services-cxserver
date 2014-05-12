@@ -14,104 +14,68 @@
 
 'use strict';
 
-var instanceName, context, port, app, server, io, fs, redis, express,
-	 RedisStore, logger, args, privateKey, certificate, credentials;
+var instanceName,
+	server,
+	fs = require( 'fs' ),
+	express = require( 'express' ),
+	app = express(),
+	logger = require( __dirname + '/utils/Logger.js' ),
+	args = require( 'minimist' )( process.argv.slice( 2 ) ),
+	port = args.port || 8080,
+	privateKey,
+	certificate,
+	credentials,
+	pkg = require( __dirname + '/package.json' );
 
-logger = require( __dirname + '/utils/Logger.js' );
-express = require( 'express' );
-fs = require( 'fs' );
-args = require( 'minimist' )( process.argv.slice( 2 ) );
-port = args.port || 8000;
 app = express();
-
 // Starts https server only if all needed args provided, else starts http server.
 if ( args.secure && args.key && args.cert ) {
-	privateKey  = fs.readFileSync( args.key, 'utf8' );
+	privateKey = fs.readFileSync( args.key, 'utf8' );
 	certificate = fs.readFileSync( args.cert, 'utf8' );
-	credentials = { key: privateKey, cert: certificate };
+	credentials = {
+		key: privateKey,
+		cert: certificate
+	};
 	server = require( 'https' ).createServer( credentials, app );
 } else {
 	server = require( 'http' ).createServer( app );
 }
 
-io = require( 'socket.io' ).listen( server, {
-	logger: {
-		debug: logger.debug,
-		info: logger.info,
-		error: logger.error,
-		warn: logger.warn
-	}
-} );
-
-// Production log configuration.
-io.configure( 'production', function () {
-	io.set( 'log level', 1 ); // reduce logging
-	io.enable( 'browser client minification' ); // send minified client
-	io.enable( 'browser client etag' ); // apply etag caching logic based on version number
-	io.enable( 'browser client gzip' ); // gzip the file
-
-	// enable all transports
-	io.set( 'transports', [
-		'websocket',
-		'flashsocket',
-		'htmlfile',
-		'xhr-polling',
-		'jsonp-polling'
-	] );
-} );
-
-// Development log configuration.
-io.configure( 'development', function () {
-	io.enable( 'browser client gzip' ); // gzip the file, reduce the log size
-	io.set( 'transports', [ 'websocket' ] );
-} );
-
-redis = require( 'redis' );
-// Use Redis as the store for socket.io
-RedisStore = require( 'socket.io/lib/stores/redis' );
-io.set( 'store',
-	new RedisStore( {
-		redisPub: redis.createClient(),
-		redisSub: redis.createClient(),
-		redisClient: redis.createClient()
-	} )
-);
 instanceName = 'worker(' + process.pid + ')';
-// socket.io connection establishment
-io.sockets.on( 'connection', function ( socket ) {
-	var dataModelManager,
-		CXDataModelManager,
-		redisSub = redis.createClient();
-
-	logger.debug( 'Client connected to ' + instanceName + '. Socket: ' + socket.id );
-	redisSub.subscribe( 'cx' );
-	redisSub.on( 'message', function ( channel, message ) {
-		socket.emit( 'cx.data.update', JSON.parse( message ) );
-		logger.debug( 'Received from channel #' + channel + ':' + message );
-	} );
-
-	socket.on( 'cx.init', function ( data ) {
-		CXDataModelManager = require( __dirname + '/models/DataModelManager.js' ).CXDataModelManager;
-		context = {
-			sourceLanguage: data.sourceLanguage,
-			targetLanguage: data.targetLanguage,
-			sourcePage: data.sourcePage,
-			pub: redis.createClient(),
-			store: redis.createClient()
-		};
-		// Inject the session context to dataModelManager
-		// It should take care of managing the data model and pushing
-		// it to the client through socket.
-		dataModelManager = new CXDataModelManager( context );
-	} );
-
-	socket.on( 'disconnect', function () {
-		logger.debug( 'Disconnecting from redis' );
-		redisSub.quit();
-	} );
-
+app.use( function ( req, res, next ) {
+	res.header( 'Access-Control-Allow-Origin', '*' );
+	res.header( 'Access-Control-Allow-Headers', 'X-Requested-With' );
+	next();
 } );
 
+app.get( '/page/:language/:title', function ( req, res ) {
+	var sourceLanguage = req.params.language,
+		title = req.params.title,
+		CXSegmenter = require( __dirname + '/segmentation/CXSegmenter.js' ).CXSegmenter,
+		PageLoader = require( __dirname + '/pageloader/PageLoader.js' ).PageLoader,
+		pageloader = new PageLoader( title, sourceLanguage );
+
+	pageloader.load().then( function ( data ) {
+		var segmenter;
+
+		logger.debug( 'Page fetched' );
+		segmenter = new CXSegmenter( data );
+		segmenter.segment();
+		res.send( {
+			sourceLanguage: sourceLanguage,
+			title: title,
+			segmentedContent: segmenter.getSegmentedContent(),
+		} );
+	} );
+} );
+
+app.get( '/version', function ( req, res ) {
+	var version = {
+		name: pkg.name,
+		version: pkg.version
+	};
+	res.json( version );
+} );
 // Everything else goes through this.
 app.use( express.static( __dirname + '/public' ) );
 logger.info( instanceName + ' ready. Listening on port: ' + port );
