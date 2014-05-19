@@ -69,6 +69,17 @@ app.get( '/page/:language/:title', function ( req, res ) {
 	} );
 } );
 
+app.get( '/dictionary/:word/:from/:to', function ( req, res ) {
+	var sourceLanguage = req.params.from,
+		word = req.params.word,
+		targetLanguage = req.params.to,
+		dictClient = require( __dirname + '/dictionary/dict/Dict.js' );
+
+	dictClient.getDefinition( word, sourceLanguage, targetLanguage ).then( function ( data ) {
+		res.send( data );
+	} );
+} );
+
 app.get( '/version', function ( req, res ) {
 	var version = {
 		name: pkg.name,
