@@ -70,12 +70,17 @@ app.get( '/page/:language/:title', function ( req, res ) {
 } );
 
 app.get( '/dictionary/:word/:from/:to', function ( req, res ) {
-	var sourceLanguage = req.params.from,
+	var from = req.params.from,
 		word = req.params.word,
-		targetLanguage = req.params.to,
-		dictClient = require( __dirname + '/dictionary/dict/Dict.js' );
+		to = req.params.to,
+		dictClient, dictionaryProviders,
+		registry = require( __dirname + '/registry' ),
+		toolset;
 
-	dictClient.getDefinition( word, sourceLanguage, targetLanguage ).then( function ( data ) {
+	toolset = registry.getToolSet( from, to );
+	dictionaryProviders = require( __dirname + '/dictionary' );
+	dictClient = dictionaryProviders[ toolset.dictionary.provider ];
+	dictClient.getTranslations( word, from, to ).then( function ( data ) {
 		res.send( data );
 	} );
 } );

@@ -1,0 +1,10 @@
+{
+	"en": {
+		"es": {
+			"fd-eng-spa": {
+				"source": "dictionaries/freedict-eng-spa.json",
+				"desc": "English-Spanish FreeDict Dictionary ver. 0.2.1"
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"en": {
+		"en": {
+			"dictionary": {
+				"provider": "Dictd"
+			}
+		},
+		"es": {
+			"dictionary": {
+				"provider": "JsonDict"
+			}
+		},
+		"hi": {
+			"dictionary": {
+				"provider": "Dictd"
+			}
+		},
+		"ru": {
+			"dictionary": {
+				"provider": "Dictd"
+			}
+		},
+		"de": {
+			"dictionary": {
+				"provider": "Dictd"
+			}
+		}
+	}
+}
