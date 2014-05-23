@@ -9,11 +9,11 @@
 				from = $( 'input[name=sourceLanguage]' ).val(),
 				to = $( 'input[name=targetLanguage]' ).val();
 			$.get( word + '/' + from + '/' + to, function ( response ) {
-				$.each( response.definitions, function ( index, definition ) {
-					$( '.definition' ).append( definition.def );
+				$.each( response.translations, function ( index, translation ) {
+					$( '.definition' ).append( translation.phrase );
 					$( '.definition' ).append( '\n' );
-					$( '.definition' ).append( definition.db.desc );
-					$( '.definition' ).append( '\n\n' );
+					$( '.definition' ).append( translation.info );
+					$( '.definition' ).append( '\n' );
 				} );
 				$( 'progress' ).hide();
 			} );
