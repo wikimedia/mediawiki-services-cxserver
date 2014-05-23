@@ -69,6 +69,22 @@ app.get( '/page/:language/:title', function ( req, res ) {
 	} );
 } );
 
+app.get( '/dictionary/:word/:from/:to', function ( req, res ) {
+	var from = req.params.from,
+		word = req.params.word,
+		to = req.params.to,
+		dictClient, dictionaryProviders,
+		registry = require( __dirname + '/registry' ),
+		toolset;
+
+	toolset = registry.getToolSet( from, to );
+	dictionaryProviders = require( __dirname + '/dictionary' );
+	dictClient = dictionaryProviders[ toolset.dictionary.provider ];
+	dictClient.getTranslations( word, from, to ).then( function ( data ) {
+		res.send( data );
+	} );
+} );
+
 app.get( '/version', function ( req, res ) {
 	var version = {
 		name: pkg.name,
