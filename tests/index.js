@@ -2,7 +2,8 @@
 var qunit = require( 'qunit' ),
 	tests = [
 		'./tests/segmentation/CXSegmenter.test.js',
-		'./tests/lineardoc/LinearDoc.test.js'
+		'./tests/lineardoc/LinearDoc.test.js',
+		'./tests/dictionary/Dictionary.test.js'
 	];
 
 qunit.setup( {
