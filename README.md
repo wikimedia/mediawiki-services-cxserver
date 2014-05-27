@@ -39,7 +39,8 @@ Subsequently, just use following to start the server.
 $ cxserver
 ```
 
-Then browse to ```http://localhost:8080/```. You'll see the server playground page.
+Then browse to ```http://localhost:8080/```. You'll see the server playground
+page.
 
 ### Running it in secure mode (https)
 
@@ -65,7 +66,8 @@ Subsequently, just use following to start the server.
 $ cxserver --secure --key key.pem --cert cert.pem
 ```
 
-Then browse to ```https://localhost:8080/```. You'll see the server playground page.
+Then browse to ```https://localhost:8080/```. You'll see the server playground
+page.
 
 
 Configuration
@@ -91,4 +93,4 @@ To run the tests:
 
 To run individual test:
 
-```$ node tests tests/segmentation/CXSegmenter.test.js```
+```$ node tests tests/path/to/individual/test```
