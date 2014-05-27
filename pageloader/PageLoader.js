@@ -8,54 +8,49 @@
 
 'use strict';
 
-var config;
+var config,
+	request = require( 'request' ),
+	Q = require( 'q' );
 
 try {
-	// TODO: Have an example configuration file.
 	config = require( __dirname + '/../config.js' );
 } catch ( e ) {
-	// TODO: define this configuration in better way
 	config = {
-		pageloaderservice: 'parsoid',
-		pageloaderservices: {
-			parsoid: {
-				api: 'http://parsoid.wmflabs.org'
-			},
-			mediawiki: {
-				api: 'http://en.wikipedia.org/w/api.php'
-			}
+		parsoid: {
+			api: 'http://parsoid.wmflabs.org'
 		}
 	};
 }
 
 /**
  * @class ParsoidPageLoader
+ *
+ * @param {string} page
+ * @param {string} sourceLanguage
+ * @return {Q.Promise}
  */
-function PageLoader( page ) {
+function PageLoader( page, sourceLanguage ) {
 	this.page = page;
+	this.sourceLanguage = sourceLanguage;
 }
 
 PageLoader.prototype.load = function () {
-	var loader, promise, ParsoidPageLoader, MediaWikiApiPageLoader, title;
+	var deferred = Q.defer();
 
-	// FIXME This way of getting tile is not reliable
-	title = this.page.split( '/' ).pop();
+	request(
+		config.parsoid.api + '/' + this.sourceLanguage + 'wiki/' + this.page,
+		function ( error, response, body ) {
+			if ( error ) {
+				deferred.reject( new Error( error ) );
+			}
+			if ( response.statusCode !== 200 ) {
+				deferred.reject( new Error( 'Error while fetching page: ' + response.statusCode ) );
+			}
+			deferred.resolve( body );
+		}
+	);
 
-	if ( config.pageloaderservice === 'parsoid' ) {
-		ParsoidPageLoader = require( __dirname + '/ParsoidPageLoader.js' ).ParsoidPageLoader;
-		// FIXME It should be possible to fetch articles from any wiki.
-		loader = new ParsoidPageLoader( config.pageloaderservices.parsoid.api, 'enwiki' );
-		promise = loader.load( title );
-	}
-
-	if ( config.pageloaderservice === 'mediawiki' ) {
-		MediaWikiApiPageLoader = require( __dirname + '/MediaWikiApiPageLoader.js' )
-			.MediaWikiApiPageLoader;
-		loader = new MediaWikiApiPageLoader( config.pageloaderservices.mediawiki.api );
-		promise = loader.load( title );
-	}
-
-	return promise;
+	return deferred.promise;
 };
 
 module.exports.PageLoader = PageLoader;

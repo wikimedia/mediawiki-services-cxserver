@@ -66,6 +66,10 @@ app.get( '/page/:language/:title', function ( req, res ) {
 			title: title,
 			segmentedContent: segmenter.getSegmentedContent(),
 		} );
+	}, function ( error ) {
+		res.send( 500, {
+			error: error
+		} );
 	} );
 } );
 
