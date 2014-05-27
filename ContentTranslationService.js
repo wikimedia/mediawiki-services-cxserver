@@ -64,7 +64,7 @@ app.get( '/page/:language/:title', function ( req, res ) {
 		res.send( {
 			sourceLanguage: sourceLanguage,
 			title: title,
-			segmentedContent: segmenter.getSegmentedContent(),
+			segmentedContent: segmenter.getSegmentedContent()
 		} );
 	}, function ( error ) {
 		res.send( 500, {

@@ -7,15 +7,18 @@ module.exports = function ( grunt ) {
 		pkg: grunt.file.readJSON( 'package.json' ),
 		jshint: {
 			options: {
-				jshintrc: '.jshintrc'
+				jshintrc: true
 			},
 			all: ['*.js', '{models,mt,pageloader,public,segmentation,tests}/**/*.js']
 		},
 		jscs: {
-			src: ['<%= jshint.all %>']
+			src: '<%= jshint.all %>'
 		},
 		watch: {
-			files: ['<%= jshint.all %>', '.{jshintrc,jshintignore}'],
+			files: [
+				'.{jscsrc,jshintignore,jshintrc}',
+				'<%= jshint.all %>'
+			],
 			tasks: ['test']
 		}
 	} );
