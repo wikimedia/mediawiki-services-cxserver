@@ -42,9 +42,11 @@ PageLoader.prototype.load = function () {
 		function ( error, response, body ) {
 			if ( error ) {
 				deferred.reject( new Error( error ) );
+				return;
 			}
 			if ( response.statusCode !== 200 ) {
 				deferred.reject( new Error( 'Error while fetching page: ' + response.statusCode ) );
+				return;
 			}
 			deferred.resolve( body );
 		}
