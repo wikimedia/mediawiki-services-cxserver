@@ -41,7 +41,7 @@ function getTranslations( word, from, to ) {
 		action: 'def',
 		suggestions: true,
 		error: function ( responseCode, message ) {
-			deferred.reject( responseCode + ': ' + message );
+			deferred.reject( new Error( responseCode + ': ' + message ) );
 		},
 		success: function ( result ) {
 			var i, translations = [];

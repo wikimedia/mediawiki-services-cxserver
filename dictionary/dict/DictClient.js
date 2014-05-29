@@ -4,8 +4,8 @@
  *    Dict client implementation borrowed from: https://github.com/ptrm/dict.json
  *    Copyright (c) 2010 Piotrek Marciniak <piotrek@ptrm.eu>, MIT Style License
  * RFC 2229: http://www.dict.org/rfc2229.txt
- *@author Santhosh Thottingal <santhosh.thottingal@gmail.com>
- *@license MIT
+ * @author Santhosh Thottingal <santhosh.thottingal@gmail.com>
+ * @license MIT
  */
 
 var sys = require( 'sys' ),
