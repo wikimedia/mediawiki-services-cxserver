@@ -21,11 +21,19 @@ var instanceName,
 	app = express(),
 	logger = require( __dirname + '/utils/Logger.js' ),
 	args = require( 'minimist' )( process.argv.slice( 2 ) ),
-	port = args.port || 8080,
+	port = args.port,
 	privateKey,
 	certificate,
 	credentials,
 	pkg = require( __dirname + '/package.json' );
+
+if ( !port ) {
+	try {
+		port = require( __dirname + '/config.js' ).port;
+	} catch ( e ) {
+		port = 8080;
+	}
+}
 
 app = express();
 // Starts https server only if all needed args provided, else starts http server.
@@ -98,7 +106,7 @@ app.get( '/version', function ( req, res ) {
 } );
 // Everything else goes through this.
 app.use( express.static( __dirname + '/public' ) );
-logger.info( instanceName + ' ready. Listening on port: ' + port );
+console.log( instanceName + ' ready. Listening on port: ' + port );
 server.listen( port );
 
 module.exports = app;
