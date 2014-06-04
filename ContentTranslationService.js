@@ -90,6 +90,10 @@ app.get( '/dictionary/:word/:from/:to', function ( req, res ) {
 		toolset;
 
 	toolset = registry.getToolSet( from, to );
+	if ( !toolset || !toolset.dictionary ) {
+		res.send( 404 );
+		return;
+	}
 	dictionaryProviders = require( __dirname + '/dictionary' );
 	dictClient = dictionaryProviders[ toolset.dictionary.provider ];
 	dictClient.getTranslations( word, from, to ).then( function ( data ) {
