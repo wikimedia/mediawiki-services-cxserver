@@ -25,7 +25,7 @@ logger = new( winston.Logger )( {
 	],
 	exceptionHandlers: [
 		new winston.transports.File( {
-			filename: 'log/exceptions.log'
+			filename: logDir + '/exceptions.log'
 		} )
 	]
 } );
