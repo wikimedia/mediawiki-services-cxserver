@@ -1,11 +1,17 @@
 var winston = require( 'winston' ),
 	fs = require( 'fs' ),
-	logDir = 'log', // TODO: Make this configurable
+	logDir,
 	env = process.env.NODE_ENV || 'development',
 	logger;
 
 winston.setLevels( winston.config.npm.levels );
 winston.addColors( winston.config.npm.colors );
+
+try {
+	logDir = require( __dirname + '/../config.js' ).logDir;
+} catch ( e ) {
+	logDir = 'log';
+}
 
 if ( !fs.existsSync( logDir ) ) {
 	fs.mkdirSync( logDir );
