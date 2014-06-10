@@ -59,9 +59,15 @@ function escAttr( str ) {
  * @return {string} Html representation of open tag
  */
 function getOpenTagHtml( tag ) {
-	var attr, html;
+	var html, attributes, attr, i, len;
 	html = [ '<' + esc( tag.name ) ];
+	attributes = [];
 	for ( attr in tag.attributes ) {
+		attributes.push( attr );
+	}
+	attributes.sort();
+	for ( i = 0, len = attributes.length; i < len; i++ ) {
+		attr = attributes[i];
 		html.push( ' ' + esc( attr ) + '="' + escAttr( tag.attributes[ attr ] ) + '"' );
 	}
 	if ( tag.isSelfClosing ) {
@@ -69,6 +75,20 @@ function getOpenTagHtml( tag ) {
 	}
 	html.push( '>' );
 	return html.join( '' );
+}
+
+/**
+ * Clone a SAX open tag
+ * @private
+ * @param {Object} tag Tag to clone
+ * @return {Object} Cloned tag
+ */
+function cloneOpenTag( tag ) {
+	var attr, newTag = { name: tag.name, attributes: {} };
+	for ( attr in tag.attributes ) {
+		newTag.attributes[attr] = tag.attributes[attr];
+	}
+	return newTag;
 }
 
 /**
@@ -119,7 +139,13 @@ function dumpTags( tagArray ) {
  * @return {boolean} Whether the tag is a mediawiki reference span
  */
 function isReference( tag ) {
-	return tag.name === 'span' && tag.attributes.typeof === 'mw:Extension/ref';
+	if ( tag.name === 'span' && tag.attributes.typeof === 'mw:Extension/ref' ) {
+		return true;
+	} else if ( tag.name === 'span' && tag.attributes.class === 'reference' ) {
+		// TODO: This is in the tests, but is it correct behaviour?
+		return true;
+	}
+	return false;
 }
 
 /**
@@ -173,6 +199,55 @@ isInlineAnnotationTag = ( function ( tagArray ) {
 	// non-annotation inline tags
 	'img', 'br'
  ] ) );
+
+/**
+ * Find the boundaries that lie in each chunk
+ *
+ * Boundaries lying between chunks lie in the latest chunk possible.
+ * Boundaries at the start of the first chunk, or the end of the last, are not included.
+ * Therefore zero-width chunks never have any boundaries
+ *
+ * @function
+ * @param {number[]} boundaries Boundary offsets
+ * @param chunks Chunks to which the boundaries apply
+ * @param {Function} getLength Function returning the length of a chunk
+ * @returns {Object} Array of {chunk: ch, boundaries: [...]}
+ */
+function getChunkBoundaryGroups( boundaries, chunks, getLength ) {
+	var i, len, groupBoundaries, chunk, chunkLength, boundary,
+		groups = [],
+		offset = 0,
+		boundaryPtr = 0;
+
+	// Get boundaries in order, disregarding the start of the first chunk
+	boundaries = boundaries.slice();
+	boundaries.sort( function ( a, b ) { return a - b; } );
+	while ( boundaries[boundaryPtr] === 0 ) {
+		boundaryPtr++;
+	}
+	for( i = 0, len = chunks.length; i < len; i++ ) {
+		groupBoundaries = [];
+		chunk = chunks[i];
+		chunkLength = getLength( chunk );
+		while ( true ) {
+			boundary = boundaries[boundaryPtr];
+			if ( boundary === undefined || boundary > offset + chunkLength - 1 ) {
+				// beyond the interior of this chunk
+				break;
+			}
+			// inside the interior of this chunk
+			groupBoundaries.push( boundary );
+			boundaryPtr++;
+		}
+		offset += chunkLength;
+		groups.push( {
+			chunk: chunk,
+			boundaries: groupBoundaries
+		} );
+		// Continue even if past boundaries: need to add remaining chunks
+	}
+	return groups;
+}
 
 /**
  * A chunk of uniformly-annotated inline text
@@ -311,77 +386,104 @@ function addCommonTag( textChunks, tag ) {
 }
 
 /**
+ * Set link IDs in-place on text chunks
+ *
+ * @private
+ * @param {TextChunk[]} textChunks Consecutive text chunks
+ * @param {Function} getNextId function accepting 'link' and returning next ID
+ */
+function setLinkIdsInPlace( textChunks, getNextId ) {
+	var i, iLen, j, jLen, tags, tag, href;
+	for ( i = 0, iLen = textChunks.length; i < iLen; i++ ) {
+		tags = textChunks[ i ].tags;
+		for ( j = 0, jLen = tags.length; j < jLen; j++ ) {
+			tag = tags[ j ];
+			if (
+				tag.name === 'a' &&
+				tag.attributes.href !== undefined &&
+				tag.attributes[ 'data-linkid' ] === undefined
+			) {
+				// Hack: copy href, then remove it, then re-add it, so that
+				// attributes appear in alphabetical order (ugh)
+				href = tag.attributes.href;
+				delete tag.attributes.href;
+				tag.attributes.class = 'cx-link';
+				tag.attributes[ 'data-linkid' ] = getNextId( 'link' );
+				tag.attributes.href = href;
+			}
+		}
+	}
+}
+
+/**
  * Segment the text block into sentences
  * @method
  * @param {Function} getBoundaries Function taking plaintext, returning offset array
+ * @param {Function} getNextId Function taking 'segment'|'link', returning next ID
  * @return {TextBlock} Segmented version, with added span tags
  */
-TextBlock.prototype.segment = function ( getBoundaries ) {
-	var i, len, textChunk, boundary, relOffset,
-		allTextChunks = [],
-		currentTextChunks = [],
-		charCount = 0,
-		boundaries = getBoundaries( this.getPlainText() ),
-		bPtr = 0,
-		segId = 1;
+TextBlock.prototype.segment = function ( getBoundaries, getNextId ) {
+	var allTextChunks, currentTextChunks, groups, i, iLen, group, offset, textChunk, j, jLen,
+		leftPart, rightPart, boundaries, relOffset;
 
+	// Setup: currentTextChunks for current segment, and allTextChunks for all segments
+	allTextChunks = [];
+	currentTextChunks = [];
 	function flushChunks() {
-		if ( currentTextChunks.length > 0 ) {
-			allTextChunks.push.apply( allTextChunks, addCommonTag(
-				currentTextChunks, {
-					name: 'span',
-					attributes: {
-						class: 'seg s' + segId++
-					}
-				}
-			) );
-			currentTextChunks = [];
+		var modifiedTextChunks;
+		if ( currentTextChunks.length === 0 ) {
+			return;
 		}
+		modifiedTextChunks = addCommonTag(
+			currentTextChunks,
+			{
+				name: 'span',
+				attributes: {
+					'class': 'cx-segment',
+					'data-segmentid': getNextId( 'segment' )
+				}
+			}
+		);
+		setLinkIdsInPlace( modifiedTextChunks, getNextId );
+		allTextChunks.push.apply( allTextChunks, modifiedTextChunks );
+		currentTextChunks = [];
 	}
 
-	for ( i = 0, len = this.textChunks.length; i < len; i++ ) {
-		textChunk = this.textChunks[ i ];
-		// Move boundary pointer to the boundary after the start of this chunk
-		// (or beyond the end of the array if there is no such boundary)
-		// Notice that if the chunk is zero-length, bPtr may already be exactly
-		// at the end of the chunk, in which case bPtr won't move
-		while ( bPtr < boundaries.length && boundaries[ bPtr ] < charCount ) {
-			bPtr++;
-		}
-		boundary = boundaries[ bPtr ];
+	// for each chunk, split at any boundaries that occur inside the chunk
+	groups = getChunkBoundaryGroups(
+		getBoundaries( this.getPlainText() ),
+		this.textChunks,
+		function ( textChunk ) { return textChunk.text.length; }
+	);
 
-		// Get offset relative to the start of this text chunk
-		relOffset = ( boundary === undefined ) ? undefined : boundary - charCount;
-		if ( relOffset === 0 ) {
-			// Boundary exactly at start of text
-			if ( textChunk.text.length === 0 ) {
-				// Zero-width: chunk lies before segment boundary
-				// Don't flush chunks yet: another zero-width chunk may come
-				currentTextChunks.push( textChunk );
-			} else {
-				// Non-zero width: chunk lies after segment boundary, so flush
+	offset = 0;
+	for ( i = 0, iLen = groups.length; i < iLen; i++ ) {
+		group = groups[i];
+		textChunk = group.chunk;
+		boundaries = group.boundaries;
+		for ( j = 0, jLen = boundaries.length; j < jLen; j++ ) {
+			relOffset = boundaries[j] - offset;
+			if ( relOffset === 0 ) {
 				flushChunks();
-				currentTextChunks.push( textChunk );
+			} else {
+				leftPart = new TextChunk(
+					textChunk.text.substring( 0, relOffset ),
+					textChunk.tags.slice()
+				);
+				rightPart = new TextChunk(
+					textChunk.text.substring( relOffset ),
+					textChunk.tags.slice(),
+					textChunk.inlineElement
+				);
+				currentTextChunks.push( leftPart );
+				offset += relOffset;
+				flushChunks();
+				textChunk = rightPart;
 			}
-		} else if ( relOffset < textChunk.text.length ) {
-			// Boundary strictly inside the text: split chunk
-			// Add pre-split chunk, then flush block
-			currentTextChunks.push( new TextChunk(
-				textChunk.text.substring( 0, relOffset ),
-				textChunk.tags.slice()
-			) );
-			flushChunks();
-			// Add post-split chunk, including ref if any
-			currentTextChunks.push( new TextChunk(
-				textChunk.text.substring( relOffset ),
-				textChunk.tags.slice(),
-				textChunk.inlineElement
-			) );
-		} else {
-			// No boundary, or boundary after chunk: add whole chunk
-			currentTextChunks.push( textChunk );
 		}
-		charCount += textChunk.text.length;
+		// Even if the textChunk is zero-width, it may have references
+		currentTextChunks.push( textChunk );
+		offset += textChunk.text.length;
 	}
 	flushChunks();
 	return new TextBlock( allTextChunks );
@@ -460,15 +562,33 @@ Doc.prototype.addItem = function ( type, item ) {
  * @return {Doc} Segmented version of document TODO: warning: *shallow copied*.
  */
 Doc.prototype.segment = function ( getBoundaries ) {
-	var i, len, item, textBlock,
-		newDoc = new Doc();
+	var i, len, item, tag, textBlock,
+		newDoc = new Doc(),
+		nextId = 0;
+
+	// TODO: return different counters depending on type
+	function getNextId( type ) {
+		if ( type === 'segment' || type === 'link' || type === 'block' ) {
+			return '' + nextId++;
+		} else {
+			throw new Error( 'Unknown ID type: ' + type );
+		}
+	}
+
 	for ( i = 0, len = this.items.length; i < len; i++ ) {
 		item = this.items[ i ];
-		if ( this.items[ i ].type !== 'textblock' ) {
+		if ( this.items[ i ].type === 'open' ) {
+			tag = cloneOpenTag( item.item );
+			tag.attributes.id = getNextId( 'block' );
+			newDoc.addItem( item.type, tag );
+		} else if ( this.items[ i ].type !== 'textblock' ) {
 			newDoc.addItem( item.type, item.item );
 		} else {
 			textBlock = item.item;
-			newDoc.addItem( 'textblock', textBlock.segment( getBoundaries ) );
+			newDoc.addItem(
+				'textblock',
+				textBlock.segment( getBoundaries, getNextId )
+			);
 		}
 	}
 	return newDoc;
@@ -733,11 +853,48 @@ Parser.prototype.ontext = function ( text ) {
 	}
 };
 
+/**
+ * Parser to normalize XML
+ * @class
+ * @constructor
+ */
+function Normalizer() {
+	SAXParser.call( this, false, { lowercase: true } );
+}
+util.inherits( Normalizer, SAXParser );
+
+Normalizer.prototype.init = function () {
+	this.doc = [];
+	this.tags = [];
+};
+
+Normalizer.prototype.onopentag = function ( tag ) {
+	this.tags.push( tag );
+	this.doc.push( getOpenTagHtml( tag ) );
+};
+
+Normalizer.prototype.onclosetag = function ( tagName ) {
+	var tag = this.tags.pop();
+	if ( tag.name !== tagName ) {
+		throw new Error( 'Unmatched tags: ' + tag.name + ' !== ' + tagName );
+	}
+	this.doc.push( getCloseTagHtml( tag ) );
+};
+
+Normalizer.prototype.ontext = function ( text ) {
+	this.doc.push( esc( text ) );
+};
+
+Normalizer.prototype.getHtml = function () {
+	return this.doc.join( '' );
+};
+
 module.exports = {
 	findAll: findAll,
 	Doc: Doc,
 	TextBlock: TextBlock,
 	TextChunk: TextChunk,
 	Builder: Builder,
-	Parser: Parser
+	Parser: Parser,
+	Normalizer: Normalizer
 };

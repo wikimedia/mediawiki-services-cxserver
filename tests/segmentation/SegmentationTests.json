@@ -13,7 +13,8 @@
 		{
 			"desc": "Exclamation, punctuation test",
 			"source": "test-2.html",
-			"result": "result-2.html"
+			"result": "result-2.html",
+			"skip": true
 		},
 		{
 			"desc": "Multiple sentences",
@@ -66,7 +67,7 @@
 			"result": "result-12.html"
 		},
 		{
-			"desc": "References can appear after period and space. Example: Hydrogen is a gas. [1] It is .... In this case we dont have any choice than considering [1] as part of second sentence",
+			"desc": "References can appear after period and space. Example: Hydrogen is a gas. [1] It is ...",
 			"source": "test-13.html",
 			"result": "result-13.html"
 		},
@@ -81,9 +82,19 @@
 			"result": "result-15.html"
 		},
 		{
+			"desc": "Three sentences in a single text node",
+			"source": "test-16.html",
+			"result": "result-16.html"
+		},
+		{
 			"desc": "Paragraph ending with reference and already having reference in between. The second reference should not be identified as repeating reference. If identified as repeating reference, 7 letters from last word will be missing.",
 			"source": "test-ends-with-references-missing-letters.html",
 			"result": "result-ends-with-references-missing-letters.html"
+		},
+		{
+			"desc": "Sentences ending with abbreviations",
+			"source": "test-17.html",
+			"result": "result-17.html"
 		}
 	],
 	"hi": [

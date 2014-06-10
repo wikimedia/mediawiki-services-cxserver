@@ -9,52 +9,40 @@
 
 'use strict';
 
-var CXParserFactory = require( __dirname + '/CXParserFactory.js' ).CXParserFactory,
-	$ = require( 'jquery' );
+var LinearDoc = require( '../lineardoc/LinearDoc' ),
+	logger = require( __dirname + '/../utils/Logger.js' ),
+	getBoundariesDefault = require( './SegmenterDefault' ).getBoundaries,
+	getBoundariesEn = require( './SegmenterEn' ).getBoundaries,
+	getBoundariesHi = require( './SegmenterHi' ).getBoundaries;
+
+function getBoundaryFunction( language ) {
+	if ( language === 'en' ) {
+		return getBoundariesEn;
+	} else if ( language === 'hi' ) {
+		return getBoundariesHi;
+	} else {
+		logger.warn( 'Using fallback boundary function for language: ' + JSON.stringify( language ) );
+		return getBoundariesDefault;
+	}
+}
 
 function CXSegmenter( content, language ) {
+	this.parser = new LinearDoc.Parser();
+	this.parser.init();
+	this.getBoundaries = getBoundaryFunction( language );
 	this.content = content;
-	this.segments = {};
-	this.segmentedContent = null;
-	this.links = {};
-	this.parser = ( new CXParserFactory() ).getParser( language || 'en' );
+	this.originalDoc = null;
+	this.segmentedDoc = null;
 }
 
 CXSegmenter.prototype.segment = function () {
-	this.parse();
-	this.extractSegments();
-};
-
-CXSegmenter.prototype.parse = function () {
-	this.parser.parse( this.content );
-	this.links = this.parser.links;
-	this.segmentedContent = this.parser.segmentedContent;
-};
-
-CXSegmenter.prototype.getLinks = function () {
-	return this.links;
-};
-
-CXSegmenter.prototype.extractSegments = function () {
-	var segmenter = this,
-		$container = $( '<div>' ).html( this.segmentedContent );
-
-	$container.find( '.cx-segment' ).each( function ( index, section ) {
-		var $section = $( section ),
-			segmentId = $section.data( 'segmentid' );
-
-		segmenter.segments[segmentId] = {
-			source: $section.html()
-		};
-	} );
-};
-
-CXSegmenter.prototype.getSegments = function () {
-	return this.segments;
+	this.parser.write( this.content );
+	this.originalDoc = this.parser.builder.doc;
+	this.segmentedDoc = this.originalDoc.segment( this.getBoundaries );
 };
 
 CXSegmenter.prototype.getSegmentedContent = function () {
-	return this.segmentedContent;
+	return this.segmentedDoc.getHtml();
 };
 
 module.exports.CXSegmenter = CXSegmenter;
