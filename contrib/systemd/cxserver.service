@@ -1,0 +1,19 @@
+[Unit]
+Description=Mediawiki Content Translation service
+Documentation=https://www.mediawiki.org/wiki/ContentTranslation
+Wants=local-fs.target network.target
+After=local-fs.target network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/path/to/cxserver/node_modules
+ExecStart=/usr/bin/node /path/to/cxserver/Server.js
+KillMode=process
+Restart=on-success
+PrivateTmp=true
+StandardOutput=syslog
