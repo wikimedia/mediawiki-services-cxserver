@@ -3,7 +3,15 @@
 		"es": {
 			"fd-eng-spa": {
 				"source": "dictionaries/freedict-eng-spa.json",
-				"desc": "English-Spanish FreeDict Dictionary ver. 0.2.1"
+				"desc": "English-Spanish FreeDict Dictionary ver. 0.2.1. License: GPL 2."
+			}
+		}
+	},
+	"es": {
+		"ca": {
+			"apertium-eng-cat": {
+				"source": "dictionaries/apertium-es-ca.json",
+				"desc": "Spanish-Catalan dictionary, taken from Apertium. License: GPL 2."
 			}
 		}
 	}
