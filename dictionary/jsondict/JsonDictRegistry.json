@@ -9,7 +9,7 @@
 	},
 	"es": {
 		"ca": {
-			"apertium-eng-cat": {
+			"apertium-es-ca": {
 				"source": "dictionaries/apertium-es-ca.json",
 				"desc": "Spanish-Catalan dictionary, taken from Apertium. License: GPL 2."
 			}
