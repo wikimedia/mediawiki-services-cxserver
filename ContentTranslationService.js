@@ -64,15 +64,21 @@ app.get( '/page/:language/:title', function ( req, res ) {
 		pageloader = new PageLoader( title, sourceLanguage );
 
 	pageloader.load().then( function ( data ) {
-		var segmenter;
-
-		logger.debug( 'Page fetched' );
-		segmenter = new CXSegmenter( data );
-		segmenter.segment();
+		var segmenter, segmentedContent;
+		try {
+			logger.debug( 'Page fetched' );
+			segmenter = new CXSegmenter( data );
+			segmenter.segment();
+			segmentedContent = segmenter.getSegmentedContent();
+		} catch ( error ) {
+			res.send( 500, {
+				error: '' + error
+			} );
+		}
 		res.send( {
 			sourceLanguage: sourceLanguage,
 			title: title,
-			segmentedContent: segmenter.getSegmentedContent()
+			segmentedContent: segmentedContent
 		} );
 	}, function ( error ) {
 		res.send( 500, {
