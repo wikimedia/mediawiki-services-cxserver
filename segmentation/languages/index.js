@@ -1,5 +1,8 @@
 'use strict';
 
-module.exports.CXParser = require( __dirname + '/CXParser.js' );
-module.exports.CXParser.hi = require( __dirname + '/hi/CXParserHi.js' );
-module.exports.CXParser.sa = require( __dirname + '/hi/CXParserHi.js' );
+module.exports.Segmenters = {
+	en: require( __dirname + '/SegmenterEn.js' ),
+	hi: require( __dirname + '/SegmenterHi.js' ),
+	sa: require( __dirname + '/SegmenterHi.js' ),
+	default: require( __dirname + '/SegmenterDefault.js' )
+};

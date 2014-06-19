@@ -10,26 +10,12 @@
 'use strict';
 
 var LinearDoc = require( '../lineardoc/LinearDoc' ),
-	logger = require( __dirname + '/../utils/Logger.js' ),
-	getBoundariesDefault = require( './SegmenterDefault' ).getBoundaries,
-	getBoundariesEn = require( './SegmenterEn' ).getBoundaries,
-	getBoundariesHi = require( './SegmenterHi' ).getBoundaries;
-
-function getBoundaryFunction( language ) {
-	if ( language === 'en' ) {
-		return getBoundariesEn;
-	} else if ( language === 'hi' ) {
-		return getBoundariesHi;
-	} else {
-		logger.warn( 'Using fallback boundary function for language: ' + JSON.stringify( language ) );
-		return getBoundariesDefault;
-	}
-}
+	segmenters = require( __dirname + '/languages' ).Segmenters;
 
 function CXSegmenter( content, language ) {
 	this.parser = new LinearDoc.Parser();
 	this.parser.init();
-	this.getBoundaries = getBoundaryFunction( language );
+	this.getBoundaries = this.getSegmenter( language );
 	this.content = content;
 	this.originalDoc = null;
 	this.segmentedDoc = null;
@@ -39,6 +25,23 @@ CXSegmenter.prototype.segment = function () {
 	this.parser.write( this.content );
 	this.originalDoc = this.parser.builder.doc;
 	this.segmentedDoc = this.originalDoc.segment( this.getBoundaries );
+};
+
+/**
+ * Get the segmenter for the given language.
+ * @param {string} language Language code
+ * @return {function} The segmenter function
+ */
+CXSegmenter.prototype.getSegmenter = function ( language ) {
+	var segmenter;
+	if ( !segmenters[ language ] ) {
+		// fallback to default segmenter
+		segmenter = segmenters[ 'default' ];
+	} else {
+		segmenter = segmenters[ language ];
+	}
+
+	return segmenter.getBoundaries;
 };
 
 CXSegmenter.prototype.getSegmentedContent = function () {
