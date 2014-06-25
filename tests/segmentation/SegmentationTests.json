@@ -95,6 +95,11 @@
 			"desc": "Sentences ending with abbreviations",
 			"source": "test-17.html",
 			"result": "result-17.html"
+		},
+		{
+			"desc": "link element inside span element",
+			"source": "test-18.html",
+			"result": "result-18.html"
 		}
 	],
 	"hi": [

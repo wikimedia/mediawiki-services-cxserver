@@ -156,7 +156,9 @@ function isReference( tag ) {
  * @returns {boolean} Whether the tag is an inline empty tag
  */
 function isInlineEmptyTag( tagName ) {
-	return tagName === 'br' || tagName === 'img';
+	// link/meta as they're allowed anywhere in HTML5+RDFa, and must be treated as void
+	// flow content. See http://www.w3.org/TR/rdfa-in-html/#extensions-to-the-html5-syntax
+	return tagName === 'br' || tagName === 'img' || tagName === 'link' || tagName === 'meta';
 }
 
 /**
@@ -178,27 +180,29 @@ isInlineAnnotationTag = ( function ( tagArray ) {
 }( [
 	'html', 'head', 'body', 'script',
 	// head tags
+	// In HTML5+RDFa, link/meta are actually allowed anywhere in the body, and are to be
+	// treated as void flow content (like <br> and <img>).
 	'title', 'style', 'meta', 'link', 'noscript', 'base',
 	// non-visual content
 	'audio', 'data', 'datagrid', 'datalist', 'dialog', 'eventsource', 'form',
 	'iframe', 'main', 'menu', 'menuitem', 'optgroup', 'option',
 	// paragraph
-        'div', 'p',
-        // tables
-        'table', 'tbody', 'thead', 'tfoot', 'caption', 'th', 'tr', 'td',
-        // lists
-        'ul', 'ol', 'li', 'dl', 'dt', 'dd',
-        // HTML5 heading content
-        'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hgroup',
-        // HTML5 sectioning content
-        'article', 'aside', 'body', 'nav', 'section', 'footer', 'header', 'figure',
-        'figcaption', 'fieldset', 'details', 'blockquote',
-        // other
-        'hr', 'button', 'canvas', 'center', 'col', 'colgroup', 'embed',
-        'map', 'object', 'pre', 'progress', 'video', 'link',
+	'div', 'p',
+	// tables
+	'table', 'tbody', 'thead', 'tfoot', 'caption', 'th', 'tr', 'td',
+	// lists
+	'ul', 'ol', 'li', 'dl', 'dt', 'dd',
+	// HTML5 heading content
+	'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hgroup',
+	// HTML5 sectioning content
+	'article', 'aside', 'body', 'nav', 'section', 'footer', 'header', 'figure',
+	'figcaption', 'fieldset', 'details', 'blockquote',
+	// other
+	'hr', 'button', 'canvas', 'center', 'col', 'colgroup', 'embed',
+	'map', 'object', 'pre', 'progress', 'video',
 	// non-annotation inline tags
 	'img', 'br'
- ] ) );
+] ) );
 
 /**
  * Find the boundaries that lie in each chunk

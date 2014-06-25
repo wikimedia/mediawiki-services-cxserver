@@ -5,9 +5,13 @@
 <style>cxtextblock { border: solid #88f 1px }
 cxtextchunk { border-right: solid #f88 1px }</style>
 <cxblockspace/>
-<meta>
-</meta>
-<cxblockspace/>
+<cxtextblock>
+  <cxinlineelement>
+    <meta/>
+  </cxinlineelement>
+  <cxtextchunk>
+</cxtextchunk>
+</cxtextblock>
 <title>
 <cxtextblock>
   <cxtextchunk>test</cxtextchunk>
