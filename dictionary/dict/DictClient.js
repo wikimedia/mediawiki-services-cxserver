@@ -473,7 +473,7 @@ function lookup( word, options ) {
 			word: word,
 			//type: type,
 			db: options.db || config.db
-			} ];
+		} ];
 		break;
 
 	case 'multi':

@@ -229,7 +229,7 @@ function getChunkBoundaryGroups( boundaries, chunks, getLength ) {
 	while ( boundaries[boundaryPtr] === 0 ) {
 		boundaryPtr++;
 	}
-	for( i = 0, len = chunks.length; i < len; i++ ) {
+	for ( i = 0, len = chunks.length; i < len; i++ ) {
 		groupBoundaries = [];
 		chunk = chunks[i];
 		chunkLength = getLength( chunk );
@@ -443,7 +443,7 @@ TextBlock.prototype.segment = function ( getBoundaries, getNextId ) {
 			{
 				name: 'span',
 				attributes: {
-					'class': 'cx-segment',
+					class: 'cx-segment',
 					'data-segmentid': getNextId( 'segment' )
 				}
 			}

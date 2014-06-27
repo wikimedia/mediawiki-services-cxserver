@@ -9,7 +9,7 @@ module.exports = function ( grunt ) {
 			options: {
 				jshintrc: true
 			},
-			all: ['*.js', '{models,mt,pageloader,public,segmentation,tests}/**/*.js']
+			all: [ '*.js', '{models,mt,pageloader,public,segmentation,tests}/**/*.js' ]
 		},
 		jscs: {
 			src: '<%= jshint.all %>'
@@ -19,10 +19,10 @@ module.exports = function ( grunt ) {
 				'.{jscsrc,jshintignore,jshintrc}',
 				'<%= jshint.all %>'
 			],
-			tasks: ['test']
+			tasks: [ 'test' ]
 		}
 	} );
 
-	grunt.registerTask( 'test', ['jshint', 'jscs'] );
+	grunt.registerTask( 'test', [ 'jshint', 'jscs' ] );
 	grunt.registerTask( 'default', 'test' );
 };
