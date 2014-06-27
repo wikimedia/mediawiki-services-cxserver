@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /**
  * A very basic cluster-based server runner. Restarts failed workers.
  *
@@ -8,15 +7,16 @@
 'use strict';
 
 var cluster = require( 'cluster' ),
-	logger = require( __dirname + '/utils/Logger.js' );
+	logger = require( __dirname + '/utils/Logger.js' ),
+	numCPUs, i;
 
 if ( cluster.isMaster ) {
 	// Start a few more workers than there are cpus visible to the OS, so that we
 	// get some degree of parallelism even on single-core systems. A single
 	// long-running request would otherwise hold up all concurrent short requests.
-	var numCPUs = require( 'os' ).cpus().length + 3;
+	numCPUs = require( 'os' ).cpus().length + 3;
 	// Fork workers.
-	for ( var i = 0; i < numCPUs; i++ ) {
+	for ( i = 0; i < numCPUs; i++ ) {
 		cluster.fork();
 	}
 
