@@ -1,4 +1,4 @@
-var findAll = require( '../lineardoc/LinearDoc' ).findAll;
+var findAll = require( '../../lineardoc/LinearDoc' ).findAll;
 
 /**
  * Test a possible Hindi sentence boundary match
@@ -10,7 +10,7 @@ var findAll = require( '../lineardoc/LinearDoc' ).findAll;
 function findBoundary( text, match ) {
 	var tail = text.slice( match.index + 1, text.length );
 	// Include any trailing space
-	return match.index + 1 + tail.match( /^\s*/ )[0].length;
+	return match.index + 1 + tail.match( /^\s*/ )[ 0 ].length;
 }
 
 /**
@@ -25,4 +25,6 @@ function getBoundaries( text ) {
 	return findAll( text, /[।!?]/g, findBoundary );
 }
 
-module.exports = { getBoundaries: getBoundaries };
+module.exports = {
+	getBoundaries: getBoundaries
+};

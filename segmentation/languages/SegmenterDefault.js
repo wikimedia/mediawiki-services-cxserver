@@ -1,7 +1,7 @@
-var findAll = require( '../lineardoc/LinearDoc' ).findAll;
+var findAll = require( '../../lineardoc/LinearDoc' ).findAll;
 
 /**
- * Test a possible English sentence boundary match
+ * Test a possible sentence boundary match
  *
  * @param {string} text The plaintext to segment
  * @param {Object} match The possible boundary match (returned by regex.exec)
@@ -19,7 +19,7 @@ function findBoundary( text, match ) {
 		return null;
 	}
 	// Include any closing punctuation and trailing space
-	return match.index + 1 + tail.match( /^['”"’]*\s*/ )[0].length;
+	return match.index + 1 + tail.match( /^['”"’]*\s*/ )[ 0 ].length;
 }
 
 /**
@@ -34,4 +34,6 @@ function getBoundaries( text ) {
 	return findAll( text, /[.!?]/g, findBoundary );
 }
 
-module.exports = { getBoundaries: getBoundaries };
+module.exports = {
+	getBoundaries: getBoundaries
+};
