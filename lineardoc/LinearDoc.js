@@ -280,8 +280,59 @@ function TextChunk( text, tags, inlineElement ) {
  * @constructor
  */
 function TextBlock( textChunks ) {
+	var i, len, cursor;
 	this.textChunks = textChunks;
+	this.startOffsets = [];
+	cursor = 0;
+	for ( i = 0, len = this.textChunks.length; i < len; i++ ) {
+		this.startOffsets[i] = cursor;
+		cursor += this.textChunks[i].text.length;
+	}
 }
+
+/**
+ * Get the (last) text chunk at a given char offset
+ * @method
+ * @param {number} charOffset the char offset of the TextChunk
+ * @return {TextChunk} The text chunk
+ */
+TextBlock.prototype.getTextChunkAt = function ( charOffset ) {
+	// TODO: bisecting instead of quadratic
+	var i, len;
+	for ( i = 0, len = this.textChunks.length - 1; i < len; i++ ) {
+		if ( this.startOffsets[i + 1] > charOffset ) {
+			break;
+		}
+	}
+	return this.textChunks[ i ];
+};
+
+/**
+ * Create a new TextBlock, applying our annotations to a translation
+ *
+ * @method
+ * @param {string} targetText Translated plain text
+ * @param {Object[]} rangeMappings Array of source-target range index mappings
+ * @returns {TextBlock} Translated textblock with annotations applied
+ */
+TextBlock.prototype.translateAnnotations = function ( targetText, rangeMappings ) {
+	var i, len, rangeMapping, oldTextChunk, newText,
+		newTextChunks = [];
+	for ( i = 0, len = rangeMappings.length; i < len; i++ ) {
+		rangeMapping = rangeMappings[i];
+		oldTextChunk = this.getTextChunkAt( rangeMapping.source.start );
+		newText = targetText.substr(
+			rangeMapping.target.start,
+			rangeMapping.target.length
+		);
+		newTextChunks.push( new TextChunk(
+			newText,
+			oldTextChunk.tags,
+			oldTextChunk.inlineElement
+		) );
+	}
+	return new TextBlock( newTextChunks );
+};
 
 /**
  * Return plain text representation of the text block
@@ -328,7 +379,7 @@ TextBlock.prototype.getHtml = function () {
 		oldTags = textChunk.tags;
 
 		// Now add text and inline elements
-		html.push( textChunk.text );
+		html.push( esc( textChunk.text ) );
 		if ( textChunk.inlineElement ) {
 			if ( textChunk.inlineElement.getHtml ) {
 				// a sub-doc
@@ -547,6 +598,24 @@ function Doc( wrapperTag ) {
 }
 
 /**
+ * Clone the Doc, modifying as we go
+ *
+ * @method
+ * @param callback The function to modify a node
+ * @return {Doc} clone with modifications
+ */
+Doc.prototype.clone = function ( callback ) {
+	var i, len, item, newItem,
+		newDoc = new Doc( this.wrapperTag );
+	for ( i = 0, len = this.items.length; i < len; i++ ) {
+		item = this.items[ i ];
+		newItem = callback( item );
+		newDoc.addItem( newItem.type, newItem.item );
+	}
+	return newDoc;
+};
+
+/**
  * Add an item to the document
  * @method
  * @param {string} type Type of item: open|close|blockspace|textBlock
@@ -635,7 +704,7 @@ Doc.prototype.getHtml = function () {
 			// textblock html list may be quite long, so concatenate now
 			html.push( textblock.getHtml() );
 		} else {
-			console.error( 'Unknown item type: ', this.items[ i ] );
+			console.error( 'Unknown item type at ' + i );
 			throw new Error( 'Unknown item type: ' + type );
 		}
 	}
@@ -894,6 +963,7 @@ Normalizer.prototype.getHtml = function () {
 };
 
 module.exports = {
+	esc: esc,
 	findAll: findAll,
 	Doc: Doc,
 	TextBlock: TextBlock,
