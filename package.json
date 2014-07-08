@@ -20,7 +20,8 @@
 		"q": "*",
 		"request": "*",
 		"sax": "0.6.0",
-		"winston": "*"
+		"winston": "*",
+        "html-entities": "1.0.10"
 	},
 	"devDependencies": {
 		"assert": "1.1.1",

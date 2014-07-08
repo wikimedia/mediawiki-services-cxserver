@@ -1,4 +1,11 @@
 {
+	"ca": {
+		"es": {
+			"mt": {
+				"provider": "Apertium"
+			}
+		}
+	},
 	"en": {
 		"en": {
 			"dictionary": {
@@ -30,6 +37,9 @@
 		"ca": {
 			"dictionary": {
 				"provider": "JsonDict"
+			},
+			"mt": {
+				"provider": "Apertium"
 			}
 		}
 	}

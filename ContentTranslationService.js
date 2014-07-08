@@ -87,6 +87,27 @@ app.get( '/page/:language/:title', function ( req, res ) {
 	} );
 } );
 
+app.get( '/mt/:sourceLang/:targetLang/:sourceHtml', function ( req, res ) {
+	var mtProviders, mtClient,
+		sourceLang = req.params.sourceLang,
+		targetLang = req.params.targetLang,
+		sourceHtml = req.params.sourceHtml,
+		registry = require( __dirname + '/registry' ),
+		toolset;
+
+	toolset = registry.getToolSet( sourceLang, targetLang );
+	if ( !toolset || !toolset.mt ) {
+		res.send( 404 );
+		return;
+	}
+	mtProviders = require( __dirname + '/mt' );
+	mtClient = mtProviders[ toolset.mt.provider ];
+	sourceHtml = '<div>' + sourceHtml + '</div>';
+	mtClient.translateHtml( sourceLang, targetLang, sourceHtml ).then( function ( data ) {
+		res.send( data );
+	} );
+} );
+
 app.get( '/dictionary/:word/:from/:to', function ( req, res ) {
 	var from = req.params.from,
 		word = req.params.word,

@@ -40,3 +40,6 @@
  .info {
      color: #555;
  }
+ .targetHtmlRaw {
+     font-family: monospace; font-size: 105%;
+ }
