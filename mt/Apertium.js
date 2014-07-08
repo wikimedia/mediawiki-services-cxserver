@@ -39,8 +39,8 @@ function readRangedText( text ) {
 			console.warn( 'Bad part: "' + part + '"' );
 			continue;
 		}
-		partText = entities.decode( match[2] );
-		ranges[ match[1] ] = {
+		partText = entities.decode( match[ 2 ] );
+		ranges[ match[ 1 ] ] = {
 			text: partText,
 			start: offset,
 			length: partText.length
@@ -56,8 +56,6 @@ function getTextAndRangeMappings( rangedSourceText, rangedTargetText ) {
 		rangeMappings = [];
 	sourceParts = readRangedText( rangedSourceText );
 	targetParts = readRangedText( rangedTargetText );
-	console.log( 'sourceParts:', sourceParts );
-	console.log( 'targetParts:', targetParts );
 	ids = Object.keys( sourceParts );
 	ids.sort( function ( x, y ) {
 		return parseInt( x ) - parseInt( y );
@@ -92,9 +90,7 @@ function translateText( sourceLang, targetLang, sourceText ) {
 		deferred = Q.defer();
 	rangedSourceText = getRangedText( sourceText );
 	apertium = spawn(
-		'./apertium.sh',
-		[ sourceLang + '-' + targetLang, '-u', '-f', 'html' ],
-		{
+		'apertium', [ sourceLang + '-' + targetLang, '-u', '-f', 'html' ], {
 			stdio: 'pipe',
 			env: {
 				PATH: process.env.PATH,
@@ -117,6 +113,44 @@ function translateText( sourceLang, targetLang, sourceText ) {
 		deferred.resolve( getTextAndRangeMappings( rangedSourceText, rangedTargetText ) );
 	} );
 	apertium.stdin.write( rangedSourceText );
+	apertium.stdin.end();
+	return deferred.promise;
+}
+
+/**
+ * Translate marked up text relying on the MT engine
+ * @param {string} sourceLang Source language code
+ * @param {string} targetLang Target language code
+ * @param {string} sourceHtml Source rich text
+ * @return {Object} Deferred promise: Translated rich text
+ */
+function translateHtmlWithNativeMarkup( sourceLang, targetLang, sourceHtml ) {
+	var apertium,
+		translation = '',
+		deferred = Q.defer();
+	apertium = spawn(
+		'apertium', [ sourceLang + '-' + targetLang, '-u', '-f', 'html' ], {
+			stdio: 'pipe',
+			env: {
+				PATH: process.env.PATH,
+				LC_ALL: 'en_US.utf8'
+			}
+		}
+	);
+	apertium.stderr.on( 'data', function ( data ) {
+		logger.error( data );
+	} );
+	apertium.stdout.on( 'data', function ( data ) {
+		translation += data;
+	} );
+	apertium.on( 'close', function ( code ) {
+		if ( code !== 0 ) {
+			deferred.reject( new Error( '' + code ) );
+			return;
+		}
+		deferred.resolve( translation );
+	} );
+	apertium.stdin.write( sourceHtml );
 	apertium.stdin.end();
 	return deferred.promise;
 }
@@ -151,12 +185,15 @@ function translateHtml( sourceLang, targetLang, sourceHtml ) {
 					newTextBlock = item.item.translateAnnotations(
 						translated.text, translated.rangeMappings
 					);
-					deferred.resolve( { type: 'textblock', item: newTextBlock } );
+					deferred.resolve( {
+						type: 'textblock',
+						item: newTextBlock
+					} );
 				} catch ( ex ) {
 					deferred.reject( ex );
 				}
 			} );
-		} ( Q.defer(), sourceDoc.items[i] ) );
+		}( Q.defer(), sourceDoc.items[ i ] ) );
 	}
 	deferred = Q.defer();
 	Q.all( itemPromises ).spread( function () {
@@ -167,6 +204,7 @@ function translateHtml( sourceLang, targetLang, sourceHtml ) {
 }
 
 module.exports = {
+	translateHtmlWithNativeMarkup: translateHtmlWithNativeMarkup,
 	translateHtml: translateHtml,
 	translateText: translateText
 };

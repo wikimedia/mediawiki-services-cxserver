@@ -63,28 +63,31 @@ app.get( '/page/:language/:title', function ( req, res ) {
 		PageLoader = require( __dirname + '/pageloader/PageLoader.js' ).PageLoader,
 		pageloader = new PageLoader( title, sourceLanguage );
 
-	pageloader.load().then( function ( data ) {
-		var segmenter, segmentedContent;
-		try {
-			logger.debug( 'Page fetched' );
-			segmenter = new CXSegmenter( data, sourceLanguage );
-			segmenter.segment();
-			segmentedContent = segmenter.getSegmentedContent();
-		} catch ( error ) {
+	pageloader.load().then(
+		function ( data ) {
+			var segmenter, segmentedContent;
+			try {
+				logger.debug( 'Page fetched' );
+				segmenter = new CXSegmenter( data, sourceLanguage );
+				segmenter.segment();
+				segmentedContent = segmenter.getSegmentedContent();
+			} catch ( error ) {
+				res.send( 500, {
+					error: '' + error
+				} );
+			}
+			res.send( {
+				sourceLanguage: sourceLanguage,
+				title: title,
+				segmentedContent: segmentedContent
+			} );
+		},
+		function ( error ) {
 			res.send( 500, {
-				error: '' + error
+				error: error
 			} );
 		}
-		res.send( {
-			sourceLanguage: sourceLanguage,
-			title: title,
-			segmentedContent: segmentedContent
-		} );
-	}, function ( error ) {
-		res.send( 500, {
-			error: error
-		} );
-	} );
+	);
 } );
 
 app.get( '/mt/:sourceLang/:targetLang/:sourceHtml', function ( req, res ) {
@@ -103,9 +106,16 @@ app.get( '/mt/:sourceLang/:targetLang/:sourceHtml', function ( req, res ) {
 	mtProviders = require( __dirname + '/mt' );
 	mtClient = mtProviders[ toolset.mt.provider ];
 	sourceHtml = '<div>' + sourceHtml + '</div>';
-	mtClient.translateHtml( sourceLang, targetLang, sourceHtml ).then( function ( data ) {
-		res.send( data );
-	} );
+	mtClient.translateHtmlWithNativeMarkup( sourceLang, targetLang, sourceHtml ).then(
+		function ( data ) {
+			res.send( data );
+		},
+		function ( error ) {
+			res.send( 500, {
+				error: error
+			} );
+		}
+	);
 } );
 
 app.get( '/dictionary/:word/:from/:to', function ( req, res ) {
@@ -123,9 +133,16 @@ app.get( '/dictionary/:word/:from/:to', function ( req, res ) {
 	}
 	dictionaryProviders = require( __dirname + '/dictionary' );
 	dictClient = dictionaryProviders[ toolset.dictionary.provider ];
-	dictClient.getTranslations( word, from, to ).then( function ( data ) {
-		res.send( data );
-	} );
+	dictClient.getTranslations( word, from, to ).then(
+		function ( data ) {
+			res.send( data );
+		},
+		function ( error ) {
+			res.send( 500, {
+				error: error
+			} );
+		}
+	);
 } );
 
 app.get( '/version', function ( req, res ) {
