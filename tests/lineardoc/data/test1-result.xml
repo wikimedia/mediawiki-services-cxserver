@@ -4,13 +4,12 @@
 <meta charset="UTF-8" />
 <style>cxtextblock { border: solid #88f 1px }
 cxtextchunk { border-right: solid #f88 1px }</style>
-<cxblockspace/>
 <cxtextblock>
+  <cxtextchunk>&#10;</cxtextchunk>
   <cxinlineelement>
     <meta/>
   </cxinlineelement>
-  <cxtextchunk>
-</cxtextchunk>
+  <cxtextchunk>&#10;</cxtextchunk>
 </cxtextblock>
 <title>
 <cxtextblock>

@@ -1,0 +1,104 @@
+<html>
+<cxblockspace/>
+<head>
+<meta charset="UTF-8" />
+<style>cxtextblock { border: solid #88f 1px }
+cxtextchunk { border-right: solid #f88 1px }</style>
+<cxtextblock>
+  <cxtextchunk>&#10;</cxtextchunk>
+  <cxinlineelement>
+    <meta/>
+  </cxinlineelement>
+  <cxtextchunk>&#10;</cxtextchunk>
+</cxtextblock>
+<title>
+<cxtextblock>
+  <cxtextchunk>test</cxtextchunk>
+</cxtextblock>
+</title>
+<cxblockspace/>
+</head>
+<cxblockspace/>
+<body>
+<cxblockspace/>
+<div>
+<cxtextblock>
+  <cxtextchunk>&#10;Note that I said “</cxtextchunk>
+  <cxtextchunk tags="i">in all cases:&#10;</cxtextchunk>
+</cxtextblock>
+<p>
+<cxtextblock>
+  <cxtextchunk tags="i">This structure is ridiculous.</cxtextchunk>
+</cxtextblock>
+</p>
+<cxblockspace/>
+<p>
+<cxtextblock>
+  <cxtextchunk tags="i">This structure is permitted.</cxtextchunk>
+</cxtextblock>
+</p>
+<cxtextblock>
+  <cxtextchunk tags="i">&#10;But never mind</cxtextchunk>
+  <cxtextchunk>” before.&#10;</cxtextchunk>
+</cxtextblock>
+</div>
+<cxblockspace/>
+<div>
+<cxtextblock>
+  <cxtextchunk>&#10;1 2&#10;</cxtextchunk>
+  <cxtextchunk tags="span:dir=rtl">&#10;3 4&#10;</cxtextchunk>
+</cxtextblock>
+<ul>
+<cxblockspace/>
+<li>
+<cxtextblock>
+  <cxtextchunk tags="span:dir=rtl">5 6</cxtextchunk>
+</cxtextblock>
+</li>
+<cxblockspace/>
+<li>
+<cxtextblock>
+  <cxtextchunk tags="span:dir=rtl">7 8</cxtextchunk>
+</cxtextblock>
+</li>
+<cxblockspace/>
+</ul>
+<cxtextblock>
+  <cxtextchunk tags="span:dir=rtl">&#10;9 10&#10;</cxtextchunk>
+  <cxtextchunk>&#10;11 12&#10;</cxtextchunk>
+</cxtextblock>
+</div>
+<cxblockspace/>
+<div>
+<cxtextblock>
+  <cxtextchunk>&#10;Zero </cxtextchunk>
+  <cxtextchunk tags="b">One&#10;</cxtextchunk>
+</cxtextblock>
+<table>
+<cxblockspace/>
+<tr>
+<cxblockspace/>
+<td>
+<cxtextblock>
+  <cxtextchunk tags="b">Two</cxtextchunk>
+</cxtextblock>
+</td>
+<cxblockspace/>
+<td>
+<cxtextblock>
+  <cxtextchunk tags="b">Three</cxtextchunk>
+</cxtextblock>
+</td>
+<cxblockspace/>
+</tr>
+<cxblockspace/>
+</table>
+<cxtextblock>
+  <cxtextchunk tags="b">&#10;Four</cxtextchunk>
+  <cxtextchunk> Five&#10;</cxtextchunk>
+</cxtextblock>
+</div>
+<cxblockspace/>
+</body>
+<cxblockspace/>
+</html>

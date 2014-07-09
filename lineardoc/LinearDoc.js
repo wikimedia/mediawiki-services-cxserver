@@ -561,7 +561,7 @@ TextBlock.prototype.dumpXmlArray = function ( pad ) {
 		if ( chunk.text ) {
 			dump.push(
 				pad + '<cxtextchunk' + tagsAttr + '>' +
-				esc( chunk.text ) +
+				esc( chunk.text ).replace( /\n/g, '&#10;' ) +
 				'</cxtextchunk>'
 			);
 		}
@@ -586,8 +586,15 @@ TextBlock.prototype.dumpXmlArray = function ( pad ) {
  * - a block open tag (e.g. <p>); or
  * - a block close tag (e.g. </p>); or
  * - a TextBlock of annotated inline text; or
- * - non-inline whitespace
+ * - "block whitespace" (a run of whitespace separating two block boundaries)
  *
+ * Some types of HTML structure get normalized away. In particular:
+ *
+ * 1. Identical adjacent annotation tags are merged
+ * 2. Inline annotations across block boundaries are split
+ * 3. Annotations on block whitespace are stripped
+ *
+ * N.B. 2 can change semantics, e.g. identical adjacent links != single link
  * @class
  *
  * @constructor
@@ -801,12 +808,6 @@ Builder.prototype.createChildBuilder = function ( wrapperTag ) {
 };
 
 Builder.prototype.pushBlockTag = function ( tag ) {
-	if ( this.inlineAnnotationTags.length > 0 ) {
-		throw new Error(
-			'Block tag <' + tag.name + '> inside inline tag <' +
-			this.inlineAnnotationTags[ this.inlineAnnotationTags.length - 1 ].name + '>'
-		);
-	}
 	this.finishTextBlock();
 	this.blockTags.push( tag );
 	this.doc.addItem( 'open', tag );
@@ -838,10 +839,6 @@ Builder.prototype.popInlineAnnotationTag = function ( tagName ) {
 	return tag;
 };
 
-Builder.prototype.addBlockSpace = function ( whitespace ) {
-	this.doc.addItem( 'blockspace', whitespace );
-};
-
 Builder.prototype.addTextChunk = function ( text ) {
 	this.textChunks.push( new TextChunk( text, this.inlineAnnotationTags.slice() ) );
 };
@@ -855,10 +852,28 @@ Builder.prototype.addRefChunk = function ( ref ) {
 };
 
 Builder.prototype.finishTextBlock = function () {
-	if ( this.textChunks.length > 0 ) {
-		this.doc.addItem( 'textblock', new TextBlock( this.textChunks ) );
-		this.textChunks = [];
+	var i, len, textChunk,
+		whitespaceOnly = true,
+		whitespace = [];
+	if ( this.textChunks.length === 0 ) {
+		return;
 	}
+	for ( i = 0, len = this.textChunks.length; i < len; i++ ) {
+		textChunk = this.textChunks[i];
+		if ( !!textChunk.inlineElement || textChunk.text.match( /\S/ ) ) {
+			whitespaceOnly = false;
+			whitespace = undefined;
+			break;
+		} else {
+			whitespace.push( this.textChunks[i].text );
+		}
+	}
+	if ( whitespaceOnly ) {
+		this.doc.addItem( 'blockspace', whitespace.join( '' ) );
+	} else {
+		this.doc.addItem( 'textblock', new TextBlock( this.textChunks ) );
+	}
+	this.textChunks = [];
 };
 
 /**
@@ -893,13 +908,12 @@ Parser.prototype.onopentag = function ( tag ) {
 };
 
 Parser.prototype.onclosetag = function ( tagName ) {
+	var isAnn = isInlineAnnotationTag( tagName );
 	if ( isInlineEmptyTag( tagName ) ) {
 		return;
-	} else if ( this.builder.inlineAnnotationTags.length > 0 ) {
+	} else if ( isAnn && this.builder.inlineAnnotationTags.length > 0 ) {
 		this.builder.popInlineAnnotationTag( tagName );
-	} else if ( this.builder.blockTags.length > 0 ) {
-		this.builder.popBlockTag( tagName );
-	} else if ( this.builder.parent !== null ) {
+	} else if ( isAnn && this.builder.parent !== null ) {
 		// In a sub document: should be a span that closes a reference
 		if ( tagName !== 'span' ) {
 			throw new Error( 'Expected close reference span, got "' + tagName + '"' );
@@ -908,22 +922,15 @@ Parser.prototype.onclosetag = function ( tagName ) {
 		this.builder.parent.addRefChunk( this.builder.doc );
 		// Finished with child now. Move back to the parent builder
 		this.builder = this.builder.parent;
+	} else if ( !isAnn ) {
+		this.builder.popBlockTag( tagName );
 	} else {
 		throw new Error( 'Unexpected close tag: ' + tagName );
 	}
 };
 
 Parser.prototype.ontext = function ( text ) {
-	if ( !text.trim() &&
-		!this.builder.inlineAnnotationTags.length &&
-		!this.builder.textChunks.length
-	) {
-		// Whitespace not after inline content.
-		// TODO: treat whitespace before/after inline content consistently
-		this.builder.addBlockSpace( text );
-	} else {
-		this.builder.addTextChunk( text );
-	}
+	this.builder.addTextChunk( text );
 };
 
 /**
