@@ -83,8 +83,8 @@ app.get( '/page/:language/:title', function ( req, res ) {
 			} );
 		},
 		function ( error ) {
-			res.send( 500, {
-				error: error
+			res.send( 404, {
+				error: '' + error
 			} );
 		}
 	);

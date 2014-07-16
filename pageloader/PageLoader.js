@@ -45,7 +45,7 @@ PageLoader.prototype.load = function () {
 				return;
 			}
 			if ( response.statusCode !== 200 ) {
-				deferred.reject( new Error( 'Error while fetching page: ' + response.statusCode ) );
+				deferred.reject( new Error( 'Error while fetching page: ' + body ) );
 				return;
 			}
 			deferred.resolve( body );
