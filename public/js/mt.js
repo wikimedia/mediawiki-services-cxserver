@@ -12,8 +12,8 @@
 			var sourceHtml = $( 'textarea[name=sourceHtml]' ).val(),
 				sourceLanguage = $( 'input[name=sourceLanguage]' ).val(),
 				targetLanguage = $( 'input[name=targetLanguage]' ).val(),
-                url = '/mt/' + sourceLanguage + '/' + targetLanguage + '/' + encodeURIComponent( sourceHtml );
-			$.post( url, function ( response ) {
+                url = '/mt/' + sourceLanguage + '/' + targetLanguage;
+			$.post( url, sourceHtml, function ( response ) {
 				$( '.targetHtmlRaw' ).text( response );
 				$( '.targetHtmlRendered' ).html( response );
 			} ).fail( function () {

@@ -90,11 +90,10 @@ app.get( '/page/:language/:title', function ( req, res ) {
 	);
 } );
 
-app.post( '/mt/:sourceLang/:targetLang/:sourceHtml', function ( req, res ) {
-	var mtProviders, mtClient,
+app.post( '/mt/:sourceLang/:targetLang', function ( req, res ) {
+	var mtProviders, mtClient, sourceHtmlChunks, sourceHtml, reqLength,
 		sourceLang = req.params.sourceLang,
 		targetLang = req.params.targetLang,
-		sourceHtml = req.params.sourceHtml,
 		registry = require( __dirname + '/registry' ),
 		toolset;
 
@@ -105,17 +104,32 @@ app.post( '/mt/:sourceLang/:targetLang/:sourceHtml', function ( req, res ) {
 	}
 	mtProviders = require( __dirname + '/mt' );
 	mtClient = mtProviders[ toolset.mt.provider ];
-	sourceHtml = '<div>' + sourceHtml + '</div>';
-	mtClient.translateHtmlWithNativeMarkup( sourceLang, targetLang, sourceHtml ).then(
-		function ( data ) {
-			res.send( data );
-		},
-		function ( error ) {
-			res.send( 500, {
-				error: error
-			} );
+
+	sourceHtmlChunks = [ '<div>' ];
+	reqLength = 0;
+	req.on( 'data', function ( data ) {
+		reqLength += data.length;
+		if ( reqLength > 50000 ) {
+			// Too long
+			res.send( 500 );
+			return;
 		}
-	);
+		sourceHtmlChunks.push( data );
+	} );
+	req.on( 'end', function () {
+		sourceHtmlChunks.push( '</div>' );
+		sourceHtml = sourceHtmlChunks.join( '' );
+		mtClient.translateHtmlWithNativeMarkup( sourceLang, targetLang, sourceHtml ).then(
+			function ( data ) {
+				res.send( data );
+			},
+			function ( error ) {
+				res.send( 500, {
+					error: error
+				} );
+			}
+		);
+	} );
 } );
 
 app.get( '/dictionary/:word/:from/:to', function ( req, res ) {
