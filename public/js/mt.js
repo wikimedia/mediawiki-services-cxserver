@@ -13,7 +13,7 @@
 				sourceLanguage = $( 'input[name=sourceLanguage]' ).val(),
 				targetLanguage = $( 'input[name=targetLanguage]' ).val(),
                 url = '/mt/' + sourceLanguage + '/' + targetLanguage + '/' + encodeURIComponent( sourceHtml );
-			$.get( url, function ( response ) {
+			$.post( url, function ( response ) {
 				$( '.targetHtmlRaw' ).text( response );
 				$( '.targetHtmlRendered' ).html( response );
 			} ).fail( function () {

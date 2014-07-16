@@ -90,7 +90,7 @@ app.get( '/page/:language/:title', function ( req, res ) {
 	);
 } );
 
-app.get( '/mt/:sourceLang/:targetLang/:sourceHtml', function ( req, res ) {
+app.post( '/mt/:sourceLang/:targetLang/:sourceHtml', function ( req, res ) {
 	var mtProviders, mtClient,
 		sourceLang = req.params.sourceLang,
 		targetLang = req.params.targetLang,
