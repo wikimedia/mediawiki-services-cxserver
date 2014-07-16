@@ -159,6 +159,21 @@ app.get( '/dictionary/:word/:from/:to', function ( req, res ) {
 	);
 } );
 
+app.get( '/list/:tool/:from/:to', function ( req, res ) {
+	var result = {},
+		tool = req.params.tool,
+		from = req.params.from,
+		to = req.params.to,
+		registry = require( __dirname + '/registry' ),
+		toolset = registry.getToolSet( from, to );
+
+	if ( toolset ) {
+		result = toolset[ tool ];
+	}
+
+	res.json( result );
+} );
+
 app.get( '/version', function ( req, res ) {
 	var version = {
 		name: pkg.name,
