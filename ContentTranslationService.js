@@ -98,7 +98,7 @@ app.post( '/mt/:sourceLang/:targetLang', function ( req, res ) {
 		toolset;
 
 	toolset = registry.getToolSet( sourceLang, targetLang );
-	if ( !toolset || !toolset.mt ) {
+	if ( !toolset.mt ) {
 		res.send( 404 );
 		return;
 	}
@@ -141,7 +141,7 @@ app.get( '/dictionary/:word/:from/:to', function ( req, res ) {
 		toolset;
 
 	toolset = registry.getToolSet( from, to );
-	if ( !toolset || !toolset.dictionary ) {
+	if ( !toolset.dictionary ) {
 		res.send( 404 );
 		return;
 	}
@@ -160,18 +160,12 @@ app.get( '/dictionary/:word/:from/:to', function ( req, res ) {
 } );
 
 app.get( '/list/:tool/:from/:to', function ( req, res ) {
-	var result = {},
-		tool = req.params.tool,
+	var tool = req.params.tool,
 		from = req.params.from,
 		to = req.params.to,
 		registry = require( __dirname + '/registry' ),
 		toolset = registry.getToolSet( from, to );
-
-	if ( toolset ) {
-		result = toolset[ tool ];
-	}
-
-	res.json( result );
+	res.json( toolset[ tool ] || {} );
 } );
 
 app.get( '/version', function ( req, res ) {
