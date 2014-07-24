@@ -90,7 +90,7 @@ function translateText( sourceLang, targetLang, sourceText ) {
 		deferred = Q.defer();
 	rangedSourceText = getRangedText( sourceText );
 	apertium = spawn(
-		'apertium', [ sourceLang + '-' + targetLang, '-u', '-f', 'html' ], {
+		'python', [ 'mt/apertium.py', sourceLang + '-' + targetLang, '-u', '-f', 'html' ], {
 			stdio: 'pipe',
 			env: {
 				PATH: process.env.PATH,
