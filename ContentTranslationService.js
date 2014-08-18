@@ -119,7 +119,7 @@ app.post( '/mt/:sourceLang/:targetLang', function ( req, res ) {
 	req.on( 'end', function () {
 		sourceHtmlChunks.push( '</div>' );
 		sourceHtml = sourceHtmlChunks.join( '' );
-		mtClient.translateHtmlWithNativeMarkup( sourceLang, targetLang, sourceHtml ).then(
+		mtClient.translate( sourceLang, targetLang, sourceHtml ).then(
 			function ( data ) {
 				res.send( data );
 			},

@@ -1,4 +1,7 @@
-var Q = require( 'q' ),
+var config,
+	Q = require( 'q' ),
+	apertiumLangMapping,
+	request = require( 'request' ),
 	LinearDoc = require( '../lineardoc/LinearDoc' ),
 	Entities = require( 'html-entities' ).AllHtmlEntities,
 	logger = require( '../utils/Logger.js' ),
@@ -6,6 +9,23 @@ var Q = require( 'q' ),
 	// TODO: Tokenize properly. These work for English/Spanish/Catalan
 	TOKENS = /[\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+(?:[·'][\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+)?|[^\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+/g,
 	IS_WORD = /^[\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+(?:[·'][\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+)?$/;
+
+try {
+	config = require( __dirname + '/../config.js' );
+} catch ( e ) {
+	config = {
+		'mt.apertium.api': 'http://apertium.wmflabs.org'
+	};
+}
+
+apertiumLangMapping = {
+	es: 'spa',
+	en: 'eng',
+	ca: 'cat',
+	pt: 'por',
+	it: 'ita',
+	kk: 'kaz'
+};
 
 function getTokens( text ) {
 	// TODO: implement for other languages than English/Spanish/Catalan
@@ -90,7 +110,7 @@ function translateText( sourceLang, targetLang, sourceText ) {
 		deferred = Q.defer();
 	rangedSourceText = getRangedText( sourceText );
 	apertium = spawn(
-		'python', [ 'mt/apertium.py', sourceLang + '-' + targetLang, '-u', '-f', 'html' ], {
+		'python', [ 'mt/apertium.py', sourceLang + '-' + targetLang, '-u' ], {
 			stdio: 'pipe',
 			env: {
 				PATH: process.env.PATH,
@@ -124,34 +144,31 @@ function translateText( sourceLang, targetLang, sourceText ) {
  * @param {string} sourceHtml Source rich text
  * @return {Object} Deferred promise: Translated rich text
  */
-function translateHtmlWithNativeMarkup( sourceLang, targetLang, sourceHtml ) {
-	var apertium,
-		translation = '',
-		deferred = Q.defer();
-	apertium = spawn(
-		'apertium', [ sourceLang + '-' + targetLang, '-u', '-f', 'html' ], {
-			stdio: 'pipe',
-			env: {
-				PATH: process.env.PATH,
-				LC_ALL: 'en_US.utf8'
+function translate( sourceLang, targetLang, sourceHtml ) {
+	var deferred = Q.defer(),
+		postData;
+
+	postData = {
+		url: config['mt.apertium.api'] + '/translate',
+		form: {
+			markUnknown: 0,
+			langpair: apertiumLangMapping[ sourceLang ] + '|' + apertiumLangMapping[ targetLang ],
+			q: sourceHtml
+		}
+	};
+	request.post( postData,
+		function ( error, response, body ) {
+			if ( error ) {
+				deferred.reject( new Error( error ) );
+				return;
 			}
+			if ( response.statusCode !== 200 ) {
+				deferred.reject( new Error( 'Error while translating content using apertium' ) );
+				return;
+			}
+			deferred.resolve( JSON.parse( body ).responseData.translatedText );
 		}
 	);
-	apertium.stderr.on( 'data', function ( data ) {
-		logger.error( data );
-	} );
-	apertium.stdout.on( 'data', function ( data ) {
-		translation += data;
-	} );
-	apertium.on( 'close', function ( code ) {
-		if ( code !== 0 ) {
-			deferred.reject( new Error( '' + code ) );
-			return;
-		}
-		deferred.resolve( translation );
-	} );
-	apertium.stdin.write( sourceHtml );
-	apertium.stdin.end();
 	return deferred.promise;
 }
 
@@ -204,7 +221,7 @@ function translateHtml( sourceLang, targetLang, sourceHtml ) {
 }
 
 module.exports = {
-	translateHtmlWithNativeMarkup: translateHtmlWithNativeMarkup,
+	translate: translate,
 	translateHtml: translateHtml,
 	translateText: translateText
 };
