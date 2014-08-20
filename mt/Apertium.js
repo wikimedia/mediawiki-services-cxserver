@@ -1,7 +1,7 @@
-var config,
+var apertiumLangMapping,
 	Q = require( 'q' ),
-	apertiumLangMapping,
 	request = require( 'request' ),
+	conf = require( __dirname + '/../utils/Conf.js' ),
 	LinearDoc = require( '../lineardoc/LinearDoc' ),
 	Entities = require( 'html-entities' ).AllHtmlEntities,
 	logger = require( '../utils/Logger.js' ),
@@ -9,14 +9,6 @@ var config,
 	// TODO: Tokenize properly. These work for English/Spanish/Catalan
 	TOKENS = /[\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+(?:[·'][\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+)?|[^\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+/g,
 	IS_WORD = /^[\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+(?:[·'][\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+)?$/;
-
-try {
-	config = require( __dirname + '/../config.js' );
-} catch ( e ) {
-	config = {
-		'mt.apertium.api': 'http://apertium.wmflabs.org'
-	};
-}
 
 apertiumLangMapping = {
 	es: 'spa',
@@ -149,7 +141,7 @@ function translate( sourceLang, targetLang, sourceHtml ) {
 		postData;
 
 	postData = {
-		url: config['mt.apertium.api'] + '/translate',
+		url: conf( 'mt.apertium.api' ) + '/translate',
 		form: {
 			markUnknown: 0,
 			langpair: apertiumLangMapping[ sourceLang ] + '|' + apertiumLangMapping[ targetLang ],

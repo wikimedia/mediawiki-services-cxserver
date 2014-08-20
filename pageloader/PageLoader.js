@@ -8,19 +8,9 @@
 
 'use strict';
 
-var config,
-	request = require( 'request' ),
-	Q = require( 'q' );
-
-try {
-	config = require( __dirname + '/../config.js' );
-} catch ( e ) {
-	config = {
-		parsoid: {
-			api: 'http://parsoid.wmflabs.org'
-		}
-	};
-}
+var request = require( 'request' ),
+	Q = require( 'q' ),
+	conf = require( __dirname + '/../utils/Conf.js' );
 
 /**
  * @class ParsoidPageLoader
@@ -38,7 +28,7 @@ PageLoader.prototype.load = function () {
 	var deferred = Q.defer();
 
 	request(
-		config.parsoid.api + '/' + this.sourceLanguage + 'wiki/' + this.page,
+		conf( 'parsoid.api' ) + '/' + this.sourceLanguage + 'wiki/' + this.page,
 		function ( error, response, body ) {
 			if ( error ) {
 				deferred.reject( new Error( error ) );

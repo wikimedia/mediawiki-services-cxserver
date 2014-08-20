@@ -1,20 +1,14 @@
 var winston = require( 'winston' ),
 	fs = require( 'fs' ),
-	logDir,
+	conf = require( __dirname + '/Conf.js' ),
 	env = process.env.NODE_ENV || 'development',
 	logger;
 
 winston.setLevels( winston.config.npm.levels );
 winston.addColors( winston.config.npm.colors );
 
-try {
-	logDir = require( __dirname + '/../config.js' ).logDir;
-} catch ( e ) {
-	logDir = 'log';
-}
-
-if ( !fs.existsSync( logDir ) ) {
-	fs.mkdirSync( logDir );
+if ( !fs.existsSync( conf( 'logDir' ) ) ) {
+	fs.mkdirSync( conf( 'logDir' ) );
 }
 
 logger = new( winston.Logger )( {
@@ -25,13 +19,13 @@ logger = new( winston.Logger )( {
 		} ),
 		new winston.transports.File( {
 			level: env === 'development' ? 'debug' : 'info',
-			filename: logDir + '/cx-logs.log',
+			filename: conf( 'logDir' ) + '/cx-logs.log',
 			maxsize: 1024 * 1024 * 10 // 10MB
 		} )
 	],
 	exceptionHandlers: [
 		new winston.transports.File( {
-			filename: logDir + '/exceptions.log'
+			filename: conf( 'logDir' ) + '/exceptions.log'
 		} )
 	]
 } );

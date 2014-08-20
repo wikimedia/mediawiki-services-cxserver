@@ -72,8 +72,8 @@ page.
 
 Configuration
 -------------
-An example configuration file is given as config.example.js. Rename that file
-to config.js and make your changes. Then restart the server.
+An default configuration file is given as config.defaults.js. Local changes
+in config.js will override the defaults. Restart server to read changes.
 
 Debugging
 ---------
