@@ -14,5 +14,67 @@ module.exports = {
 	// SSL key filename
 	sslkey: null,
 	// SSL cert filename
-	cert: null
+	cert: null,
+	registry: {
+		ca: {
+			es: {
+				mt: {
+					providers: [
+						'Apertium'
+					]
+				}
+			}
+		},
+		en: {
+			en: {
+				dictionary: {
+					providers: [
+						'Dictd'
+					]
+				}
+			},
+			es: {
+				dictionary: {
+					providers: [
+						'JsonDict'
+					]
+				}
+			},
+			hi: {
+				dictionary: {
+					providers: [
+						'Dictd'
+					]
+				}
+			},
+			ru: {
+				dictionary: {
+					providers: [
+						'Dictd'
+					]
+				}
+			},
+			de: {
+				dictionary: {
+					providers: [
+						'Dictd'
+					]
+				}
+			}
+		},
+		es: {
+			ca: {
+				dictionary: {
+					providers: [
+						'JsonDict'
+					]
+				},
+				mt: {
+					providers: [
+						'Apertium'
+					]
+				}
+			}
+		}
+	}
 };

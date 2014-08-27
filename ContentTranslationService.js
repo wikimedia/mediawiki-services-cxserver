@@ -81,23 +81,26 @@ app.get( '/page/:language/:title', function ( req, res ) {
 	);
 } );
 
-app.post( '/mt/:sourceLang/:targetLang', function ( req, res ) {
-	var mtProviders, mtClient, sourceHtmlChunks, sourceHtml, reqLength,
-		sourceLang = req.params.sourceLang,
-		targetLang = req.params.targetLang,
+app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
+	var mtClients, mtClient,
+		sourceHtmlChunks, sourceHtml, reqLength,
 		registry = require( __dirname + '/registry' ),
-		toolset;
+		from = req.params.from,
+		to = req.params.to,
+		provider = registry.getValidProvider( from, to, 'mt', req.params.provider );
 
-	toolset = registry.getToolSet( sourceLang, targetLang );
-	if ( !toolset.mt ) {
+	if ( !provider ) {
 		res.send( 404 );
+
 		return;
 	}
-	mtProviders = require( __dirname + '/mt' );
-	mtClient = mtProviders[ toolset.mt.provider ];
+
+	mtClients = require( __dirname + '/mt/' );
+	mtClient = mtClients[ provider ];
 
 	sourceHtmlChunks = [ '<div>' ];
 	reqLength = 0;
+
 	req.on( 'data', function ( data ) {
 		reqLength += data.length;
 		if ( reqLength > 50000 ) {
@@ -110,7 +113,7 @@ app.post( '/mt/:sourceLang/:targetLang', function ( req, res ) {
 	req.on( 'end', function () {
 		sourceHtmlChunks.push( '</div>' );
 		sourceHtml = sourceHtmlChunks.join( '' );
-		mtClient.translate( sourceLang, targetLang, sourceHtml ).then(
+		mtClient.translate( from, to, sourceHtml ).then(
 			function ( data ) {
 				res.send( data );
 			},
@@ -123,21 +126,23 @@ app.post( '/mt/:sourceLang/:targetLang', function ( req, res ) {
 	} );
 } );
 
-app.get( '/dictionary/:word/:from/:to', function ( req, res ) {
-	var from = req.params.from,
-		word = req.params.word,
-		to = req.params.to,
-		dictClient, dictionaryProviders,
+app.get( '/dictionary/:word/:from/:to/:provider?', function ( req, res ) {
+	var dictClients, dictClient,
 		registry = require( __dirname + '/registry' ),
-		toolset;
+		word = req.params.word,
+		from = req.params.from,
+		to = req.params.to,
+		provider = registry.getValidProvider( from, to, 'dictionary', req.params.provider );
 
-	toolset = registry.getToolSet( from, to );
-	if ( !toolset.dictionary ) {
+	if ( !provider ) {
 		res.send( 404 );
+
 		return;
 	}
-	dictionaryProviders = require( __dirname + '/dictionary' );
-	dictClient = dictionaryProviders[ toolset.dictionary.provider ];
+
+	dictClients = require( __dirname + '/dictionary/' );
+	dictClient = dictClients[ provider ];
+
 	dictClient.getTranslations( word, from, to ).then(
 		function ( data ) {
 			res.send( data );
@@ -156,6 +161,7 @@ app.get( '/list/:tool/:from/:to', function ( req, res ) {
 		to = req.params.to,
 		registry = require( __dirname + '/registry' ),
 		toolset = registry.getToolSet( from, to );
+
 	res.json( toolset[ tool ] || {} );
 } );
 
