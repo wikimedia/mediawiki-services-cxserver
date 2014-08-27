@@ -1,0 +1,75 @@
+[
+{
+	"source": "A <b>big<span typeof=\"mw:Extension/ref\">[1]</span> <i>brown</i><span typeof=\"mw:Extension/ref\">[2]</span> </b><u>dog</u> from <img /> the <a href=\"GB\">United Kingdom</a><span typeof=\"mw:Extension/ref\">[3]</span>. ",
+	"targetText": "The hound (enormous and brown) from Great Britain. ",
+	"rangeMappings": [
+		{
+			"source": { "start": 12, "length": 3 },
+			"target": { "start": 4, "length": 5 }
+		},
+		{
+			"source": { "start": 2, "length": 9 },
+			"target": { "start": 11, "length": 18 }
+		},
+		{
+			"source": { "start": 27, "length": 14 },
+			"target": { "start": 36, "length": 13 }
+		}
+	],
+	"expect": "The <u>hound</u> (<b>enormous and brown<span typeof=\"mw:Extension/ref\">[1]</span><span typeof=\"mw:Extension/ref\">[2]</span></b>) from <a href=\"GB\">Great Britain</a><span typeof=\"mw:Extension/ref\">[3]</span>.<img /> "
+},
+{
+	"source": "x <span data-mw=\"foo\" />y <span data-mw=\"bar\" />z. ",
+	"targetText": "Z X Y. ",
+	"rangeMappings": [
+		{
+			"source": { "start": 0, "length": 3 },
+			"target": { "start": 2, "length": 3 }
+		},
+		{
+			"source": { "start": 5, "length": 1 },
+			"target": { "start": 0, "length": 1 }
+		}
+	],
+	"expect": "Z X Y<span data-mw=\"foo\" />.<span data-mw=\"bar\" /> "
+},
+{
+	"source": "<span data-mw=\"x\">\n</span>",
+	"targetText": "",
+	"rangeMappings": [],
+	"expect": "<span data-mw=\"x\">\n</span>"
+},
+{
+	"source": "s <span>\n</span>",
+	"targetText": "S \n",
+	"rangeMappings": [],
+	"expect": "S \n"
+},
+{
+	"source": "<b>a1 a2</b> <u>b1 b2</u> <i>c1 c2</i>",
+	"targetText": "C1 A1 B1 B2 A2 C2",
+	"rangeMappings": [
+		{
+			"source": { "start": 0, "length": 5 },
+			"target": { "start": 3, "length": 2 }
+		},
+		{
+			"source": { "start": 0, "length": 5 },
+			"target": { "start": 12, "length": 2 }
+		},
+		{
+			"source": { "start": 6, "length": 5 },
+			"target": { "start": 6, "length": 5 }
+		},
+		{
+			"source": { "start": 12, "length": 5 },
+			"target": { "start": 0, "length": 2 }
+		},
+		{
+			"source": { "start": 12, "length": 5 },
+			"target": { "start": 15, "length": 2 }
+		}
+	],
+	"expect": "<i>C1</i> <b>A1</b> <u>B1 B2</u> <b>A2</b> <i>C2</i>"
+}
+]
