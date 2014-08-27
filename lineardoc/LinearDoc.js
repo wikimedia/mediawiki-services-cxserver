@@ -215,7 +215,7 @@ isInlineAnnotationTag = ( function ( tagArray ) {
  * @param {number[]} boundaries Boundary offsets
  * @param chunks Chunks to which the boundaries apply
  * @param {Function} getLength Function returning the length of a chunk
- * @returns {Object} Array of {chunk: ch, boundaries: [...]}
+ * @returns {Object[]} Array of {chunk: ch, boundaries: [...]}
  */
 function getChunkBoundaryGroups( boundaries, chunks, getLength ) {
 	var i, len, groupBoundaries, chunk, chunkLength, boundary,
@@ -265,12 +265,12 @@ function getChunkBoundaryGroups( boundaries, chunks, getLength ) {
  * @constructor
  * @param {string} text Plaintext in the chunk (can be '')
  * @param {Object[]} array of SAX open tag objects, for the applicable tags
- * @param {Doc|object} [inlineElement] tag or sub-doc
+ * @param {Doc|object} [inlineContent] tag or sub-doc
  */
-function TextChunk( text, tags, inlineElement ) {
+function TextChunk( text, tags, inlineContent ) {
 	this.text = text;
 	this.tags = tags;
-	this.inlineElement = inlineElement;
+	this.inlineContent = inlineContent;
 }
 
 /**
@@ -293,14 +293,14 @@ function TextBlock( textChunks ) {
 /**
  * Get the (last) text chunk at a given char offset
  * @method
- * @param {number} charOffset the char offset of the TextChunk
+ * @param {number} charOffset The char offset of the TextChunk
  * @return {TextChunk} The text chunk
  */
 TextBlock.prototype.getTextChunkAt = function ( charOffset ) {
-	// TODO: bisecting instead of quadratic
+	// TODO: bisecting instead of linear search
 	var i, len;
 	for ( i = 0, len = this.textChunks.length - 1; i < len; i++ ) {
-		if ( this.startOffsets[i + 1] > charOffset ) {
+		if ( this.startOffsets[ i + 1 ] > charOffset ) {
 			break;
 		}
 	}
@@ -318,17 +318,15 @@ TextBlock.prototype.getTextChunkAt = function ( charOffset ) {
 TextBlock.prototype.translateAnnotations = function ( targetText, rangeMappings ) {
 	var i, len, rangeMapping, oldTextChunk, newText,
 		newTextChunks = [];
+
 	for ( i = 0, len = rangeMappings.length; i < len; i++ ) {
-		rangeMapping = rangeMappings[i];
+		rangeMapping = rangeMappings[ i ];
 		oldTextChunk = this.getTextChunkAt( rangeMapping.source.start );
-		newText = targetText.substr(
-			rangeMapping.target.start,
-			rangeMapping.target.length
-		);
+		newText = targetText.substr( rangeMapping.target.start, rangeMapping.target.length );
 		newTextChunks.push( new TextChunk(
 			newText,
 			oldTextChunk.tags,
-			oldTextChunk.inlineElement
+			oldTextChunk.inlineContent
 		) );
 	}
 	return new TextBlock( newTextChunks );
@@ -378,15 +376,16 @@ TextBlock.prototype.getHtml = function () {
 		}
 		oldTags = textChunk.tags;
 
-		// Now add text and inline elements
+		// Now add text and inline content
 		html.push( esc( textChunk.text ) );
-		if ( textChunk.inlineElement ) {
-			if ( textChunk.inlineElement.getHtml ) {
+		if ( textChunk.inlineContent ) {
+			if ( textChunk.inlineContent.getHtml ) {
 				// a sub-doc
-				html.push( textChunk.inlineElement.getHtml() );
+				html.push( textChunk.inlineContent.getHtml() );
 			} else {
 				// an empty inline tag
-				html.push( getOpenTagHtml( textChunk.inlineElement ) );
+				html.push( getOpenTagHtml( textChunk.inlineContent ) );
+				html.push( getCloseTagHtml( textChunk.inlineContent ) );
 			}
 		}
 	}
@@ -434,7 +433,7 @@ function addCommonTag( textChunks, tag ) {
 		newTextChunks.push( new TextChunk(
 			textChunk.text,
 			newTags,
-			textChunk.inlineElement
+			textChunk.inlineContent
 		) );
 	}
 	return newTextChunks;
@@ -528,7 +527,7 @@ TextBlock.prototype.segment = function ( getBoundaries, getNextId ) {
 				rightPart = new TextChunk(
 					textChunk.text.substring( relOffset ),
 					textChunk.tags.slice(),
-					textChunk.inlineElement
+					textChunk.inlineContent
 				);
 				currentTextChunks.push( leftPart );
 				offset += relOffset;
@@ -565,13 +564,13 @@ TextBlock.prototype.dumpXmlArray = function ( pad ) {
 				'</cxtextchunk>'
 			);
 		}
-		if ( chunk.inlineElement ) {
+		if ( chunk.inlineContent ) {
 			dump.push( pad + '<cxinlineelement' + tagsAttr + '>' );
-			if ( chunk.inlineElement.dumpXmlArray ) {
+			if ( chunk.inlineContent.dumpXmlArray ) {
 				// sub-doc: concatenate
-				dump.push.apply( dump, chunk.inlineElement.dumpXmlArray( pad + '  ' ) );
+				dump.push.apply( dump, chunk.inlineContent.dumpXmlArray( pad + '  ' ) );
 			} else {
-				dump.push( pad + '  ' + '<' + chunk.inlineElement.name + '/>' );
+				dump.push( pad + '  ' + '<' + chunk.inlineContent.name + '/>' );
 			}
 			dump.push( pad + '</cxinlineelement>' );
 		}
@@ -592,7 +591,7 @@ TextBlock.prototype.dumpXmlArray = function ( pad ) {
  *
  * 1. Identical adjacent annotation tags are merged
  * 2. Inline annotations across block boundaries are split
- * 3. Annotations on block whitespace are stripped
+ * 3. Annotations on block whitespace are stripped (except spans with 'data-mw')
  *
  * N.B. 2 can change semantics, e.g. identical adjacent links != single link
  * @class
@@ -625,14 +624,16 @@ Doc.prototype.clone = function ( callback ) {
 /**
  * Add an item to the document
  * @method
- * @param {string} type Type of item: open|close|blockspace|textBlock
+ * @param {string} type Type of item: open|close|blockspace|textblock
  * @param {Object|string|TextBlock} item Open/close tag, space or text block
+ * @chainable
  */
 Doc.prototype.addItem = function ( type, item ) {
 	this.items.push( {
 		type: type,
 		item: item
 	} );
+	return this;
 };
 
 /**
@@ -797,7 +798,10 @@ Doc.prototype.getSegments = function () {
  */
 function Builder( parent, wrapperTag ) {
 	this.blockTags = [];
+	// Stack of annotation tags
 	this.inlineAnnotationTags = [];
+	// The height of the annotation tags that have been used, minus one
+	this.inlineAnnotationTagsUsed = 0;
 	this.doc = new Doc( wrapperTag || null );
 	this.textChunks = [];
 	this.parent = parent || null;
@@ -830,10 +834,45 @@ Builder.prototype.pushInlineAnnotationTag = function ( tag ) {
 };
 
 Builder.prototype.popInlineAnnotationTag = function ( tagName ) {
-	var tag = this.inlineAnnotationTags.pop();
+	var tag, textChunk, chunkTag, i, replace, whitespace;
+	tag = this.inlineAnnotationTags.pop();
+	if ( this.inlineAnnotationTagsUsed === this.inlineAnnotationTags.length ) {
+		this.inlineAnnotationTagsUsed--;
+	}
 	if ( !tag || tag.name !== tagName ) {
 		throw new Error(
 			'Mismatched inline tags: open=' + ( tag && tag.name ) + ', close=' + tagName
+		);
+	}
+	if ( tag.name !== 'span' || !tag.attributes[ 'data-mw' ] ) {
+		return tag;
+	}
+	// Check for empty/whitespace-only data span. Replace as inline content
+	replace = true;
+	whitespace = [];
+	for ( i = this.textChunks.length - 1; i >= 0; i-- ) {
+		textChunk = this.textChunks[ i ];
+		chunkTag = textChunk.tags[ textChunk.tags.length - 1 ];
+		if ( !chunkTag || chunkTag !== tag ) {
+			break;
+		}
+		if ( textChunk.text.match( /\S/ ) || textChunk.inlineContent ) {
+			replace = false;
+			break;
+		}
+		whitespace.push( textChunk.text );
+	}
+	if ( replace ) {
+		// truncate list and add data span as new sub-Doc.
+		this.textChunks.length = i + 1;
+		whitespace.reverse();
+		this.addInlineContent(
+			new Doc()
+			.addItem( 'open', tag )
+			.addItem( 'textblock', new TextBlock(
+				[ new TextChunk( whitespace.join( '' ), [] ) ]
+			) )
+			.addItem( 'close', tag )
 		);
 	}
 	return tag;
@@ -841,14 +880,17 @@ Builder.prototype.popInlineAnnotationTag = function ( tagName ) {
 
 Builder.prototype.addTextChunk = function ( text ) {
 	this.textChunks.push( new TextChunk( text, this.inlineAnnotationTags.slice() ) );
+	this.inlineAnnotationTagsUsed = this.inlineAnnotationTags.length;
 };
 
-Builder.prototype.addInlineEmptyTag = function ( tag ) {
-	this.textChunks.push( new TextChunk( '', this.inlineAnnotationTags.slice(), tag ) );
-};
-
-Builder.prototype.addRefChunk = function ( ref ) {
-	this.textChunks.push( new TextChunk( '', this.inlineAnnotationTags.slice(), ref ) );
+/**
+ * Add content that doesn't need linearizing, to appear inline
+ * @method
+ * @param {Object} tag Sub-document or empty SAX tag
+ */
+Builder.prototype.addInlineContent = function ( content ) {
+	this.textChunks.push( new TextChunk( '', this.inlineAnnotationTags.slice(), content ) );
+	this.inlineAnnotationTagsUsed = this.inlineAnnotationTags.length;
 };
 
 Builder.prototype.finishTextBlock = function () {
@@ -860,7 +902,7 @@ Builder.prototype.finishTextBlock = function () {
 	}
 	for ( i = 0, len = this.textChunks.length; i < len; i++ ) {
 		textChunk = this.textChunks[i];
-		if ( !!textChunk.inlineElement || textChunk.text.match( /\S/ ) ) {
+		if ( textChunk.inlineContent || textChunk.text.match( /\S/ ) ) {
 			whitespaceOnly = false;
 			whitespace = undefined;
 			break;
@@ -899,7 +941,7 @@ Parser.prototype.onopentag = function ( tag ) {
 		// Start a reference: create a child builder, and move into it
 		this.builder = this.builder.createChildBuilder( tag );
 	} else if ( isInlineEmptyTag( tag.name ) ) {
-		this.builder.addInlineEmptyTag( tag );
+		this.builder.addInlineContent( tag );
 	} else if ( isInlineAnnotationTag( tag.name ) ) {
 		this.builder.pushInlineAnnotationTag( tag );
 	} else {
@@ -919,7 +961,7 @@ Parser.prototype.onclosetag = function ( tagName ) {
 			throw new Error( 'Expected close reference span, got "' + tagName + '"' );
 		}
 		this.builder.finishTextBlock();
-		this.builder.parent.addRefChunk( this.builder.doc );
+		this.builder.parent.addInlineContent( this.builder.doc );
 		// Finished with child now. Move back to the parent builder
 		this.builder = this.builder.parent;
 	} else if ( !isAnn ) {
