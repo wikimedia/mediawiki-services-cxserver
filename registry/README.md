@@ -7,7 +7,7 @@ The value in config.js completely overrides the defaults.
 
 Format
 ------------
-The registry works accrding to language pairs. The main keys are source languages.
+The registry works according to language pairs. The main keys are source languages.
 Under them you'll find target languages. Under the target language key you'll find
 the services provided for that language.
 
