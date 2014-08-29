@@ -23,6 +23,13 @@ module.exports = {
 						'Apertium'
 					]
 				}
+			},
+			pt: {
+				mt: {
+					providers: [
+						'Apertium'
+					]
+				}
 			}
 		},
 		en: {
@@ -69,6 +76,29 @@ module.exports = {
 						'JsonDict'
 					]
 				},
+				mt: {
+					providers: [
+						'Apertium'
+					]
+				}
+			},
+			pt: {
+				mt: {
+					providers: [
+						'Apertium'
+					]
+				}
+			}
+		},
+		pt: {
+			ca: {
+				mt: {
+					providers: [
+						'Apertium'
+					]
+				}
+			},
+			es: {
 				mt: {
 					providers: [
 						'Apertium'
