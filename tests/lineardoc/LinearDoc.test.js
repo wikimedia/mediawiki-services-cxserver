@@ -32,7 +32,7 @@ QUnit.test( 'LinearDoc tests', function ( assert ) {
 	}
 } );
 
-QUnit.test( 'LinearDoc translateAnnotations', function ( assert ) {
+QUnit.test( 'LinearDoc translatetags', function ( assert ) {
 	var parser, textBlock1, textBlock2, i, len, test, doc;
 
 	QUnit.expect( 2 * transTests.length );
@@ -49,7 +49,7 @@ QUnit.test( 'LinearDoc translateAnnotations', function ( assert ) {
 			test.source,
 			'Reconstructed source HTML'
 		);
-		textBlock2 = textBlock1.translateAnnotations(
+		textBlock2 = textBlock1.translateTags(
 			test.targetText,
 			test.rangeMappings
 		);

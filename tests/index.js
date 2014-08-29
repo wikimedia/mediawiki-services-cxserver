@@ -3,6 +3,7 @@ var qunit = require( 'qunit' ),
 	tests = [
 		'./tests/segmentation/CXSegmenter.test.js',
 		'./tests/lineardoc/LinearDoc.test.js',
+		'./tests/mt/Apertium.test.js',
 		'./tests/dictionary/Dictionary.test.js'
 	];
 

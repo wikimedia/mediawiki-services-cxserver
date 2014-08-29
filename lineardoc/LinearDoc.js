@@ -109,7 +109,7 @@ function getCloseTagHtml( tag ) {
  *
  * @private
  * @param {Object[]} tagArray SAX open tags
- * @returns [string[]] Tag names
+ * @return {string[]} Tag names
  */
 function dumpTags( tagArray ) {
 	var i, len, tag, attr, attrDumps,
@@ -153,7 +153,7 @@ function isReference( tag ) {
  *
  * @private
  * @param {string} tagName The name of the tag (lowercase)
- * @returns {boolean} Whether the tag is an inline empty tag
+ * @return {boolean} Whether the tag is an inline empty tag
  */
 function isInlineEmptyTag( tagName ) {
 	// link/meta as they're allowed anywhere in HTML5+RDFa, and must be treated as void
@@ -166,7 +166,7 @@ function isInlineEmptyTag( tagName ) {
  *
  * @private
  * @param {string} tagName The name of the tag (lowercase)
- * @returns {boolean} Whether the tag is an inline annotation
+ * @return {boolean} Whether the tag is an inline annotation
  */
 isInlineAnnotationTag = ( function ( tagArray ) {
 	var i, len,
@@ -215,7 +215,7 @@ isInlineAnnotationTag = ( function ( tagArray ) {
  * @param {number[]} boundaries Boundary offsets
  * @param chunks Chunks to which the boundaries apply
  * @param {Function} getLength Function returning the length of a chunk
- * @returns {Object[]} Array of {chunk: ch, boundaries: [...]}
+ * @return {Object[]} Array of {chunk: ch, boundaries: [...]}
  */
 function getChunkBoundaryGroups( boundaries, chunks, getLength ) {
 	var i, len, groupBoundaries, chunk, chunkLength, boundary,
@@ -282,13 +282,28 @@ function TextChunk( text, tags, inlineContent ) {
 function TextBlock( textChunks ) {
 	var i, len, cursor;
 	this.textChunks = textChunks;
-	this.startOffsets = [];
+	this.offsets = [];
 	cursor = 0;
 	for ( i = 0, len = this.textChunks.length; i < len; i++ ) {
-		this.startOffsets[i] = cursor;
-		cursor += this.textChunks[i].text.length;
+		this.offsets[ i ] = { start: cursor, length: this.textChunks[ i ].text.length };
+		cursor += this.offsets[ i ].length;
 	}
 }
+
+/**
+ * Get the start and length of each non-common annotation
+ * @return {Object[]}
+ * @return[i].start {number} Position of each text chunk
+ * @return[i].length {number} Length of each text chunk
+ */
+TextBlock.prototype.getTagOffsets = function () {
+	var textBlock = this,
+		commonTags = this.getCommonTags();
+	return this.offsets.filter( function ( offset, i ) {
+		var textChunk = textBlock.textChunks[ i ];
+		return textChunk.tags.length > commonTags.length && textChunk.text.length > 0;
+	} );
+};
 
 /**
  * Get the (last) text chunk at a given char offset
@@ -300,11 +315,37 @@ TextBlock.prototype.getTextChunkAt = function ( charOffset ) {
 	// TODO: bisecting instead of linear search
 	var i, len;
 	for ( i = 0, len = this.textChunks.length - 1; i < len; i++ ) {
-		if ( this.startOffsets[ i + 1 ] > charOffset ) {
+		if ( this.offsets[ i + 1 ].start > charOffset ) {
 			break;
 		}
 	}
 	return this.textChunks[ i ];
+};
+
+/**
+ * Returns the list of SAX tags that apply to the whole text block
+ * @return {Object[]} List of common SAX tags
+ */
+TextBlock.prototype.getCommonTags = function () {
+	var i, iLen, j, jLen, commonTags, tags;
+	if ( this.textChunks.length === 0 ) {
+		return [];
+	}
+	commonTags = this.textChunks[ 0 ].tags.slice();
+	for ( i = 0, iLen = this.textChunks.length; i < iLen; i++ ) {
+		tags = this.textChunks[ i ].tags;
+		if ( tags.length < commonTags.length ) {
+			commonTags.splice( tags.length );
+		}
+		for ( j = 0, jLen = commonTags.length; j < jLen; j++ ) {
+			if ( commonTags[ j ] !== tags[ j ] ) {
+				// truncate
+				commonTags.splice( j );
+				break;
+			}
+		}
+	}
+	return commonTags;
 };
 
 /**
@@ -313,11 +354,11 @@ TextBlock.prototype.getTextChunkAt = function ( charOffset ) {
  * @method
  * @param {string} targetText Translated plain text
  * @param {Object[]} rangeMappings Array of source-target range index mappings
- * @returns {TextBlock} Translated textblock with annotations applied
+ * @return {TextBlock} Translated textblock with tags applied
  */
-TextBlock.prototype.translateAnnotations = function ( targetText, rangeMappings ) {
+TextBlock.prototype.translateTags = function ( targetText, rangeMappings ) {
 	var i, iLen, j, rangeMapping, sourceTextChunk, text, pos, textChunk, offset,
-		sourceRangeEnd, targetRangeEnd, tail, tailSpace,
+		sourceRangeEnd, targetRangeEnd, tail, tailSpace, commonTags,
 		// map of { offset: x, textChunks: [...] }
 		emptyTextChunks = {},
 		emptyTextChunkOffsets = [],
@@ -338,7 +379,7 @@ TextBlock.prototype.translateAnnotations = function ( targetText, rangeMappings 
 	// Create map of empty text chunks, by offset
 	for ( i = 0, iLen = this.textChunks.length; i < iLen; i++ ) {
 		textChunk = this.textChunks[ i ];
-		offset = this.startOffsets[ i ];
+		offset = this.offsets[ i ].start;
 		if ( textChunk.text.length > 0 ) {
 			continue;
 		} 
@@ -353,7 +394,7 @@ TextBlock.prototype.translateAnnotations = function ( targetText, rangeMappings 
 	emptyTextChunkOffsets.sort( function ( a, b ) { return a - b; } );
 
 	for ( i = 0, iLen = rangeMappings.length; i < iLen; i++ ) {
-		// Copy annotations from source text start offset
+		// Copy tags from source text start offset
 		rangeMapping = rangeMappings[ i ];
 		sourceRangeEnd = rangeMapping.source.start + rangeMapping.source.length;
 		targetRangeEnd = rangeMapping.target.start + rangeMapping.target.length;
@@ -393,8 +434,9 @@ TextBlock.prototype.translateAnnotations = function ( targetText, rangeMappings 
 	textChunks.sort( function ( textChunk1, textChunk2 ) {
 		return textChunk1.start - textChunk2.start;
 	} );
-	// Fill in any textChunk gaps with unannotated text
+	// Fill in any textChunk gaps using text with commonTags
 	pos = 0;
+	commonTags = this.getCommonTags();
 	for ( i = 0, iLen = textChunks.length; i < iLen; i++ ) {
 		textChunk = textChunks[ i ];
 		if ( textChunk.start < pos ) {
@@ -406,7 +448,7 @@ TextBlock.prototype.translateAnnotations = function ( targetText, rangeMappings 
 				length: textChunk.start - pos,
 				textChunk: new TextChunk(
 					targetText.substr( pos, textChunk.start - pos ),
-					[]
+					commonTags
 				)
 			} );
 			i++;
@@ -423,11 +465,11 @@ TextBlock.prototype.translateAnnotations = function ( targetText, rangeMappings 
 	}
 
 	if ( tail ) {
-		// Append tail as unannotated text
+		// Append tail as text with commonTags
 		textChunks.push( {
 			start: pos,
 			length: tail.length,
-			textChunk: new TextChunk( tail, [] )
+			textChunk: new TextChunk( tail, commonTags )
 		} );
 		pos += tail.length;
 	}
@@ -438,11 +480,11 @@ TextBlock.prototype.translateAnnotations = function ( targetText, rangeMappings 
 		pushEmptyTextChunks( pos, emptyTextChunks[ offset ] );
 	}
 	if ( tailSpace ) {
-		// Append tailSpace as unannotated text
+		// Append tailSpace as text with commonTags
 		textChunks.push( {
 			start: pos,
 			length: tailSpace.length,
-			textChunk: new TextChunk( tailSpace, [] )
+			textChunk: new TextChunk( tailSpace, commonTags )
 		} );
 		pos += tail.length;
 	}
