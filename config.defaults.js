@@ -18,6 +18,11 @@ module.exports = {
 	registry: {
 		ca: {
 			es: {
+				dictionary: {
+					providers: [
+						'JsonDict'
+					]
+				},
 				mt: {
 					providers: [
 						'Apertium'

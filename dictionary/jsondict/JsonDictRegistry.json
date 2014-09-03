@@ -1,4 +1,12 @@
 {
+	"ca": {
+		"es": {
+			"apertium-ca-es": {
+				"source": "dictionaries/apertium-ca-es.json",
+				"desc": "Catalan-Spanish dictionary, taken from Apertium. License: GPL 2."
+			}
+		}
+	},
 	"en": {
 		"es": {
 			"fd-eng-spa": {
