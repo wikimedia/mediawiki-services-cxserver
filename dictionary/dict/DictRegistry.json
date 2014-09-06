@@ -10,11 +10,12 @@
 			"fd-eng-ces": "English-Czech dicts.info/FreeDict Dictionary ver. 0.1.1",
 			"fd-eng-cze": "English-Czech fdicts/FreeDict Dictionary"
 		},
-		"hr": {
+		"cr": {
 			"fd-eng-cro": "English-Croatian Freedict Dictionary"
 		},
 		"cy": {
-			"fd-eng-cym": "Eurfa Saesneg, English-Welsh Eurfa/Freedict dictionary ver. 0.2."
+			"fd-eng-cym": "Eurfa Saesneg, English-Welsh Eurfa/Freedict dictionary ver. 0.2.",
+			"fd-eng-wel": "English-Welsh Freedict dictionary"
 		},
 		"de": {
 			"fd-eng-deu": "English-German FreeDict Dictionary ver. 0.3.5"
@@ -80,9 +81,6 @@
 		},
 		"tr": {
 			"fd-eng-tur": "English-Turkish FreeDict Dictionary ver. 0.2.1"
-		},
-		"cy": {
-			"fd-eng-wel": "English-Welsh Freedict dictionary"
 		}
 	},
 	"af": {
@@ -90,7 +88,11 @@
 			"fd-afr-deu": "Afrikaans-German FreeDict Dictionary ver. 0.3"
 		},
 		"en": {
-			"fd-afr-eng": "Afrikaans-English FreeDict Dictionary ver. 0.2.1",
+			"fd-afr-eng": "Afrikaans-English FreeDict Dictionary ver. 0.2.1"
+		}
+	},
+	"ar": {
+		"en": {
 			"fd-ara-eng": "Arabic-English FreeDict DictionaryByarabeyes.org ver. 0.6.2"
 		}
 	},
@@ -109,7 +111,8 @@
 	},
 	"cy": {
 		"en": {
-			"fd-cym-eng": "Eurfa Cymraeg, Welsh-English Eurfa/Freedict dictionary ver. 0.2.2"
+			"fd-cym-eng": "Eurfa Cymraeg, Welsh-English Eurfa/Freedict dictionary ver. 0.2.2",
+			"fd-wel-eng": "Welsh-English Freedict dictionary"
 		}
 	},
 	"cs": {
@@ -187,11 +190,6 @@
 			"fd-hun-eng": "Hungarian-English FreeDict Dictionary ver. 0.3"
 		}
 	},
-	"ga": {
-		"en": {
-			"fd-iri-eng": "Irish-English Freedict dictionary"
-		}
-	},
 	"is": {
 		"en": {
 			"fd-isl-eng": "íslenska - English FreeDict Dictionary ver. 0.1"
@@ -230,7 +228,9 @@
 		}
 	},
 	"lt": {
-		"fd-lit-eng": "Lithuanian-English FreeDict Dictionary ver. 0.7.1"
+		"en": {
+			"fd-lit-eng": "Lithuanian-English FreeDict Dictionary ver. 0.7.1"
+		}
 	},
 	"mk": {
 		"bg": {
@@ -268,7 +268,8 @@
 	},
 	"sr": {
 		"en": {
-			"fd-scr-eng": "Serbo-Croat-English Freedict dictionary"
+			"fd-scr-eng": "Serbo-Croat-English Freedict dictionary",
+			"fd-srp-eng": "Serbian - English FreeDict Dictionary ver. 0.1.3"
 		}
 	},
 	"sk": {
@@ -279,11 +280,6 @@
 	"es": {
 		"en": {
 			"fd-spa-eng": "Spanish-English FreeDict Dictionary ver. 0.1.1"
-		}
-	},
-	"sr": {
-		"en": {
-			"fd-srp-eng": "Serbian - English FreeDict Dictionary ver. 0.1.3"
 		}
 	},
 	"sw": {
@@ -306,11 +302,6 @@
 		},
 		"en": {
 			"fd-tur-eng": "Turkish-English FreeDict Dictionary ver. 0.2.1"
-		}
-	},
-	"cy": {
-		"en": {
-			"fd-wel-eng": "Welsh-English Freedict dictionary"
 		}
 	}
 }

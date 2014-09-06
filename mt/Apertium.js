@@ -10,14 +10,7 @@ var apertiumLangMapping,
 	TOKENS = /[\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+(?:[·'][\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+)?|[^\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+/g,
 	IS_WORD = /^[\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+(?:[·'][\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+)?$/;
 
-apertiumLangMapping = {
-	es: 'spa',
-	en: 'eng',
-	ca: 'cat',
-	pt: 'por',
-	it: 'ita',
-	kk: 'kaz'
-};
+apertiumLangMapping = require( __dirname + '/mappings.js' );
 
 function getTokens( text ) {
 	// TODO: implement for other languages than English/Spanish/Catalan
