@@ -36,8 +36,10 @@ if ( conf( 'secure' ) && conf( 'sslkey' ) && conf( 'cert' ) ) {
 		cert: certificate
 	};
 	server = require( 'https' ).createServer( credentials, app );
+	logger.debug( 'Secure server created' );
 } else {
 	server = require( 'http' ).createServer( app );
+	logger.debug( 'Server created' );
 }
 
 instanceName = 'worker(' + process.pid + ')';
@@ -54,19 +56,24 @@ app.get( '/page/:language/:title', function ( req, res ) {
 		PageLoader = require( __dirname + '/pageloader/PageLoader.js' ).PageLoader,
 		pageloader = new PageLoader( title, sourceLanguage );
 
+	logger.profile( 'Fetch page' );
 	pageloader.load().then(
 		function ( data ) {
 			var segmenter, segmentedContent, revision;
 			try {
-				logger.debug( 'Page fetched' );
 				revision = pageloader.getRevision( data );
+				logger.profile( 'Fetch page', { title: title, sourceLanguage: sourceLanguage } );
+				logger.profile( 'Segment page' );
 				segmenter = new CXSegmenter( data, sourceLanguage );
 				segmenter.segment();
 				segmentedContent = segmenter.getSegmentedContent();
+				logger.profile( 'Segment page', { title: title, sourceLanguage: sourceLanguage } );
 			} catch ( error ) {
 				res.send( 500, {
 					error: '' + error
 				} );
+				logger.log( 'error', 'Page %s:%s could not be fetched or segmented: (%s)',
+					sourceLanguage, title, error );
 			}
 			res.send( {
 				sourceLanguage: sourceLanguage,
@@ -74,11 +81,13 @@ app.get( '/page/:language/:title', function ( req, res ) {
 				revision: revision,
 				segmentedContent: segmentedContent
 			} );
+			logger.debug( 'Page sent' );
 		},
 		function ( error ) {
 			res.send( 404, {
 				error: '' + error
 			} );
+			logger.info( 'Page not found: %s:%s', sourceLanguage, title );
 		}
 	);
 } );
@@ -93,6 +102,7 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 
 	if ( !provider ) {
 		res.send( 404 );
+		logger.info( 'MT provider invalid or missing' );
 
 		return;
 	}
@@ -108,6 +118,7 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 		if ( reqLength > 50000 ) {
 			// Too long
 			res.send( 500 );
+			logger.error( 'MT content too long' );
 			return;
 		}
 		sourceHtmlChunks.push( data );
@@ -115,14 +126,18 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 	req.on( 'end', function () {
 		sourceHtmlChunks.push( '</div>' );
 		sourceHtml = sourceHtmlChunks.join( '' );
+
+		logger.profile( 'MT');
 		mtClient.translate( from, to, sourceHtml ).then(
 			function ( data ) {
 				res.send( data );
+				logger.profile( 'MT', { from: from, to: to } );
 			},
 			function ( error ) {
 				res.send( 500, {
 					error: error
 				} );
+				logger.log( 'error', 'MT processing error: (%s)', error );
 			}
 		);
 	} );
@@ -138,6 +153,7 @@ app.get( '/dictionary/:word/:from/:to/:provider?', function ( req, res ) {
 
 	if ( !provider ) {
 		res.send( 404 );
+		logger.info( 'Dictionary provider invalid or missing' );
 
 		return;
 	}
@@ -145,14 +161,17 @@ app.get( '/dictionary/:word/:from/:to/:provider?', function ( req, res ) {
 	dictClients = require( __dirname + '/dictionary/' );
 	dictClient = dictClients[ provider ];
 
+	logger.profile( 'Dictionary lookup' );
 	dictClient.getTranslations( word, from, to ).then(
 		function ( data ) {
 			res.send( data );
+			logger.profile( 'Dictionary lookup', { word: word, from: from, to: to } );
 		},
 		function ( error ) {
 			res.send( 500, {
 				error: error
 			} );
+			logger.log( 'error', 'Dictionary lookup error: (%s)', error );
 		}
 	);
 } );
@@ -165,6 +184,7 @@ app.get( '/list/:tool/:from/:to', function ( req, res ) {
 		toolset = registry.getToolSet( from, to );
 
 	res.json( toolset[ tool ] || {} );
+	logger.debug( 'Tool data sent' );
 } );
 
 app.get( '/languagepairs', function ( req, res ) {
@@ -179,6 +199,7 @@ app.get( '/version', function ( req, res ) {
 		version: pkg.version
 	};
 	res.json( version );
+	logger.debug( 'Version info sent' );
 } );
 // Everything else goes through this.
 app.use( express.static( __dirname + '/public' ) );
