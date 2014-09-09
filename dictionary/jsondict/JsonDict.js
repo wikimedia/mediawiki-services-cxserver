@@ -1,6 +1,7 @@
 var dictRegistry = require( __dirname + '/JsonDictRegistry.json' ),
 	fs = require( 'fs' ),
-	Q = require( 'q' );
+	Q = require( 'q' ),
+	logger = require( __dirname + '/../../utils/Logger.js' );
 
 /**
  * Find bilingual dictionaries for the language pair
@@ -46,6 +47,7 @@ function getTranslations( source, sourceLang, targetLang ) {
 
 	dictionaries = findDictionaries( sourceLang, targetLang );
 	if ( dictionaries === null ) {
+		logger.error( 'JSON dictionary not found for %s-%s', sourceLang, targetLang );
 		deferred.resolve( [] );
 		return deferred.promise;
 	}
@@ -61,19 +63,27 @@ function getTranslations( source, sourceLang, targetLang ) {
 		var results, result, i, len,
 			translations = [];
 		if ( err ) {
-			deferred.reject( 'Error: ' + err );
+			logger.error( 'Dictionary file \'%s\' could not be read', file );
+			deferred.reject( '' + err );
 			return;
 		}
 		results = JSON.parse( data )[source] || [];
 		for ( i = 0, len = results.length; i < len; i++ ) {
 			result = results[i];
 			translations.push( {
-				'phrase': result[0],
-				'info': result[1],
-				'sources': [dictionaryId]
+				phrase: result[0],
+				info: result[1],
+				sources: [ dictionaryId ]
 			} );
 		}
-		deferred.resolve( { 'source': source, 'translations': translations } );
+
+		if ( translations.length < 1 ) {
+			logger.debug( 'No dictionary entries found' );
+		} else {
+			logger.debug( 'Dictionary entries found' );
+		}
+
+		deferred.resolve( { source: source, translations: translations } );
 	} );
 	return deferred.promise;
 }
