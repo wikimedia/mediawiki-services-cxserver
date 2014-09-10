@@ -10,16 +10,10 @@
 
 var sys = require( 'sys' ),
 	net = require( 'net' ),
-	logLevel, config;
+	logger = require( __dirname + '/../../utils/Logger.js' ),
+	config;
 
-logLevel = {
-	silent: 0,
-	standard: 1,
-	diagnostic: 2,
-	verbose: 3
-};
 config = {
-	logging: logLevel.silent,
 	dictd: {
 		port: '2628',
 		host: '127.0.0.1',
@@ -41,18 +35,6 @@ function firstObj( list ) {
 	}
 
 	return obj;
-}
-
-/**
- * Simple logger, mainly for debugging
- */
-function log( msg, level ) {
-	if ( !level ) {
-		level = logLevel.standard;
-	}
-	if ( level <= config.logging ) {
-		sys.log( msg );
-	}
 }
 
 /**
@@ -95,7 +77,7 @@ function parseWords( words ) {
 	}
 
 	res.count = count;
-	log( sys.inspect( res ), logLevel.verbose );
+	logger.verbose( sys.inspect( res ) );
 
 	return res;
 }
@@ -125,19 +107,19 @@ function getDefs( words, options ) {
 	}
 
 	dict.on( 'timeout', function () {
-		log( 'timeout', logLevel.diagnostic );
+		logger.debug( 'Timeout' );
 		options.error( 'error', 'Timeout' );
 		dict.end();
 	} );
 
 	dict.on( 'end', function () {
-		log( 'end', logLevel.diagnostic );
+		logger.debug( 'End' );
 		dict.end();
 	} );
 
 	dict.on( 'connect', function () {
 		var dbIdx, req, db, word;
-		log( 'getDefs: connected', logLevel.verbose );
+		logger.debug( 'getDefs: connected' );
 
 		// put requests to queue
 		for ( word in words ) {
@@ -167,7 +149,7 @@ function getDefs( words, options ) {
 		if ( ( currentReqIdx + 1 < sentReqs.length ) || reqQueue.length ) {
 			if ( !dict.writable ) {
 				reqOnDrain = true;
-				log( 'nextRequest() postponed till drain', logLevel.diagnostic );
+				logger.debug( 'nextRequest() postponed till drain' );
 				return;
 			}
 
@@ -185,14 +167,14 @@ function getDefs( words, options ) {
 
 			if ( req.trim() ) {
 				dict.write( req );
-				log( 'getDefs: nextRequest: sent request: "' + req + '"', logLevel.verbose );
+				logger.verbose( 'getDefs: nextRequest: sent request: "' + req + '"' );
 			}
 		} else { // if not, send the quit message
 			currentReq = {
 				request: 'q\r\n'
 			};
 			dict.end( currentReq.request );
-			log( 'nextRequest(): Sent "q"', logLevel.diagnostic );
+			logger.debug( 'nextRequest(): Sent "q"' );
 		}
 	}
 
@@ -201,7 +183,7 @@ function getDefs( words, options ) {
 			return;
 		}
 		nextRequest();
-		log( 'called nextRequestuest() on drain', logLevel.diagnostic );
+		logger.debug( 'Called nextRequestuest() on drain' );
 	} );
 
 	dict.on( 'data', function ( data ) {
@@ -212,7 +194,7 @@ function getDefs( words, options ) {
 		if ( typeof data !== 'string' ) {
 			return;
 		}
-		log( 'Data: ' + JSON.stringify( data ), logLevel.verbose );
+		logger.verbose( 'Data: ' + JSON.stringify( data ) );
 
 		/*
         To understand the response handling code, an example response is given below.
@@ -250,11 +232,11 @@ function getDefs( words, options ) {
 				status = response.substring( 0, 3 );
 			} else {
 				textEnded = ( nextResponsePos > -1 );
-				log( 'nextResponsePos: ' + nextResponsePos, logLevel.verbose );
+				logger.verbose( 'nextResponsePos: ' + nextResponsePos );
 			}
 
-			log( 'Response: "' + response + '", next at ' + nextResponsePos, logLevel.verbose );
-			log( 'Status: ' + status, logLevel.verbose );
+			logger.verbose( 'Response: "' + response + '", next at ' + nextResponsePos );
+			logger.verbose( 'Status: ' + status );
 		}
 
 		while ( ( nextResponsePos !== -1 ) && ( nextResponsePos !== 0 ) ) {
@@ -266,13 +248,13 @@ function getDefs( words, options ) {
 				response = '';
 				nextResponse();
 			} else {
-				log( 'Continuing previous data', logLevel.verbose );
+				logger.verbose( 'Continuing previous data' );
 			}
 
 			switch ( status ) {
 				//greetings
 			case '220':
-				log( 'getDefs: dict.org said hello', logLevel.verbose );
+				logger.verbose( 'getDefs: dict.org said hello' );
 
 				//we can start the fun now
 				nextRequest();
@@ -280,7 +262,7 @@ function getDefs( words, options ) {
 
 				//bye
 			case '221':
-				log( 'getDefs: dict.org says bye', logLevel.verbose );
+				logger.verbose( 'getDefs: dict.org says bye' );
 				//onEnd event should follow, so no need to do anything here
 				break;
 
@@ -320,7 +302,7 @@ function getDefs( words, options ) {
 			case '550':
 				//invalid strategy
 			case '551':
-				log( 'Proceeding to next request at status ' + status, logLevel.diagnostic );
+				logger.debug( 'Proceeding to next request at status ' + status );
 				nextRequest();
 				break;
 
@@ -339,7 +321,7 @@ function getDefs( words, options ) {
 					textBuf = response;
 					textEnded = response.match( /\r\n\.(\r\n|$)/ );
 					if ( !textEnded ) {
-						log( 'Suggestions didn\'t end.', logLevel.verbose );
+						logger.verbose( 'Suggestions didn\'t end.' );
 					}
 				} else {
 					nextResponse();
@@ -365,14 +347,14 @@ function getDefs( words, options ) {
 						}
 						// remove the first word in the line because it is db name
 						sug = sugLines[ lNum ].replace( /^[a-zA-Z0-9]+ "([^"]+)".*/, '$1' );
-						log( 'Suggestion: "' + sug + '"', logLevel.verbose );
+						logger.verbose( 'Suggestion: "' + sug + '"' );
 						if ( suggestions[ word ].indexOf( sug ) === -1 ) {
 							suggestions[ word ].push( sug );
 						}
 					}
 
-					log( 'Suggestions ended.', logLevel.verbose );
-					log( 'Parsed suggestions: ' + sys.inspect( suggestions[ word ] ), logLevel.verbose );
+					logger.verbose( 'Suggestions ended.' );
+					logger.verbose( 'Parsed suggestions: ' + sys.inspect( suggestions[ word ] ) );
 				}
 				break;
 
@@ -402,7 +384,7 @@ function getDefs( words, options ) {
 
 					textEnded = response.match( /\r\n\.(\r\n|$)/ );
 					if ( !textEnded ) {
-						log( 'Definition did not end.', logLevel.verbose );
+						logger.verbose( 'Definition did not end.' );
 					}
 				} else {
 					nextResponse();
@@ -414,8 +396,8 @@ function getDefs( words, options ) {
 					// We also remove the "." ending the text message.
 					definition = textBuf.replace( /^\.\./m, '.' ).replace( /\r\n\.(\r\n|$)/, '' );
 
-					log( 'Definition ended.', logLevel.verbose );
-					log( 'Parsed defs: ' + sys.inspect( definition ), logLevel.verbose );
+					logger.verbose( 'Definition ended.' );
+					logger.verbose( 'Parsed defs: ' + sys.inspect( definition ) );
 
 					if ( typeof defs[ currentReq.word ] !== 'object' ) {
 						defs[ currentReq.word ] = [];
@@ -428,11 +410,11 @@ function getDefs( words, options ) {
 						}
 					} );
 
-					log( 'Defs: ' + sys.inspect( defs ), logLevel.verbose );
+					logger.verbose( 'Defs: ' + sys.inspect( defs ) );
 				}
 				break;
 			}
-			log( '*** End of data event\n', logLevel.verbose );
+			logger.verbose( '*** End of data event\n' );
 		}
 	} );
 
@@ -454,7 +436,7 @@ function getDefs( words, options ) {
 			data.suggestions = suggestions;
 		}
 		options.success( data );
-		log( 'Connection ended.', logLevel.verbose );
+		logger.verbose( 'Connection ended.' );
 	} );
 }
 
@@ -488,7 +470,7 @@ function lookup( word, options ) {
 	// Sanitize the wordList
 	words = parseWords( wordList );
 	if ( words.count ) {
-		log( 'Words ok', logLevel.verbose );
+		logger.verbose( 'Words ok' );
 		defs = getDefs( words, {
 			action: options.action,
 			suggestions: !!options.suggestions,

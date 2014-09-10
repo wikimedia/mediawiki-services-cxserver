@@ -1,10 +1,12 @@
 var dictClient = require( __dirname + '/DictClient.js' ),
 	dictRegistry = require( __dirname + '/DictRegistry.json' ),
-	Q = require( 'q' );
+	Q = require( 'q' ),
+	logger = require( __dirname + '/../../utils/Logger.js' );
 
 function findDatabase( source, target ) {
 	var dictionaries = dictRegistry[ source ] && dictRegistry[ source ][ target ];
 	if ( !dictionaries ) {
+		logger.info( 'Could not find dictd dictionaries for %s-%s', source, target );
 		return null;
 	}
 	return Object.keys( dictionaries );
@@ -41,10 +43,12 @@ function getTranslations( word, from, to ) {
 		action: 'def',
 		suggestions: true,
 		error: function ( responseCode, message ) {
+			logger.info( 'Dictd look up failed' );
 			deferred.reject( new Error( responseCode + ': ' + message ) );
 		},
 		success: function ( result ) {
 			var i, translations = [];
+			logger.debug( 'Dictd look up succeeded' );
 			for ( i = 0; i < result.definitions.length; i++ ) {
 				translations.push( {
 					text: result.definitions[ i ].def,
