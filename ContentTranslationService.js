@@ -165,6 +165,12 @@ app.get( '/list/:tool/:from/:to', function ( req, res ) {
 	res.json( toolset[ tool ] || {} );
 } );
 
+app.get( '/languagepairs', function ( req, res ) {
+	var registry = require( __dirname + '/registry' );
+
+	res.json( registry.getLanguagePairs() );
+} );
+
 app.get( '/version', function ( req, res ) {
 	var version = {
 		name: pkg.name,

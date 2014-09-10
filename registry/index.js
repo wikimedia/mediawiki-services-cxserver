@@ -2,6 +2,22 @@ var conf = require( __dirname + '/../utils/Conf.js' ),
 	registry = conf( 'registry' );
 
 /**
+ * Return all language pairs.
+ * @return {Object} The languages, indexed by source language
+ *   pointing to a list of target languages.
+ */
+function getLanguagePairs() {
+	var sourceLanguage,
+		languagePairs = {};
+
+	for ( sourceLanguage in registry ) {
+		languagePairs[ sourceLanguage ] = Object.keys( registry[ sourceLanguage ] );
+	}
+
+	return languagePairs;
+}
+
+/**
  * Get the available toolset for the given language pair
  * @param {string} from source language
  * @param {string} to target language
@@ -46,6 +62,7 @@ function getValidProvider( from, to, serviceType, providerName ) {
 }
 
 module.exports = {
+	getLanguagePairs: getLanguagePairs,
 	getToolSet: getToolSet,
 	getValidProvider: getValidProvider
 };
