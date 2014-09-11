@@ -325,6 +325,11 @@ module.exports = {
 						'JsonDict',
 						'Dictd'
 					]
+				},
+				mt: {
+					providers: [
+						'Apertium'
+					]
 				}
 			},
 			fr: {
