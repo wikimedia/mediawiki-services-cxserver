@@ -56,9 +56,10 @@ app.get( '/page/:language/:title', function ( req, res ) {
 
 	pageloader.load().then(
 		function ( data ) {
-			var segmenter, segmentedContent;
+			var segmenter, segmentedContent, revision;
 			try {
 				logger.debug( 'Page fetched' );
+				revision = pageloader.getRevision( data );
 				segmenter = new CXSegmenter( data, sourceLanguage );
 				segmenter.segment();
 				segmentedContent = segmenter.getSegmentedContent();
@@ -70,6 +71,7 @@ app.get( '/page/:language/:title', function ( req, res ) {
 			res.send( {
 				sourceLanguage: sourceLanguage,
 				title: title,
+				revision: revision,
 				segmentedContent: segmentedContent
 			} );
 		},
