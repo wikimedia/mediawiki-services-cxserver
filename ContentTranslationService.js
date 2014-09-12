@@ -58,13 +58,12 @@ app.get( '/page/:language/:title', function ( req, res ) {
 
 	logger.profile( 'Fetch page' );
 	pageloader.load().then(
-		function ( data ) {
-			var segmenter, segmentedContent, revision;
+		function ( response ) {
+			var segmenter, segmentedContent;
 			try {
-				revision = pageloader.getRevision( data );
 				logger.profile( 'Fetch page', { title: title, sourceLanguage: sourceLanguage } );
 				logger.profile( 'Segment page' );
-				segmenter = new CXSegmenter( data, sourceLanguage );
+				segmenter = new CXSegmenter( response.body, sourceLanguage );
 				segmenter.segment();
 				segmentedContent = segmenter.getSegmentedContent();
 				logger.profile( 'Segment page', { title: title, sourceLanguage: sourceLanguage } );
@@ -78,7 +77,7 @@ app.get( '/page/:language/:title', function ( req, res ) {
 			res.send( {
 				sourceLanguage: sourceLanguage,
 				title: title,
-				revision: revision,
+				revision: response.revision,
 				segmentedContent: segmentedContent
 			} );
 			logger.debug( 'Page sent' );

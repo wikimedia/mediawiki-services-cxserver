@@ -39,26 +39,14 @@ PageLoader.prototype.load = function () {
 				return;
 			}
 
-			deferred.resolve( body );
+			deferred.resolve( {
+				body: response.body,
+				revision: response.headers[ 'content-revision-id' ]
+			} );
 		}
 	);
 
 	return deferred.promise;
-};
-
-/**
- * Gets article revision number from Parsoid html
- * @param {string} html The html returned from Parsoid
- * @return {integer} the revison id
- */
-PageLoader.prototype.getRevision = function ( data ) {
-	var snippet, revision;
-
-	// Cut down data string to make regex more efficient
-	snippet = data.substr( data.indexOf( '<html' ), data.indexOf( '<head' ) );
-	revision = snippet.match( /about=".*\/revision\/(.*?)">/ )[ 1 ];
-
-	return parseInt( revision );
 };
 
 module.exports.PageLoader = PageLoader;
