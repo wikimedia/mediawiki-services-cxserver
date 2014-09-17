@@ -72,7 +72,7 @@ app.get( '/page/:language/:title', function ( req, res ) {
 					error: '' + error
 				} );
 				logger.log( 'error', 'Page %s:%s could not be fetched or segmented: (%s)',
-					sourceLanguage, title, error );
+					sourceLanguage, title, error.toString() );
 			}
 			res.send( {
 				sourceLanguage: sourceLanguage,
@@ -136,7 +136,7 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 				res.send( 500, {
 					error: error
 				} );
-				logger.log( 'error', 'MT processing error: (%s)', error );
+				logger.log( 'error', 'MT processing error: (%s)', error.toString() );
 			}
 		);
 	} );
@@ -170,7 +170,7 @@ app.get( '/dictionary/:word/:from/:to/:provider?', function ( req, res ) {
 			res.send( 500, {
 				error: error
 			} );
-			logger.log( 'error', 'Dictionary lookup error: (%s)', error );
+			logger.log( 'error', 'Dictionary lookup error: (%s)', error.toString() );
 		}
 	);
 } );
