@@ -13,7 +13,13 @@ var config, customConfig,
 try {
 	customConfig = require( __dirname + '/../config.js' );
 } catch ( e ) {
-	customConfig = {};
+	if ( e.code === 'MODULE_NOT_FOUND' ) {
+		// Custom configuration file missing. That is acceptable.
+		customConfig = {};
+	} else {
+		// Corrupted custom configuration file. Fail.
+		throw new Error( 'Invalid configuration file.\n' + e );
+	}
 }
 
 function readConfig() {
