@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+var sourceLang, targetLang, sourceHtml, script, args,
+	Apertium = require( __dirname + '/../mt/Apertium.js' );
+
+script = process.argv[ 1 ];
+args = process.argv.slice( 2 );
+if ( args.length !== 2 ) {
+	process.stderr.write(
+		'Usage: node ' + script + ' <sourceLang> <targetLang> < xhtmlSource\n\n' +
+		'xhtml must be wrapped in a block element such as <p>...</p> or <div>..</div>.\n' +
+		'Example:\n\techo "<p>A <b>red</b> box.</p>" | node ' + script + ' en es\n\n'
+	);
+	process.exit( 1 );
+}
+
+sourceLang = args[ 0 ];
+targetLang = args[ 1 ];
+
+sourceHtml = [];
+
+process.stdin.on( 'data', function( data ) {
+	sourceHtml.push( data );
+} );
+process.stdin.on( 'end', function() {
+	Apertium.translate(
+		sourceLang,
+		targetLang,
+		sourceHtml.join( '' )
+	).then( function( targetHtml ) {
+		process.stdout.write( targetHtml + '\n' );
+	}, function( error ) {
+		console.error( 'error', error );
+		process.exit( 2 );
+	} );
+} );

@@ -46,6 +46,23 @@
 	"expect": "S \n"
 },
 {
+	"source": "Un cotxe blau.",
+	"targetText": "A blue car.",
+	"rangeMappings": [],
+	"expect": "A blue car."
+},
+{
+	"source": "Un <a href=\"x\">cotxe</a> blau.",
+	"targetText": "A blue car.",
+	"rangeMappings": [
+		{
+			"source": { "start": 3, "length": 5 },
+			"target": { "start": 7, "length": 3 }
+		}
+	],
+	"expect": "A blue <a href=\"x\">car</a>."
+},
+{
 	"source": "<b>a1 a2</b> <u>b1 b2</u> <i>c1 c2</i>",
 	"targetText": "C1 A1 B1 B2 A2 C2",
 	"rangeMappings": [
