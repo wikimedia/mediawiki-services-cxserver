@@ -316,20 +316,137 @@ TextBlock.prototype.getTextChunkAt = function ( charOffset ) {
  * @returns {TextBlock} Translated textblock with annotations applied
  */
 TextBlock.prototype.translateAnnotations = function ( targetText, rangeMappings ) {
-	var i, len, rangeMapping, oldTextChunk, newText,
-		newTextChunks = [];
+	var i, iLen, j, rangeMapping, sourceTextChunk, text, pos, textChunk, offset,
+		sourceRangeEnd, targetRangeEnd, tail, tailSpace,
+		// map of { offset: x, textChunks: [...] }
+		emptyTextChunks = {},
+		emptyTextChunkOffsets = [],
+		// list of { start: x, length: x, textChunk: x }
+		textChunks = [];
 
-	for ( i = 0, len = rangeMappings.length; i < len; i++ ) {
-		rangeMapping = rangeMappings[ i ];
-		oldTextChunk = this.getTextChunkAt( rangeMapping.source.start );
-		newText = targetText.substr( rangeMapping.target.start, rangeMapping.target.length );
-		newTextChunks.push( new TextChunk(
-			newText,
-			oldTextChunk.tags,
-			oldTextChunk.inlineContent
-		) );
+	function pushEmptyTextChunks( offset, chunks ) {
+		var c, cLen;
+		for ( c = 0, cLen = chunks.length; c < cLen; c++ ) {
+			textChunks.push( {
+				start: offset,
+				length: 0,
+				textChunk: chunks[ c ]
+			} );
+		}
 	}
-	return new TextBlock( newTextChunks );
+
+	// Create map of empty text chunks, by offset
+	for ( i = 0, iLen = this.textChunks.length; i < iLen; i++ ) {
+		textChunk = this.textChunks[ i ];
+		offset = this.startOffsets[ i ];
+		if ( textChunk.text.length > 0 ) {
+			continue;
+		} 
+		if ( !emptyTextChunks[ offset ] ) {
+			emptyTextChunks[ offset ] = [];
+		}
+		emptyTextChunks[ offset ].push( textChunk );
+	}
+	for ( offset in emptyTextChunks ) {
+		emptyTextChunkOffsets.push( offset );
+	}
+	emptyTextChunkOffsets.sort( function ( a, b ) { return a - b; } );
+
+	for ( i = 0, iLen = rangeMappings.length; i < iLen; i++ ) {
+		// Copy annotations from source text start offset
+		rangeMapping = rangeMappings[ i ];
+		sourceRangeEnd = rangeMapping.source.start + rangeMapping.source.length;
+		targetRangeEnd = rangeMapping.target.start + rangeMapping.target.length;
+		sourceTextChunk = this.getTextChunkAt( rangeMapping.source.start );
+		text = targetText.substr( rangeMapping.target.start, rangeMapping.target.length );
+		textChunks.push( {
+			start: rangeMapping.target.start,
+			length: rangeMapping.target.length,
+			textChunk: new TextChunk(
+				text,
+				sourceTextChunk.tags,
+				sourceTextChunk.inlineContent
+			)
+		} );
+
+		// Empty source text chunks will not be represented in the target plaintext
+		// (because they have no plaintext representation). Therefore we must clone each
+		// one manually into the target rich text.
+
+		// Iterate through all remaining emptyTextChunks
+		for ( j = 0; j < emptyTextChunkOffsets.length; j++ ) {
+			offset = emptyTextChunkOffsets[ j ];
+			// Check whether chunk is in range
+			if ( offset < rangeMapping.source.start || offset > sourceRangeEnd ) {
+				continue;
+			}
+			// Push chunk into target text at the current point
+			pushEmptyTextChunks( targetRangeEnd, emptyTextChunks[ offset ] );
+			// Remove chunk from remaining list
+			delete emptyTextChunks[ offset ];
+			emptyTextChunkOffsets.splice( j, 1 );
+			// Decrement pointer to match removal
+			j--;
+		}
+	}
+	// Sort by start position
+	textChunks.sort( function ( textChunk1, textChunk2 ) {
+		return textChunk1.start - textChunk2.start;
+	} );
+	// Fill in any textChunk gaps with unannotated text
+	pos = 0;
+	for ( i = 0, iLen = textChunks.length; i < iLen; i++ ) {
+		textChunk = textChunks[ i ];
+		if ( textChunk.start < pos ) {
+			throw new Error( 'Overlappping chunks at pos=' + pos + ', i=' + i );
+		} else if ( textChunk.start > pos ) {
+			// Unmapped chunk: insert plaintext and adjust offset
+			textChunks.splice( i, 0, {
+				start: pos,
+				length: textChunk.start - pos,
+				textChunk: new TextChunk(
+					targetText.substr( pos, textChunk.start - pos ),
+					[]
+				)
+			} );
+			i++;
+			iLen++;
+		}
+		pos = textChunk.start + textChunk.length;
+	}
+
+	// Get trailing text and trailing whitespace
+	tail = targetText.substr( pos );
+	tailSpace = tail.match( /\s*$/ )[ 0 ];
+	if ( tailSpace ) {
+		tail = tail.substr( 0, tail.length - tailSpace.length );
+	}
+
+	if ( tail ) {
+		// Append tail as unannotated text
+		textChunks.push( {
+			start: pos,
+			length: tail.length,
+			textChunk: new TextChunk( tail, [] )
+		} );
+		pos += tail.length;
+	}
+
+	// Copy any remaining textChunks that have no text
+	for ( i = 0, iLen = emptyTextChunkOffsets.length; i < iLen; i++ ) {
+		offset = emptyTextChunkOffsets[ i ];
+		pushEmptyTextChunks( pos, emptyTextChunks[ offset ] );
+	}
+	if ( tailSpace ) {
+		// Append tailSpace as unannotated text
+		textChunks.push( {
+			start: pos,
+			length: tailSpace.length,
+			textChunk: new TextChunk( tailSpace, [] )
+		} );
+		pos += tail.length;
+	}
+	return new TextBlock( textChunks.map( function ( x ) { return x.textChunk; } ) );
 };
 
 /**
