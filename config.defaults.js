@@ -9,6 +9,8 @@ module.exports = {
 	'parsoid.api': 'http://parsoid-lb.eqiad.wikimedia.org',
 	// Apertium web API URL
 	'mt.apertium.api': 'http://apertium.wmflabs.org',
+	'mt.yandex.api': 'https://translate.yandex.net',
+	'mt.yandex.key': null,
 	// Use SSL?
 	secure: false,
 	// SSL key filename

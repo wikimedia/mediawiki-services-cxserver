@@ -1,3 +1,4 @@
 module.exports = {
-	Apertium: require( './Apertium.js' )
+	Apertium: require( './Apertium.js' ),
+	Yandex: require( './Yandex.js' )
 };
