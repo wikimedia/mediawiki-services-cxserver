@@ -91,6 +91,10 @@ app.get( '/page/:language/:title', function ( req, res ) {
 	);
 } );
 
+app.get( '/mt/:from/:to/:provider?', function ( req, res ) {
+	res.send( 405, { error: 'Request must be posted' } );
+} );
+
 app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 	var mtClients, mtClient,
 		sourceHtmlChunks, sourceHtml, reqLength,
@@ -100,13 +104,19 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 		provider = registry.getValidProvider( from, to, 'mt', req.params.provider );
 
 	if ( !provider ) {
-		res.send( 404 );
+		res.send( 404, { error: 'Provider not supported' } );
 		logger.info( 'MT provider invalid or missing' );
 
 		return;
 	}
 
 	mtClients = require( __dirname + '/mt/' );
+	if ( mtClients[provider] === undefined ) {
+		res.send( 500, { error: 'Provider not found' } );
+		logger.error( 'Configured provider ' + provider + ' was not found' );
+		return;
+	}
+
 	mtClient = mtClients[ provider ];
 
 	sourceHtmlChunks = [ '<div>' ];
@@ -116,7 +126,7 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 		reqLength += data.length;
 		if ( reqLength > 50000 ) {
 			// Too long
-			res.send( 500 );
+			res.send( 413, { error: 'Content too long' } );
 			logger.error( 'MT content too long' );
 			return;
 		}
@@ -126,16 +136,14 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 		sourceHtmlChunks.push( '</div>' );
 		sourceHtml = sourceHtmlChunks.join( '' );
 
-		logger.profile( 'MT');
+		logger.profile( 'MT' );
 		mtClient.translate( from, to, sourceHtml ).then(
 			function ( data ) {
 				res.send( data );
 				logger.profile( 'MT', { from: from, to: to } );
 			},
 			function ( error ) {
-				res.send( 500, {
-					error: error
-				} );
+				res.send( 500, { error: error } );
 				logger.log( 'error', 'MT processing error: (%s)', error.toString() );
 			}
 		);
