@@ -227,12 +227,14 @@ function translateTextApertium( sourceLang, targetLang, sourceText ) {
  * @return {Object} Deferred promise: Translated plaintext lines
  */
 function translateLinesApertium( sourceLang, targetLang, sourceLines ) {
-	var deferred = Q.defer();
+	var sourceLinesText,
+		deferred = Q.defer();
 	// Join lines into single string. Separator must break sentences and pass through unchanged
+	sourceLinesText = sourceLines.join( '\n.CxServerApertium.\n' );
 	translateTextApertium(
 		sourceLang,
 		targetLang,
-		sourceLines.join( '\n.CxServerApertium.\n' )
+		sourceLinesText
 	).then( function ( targetLinesText ) {
 		var targetText = targetLinesText
 			.replace( /^\s+|\s+$/g, '' )
@@ -253,12 +255,20 @@ function translateLinesApertium( sourceLang, targetLang, sourceLines ) {
  * @return {Object} Deferred promise: Translated plain text and range mappings
  */
 function translateTextWithTagOffsets( sourceLang, targetLang, sourceText, tagOffsets ) {
-	var sourceVariants, sourceLines, deferred;
+	var sourceVariants, sourceLines, m, preSpace, postSpace, trimmedSourceLines, deferred;
 	sourceVariants = getCaseVariants( sourceLang, sourceText, tagOffsets );
 	sourceLines = sourceVariants.map( function ( variant ) {
 		return variant.text;
 	} );
 	sourceLines.splice( 0, 0, sourceText );
+
+	// Don't push leading and trailing whitespace through Apertium
+	m = sourceText.match( /^(\s*).*?(\s*)$/ );
+	preSpace = m[ 1 ];
+	postSpace = m[ 2 ];
+	trimmedSourceLines = sourceLines.map( function ( line ) {
+		return line.substring( preSpace.length, line.length - postSpace.length );
+	} );
 
 	deferred = Q.defer();
 	// Call apertium through module.exports, so tests can override it
@@ -266,16 +276,24 @@ function translateTextWithTagOffsets( sourceLang, targetLang, sourceText, tagOff
 	module.exports.translateLinesApertium(
 		sourceLang,
 		targetLang,
-		sourceLines
-	).then( function ( targetLines ) {
-		var targetText, rangeMappings;
-		targetText = targetLines.splice( 0, 1 )[ 0 ];
-		rangeMappings = getRangeMappings(
-			targetLang,
-			sourceVariants,
-			targetText,
-			targetLines
-		);
+		trimmedSourceLines
+	).then( function ( trimmedTargetLines ) {
+		var targetLines, targetText, rangeMappings;
+		targetLines = trimmedTargetLines.map( function ( trimmedTargetLine ) {
+			return preSpace + trimmedTargetLine + postSpace;
+		} );
+		try {
+			targetText = targetLines.splice( 0, 1 )[ 0 ];
+			rangeMappings = getRangeMappings(
+				targetLang,
+				sourceVariants,
+				targetText,
+				targetLines
+			);
+		} catch ( ex ) {
+			deferred.reject( ex );
+			return;
+		}
 		deferred.resolve( {
 			text: targetText,
 			rangeMappings: rangeMappings

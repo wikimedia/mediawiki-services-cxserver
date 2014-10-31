@@ -29,7 +29,11 @@ process.stdin.on( 'end', function() {
 	).then( function( targetHtml ) {
 		process.stdout.write( targetHtml + '\n' );
 	}, function( error ) {
-		console.error( 'error', error );
+		if ( error.stack ) {
+			console.error( 'error', error.stack );
+		} else {
+			console.error( 'error', error );
+		}
 		process.exit( 2 );
 	} );
 } );
