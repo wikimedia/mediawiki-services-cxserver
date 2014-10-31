@@ -668,6 +668,13 @@ module.exports = {
 						'Dictd'
 					]
 				}
+			},
+			ur: {
+				mt: {
+					providers: [
+						'Apertium'
+					]
+				}
 			}
 		},
 		hr: {
@@ -1102,6 +1109,15 @@ module.exports = {
 		},
 		tt: {
 			kk: {
+				mt: {
+					providers: [
+						'Apertium'
+					]
+				}
+			}
+		},
+		ur: {
+			hi: {
 				mt: {
 					providers: [
 						'Apertium'
