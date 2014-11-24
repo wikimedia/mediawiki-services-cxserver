@@ -32,7 +32,7 @@
 	"scripts": {
 		"start": "node Server.js",
 		"debug": "node-debug ContentTranslationService.js",
-		"test": "grunt test && node tests"
+		"test": "grunt test && nodejs tests"
 	},
 	"main": "./index.js",
 	"devDependencies": {
