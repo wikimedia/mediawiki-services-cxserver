@@ -12,10 +12,11 @@ tests = [
 	{
 		title: 'All caps words',
 		source: '<p>A <b>Japanese</b> <i>BBC</i> article</p>',
-		target: '<p>Un artículo de BBC <b>japonés</b></p>',
+		target: '<p>Un artículo de <i>BBC</i> <b>japonés</b></p>',
 		textTranslations: {
 			'A Japanese BBC article': 'Un artículo de BBC japonés',
-			'A JAPANESE BBC article': 'Un artículo de BBC JAPONÉS'
+			BBC: 'BBC',
+			Japanese: 'japonés'
 		}
 	},
 	{
@@ -24,8 +25,7 @@ tests = [
 		target: '<div>Una Gran Bretaña <b>moderna</b>.</div>',
 		textTranslations: {
 			'A modern Britain.': 'Una Gran Bretaña moderna.',
-			'A MODERN Britain.': 'Una Gran Bretaña MODERNA.',
-			'A modern BRITAIN.': 'Una GRAN BRETAÑA moderna.'
+			modern: 'Moderno'
 		}
 	},
 	{
@@ -34,8 +34,8 @@ tests = [
 		target: '<p>El perro <b><i>rojo</i></b> <b>grande</b></p>',
 		textTranslations: {
 			'The big red dog': 'El perro rojo grande',
-			'The BIG red dog': 'El perro rojo GRANDE',
-			'The big RED dog': 'El perro ROJO grande'
+			big: 'Grande',
+			red: 'Rojo'
 		}
 	},
 	{
@@ -44,8 +44,8 @@ tests = [
 		target: '<p>Diga que "<i>enladrillo</i> <i><a href="x">baños</a></i>."</p>',
 		textTranslations: {
 			'He said "I tile bathrooms."': 'Diga que "enladrillo baños."',
-			'He said "I TILE bathrooms."': 'Diga que "ENLADRILLO baños."',
-			'He said "I tile BATHROOMS."': 'Diga que "enladrillo BAÑOS."'
+			'I tile': 'Enladrillo',
+			bathrooms: 'Baños"'
 		}
 	},
 	{
@@ -54,7 +54,7 @@ tests = [
 		target: '<p>El perro <b>rojo grande</b></p>',
 		textTranslations: {
 			'The big red dog': 'El perro rojo grande',
-			'The BIG RED dog': 'El perro ROJO GRANDE'
+			'big red': 'Rojo grande'
 		}
 	},
 	{
@@ -63,8 +63,8 @@ tests = [
 		target: '<p>El perro <b>rojo</b> <b>grande</b></p>',
 		textTranslations: {
 			'The big red dog': 'El perro rojo grande',
-			'The BIG red dog': 'El perro rojo GRANDE',
-			'The big RED dog': 'El perro ROJO grande'
+			big: 'Grande',
+			red: 'Rojo'
 		}
 	},
 	{
@@ -73,11 +73,11 @@ tests = [
 		target: '<p>El perro <a href="2">rojo</a> <a href="1">grande</a></p>',
 		textTranslations: {
 			'The big red dog': 'El perro rojo grande',
-			'The BIG red dog': 'El perro rojo GRANDE',
-			'The big RED dog': 'El perro ROJO grande'
+			big: 'Grande',
+			red: 'Rojo'
 		}
 	}
-];
+ ];
 
 QUnit.test( 'Apertium wrapper tests', function ( assert ) {
 	var textTranslations;
@@ -104,7 +104,7 @@ QUnit.test( 'Apertium wrapper tests', function ( assert ) {
 
 	function resumeTests( i ) {
 		var test,
-			apertium =  new CX.Apertium();
+			apertium = new CX.Apertium();
 
 		if ( i >= tests.length ) {
 			return;

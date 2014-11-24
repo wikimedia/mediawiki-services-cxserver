@@ -1,8 +1,7 @@
 'use strict';
 
 var SAXParser = require( 'sax' ).SAXParser,
-	util = require( 'util' ),
-	isInlineAnnotationTag;
+	util = require( 'util' );
 
 /**
  * Find all matches of regex in text, calling callback with each match object
@@ -67,7 +66,7 @@ function getOpenTagHtml( tag ) {
 	}
 	attributes.sort();
 	for ( i = 0, len = attributes.length; i < len; i++ ) {
-		attr = attributes[i];
+		attr = attributes[ i ];
 		html.push( ' ' + esc( attr ) + '="' + escAttr( tag.attributes[ attr ] ) + '"' );
 	}
 	if ( tag.isSelfClosing ) {
@@ -84,9 +83,12 @@ function getOpenTagHtml( tag ) {
  * @return {Object} Cloned tag
  */
 function cloneOpenTag( tag ) {
-	var attr, newTag = { name: tag.name, attributes: {} };
+	var attr, newTag = {
+		name: tag.name,
+		attributes: {}
+	};
 	for ( attr in tag.attributes ) {
-		newTag.attributes[attr] = tag.attributes[attr];
+		newTag.attributes[ attr ] = tag.attributes[ attr ];
 	}
 	return newTag;
 }
@@ -149,6 +151,18 @@ function isReference( tag ) {
 }
 
 /**
+ * Detect whether this is a segment
+ * @param {Object} tag SAX open tag object
+ * @return {boolean} Whether the tag is a mediawiki reference span
+ */
+function isSegment( tag ) {
+	if ( tag.name === 'span' && tag.attributes.class === 'cx-segment' ) {
+		return true;
+	}
+	return false;
+}
+
+/**
  * Determine whether a tag is an inline empty tag
  *
  * @private
@@ -160,49 +174,6 @@ function isInlineEmptyTag( tagName ) {
 	// flow content. See http://www.w3.org/TR/rdfa-in-html/#extensions-to-the-html5-syntax
 	return tagName === 'br' || tagName === 'img' || tagName === 'link' || tagName === 'meta';
 }
-
-/**
- * Determine whether a tag is an inline annotation
- *
- * @private
- * @param {string} tagName The name of the tag (lowercase)
- * @return {boolean} Whether the tag is an inline annotation
- */
-isInlineAnnotationTag = ( function ( tagArray ) {
-	var i, len,
-		nonInlineTags = {};
-	for ( i = 0, len = tagArray.length; i < len; i++ ) {
-		nonInlineTags[ tagArray[ i ] ] = true;
-	}
-	return function ( tagName ) {
-		return !nonInlineTags[ tagName ];
-	};
-}( [
-	'html', 'head', 'body', 'script',
-	// head tags
-	// In HTML5+RDFa, link/meta are actually allowed anywhere in the body, and are to be
-	// treated as void flow content (like <br> and <img>).
-	'title', 'style', 'meta', 'link', 'noscript', 'base',
-	// non-visual content
-	'audio', 'data', 'datagrid', 'datalist', 'dialog', 'eventsource', 'form',
-	'iframe', 'main', 'menu', 'menuitem', 'optgroup', 'option',
-	// paragraph
-	'div', 'p',
-	// tables
-	'table', 'tbody', 'thead', 'tfoot', 'caption', 'th', 'tr', 'td',
-	// lists
-	'ul', 'ol', 'li', 'dl', 'dt', 'dd',
-	// HTML5 heading content
-	'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hgroup',
-	// HTML5 sectioning content
-	'article', 'aside', 'body', 'nav', 'section', 'footer', 'header', 'figure',
-	'figcaption', 'fieldset', 'details', 'blockquote',
-	// other
-	'hr', 'button', 'canvas', 'center', 'col', 'colgroup', 'embed',
-	'map', 'object', 'pre', 'progress', 'video',
-	// non-annotation inline tags
-	'img', 'br'
-] ) );
 
 /**
  * Find the boundaries that lie in each chunk
@@ -225,16 +196,18 @@ function getChunkBoundaryGroups( boundaries, chunks, getLength ) {
 
 	// Get boundaries in order, disregarding the start of the first chunk
 	boundaries = boundaries.slice();
-	boundaries.sort( function ( a, b ) { return a - b; } );
-	while ( boundaries[boundaryPtr] === 0 ) {
+	boundaries.sort( function ( a, b ) {
+		return a - b;
+	} );
+	while ( boundaries[ boundaryPtr ] === 0 ) {
 		boundaryPtr++;
 	}
 	for ( i = 0, len = chunks.length; i < len; i++ ) {
 		groupBoundaries = [];
-		chunk = chunks[i];
+		chunk = chunks[ i ];
 		chunkLength = getLength( chunk );
 		while ( true ) {
-			boundary = boundaries[boundaryPtr];
+			boundary = boundaries[ boundaryPtr ];
 			if ( boundary === undefined || boundary > offset + chunkLength - 1 ) {
 				// beyond the interior of this chunk
 				break;
@@ -285,7 +258,11 @@ function TextBlock( textChunks ) {
 	this.offsets = [];
 	cursor = 0;
 	for ( i = 0, len = this.textChunks.length; i < len; i++ ) {
-		this.offsets[ i ] = { start: cursor, length: this.textChunks[ i ].text.length };
+		this.offsets[ i ] = {
+			start: cursor,
+			length: this.textChunks[ i ].text.length,
+			tags: this.textChunks[ i ].tags
+		};
 		cursor += this.offsets[ i ].length;
 	}
 }
@@ -338,7 +315,7 @@ TextBlock.prototype.getCommonTags = function () {
 			commonTags.splice( tags.length );
 		}
 		for ( j = 0, jLen = commonTags.length; j < jLen; j++ ) {
-			if ( commonTags[ j ] !== tags[ j ] ) {
+			if ( commonTags[ j ].name !== tags[ j ].name ) {
 				// truncate
 				commonTags.splice( j );
 				break;
@@ -382,7 +359,7 @@ TextBlock.prototype.translateTags = function ( targetText, rangeMappings ) {
 		offset = this.offsets[ i ].start;
 		if ( textChunk.text.length > 0 ) {
 			continue;
-		} 
+		}
 		if ( !emptyTextChunks[ offset ] ) {
 			emptyTextChunks[ offset ] = [];
 		}
@@ -391,7 +368,9 @@ TextBlock.prototype.translateTags = function ( targetText, rangeMappings ) {
 	for ( offset in emptyTextChunks ) {
 		emptyTextChunkOffsets.push( offset );
 	}
-	emptyTextChunkOffsets.sort( function ( a, b ) { return a - b; } );
+	emptyTextChunkOffsets.sort( function ( a, b ) {
+		return a - b;
+	} );
 
 	for ( i = 0, iLen = rangeMappings.length; i < iLen; i++ ) {
 		// Copy tags from source text start offset
@@ -440,7 +419,7 @@ TextBlock.prototype.translateTags = function ( targetText, rangeMappings ) {
 	for ( i = 0, iLen = textChunks.length; i < iLen; i++ ) {
 		textChunk = textChunks[ i ];
 		if ( textChunk.start < pos ) {
-			throw new Error( 'Overlappping chunks at pos=' + pos + ', i=' + i );
+			throw new Error( 'Overlappping chunks at pos=' + pos + ', textChunks=' + i + ' start=' + textChunk.start );
 		} else if ( textChunk.start > pos ) {
 			// Unmapped chunk: insert plaintext and adjust offset
 			textChunks.splice( i, 0, {
@@ -488,7 +467,9 @@ TextBlock.prototype.translateTags = function ( targetText, rangeMappings ) {
 		} );
 		pos += tail.length;
 	}
-	return new TextBlock( textChunks.map( function ( x ) { return x.textChunk; } ) );
+	return new TextBlock( textChunks.map( function ( x ) {
+		return x.textChunk;
+	} ) );
 };
 
 /**
@@ -642,14 +623,14 @@ TextBlock.prototype.segment = function ( getBoundaries, getNextId ) {
 	// Setup: currentTextChunks for current segment, and allTextChunks for all segments
 	allTextChunks = [];
 	currentTextChunks = [];
+
 	function flushChunks() {
 		var modifiedTextChunks;
 		if ( currentTextChunks.length === 0 ) {
 			return;
 		}
 		modifiedTextChunks = addCommonTag(
-			currentTextChunks,
-			{
+			currentTextChunks, {
 				name: 'span',
 				attributes: {
 					class: 'cx-segment',
@@ -666,16 +647,18 @@ TextBlock.prototype.segment = function ( getBoundaries, getNextId ) {
 	groups = getChunkBoundaryGroups(
 		getBoundaries( this.getPlainText() ),
 		this.textChunks,
-		function ( textChunk ) { return textChunk.text.length; }
+		function ( textChunk ) {
+			return textChunk.text.length;
+		}
 	);
 
 	offset = 0;
 	for ( i = 0, iLen = groups.length; i < iLen; i++ ) {
-		group = groups[i];
+		group = groups[ i ];
 		textChunk = group.chunk;
 		boundaries = group.boundaries;
 		for ( j = 0, jLen = boundaries.length; j < jLen; j++ ) {
-			relOffset = boundaries[j] - offset;
+			relOffset = boundaries[ j ] - offset;
 			if ( relOffset === 0 ) {
 				flushChunks();
 			} else {
@@ -857,6 +840,11 @@ Doc.prototype.getHtml = function () {
 	for ( i = 0, len = this.items.length; i < len; i++ ) {
 		type = this.items[ i ].type;
 		item = this.items[ i ].item;
+
+		if ( item.attributes && item.attributes.class === 'cx-segment-block' ) {
+			continue;
+		}
+
 		if ( type === 'open' ) {
 			tag = item;
 			html.push( getOpenTagHtml( tag ) );
@@ -1060,13 +1048,13 @@ Builder.prototype.finishTextBlock = function () {
 		return;
 	}
 	for ( i = 0, len = this.textChunks.length; i < len; i++ ) {
-		textChunk = this.textChunks[i];
+		textChunk = this.textChunks[ i ];
 		if ( textChunk.inlineContent || textChunk.text.match( /\S/ ) ) {
 			whitespaceOnly = false;
 			whitespace = undefined;
 			break;
 		} else {
-			whitespace.push( this.textChunks[i].text );
+			whitespace.push( this.textChunks[ i ].text );
 		}
 	}
 	if ( whitespaceOnly ) {
@@ -1083,11 +1071,13 @@ Builder.prototype.finishTextBlock = function () {
  *
  * @constructor
  */
-function Parser() {
+function Parser( options ) {
 	SAXParser.call( this, false, {
 		lowercase: true
 	} );
+	this.options = options || {};
 }
+
 util.inherits( Parser, SAXParser );
 
 Parser.prototype.init = function () {
@@ -1096,12 +1086,20 @@ Parser.prototype.init = function () {
 };
 
 Parser.prototype.onopentag = function ( tag ) {
+	if ( this.options.isolateSegments && isSegment( tag ) ) {
+		this.builder.pushBlockTag( {
+			name: 'div',
+			attributes: {
+				class: 'cx-segment-block'
+			}
+		} );
+	}
 	if ( isReference( tag ) ) {
 		// Start a reference: create a child builder, and move into it
 		this.builder = this.builder.createChildBuilder( tag );
 	} else if ( isInlineEmptyTag( tag.name ) ) {
 		this.builder.addInlineContent( tag );
-	} else if ( isInlineAnnotationTag( tag.name ) ) {
+	} else if ( this.isInlineAnnotationTag( tag.name ) ) {
 		this.builder.pushInlineAnnotationTag( tag );
 	} else {
 		this.builder.pushBlockTag( tag );
@@ -1109,11 +1107,15 @@ Parser.prototype.onopentag = function ( tag ) {
 };
 
 Parser.prototype.onclosetag = function ( tagName ) {
-	var isAnn = isInlineAnnotationTag( tagName );
+	var tag,
+		isAnn = this.isInlineAnnotationTag( tagName );
 	if ( isInlineEmptyTag( tagName ) ) {
 		return;
 	} else if ( isAnn && this.builder.inlineAnnotationTags.length > 0 ) {
-		this.builder.popInlineAnnotationTag( tagName );
+		tag = this.builder.popInlineAnnotationTag( tagName );
+		if ( this.options.isolateSegments && tag.attributes && tag.attributes.class === 'cx-segment' ) {
+			this.builder.popBlockTag( 'div' );
+		}
 	} else if ( isAnn && this.builder.parent !== null ) {
 		// In a sub document: should be a span that closes a reference
 		if ( tagName !== 'span' ) {
@@ -1134,13 +1136,62 @@ Parser.prototype.ontext = function ( text ) {
 	this.builder.addTextChunk( text );
 };
 
+Parser.prototype.blockTags = [
+	'html', 'head', 'body', 'script',
+	// head tags
+	// In HTML5+RDFa, link/meta are actually allowed anywhere in the body, and are to be
+	// treated as void flow content (like <br> and <img>).
+	'title', 'style', 'meta', 'link', 'noscript', 'base',
+	// non-visual content
+	'audio', 'data', 'datagrid', 'datalist', 'dialog', 'eventsource', 'form',
+	'iframe', 'main', 'menu', 'menuitem', 'optgroup', 'option',
+	// paragraph
+	'div', 'p',
+	// tables
+	'table', 'tbody', 'thead', 'tfoot', 'caption', 'th', 'tr', 'td',
+	// lists
+	'ul', 'ol', 'li', 'dl', 'dt', 'dd',
+	// HTML5 heading content
+	'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hgroup',
+	// HTML5 sectioning content
+	'article', 'aside', 'body', 'nav', 'section', 'footer', 'header', 'figure',
+	'figcaption', 'fieldset', 'details', 'blockquote',
+	// other
+	'hr', 'button', 'canvas', 'center', 'col', 'colgroup', 'embed',
+	'map', 'object', 'pre', 'progress', 'video',
+	// non-annotation inline tags
+	'img', 'br'
+ ];
+
+/**
+ * Determine whether a tag is an inline annotation
+ *
+ * @private
+ * @param {string} tagName The name of the tag (lowercase)
+ * @return {boolean} Whether the tag is an inline annotation
+ */
+Parser.prototype.isInlineAnnotationTag = function ( tagName ) {
+	var i, len,
+		nonInlineTags = {};
+
+	for ( i = 0, len = this.blockTags.length; i < len; i++ ) {
+		nonInlineTags[ this.blockTags[ i ] ] = true;
+	}
+	if ( tagName === 'span' && this.options.inlineBlockAsBlock ) {
+		return false;
+	}
+	return !nonInlineTags[ tagName ];
+};
+
 /**
  * Parser to normalize XML
  * @class
  * @constructor
  */
 function Normalizer() {
-	SAXParser.call( this, false, { lowercase: true } );
+	SAXParser.call( this, false, {
+		lowercase: true
+	} );
 }
 util.inherits( Normalizer, SAXParser );
 

@@ -1,9 +1,9 @@
 var LinearDoc = require( '../lineardoc/LinearDoc' ),
-	TOKENS = /[\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+(?:[·'][\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+)?|[^\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+/g,
-	IS_WORD = /^[\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+(?:[·'][\wáàçéèíïóòúüñÁÀÇÉÈÍÏÓÒÚÜÑ]+)?$/;
+	Q = require( 'q' ),
+	SubSequenceMatcher = require( './annotationmapper/SubsequenceMatcher.js' );
 
 /**
- * MTClient - Parent class for all MT clients.
+ * MTClient - Generic machine translation client.
  * @class
  *
  * @constructor
@@ -14,32 +14,168 @@ function MTClient() {
 }
 
 /**
- * Split text into tokens
- * @param {string} lang Language code
- * @param {string} text Text to split
- * @return {Object[]} List of tokens
- * @return[].text Text of the token
- * @return[].isWord Whether the token is a word
+ * Translate the given content between the language pairs.
+ *
+ * @param {string} sourceLang Source language code
+ * @param {string} targetLang Target language code
+ * @param {string} content Content to translate
+ * @param {string} content Content to translate
+ * @param {string} [format] Format of the content- html or text. Default is html.
+ * @return {Object} Deferred promise: Target language text
  */
-MTClient.prototype.getTokens = function ( lang, text ) {
-	// TODO: implement for other languages than English/Spanish/Catalan
-	return text.match( TOKENS ).map( function ( tokenText ) {
-		return {
-			text: tokenText,
-			isWord: !!tokenText.match( IS_WORD )
-		};
-	} );
+MTClient.prototype.translate = function ( sourceLang, targetLang, content, format ) {
+	if ( format === 'text' ) {
+		return this.translateText( sourceLang, targetLang, content );
+	} else {
+		return this.translateHtml( sourceLang, targetLang, content );
+	}
 };
 
 /**
- * Language-aware uppercasing
- * @param {string} lang Language code
- * @param {string} text Text to uppercase
- * @return {string} Upper-cased text (possibly identical)
+ * Translate marked-up text
+ * @param {string} sourceLang Source language code
+ * @param {string} targetLang Target language code
+ * @param {string} sourceText Source html
+ * @return {Object} Deferred promise: Translated html
  */
-MTClient.prototype.toUpperCase = function ( lang, text ) {
-	// stub: just use the javascript ASCII method for now
-	return text.toUpperCase();
+MTClient.prototype.translateHtml = function ( sourceLang, targetLang, sourceHtml ) {
+	var i, len, targetDoc, itemPromises, deferred,
+		mtClient = this;
+
+	this.buildSourceDoc( sourceHtml );
+	// Clone and adapt sourceDoc
+	targetDoc = new LinearDoc.Doc( this.sourceDoc.wrapperTag );
+	itemPromises = [];
+
+	function translateItemDeferred( deferred, item ) {
+		itemPromises.push( deferred.promise );
+		if ( item.type !== 'textblock' ) {
+			deferred.resolve( item );
+			return;
+		}
+		mtClient.translateTextWithTagOffsets(
+			sourceLang,
+			targetLang,
+			item.item.getPlainText(),
+			item.item.getTagOffsets()
+		).then( function ( translated ) {
+			var newTextBlock;
+			try {
+				newTextBlock = item.item.translateTags(
+					translated.text, translated.rangeMappings
+				);
+				deferred.resolve( {
+					type: 'textblock',
+					item: newTextBlock
+				} );
+			} catch ( ex ) {
+				deferred.reject( ex );
+			}
+		}, function ( error ) {
+			deferred.reject( error );
+		} );
+	}
+	for ( i = 0, len = this.sourceDoc.items.length; i < len; i++ ) {
+		translateItemDeferred( Q.defer(), this.sourceDoc.items[ i ] );
+	}
+	deferred = Q.defer();
+	Q.all( itemPromises ).spread( function () {
+		targetDoc.items = Array.prototype.slice.call( arguments, 0 );
+		deferred.resolve( targetDoc.getHtml() );
+	}, function ( error ) {
+		deferred.reject( error );
+	} );
+
+	return deferred.promise;
+};
+
+/**
+ * Translate text, using case variants to map tag offsets
+ * @param {string} sourceLang Source language code
+ * @param {string} targetLang Target language code
+ * @param {string} sourceText Source plain text
+ * @param {Object[]} tagOffsets start and length for each annotation chunk
+ * @return {Object} Deferred promise: Translated plain text and range mappings
+ */
+MTClient.prototype.translateTextWithTagOffsets = function ( sourceLang, targetLang, sourceText, tagOffsets ) {
+	var subSequences, sourceLines, m, preSpace, postSpace, trimmedSourceLines, deferred,
+		self = this;
+
+	subSequences = this.getSubSequences( sourceLang, sourceText, tagOffsets );
+	sourceLines = subSequences.map( function ( variant ) {
+		return variant.text;
+	} );
+	sourceLines.splice( 0, 0, sourceText );
+	// Don't push leading and trailing whitespace through MT client
+	m = sourceText.match( /^(\s*).*?(\s*)$/ );
+	preSpace = m[ 1 ];
+	postSpace = m[ 2 ];
+	trimmedSourceLines = sourceLines.map( function ( line ) {
+		return line.trim();
+	} );
+
+	deferred = Q.defer();
+	// Join segments with a string that will definitely break sentences and be preserved
+	self.translateLines(
+		sourceLang,
+		targetLang,
+		trimmedSourceLines
+	).then( function ( targetLines ) {
+		var targetText, rangeMappings;
+
+		try {
+			targetText = targetLines.splice( 0, 1 )[ 0 ];
+			// restore trailing spaces if any.
+			targetText = preSpace + targetText + postSpace;
+			rangeMappings = self.getSequenceMappings(
+				targetLang,
+				subSequences,
+				targetText,
+				targetLines
+			);
+		} catch ( ex ) {
+			deferred.reject( ex );
+			return;
+		}
+		deferred.resolve( {
+			text: targetText,
+			rangeMappings: rangeMappings
+		} );
+	}, function ( error ) {
+		deferred.reject( error );
+	} );
+
+	return deferred.promise;
+};
+
+/**
+ * Translate multiple lines of plaintext
+ * @param {string} sourceLang Source language code
+ * @param {string} targetLang Target language code
+ * @param {string[]} sourceLines Source plaintext lines
+ * @return {Object} Deferred promise: Translated plaintext lines
+ */
+MTClient.prototype.translateLines = function ( sourceLang, targetLang, sourceLines ) {
+	var sourceLinesText,
+		deferred = Q.defer();
+
+	// Join lines into single string. Separator must break sentences and pass through unchanged
+	// Using Devangari seperator Double Danda twice.
+	sourceLinesText = sourceLines.join( '.॥॥.' );
+
+	this.translateText(
+		sourceLang,
+		targetLang,
+		sourceLinesText
+	).then( function ( targetLinesText ) {
+		var targetText = targetLinesText
+			.replace( /^\s+|\s+$/g, '' )
+			.split( /\.॥॥\./g );
+		deferred.resolve( targetText );
+	}, function ( error ) {
+		deferred.reject( error );
+	} );
+	return deferred.promise;
 };
 
 /**
@@ -52,181 +188,155 @@ MTClient.prototype.toUpperCase = function ( lang, text ) {
  * @return[].length {number} Length of uppercasing
  * @return[].text {string} Text variant with uppercasing
  */
-MTClient.prototype.getCaseVariants = function ( lang, sourceText, annotationOffsets ) {
-	var i, len, offset, chunk, upperChunk, variantText,
-		caseVariants = [];
+MTClient.prototype.getSubSequences = function ( lang, sourceText, annotationOffsets ) {
+	var i, len, offset, subSequences = [];
 
 	for ( i = 0, len = annotationOffsets.length; i < len; i++ ) {
 		offset = annotationOffsets[ i ];
-		chunk = sourceText.slice( offset.start, offset.start + offset.length );
-		upperChunk = this.toUpperCase( lang, chunk );
-		if ( upperChunk === chunk ) {
-			// Already uppercased; can't detect change
-			continue;
-		}
-		variantText = [
-			sourceText.slice( 0, offset.start ),
-			upperChunk,
-			sourceText.slice( offset.start + offset.length )
-		].join( '' );
-		caseVariants.push( {
+		subSequences.push( {
 			start: offset.start,
 			length: offset.length,
-			text: variantText
+			text: sourceText.slice( offset.start, offset.start + offset.length )
 		} );
 	}
-	return caseVariants;
+	return subSequences;
 };
 
 /**
- * Finds offsets of ranges at which tokens have changed to uppercase
- * @param {string} text Original text
- * @param {string} text Changed text
- * @return {Object[]} start and length for each changed range
+ * Check if a range already exist in the array of ranges already located.
+ * A range is start position and length indicating position of certain text
+ * in a bigger text.
+ * This is not just a membership check. If the range we are checking
+ * falls under the start and end position of an already existing range, then also
+ * we consider it as an overlapping range.
+ * For example [start:5, length:4] and [start:6, length:3] overlaps.
+ *
+ * @param {Object} range
+ * @parama {Object[]} rangeArray
+ * @return {boolean} Whether the range overlap or exist in any range in the given
+ *   range array
  */
-MTClient.prototype.getChangedCaseRanges = function ( lang, originalText, changedText ) {
-	var orig, upper, changed, len, ranges, start, startChar, end, endChar;
+function isOverlappingRange( range, rangeArray ) {
+	var i;
 
-	orig = this.getTokens( lang, originalText );
-	upper = this.getTokens( lang, this.toUpperCase( lang, originalText ) );
-	changed = this.getTokens( lang, changedText );
-
-	len = orig.length;
-	if ( len !== upper.length || len !== changed.length ) {
-		throw new Error( 'token length mismatch' );
+	for ( i = 0; i < rangeArray.length; i++ ) {
+		if ( rangeArray[ i ].start <= range.start &&
+			rangeArray[ i ].start + rangeArray[ i ].length >= range.start + range.length
+		) {
+			return true;
+		}
 	}
 
-	// Find start/end of changed text token ranges. Track char ranges too, and store these.
-	ranges = [];
-	// start token
-	start = 0;
-	// start char
-	startChar = 0;
-
-	while ( true ) {
-		// Skip to first changed word token
-		while ( start < len && ( !( orig[ start ].isWord ) ||
-			(
-				orig[ start ].text === changed[ start ].text ||
-				upper[ start ].text !== changed[ start ].text
-			)
-		) ) {
-			startChar += orig[ start ].text.length;
-			start++;
-		}
-		if ( start >= len ) {
-			break;
-		}
-		// Find last consecutive changed non-word token
-		end = start;
-		endChar = startChar + orig[ end ].text.length;
-
-		while ( end < len && ( !( orig[ end ].isWord ) ||
-			(
-				orig[ end ].text !== upper[ end ].text &&
-				upper[ end ].text === changed[ end ].text
-			)
-		) ) {
-			end++;
-			if ( end < len ) {
-				endChar += orig[ end ].text.length;
-			}
-		}
-		do {
-			if ( end < len ) {
-				endChar -= orig[ end ].text.length;
-			}
-			end--;
-		} while ( !( orig[ end ].isWord ) );
-		// Store ranges
-		ranges.push( {
-			start: startChar,
-			length: endChar - startChar
-		} );
-		start = end + 1;
-		startChar = endChar;
-	}
-	return ranges;
-};
+	return false;
+}
 
 /**
- * Calculate range mappings based on the target text variants
+ * Calculate range mappings based on the target text variants.
+ *
  * @param {string} targetLang The target language
- * @param {Object[]} sourceVariants The start and length of each variation
- * @param {
- * @param {Object} annotationOffsets The start and length of each offset, by sourceVariantId
+ * @param {Object[]} subSequences The start and length of each subsequence
+ * @param {string} targetText The translated text
+ * @param {Object} targetLines Translation of each subsequences
+ * @retun {Object[]} The location of source and translation sequences in the text.
+ * @return[i].source.start {number} Start position of source subSequence in the text
+ * @return[i].source.length {number} Length of source subSequence in the text.
+ * @return[i].target.start {number} Start position of sequence in the text
+ * @return[i].target.length {number} Length of matched sequence in the text.
  */
-MTClient.prototype.getRangeMappings = function ( targetLang, sourceVariants, targetText, targetLines ) {
-	var i, iLen, j, jLen, changedCaseRanges, sourceRange,
-		rangeMappings = [];
-	if ( sourceVariants.length !== targetLines.length ) {
+MTClient.prototype.getSequenceMappings = function ( targetLang, subSequences, targetText, targetLines ) {
+	var i, iLen, targetRange, sourceRange, subSequence,
+		rangeMappings = [],
+		targetRanges = [],
+		occurances = {};
+
+	if ( subSequences.length !== targetLines.length ) {
+		// We must have translation for all subSequences.
 		throw new Error( 'Translation variants length mismatch' );
 	}
-	for ( i = 0, iLen = sourceVariants.length; i < iLen; i++ ) {
+
+	for ( i = 0, iLen = subSequences.length; i < iLen; i++ ) {
+		subSequence = subSequences[ i ];
 		sourceRange = {
-			start: sourceVariants[ i ].start,
-			length: sourceVariants[ i ].length
+			start: subSequence.start,
+			length: subSequence.length
 		};
-		changedCaseRanges = this.getChangedCaseRanges(
-			targetLang,
-			targetText,
-			targetLines[ i ]
+		// Keep track of repeated occurances of a subsequence in the text. A word can repeat
+		// in a translation block.
+		occurances[ subSequence.text ] =
+			occurances[ subSequence.text ] === undefined ? 0 : occurances[ subSequence.text ] + 1;
+		// Find the position of the translated subsequence in translated text.
+		// This involves a non-trivial fuzzy matching algorithm
+		targetRange = this.findSubSequence(
+			targetText, targetLines[ i ], targetLang, occurances[ subSequence.text ]
 		);
-		for ( j = 0, jLen = changedCaseRanges.length; j < jLen; j++ ) {
+
+		if ( targetRange && !isOverlappingRange( targetRange, targetRanges ) ) {
+			// targetRanges keep track of all ranges we located. Used for overlap
+			// detection.
+			targetRanges.push( targetRange );
 			rangeMappings.push( {
 				source: sourceRange,
-				target: changedCaseRanges[ j ]
+				target: targetRange
 			} );
 		}
 	}
+
 	return rangeMappings;
 };
 
+/**
+ * Locate the given sequence in the translated text.
+ * Example:
+ *   Searching  'tropical' in 'They are subtropical and tropical flowers.', 'tropical',
+ *   retruns { start: 12, length: 8 }
+ *
+ * @param {string} text The translated text.
+ * @param {string} sequence The search string.
+ * @param {string} language Language of the text. Used for language specific matching.
+ * @param {number} occurance Pass 1 for first occurance, 2 for second occurance, so on.
+ * @retun {Object} The location of the sequence in the text.
+ * @return.start {number} Start position of sequence in the text
+ * @return.length {number} Length of matched sequence in the text.
+ */
+MTClient.prototype.findSubSequence = function ( text, sequence, language, occurance ) {
+	var indices, matcher = new SubSequenceMatcher( language );
+
+	indices = matcher.findFuzzyMatch( text, sequence );
+	// Find the nth occurance position
+	if ( !indices || indices.length < occurance ) {
+		return null;
+	} else {
+		return indices[ occurance ];
+	}
+};
+
+/**
+ * Build the LinearDoc for the given source html
+ *
+ * @param {string} sourceHtml The html content
+ */
 MTClient.prototype.buildSourceDoc = function ( sourceHtml ) {
 	var parser;
 
 	if ( this.sourceDoc ) {
 		return;
 	}
+
 	if ( !sourceHtml ) {
 		throw new Error( 'Invalid sourceHtml' );
 	}
-	parser = new LinearDoc.Parser();
+
+	parser = new LinearDoc.Parser( {
+		// For the proper annotation mapping between source and translated content,
+		// we need to treat each sentence as isolated.
+		// In other words, trying to find mappings in a sentence context has better results
+		// compared to the mapping done in a whole paragraph content.
+		isolateSegments: true
+	} );
 	parser.init();
 	parser.write( sourceHtml );
 	this.sourceHTML = sourceHtml;
 	this.sourceDoc = parser.builder.doc;
-};
-
-MTClient.prototype.getSubSequencesAsText = function () {
-	var i, j, sequences, subsquences = [];
-
-	if ( !this.sourceDoc ) {
-		throw new Error( 'Build the sourceDoc model by calling buildSourceDoc.' );
-	}
-	sequences = this.sourceDoc.getSubSequences();
-	for ( i = 0; i < sequences.length; i++ ) {
-		for ( j = 0; j < sequences[ i ].length; j++ ) {
-			subsquences.push( sequences[ i ][ j ].text );
-		}
-	}
-	return subsquences;
-};
-
-/**
- * Get the plain text version of given html content.
- * @return {string} The plain text of given html content.
- */
-MTClient.prototype.toPlainText = function () {
-	var i, len, item, plainText = [];
-	this.buildSourceDoc( this.sourceHtml );
-	for ( i = 0, len = this.sourceDoc.items.length; i < len; i++ ) {
-		item = this.sourceDoc.items[ i ];
-		if ( item.type === 'textblock' ) {
-			plainText.push( item.item.getPlainText() );
-		}
-	}
-	return plainText.join( '' );
 };
 
 module.exports = MTClient;

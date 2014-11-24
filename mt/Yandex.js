@@ -11,7 +11,10 @@ function Yandex() {
 util.inherits( Yandex, MTClient );
 
 /**
- * Translate plain text with Yandex.
+ * Translate html or plain text content with Yandex.
+ * Yandex is capable of translating plain text and html with
+ * annotations mapping (keeps markup retained in translated content).
+ * Hence overriding translate method of MTClient.
  *
  * @param {string} sourceLang Source language code
  * @param {string} targetLang Target language code
