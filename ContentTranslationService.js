@@ -117,7 +117,7 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 		return;
 	}
 
-	mtClient = mtClients[ provider ];
+	mtClient = new mtClients[ provider ]();
 
 	sourceHtmlChunks = [ '<div>' ];
 	reqLength = 0;

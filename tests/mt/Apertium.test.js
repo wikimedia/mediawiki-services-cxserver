@@ -83,12 +83,13 @@ QUnit.test( 'Apertium wrapper tests', function ( assert ) {
 	var textTranslations;
 
 	// Fake the actual Apertium call
-	CX.Apertium.translateLinesApertium = function ( sourceLang, targetLang, sourceLines ) {
+	CX.Apertium.prototype.translateLines = function ( sourceLang, targetLang, sourceLines ) {
 		var deferred = Q.defer();
+
 		setTimeout( function () {
 			var targetLines;
 			try {
-				sourceLines.map( function ( line ) {
+				targetLines = sourceLines.map( function ( line ) {
 					return textTranslations[ line ] || 'X' + line + 'X';
 				} );
 				deferred.resolve( targetLines );
@@ -102,7 +103,9 @@ QUnit.test( 'Apertium wrapper tests', function ( assert ) {
 	QUnit.expect( tests.length );
 
 	function resumeTests( i ) {
-		var test;
+		var test,
+			apertium =  new CX.Apertium();
+
 		if ( i >= tests.length ) {
 			return;
 		}
@@ -110,8 +113,7 @@ QUnit.test( 'Apertium wrapper tests', function ( assert ) {
 		textTranslations = test.textTranslations;
 
 		QUnit.stop();
-
-		CX.Apertium.translate( 'xx', 'yy', test.source ).then( function ( target ) {
+		apertium.translate( 'en', 'es', test.source ).then( function ( target ) {
 			assert.strictEqual(
 				target,
 				test.target,
