@@ -15,6 +15,7 @@
 	"eu": "eus",
 	"fr": "fra",
 	"gl": "glg",
+	"hi": "hin",
 	"hr": "hbs_HR",
 	"id": "ind",
 	"is": "isl",
@@ -34,5 +35,6 @@
 	"sl": "slv",
 	"sr": "hbs_SR",
 	"sv": "swe",
-	"tt": "tat"
+	"tt": "tat",
+	"ur": "urd"
 }
