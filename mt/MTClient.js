@@ -1,4 +1,4 @@
-var LinearDoc = require( '../lineardoc/LinearDoc' ),
+var LinearDoc = require( '../lineardoc' ),
 	Q = require( 'q' ),
 	SubSequenceMatcher = require( './annotationmapper/SubsequenceMatcher.js' );
 

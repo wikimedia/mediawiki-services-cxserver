@@ -9,7 +9,7 @@
 
 'use strict';
 
-var LinearDoc = require( '../lineardoc/LinearDoc' ),
+var LinearDoc = require( '../lineardoc' ),
 	segmenters = require( __dirname + '/languages' ).Segmenters;
 
 function CXSegmenter( content, language ) {

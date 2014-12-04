@@ -1,4 +1,4 @@
-var findAll = require( '../../lineardoc/LinearDoc' ).findAll;
+var findAll = require( '../../lineardoc' ).Utils.findAll;
 
 /**
  * Test a possible Hindi sentence boundary match

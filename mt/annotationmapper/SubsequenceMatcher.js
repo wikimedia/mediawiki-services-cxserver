@@ -118,11 +118,4 @@ SubSequenceMatcher.prototype.findFuzzyMatch = function ( text, substring ) {
 	return indices;
 };
 
-/*
-var s = new SubSequenceMatcher( 'en' );
-console.log( s.getNGrams( 'a b c d', 2 ) );
-console.log( s.findFuzzyMatch( 'The quick brown fox jumps over the lazy dog', 'jumbs' ) );
-console.log( s.findFuzzyMatch( 'The quick brown fox jumps over the lazy dog', 'jumbs ovar' ) );
-console.log( s.findFuzzyMatch( 'The quick brown fox "jumps over" the lazy dog', 'jumbs ovar' ) );
-*/
 module.exports = SubSequenceMatcher;

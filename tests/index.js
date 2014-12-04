@@ -17,7 +17,6 @@ qunit.setup( {
 		namespace: 'CX'
 	}
 } );
-
 qunit.run( {
 	tests: process.argv[ 2 ] || tests
 }, function ( err, report ) {
