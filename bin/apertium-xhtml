@@ -22,7 +22,7 @@ process.stdin.on( 'data', function( data ) {
 	sourceHtml.push( data );
 } );
 process.stdin.on( 'end', function() {
-	Apertium.translate(
+	new Apertium().translate(
 		sourceLang,
 		targetLang,
 		sourceHtml.join( '' )
