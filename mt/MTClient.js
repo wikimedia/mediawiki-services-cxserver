@@ -1,5 +1,6 @@
-var LinearDoc = require( '../lineardoc' ),
+var LinearDoc = require( __dirname + '/../lineardoc' ),
 	Q = require( 'q' ),
+	logger = require( __dirname + '/../utils/Logger.js' ),
 	SubSequenceMatcher = require( './annotationmapper/SubsequenceMatcher.js' );
 
 /**
@@ -141,8 +142,10 @@ MTClient.prototype.translateTextWithTagOffsets = function ( sourceLang, targetLa
 				targetLines
 			);
 		} catch ( ex ) {
-			deferred.reject( ex );
-			return;
+			// If annotation mapping fails for any reason, return translated text
+			// without annotations.
+			logger.error( 'Error while mapping annotations: ', ex.stack );
+			rangeMappings = {};
 		}
 		deferred.resolve( {
 			text: targetText,
