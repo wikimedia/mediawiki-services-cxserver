@@ -98,7 +98,7 @@ MTClient.prototype.translateHtml = function ( sourceLang, targetLang, sourceHtml
  * @return {Object} Deferred promise: Translated plain text and range mappings
  */
 MTClient.prototype.translateTextWithTagOffsets = function ( sourceLang, targetLang, sourceText, tagOffsets ) {
-	var subSequences, sourceLines, m, preSpace, postSpace, trimmedSourceLines, deferred,
+	var subSequences, sourceLines, i, m, preSpaces, postSpaces, trimmedSourceLines, deferred,
 		self = this;
 
 	subSequences = this.getSubSequences( sourceLang, sourceText, tagOffsets );
@@ -106,13 +106,18 @@ MTClient.prototype.translateTextWithTagOffsets = function ( sourceLang, targetLa
 		return variant.text;
 	} );
 	sourceLines.splice( 0, 0, sourceText );
-	// Don't push leading and trailing whitespace through MT client
-	m = sourceText.match( /^(\s*).*?(\s*)$/ );
-	preSpace = m[ 1 ];
-	postSpace = m[ 2 ];
-	trimmedSourceLines = sourceLines.map( function ( line ) {
-		return line.trim();
-	} );
+
+	// Strip and store leading/trailing whitespace before sending text to MT server
+	preSpaces = [];
+	postSpaces = [];
+	trimmedSourceLines = [];
+	for ( i = 0; i < sourceLines.length; i++ ) {
+		// Search for zero or more leading and trailing spaces. This will always match.
+		m = sourceLines[ i ].match( /^(\s*)(.*?)(\s*)$/ );
+		preSpaces[ i ] = m[ 1 ];
+		trimmedSourceLines[ i ] = m[ 2 ];
+		postSpaces[ i ] = m[ 3 ];
+	}
 
 	deferred = Q.defer();
 	// Join segments with a string that will definitely break sentences and be preserved
@@ -120,13 +125,15 @@ MTClient.prototype.translateTextWithTagOffsets = function ( sourceLang, targetLa
 		sourceLang,
 		targetLang,
 		trimmedSourceLines
-	).then( function ( targetLines ) {
-		var targetText, rangeMappings;
+	).then( function ( unnormalizedTargetLines ) {
+		var targetLines, targetText, rangeMappings;
 
+		// Restore leading/trailing whitespace from source
+		targetLines = unnormalizedTargetLines.map( function ( line, i ) {
+			return preSpaces[ i ] + line.replace( /^\s+|\s+$/g, '' ) + postSpaces[ i ];
+		} );
 		try {
 			targetText = targetLines.splice( 0, 1 )[ 0 ];
-			// restore trailing spaces if any.
-			targetText = preSpace + targetText + postSpace;
 			rangeMappings = self.getSequenceMappings(
 				targetLang,
 				subSequences,
@@ -150,6 +157,8 @@ MTClient.prototype.translateTextWithTagOffsets = function ( sourceLang, targetLa
 
 /**
  * Translate multiple lines of plaintext
+ *
+ * The output may need normalizing for leading/trailing whitespace etc.
  * @param {string} sourceLang Source language code
  * @param {string} targetLang Target language code
  * @param {string[]} sourceLines Source plaintext lines
@@ -168,9 +177,7 @@ MTClient.prototype.translateLines = function ( sourceLang, targetLang, sourceLin
 		targetLang,
 		sourceLinesText
 	).then( function ( targetLinesText ) {
-		var targetText = targetLinesText
-			.replace( /^\s+|\s+$/g, '' )
-			.split( /\.॥॥\./g );
+		var targetText = targetLinesText.split( /\.॥॥\./g );
 		deferred.resolve( targetText );
 	}, function ( error ) {
 		deferred.reject( error );
