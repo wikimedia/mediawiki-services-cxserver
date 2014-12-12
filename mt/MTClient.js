@@ -247,14 +247,14 @@ function isOverlappingRange( range, rangeArray ) {
 /**
  * Calculate range mappings based on the target text variants.
  *
- * @param {string} targetLang The target language
- * @param {Object[]} subSequences The start and length of each subsequence
- * @param {string} targetText The translated text
- * @param {Object} targetLines Translation of each subsequences
- * @retun {Object[]} The location of source and translation sequences in the text.
- * @return[i].source.start {number} Start position of source subSequence in the text
+ * @param {string} targetLang The target language.
+ * @param {Object[]} subSequences The start and length of each subsequence.
+ * @param {string} targetText The translated text.
+ * @param {Object} targetLines Translation of each subsequences.
+ * @return {Object[]} The location of source and translation sequences in the text.
+ * @return[i].source.start {number} Start position of source subSequence in the text.
  * @return[i].source.length {number} Length of source subSequence in the text.
- * @return[i].target.start {number} Start position of sequence in the text
+ * @return[i].target.start {number} Start position of sequence in the text.
  * @return[i].target.length {number} Length of matched sequence in the text.
  */
 MTClient.prototype.getSequenceMappings = function ( targetLang, subSequences, targetText, targetLines ) {
@@ -301,14 +301,14 @@ MTClient.prototype.getSequenceMappings = function ( targetLang, subSequences, ta
  * Locate the given sequence in the translated text.
  * Example:
  *   Searching  'tropical' in 'They are subtropical and tropical flowers.', 'tropical',
- *   retruns { start: 12, length: 8 }
+ *   returns { start: 12, length: 8 }
  *
  * @param {string} text The translated text.
  * @param {string} sequence The search string.
  * @param {string} language Language of the text. Used for language specific matching.
  * @param {number} occurance Pass 1 for first occurance, 2 for second occurance, so on.
- * @retun {Object} The location of the sequence in the text.
- * @return.start {number} Start position of sequence in the text
+ * @return {Object} The location of the sequence in the text.
+ * @return.start {number} Start position of sequence in the text.
  * @return.length {number} Length of matched sequence in the text.
  */
 MTClient.prototype.findSubSequence = function ( text, sequence, language, occurance ) {

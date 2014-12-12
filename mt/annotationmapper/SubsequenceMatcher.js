@@ -50,7 +50,7 @@ SubSequenceMatcher.prototype.getNGrams = function ( str, n ) {
  * Approximately compare two strings
  * @param {string} string1
  * @param {string} string2
- * @retun {boolean}
+ * @return {boolean}
  */
 SubSequenceMatcher.prototype.isApproximateEqual = function ( string1, string2 ) {
 	var distance = levenshteinDistance( string1, string2 );
@@ -141,8 +141,8 @@ function comparePositions( positionA, positionB ) {
 
 /**
  * Find the best match among candidate positions by longest match.
- * @param {Object[]} positions
- * @retun {Object} best match position.
+ * @param {Object[]} positions.
+ * @return {Object} best match position.
  */
 SubSequenceMatcher.prototype.bestMatch = function ( positions ) {
 	positions.sort( comparePositions );
