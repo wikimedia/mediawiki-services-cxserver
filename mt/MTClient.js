@@ -73,6 +73,7 @@ MTClient.prototype.translateHtml = function ( sourceLang, targetLang, sourceHtml
 				deferred.reject( ex );
 			}
 		}, function ( error ) {
+			logger.error( error.toString() );
 			deferred.reject( error );
 		} );
 	}
@@ -153,6 +154,7 @@ MTClient.prototype.translateTextWithTagOffsets = function ( sourceLang, targetLa
 			rangeMappings: rangeMappings
 		} );
 	}, function ( error ) {
+		logger.error( error.toString() );
 		deferred.reject( error );
 	} );
 
@@ -184,6 +186,7 @@ MTClient.prototype.translateLines = function ( sourceLang, targetLang, sourceLin
 		var targetText = targetLinesText.split( /\.॥॥\./g );
 		deferred.resolve( targetText );
 	}, function ( error ) {
+		logger.error( error.toString() );
 		deferred.reject( error );
 	} );
 	return deferred.promise;
