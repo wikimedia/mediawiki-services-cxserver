@@ -78,6 +78,7 @@ SubSequenceMatcher.prototype.findFuzzyMatch = function ( text, substring ) {
 		return null;
 	}
 
+	//console.log( 'Searching [' + substring + '] in [' + text + ']' );
 	substringNGrams = this.getWords( substring );
 	substringWordsLength = substringNGrams.length;
 	textNGrams = this.getNGrams( text, substringNGrams.length );
@@ -91,6 +92,12 @@ SubSequenceMatcher.prototype.findFuzzyMatch = function ( text, substring ) {
 			if ( this.isApproximateEqual( word, substringNGrams[ j ] ) ) {
 				match = !match ? word : match + ' ' + word;
 			} else {
+				// The match sequence broke.
+				// Example:
+				// Sarching [editor de página del editorial] in [the new york times, el cual tiene un editor
+				// ejecutivo sobre las páginas noticiosas y un editor de página del editorial encima páginas de opinión.],
+				// [editor ejecutivo] will be the match till here. We do not ignore that match, but will look for better
+				// matches.
 				break;
 			}
 		}
@@ -115,7 +122,31 @@ SubSequenceMatcher.prototype.findFuzzyMatch = function ( text, substring ) {
 
 		startIndex = index + match.length;
 	}
+
 	return indices;
+};
+
+/**
+ * Sort function for maching positions based on length.
+ */
+function comparePositions( positionA, positionB ) {
+	if ( positionA.length < positionB.length ) {
+		return -1;
+	}
+	if ( positionA.length > positionB.length ) {
+		return 1;
+	}
+	return 0;
+}
+
+/**
+ * Find the best match among candidate positions by longest match.
+ * @param {Object[]} positions
+ * @retun {Object} best match position.
+ */
+SubSequenceMatcher.prototype.bestMatch = function ( positions ) {
+	positions.sort( comparePositions );
+	return positions[ positions.length - 1 ];
 };
 
 module.exports = SubSequenceMatcher;

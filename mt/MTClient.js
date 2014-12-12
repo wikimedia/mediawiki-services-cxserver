@@ -84,6 +84,7 @@ MTClient.prototype.translateHtml = function ( sourceLang, targetLang, sourceHtml
 		targetDoc.items = Array.prototype.slice.call( arguments, 0 );
 		deferred.resolve( targetDoc.getHtml() );
 	}, function ( error ) {
+		logger.error( error.toString() );
 		deferred.reject( error );
 	} );
 
@@ -227,12 +228,15 @@ MTClient.prototype.getSubSequences = function ( lang, sourceText, annotationOffs
  *   range array
  */
 function isOverlappingRange( range, rangeArray ) {
-	var i;
+	var i, rangeStart, rangeEnd, start, end;
 
+	rangeStart = range.start;
+	rangeEnd = range.start + range.length;
 	for ( i = 0; i < rangeArray.length; i++ ) {
-		if ( rangeArray[ i ].start <= range.start &&
-			rangeArray[ i ].start + rangeArray[ i ].length >= range.start + range.length
-		) {
+		start = rangeArray[ i ].start;
+		end = start + rangeArray[ i ].length;
+		if ( start >= rangeStart && end <= rangeEnd ||
+			start <= rangeStart && end >= rangeEnd ) {
 			return true;
 		}
 	}
@@ -290,7 +294,6 @@ MTClient.prototype.getSequenceMappings = function ( targetLang, subSequences, ta
 			} );
 		}
 	}
-
 	return rangeMappings;
 };
 
@@ -309,15 +312,19 @@ MTClient.prototype.getSequenceMappings = function ( targetLang, subSequences, ta
  * @return.length {number} Length of matched sequence in the text.
  */
 MTClient.prototype.findSubSequence = function ( text, sequence, language, occurance ) {
-	var indices, matcher = new SubSequenceMatcher( language );
+	var indices, matcher;
 
+	matcher = new SubSequenceMatcher( language );
 	indices = matcher.findFuzzyMatch( text, sequence );
 	// Find the nth occurance position
+
 	if ( !indices || indices.length < occurance ) {
 		return null;
-	} else {
-		return indices[ occurance ];
 	}
+	if ( occurance === 0 ) {
+		return matcher.bestMatch( indices );
+	}
+	return indices[ occurance ];
 };
 
 /**
