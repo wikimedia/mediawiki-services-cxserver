@@ -5,6 +5,8 @@ module.exports = {
 	port: 8080,
 	// Log directory
 	logDir: 'log',
+	// Accept requests from the given domains. * for all domains.
+	allowCORS: '*',
 	// Parsoid API URL
 	'parsoid.api': 'http://parsoid-lb.eqiad.wikimedia.org',
 	// Apertium web API URL
