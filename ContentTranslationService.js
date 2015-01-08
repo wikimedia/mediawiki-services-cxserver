@@ -139,7 +139,16 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 		logger.profile( 'MT' );
 		mtClient.translate( from, to, sourceHtml ).then(
 			function ( data ) {
-				res.send( data );
+				// Prevent XSS by sending json with
+				// dangerous characters converted to
+				// unicode sequences
+				var json = JSON.stringify( { contents: data } );
+				json = json
+					.replace( /&/g, '\\u0026' )
+					.replace( /</g, '\\u003C' )
+					.replace( />/g, '\\u003E' );
+				res.type( 'application/json' );
+				res.send( json );
 				logger.profile( 'MT', { from: from, to: to } );
 			},
 			function ( error ) {
