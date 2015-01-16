@@ -15,9 +15,9 @@
 			sourceLanguage = $( 'input[name=sourceLanguage]' ).val(),
 			targetLanguage = $( 'input[name=targetLanguage]' ).val();
 		translate( sourceLanguage, targetLanguage, sourceHtml )
-			.done( function ( response ) {
-				$( '.targetHtmlRaw' ).text( response );
-				$( '.targetHtmlRendered' ).html( response );
+			.done( function ( translation ) {
+				$( '.targetHtmlRaw' ).text( translation.contents );
+				$( '.targetHtmlRendered' ).html( translation.contents  );
 			} ).fail( function () {
 				$( '.targetHtmlRendered' ).html( '<h1>Error</h1>' );
 			} ).always( function () {
@@ -30,7 +30,7 @@
 
 		translate( sourceLanguage, targetLanguage, content[ 0 ] )
 			.done( function ( translation ) {
-				if ( '<div>' + getTestContent( sourceLanguage, targetLanguage )[ 1 ] + '</div>' === translation ) {
+				if ( '<div>' + getTestContent( sourceLanguage, targetLanguage )[ 1 ] + '</div>' === translation.contents ) {
 					$( '#' + sourceLanguage + '-' + targetLanguage ).text( 'OK' ).addClass( 'ok' );
 				} else {
 					$( '#' + sourceLanguage + '-' + targetLanguage ).text( 'OK' );
