@@ -9,7 +9,7 @@ module.exports = function ( grunt ) {
 			options: {
 				jshintrc: true
 			},
-			all: [ '*.js', '{lineardoc,models,mt,pageloader,public,segmentation,tests}/**/*.js' ]
+			all: [ '*.js', '{dictionary,lineardoc,mt,pageloader,public,registry,segmentation,tests,utils}/**/*.js' ]
 		},
 		jscs: {
 			src: '<%= jshint.all %>'
