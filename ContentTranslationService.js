@@ -111,7 +111,7 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 	}
 
 	mtClients = require( __dirname + '/mt/' );
-	if ( mtClients[provider] === undefined ) {
+	if ( mtClients[ provider ] === undefined ) {
 		res.send( 500, { error: 'Provider not found' } );
 		logger.error( 'Configured provider ' + provider + ' was not found' );
 		return;
