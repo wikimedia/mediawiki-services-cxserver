@@ -174,6 +174,13 @@ module.exports = {
 					]
 				}
 			},
+			ru: {
+				mt: {
+					providers: [
+						'Yandex'
+					]
+				}
+			},
 			sr: {
 				mt: {
 					providers: [
