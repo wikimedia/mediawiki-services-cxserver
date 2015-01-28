@@ -22,20 +22,6 @@ module.exports = {
 	// Service registry
 	registry: {
 		af: {
-			de: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
 			nl: {
 				mt: {
 					providers: [
@@ -54,13 +40,6 @@ module.exports = {
 			}
 		},
 		ar: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
 			mt: {
 				mt: {
 					providers: [
@@ -79,19 +58,7 @@ module.exports = {
 			}
 		},
 		br: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
 			fr: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				},
 				mt: {
 					providers: [
 						'Apertium'
@@ -101,11 +68,6 @@ module.exports = {
 		},
 		ca: {
 			es: {
-				dictionary: {
-					providers: [
-						'JsonDict'
-					]
-				},
 				mt: {
 					providers: [
 						'Apertium'
@@ -148,31 +110,8 @@ module.exports = {
 				}
 			}
 		},
-		cr: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
-		cs: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
 		cy: {
 			en: {
-				dictionary: {
-					providers: [
-						'Apertium'
-					]
-				},
 				mt: {
 					providers: [
 						'Apertium'
@@ -180,81 +119,7 @@ module.exports = {
 				}
 			}
 		},
-		da: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
-		de: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			fr: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			it: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			nl: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			ku: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			pt: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			tr: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
 		en: {
-			af: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			ar: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
 			bs: {
 				mt: {
 					providers: [
@@ -270,49 +135,9 @@ module.exports = {
 				}
 			},
 			cr: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				},
 				mt: {
 					providers: [
 						'Apertium'
-					]
-				}
-			},
-			cs: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			cy: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			de: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			el: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
 					]
 				}
 			},
@@ -326,27 +151,12 @@ module.exports = {
 			es: {
 				dictionary: {
 					providers: [
-						'JsonDict',
-						'Dictd'
+						'JsonDict'
 					]
 				},
 				mt: {
 					providers: [
 						'Apertium'
-					]
-				}
-			},
-			fr: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			ga: {
-				dictionary: {
-					providers: [
-						'Dictd'
 					]
 				}
 			},
@@ -357,118 +167,17 @@ module.exports = {
 					]
 				}
 			},
-			hi: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
 			hr: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				},
 				mt: {
 					providers: [
 						'Apertium'
-					]
-				}
-			},
-			hu: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			it: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			la: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			lt: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			nl: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			pl: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			pt: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			ro: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			ru: {
-				dictionary: {
-					providers: [
-						'Dictd'
 					]
 				}
 			},
 			sr: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				},
 				mt: {
 					providers: [
 						'Apertium'
-					]
-				}
-			},
-			sw: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			sv: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			tr: {
-				dictionary: {
-					providers: [
-						'Dictd'
 					]
 				}
 			}
@@ -517,11 +226,6 @@ module.exports = {
 				}
 			},
 			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				},
 				mt: {
 					providers: [
 						'Apertium'
@@ -567,31 +271,10 @@ module.exports = {
 			}
 		},
 		fr: {
-			br: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
 			ca: {
 				mt: {
 					providers: [
 						'Apertium'
-					]
-				}
-			},
-			de: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
 					]
 				}
 			},
@@ -606,38 +289,6 @@ module.exports = {
 				mt: {
 					providers: [
 						'Apertium'
-					]
-				}
-			},
-			nl: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
-		ga: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			pl: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
-		gd: {
-			de: {
-				dictionary: {
-					providers: [
-						'Dictd'
 					]
 				}
 			}
@@ -666,35 +317,10 @@ module.exports = {
 			}
 		},
 		hi: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
 			ur: {
 				mt: {
 					providers: [
 						'Apertium'
-					]
-				}
-			}
-		},
-		hr: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
-		hu: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
 					]
 				}
 			}
@@ -710,62 +336,9 @@ module.exports = {
 		},
 		is: {
 			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				},
 				mt: {
 					providers: [
 						'Apertium'
-					]
-				}
-			}
-		},
-		it: {
-			de: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
-		ja: {
-			de: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
-		ku: {
-			de: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			tr: {
-				dictionary: {
-					providers: [
-						'Dictd'
 					]
 				}
 			}
@@ -775,31 +348,6 @@ module.exports = {
 				mt: {
 					providers: [
 						'Apertium'
-					]
-				}
-			}
-		},
-		la: {
-			de: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
-		lt: {
-			de: {
-				dictionary: {
-					providers: [
-						'Dictd'
 					]
 				}
 			}
@@ -827,11 +375,6 @@ module.exports = {
 				}
 			},
 			bg: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				},
 				mt: {
 					providers: [
 						'Apertium'
@@ -874,27 +417,6 @@ module.exports = {
 			}
 		},
 		nl: {
-			de: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			fr: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
 			af: {
 				mt: {
 					providers: [
@@ -935,34 +457,11 @@ module.exports = {
 				}
 			}
 		},
-		pl: {
-			ga: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
 		pt: {
 			ca: {
 				mt: {
 					providers: [
 						'Apertium'
-					]
-				}
-			},
-			de: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
 					]
 				}
 			},
@@ -990,29 +489,11 @@ module.exports = {
 				}
 			}
 		},
-		sa: {
-			de: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
 		sh: {
 			sl: {
 				mt: {
 					providers: [
 						'Apertium'
-					]
-				}
-			}
-		},
-		sk: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
 					]
 				}
 			}
@@ -1047,39 +528,7 @@ module.exports = {
 				}
 			}
 		},
-		sr: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
-		sw: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			pl: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			}
-		},
 		sv: {
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
 			da: {
 				mt: {
 					providers: [
@@ -1091,22 +540,6 @@ module.exports = {
 				mt: {
 					providers: [
 						'Apertium'
-					]
-				}
-			}
-		},
-		tr: {
-			de: {
-				dictionary: {
-					providers: [
-						'Dictd'
-					]
-				}
-			},
-			en: {
-				dictionary: {
-					providers: [
-						'Dictd'
 					]
 				}
 			}
