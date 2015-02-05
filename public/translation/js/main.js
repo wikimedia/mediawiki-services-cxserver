@@ -3,7 +3,7 @@
 	'use strict';
 
 	function translate( sourceLanguage, targetLanguage, content ) {
-		var url = '/mt/' + sourceLanguage + '/' + targetLanguage;
+		var url = '/v1/mt/' + sourceLanguage + '/' + targetLanguage;
 		return $.post( url, content );
 	}
 
