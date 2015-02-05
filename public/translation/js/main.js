@@ -67,6 +67,7 @@
 			'en-eo': [ 'And', 'Kaj' ],
 			'en-gl': [ 'Only', 'Só' ],
 			'en-es': [ 'hello', 'hola' ],
+			'en-ru': [ 'hello', 'привет' ],
 			'eo-en': [ 'kaj', 'and' ],
 			'eu-en': [ 'kaixo', 'hello' ],
 			'eu-es': [ 'kaixo', 'hola' ],
