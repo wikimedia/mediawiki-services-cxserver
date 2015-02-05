@@ -3,6 +3,7 @@
 module.exports = {
 	// CX Server port
 	port: 8080,
+	proxy: null,
 	// Log directory
 	logDir: 'log',
 	// Accept requests from the given domains. * for all domains.

@@ -40,6 +40,7 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 	// Language mapping that might be needed is be-tarask -> be
 	postData = {
 		url: conf( 'mt.yandex.api' ) + '/api/v1.5/tr.json/translate',
+		proxy: conf( 'proxy' ),
 		form: {
 			key: key,
 			lang: sourceLang + '-' + targetLang,
@@ -63,7 +64,6 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 			return;
 		}
 
-		console.log( ret );
 		if ( ret.code !== 200 ) {
 			deferred.reject( new Error( ret.code + ': ' + self.getErrorName( ret.code ) ) );
 		}
