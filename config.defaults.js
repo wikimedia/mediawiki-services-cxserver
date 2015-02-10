@@ -497,6 +497,10 @@ module.exports = {
 				}
 			}
 		},
+		ru: {
+			uz: {
+			}
+		},
 		sh: {
 			sl: {
 				mt: {
