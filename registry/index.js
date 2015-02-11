@@ -7,14 +7,10 @@ var conf = require( __dirname + '/../utils/Conf.js' ),
  *   pointing to a list of target languages.
  */
 function getLanguagePairs() {
-	var sourceLanguage,
-		languagePairs = {};
-
-	for ( sourceLanguage in registry ) {
-		languagePairs[ sourceLanguage ] = Object.keys( registry[ sourceLanguage ] );
-	}
-
-	return languagePairs;
+	return {
+		source: registry.source,
+		target: registry.target
+	};
 }
 
 /**
@@ -24,7 +20,31 @@ function getLanguagePairs() {
  * @return {Object} the toolset (empty object if nothing available)
  */
 function getToolSet( from, to ) {
-	return ( registry[ from ] || {} )[ to ] || {};
+	var i, j, tool, tools, provider, providers, defaultProvider, result = {};
+
+	// Known tools
+	tools = [ 'mt', 'dictionary' ];
+
+	for ( i = 0; i < tools.length; i++ ) {
+		tool = registry[ tools[ i ] ];
+		providers = Object.keys( tool );
+		// If there is a default provider, add it to the beginning of array.
+		if ( tool.defaults && tool.defaults[ from + '-' + to ] ) {
+			defaultProvider = tool.defaults[ from + '-' + to ];
+			result[ tools[ i ] ] = [ defaultProvider ];
+		}
+		for ( j = 0; j < providers.length; j++ ) {
+			provider = tool[ providers[ j ] ];
+			if ( provider[ from ] && provider[ from ].indexOf( to ) >= 0 &&
+				defaultProvider !== providers[ j ]
+			) {
+				result[ tools[ i ] ] = result[ tools[ i ] ] || [];
+				result[ tools[ i ] ].push( providers[ j ] );
+			}
+		}
+	}
+
+	return result;
 }
 
 /**
@@ -47,7 +67,7 @@ function getValidProvider( from, to, serviceType, providerName ) {
 	}
 
 	if ( providerName ) {
-		if ( toolset[ serviceType ].providers.indexOf( providerName ) === -1 ) {
+		if ( toolset[ serviceType ].indexOf( providerName ) === -1 ) {
 			// The requested provider doesn't appear in the registry,
 			// so it's invalid
 			return false;
@@ -58,7 +78,7 @@ function getValidProvider( from, to, serviceType, providerName ) {
 	}
 
 	// If provider not given, use the first one in the registry
-	return toolset[ serviceType ].providers[ 0 ];
+	return toolset[ serviceType ][ 0 ];
 }
 
 module.exports = {

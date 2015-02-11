@@ -171,12 +171,17 @@ app.get( '/dictionary/:word/:from/:to/:provider?', function ( req, res ) {
 } );
 
 app.get( '/list/:tool/:from/:to', function ( req, res ) {
-	var tool = req.params.tool,
+	var result = {},
+		tool = req.params.tool,
 		from = req.params.from,
 		to = req.params.to,
 		toolset = registry.getToolSet( from, to );
 
-	res.json( toolset[ tool ] || {} );
+	if ( toolset[ tool ] ) {
+		result[ tool ] = toolset[ tool ];
+		result[ 'default' ] = toolset.default;
+	}
+	res.json( result );
 	logger.debug( 'Tool data sent' );
 } );
 
