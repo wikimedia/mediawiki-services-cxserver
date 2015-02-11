@@ -148,7 +148,7 @@ app.get( '/dictionary/:word/:from/:to/:provider?', function ( req, res ) {
 		return;
 	}
 
-	dictClients = require( __dirname + '/dictionary/' );
+	dictClients = require( __dirname + '/../dictionary/' );
 	dictClient = dictClients[ provider ];
 
 	logger.profile( 'Dictionary lookup' );
