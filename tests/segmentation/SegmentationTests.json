@@ -108,5 +108,12 @@
 			"source": "test-14.html",
 			"result": "result-14.html"
 		}
+	],
+	"ja": [
+		{
+			"desc": "Japanese segmentation - basic test",
+			"source": "test-19.html",
+			"result": "result-19.html"
+		}
 	]
 }
