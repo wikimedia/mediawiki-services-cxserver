@@ -115,5 +115,13 @@
 			"source": "test-19.html",
 			"result": "result-19.html"
 		}
+	],
+	"zh": [
+		{
+			"desc": "Chinese segmentation - basic test",
+			"source": "test-20.html",
+			"result": "result-20.html"
+		}
 	]
+
 }
