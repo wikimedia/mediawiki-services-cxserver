@@ -116,7 +116,7 @@ MTClient.prototype.translateTextWithTagOffsets = function ( sourceLang, targetLa
 	trimmedSourceLines = [];
 	for ( i = 0; i < sourceLines.length; i++ ) {
 		// Search for zero or more leading and trailing spaces. This will always match.
-		m = sourceLines[ i ].match( /^(\s*)(.*?)(\s*)$/ );
+		m = sourceLines[ i ].match( /^(\s*)([\s\S]*?)(\s*)$/ );
 		if ( !m ) {
 			// See https://phabricator.wikimedia.org/T86625. This not supposed to happen.
 			logger.error( 'Regex to extract trailing and leading space failed for ' + sourceLines[ i ] );
