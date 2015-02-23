@@ -15,7 +15,8 @@ logger = new( winston.Logger )( {
 	transports: [
 		new winston.transports.Console( {
 			level: 'warn', // Only write logs of warn level or higher
-			colorize: true
+			colorize: true,
+			timestamp: true
 		} ),
 		new winston.transports.File( {
 			level: env === 'development' ? 'debug' : 'info',
