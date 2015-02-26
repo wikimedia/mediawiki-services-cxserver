@@ -8,15 +8,33 @@
 
 var cluster = require( 'cluster' ),
 	logger = require( __dirname + '/utils/Logger.js' ),
-	numCPUs, i;
+	i, opts, argv;
 
-if ( cluster.isMaster ) {
-	// Start a few more workers than there are cpus visible to the OS, so that we
-	// get some degree of parallelism even on single-core systems. A single
-	// long-running request would otherwise hold up all concurrent short requests.
-	numCPUs = require( 'os' ).cpus().length + 3;
+opts = require( 'yargs' )
+	.usage( 'Usage: $0 [-h] [-n[=val]]' )
+	.default( {
+		// Start a few more workers than there are cpus visible to the OS, so
+		// that we get some degree of parallelism even on single-core systems.
+		// A single long-running request would otherwise hold up all concurrent
+		// short requests.
+		n: require( 'os' ).cpus().length + 3,
+		h: false
+	} )
+	.alias( 'n', 'num-workers' )
+	.describe( 'n', 'Number of workers' )
+	.alias( 'h', 'help' )
+	.describe( 'h', 'Show help' );
+argv = opts.argv;
+
+if ( argv.h ) {
+	opts.showHelp();
+	process.exit( 0 );
+}
+
+if ( cluster.isMaster && argv.n > 0 ) {
 	// Fork workers.
-	for ( i = 0; i < numCPUs; i++ ) {
+	logger.info( 'initializing %s workers', argv.n );
+	for ( i = 0; i < argv.n; i++ ) {
 		cluster.fork();
 	}
 
