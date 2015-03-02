@@ -122,6 +122,13 @@
 			"source": "test-20.html",
 			"result": "result-20.html"
 		}
+	],
+	"pa": [
+		{
+			"desc": "Punjabi segmentation - basic test",
+			"source": "test-21.html",
+			"result": "result-21.html"
+		}
 	]
 
 }
