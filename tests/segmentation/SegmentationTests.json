@@ -109,6 +109,13 @@
 			"result": "result-14.html"
 		}
 	],
+	"hy": [
+		{
+			"desc": "Armenian segmentation - basic test",
+			"source": "test-22.html",
+			"result": "result-22.html"
+		}
+	],
 	"ja": [
 		{
 			"desc": "Japanese segmentation - basic test",
