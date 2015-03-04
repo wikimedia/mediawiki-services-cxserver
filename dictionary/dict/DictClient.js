@@ -252,31 +252,31 @@ function getDefs( words, options ) {
 			}
 
 			switch ( status ) {
-				//greetings
+				// greetings
 			case '220':
 				logger.verbose( 'getDefs: dict.org said hello' );
 
-				//we can start the fun now
+				// we can start the fun now
 				nextRequest();
 				break;
 
-				//bye
+				// bye
 			case '221':
 				logger.verbose( 'getDefs: dict.org says bye' );
-				//onEnd event should follow, so no need to do anything here
+				// onEnd event should follow, so no need to do anything here
 				break;
 
-				//a couple of errors on which we should close
-				//temorarily unavailable
+				// a couple of errors on which we should close
+				// temorarily unavailable
 			case '420':
-				//Server temporarily unavailable
+				// Server temporarily unavailable
 			case '421':
-				//Server shutting down at operator request
+				// Server shutting down at operator request
 				options.error( 'error', 'Error code ' + status );
 				return;
-				//no match
+				// no match
 			case '552':
-				//provide suggestions?
+				// provide suggestions?
 				// checking request type, because server gives the same not found code for suggestions as for words
 				// also checking whether db isn't on ignore list
 				if ( ( currentReq.type === 'def' ) && options.suggestions ) {
@@ -289,29 +289,29 @@ function getDefs( words, options ) {
 				nextRequest();
 				break;
 
-				//a couple of errors on which we might try to continue
-				//syntax error, command not recognized
+				// a couple of errors on which we might try to continue
+				// syntax error, command not recognized
 			case '500':
-				//Syntax error, command not recognized
+				// Syntax error, command not recognized
 			case '501':
-				//Syntax error, illegal parameters
+				// Syntax error, illegal parameters
 			case '502':
-				//Command not implemented
+				// Command not implemented
 			case '503':
 				// Command parameter not implemented
 			case '550':
-				//invalid strategy
+				// invalid strategy
 			case '551':
 				logger.debug( 'Proceeding to next request at status ' + status );
 				nextRequest();
 				break;
 
-				//suggestions
+				// suggestions
 			case '152':
 				word = currentReq.word;
 
 				if ( textEnded ) {
-					//first line is the status message:
+					// first line is the status message:
 					idx = response.indexOf( '\r\n' );
 					if ( idx === -1 ) {
 						break;
@@ -358,17 +358,17 @@ function getDefs( words, options ) {
 				}
 				break;
 
-				//ok
+				// ok
 			case '250':
 				nextRequest();
 				break;
 
-				//definition
+				// definition
 			case '151':
-				//word database name - text follows
-				//textEnded, so we are free to start anew
+				// word database name - text follows
+				// textEnded, so we are free to start anew
 				if ( textEnded ) {
-					//first line is the status message:
+					// first line is the status message:
 					idx = response.indexOf( '\r\n' );
 					if ( idx === -1 ) {
 						break;
@@ -453,7 +453,6 @@ function lookup( word, options ) {
 	case 'def':
 		wordList = [ {
 			word: word,
-			//type: type,
 			db: options.db || config.db
 		} ];
 		break;

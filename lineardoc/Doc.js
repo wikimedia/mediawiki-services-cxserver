@@ -73,7 +73,7 @@ Doc.prototype.segment = function ( getBoundaries ) {
 	// TODO: return different counters depending on type
 	function getNextId( type ) {
 		if ( type === 'segment' || type === 'link' || type === 'block' ) {
-			return '' + nextId++;
+			return String( nextId++ );
 		} else {
 			throw new Error( 'Unknown ID type: ' + type );
 		}

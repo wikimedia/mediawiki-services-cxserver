@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-	Utils: require( './Utils.js'),
-	Doc:  require( './Doc.js'),
+	Utils: require( './Utils.js' ),
+	Doc:  require( './Doc.js' ),
 	TextBlock: require( './TextBlock.js' ),
 	TextChunk: require( './TextChunk.js' ),
 	Builder: require( './Builder.js' ),

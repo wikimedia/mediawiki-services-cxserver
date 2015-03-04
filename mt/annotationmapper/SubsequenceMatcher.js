@@ -78,7 +78,7 @@ SubSequenceMatcher.prototype.findFuzzyMatch = function ( text, substring ) {
 		return null;
 	}
 
-	//console.log( 'Searching [' + substring + '] in [' + text + ']' );
+	// console.log( 'Searching [' + substring + '] in [' + text + ']' );
 	substringNGrams = this.getWords( substring );
 	substringWordsLength = substringNGrams.length;
 	textNGrams = this.getNGrams( text, substringNGrams.length );
@@ -110,7 +110,7 @@ SubSequenceMatcher.prototype.findFuzzyMatch = function ( text, substring ) {
 		index = text.indexOf( match, startIndex );
 
 		if ( index === -1 ) {
-			//console.log( 'failed to find ' + match + ' in ' + text );
+			// console.log( 'failed to find ' + match + ' in ' + text );
 			// FIXME: This can occur because of multiple punctuations in between token
 			break;
 		}

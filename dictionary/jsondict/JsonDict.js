@@ -64,7 +64,7 @@ function getTranslations( source, sourceLang, targetLang ) {
 			translations = [];
 		if ( err ) {
 			logger.error( 'Dictionary file \'%s\' could not be read', file );
-			deferred.reject( '' + err );
+			deferred.reject( String( err ) );
 			return;
 		}
 		results = JSON.parse( data )[source] || [];
