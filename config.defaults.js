@@ -22,8 +22,8 @@ module.exports = {
 	cert: null,
 	// Service registry
 	registry: {
-		source: [ 'af', 'an', 'ar', 'az', 'bg', 'bs', 'ca', 'cr', 'cy', 'en', 'eo', 'es', 'fr', 'gl', 'hi', 'hr', 'id', 'ja', 'kk', 'km', 'ky', 'min', 'mk', 'ms', 'mt', 'nl', 'no', 'nn', 'oc', 'pa', 'pl', 'pt', 'ru', 'tr', 'tt', 'ur', 'uz', 'vi', 'xh', 'zh' ],
-		target: [ 'af', 'an', 'ar', 'az', 'bg', 'bs', 'ca', 'cr', 'cy', 'eo', 'es', 'fr', 'gl', 'hi', 'hr', 'id', 'ja', 'kk', 'km', 'ky', 'min', 'mk', 'ms', 'mt', 'nl', 'no', 'nn', 'oc', 'pa', 'pl', 'pt', 'ru', 'tt', 'tr', 'ur', 'uz', 'vi', 'xh', 'zh' ],
+		source: [ 'af', 'an', 'ar', 'az', 'bg', 'bs', 'ca', 'cr', 'cy', 'en', 'eo', 'es', 'fr', 'gl', 'hi', 'hr', 'id', 'ja', 'kk', 'km', 'kn', 'ky', 'kz', 'min', 'mk', 'ms', 'mt', 'nl', 'no', 'nn', 'oc', 'pa', 'pl', 'pt', 'ru', 'sh', 'sl', 'tr', 'tt', 'uk', 'ur', 'uz', 'vi', 'xh', 'zh' ],
+		target: [ 'af', 'an', 'ar', 'az', 'bg', 'bs', 'ca', 'cr', 'cy', 'eo', 'es', 'fr', 'gl', 'hi', 'hr', 'id', 'ja', 'kk', 'km', 'kn', 'ky', 'kz', 'min', 'mk', 'ms', 'mt', 'nl', 'no', 'nn', 'oc', 'pa', 'pl', 'pt', 'ru', 'sh', 'sl', 'tt', 'tr', 'uk', 'ur', 'uz', 'vi', 'xh', 'zh' ],
 		mt: {
 			Apertium: {
 				af: [ 'nl' ],
@@ -43,7 +43,7 @@ module.exports = {
 				id: [ 'ms' ],
 				is: [ 'en' ],
 				kk: [ 'tt' ],
-				mk: [ 'bg', 'bs', 'hr', 'mk', 'sr' ],
+				mk: [ 'bg', 'bs', 'hr', 'sr' ],
 				ms: [ 'id' ],
 				mt: [ 'ar' ],
 				no: [ 'da', 'nn' ],
@@ -52,8 +52,8 @@ module.exports = {
 				oc: [ 'es', 'ca' ],
 				pt: [ 'ca', 'es', 'gl' ],
 				ro: [ 'es' ],
-				sh: [ 'sl' ],
-				sl: [ 'bs', 'cr', 'hr', 'sr' ],
+				sh: [ 'mk', 'sl' ],
+				sl: [ 'bs', 'cr', 'hr', 'sh', 'sr' ],
 				sv: [ 'da', 'is' ],
 				tt: [ 'kk' ],
 				ur: [ 'hi' ]
