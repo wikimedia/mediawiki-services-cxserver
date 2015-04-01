@@ -25,10 +25,13 @@ function PageLoader( page, sourceLanguage ) {
 }
 
 PageLoader.prototype.load = function () {
-	var deferred = Q.defer();
+	var url,
+		deferred = Q.defer();
 
-	request(
-		conf( 'parsoid.api' ) + '/' + this.sourceLanguage + 'wiki/' + this.page,
+	url = conf( 'parsoid.api' ) + '/' + this.sourceLanguage + 'wiki/' +
+		encodeURIComponent( this.page ) + '?body=1';
+
+	request( url,
 		function ( error, response, body ) {
 			if ( error ) {
 				deferred.reject( new Error( error ) );
