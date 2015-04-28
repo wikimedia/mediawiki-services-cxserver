@@ -10,6 +10,7 @@ module.exports = {
 	allowCORS: '*',
 	// Parsoid API URL
 	'parsoid.api': 'http://parsoid-lb.eqiad.wikimedia.org',
+	'restbase.url': 'https://$lang.wikipedia.org/api/rest_v1/page/html/$title',
 	// Apertium web API URL
 	'mt.apertium.api': 'http://apertium.wmflabs.org',
 	'mt.yandex.api': 'https://translate.yandex.net',

@@ -13,6 +13,26 @@ var request = require( 'request' ),
 	conf = require( __dirname + '/../utils/Conf.js' );
 
 /**
+ * Cheap body extraction.
+ *
+ * This is safe as we know that the HTML we are receiving from Parsoid is
+ * serialized as XML.
+ * Restbase does not support body only retrieval of content.
+ * See https://phabricator.wikimedia.org/T95199
+ * @param {string} html
+ * @return {string} body of the html passed, wrapped in <body> tag.
+ */
+function cheapBodyInnerHTML( html ) {
+	var match = /<body[^>]*>([\s\S]*)<\/body>/.exec( html );
+
+	if ( !match ) {
+		throw new Error( 'No HTML body found!' );
+	} else {
+		return '<body>' + match[ 1 ] + '</body>';
+	}
+}
+
+/**
  * @class ParsoidPageLoader
  *
  * @param {string} page
@@ -28,9 +48,14 @@ PageLoader.prototype.load = function () {
 	var url,
 		deferred = Q.defer();
 
-	url = conf( 'parsoid.api' ) + '/' + this.sourceLanguage + 'wiki/' +
-		encodeURIComponent( this.page ) + '?body=1';
-
+	if ( conf( 'restbase.url' ) ) {
+		url = conf( 'restbase.url' )
+			.replace( '$lang', this.sourceLanguage )
+			.replace( '$title', encodeURIComponent( this.page ) );
+	} else {
+		url = conf( 'parsoid.api' ) + '/' + this.sourceLanguage + 'wiki/' +
+			encodeURIComponent( this.page );
+	}
 	request( url,
 		function ( error, response, body ) {
 			if ( error ) {
@@ -41,10 +66,12 @@ PageLoader.prototype.load = function () {
 				deferred.reject( new Error( 'Error while fetching page: ' + body ) );
 				return;
 			}
-
 			deferred.resolve( {
-				body: response.body,
-				revision: response.headers[ 'content-revision-id' ]
+				body: cheapBodyInnerHTML( response.body ),
+				// Restbase returns revision ID in etag  header.
+				// Example:
+				//     ETag: "123456/c4e494da-ee8f-11e4-83a1-8b80de1cde5f"
+				revision: response.headers.etag.split( '/' )[ 0 ].replace( '"', '' )
 			} );
 		}
 	);
