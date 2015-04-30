@@ -22,8 +22,8 @@ module.exports = {
 	cert: null,
 	// Service registry
 	registry: {
-		source: [ 'af', 'an', 'ar', 'ast', 'az', 'ba', 'bg', 'bs', 'ca', 'ceb', 'cr', 'cs', 'cv', 'cy', 'de', 'el', 'en', 'eo', 'es', 'eu', 'fr', 'gl', 'gu', 'hi', 'hr', 'id', 'it', 'ja', 'kk', 'km', 'kn', 'koi', 'kv', 'ky', 'kz', 'lez', 'min', 'mk', 'ms', 'mt', 'nl', 'no', 'nn', 'oc', 'pa', 'pl', 'pt', 'ru', 'sah', 'sh', 'simple', 'sl', 'tr', 'tt', 'tyv', 'udm', 'uk', 'ur', 'uz', 'vi', 'war', 'xh', 'zh', 'zu' ],
-		target: [ 'af', 'an', 'ar', 'ast', 'az', 'ba', 'bg', 'bs', 'ca', 'ceb', 'cr', 'cs', 'cv', 'cy', 'el', 'eo', 'es', 'eu', 'fr', 'gl', 'gu', 'hi', 'hr', 'id', 'it', 'ja', 'kk', 'km', 'kn', 'koi', 'kv', 'ky', 'kz', 'lez', 'min', 'mk', 'ms', 'mt', 'nl', 'no', 'nn', 'oc', 'pa', 'pl', 'pt', 'ru', 'sah', 'sh', 'simple', 'sl', 'tt', 'tr', 'tyv', 'udm', 'uk', 'ur', 'uz', 'vi', 'war', 'xh', 'zh', 'zu' ],
+		source: [ 'af', 'ak', 'an', 'ar', 'ast', 'az', 'ba', 'bg', 'bm', 'bs', 'ca', 'ceb', 'cr', 'cs', 'cv', 'cy', 'de', 'ee', 'el', 'en', 'eo', 'es', 'eu', 'ff', 'fr', 'gl', 'gu', 'hi', 'hr', 'id', 'it', 'ja', 'kg', 'ki', 'kk', 'km', 'kn', 'koi', 'kv', 'ky', 'kz', 'lg', 'lez', 'min', 'mk', 'ms', 'mt', 'nl', 'no', 'nn', 'ny', 'oc', 'om', 'pa', 'pl', 'pt', 'rn', 'ru', 'sah', 'sg', 'sh', 'simple', 'sl', 'ss', 'st', 'ti', 'tn', 'tr', 'ts', 'tt', 'tyv', 'tum', 'tw', 'udm', 'uk', 'ur', 'uz', 've', 'vi', 'war', 'xh', 'zh', 'zu' ],
+		target: [ 'af', 'ak', 'an', 'ar', 'ast', 'az', 'ba', 'bg', 'bm', 'bs', 'ca', 'ceb', 'cr', 'cs', 'cv', 'cy', 'ee', 'el', 'eo', 'es', 'eu', 'ff', 'fr', 'gl', 'gu', 'hi', 'hr', 'id', 'it', 'ja', 'kg', 'ki', 'kk', 'km', 'kn', 'koi', 'kv', 'ky', 'kz', 'lg', 'lez', 'min', 'mk', 'ms', 'mt', 'nl', 'no', 'nn', 'ny', 'oc', 'om', 'pa', 'pl', 'pt', 'rn', 'ru', 'sah', 'sg', 'sh', 'simple', 'sl', 'ss', 'st', 'ti', 'tn', 'tr', 'ts', 'tt', 'tyv', 'tum', 'tw', 'udm', 'uk', 'ur', 'uz', 've', 'vi', 'war', 'xh', 'zh', 'zu' ],
 		mt: {
 			Apertium: {
 				af: [ 'nl' ],
