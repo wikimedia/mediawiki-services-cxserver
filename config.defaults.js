@@ -4,8 +4,23 @@ module.exports = {
 	// CX Server port
 	port: 8080,
 	proxy: null,
-	// Log directory
-	logDir: 'log',
+	logging: {
+		name: 'cxserver',
+		// log streams. Comment out unwanted streams or add new.
+		streams: [
+			/* {
+				// Use gelf-stream -> logstash.
+				type: 'gelf',
+				host: 'localhost', // host where logstash with gelf input plugin is running
+				port: 12201, // port of host where logstash with gelf input plugin is running
+				level: 'info' // log INFO and above to gelf
+			},*/
+			{
+				level: 'debug',
+				stream: process.stdout // log DEBUG and above to stdout. Useful for development.
+			}
+		]
+	},
 	// Accept requests from the given domains. * for all domains.
 	allowCORS: '*',
 	// Parsoid API URL

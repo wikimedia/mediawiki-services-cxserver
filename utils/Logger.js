@@ -1,34 +1,29 @@
-var winston = require( 'winston' ),
-	fs = require( 'fs' ),
+var bunyan = require( 'bunyan' ),
+	gelfStream = require( 'gelf-stream' ),
 	conf = require( __dirname + '/Conf.js' ),
-	env = process.env.NODE_ENV || 'development',
 	logger;
 
-winston.setLevels( winston.config.npm.levels );
-winston.addColors( winston.config.npm.colors );
-
-if ( !fs.existsSync( conf( 'logDir' ) ) ) {
-	fs.mkdirSync( conf( 'logDir' ) );
+function processConf( conf ) {
+	if ( Array.isArray( conf.streams ) ) {
+		var streams = [];
+		conf.streams.forEach( function ( stream ) {
+			if ( stream.type === 'gelf' ) {
+				// Convert the 'gelf' logger type to a real logger
+				streams.push( {
+					type: 'raw',
+					level: stream.level,
+					stream: gelfStream.forBunyan( stream.host,
+						stream.port, stream.options )
+				} );
+			} else {
+				streams.push( stream );
+			}
+		} );
+		conf.streams = streams;
+	}
+	return conf;
 }
 
-logger = new( winston.Logger )( {
-	transports: [
-		new winston.transports.Console( {
-			level: 'warn', // Only write logs of warn level or higher
-			colorize: true,
-			timestamp: true
-		} ),
-		new winston.transports.File( {
-			level: env === 'development' ? 'debug' : 'info',
-			filename: conf( 'logDir' ) + '/cx-logs.log',
-			maxsize: 1024 * 1024 * 10 // 10MB
-		} )
-	],
-	exceptionHandlers: [
-		new winston.transports.File( {
-			filename: conf( 'logDir' ) + '/exceptions.log'
-		} )
-	]
-} );
+logger = bunyan.createLogger( processConf( conf( 'logging' ) ) );
 
 module.exports = logger;

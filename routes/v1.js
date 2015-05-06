@@ -11,20 +11,18 @@ app.get( '/page/:language/:title', function ( req, res ) {
 		PageLoader = require( __dirname + '/../pageloader/PageLoader.js' ).PageLoader,
 		pageloader = new PageLoader( title, sourceLanguage );
 
-	logger.profile( 'Fetch page' );
 	pageloader.load().then(
 		function ( response ) {
 			var segmenter, segmentedContent;
 			try {
-				logger.profile( 'Fetch page', {
+				logger.debug( 'Fetch page', {
 					title: title,
 					sourceLanguage: sourceLanguage
 				} );
-				logger.profile( 'Segment page' );
 				segmenter = new CXSegmenter( response.body, sourceLanguage );
 				segmenter.segment();
 				segmentedContent = segmenter.getSegmentedContent();
-				logger.profile( 'Segment page', {
+				logger.debug( 'Segment page', {
 					title: title,
 					sourceLanguage: sourceLanguage
 				} );
@@ -104,7 +102,6 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 		sourceHtmlChunks.push( '</div>' );
 		sourceHtml = sourceHtmlChunks.join( '' );
 
-		logger.profile( 'MT' );
 		mtClient.translate( from, to, sourceHtml ).then(
 			function ( data ) {
 				// Prevent XSS by sending json with
@@ -119,7 +116,7 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 					.replace( />/g, '\\u003E' );
 				res.type( 'application/json' );
 				res.send( json );
-				logger.profile( 'MT', {
+				logger.debug( 'MT', {
 					from: from,
 					to: to
 				} );
@@ -151,11 +148,10 @@ app.get( '/dictionary/:word/:from/:to/:provider?', function ( req, res ) {
 	dictClients = require( __dirname + '/../dictionary/' );
 	dictClient = dictClients[ provider ];
 
-	logger.profile( 'Dictionary lookup' );
 	dictClient.getTranslations( word, from, to ).then(
 		function ( data ) {
 			res.send( data );
-			logger.profile( 'Dictionary lookup', {
+			logger.debug( 'Dictionary lookup', {
 				word: word,
 				from: from,
 				to: to
