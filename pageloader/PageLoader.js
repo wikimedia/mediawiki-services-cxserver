@@ -50,8 +50,8 @@ PageLoader.prototype.load = function () {
 
 	if ( conf( 'restbase.url' ) ) {
 		url = conf( 'restbase.url' )
-			.replace( '$lang', this.sourceLanguage )
-			.replace( '$title', encodeURIComponent( this.page ) );
+			.replace( '@lang', this.sourceLanguage )
+			.replace( '@title', encodeURIComponent( this.page ) );
 	} else {
 		url = conf( 'parsoid.api' ) + '/' + this.sourceLanguage + 'wiki/' +
 			encodeURIComponent( this.page );
