@@ -70,7 +70,8 @@ module.exports = {
 		},
 		dictionary: {
 			JsonDict: {
-				ca: [ 'es', 'en' ],
+				ca: [ 'es' ],
+				en: [ 'es' ],
 				es: [ 'ca' ]
 			}
 		}
