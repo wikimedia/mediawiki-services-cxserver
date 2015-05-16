@@ -1,4 +1,11 @@
 {
+	"am": [
+		{
+			"desc": "Amharic segmentation - basic test",
+			"source": "test-23.html",
+			"result": "result-23.html"
+		}
+	],
 	"en": [
 		{
 			"desc": "Simple paragraph test",
