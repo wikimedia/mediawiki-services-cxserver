@@ -8,6 +8,7 @@
 
 var cluster = require( 'cluster' ),
 	logger = require( __dirname + '/utils/Logger.js' ),
+	conf = require( __dirname + '/utils/Conf.js' ),
 	i, opts, argv;
 
 opts = require( 'yargs' )
@@ -33,7 +34,7 @@ if ( argv.h ) {
 
 if ( cluster.isMaster && argv.n > 0 ) {
 	// Fork workers.
-	logger.info( 'initializing %s workers', argv.n );
+	logger.info( 'Initializing ' + argv.n + ' workers on ' + conf( 'port' ) + ' port' );
 	for ( i = 0; i < argv.n; i++ ) {
 		cluster.fork();
 	}

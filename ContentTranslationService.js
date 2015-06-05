@@ -55,7 +55,6 @@ app.use( '/', require( './routes/v1' ) );
 // Everything else goes through this.
 app.use( express.static( __dirname + '/public' ) );
 
-console.log( instanceName + ' ready. Listening on port: ' + conf( 'port' ) );
 server.listen( conf( 'port' ) );
 
 module.exports = app;
