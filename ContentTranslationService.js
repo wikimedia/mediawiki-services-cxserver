@@ -45,7 +45,7 @@ instanceName = 'worker(' + process.pid + ')';
 
 app.use( function ( req, res, next ) {
 	res.header( 'Access-Control-Allow-Origin', conf( 'allowCORS' ) );
-	res.header( 'Access-Control-Allow-Headers', 'X-Requested-With' );
+	res.header( 'Access-Control-Allow-Headers', 'X-Requested-With, Authorization' );
 	next();
 } );
 
