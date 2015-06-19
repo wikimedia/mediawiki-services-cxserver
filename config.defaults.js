@@ -80,6 +80,8 @@ module.exports = {
 				en: [ 'ru' ]
 			},
 			defaults: {
+				'hi-ur': 'no-mt',
+				'ur-hi': 'no-mt',
 				'en-ru': 'Yandex'
 			}
 		},
