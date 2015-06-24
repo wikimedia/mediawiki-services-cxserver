@@ -83,7 +83,12 @@ Doc.prototype.segment = function ( getBoundaries ) {
 		item = this.items[ i ];
 		if ( this.items[ i ].type === 'open' ) {
 			tag = Utils.cloneOpenTag( item.item );
-			tag.attributes.id = getNextId( 'block' );
+			if ( tag.attributes.id ) {
+				// Kept for restoring the old articles.
+				tag.attributes[ 'data-seqid' ] = getNextId( 'block' );
+			} else {
+				tag.attributes.id = getNextId( 'block' );
+			}
 			newDoc.addItem( item.type, tag );
 		} else if ( this.items[ i ].type !== 'textblock' ) {
 			newDoc.addItem( item.type, item.item );
