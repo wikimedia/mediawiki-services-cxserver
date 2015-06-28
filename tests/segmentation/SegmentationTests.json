@@ -20,8 +20,7 @@
 		{
 			"desc": "Exclamation, punctuation test",
 			"source": "test-2.html",
-			"result": "result-2.html",
-			"skip": true
+			"result": "result-2.html"
 		},
 		{
 			"desc": "Multiple sentences",
@@ -143,6 +142,12 @@
 			"source": "test-21.html",
 			"result": "result-21.html"
 		}
+	],
+	"en": [
+		{
+			"desc": "Do not break inside of links with abbreviations. Example: Carl E. Wieman. See https://phabricator.wikimedia.org/T99504",
+			"source": "test-24.html",
+			"result": "result-24.html"
+		}
 	]
-
 }
