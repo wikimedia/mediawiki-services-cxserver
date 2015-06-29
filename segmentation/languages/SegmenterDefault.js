@@ -1,15 +1,18 @@
 var findAll = require( '../../lineardoc' ).Utils.findAll;
 
 /**
- * Test a possible sentence boundary match
+ * Test a possible English sentence boundary match
  *
  * @param {string} text The plaintext to segment
  * @param {Object} match The possible boundary match (returned by regex.exec)
  * @return {number|null} The boundary offset, or null if not a sentence boundary
  */
-
 function findBoundary( text, match ) {
-	var tail = text.slice( match.index + 1, text.length );
+	var tail, head, lastWord;
+
+	tail = text.slice( match.index + 1, text.length );
+	head = text.slice( 0, match.index );
+
 	// Trailing non-final punctuation: not a sentence boundary
 	if ( tail.match( /^[,;:]/ ) ) {
 		return null;
@@ -18,6 +21,15 @@ function findBoundary( text, match ) {
 	if ( tail.match( /^\W*[0-9a-z]/ ) ) {
 		return null;
 	}
+
+	// Do not break in abbreviations. Example D. John, St. Peter
+	lastWord = head.match( /(\w*)$/ )[ 0 ];
+	// Exclude at most 2 letter abbreviations. Examples: T. Dr. St. Jr. Sr. Ms. Mr.
+	// But not all caps like "UK." as in  "UK. Not US",
+	if ( lastWord.length <= 2 && lastWord.match( /^\W*[A-Z][a-z]?$/ ) && tail.match( /^\W*[A-Z]/ ) ) {
+		return null;
+	}
+
 	// Include any closing punctuation and trailing space
 	return match.index + 1 + tail.match( /^['”"’]*\s*/ )[ 0 ].length;
 }
