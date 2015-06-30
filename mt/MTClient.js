@@ -364,4 +364,13 @@ MTClient.prototype.buildSourceDoc = function ( sourceHtml ) {
 	this.sourceDoc = parser.builder.doc;
 };
 
+/**
+ * Whether this engine needs authentication with JWT
+ *
+ * @return {bool}
+ */
+MTClient.prototype.requiresAuthorization = function () {
+	return false;
+};
+
 module.exports = MTClient;
