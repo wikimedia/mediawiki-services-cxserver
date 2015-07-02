@@ -58,7 +58,14 @@ Builder.prototype.popInlineAnnotationTag = function ( tagName ) {
 			'Mismatched inline tags: open=' + ( tag && tag.name ) + ', close=' + tagName
 		);
 	}
-	if ( tag.name !== 'span' || !tag.attributes[ 'data-mw' ] ) {
+
+	if ( !Object.keys( tag.attributes ).length ) {
+		// Skip tags which have attributes, content or both from further check to
+		// see if we want to keep inline content. Else we assume that, if this tag has
+		// whitespace or empty content, it is ok to remove it from resulting document.
+		// But if it has attributes, we make sure that there are inline content blocks to
+		// avoid them missing in resulting document.
+		// See T104539
 		return tag;
 	}
 	// Check for empty/whitespace-only data span. Replace as inline content

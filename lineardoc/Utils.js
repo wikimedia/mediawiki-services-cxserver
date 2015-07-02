@@ -141,9 +141,11 @@ function dumpTags( tagArray ) {
  */
 function isReference( tag ) {
 	if ( tag.name === 'span' && tag.attributes.typeof === 'mw:Extension/ref' ) {
+		// See https://www.mediawiki.org/wiki/Parsoid/MediaWiki_DOM_spec#Ref_and_References
 		return true;
-	} else if ( tag.name === 'span' && tag.attributes.class === 'reference' ) {
-		// TODO: This is in the tests, but is it correct behaviour?
+	} else if ( tag.name === 'sup' && tag.attributes.class === 'reference' ) {
+		// See "cite_reference_link" message of Cite extension
+		// https://www.mediawiki.org/wiki/Extension:Cite
 		return true;
 	}
 	return false;

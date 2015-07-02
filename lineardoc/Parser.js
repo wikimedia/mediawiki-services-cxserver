@@ -86,9 +86,9 @@ Parser.prototype.onclosetag = function ( tagName ) {
 			this.builder.popBlockTag( 'div' );
 		}
 	} else if ( isAnn && this.builder.parent !== null ) {
-		// In a sub document: should be a span that closes a reference
-		if ( tagName !== 'span' ) {
-			throw new Error( 'Expected close reference span, got "' + tagName + '"' );
+		// In a sub document: should be a span or sup that closes a reference
+		if ( tagName !== 'span' && tagName !== 'sup' ) {
+			throw new Error( 'Expected close reference - span or sup tags, got "' + tagName + '"' );
 		}
 		this.builder.finishTextBlock();
 		this.builder.parent.addInlineContent( this.builder.doc );
