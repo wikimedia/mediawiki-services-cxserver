@@ -166,21 +166,31 @@ app.get( '/dictionary/:word/:from/:to/:provider?', function ( req, res ) {
 	);
 } );
 
-app.get( '/list/:tool/:from/:to', function ( req, res ) {
-	var result = {},
+app.get( '/list/:tool/:from?/:to?', function ( req, res ) {
+	var toolset, result = {},
 		tool = req.params.tool,
 		from = req.params.from,
-		to = req.params.to,
-		toolset = registry.getToolSet( from, to );
+		to = req.params.to;
 
-	if ( toolset[ tool ] ) {
+	if ( from && to ) {
+		toolset = registry.getToolSet( from, to );
 		result[ tool ] = toolset[ tool ];
 		result[ 'default' ] = toolset.default;
+	} else if ( tool ) {
+		if ( tool === 'mt' ) {
+			result = registry.getMTPairs();
+		}
+		if ( tool === 'dictionary' ) {
+			result = registry.getDictionaryPairs();
+		}
 	}
 	res.json( result );
 	logger.debug( 'Tool data sent' );
 } );
 
+/**
+ * Get a list of all language pairs.
+ */
 app.get( '/languagepairs', function ( req, res ) {
 	res.json( registry.getLanguagePairs() );
 } );

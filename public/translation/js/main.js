@@ -113,20 +113,24 @@
 
 	function healthcheck() {
 		$( 'table.mthealth' ).empty();
-		$.get( '/languagepairs', function ( response ) {
-			$.each( response, function ( source, targets ) {
-				var $tr, sourceLanguage, targetLanguage, i;
-				for ( i = 0; i < targets.length; i++ ) {
-					sourceLanguage = source;
-					targetLanguage = targets[ i ];
-					$tr = $( '<tr>' ).append(
-						$( '<td>' ).text( sourceLanguage ),
-						$( '<td>' ).text( targetLanguage ),
-						$( '<td>' ).attr( 'id', sourceLanguage + '-' + targetLanguage ).text( 'CHECKING' ).addClass( 'status' )
-					);
-					$( 'table.mthealth' ).append( $tr );
-					check( sourceLanguage, targetLanguage );
-				}
+		$.get( '/list/mt', function ( response ) {
+			$.each( response, function ( provider, pairs ) {
+				$.each( pairs, function ( source, targets ) {
+					var $tr, sourceLanguage, targetLanguage, i;
+					if ( $.isArray( targets ) ) {
+						for ( i = 0; i < targets.length; i++ ) {
+							sourceLanguage = source;
+							targetLanguage = targets[i];
+							$tr = $( '<tr>' ).append(
+								$( '<td>' ).text( sourceLanguage ),
+								$( '<td>' ).text( targetLanguage ),
+								$( '<td>' ).attr( 'id', sourceLanguage + '-' + targetLanguage ).text( 'CHECKING' ).addClass( 'status' )
+							);
+							$( 'table.mthealth' ).append( $tr );
+							check( sourceLanguage, targetLanguage );
+						}
+					}
+				} );
 			} );
 		} );
 	}
