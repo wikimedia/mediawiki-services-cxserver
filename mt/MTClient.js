@@ -151,7 +151,7 @@ MTClient.prototype.translateTextWithTagOffsets = function ( sourceLang, targetLa
 		} catch ( ex ) {
 			// If annotation mapping fails for any reason, return translated text
 			// without annotations.
-			logger.error( 'Error while mapping annotations: ', ex.stack );
+			logger.debug( 'Error while mapping annotations: ', ex.stack );
 			rangeMappings = {};
 		}
 		deferred.resolve( {
