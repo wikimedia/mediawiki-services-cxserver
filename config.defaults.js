@@ -30,6 +30,10 @@ module.exports = {
 	'mt.apertium.api': 'http://apertium.wmflabs.org',
 	'mt.yandex.api': 'https://translate.yandex.net',
 	'mt.yandex.key': null,
+	jwt: {
+		secret: '',
+		algorithms: [ 'HS256' ]
+	},
 	// Use SSL?
 	secure: false,
 	// SSL key filename

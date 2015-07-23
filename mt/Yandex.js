@@ -98,4 +98,8 @@ Yandex.prototype.getErrorName = function ( code ) {
 	return 'Unknown error';
 };
 
+Yandex.prototype.requiresAuthorization = function () {
+	return true;
+};
+
 module.exports = Yandex;

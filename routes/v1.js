@@ -1,4 +1,7 @@
-var express = require( 'express' ),
+var
+	express = require( 'express' ),
+	jwt = require('jsonwebtoken'),
+	conf = require( __dirname + '/../utils/Conf.js' ),
 	logger = require( __dirname + '/../utils/Logger.js' ),
 	registry = require( __dirname + '/../registry' ),
 	pkg = require( __dirname + '/../package.json' ),
@@ -59,6 +62,7 @@ app.get( '/mt/:from/:to/:provider?', function ( req, res ) {
 app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 	var mtClients, mtClient,
 		sourceHtmlChunks, sourceHtml, reqLength,
+		authzToken, authz, jwtConfig
 		from = req.params.from,
 		to = req.params.to,
 		provider = registry.getValidProvider( from, to, 'mt', req.params.provider );
@@ -82,6 +86,31 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 	}
 
 	mtClient = new mtClients[ provider ]();
+
+	if ( mtClient.requiresAuthorization() ) {
+		if ( !req.headers || !req.headers.authorization ) {
+			res.send( 403, {
+				error: 'Authorization header is missing'
+			} );
+			return;
+		}
+
+		authzToken = req.headers.authorization;
+		jwtConfig = conf( 'jwt' );
+
+		try {
+			authz = jwt.verify(
+				authzToken,
+				jwtConfig.secret,
+				{ algorithms: jwtConfig.algorithms }
+			);
+		} catch ( err ) {
+			res.send( 403, {
+				error: 'Authorization header is not valid: ' + err
+			} );
+			return;
+		}
+	}
 
 	sourceHtmlChunks = [ '<div>' ];
 	reqLength = 0;
