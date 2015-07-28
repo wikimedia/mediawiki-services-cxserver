@@ -13,6 +13,14 @@ function getLanguagePairs() {
 	};
 }
 
+function getMTPairs() {
+	return registry.mt;
+}
+
+function getDictionaryPairs() {
+	return registry.dictionary;
+}
+
 /**
  * Get the available toolset for the given language pair
  * @param {string} from source language
@@ -83,6 +91,8 @@ function getValidProvider( from, to, serviceType, providerName ) {
 
 module.exports = {
 	getLanguagePairs: getLanguagePairs,
+	getMTPairs: getMTPairs,
+	getDictionaryPairs: getDictionaryPairs,
 	getToolSet: getToolSet,
 	getValidProvider: getValidProvider
 };
