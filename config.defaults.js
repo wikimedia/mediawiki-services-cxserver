@@ -51,7 +51,7 @@ module.exports = {
 				bg: [ 'mk' ],
 				br: [ 'fr' ],
 				ca: [ 'en', 'es', 'eo', 'oc', 'pt', 'simple' ],
-				cy: [ 'en' ],
+				cy: [ 'en', 'simple' ],
 				en: [ 'ca', 'eo', 'es', 'gl', 'sh' ],
 				eo: [ 'en', 'simple' ],
 				es: [ 'an', 'ast', 'ca', 'en', 'fr', 'gl', 'oc', 'pt', 'simple' ],
