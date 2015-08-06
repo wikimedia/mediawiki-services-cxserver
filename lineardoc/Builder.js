@@ -83,7 +83,7 @@ Builder.prototype.popInlineAnnotationTag = function ( tagName ) {
 		}
 		whitespace.push( textChunk.text );
 	}
-	if ( replace ) {
+	if ( replace && ( tag.attributes[ 'data-mw' ] ||  tag.attributes[ 'data-parsoid' ]  ) ) {
 		// truncate list and add data span as new sub-Doc.
 		this.textChunks.length = i + 1;
 		whitespace.reverse();
