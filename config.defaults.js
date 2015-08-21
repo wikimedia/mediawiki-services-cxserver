@@ -50,7 +50,7 @@ module.exports = {
 				an: [ 'es' ],
 				ast: [ 'es' ],
 				bg: [ 'mk' ],
-				ca: [ 'en', 'es', 'eo', 'oc', 'pt', 'simple' ],
+				ca: [ 'en', 'es', 'oc', 'pt', 'simple' ],
 				cy: [ 'en', 'simple' ],
 				en: [ 'ca', 'eo', 'es', 'gl', 'sh' ],
 				eo: [ 'en', 'simple' ],
