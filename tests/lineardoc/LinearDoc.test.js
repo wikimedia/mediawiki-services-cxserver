@@ -6,7 +6,7 @@ var fs = require( 'fs' ),
 QUnit.test( 'LinearDoc tests', function ( assert ) {
 	var parser, testXhtmlFile, resultXmlFile, resultXhtmlFile, testXhtml, resultXml,
 		resultXhtml, i,
-		numTests = 4;
+		numTests = 5;
 	QUnit.expect( 2 * numTests );
 	for ( i = 1; i <= numTests; i++ ) {
 		testXhtmlFile = __dirname + '/data/test' + i + '.xhtml';
