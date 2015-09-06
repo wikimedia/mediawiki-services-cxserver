@@ -65,7 +65,7 @@ module.exports = {
 				mk: [ 'bg', 'sr' ],
 				ms: [ 'id' ],
 				nl: [ 'af' ],
-				nn: [ 'nb', 'no' ],
+				nn: [ 'da', 'nb', 'no' ],
 				no: [ 'nn' ],
 				oc: [ 'ca', 'es' ],
 				pt: [ 'ca', 'es', 'gl' ],
