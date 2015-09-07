@@ -83,7 +83,13 @@ Builder.prototype.popInlineAnnotationTag = function ( tagName ) {
 		}
 		whitespace.push( textChunk.text );
 	}
-	if ( replace && ( tag.attributes[ 'data-mw' ] ||  tag.attributes[ 'data-parsoid' ]  ) ) {
+	if ( replace && (
+		tag.attributes[ 'data-mw' ] ||
+		tag.attributes[ 'data-parsoid' ] ||
+		// Allow empty <a rel='mw:ExtLink'></a> because REST API v1 can output links with
+		// no link text (which then get a CSS generated content numbered reference).
+		( tag.name === 'a' && tag.attributes.rel === 'mw:ExtLink' )
+	) ) {
 		// truncate list and add data span as new sub-Doc.
 		this.textChunks.length = i + 1;
 		whitespace.reverse();
