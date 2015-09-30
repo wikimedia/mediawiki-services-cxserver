@@ -53,8 +53,9 @@ PageLoader.prototype.load = function () {
 			.replace( '@lang', this.sourceLanguage )
 			.replace( '@title', encodeURIComponent( this.page ) );
 	} else {
-		url = conf( 'parsoid.api' ) + '/' + this.sourceLanguage + 'wiki/' +
-			encodeURIComponent( this.page );
+		url = conf( 'parsoid.api' )
+			.replace( '@lang', this.sourceLanguage )
+			.replace( '@title', encodeURIComponent( this.page ) );
 	}
 	request( url,
 		function ( error, response, body ) {

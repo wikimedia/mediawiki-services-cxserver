@@ -24,7 +24,8 @@ module.exports = {
 	// Accept requests from the given domains. * for all domains.
 	allowCORS: '*',
 	// Parsoid API URL
-	'parsoid.api': 'http://parsoid-lb.eqiad.wikimedia.org',
+	'parsoid.api': 'http://parsoid-lb.eqiad.wikimedia.org/@lang.wikipedia.org/v3/page/html/@title',
+	// RESTBase API URL
 	'restbase.url': 'https://@lang.wikipedia.org/api/rest_v1/page/html/@title',
 	// Apertium web API URL
 	'mt.apertium.api': 'http://apertium.wmflabs.org',
