@@ -62,7 +62,7 @@ module.exports = {
 				gl: [ 'en', 'es', 'simple' ],
 				hi: [ 'ur' ],
 				id: [ 'ms' ],
-				is: [ 'sv' ],
+				is: [ 'en', 'sv' ],
 				it: [ 'ca', 'es' ],
 				kk: [ 'tt' ],
 				mk: [ 'bg', 'sr' ],
