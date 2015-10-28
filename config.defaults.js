@@ -52,6 +52,7 @@ module.exports = {
 				ar: [ 'mt' ],
 				ast: [ 'es' ],
 				bg: [ 'mk' ],
+				br: [ 'fr' ],
 				ca: [ 'en', 'es', 'eo', 'fr', 'oc', 'pt', 'simple' ],
 				cy: [ 'en', 'simple' ],
 				en: [ 'ca', 'eo', 'es', 'gl', 'sh' ],
