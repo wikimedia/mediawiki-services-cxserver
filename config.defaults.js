@@ -86,7 +86,6 @@ module.exports = {
 				en: [ 'ru' ]
 			},
 			defaults: {
-				'en-ru': 'no-mt',
 				'hi-ur': 'no-mt',
 				'ur-hi': 'no-mt'
 			}
