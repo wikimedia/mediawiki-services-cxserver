@@ -152,9 +152,9 @@ app.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 			},
 			function ( error ) {
 				res.send( 500, {
-					error: error
+					error: error.toString()
 				} );
-				logger.log( 'error', 'MT processing error: (%s)', error.toString() );
+				logger.error( 'MT processing error: ' + error.toString() );
 			}
 		);
 	} );
