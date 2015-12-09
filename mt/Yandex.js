@@ -1,7 +1,7 @@
 var Q = require( 'q' ),
 	request = require( 'request' ),
 	util = require( 'util' ),
-	MTClient  = require( './MTClient.js' ),
+	MTClient = require( './MTClient.js' ),
 	conf = require( __dirname + '/../utils/Conf.js' );
 
 function Yandex() {
@@ -41,6 +41,7 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 	postData = {
 		url: conf( 'mt.yandex.api' ) + '/api/v1.5/tr.json/translate',
 		proxy: conf( 'proxy' ),
+		strictSSL: false,
 		form: {
 			key: key,
 			lang: sourceLang + '-' + targetLang,
