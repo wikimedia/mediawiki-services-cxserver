@@ -35,6 +35,7 @@ blockTags = [
 
 /**
  * Parser to read an HTML stream into a Doc
+ *
  * @class
  *
  * @constructor
@@ -109,7 +110,7 @@ Parser.prototype.ontext = function ( text ) {
  * Determine whether a tag is an inline annotation
  *
  * @private
- * @param {string} tagName The name of the tag (lowercase)
+ * @param {string[]} tagArray Array of tags in lowercase.
  * @return {boolean} Whether the tag is an inline annotation
  */
 Parser.prototype.isInlineAnnotationTag = ( function ( tagArray ) {

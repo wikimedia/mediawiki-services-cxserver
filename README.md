@@ -13,73 +13,23 @@ Install the dependencies:
 Running the server
 ------------------
 
-#### Using ```node```
-
-```
-$ node Server.js
-```
-
-#### Using ```npm```
-
 ```
 $ npm start
-```
-
-#### As a ```cxserver``` command
-
-Following step is to be performed only once. You might have to use ```sudo```.
-
-```
-$ npm link .
-```
-
-Subsequently, just use following to start the server.
-
-```
-$ cxserver
 ```
 
 Then browse to ```http://localhost:8080/```. You'll see the server playground
 page.
 
-### Running it in secure mode (https)
-
-You need to provide SSL certificate to start the server over secure mode.
-
-
-#### Using ```node```
-```
-$ node Server.js --secure --key key.pem --cert cert.pem
-```
-
-#### As a ```cxserver``` command
-
-Following step is to be performed only once. You might have to use ```sudo```.
-
-```
-$ npm link .
-```
-
-Subsequently, just use following to start the server.
-
-```
-$ cxserver --secure --key key.pem --cert cert.pem
-```
-
-Then browse to ```https://localhost:8080/```. You'll see the server playground
-page.
-
-
 Configuration
 -------------
-An default configuration file is given as config.defaults.js. Local changes
-in config.js will override the defaults. Restart server to read changes.
+An default configuration file is given as config.dev.yaml. Copy it to config.yaml
+to customize. Restart server to read changes.
 
 Debugging
 ---------
-To run the ContentTranslation server:
+You need node-inspector installed.
 
-```$ npm run-script debug```
+```$ npm debug```
 
 It will open Chrome developer tools with the ContentTranslation source code.
 You can debug the code just like a web application. You can also edit the code
@@ -90,7 +40,3 @@ Testing
 To run the tests:
 
 ```$ npm test```
-
-To run individual test:
-
-```$ node tests tests/path/to/individual/test```

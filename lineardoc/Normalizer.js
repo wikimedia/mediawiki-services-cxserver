@@ -5,7 +5,8 @@ var SAXParser = require( 'sax' ).SAXParser,
 	Utils =  require( './Utils.js' );
 
 /**
- * Escape text for inclusion in HTML, not inside a tag
+ * Escape text for inclusion in HTML, not inside a tag.
+ *
  * @private
  * @param {string} str String to escape
  * @return {string} Escaped version of the string
@@ -17,7 +18,8 @@ function esc( str ) {
 }
 
 /**
- * Parser to normalize XML
+ * Parser to normalize XML.
+ *
  * @class
  * @constructor
  */

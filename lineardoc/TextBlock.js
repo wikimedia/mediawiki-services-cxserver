@@ -4,6 +4,7 @@ var TextChunk = require( './TextChunk.js' ),
 	Utils = require( './Utils.js' );
 /**
  * A block of annotated inline text
+ *
  * @class
  *
  * @constructor
@@ -25,9 +26,10 @@ function TextBlock( textChunks ) {
 
 /**
  * Get the start and length of each non-common annotation
+ *
  * @return {Object[]}
- * @return[i].start {number} Position of each text chunk
- * @return[i].length {number} Length of each text chunk
+ * @return {number} [i].start {number} Position of each text chunk
+ * @return {number} [i].length {number} Length of each text chunk
  */
 TextBlock.prototype.getTagOffsets = function () {
 	var textBlock = this,
@@ -40,6 +42,7 @@ TextBlock.prototype.getTagOffsets = function () {
 
 /**
  * Get the (last) text chunk at a given char offset
+ *
  * @method
  * @param {number} charOffset The char offset of the TextChunk
  * @return {TextChunk} The text chunk
@@ -57,6 +60,7 @@ TextBlock.prototype.getTextChunkAt = function ( charOffset ) {
 
 /**
  * Returns the list of SAX tags that apply to the whole text block
+ *
  * @return {Object[]} List of common SAX tags
  */
 TextBlock.prototype.getCommonTags = function () {
@@ -230,6 +234,7 @@ TextBlock.prototype.translateTags = function ( targetText, rangeMappings ) {
 
 /**
  * Return plain text representation of the text block
+ *
  * @return {string} Plain text representation
  */
 TextBlock.prototype.getPlainText = function () {
@@ -243,6 +248,7 @@ TextBlock.prototype.getPlainText = function () {
 
 /**
  * Return HTML representation of the text block
+ *
  * @return {string} Plain text representation
  */
 TextBlock.prototype.getHtml = function () {
@@ -294,6 +300,7 @@ TextBlock.prototype.getHtml = function () {
 
 /**
  * Segment the text block into sentences
+ *
  * @method
  * @param {Function} getBoundaries Function taking plaintext, returning offset array
  * @param {Function} getNextId Function taking 'segment'|'link', returning next ID

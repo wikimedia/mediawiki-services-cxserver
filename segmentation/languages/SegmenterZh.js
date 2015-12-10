@@ -18,7 +18,7 @@ function findBoundary( text, match ) {
  * Find Chinese sentence boundaries
  *
  * @param {string} text The plaintext to segment
- * @returns {number[]} Sentence boundary offsets
+ * @return {number[]} Sentence boundary offsets
  */
 function getBoundaries( text ) {
 	// Regex to find possible Chinese sentence boundaries:

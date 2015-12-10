@@ -1,11 +1,12 @@
-var Q = require( 'q' ),
-	request = require( 'request' ),
+var
 	util = require( 'util' ),
-	MTClient = require( './MTClient.js' ),
-	conf = require( __dirname + '/../utils/Conf.js' );
+	preq = require( 'preq' ),
+	BBPromise = require( 'bluebird' ),
+	MTClient = require( './MTClient.js' );
 
-function Yandex() {
-
+function Yandex( options ) {
+	this.logger = options.logger;
+	this.conf = options.conf;
 }
 
 util.inherits( Yandex, MTClient );
@@ -22,27 +23,22 @@ util.inherits( Yandex, MTClient );
  * @return {Q.Promise} Target language text
  */
 Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
-	var key, postData,
-		self = this,
-		deferred = Q.defer();
+	var key, postData;
 
-	key = conf( 'mt.yandex.key' );
+	key = this.conf.mt.yandex.key;
 	if ( key === null ) {
-		deferred.reject( new Error( 'Yandex service is misconfigured' ) );
-		return deferred.promise;
+		return BBPromise.reject( new Error( 'Yandex service is misconfigured' ) );
 	}
 
 	if ( sourceText.length > 10000 ) {
-		deferred.reject( new Error( 'Source text too long' ) );
-		return deferred.promise;
+		return BBPromise.reject( new Error( 'Source text too long' ) );
 	}
 
 	// Language mapping that might be needed is be-tarask -> be
 	postData = {
-		url: conf( 'mt.yandex.api' ) + '/api/v1.5/tr.json/translate',
-		proxy: conf( 'proxy' ),
-		strictSSL: false,
-		form: {
+		uri: this.conf.mt.yandex.api + '/api/v1.5/tr.json/translate',
+		proxy: this.conf.proxy,
+		body: {
 			key: key,
 			lang: sourceLang + '-' + targetLang,
 			format: 'html',
@@ -50,33 +46,15 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 		}
 	};
 
-	request.post( postData, function ( error, response, body ) {
-		var ret;
-
-		if ( error ) {
-			deferred.reject( new Error( error ) );
-			return;
-		}
-
-		try {
-			ret = JSON.parse( body );
-		} catch ( err ) {
-			deferred.reject( err );
-			return;
-		}
-
-		if ( ret.code !== 200 ) {
-			deferred.reject( new Error( ret.code + ': ' + self.getErrorName( ret.code ) ) );
-		}
-
-		deferred.resolve( ret.text[ 0 ] );
+	return preq.post( postData ).then( function ( response ) {
+		return response.body.text[ 0 ];
 	} );
 
-	return deferred.promise;
 };
 
 /**
  * Returns error name from error code.
+ *
  * @return {string}
  */
 Yandex.prototype.getErrorName = function ( code ) {

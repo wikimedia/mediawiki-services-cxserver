@@ -1,12 +1,3 @@
-/**
- * ContentTranslation Server - Segmenter
- *
- * @file
- * @ingroup Extensions
- * @copyright See AUTHORS.txt
- * @license GPL-2.0+
- */
-
 'use strict';
 
 var LinearDoc = require( '../lineardoc' ),
@@ -29,8 +20,9 @@ CXSegmenter.prototype.segment = function () {
 
 /**
  * Get the segmenter for the given language.
+ *
  * @param {string} language Language code
- * @return {function} The segmenter function
+ * @return {Function} The segmenter function
  */
 CXSegmenter.prototype.getSegmenter = function ( language ) {
 	var segmenter;

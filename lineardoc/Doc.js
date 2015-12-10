@@ -17,6 +17,7 @@ var Utils = require( './Utils.js' );
  * 3. Annotations on block whitespace are stripped (except spans with 'data-mw')
  *
  * N.B. 2 can change semantics, e.g. identical adjacent links != single link
+ *
  * @class
  *
  * @constructor
@@ -30,7 +31,7 @@ function Doc( wrapperTag ) {
  * Clone the Doc, modifying as we go
  *
  * @method
- * @param callback The function to modify a node
+ * @param {Function} callback The function to modify a node
  * @return {Doc} clone with modifications
  */
 Doc.prototype.clone = function ( callback ) {
@@ -46,6 +47,7 @@ Doc.prototype.clone = function ( callback ) {
 
 /**
  * Add an item to the document
+ *
  * @method
  * @param {string} type Type of item: open|close|blockspace|textblock
  * @param {Object|string|TextBlock} item Open/close tag, space or text block
@@ -61,6 +63,7 @@ Doc.prototype.addItem = function ( type, item ) {
 
 /**
  * Segment the document into sentences
+ *
  * @method
  * @param {Function} getBoundaries Function taking plaintext, returning offset array
  * @return {Doc} Segmented version of document TODO: warning: *shallow copied*.
@@ -105,6 +108,7 @@ Doc.prototype.segment = function ( getBoundaries ) {
 
 /**
  * Dump an XML version of the linear representation, for debugging
+ *
  * @method
  * @return {string} XML version of the linear representation
  */
@@ -114,6 +118,7 @@ Doc.prototype.dumpXml = function () {
 
 /**
  * Dump the document in HTML format
+ *
  * @method
  * @return {string} HTML document
  */
@@ -157,6 +162,7 @@ Doc.prototype.getHtml = function () {
 
 /**
  * Dump an XML Array version of the linear representation, for debugging
+ *
  * @method
  * @return {string[]} Array that will concatenate to an XML string representation
  */
@@ -205,6 +211,7 @@ Doc.prototype.dumpXmlArray = function ( pad ) {
 
 /**
  * Extract the text segments from the document
+ *
  * @method
  * @return {string[]} balanced html fragments, one per segment
  */

@@ -8,7 +8,8 @@
  *
  */
 /**
- * @param str {String} The string to be compared with the object's valueOf.
+ * @param {string} a The string to be compared
+ * @param {string} b The string to be compared
  * @return {Integer} The minimum number of operations needed to transform one string into the other.
  */
 function levenshteinDistance( a, b ) {

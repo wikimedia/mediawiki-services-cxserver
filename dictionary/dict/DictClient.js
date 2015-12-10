@@ -4,13 +4,9 @@
  *    Dict client implementation borrowed from: https://github.com/ptrm/dict.json
  *    Copyright (c) 2010 Piotrek Marciniak <piotrek@ptrm.eu>, MIT Style License
  * RFC 2229: http://www.dict.org/rfc2229.txt
- * @author Santhosh Thottingal <santhosh.thottingal@gmail.com>
- * @license MIT
  */
 
-var sys = require( 'sys' ),
-	net = require( 'net' ),
-	logger = require( __dirname + '/../../utils/Logger.js' ),
+var net = require( 'net' ),
 	config;
 
 config = {
@@ -39,6 +35,7 @@ function firstObj( list ) {
 
 /**
  * Sanitize the words
+ *
  * @param {Object} words
  */
 function parseWords( words ) {
@@ -77,7 +74,6 @@ function parseWords( words ) {
 	}
 
 	res.count = count;
-	logger.verbose( sys.inspect( res ) );
 
 	return res;
 }
@@ -107,19 +103,16 @@ function getDefs( words, options ) {
 	}
 
 	dict.on( 'timeout', function () {
-		logger.debug( 'Timeout' );
 		options.error( 'error', 'Timeout' );
 		dict.end();
 	} );
 
 	dict.on( 'end', function () {
-		logger.debug( 'End' );
 		dict.end();
 	} );
 
 	dict.on( 'connect', function () {
 		var dbIdx, req, db, word;
-		logger.debug( 'getDefs: connected' );
 
 		// put requests to queue
 		for ( word in words ) {
@@ -149,7 +142,6 @@ function getDefs( words, options ) {
 		if ( ( currentReqIdx + 1 < sentReqs.length ) || reqQueue.length ) {
 			if ( !dict.writable ) {
 				reqOnDrain = true;
-				logger.debug( 'nextRequest() postponed till drain' );
 				return;
 			}
 
@@ -167,14 +159,12 @@ function getDefs( words, options ) {
 
 			if ( req.trim() ) {
 				dict.write( req );
-				logger.verbose( 'getDefs: nextRequest: sent request: "' + req + '"' );
 			}
 		} else { // if not, send the quit message
 			currentReq = {
 				request: 'q\r\n'
 			};
 			dict.end( currentReq.request );
-			logger.debug( 'nextRequest(): Sent "q"' );
 		}
 	}
 
@@ -183,7 +173,6 @@ function getDefs( words, options ) {
 			return;
 		}
 		nextRequest();
-		logger.debug( 'Called nextRequestuest() on drain' );
 	} );
 
 	dict.on( 'data', function ( data ) {
@@ -194,7 +183,6 @@ function getDefs( words, options ) {
 		if ( typeof data !== 'string' ) {
 			return;
 		}
-		logger.verbose( 'Data: ' + JSON.stringify( data ) );
 
 		/*
         To understand the response handling code, an example response is given below.
@@ -232,37 +220,29 @@ function getDefs( words, options ) {
 				status = response.substring( 0, 3 );
 			} else {
 				textEnded = ( nextResponsePos > -1 );
-				logger.verbose( 'nextResponsePos: ' + nextResponsePos );
 			}
 
-			logger.verbose( 'Response: "' + response + '", next at ' + nextResponsePos );
-			logger.verbose( 'Status: ' + status );
 		}
 
 		while ( ( nextResponsePos !== -1 ) && ( nextResponsePos !== 0 ) ) {
-
 			if ( textEnded ) {
 				// reset state variables
 				textBuf = '';
 				status = '';
 				response = '';
 				nextResponse();
-			} else {
-				logger.verbose( 'Continuing previous data' );
 			}
+			// Continuing previous data
 
 			switch ( status ) {
 				// greetings
 			case '220':
-				logger.verbose( 'getDefs: dict.org said hello' );
-
 				// we can start the fun now
 				nextRequest();
 				break;
 
 				// bye
 			case '221':
-				logger.verbose( 'getDefs: dict.org says bye' );
 				// onEnd event should follow, so no need to do anything here
 				break;
 
@@ -302,7 +282,7 @@ function getDefs( words, options ) {
 			case '550':
 				// invalid strategy
 			case '551':
-				logger.debug( 'Proceeding to next request at status ' + status );
+				// Proceeding to next request at status
 				nextRequest();
 				break;
 
@@ -320,9 +300,7 @@ function getDefs( words, options ) {
 					response = response.slice( idx + 2 );
 					textBuf = response;
 					textEnded = response.match( /\r\n\.(\r\n|$)/ );
-					if ( !textEnded ) {
-						logger.verbose( 'Suggestions didn\'t end.' );
-					}
+					// If textEnded is false, suggestions did not end
 				} else {
 					nextResponse();
 					textBuf = textBuf.concat( response );
@@ -347,14 +325,11 @@ function getDefs( words, options ) {
 						}
 						// remove the first word in the line because it is db name
 						sug = sugLines[ lNum ].replace( /^[a-zA-Z0-9]+ "([^"]+)".*/, '$1' );
-						logger.verbose( 'Suggestion: "' + sug + '"' );
 						if ( suggestions[ word ].indexOf( sug ) === -1 ) {
 							suggestions[ word ].push( sug );
 						}
 					}
-
-					logger.verbose( 'Suggestions ended.' );
-					logger.verbose( 'Parsed suggestions: ' + sys.inspect( suggestions[ word ] ) );
+					// Suggestions ended
 				}
 				break;
 
@@ -383,9 +358,7 @@ function getDefs( words, options ) {
 					textBuf = response;
 
 					textEnded = response.match( /\r\n\.(\r\n|$)/ );
-					if ( !textEnded ) {
-						logger.verbose( 'Definition did not end.' );
-					}
+					// If textEnded is false, definition did not end
 				} else {
 					nextResponse();
 					textBuf = textBuf.concat( response );
@@ -396,8 +369,7 @@ function getDefs( words, options ) {
 					// We also remove the "." ending the text message.
 					definition = textBuf.replace( /^\.\./m, '.' ).replace( /\r\n\.(\r\n|$)/, '' );
 
-					logger.verbose( 'Definition ended.' );
-					logger.verbose( 'Parsed defs: ' + sys.inspect( definition ) );
+					// Definition ended.
 
 					if ( typeof defs[ currentReq.word ] !== 'object' ) {
 						defs[ currentReq.word ] = [];
@@ -410,11 +382,9 @@ function getDefs( words, options ) {
 						}
 					} );
 
-					logger.verbose( 'Defs: ' + sys.inspect( defs ) );
 				}
 				break;
 			}
-			logger.verbose( '*** End of data event\n' );
 		}
 	} );
 
@@ -436,12 +406,12 @@ function getDefs( words, options ) {
 			data.suggestions = suggestions;
 		}
 		options.success( data );
-		logger.verbose( 'Connection ended.' );
 	} );
 }
 
 /**
  * Search for the definition of a word
+ *
  * @param {string|Array} word
  * @param {Object} options
  */
@@ -469,7 +439,6 @@ function lookup( word, options ) {
 	// Sanitize the wordList
 	words = parseWords( wordList );
 	if ( words.count ) {
-		logger.verbose( 'Words ok' );
 		defs = getDefs( words, {
 			action: options.action,
 			suggestions: !!options.suggestions,

@@ -1,0 +1,151 @@
+{
+	"am": [
+		{
+			"desc": "Amharic segmentation - basic test",
+			"source": "test-23.html",
+			"result": "result-23.html"
+		}
+	],
+	"en": [
+		{
+			"desc": "Simple paragraph test",
+			"source": "test-1.html",
+			"result": "result-1.html"
+		},
+		{
+			"desc": "Sentence ending with )",
+			"source": "test-ends-with-bracket.html",
+			"result": "result-ends-with-bracket.html"
+		},
+		{
+			"desc": "Exclamation, punctuation test",
+			"source": "test-2.html",
+			"result": "result-2.html"
+		},
+		{
+			"desc": "Multiple sentences",
+			"source": "test-3.html",
+			"result": "result-3.html"
+		},
+		{
+			"desc": "Multiple sections - a div and paragraph",
+			"source": "test-4.html",
+			"result": "result-4.html"
+		},
+		{
+			"desc": "Sentence starting with a link",
+			"source": "test-5.html",
+			"result": "result-5.html"
+		},
+		{
+			"desc": "Sentence starting with a link and ending with a link",
+			"source": "test-6.html",
+			"result": "result-6.html"
+		},
+		{
+			"desc": "Figure",
+			"source": "test-7.html",
+			"result": "result-7.html"
+		},
+		{
+			"desc": "References can appear after period without space. Example: Hydrogen is a gas.[1] It is ...",
+			"source": "test-8.html",
+			"result": "result-8.html"
+		},
+		{
+			"desc": "References can appear after period without space, repeated. Example: Hydrogen is a gas.[1][2][3] It is ...",
+			"source": "test-9.html",
+			"result": "result-9.html"
+		},
+		{
+			"desc": "References can appear inside a sentence. Example: Hydrogen is a gas[1] and it is ...",
+			"source": "test-10.html",
+			"result": "result-10.html"
+		},
+		{
+			"desc": "References can appear inside a sentence. Example:Hydrogen's atomic number is one. Hydrogen is a gas[1] and it is ..... Test the flags are reset properly",
+			"source": "test-11.html",
+			"result": "result-11.html"
+		},
+		{
+			"desc": "References can appear repeated inside a sentence. Example: Hydrogen is a gas[1][2][3] and it is ...",
+			"source": "test-12.html",
+			"result": "result-12.html"
+		},
+		{
+			"desc": "References can appear after period and space. Example: Hydrogen is a gas. [1] It is ...",
+			"source": "test-13.html",
+			"result": "result-13.html"
+		},
+		{
+			"desc": "Paragraph from Debian article- repeating references",
+			"source": "test-debian-1.html",
+			"result": "result-debian-1.html"
+		},
+		{
+			"desc": "References after closing bracket and period.",
+			"source": "test-15.html",
+			"result": "result-15.html"
+		},
+		{
+			"desc": "Three sentences in a single text node",
+			"source": "test-16.html",
+			"result": "result-16.html"
+		},
+		{
+			"desc": "Paragraph ending with reference and already having reference in between. The second reference should not be identified as repeating reference. If identified as repeating reference, 7 letters from last word will be missing.",
+			"source": "test-ends-with-references-missing-letters.html",
+			"result": "result-ends-with-references-missing-letters.html"
+		},
+		{
+			"desc": "Sentences ending with abbreviations",
+			"source": "test-17.html",
+			"result": "result-17.html"
+		},
+		{
+			"desc": "link element inside span element",
+			"source": "test-18.html",
+			"result": "result-18.html"
+		},
+		{
+			"desc": "Do not break inside of links with abbreviations. Example: Carl E. Wieman. See https://phabricator.wikimedia.org/T99504",
+			"source": "test-24.html",
+			"result": "result-24.html"
+		}
+	],
+	"hi": [
+		{
+			"desc": "Hindi segmentation - basic test",
+			"source": "test-14.html",
+			"result": "result-14.html"
+		}
+	],
+	"hy": [
+		{
+			"desc": "Armenian segmentation - basic test",
+			"source": "test-22.html",
+			"result": "result-22.html"
+		}
+	],
+	"ja": [
+		{
+			"desc": "Japanese segmentation - basic test",
+			"source": "test-19.html",
+			"result": "result-19.html"
+		}
+	],
+	"zh": [
+		{
+			"desc": "Chinese segmentation - basic test",
+			"source": "test-20.html",
+			"result": "result-20.html"
+		}
+	],
+	"pa": [
+		{
+			"desc": "Punjabi segmentation - basic test",
+			"source": "test-21.html",
+			"result": "result-21.html"
+		}
+	]
+}

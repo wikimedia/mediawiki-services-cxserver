@@ -1,7 +1,11 @@
-var dictRegistry = require( __dirname + '/JsonDictRegistry.json' ),
-	fs = require( 'fs' ),
-	Q = require( 'q' ),
-	logger = require( __dirname + '/../../utils/Logger.js' );
+var
+	BBPromise = require( 'bluebird' ),
+	fs = BBPromise.promisifyAll( require( 'fs' ) );
+
+function JsonDict( options ) {
+	this.log = options.log || function () {};
+	this.registry = require( __dirname + '/JsonDictRegistry.json' );
+}
 
 /**
  * Find bilingual dictionaries for the language pair
@@ -10,14 +14,14 @@ var dictRegistry = require( __dirname + '/JsonDictRegistry.json' ),
  * @method
  * @param {string} sourceLang Source language BCP47 tag
  * @param {string} targetLang Target language BCP47 tag
- * @returns {Object|null} dictionary info, or null if no dictionaries
- * @returns {Object} [return.<dictionaryId>] Info for one dictionary
- * @returns {string} [return.<dictionaryId>.source] JSON filename
- * @returns {string} [return.<dictionaryId>.desc] Description of the source
+ * @return {Object|null} dictionary info, or null if no dictionaries
+ * @return {Object} [return.<dictionaryId>] Info for one dictionary
+ * @return {string} [return.<dictionaryId>.source] JSON filename
+ * @return {string} [return.<dictionaryId>.desc] Description of the source
  */
-function findDictionaries( sourceLang, targetLang ) {
-	return ( dictRegistry[sourceLang] && dictRegistry[sourceLang][targetLang] ) || {};
-}
+JsonDict.prototype.findDictionaries = function ( sourceLang, targetLang ) {
+	return ( this.registry[ sourceLang ] && this.registry[ sourceLang ][ targetLang ] ) || {};
+};
 
 /**
  * Get possible translations and information about them
@@ -39,53 +43,48 @@ function findDictionaries( sourceLang, targetLang ) {
  * @param {string} source Source language word or phrase
  * @param {string} sourceLang Source language BCP47 code
  * @param {string} targetLang Target language BCP47 code
- * @returns {Object} deferred.promise
+ * @return {Object} deferred.promise
  */
-function getTranslations( source, sourceLang, targetLang ) {
-	var deferred = Q.defer(),
-		dictionaries, dictionaryId, file;
+JsonDict.prototype.getTranslations = function ( source, sourceLang, targetLang ) {
+	var dictionaries, dictionaryId, file, self = this;
 
-	dictionaries = findDictionaries( sourceLang, targetLang );
+	dictionaries = this.findDictionaries( sourceLang, targetLang );
 	if ( dictionaries === null ) {
-		logger.error( 'JSON dictionary not found for %s-%s', sourceLang, targetLang );
-		deferred.resolve( [] );
-		return deferred.promise;
+		this.log( 'error', 'JSON dictionary not found for %s-%s', sourceLang, targetLang );
+		return BBPromise.resolve( [] );
 	}
 
 	// Just use the one dictionary for now
 	// TODO: Use all dictionaries
-	dictionaryId = Object.keys( dictionaries )[0];
-	file = __dirname + '/' + dictionaries[dictionaryId].source;
+	dictionaryId = Object.keys( dictionaries )[ 0 ];
+	file = __dirname + '/' + dictionaries[ dictionaryId ].source;
 
 	// TODO: Cache dictionary files. Use one cache for all files, so we can
 	// flush the least frequently used file as necessary.
-	fs.readFile( file, 'utf8', function ( err, data ) {
+	return fs.readFileAsync( file, 'utf8' ).then( function ( data ) {
 		var results, result, i, len,
 			translations = [];
-		if ( err ) {
-			logger.error( 'Dictionary file \'%s\' could not be read', file );
-			deferred.reject( String( err ) );
-			return;
-		}
-		results = JSON.parse( data )[source] || [];
+		results = JSON.parse( data )[ source ] || [];
 		for ( i = 0, len = results.length; i < len; i++ ) {
-			result = results[i];
+			result = results[ i ];
 			translations.push( {
-				phrase: result[0],
-				info: result[1],
+				phrase: result[ 0 ],
+				info: result[ 1 ],
 				sources: [ dictionaryId ]
 			} );
 		}
 
 		if ( translations.length < 1 ) {
-			logger.debug( 'No dictionary entries found' );
+			self.log( 'debug', 'No dictionary entries found' );
 		} else {
-			logger.debug( 'Dictionary entries found' );
+			self.log( 'debug', 'Dictionary entries found' );
 		}
 
-		deferred.resolve( { source: source, translations: translations } );
+		return ( {
+			source: source,
+			translations: translations
+		} );
 	} );
-	return deferred.promise;
-}
+};
 
-module.exports.getTranslations = getTranslations;
+module.exports = JsonDict;

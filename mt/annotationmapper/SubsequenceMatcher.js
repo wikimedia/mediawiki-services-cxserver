@@ -19,6 +19,7 @@ function cleanup( str ) {
 
 /**
  * Tokenize the string to words
+ *
  * @param {string} str
  * @return {string[]} array of words
  */
@@ -48,6 +49,7 @@ SubSequenceMatcher.prototype.getNGrams = function ( str, n ) {
 
 /**
  * Approximately compare two strings
+ *
  * @param {string} string1
  * @param {string} string2
  * @return {boolean}
@@ -141,7 +143,8 @@ function comparePositions( positionA, positionB ) {
 
 /**
  * Find the best match among candidate positions by longest match.
- * @param {Object[]} positions.
+ *
+ * @param {Object[]} positions
  * @return {Object} best match position.
  */
 SubSequenceMatcher.prototype.bestMatch = function ( positions ) {

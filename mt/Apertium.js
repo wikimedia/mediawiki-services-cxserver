@@ -1,12 +1,11 @@
-var Q = require( 'q' ),
+var preq = require( 'preq' ),
 	util = require( 'util' ),
-	request = require( 'request' ),
-	conf = require( __dirname + '/../utils/Conf.js' ),
 	MTClient = require( './MTClient.js' ),
 	apertiumLangMapping = require( './Apertium.languagenames.json' );
 
-function Apertium() {
-
+function Apertium( options ) {
+	this.logger = options.logger;
+	this.conf = options.conf;
 }
 
 util.inherits( Apertium, MTClient );
@@ -17,42 +16,24 @@ util.inherits( Apertium, MTClient );
  * mapping. For translating HTML, It use CX's annotation mapping on top
  * of the plaintext translation. Hence it inherits translateHTML method
  * of MTClient.
+ *
  * @param {string} sourceLang Source language code
  * @param {string} targetLang Target language code
  * @param {string} sourceText Source language text
- * @return {Object} Deferred promise: Target language text
+ * @return {BBPromise} promise: Target language text
  */
 Apertium.prototype.translateText = function ( sourceLang, targetLang, sourceText ) {
-	var deferred = Q.defer(),
-		postData;
-
-	postData = {
-		url: conf( 'mt.apertium.api' ) + '/translate',
-		form: {
+	return preq.post( {
+		uri: this.conf.mt.apertium.api + '/translate',
+		body: {
 			markUnknown: 0,
 			langpair: apertiumLangMapping[ sourceLang ] + '|' + apertiumLangMapping[ targetLang ],
 			format: 'txt',
 			q: sourceText
 		}
-	};
-	request.post( postData,
-		function ( error, response, body ) {
-			var message;
-
-			if ( error ) {
-				deferred.reject( new Error( error ) );
-				return;
-			}
-			if ( response.statusCode !== 200 ) {
-				message = 'Error ' + response.statusCode;
-				message += ' sourceText={' + sourceText + '}, body={' + body + '}';
-				deferred.reject( new Error( message ) );
-				return;
-			}
-			deferred.resolve( JSON.parse( body ).responseData.translatedText );
-		}
-	);
-	return deferred.promise;
+	} ).then( function ( response ) {
+		return response.body.responseData.translatedText;
+	} );
 };
 
 module.exports = Apertium;

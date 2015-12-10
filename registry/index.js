@@ -1,8 +1,8 @@
-var conf = require( __dirname + '/../utils/Conf.js' ),
-	registry = conf( 'registry' );
+var registry;
 
 /**
  * Return all language pairs.
+ *
  * @return {Object} The languages, indexed by source language
  *   pointing to a list of target languages.
  */
@@ -23,6 +23,7 @@ function getDictionaryPairs() {
 
 /**
  * Get the available toolset for the given language pair
+ *
  * @param {string} from source language
  * @param {string} to target language
  * @return {Object} the toolset (empty object if nothing available)
@@ -60,11 +61,12 @@ function getToolSet( from, to ) {
  * If the provider name is given, it is validated.
  * If provider name is not given, the first one that appears in the registry will be returned.
  * If not valid provider is found, the function returns null.
+ *
  * @param {string} from source language
  * @param {string} to target language
  * @param {string} serviceType Service type from the registry, such as 'mt' or 'dictionary'
  * @param {string} providerName Optional - if given, it is validated.
- * @return {string} Provider name
+ * @return {string|null|boolean} Provider name
  */
 function getValidProvider( from, to, serviceType, providerName ) {
 	var toolset = getToolSet( from, to );
@@ -89,10 +91,13 @@ function getValidProvider( from, to, serviceType, providerName ) {
 	return toolset[ serviceType ][ 0 ];
 }
 
-module.exports = {
-	getLanguagePairs: getLanguagePairs,
-	getMTPairs: getMTPairs,
-	getDictionaryPairs: getDictionaryPairs,
-	getToolSet: getToolSet,
-	getValidProvider: getValidProvider
+module.exports = function ( app ) {
+	registry = app.conf.registry || {};
+	return {
+		getLanguagePairs: getLanguagePairs,
+		getMTPairs: getMTPairs,
+		getDictionaryPairs: getDictionaryPairs,
+		getToolSet: getToolSet,
+		getValidProvider: getValidProvider
+	};
 };

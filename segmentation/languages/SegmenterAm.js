@@ -29,7 +29,7 @@ function findBoundary( text, match ) {
  * Find Ethiopic sentence boundaries
  *
  * @param {string} text The plaintext to segment
- * @returns {number[]} Sentence boundary offsets
+ * @return {number[]} Sentence boundary offsets
  */
 function getBoundaries( text ) {
 	// Regex to find possible Ethiopic sentence boundaries.

@@ -12,9 +12,14 @@
 
 	// Environment
 	"node": true,
+	"jasmine": true,
 
 	"globals": {
 		"CX": false,
-		"QUnit": false
+		"QUnit": false,
+		"before": false,
+		"beforeEach": false,
+		"after": false,
+		"afterEach": false
 	}
 }

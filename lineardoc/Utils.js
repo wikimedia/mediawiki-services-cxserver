@@ -28,6 +28,7 @@ function findAll( text, regex, callback ) {
 
 /**
  * Escape text for inclusion in HTML, not inside a tag
+ *
  * @private
  * @param {string} str String to escape
  * @return {string} Escaped version of the string
@@ -40,6 +41,7 @@ function esc( str ) {
 
 /**
  * Escape text for inclusion inside an HTML attribute
+ *
  * @private
  * @param {string} str String to escape
  * @return {string} Escaped version of the string
@@ -52,6 +54,7 @@ function escAttr( str ) {
 
 /**
  * Render a SAX open tag into an HTML string
+ *
  * @private
  * @param {Object} tag Tag to render
  * @return {string} Html representation of open tag
@@ -77,6 +80,7 @@ function getOpenTagHtml( tag ) {
 
 /**
  * Clone a SAX open tag
+ *
  * @private
  * @param {Object} tag Tag to clone
  * @return {Object} Cloned tag
@@ -94,6 +98,7 @@ function cloneOpenTag( tag ) {
 
 /**
  * Render a SAX close tag into an HTML string
+ *
  * @private
  * @param {Object} tag Name of tag to close
  * @return {string} Html representation of close tag
@@ -136,6 +141,7 @@ function dumpTags( tagArray ) {
 
 /**
  * Detect whether this is a mediawiki reference span
+ *
  * @param {Object} tag SAX open tag object
  * @return {boolean} Whether the tag is a mediawiki reference span
  */
@@ -186,9 +192,8 @@ function isInlineEmptyTag( tagName ) {
  * Boundaries at the start of the first chunk, or the end of the last, are not included.
  * Therefore zero-width chunks never have any boundaries
  *
- * @function
  * @param {number[]} boundaries Boundary offsets
- * @param chunks Chunks to which the boundaries apply
+ * @param {Object[]} chunks Chunks to which the boundaries apply
  * @param {Function} getLength Function returning the length of a chunk
  * @return {Object[]} Array of {chunk: ch, boundaries: [...]}
  */
