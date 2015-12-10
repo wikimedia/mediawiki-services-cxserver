@@ -61,6 +61,10 @@ services:
           api: https://translate.yandex.net
           proxy: http://url-downloader.wikimedia.org:8080
           key: null
+          # SSL certificate of yandex server. Only required while using Node 0.10.x on Ubuntu
+          # Setting a value like '/etc/ssl/certs/Certum_Trusted_Network_CA.pem' will help
+          # to prevent certificate rejection by nodejs.
+          certificate: null
       registry:
         source:
           - ab

@@ -1,8 +1,10 @@
 var
 	util = require( 'util' ),
 	preq = require( 'preq' ),
+	fs = require( 'fs' ),
 	BBPromise = require( 'bluebird' ),
-	MTClient = require( './MTClient.js' );
+	MTClient = require( './MTClient.js' ),
+	certificate;
 
 function Yandex( options ) {
 	this.logger = options.logger;
@@ -46,6 +48,12 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 		}
 	};
 
+	if ( this.conf.mt.yandex.certificate ) {
+		certificate = certificate || fs.readFileSync( this.conf.mt.yandex.certificate );
+		postData.agentOptions = {
+			ca: certificate
+		};
+	}
 	return preq.post( postData ).then( function ( response ) {
 		return response.body.text[ 0 ];
 	} );
