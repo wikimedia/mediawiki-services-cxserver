@@ -83,7 +83,10 @@ module.exports = {
 				ur: [ 'hi' ]
 			},
 			Yandex: {
-				en: [ 'ru' ]
+				en: [ 'ru' ],
+				'be-tarask': [ 'ru' ],
+				be: [ 'ru' ],
+				uk: [ 'ru' ]
 			}
 		},
 		dictionary: {
