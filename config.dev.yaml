@@ -738,7 +738,13 @@ services:
             ur:
               - hi
           Yandex:
+            'be-tarask':
+              - ru
+            be:
+              - ru
             en:
+              - ru
+            uk:
               - ru
         dictionary:
             Dictd:
