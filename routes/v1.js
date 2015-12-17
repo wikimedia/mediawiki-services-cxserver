@@ -87,7 +87,7 @@ router.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 		}
 
 		authzToken = req.headers.authorization;
-		jwtConfig = app.conf( 'jwt' );
+		jwtConfig = app.conf.jwt;
 
 		try {
 			authz = jwt.verify( authzToken, jwtConfig.secret, {
