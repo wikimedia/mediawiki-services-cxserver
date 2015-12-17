@@ -39,7 +39,7 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 	// Language mapping that might be needed is be-tarask -> be
 	postData = {
 		uri: this.conf.mt.yandex.api + '/api/v1.5/tr.json/translate',
-		proxy: this.conf.proxy,
+		proxy: this.conf.mt.yandex.proxy,
 		body: {
 			key: key,
 			lang: sourceLang + '-' + targetLang,
