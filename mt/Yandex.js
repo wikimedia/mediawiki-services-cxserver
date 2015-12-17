@@ -50,6 +50,8 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 
 	if ( this.conf.mt.yandex.certificate ) {
 		certificate = certificate || fs.readFileSync( this.conf.mt.yandex.certificate );
+		// Dont ask why.
+		postData.ca = certificate;
 		postData.agentOptions = {
 			ca: certificate
 		};
