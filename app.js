@@ -42,20 +42,6 @@ function initApp( options ) {
 			'default-src \'self\'; object-src \'none\'; media-src *; img-src *; style-src *; frame-ancestors \'self\'';
 	}
 
-	// set outgoing proxy
-	if ( app.conf.proxy ) {
-		process.env.HTTP_PROXY = app.conf.proxy;
-		// if there is a list of domains which should
-		// not be proxied, set it
-		if ( app.conf.no_proxy_list ) {
-			if ( Array.isArray( app.conf.no_proxy_list ) ) {
-				process.env.NO_PROXY = app.conf.no_proxy_list.join( ',' );
-			} else {
-				process.env.NO_PROXY = app.conf.no_proxy_list;
-			}
-		}
-	}
-
 	// set up the spec
 	if ( !app.conf.spec ) {
 		app.conf.spec = __dirname + '/spec.yaml';
