@@ -4,7 +4,14 @@ var
 	fs = require( 'fs' ),
 	BBPromise = require( 'bluebird' ),
 	MTClient = require( './MTClient.js' ),
+	yandexLanguageNameMap,
 	certificate;
+
+// Yandex language codes can differ from the language codes that
+// we use.
+yandexLanguageNameMap = {
+	'be-tarask': 'be' // T122033
+};
 
 function Yandex( options ) {
 	this.logger = options.logger;
@@ -36,7 +43,9 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 		return BBPromise.reject( new Error( 'Source text too long' ) );
 	}
 
-	// Language mapping that might be needed is be-tarask -> be
+	sourceLang = yandexLanguageNameMap[ sourceLang ] || sourceLang;
+	targetLang = yandexLanguageNameMap[ targetLang ] || targetLang;
+
 	postData = {
 		uri: this.conf.mt.yandex.api + '/api/v1.5/tr.json/translate',
 		proxy: this.conf.proxy,
