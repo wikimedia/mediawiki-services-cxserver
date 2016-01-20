@@ -50,6 +50,9 @@
 		"docker-test": "service-runner docker-test",
 		"build": "service-runner build"
 	},
+	"bin": {
+		"cxserver": "./server.js"
+	},
 	"main": "./app.js",
 	"deploy": {
 		"target": "ubuntu",
