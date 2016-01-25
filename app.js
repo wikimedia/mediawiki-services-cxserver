@@ -113,13 +113,7 @@ function initApp( options ) {
 	} ) );
 	// use the application/x-www-form-urlencoded parser
 	app.use( bodyParser.urlencoded( {
-		extended: true,
-		verify: function ( req, res, buf ) {
-			// Get the formdata buffer to rawBody.
-			// TODO: This is a hack. Remove this after CX MT tool start sending html
-			// in formdata than the whole html as form data.
-			req.rawBody = buf.toString();
-		}
+		extended: true
 	} ) );
 	// use the JSON body parser
 	app.use( bodyParser.json( {
