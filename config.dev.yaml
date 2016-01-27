@@ -81,6 +81,7 @@ services:
           - av
           - ay
           - az
+          - azb
           - bar
           - ba
           - bcl
@@ -361,6 +362,7 @@ services:
           - av
           - ay
           - az
+          - azb
           - bar
           - ba
           - bcl
