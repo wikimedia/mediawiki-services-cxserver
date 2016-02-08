@@ -35,14 +35,19 @@ function PageLoader( options ) {
 /**
  * @param {string} page
  * @param {string} sourceLanguage
+ * @param {string} revision
  * @return {Promise}
  */
-PageLoader.prototype.load = function ( page, sourceLanguage ) {
+PageLoader.prototype.load = function ( page, sourceLanguage, revision ) {
 	var url;
 
 	url = this.conf.restbase_url
 		.replace( '@lang', sourceLanguage )
 		.replace( '@title', encodeURIComponent( page ) );
+
+	if ( revision ) {
+		url += '/' + revision;
+	}
 
 	return preq.get( {
 		uri: url,
@@ -52,6 +57,7 @@ PageLoader.prototype.load = function ( page, sourceLanguage ) {
 	} ).then( function ( response ) {
 		return {
 			body: cheapBodyInnerHTML( response.body ),
+			url: url,
 			// Restbase returns revision ID in etag  header.
 			// Example:
 			//     ETag: "123456/c4e494da-ee8f-11e4-83a1-8b80de1cde5f"
