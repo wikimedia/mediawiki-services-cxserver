@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Dict dictionary protocol client as per RFC 2229
  * Credits:

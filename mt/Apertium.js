@@ -1,3 +1,5 @@
+'use strict';
+
 var preq = require( 'preq' ),
 	util = require( 'util' ),
 	MTClient = require( './MTClient.js' ),

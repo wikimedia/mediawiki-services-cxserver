@@ -1,3 +1,5 @@
+'use strict';
+
 var dictClient = require( __dirname + '/DictClient.js' ),
 	BBPromise = require( 'bluebird' );
 

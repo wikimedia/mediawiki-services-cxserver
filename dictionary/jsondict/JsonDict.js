@@ -1,3 +1,5 @@
+'use strict';
+
 var
 	BBPromise = require( 'bluebird' ),
 	fs = BBPromise.promisifyAll( require( 'fs' ) );

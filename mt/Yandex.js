@@ -1,3 +1,5 @@
+'use strict';
+
 var
 	util = require( 'util' ),
 	preq = require( 'preq' ),

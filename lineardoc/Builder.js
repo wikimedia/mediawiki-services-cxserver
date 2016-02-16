@@ -1,3 +1,5 @@
+'use strict';
+
 var Doc = require( './Doc.js' ),
 	TextBlock = require( './TextBlock.js' ),
 	TextChunk = require( './TextChunk.js' );

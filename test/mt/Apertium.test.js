@@ -1,3 +1,5 @@
+'use strict';
+
 var tests,
 	assert = require( '../utils/assert.js' ),
 	server = require( '../utils/server.js' ),

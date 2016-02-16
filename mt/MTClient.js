@@ -1,3 +1,5 @@
+'use strict';
+
 var LinearDoc = require( __dirname + '/../lineardoc' ),
 	BBPromise = require( 'bluebird' ),
 	SubSequenceMatcher = require( './annotationmapper/SubsequenceMatcher.js' );
