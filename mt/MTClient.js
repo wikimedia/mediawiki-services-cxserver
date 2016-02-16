@@ -173,7 +173,7 @@ MTClient.prototype.translateLines = function ( sourceLang, targetLang, sourceLin
 	var sourceLinesText;
 
 	// Join lines into single string. Separator must break sentences and pass through unchanged
-	// Using Devangari seperator Double Danda twice.
+	// Using Devangari separator Double Danda twice.
 	sourceLinesText = sourceLines.join( '.॥॥.' );
 
 	return this.translateText(
@@ -259,7 +259,7 @@ MTClient.prototype.getSequenceMappings = function ( targetLang, subSequences, ta
 	var i, iLen, targetRange, sourceRange, subSequence,
 		rangeMappings = [],
 		targetRanges = [],
-		occurances = {};
+		occurrences = {};
 
 	if ( subSequences.length !== targetLines.length ) {
 		// We must have translation for all subSequences.
@@ -272,14 +272,14 @@ MTClient.prototype.getSequenceMappings = function ( targetLang, subSequences, ta
 			start: subSequence.start,
 			length: subSequence.length
 		};
-		// Keep track of repeated occurances of a subsequence in the text. A word can repeat
+		// Keep track of repeated occurrences of a subsequence in the text. A word can repeat
 		// in a translation block.
-		occurances[ subSequence.text ] =
-			occurances[ subSequence.text ] === undefined ? 0 : occurances[ subSequence.text ] + 1;
+		occurrences[ subSequence.text ] =
+			occurrences[ subSequence.text ] === undefined ? 0 : occurrences[ subSequence.text ] + 1;
 		// Find the position of the translated subsequence in translated text.
 		// This involves a non-trivial fuzzy matching algorithm
 		targetRange = this.findSubSequence(
-			targetText, targetLines[ i ], targetLang, occurances[ subSequence.text ]
+			targetText, targetLines[ i ], targetLang, occurrences[ subSequence.text ]
 		);
 
 		if ( targetRange && !isOverlappingRange( targetRange, targetRanges ) ) {
@@ -304,25 +304,25 @@ MTClient.prototype.getSequenceMappings = function ( targetLang, subSequences, ta
  * @param {string} text The translated text.
  * @param {string} sequence The search string.
  * @param {string} language Language of the text. Used for language specific matching.
- * @param {number} occurance Pass 1 for first occurance, 2 for second occurance, so on.
+ * @param {number} occurrence Pass 1 for first occurrence, 2 for second occurrence, so on.
  * @return {null|Object} The location of the sequence in the text.
  * @return {null|number} Object.start {number} Start position of sequence in the text.
  * @return {null|number} Object.lengthLength of matched sequence in the text.
  */
-MTClient.prototype.findSubSequence = function ( text, sequence, language, occurance ) {
+MTClient.prototype.findSubSequence = function ( text, sequence, language, occurrence ) {
 	var indices, matcher;
 
 	matcher = new SubSequenceMatcher( language );
 	indices = matcher.findFuzzyMatch( text, sequence );
-	// Find the nth occurance position
+	// Find the nth occurrence position
 
-	if ( !indices || indices.length < occurance ) {
+	if ( !indices || indices.length < occurrence ) {
 		return null;
 	}
-	if ( occurance === 0 ) {
+	if ( occurrence === 0 ) {
 		return matcher.bestMatch( indices );
 	}
-	return indices[ occurance ];
+	return indices[ occurrence ];
 };
 
 /**
