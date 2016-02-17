@@ -1,11 +1,9 @@
 var
 	util = require( 'util' ),
 	preq = require( 'preq' ),
-	fs = require( 'fs' ),
 	BBPromise = require( 'bluebird' ),
 	MTClient = require( './MTClient.js' ),
-	yandexLanguageNameMap,
-	certificate;
+	yandexLanguageNameMap;
 
 // Yandex language codes can differ from the language codes that
 // we use.
@@ -57,14 +55,6 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 		}
 	};
 
-	if ( this.conf.mt.yandex.certificate ) {
-		certificate = certificate || fs.readFileSync( this.conf.mt.yandex.certificate );
-		// Dont ask why.
-		postData.ca = certificate;
-		postData.agentOptions = {
-			ca: certificate
-		};
-	}
 	return preq.post( postData ).then( function ( response ) {
 		return response.body.text[ 0 ];
 	} );
