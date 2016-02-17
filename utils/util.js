@@ -1,3 +1,5 @@
+'use strict';
+
 var BBPromise = require( 'bluebird' ),
 	util = require( 'util' ),
 	express = require( 'express' ),

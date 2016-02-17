@@ -1,3 +1,5 @@
+'use strict';
+
 var fs = require( 'fs' ),
 	lang, i, len, lang, test, tests,
 	assert = require( '../utils/assert.js' ),

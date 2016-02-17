@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Levenshtein distance is a metric for measuring the amount of difference between two sequences.
  *  - http://en.wikipedia.org/wiki/Levenshtein_distance

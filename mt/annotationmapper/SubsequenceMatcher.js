@@ -1,3 +1,5 @@
+'use strict';
+
 var levenshteinDistance = require( './LevenshteinDistance.js' );
 
 function SubSequenceMatcher( language ) {

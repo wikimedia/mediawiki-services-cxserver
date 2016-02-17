@@ -1,3 +1,5 @@
+'use strict';
+
 var assert = require( '../utils/assert.js' ),
 	LinearDoc = require( '../../lineardoc' ),
 	fs = require( 'fs' ),

@@ -1,3 +1,5 @@
+'use strict';
+
 var findAll = require( '../../lineardoc' ).Utils.findAll;
 
 /**
