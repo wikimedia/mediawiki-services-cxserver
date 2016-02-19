@@ -13,14 +13,15 @@ HTTPError = sUtil.HTTPError;
  */
 router = sUtil.router();
 
-router.get( '/page/:language/:title', function ( req, res ) {
+router.get( '/page/:language/:title/:revision?', function ( req, res ) {
 	var sourceLanguage = req.params.language,
 		title = req.params.title,
+		revision = req.params.revision,
 		CXSegmenter = require( __dirname + '/../segmentation/CXSegmenter.js' ).CXSegmenter,
 		PageLoader = require( __dirname + '/../pageloader/PageLoader.js' ).PageLoader,
 		pageloader = new PageLoader( app );
 
-	return pageloader.load( title, sourceLanguage ).then(
+	return pageloader.load( title, sourceLanguage, revision ).then(
 		function ( response ) {
 			var segmenter, segmentedContent;
 

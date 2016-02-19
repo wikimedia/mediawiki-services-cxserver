@@ -53,7 +53,7 @@ paths:
           response:
             status: 404
   # from routes/v1.js
-  /v1/page/{language}/{title}:
+  /v1/page/{language}/{title}{/revision}:
     get:
       tags:
         - Page content
@@ -71,12 +71,18 @@ paths:
           description: The page title
           type: string
           required: true
+        - name: revision
+          in: path
+          description: The page revision id
+          type: string
+          required: false
       x-amples:
         - title: Fetch enwiki Oxygen page
           request:
             params:
               language: en
               title: Oxygen
+              revision: 702870951
           response:
             status: 200
             headers:
