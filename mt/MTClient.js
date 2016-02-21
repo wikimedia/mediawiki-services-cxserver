@@ -28,8 +28,7 @@ MTClient.prototype.log = function ( level, info ) {
  * @param {string} sourceLang Source language code
  * @param {string} targetLang Target language code
  * @param {string} content Content to translate
- * @param {string} format Content to translate
- * @param {string} [format] Format of the content- html or text. Default is html.
+ * @param {string} [format="html"] Format of the content- html or text
  * @return {Object} Deferred promise: Target language text
  */
 MTClient.prototype.translate = function ( sourceLang, targetLang, content, format ) {
