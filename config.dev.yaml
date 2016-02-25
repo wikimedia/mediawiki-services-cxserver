@@ -60,6 +60,9 @@ services:
         yandex:
           api: https://translate.yandex.net
           key: null
+        youdao:
+          api: https://fanyi.youdao.com/paidapi/fanyiapi
+          key: null
       registry:
         source:
           - ab
@@ -1200,6 +1203,11 @@ services:
               - sq
               - ru
               - uz
+          Youdao:
+            en:
+              - zh
+            zh:
+              - en
         dictionary:
           Dictd:
             en:

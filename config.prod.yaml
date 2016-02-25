@@ -59,7 +59,9 @@ services:
           api: http://apertium.wmflabs.org
         yandex:
           api: https://translate.yandex.net
-          proxy: http://url-downloader.wikimedia.org:8080
+          key: null
+        youdao:
+          api: https://fanyi.youdao.com/paidapi/fanyiapi
           key: null
       registry:
         source:
