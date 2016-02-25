@@ -48,13 +48,12 @@ MTClient.prototype.translate = function ( sourceLang, targetLang, content, forma
  * @return {Promise} promise: Translated html
  */
 MTClient.prototype.translateHtml = function ( sourceLang, targetLang, sourceHtml ) {
-	var i, len, targetDoc, itemPromises, chain = [],
+	var i, len, targetDoc, chain = [],
 		self = this;
 
 	this.buildSourceDoc( sourceHtml );
 	// Clone and adapt sourceDoc
 	targetDoc = new LinearDoc.Doc( this.sourceDoc.wrapperTag );
-	itemPromises = [];
 
 	function translateItemDeferred( item ) {
 		if ( item.type !== 'textblock' ) {
