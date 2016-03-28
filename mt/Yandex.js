@@ -32,7 +32,7 @@ util.inherits( Yandex, MTClient );
  * @return {Q.Promise} Target language text
  */
 Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
-	var key, postData;
+	var key, postData, self = this;
 
 	key = this.conf.mt.yandex.key;
 	if ( key === null ) {
@@ -59,8 +59,10 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 
 	return preq.post( postData ).then( function ( response ) {
 		return response.body.text[ 0 ];
+	} ).catch( function ( response ) {
+		throw new Error( 'Translation with Yandex failed. Error: ' +
+			self.getErrorName( response.body.code ) );
 	} );
-
 };
 
 /**
