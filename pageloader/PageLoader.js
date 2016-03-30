@@ -52,6 +52,8 @@ PageLoader.prototype.load = function ( page, sourceLanguage, revision ) {
 	return preq.get( {
 		uri: url,
 		headers: {
+			// See https://www.mediawiki.org/wiki/Specs/HTML/1.2.1
+			Accept: 'text/html; charset=utf-8; profile="https://www.mediawiki.org/wiki/Specs/HTML/1.2.1"',
 			'User-Agent': 'cxserver'
 		}
 	} ).then( function ( response ) {
