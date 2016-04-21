@@ -77,7 +77,7 @@ function initApp( options ) {
 
 	if ( app.conf.registry.constructor !== Object ) {
 		try {
-			app.conf.registry = yaml.safeLoad( fs.readFileSync( app.conf.registry ) );
+			app.conf.registry = yaml.safeLoad( fs.readFileSync( __dirname + '/' + app.conf.registry ) );
 		} catch ( e ) {
 			app.logger.log( 'warn/registry', 'Could not load the registry: ' + e );
 			app.conf.registry = {};
