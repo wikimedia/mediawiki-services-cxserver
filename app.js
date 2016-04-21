@@ -70,6 +70,19 @@ function initApp( options ) {
 		}
 	}
 
+	// set up the registry
+	if ( !app.conf.registry ) {
+		app.conf.registry = __dirname + '/registry.yaml';
+	}
+
+	if ( app.conf.registry.constructor !== Object ) {
+		try {
+			app.conf.registry = yaml.safeLoad( fs.readFileSync( app.conf.registry ) );
+		} catch ( e ) {
+			app.logger.log( 'warn/registry', 'Could not load the registry: ' + e );
+			app.conf.registry = {};
+		}
+	}
 	if ( !app.conf.spec.swagger ) {
 		app.conf.spec.swagger = '2.0';
 	}
