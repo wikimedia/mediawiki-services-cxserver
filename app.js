@@ -73,11 +73,13 @@ function initApp( options ) {
 	// set up the registry
 	if ( !app.conf.registry ) {
 		app.conf.registry = __dirname + '/registry.yaml';
+	} else if ( typeof app.conf.registry === 'string' ) {
+		app.conf.registry = __dirname + '/' + app.conf.registry;
 	}
 
 	if ( app.conf.registry.constructor !== Object ) {
 		try {
-			app.conf.registry = yaml.safeLoad( fs.readFileSync( __dirname + '/' + app.conf.registry ) );
+			app.conf.registry = yaml.safeLoad( fs.readFileSync( app.conf.registry ) );
 		} catch ( e ) {
 			app.logger.log( 'warn/registry', 'Could not load the registry: ' + e );
 			app.conf.registry = {};
