@@ -8,6 +8,7 @@ var http = require( 'http' ),
 	fs = BBPromise.promisifyAll( require( 'fs' ) ),
 	sUtil = require( './utils/util' ),
 	packageInfo = require( './package.json' ),
+	path = require( 'path' ),
 	yaml = require( 'js-yaml' );
 
 /**
@@ -74,11 +75,14 @@ function initApp( options ) {
 	if ( !app.conf.registry ) {
 		app.conf.registry = __dirname + '/registry.yaml';
 	} else if ( typeof app.conf.registry === 'string' ) {
-		app.conf.registry = __dirname + '/' + app.conf.registry;
+		if ( !path.isAbsolute( app.conf.registry ) ) {
+			app.conf.registry = __dirname + '/' + app.conf.registry;
+		}
 	}
 
 	if ( app.conf.registry.constructor !== Object ) {
 		try {
+			app.logger.log( 'info/registry', 'Reading registry from: ' + app.conf.registry );
 			app.conf.registry = yaml.safeLoad( fs.readFileSync( app.conf.registry ) );
 		} catch ( e ) {
 			app.logger.log( 'warn/registry', 'Could not load the registry: ' + e );
