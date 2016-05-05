@@ -688,10 +688,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -723,6 +725,7 @@ mt:
       - sk
       - sl
       - sr
+      - sv
       - sq
       - sw
       - tg
@@ -731,6 +734,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -745,10 +749,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -780,14 +786,17 @@ mt:
       - sk
       - sl
       - sr
+      - sv
       - sq
       - sw
       - tg
       - th
       - tl
       - tr
+      - uk
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -803,10 +812,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -838,6 +849,7 @@ mt:
       - sk
       - sl
       - sr
+      - sv
       - sq
       - sw
       - tg
@@ -846,6 +858,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -860,10 +873,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -896,6 +911,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -903,6 +919,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -918,10 +935,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -954,6 +973,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -961,6 +981,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -975,10 +996,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1011,6 +1034,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1018,6 +1042,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1033,9 +1058,11 @@ mt:
       - da
       - el
       - et
+      - es
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1068,6 +1095,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1075,6 +1103,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1089,10 +1118,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1126,12 +1157,14 @@ mt:
       - sr
       - sq
       - sw
+      - sv
       - tg
       - th
       - tl
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1147,9 +1180,11 @@ mt:
       - da
       - el
       - et
+      - es
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1189,6 +1224,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1203,10 +1239,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1246,6 +1284,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1264,6 +1303,7 @@ mt:
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1296,6 +1336,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1303,6 +1344,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1317,10 +1359,12 @@ mt:
       - cs
       - cy
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1352,6 +1396,7 @@ mt:
       - sk
       - sl
       - sr
+      - sv
       - sq
       - sw
       - tg
@@ -1360,6 +1405,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1375,10 +1421,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1411,6 +1459,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1418,6 +1467,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1432,10 +1482,12 @@ mt:
       - cs
       - cy
       - da
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1468,6 +1520,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1475,6 +1528,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1490,10 +1544,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1526,6 +1582,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1533,6 +1590,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1552,6 +1610,7 @@ mt:
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1584,6 +1643,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1591,6 +1651,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1606,9 +1667,11 @@ mt:
       - cy
       - da
       - el
+      - es
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1641,6 +1704,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1648,6 +1712,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1663,9 +1728,11 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1698,6 +1765,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1705,6 +1773,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1720,9 +1789,11 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1755,6 +1826,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1762,6 +1834,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1777,9 +1850,11 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
+      - fr
       - ga
       - gl
       - he
@@ -1812,6 +1887,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1819,6 +1895,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1834,10 +1911,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -1870,6 +1949,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1877,6 +1957,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1892,10 +1973,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - gl
       - he
       - hi
@@ -1927,6 +2010,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1934,6 +2018,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -1949,10 +2034,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - he
       - hi
@@ -1984,6 +2071,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -1991,6 +2079,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2006,10 +2095,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - hi
@@ -2041,6 +2132,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2048,6 +2140,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2063,10 +2156,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2098,6 +2193,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2105,6 +2201,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2120,10 +2217,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2155,6 +2254,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2162,6 +2262,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2177,10 +2278,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2212,6 +2315,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2219,6 +2323,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2234,10 +2339,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2269,6 +2376,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2276,6 +2384,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2291,10 +2400,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2326,6 +2437,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2333,6 +2445,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2348,10 +2461,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2360,7 +2475,6 @@ mt:
       - ht
       - hu
       - hy
-      - id
       - is
       - ja
       - ka
@@ -2384,6 +2498,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2391,6 +2506,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2406,10 +2522,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2441,6 +2559,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2448,6 +2567,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2463,10 +2583,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2499,6 +2621,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2506,6 +2629,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2521,10 +2645,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2556,6 +2682,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2563,6 +2690,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2578,10 +2706,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2613,6 +2743,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2620,6 +2751,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2635,10 +2767,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2670,6 +2804,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2677,6 +2812,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2692,10 +2828,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2727,6 +2865,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2734,6 +2873,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2749,10 +2889,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2784,6 +2926,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2791,6 +2934,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2806,10 +2950,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2841,6 +2987,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2848,6 +2995,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2863,10 +3011,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2898,6 +3048,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2905,6 +3056,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2920,10 +3072,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -2955,6 +3109,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -2962,6 +3117,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -2977,10 +3133,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3012,6 +3170,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3019,6 +3178,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3034,10 +3194,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3069,6 +3231,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3076,6 +3239,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3091,10 +3255,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3126,6 +3292,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3133,6 +3300,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3148,10 +3316,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3183,6 +3353,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3190,6 +3361,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3205,10 +3377,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3240,6 +3414,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3247,6 +3422,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3262,10 +3438,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3298,6 +3476,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3305,6 +3484,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3320,10 +3500,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3355,6 +3537,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3362,6 +3545,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3377,10 +3561,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3412,6 +3598,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3419,6 +3606,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3434,10 +3622,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3469,6 +3659,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3476,6 +3667,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3491,10 +3683,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3526,6 +3720,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3533,6 +3728,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3548,10 +3744,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3583,6 +3781,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3590,6 +3789,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3605,10 +3805,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3640,6 +3842,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3647,6 +3850,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3662,10 +3866,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3697,6 +3903,7 @@ mt:
       - sk
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3704,6 +3911,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3719,10 +3927,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3754,6 +3964,7 @@ mt:
       - sk
       - sl
       - sr
+      - sv
       - sw
       - tg
       - th
@@ -3761,6 +3972,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3776,10 +3988,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3811,6 +4025,7 @@ mt:
       - sk
       - sl
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3818,6 +4033,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3833,10 +4049,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3876,6 +4094,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3891,10 +4110,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3927,12 +4148,14 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - tg
       - th
       - tl
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -3948,10 +4171,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -3984,6 +4209,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -3991,6 +4217,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -4006,10 +4233,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -4042,12 +4271,14 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - tl
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -4063,10 +4294,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -4099,12 +4332,14 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -4120,10 +4355,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -4156,12 +4393,14 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
       - tl
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
@@ -4177,10 +4416,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -4213,12 +4454,75 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
       - tl
       - tr
       - udm
+      - uk
+      - ur
+      - uz
+      - vi
+    udm:
+      - af
+      - ar
+      - ba
+      - be
+      - bg
+      - bs
+      - ca
+      - cs
+      - cy
+      - da
+      - el
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gl
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - ka
+      - kk
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mg
+      - mk
+      - mn
+      - ms
+      - mt
+      - 'no'
+      - pl
+      - pt
+      - ro
+      - ru
+      - sk
+      - sl
+      - sr
+      - sq
+      - sv
+      - sw
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - uk
       - ur
       - uz
       - vi
@@ -4280,63 +4584,6 @@ mt:
       - ur
       - uz
       - vi
-    udm:
-      - af
-      - ar
-      - ba
-      - be
-      - bg
-      - bs
-      - ca
-      - cs
-      - cy
-      - da
-      - el
-      - et
-      - eu
-      - fa
-      - fi
-      - ga
-      - gl
-      - he
-      - hi
-      - hr
-      - ht
-      - hu
-      - hy
-      - id
-      - is
-      - ja
-      - ka
-      - kk
-      - ko
-      - ky
-      - la
-      - lt
-      - lv
-      - mg
-      - mk
-      - mn
-      - ms
-      - mt
-      - 'no'
-      - pl
-      - pt
-      - ro
-      - ru
-      - sk
-      - sl
-      - sr
-      - sq
-      - sw
-      - tg
-      - th
-      - tl
-      - tr
-      - tt
-      - ur
-      - uz
-      - vi
     ur:
       - af
       - ar
@@ -4349,10 +4596,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -4385,6 +4634,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -4392,6 +4642,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - uz
       - vi
     uz:
@@ -4406,10 +4657,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -4442,6 +4695,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -4449,6 +4703,7 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - vi
     vi:
@@ -4463,10 +4718,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -4499,6 +4756,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -4506,8 +4764,10 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
+      - zh
     zh:
       - af
       - ar
@@ -4520,10 +4780,12 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
       - he
@@ -4556,6 +4818,7 @@ mt:
       - sl
       - sr
       - sq
+      - sv
       - sw
       - tg
       - th
@@ -4563,10 +4826,27 @@ mt:
       - tr
       - tt
       - udm
+      - uk
       - ur
       - uz
       - vi
   defaults:
+    'az-ar': source-mt
+    'fa-ar': source-mt
+    'fr-ar': source-mt
+    'de-ar': source-mt
+    'en-ar': source-mt
+    'es-ar': source-mt
+    'he-ar': source-mt
+    'ko-ar': source-mt
+    'pt-ar': source-mt
+    'ru-ar': source-mt
+    'sv-ar': source-mt
+    'th-ar': source-mt
+    'tr-ar': source-mt
+    'en-cy': source-mt
+    'es-cy': source-mt
+    'nl-cy': source-mt
     'cs-la': source-mt
     'de-la': source-mt
     'en-la': source-mt
@@ -4575,158 +4855,109 @@ mt:
     'he-la': source-mt
     'hu-la': source-mt
     'it-la': source-mt
-    'ar-he': source-mt
-    'ar-tr': source-mt
-    'az-ar': source-mt
-    'az-gl': source-mt
-    'az-tr': source-mt
-    'be-bg': source-mt
-    'bg-da': source-mt
-    'bs-hr': source-mt
-    'bs-sr': source-mt
-    'ca-el': source-mt
-    'ca-gl': source-mt
-    'cs-bg': source-mt
-    'cs-hr': source-mt
-    'cs-pt': source-mt
-    'cs-sr': source-mt
-    'da-bg': source-mt
-    'da-gl': source-mt
-    'da-pt': source-mt
-    'de-ar': source-mt
-    'de-bg': source-mt
-    'de-ca': source-mt
-    'de-da': source-mt
-    'de-el': source-mt
-    'de-gl': source-mt
-    'de-he': source-mt
-    'de-hr': source-mt
-    'de-hy': source-mt
-    'de-ko': source-mt
-    'de-lt': source-mt
-    'de-no': source-mt
-    'de-pt': source-mt
-    'de-sr': source-mt
-    'de-tr': source-mt
-    'el-gl': source-mt
-    'en-ar': source-mt
-    'en-bg': source-mt
-    'en-cy': source-mt
-    'en-da': source-mt
-    'en-el': source-mt
-    'en-he': source-mt
-    'en-hi': source-mt
-    'en-hr': source-mt
-    'en-hy': source-mt
-    'en-ko': source-mt
-    'en-lt': source-mt
-    'en-no': source-mt
-    'en-pt': source-mt
-    'en-sr': source-mt
-    'en-tr': source-mt
-    'es-ar': source-mt
-    'es-bg': source-mt
-    'es-cy': source-mt
-    'es-da': source-mt
-    'es-el': source-mt
-    'es-he': source-mt
-    'es-hr': source-mt
-    'es-ko': source-mt
-    'es-sr': source-mt
-    'es-tr': source-mt
-    'eu-gl': source-mt
-    'fa-ar': source-mt
-    'fi-ca': source-mt
-    'fi-da': source-mt
-    'fi-he': source-mt
-    'fr-ar': source-mt
-    'fr-bg': source-mt
-    'fr-da': source-mt
-    'fr-el': source-mt
-    'fr-gl': source-mt
-    'fr-he': source-mt
-    'fr-hi': source-mt
-    'fr-hr': source-mt
-    'fr-hy': source-mt
-    'fr-ko': source-mt
-    'fr-pt': source-mt
-    'fr-sr': source-mt
-    'fr-tr': source-mt
-    'gl-ca': source-mt
-    'gl-pt': source-mt
-    'he-ar': source-mt
-    'he-pt': source-mt
-    'hr-sr': source-mt
-    'hu-ca': source-mt
-    'is-tr': source-mt
-    'ja-ko': source-mt
-    'ja-pt': source-mt
-    'ko-ar': source-mt
-    'la-bg': source-mt
-    'lv-gl': source-mt
-    'lv-lt': source-mt
-    'mk-bg': source-mt
-    'mk-hr': source-mt
-    'nl-bg': source-mt
-    'nl-ca': source-mt
-    'nl-cy': source-mt
-    'nl-gl': source-mt
-    'nl-tr': source-mt
-    'no-bg': source-mt
-    'no-ca': source-mt
-    'no-da': source-mt
-    'no-tr': source-mt
-    'pl-hy': source-mt
-    'pl-lt': source-mt
-    'pl-no': source-mt
-    'pl-pt': source-mt
-    'pt-ar': source-mt
-    'pt-he': source-mt
-    'pt-hr': source-mt
-    'ro-ca': source-mt
-    'ro-gl': source-mt
-    'ru-ar': source-mt
-    'ru-bg': source-mt
-    'ru-ca': source-mt
-    'ru-da': source-mt
-    'ru-el': source-mt
-    'ru-he': source-mt
-    'ru-hy': source-mt
-    'ru-ko': source-mt
-    'ru-lt': source-mt
-    'ru-pt': source-mt
-    'ru-sr': source-mt
-    'ru-tr': source-mt
-    'sl-hr': source-mt
-    'sl-lt': source-mt
-    'sr-hr': source-mt
-    'sv-ar': source-mt
-    'sv-ca': source-mt
-    'sv-no': source-mt
-    'sv-pt': source-mt
-    'th-ar': source-mt
-    'tr-ar': source-mt
-    'tr-bg': source-mt
-    'tr-gl': source-mt
-    'uk-bg': source-mt
-    'uk-ca': source-mt
-    'uk-hy': source-mt
-    'ur-da': source-mt
-    'uz-tr': source-mt
-    'zh-ca': source-mt
-    'zh-ko': source-mt
-    'ca-pt': Apertium
-    'en-ca': Apertium
-    'en-gl': Apertium
-    'es-ca': Apertium
-    'es-gl': Apertium
-    'es-pt': Apertium
-    'fr-ca': Apertium
+    'af-es': source-mt
+    'ar-es': source-mt
+    'cs-es': source-mt
+    'da-es': source-mt
+    'de-es': source-mt
+    'el-es': source-mt
+    'en-es': source-mt
+    'fi-es': source-mt
+    'he-es': source-mt
+    'hu-es': source-mt
+    'id-es': source-mt
+    'ja-es': source-mt
+    'lt-es': source-mt
+    'nl-es': source-mt
+    'pl-es': source-mt
+    'pt-es': source-mt
+    'ro-es': source-mt
+    'ru-es': source-mt
+    'sh-es': source-mt
+    'sv-es': source-mt
+    'th-es': source-mt
+    'tr-es': source-mt
+    'uk-es': source-mt
+    'zh-es': source-mt
+    'ar-fr': source-mt
+    'az-fr': source-mt
+    'cs-fr': source-mt
+    'da-fr': source-mt
+    'de-fr': source-mt
+    'el-fr': source-mt
+    'en-fr': source-mt
+    'fa-fr': source-mt
+    'he-fr': source-mt
+    'hr-fr': source-mt
+    'hu-fr': source-mt
+    'id-fr': source-mt
+    'is-fr': source-mt
+    'it-fr': source-mt
+    'ja-fr': source-mt
+    'ka-fr': source-mt
+    'lv-fr': source-mt
+    'mg-fr': source-mt
+    'nl-fr': source-mt
+    'pl-fr': source-mt
+    'pt-fr': source-mt
+    'ro-fr': source-mt
+    'ru-fr': source-mt
+    'sh-fr': source-mt
+    'sv-fr': source-mt
+    'tr-fr': source-mt
+    'vi-fr': source-mt
+    'uk-fr': source-mt
+    'zh-fr': source-mt
+    'ar-sv': source-mt
+    'da-sv': source-mt
+    'de-sv': source-mt
+    'en-sv': source-mt
+    'es-sv': source-mt
+    'fi-sv': source-mt
+    'fr-sv': source-mt
+    'ja-sv': source-mt
+    'nl-sv': source-mt
+    'no-sv': source-mt
+    'ru-sv': source-mt
+    'be-uk': source-mt
+    'cs-uk': source-mt
+    'de-uk': source-mt
+    'en-uk': source-mt
+    'es-uk': source-mt
+    'et-uk': source-mt
+    'fr-uk': source-mt
+    'it-uk': source-mt
+    'ja-uk': source-mt
+    'nl-uk': source-mt
+    'pl-uk': source-mt
+    'ro-uk': source-mt
+    'ru-uk': source-mt
+    'sk-uk': source-mt
+    'sv-uk': source-mt
     'mt-ar': Apertium
+    'es-ca': Apertium
+    'fr-ca': Apertium
     'pt-ca': Apertium
-    'pt-gl': Apertium
     'sv-da': Apertium
+    'ca-es': Apertium
+    'fr-es': Apertium
+    'gl-es': Apertium
+    'it-es': Apertium
+    'pt-es': Apertium
+    'ca-fr': Apertium
+    'es-fr': Apertium
+    'en-gl': Apertium
+    'es-gl': Apertium
+    'pt-gl': Apertium
     'ur-hi': Apertium
+    'ms-id': Apertium
+    'tt-kk': Apertium
+    'id-ms': Apertium
+    'ca-pt': Apertium
+    'es-pt': Apertium
+    'is-sv': Apertium
+    'kk-tt': Apertium
+    'hi-ur': Apertium
 dictionary:
   Dictd:
     en:
