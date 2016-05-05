@@ -730,6 +730,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -786,6 +787,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -843,6 +845,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -899,6 +902,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -956,6 +960,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1012,6 +1017,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1068,6 +1074,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1124,6 +1131,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1180,6 +1188,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1236,6 +1245,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1292,6 +1302,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1348,6 +1359,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1405,6 +1417,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1461,6 +1474,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1518,6 +1532,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1575,6 +1590,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1631,6 +1647,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1687,6 +1704,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1743,6 +1761,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1799,6 +1818,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1856,6 +1876,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1912,6 +1933,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -1968,6 +1990,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2024,6 +2047,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2080,6 +2104,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2136,6 +2161,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2192,6 +2218,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2248,6 +2275,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2304,6 +2332,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2361,6 +2390,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2417,6 +2447,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2474,6 +2505,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2530,6 +2562,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2586,6 +2619,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2642,6 +2676,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2698,6 +2733,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2754,6 +2790,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2810,6 +2847,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2866,6 +2904,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2922,6 +2961,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -2978,6 +3018,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3034,6 +3075,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3090,6 +3132,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3146,6 +3189,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3202,6 +3246,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3259,6 +3304,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3315,6 +3361,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3371,6 +3418,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3427,6 +3475,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3483,6 +3532,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3539,6 +3589,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3595,6 +3646,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3651,6 +3703,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3707,6 +3760,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3763,6 +3817,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3820,6 +3875,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3876,6 +3932,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3933,6 +3990,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -3989,6 +4047,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -4045,6 +4104,7 @@ mt:
       - th
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -4101,6 +4161,7 @@ mt:
       - th
       - tl
       - tt
+      - udm
       - ur
       - uz
       - vi
@@ -4157,10 +4218,69 @@ mt:
       - th
       - tl
       - tr
+      - udm
       - ur
       - uz
       - vi
     uk:
+      - af
+      - ar
+      - ba
+      - be
+      - bg
+      - bs
+      - ca
+      - cs
+      - cy
+      - da
+      - el
+      - et
+      - eu
+      - fa
+      - fi
+      - ga
+      - gl
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - ka
+      - kk
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mg
+      - mk
+      - mn
+      - ms
+      - mt
+      - 'no'
+      - pl
+      - pt
+      - ro
+      - ru
+      - sk
+      - sl
+      - sr
+      - sq
+      - sw
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - ur
+      - uz
+      - vi
+    udm:
       - af
       - ar
       - ba
@@ -4271,6 +4391,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - uz
       - vi
     uz:
@@ -4327,6 +4448,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - vi
     vi:
@@ -4383,6 +4505,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
     zh:
@@ -4439,6 +4562,7 @@ mt:
       - tl
       - tr
       - tt
+      - udm
       - ur
       - uz
       - vi
