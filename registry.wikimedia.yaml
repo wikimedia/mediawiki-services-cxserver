@@ -4931,14 +4931,18 @@ mt:
     'ru-uk': source-mt
     'sk-uk': source-mt
     'sv-uk': source-mt
+    'nl-af': Apertium
     'mt-ar': Apertium
+    'mk-bg': Apertium
     'en-ca': Apertium
     'es-ca': Apertium
     'fr-ca': Apertium
+    'it-ca': Apertium
     'pt-ca': Apertium
     'sv-da': Apertium
     'ca-es': Apertium
     'en-es': Apertium
+    'eu-es': Apertium
     'fr-es': Apertium
     'gl-es': Apertium
     'it-es': Apertium
@@ -4951,10 +4955,16 @@ mt:
     'pt-gl': Apertium
     'ur-hi': Apertium
     'ms-id': Apertium
+    'sv-is': Apertium
     'tt-kk': Apertium
+    'bg-mk': Apertium
     'id-ms': Apertium
+    'ar-mt': Apertium
     'ca-pt': Apertium
     'es-pt': Apertium
+    'sh-sl': Apertium
+    'mk-sr': Apertium
+    'sl-sr': Apertium
     'is-sv': Apertium
     'kk-tt': Apertium
     'hi-ur': Apertium
