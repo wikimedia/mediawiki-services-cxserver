@@ -4861,7 +4861,6 @@ mt:
     'da-es': source-mt
     'de-es': source-mt
     'el-es': source-mt
-    'en-es': source-mt
     'fi-es': source-mt
     'he-es': source-mt
     'hu-es': source-mt
@@ -4870,7 +4869,6 @@ mt:
     'lt-es': source-mt
     'nl-es': source-mt
     'pl-es': source-mt
-    'pt-es': source-mt
     'ro-es': source-mt
     'ru-es': source-mt
     'sh-es': source-mt
@@ -4935,11 +4933,13 @@ mt:
     'sk-uk': source-mt
     'sv-uk': source-mt
     'mt-ar': Apertium
+    'en-ca': Apertium
     'es-ca': Apertium
     'fr-ca': Apertium
     'pt-ca': Apertium
     'sv-da': Apertium
     'ca-es': Apertium
+    'en-es': Apertium
     'fr-es': Apertium
     'gl-es': Apertium
     'it-es': Apertium
