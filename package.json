@@ -1,7 +1,7 @@
 {
-	"name": "mediawiki-contenttranslation",
+	"name": "cxserver",
 	"version": "1.0.0",
-	"description": "cxserver - The Content Translation Server",
+	"description": "The Content Translation Server",
 	"homepage": "https://mediawiki.org/wiki/CX",
 	"repository": {
 		"type": "git",
