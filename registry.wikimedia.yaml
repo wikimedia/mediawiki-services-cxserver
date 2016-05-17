@@ -740,6 +740,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     ar:
       - af
       - ba
@@ -802,6 +803,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     az:
       - af
       - ar
@@ -864,6 +866,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     ba:
       - af
       - ar
@@ -925,6 +928,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     'be-tarask':
       - af
       - ar
@@ -987,6 +991,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     be:
       - af
       - ar
@@ -1048,6 +1053,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     bg:
       - af
       - ar
@@ -1109,6 +1115,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     bs:
       - af
       - ar
@@ -1170,6 +1177,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     ca:
       - af
       - ar
@@ -1230,6 +1238,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     cs:
       - af
       - ar
@@ -1290,6 +1299,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     cy:
       - af
       - ar
@@ -1350,6 +1360,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     da:
       - af
       - ar
@@ -1411,6 +1422,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     de:
       - af
       - ar
@@ -1473,6 +1485,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     el:
       - af
       - ar
@@ -1534,6 +1547,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     en:
       - af
       - ar
@@ -1596,6 +1610,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     es:
       - af
       - ar
@@ -1657,6 +1672,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     et:
       - af
       - ar
@@ -1718,6 +1734,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     eu:
       - af
       - ar
@@ -1779,6 +1796,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     fa:
       - af
       - ar
@@ -1840,6 +1858,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     fi:
       - af
       - ar
@@ -1901,6 +1920,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     fr:
       - af
       - ar
@@ -1963,6 +1983,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     ga:
       - af
       - ar
@@ -2024,6 +2045,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     gl:
       - af
       - ar
@@ -2085,6 +2107,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     he:
       - af
       - ar
@@ -2146,6 +2169,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     hi:
       - af
       - ar
@@ -2207,6 +2231,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     hr:
       - af
       - ar
@@ -2268,6 +2293,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     ht:
       - af
       - ar
@@ -2329,6 +2355,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     hu:
       - af
       - ar
@@ -2390,6 +2417,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     hy:
       - af
       - ar
@@ -2451,6 +2479,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     id:
       - af
       - ar
@@ -2512,6 +2541,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     is:
       - af
       - ar
@@ -2573,6 +2603,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     it:
       - af
       - ar
@@ -2635,6 +2666,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     ja:
       - af
       - ar
@@ -2696,6 +2728,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     ka:
       - af
       - ar
@@ -2757,6 +2790,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     kk:
       - af
       - ar
@@ -2818,6 +2852,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     ko:
       - af
       - ar
@@ -2879,6 +2914,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     ky:
       - af
       - ar
@@ -2940,6 +2976,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     la:
       - af
       - ar
@@ -3001,6 +3038,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     lt:
       - af
       - ar
@@ -3062,6 +3100,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     lv:
       - af
       - ar
@@ -3123,6 +3162,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     mg:
       - af
       - ar
@@ -3184,6 +3224,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     mk:
       - af
       - ar
@@ -3245,6 +3286,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     mn:
       - af
       - ar
@@ -3306,6 +3348,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     ms:
       - af
       - ar
@@ -3367,6 +3410,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     mt:
       - af
       - ar
@@ -3428,6 +3472,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     nl:
       - af
       - ar
@@ -3490,6 +3535,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     'no':
       - af
       - ar
@@ -3551,6 +3597,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     pl:
       - af
       - ar
@@ -3612,6 +3659,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     pt:
       - af
       - ar
@@ -3673,6 +3721,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     ro:
       - af
       - ar
@@ -3734,6 +3783,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     ru:
       - af
       - ar
@@ -3795,6 +3845,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     sk:
       - af
       - ar
@@ -3856,6 +3907,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     sl:
       - af
       - ar
@@ -3917,6 +3969,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     sq:
       - af
       - ar
@@ -3978,6 +4031,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     sr:
       - af
       - ar
@@ -4039,6 +4093,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     sv:
       - af
       - ar
@@ -4100,6 +4155,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     sw:
       - af
       - ar
@@ -4161,6 +4217,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     tg:
       - af
       - ar
@@ -4223,6 +4280,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     th:
       - af
       - ar
@@ -4284,6 +4342,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     tl:
       - af
       - ar
@@ -4345,6 +4404,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     tr:
       - af
       - ar
@@ -4406,6 +4466,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     tt:
       - af
       - ar
@@ -4467,6 +4528,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     udm:
       - af
       - ar
@@ -4528,6 +4590,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     uk:
       - af
       - ar
@@ -4586,6 +4649,7 @@ mt:
       - ur
       - uz
       - vi
+      - zh
     ur:
       - af
       - ar
@@ -4647,6 +4711,7 @@ mt:
       - uk
       - uz
       - vi
+      - zh
     uz:
       - af
       - ar
@@ -4708,6 +4773,7 @@ mt:
       - uk
       - ur
       - vi
+      - zh
     vi:
       - af
       - ar
@@ -4933,6 +4999,21 @@ mt:
     'ru-uk': source-mt
     'sk-uk': source-mt
     'sv-uk': source-mt
+    'cs-zh': source-mt
+    'de-zh': source-mt
+    'en-zh': source-mt
+    'es-zh': source-mt
+    'fa-zh': source-mt
+    'id-zh': source-mt
+    'fr-zh': source-mt
+    'ja-zh': source-mt
+    'it-zh': source-mt
+    'ko-zh': source-mt
+    'nl-zh': source-mt
+    'ru-zh': source-mt
+    'sv-zh': source-mt
+    'uk-zh': source-mt
+    'vi-zh': source-mt
     'nl-af': Apertium
     'mt-ar': Apertium
     'mk-bg': Apertium
