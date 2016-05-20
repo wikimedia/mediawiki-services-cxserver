@@ -4923,56 +4923,6 @@ mt:
     'he-la': source-mt
     'hu-la': source-mt
     'it-la': source-mt
-    'af-es': source-mt
-    'ar-es': source-mt
-    'cs-es': source-mt
-    'da-es': source-mt
-    'de-es': source-mt
-    'el-es': source-mt
-    'fi-es': source-mt
-    'he-es': source-mt
-    'hu-es': source-mt
-    'id-es': source-mt
-    'ja-es': source-mt
-    'lt-es': source-mt
-    'nl-es': source-mt
-    'pl-es': source-mt
-    'ru-es': source-mt
-    'sh-es': source-mt
-    'sv-es': source-mt
-    'th-es': source-mt
-    'tr-es': source-mt
-    'uk-es': source-mt
-    'zh-es': source-mt
-    'ar-fr': source-mt
-    'az-fr': source-mt
-    'cs-fr': source-mt
-    'da-fr': source-mt
-    'de-fr': source-mt
-    'el-fr': source-mt
-    'en-fr': source-mt
-    'fa-fr': source-mt
-    'he-fr': source-mt
-    'hr-fr': source-mt
-    'hu-fr': source-mt
-    'id-fr': source-mt
-    'is-fr': source-mt
-    'it-fr': source-mt
-    'ja-fr': source-mt
-    'ka-fr': source-mt
-    'lv-fr': source-mt
-    'mg-fr': source-mt
-    'nl-fr': source-mt
-    'pl-fr': source-mt
-    'pt-fr': source-mt
-    'ro-fr': source-mt
-    'ru-fr': source-mt
-    'sh-fr': source-mt
-    'sv-fr': source-mt
-    'tr-fr': source-mt
-    'vi-fr': source-mt
-    'uk-fr': source-mt
-    'zh-fr': source-mt
     'ar-sv': source-mt
     'da-sv': source-mt
     'de-sv': source-mt
