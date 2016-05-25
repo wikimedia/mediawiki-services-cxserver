@@ -10,7 +10,8 @@ var
 // Yandex language codes can differ from the language codes that
 // we use.
 yandexLanguageNameMap = {
-	'be-tarask': 'be' // T122033
+	'be-tarask': 'be', // T122033
+	nb: 'no' // T132217
 };
 
 function Yandex( options ) {

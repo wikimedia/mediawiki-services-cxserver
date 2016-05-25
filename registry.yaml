@@ -169,6 +169,7 @@ source:
   - nan
   - nap
   - na
+  - nb
   - nds-nl
   - nds
   - ne
@@ -176,7 +177,6 @@ source:
   - nl
   - nn
   - nov
-  - 'no'
   - nrm
   - nso
   - nv
@@ -452,6 +452,7 @@ target:
   - nan
   - nap
   - na
+  - nb
   - nds-nl
   - nds
   - ne
@@ -459,7 +460,6 @@ target:
   - nl
   - nn
   - nov
-  - 'no'
   - nrm
   - nso
   - nv
@@ -646,9 +646,6 @@ mt:
     nn:
       - da
       - nb
-      - 'no'
-    'no':
-      - nn
     oc:
       - ca
       - es
@@ -998,7 +995,7 @@ mt:
       - sq
       - ru
       - uz
-    'no':
+    nb:
       - ba
       - hy
       - pl
