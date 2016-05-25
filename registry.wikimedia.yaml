@@ -5002,9 +5002,6 @@ mt:
     'kk-tt': Apertium
     'hi-ur': Apertium
 dictionary:
-  Dictd:
-    en:
-      - hi
   JsonDict:
     ca:
       - es
