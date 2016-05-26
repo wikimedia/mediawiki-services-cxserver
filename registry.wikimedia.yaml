@@ -683,6 +683,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -698,6 +699,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -709,6 +711,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -720,16 +723,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
+      - sq
       - sr
       - sv
-      - sq
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -745,6 +751,7 @@ mt:
       - af
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -760,6 +767,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -771,6 +779,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -782,21 +791,23 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
+      - sq
       - sr
       - sv
-      - sq
       - sw
+      - ta
       - tg
       - th
       - tl
       - tr
-      - uk
       - tt
       - udm
       - uk
@@ -809,6 +820,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -824,6 +836,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -835,6 +848,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -846,16 +860,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
+      - sq
       - sr
       - sv
-      - sq
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -871,6 +888,7 @@ mt:
       - af
       - ar
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -886,6 +904,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -897,6 +916,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -908,16 +928,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -934,6 +957,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -949,6 +973,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -960,6 +985,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -971,16 +997,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -996,6 +1025,7 @@ mt:
       - af
       - ar
       - ba
+      - bn
       - bg
       - bs
       - ca
@@ -1011,6 +1041,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1022,6 +1053,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1033,16 +1065,87 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - zh
+    bn:
+      - af
+      - ar
+      - ba
+      - be
+      - bg
+      - bs
+      - ca
+      - cs
+      - cy
+      - da
+      - el
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mg
+      - mk
+      - mn
+      - ms
+      - mt
+      - 'no'
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - sv
+      - sw
+      - ta
       - tg
       - th
       - tl
@@ -1058,21 +1161,23 @@ mt:
       - af
       - ar
       - ba
-      - bg
+      - be
+      - bn
       - bs
       - ca
       - cs
       - cy
       - da
       - el
-      - et
       - es
+      - et
       - eu
       - fa
       - fi
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1084,6 +1189,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1095,16 +1201,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1121,6 +1230,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - ca
       - cs
@@ -1135,6 +1245,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1146,6 +1257,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1157,16 +1269,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
-      - sw
+      - sr
       - sv
+      - sw
+      - ta
       - tg
       - th
       - tl
@@ -1183,20 +1298,22 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - cs
       - cy
       - da
       - el
-      - et
       - es
+      - et
       - eu
       - fa
       - fi
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1208,6 +1325,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1219,15 +1337,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
+      - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1244,6 +1366,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -1258,6 +1381,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1269,6 +1393,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1280,15 +1405,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
+      - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1305,12 +1434,14 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
       - cs
       - da
       - el
+      - es
       - et
       - eu
       - fa
@@ -1318,6 +1449,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1329,6 +1461,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1340,16 +1473,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1366,6 +1502,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -1380,6 +1517,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1391,6 +1529,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1402,16 +1541,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
+      - sq
       - sr
       - sv
-      - sq
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1428,6 +1570,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -1443,6 +1586,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1454,6 +1598,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1465,16 +1610,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1491,6 +1639,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -1505,6 +1654,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1516,6 +1666,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1527,16 +1678,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1553,6 +1707,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -1568,6 +1723,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1579,6 +1735,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1590,16 +1747,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1616,6 +1776,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -1630,6 +1791,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1641,6 +1803,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1652,16 +1815,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1678,6 +1844,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -1692,6 +1859,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1703,6 +1871,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1714,16 +1883,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1740,6 +1912,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -1754,6 +1927,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1765,6 +1939,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1776,16 +1951,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1802,6 +1980,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -1816,6 +1995,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1827,6 +2007,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1838,16 +2019,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1864,6 +2048,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -1878,6 +2063,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1889,6 +2075,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1900,16 +2087,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1926,6 +2116,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -1938,9 +2129,9 @@ mt:
       - eu
       - fa
       - fi
-      - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -1952,6 +2143,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -1963,16 +2155,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -1989,6 +2184,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2003,6 +2199,7 @@ mt:
       - fi
       - fr
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -2014,6 +2211,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -2025,16 +2223,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2051,6 +2252,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2065,6 +2267,7 @@ mt:
       - fi
       - fr
       - ga
+      - gu
       - he
       - hi
       - hr
@@ -2076,6 +2279,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -2087,16 +2291,87 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - zh
+    gu:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - cs
+      - cy
+      - da
+      - el
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gl
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mg
+      - mk
+      - mn
+      - ms
+      - mt
+      - 'no'
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - sv
+      - sw
+      - ta
       - tg
       - th
       - tl
@@ -2113,6 +2388,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2128,6 +2404,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - hi
       - hr
       - ht
@@ -2138,6 +2415,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -2149,16 +2427,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2175,6 +2456,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2190,6 +2472,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hr
       - ht
@@ -2200,6 +2483,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -2211,16 +2495,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2237,6 +2524,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2252,6 +2540,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - ht
@@ -2262,6 +2551,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -2273,16 +2563,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2299,6 +2592,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2314,6 +2608,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -2324,6 +2619,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -2335,16 +2631,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2361,6 +2660,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2376,6 +2676,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -2386,6 +2687,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -2397,16 +2699,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2423,6 +2728,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2438,6 +2744,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -2448,6 +2755,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -2459,16 +2767,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2485,6 +2796,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2500,6 +2812,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -2510,6 +2823,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -2521,16 +2835,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2547,6 +2864,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2562,6 +2880,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -2572,6 +2891,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -2583,16 +2903,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2609,6 +2932,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2624,6 +2948,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -2635,6 +2960,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -2646,16 +2972,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2672,6 +3001,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2687,6 +3017,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -2695,8 +3026,10 @@ mt:
       - hy
       - id
       - is
+      - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -2708,16 +3041,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2734,6 +3070,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2749,6 +3086,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -2759,6 +3097,7 @@ mt:
       - is
       - ja
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -2770,16 +3109,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2796,6 +3138,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2811,6 +3154,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -2821,6 +3165,7 @@ mt:
       - is
       - ja
       - ka
+      - kn
       - ko
       - ky
       - la
@@ -2832,16 +3177,87 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - zh
+    kn:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - cs
+      - cy
+      - da
+      - el
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - ka
+      - kk
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mg
+      - mk
+      - mn
+      - ms
+      - mt
+      - 'no'
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - sv
+      - sw
+      - ta
       - tg
       - th
       - tl
@@ -2858,6 +3274,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2873,6 +3290,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -2884,6 +3302,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ky
       - la
       - lt
@@ -2894,16 +3313,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2920,6 +3342,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2935,6 +3358,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -2946,6 +3370,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - la
       - lt
@@ -2956,16 +3381,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -2982,6 +3410,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -2997,6 +3426,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3008,6 +3438,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - lt
@@ -3018,16 +3449,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3044,6 +3478,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3059,6 +3494,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3070,6 +3506,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3080,16 +3517,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3106,6 +3546,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3121,6 +3562,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3132,6 +3574,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3142,16 +3585,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3168,6 +3614,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3183,6 +3630,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3194,6 +3642,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3204,16 +3653,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3230,6 +3682,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3245,6 +3698,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3256,6 +3710,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3266,16 +3721,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3292,6 +3750,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3307,6 +3766,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3318,6 +3778,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3328,16 +3789,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3354,6 +3818,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3369,6 +3834,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3380,6 +3846,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3390,16 +3857,19 @@ mt:
       - mn
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3416,6 +3886,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3431,6 +3902,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3442,6 +3914,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3452,16 +3925,19 @@ mt:
       - mn
       - ms
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3478,6 +3954,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3493,6 +3970,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3504,6 +3982,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3515,16 +3994,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3541,6 +4023,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3556,6 +4039,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3567,6 +4051,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3577,16 +4062,87 @@ mt:
       - mn
       - ms
       - mt
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - zh
+    pa:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - cs
+      - cy
+      - da
+      - el
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mg
+      - mk
+      - mn
+      - ms
+      - mt
+      - 'no'
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - sv
+      - sw
+      - ta
       - tg
       - th
       - tl
@@ -3603,6 +4159,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3618,6 +4175,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3629,6 +4187,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3640,15 +4199,18 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3665,6 +4227,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3680,6 +4243,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3691,6 +4255,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3702,15 +4267,18 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3727,6 +4295,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3742,6 +4311,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3753,6 +4323,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3764,15 +4335,18 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3789,6 +4363,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3804,6 +4379,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3815,6 +4391,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3826,15 +4403,86 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - zh
+    si:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - cs
+      - cy
+      - da
+      - el
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mg
+      - mk
+      - mn
+      - ms
+      - mt
+      - 'no'
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - sk
+      - sl
+      - sq
+      - sr
+      - sv
+      - sw
+      - ta
       - tg
       - th
       - tl
@@ -3851,6 +4499,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3866,6 +4515,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3877,6 +4527,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3888,15 +4539,18 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3913,6 +4567,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3928,6 +4583,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -3939,6 +4595,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -3950,15 +4607,18 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -3975,6 +4635,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -3990,6 +4651,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4001,6 +4663,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4012,15 +4675,18 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
       - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -4037,6 +4703,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4052,6 +4719,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4063,6 +4731,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4074,15 +4743,18 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
       - sq
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -4099,6 +4771,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4114,6 +4787,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4125,6 +4799,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4136,15 +4811,18 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -4161,6 +4839,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4176,6 +4855,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4187,6 +4867,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4198,15 +4879,86 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
+      - ta
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - zh
+    ta:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - cs
+      - cy
+      - da
+      - el
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mg
+      - mk
+      - mn
+      - ms
+      - mt
+      - 'no'
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - sv
+      - sw
       - tg
       - th
       - tl
@@ -4223,6 +4975,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4238,6 +4991,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4249,6 +5003,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4260,17 +5015,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
-      - tg
+      - ta
       - th
       - tl
       - tr
@@ -4286,6 +5043,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4301,6 +5059,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4312,6 +5071,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4323,16 +5083,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - tl
       - tr
@@ -4348,6 +5111,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4363,6 +5127,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4374,6 +5139,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4385,16 +5151,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tr
@@ -4410,6 +5179,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4425,6 +5195,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4436,6 +5207,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4447,16 +5219,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -4472,6 +5247,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4487,6 +5263,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4498,6 +5275,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4509,16 +5287,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -4534,6 +5315,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4549,6 +5331,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4560,6 +5343,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4571,16 +5355,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -4596,6 +5383,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4603,12 +5391,15 @@ mt:
       - cy
       - da
       - el
+      - es
       - et
       - eu
       - fa
       - fi
+      - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4620,6 +5411,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4631,15 +5423,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
+      - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -4655,6 +5451,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4670,6 +5467,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4681,6 +5479,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4692,16 +5491,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -4717,6 +5519,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4732,6 +5535,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4743,6 +5547,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4754,16 +5559,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -4779,6 +5587,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4794,6 +5603,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4805,6 +5615,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4816,16 +5627,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -4841,6 +5655,7 @@ mt:
       - ar
       - ba
       - be
+      - bn
       - bg
       - bs
       - ca
@@ -4856,6 +5671,7 @@ mt:
       - fr
       - ga
       - gl
+      - gu
       - he
       - hi
       - hr
@@ -4867,6 +5683,7 @@ mt:
       - ja
       - ka
       - kk
+      - kn
       - ko
       - ky
       - la
@@ -4878,16 +5695,19 @@ mt:
       - ms
       - mt
       - 'no'
+      - pa
       - pl
       - pt
       - ro
       - ru
+      - si
       - sk
       - sl
-      - sr
       - sq
+      - sr
       - sv
       - sw
+      - ta
       - tg
       - th
       - tl
@@ -4964,6 +5784,20 @@ mt:
     'sv-zh': source-mt
     'uk-zh': source-mt
     'vi-zh': source-mt
+    'en-bn': source-mt
+    'eu-bn': source-mt
+    'en-gu': source-mt
+    'fr-gu': source-mt
+    'he-gu': source-mt
+    'hi-gu': source-mt
+    'pt-gu': source-mt
+    'en-kn': source-mt
+    'fr-kn': source-mt
+    'en-pa': source-mt
+    'hi-pa': source-mt
+    'ru-pa': source-mt
+    'en-si': source-mt
+    'en-ta': source-mt
     'nl-af': Apertium
     'mt-ar': Apertium
     'mk-bg': Apertium
