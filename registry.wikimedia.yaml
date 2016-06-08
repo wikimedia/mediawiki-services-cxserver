@@ -576,10 +576,12 @@ mt:
       - es
     bg:
       - mk
+    br:
+      - fr
     ca:
       - en
-      - es
       - eo
+      - es
       - fr
       - oc
       - pt
@@ -619,6 +621,7 @@ mt:
     gl:
       - en
       - es
+      - pt
       - simple
     hi:
       - ur
@@ -5826,6 +5829,7 @@ mt:
     'ar-mt': Apertium
     'ca-pt': Apertium
     'es-pt': Apertium
+    'gl-pt': Apertium
     'sh-sl': Apertium
     'mk-sr': Apertium
     'sl-sr': Apertium
