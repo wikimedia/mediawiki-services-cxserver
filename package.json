@@ -5,7 +5,7 @@
 	"homepage": "https://mediawiki.org/wiki/CX",
 	"repository": {
 		"type": "git",
-		"url": "https://git.wikimedia.org/git/mediawiki/services/cxserver.git"
+		"url": "https://phabricator.wikimedia.org/diffusion/GCXS/cxserver.git"
 	},
 	"license": "GPL-2.0+",
 	"bugs": {
