@@ -579,7 +579,6 @@ mt:
     br:
       - fr
     ca:
-      - en
       - eo
       - es
       - fr
@@ -587,7 +586,6 @@ mt:
       - pt
       - simple
     cy:
-      - en
       - simple
     en:
       - ca
@@ -596,13 +594,11 @@ mt:
       - gl
       - sh
     eo:
-      - en
       - simple
     es:
       - an
       - ast
       - ca
-      - en
       - eo
       - fr
       - gl
@@ -611,7 +607,6 @@ mt:
       - pt
       - simple
     eu:
-      - en
       - es
       - simple
     fr:
@@ -619,7 +614,6 @@ mt:
       - eo
       - es
     gl:
-      - en
       - es
       - pt
       - simple
@@ -628,7 +622,6 @@ mt:
     id:
       - ms
     is:
-      - en
       - sv
     it:
       - ca
@@ -659,7 +652,6 @@ mt:
     ro:
       - es
     sh:
-      - en
       - simple
       - sl
     simple:
