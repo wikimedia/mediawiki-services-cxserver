@@ -47,8 +47,13 @@ services:
       # no_proxy_list:
       #   - domain1.com
       #   - domain2.org
-      # RESTBase API URL
-      restbase_url: https://@lang.wikipedia.org/api/rest_v1/page/html/@title
+      user_agent: cxserver
+      restbase_req:
+        method: '{{request.method}}'
+        uri: https://{{domain}}/api/rest_v1/{+path}
+        query: '{{ default(request.query, {}) }}'
+        headers: '{{request.headers}}'
+        body: '{{request.body}}'
       jwt:
         secret: ''
         algorithms:

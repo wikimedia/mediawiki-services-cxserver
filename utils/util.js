@@ -73,6 +73,11 @@ function errForLog( err ) {
 	ret.type = err.type;
 	ret.detail = err.detail;
 
+	// log the stack trace only for 500 errors
+	if ( Number.parseInt( ret.status ) !== 500 ) {
+		ret.stack = undefined;
+	}
+
 	return ret;
 }
 
@@ -87,21 +92,40 @@ function generateRequestId() {
 
 /**
  * Wraps all of the given router's handler functions with
- * promised try blocks to allow catching all errors,
+ * promised try blocks so as to allow catching all errors,
  * regardless of whether a handler returns/uses promises
  * or not.
  *
- * @param {Router} router object
+ * @param {Object} route the object containing the router and path to bind it to
+ * @param {Application} app the application object
  */
-function wrapRouteHandlers( router ) {
-	router.stack.forEach( function ( routerLayer ) {
+function wrapRouteHandlers( route, app ) {
+
+	route.router.stack.forEach( function ( routerLayer ) {
+		var path = ( route.path + routerLayer.route.path.slice( 1 ) )
+			.replace( /\/:/g, '/--' )
+			.replace( /^\//, '' )
+			.replace( /[\/?]+$/, '' );
+		path = app.metrics.normalizeName( path || 'root' );
 		routerLayer.route.stack.forEach( function ( layer ) {
 			var origHandler = layer.handle;
 			layer.handle = function ( req, res, next ) {
+				var startTime = Date.now();
 				BBPromise.try( function () {
 						return origHandler( req, res, next );
 					} )
-					.catch( next );
+					.catch( next )
+					.finally( function () {
+						var statusCode, statusClass, stat;
+						statusCode = parseInt( res.statusCode ) || 500;
+						if ( statusCode < 100 || statusCode > 599 ) {
+							statusCode = 500;
+						}
+						statusClass = Math.floor( statusCode / 100 ) + 'xx';
+						stat = path + '.' + req.method + '.';
+						app.metrics.endTiming( [ stat + statusCode, stat + statusClass, stat + 'ALL' ],
+							startTime );
+					} );
 			};
 		} );
 	} );
@@ -203,7 +227,7 @@ function setErrorHandler( app ) {
 /**
  * Creates a new router with some default options.
  *
- * @param {Object} opts additional options to pass to express.Router()
+ * @param {Object} [opts] additional options to pass to express.Router()
  * @return {Router} a new router object
  */
 function createRouter( opts ) {
@@ -231,10 +255,10 @@ function initAndLogRequest( req, app ) {
 	req.headers = req.headers || {};
 	req.headers[ 'x-request-id' ] = req.headers[ 'x-request-id' ] || generateRequestId();
 	req.logger = app.logger.child( {
-		request_id: req.headers[ 'x-request-id' ]
+		request_id: req.headers[ 'x-request-id' ],
+		request: reqForLog( req, app.conf.log_header_whitelist )
 	} );
 	req.logger.log( 'trace/req', {
-		req: reqForLog( req ),
 		msg: 'incoming request'
 	} );
 }

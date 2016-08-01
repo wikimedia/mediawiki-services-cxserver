@@ -238,154 +238,154 @@ function getDefs( words, options ) {
 
 			switch ( status ) {
 				// greetings
-			case '220':
-				// we can start the fun now
-				nextRequest();
-				break;
+				case '220':
+					// we can start the fun now
+					nextRequest();
+					break;
 
-				// bye
-			case '221':
-				// onEnd event should follow, so no need to do anything here
-				break;
+					// bye
+				case '221':
+					// onEnd event should follow, so no need to do anything here
+					break;
 
-				// a couple of errors on which we should close
-				// temorarily unavailable
-			case '420':
-				// Server temporarily unavailable
-			case '421':
-				// Server shutting down at operator request
-				options.error( 'error', 'Error code ' + status );
-				return;
-				// no match
-			case '552':
-				// provide suggestions?
-				// checking request type, because server gives the same not found code for suggestions as for words
-				// also checking whether db isn't on ignore list
-				if ( ( currentReq.type === 'def' ) && options.suggestions ) {
-					reqQueue.push( {
-						request: 'match ' + currentReq.db + ' lev "' + currentReq.word + '"' + '\r\n',
-						type: 'sug',
-						word: currentReq.word
-					} );
-				}
-				nextRequest();
-				break;
-
-				// a couple of errors on which we might try to continue
-				// syntax error, command not recognized
-			case '500':
-				// Syntax error, command not recognized
-			case '501':
-				// Syntax error, illegal parameters
-			case '502':
-				// Command not implemented
-			case '503':
-				// Command parameter not implemented
-			case '550':
-				// invalid strategy
-			case '551':
-				// Proceeding to next request at status
-				nextRequest();
-				break;
-
-				// suggestions
-			case '152':
-				word = currentReq.word;
-
-				if ( textEnded ) {
-					// first line is the status message:
-					idx = response.indexOf( '\r\n' );
-					if ( idx === -1 ) {
-						break;
+					// a couple of errors on which we should close
+					// temorarily unavailable
+				case '420':
+					// Server temporarily unavailable
+				case '421':
+					// Server shutting down at operator request
+					options.error( 'error', 'Error code ' + status );
+					return;
+					// no match
+				case '552':
+					// provide suggestions?
+					// checking request type, because server gives the same not found code for suggestions as for words
+					// also checking whether db isn't on ignore list
+					if ( ( currentReq.type === 'def' ) && options.suggestions ) {
+						reqQueue.push( {
+							request: 'match ' + currentReq.db + ' lev "' + currentReq.word + '"' + '\r\n',
+							type: 'sug',
+							word: currentReq.word
+						} );
 					}
-					header = response.substring( 0, idx );
-					response = response.slice( idx + 2 );
-					textBuf = response;
-					textEnded = response.match( /\r\n\.(\r\n|$)/ );
-					// If textEnded is false, suggestions did not end
-				} else {
-					nextResponse();
-					textBuf = textBuf.concat( response );
-				}
+					nextRequest();
+					break;
 
-				if ( textEnded ) {
-					// Example suggestion response:
-					// 152 7 matches found: list follows
-					// dbname suggestion1
-					// dbname suggestion2
-					// Remove the "." ending the text message.
-					sugLines = textBuf.replace( /\r\n\.(\r\n|$)/, '' ).split( '\r\n' );
-					// That removed the first line too.
-					if ( !suggestions[ word ] ) {
-						// initialize the object
-						suggestions[ word ] = [];
-					}
+					// a couple of errors on which we might try to continue
+					// syntax error, command not recognized
+				case '500':
+					// Syntax error, command not recognized
+				case '501':
+					// Syntax error, illegal parameters
+				case '502':
+					// Command not implemented
+				case '503':
+					// Command parameter not implemented
+				case '550':
+					// invalid strategy
+				case '551':
+					// Proceeding to next request at status
+					nextRequest();
+					break;
 
-					for ( lNum in sugLines ) {
-						if ( !sugLines[ lNum ].trim() ) {
-							continue;
+					// suggestions
+				case '152':
+					word = currentReq.word;
+
+					if ( textEnded ) {
+						// first line is the status message:
+						idx = response.indexOf( '\r\n' );
+						if ( idx === -1 ) {
+							break;
 						}
-						// remove the first word in the line because it is db name
-						sug = sugLines[ lNum ].replace( /^[a-zA-Z0-9]+ "([^"]+)".*/, '$1' );
-						if ( suggestions[ word ].indexOf( sug ) === -1 ) {
-							suggestions[ word ].push( sug );
+						header = response.substring( 0, idx );
+						response = response.slice( idx + 2 );
+						textBuf = response;
+						textEnded = response.match( /\r\n\.(\r\n|$)/ );
+						// If textEnded is false, suggestions did not end
+					} else {
+						nextResponse();
+						textBuf = textBuf.concat( response );
+					}
+
+					if ( textEnded ) {
+						// Example suggestion response:
+						// 152 7 matches found: list follows
+						// dbname suggestion1
+						// dbname suggestion2
+						// Remove the "." ending the text message.
+						sugLines = textBuf.replace( /\r\n\.(\r\n|$)/, '' ).split( '\r\n' );
+						// That removed the first line too.
+						if ( !suggestions[ word ] ) {
+							// initialize the object
+							suggestions[ word ] = [];
 						}
-					}
-					// Suggestions ended
-				}
-				break;
 
-				// ok
-			case '250':
-				nextRequest();
-				break;
-
-				// definition
-			case '151':
-				// word database name - text follows
-				// textEnded, so we are free to start anew
-				if ( textEnded ) {
-					// first line is the status message:
-					idx = response.indexOf( '\r\n' );
-					if ( idx === -1 ) {
-						break;
-					}
-					header = response.substring( 0, idx );
-					response = response.slice( idx + 2 );
-
-					word = header.replace( /[0-9]{3} "([^"]*)".*/, '$1' ).toLowerCase();
-					dbName = header.replace( /[0-9]{3} "[^"]*" (\w+)\b.*/, '$1' );
-					dbDesc = header.replace( /[0-9]{3} "[^"]*".*"([^"]*)"/, '$1' );
-
-					textBuf = response;
-
-					textEnded = response.match( /\r\n\.(\r\n|$)/ );
-					// If textEnded is false, definition did not end
-				} else {
-					nextResponse();
-					textBuf = textBuf.concat( response );
-				}
-
-				if ( textEnded ) {
-					// ".." On the beggining of a new line means "."
-					// We also remove the "." ending the text message.
-					definition = textBuf.replace( /^\.\./m, '.' ).replace( /\r\n\.(\r\n|$)/, '' );
-
-					// Definition ended.
-
-					if ( typeof defs[ currentReq.word ] !== 'object' ) {
-						defs[ currentReq.word ] = [];
-					}
-					defs[ currentReq.word ].push( {
-						def: definition,
-						db: {
-							name: dbName,
-							desc: dbDesc
+						for ( lNum in sugLines ) {
+							if ( !sugLines[ lNum ].trim() ) {
+								continue;
+							}
+							// remove the first word in the line because it is db name
+							sug = sugLines[ lNum ].replace( /^[a-zA-Z0-9]+ "([^"]+)".*/, '$1' );
+							if ( suggestions[ word ].indexOf( sug ) === -1 ) {
+								suggestions[ word ].push( sug );
+							}
 						}
-					} );
+						// Suggestions ended
+					}
+					break;
 
-				}
-				break;
+					// ok
+				case '250':
+					nextRequest();
+					break;
+
+					// definition
+				case '151':
+					// word database name - text follows
+					// textEnded, so we are free to start anew
+					if ( textEnded ) {
+						// first line is the status message:
+						idx = response.indexOf( '\r\n' );
+						if ( idx === -1 ) {
+							break;
+						}
+						header = response.substring( 0, idx );
+						response = response.slice( idx + 2 );
+
+						word = header.replace( /[0-9]{3} "([^"]*)".*/, '$1' ).toLowerCase();
+						dbName = header.replace( /[0-9]{3} "[^"]*" (\w+)\b.*/, '$1' );
+						dbDesc = header.replace( /[0-9]{3} "[^"]*".*"([^"]*)"/, '$1' );
+
+						textBuf = response;
+
+						textEnded = response.match( /\r\n\.(\r\n|$)/ );
+						// If textEnded is false, definition did not end
+					} else {
+						nextResponse();
+						textBuf = textBuf.concat( response );
+					}
+
+					if ( textEnded ) {
+						// ".." On the beggining of a new line means "."
+						// We also remove the "." ending the text message.
+						definition = textBuf.replace( /^\.\./m, '.' ).replace( /\r\n\.(\r\n|$)/, '' );
+
+						// Definition ended.
+
+						if ( typeof defs[ currentReq.word ] !== 'object' ) {
+							defs[ currentReq.word ] = [];
+						}
+						defs[ currentReq.word ].push( {
+							def: definition,
+							db: {
+								name: dbName,
+								desc: dbDesc
+							}
+						} );
+
+					}
+					break;
 			}
 		}
 	} );
@@ -422,20 +422,20 @@ function lookup( word, options ) {
 		action = options.action || 'def';
 
 	switch ( action ) {
-	case 'def':
-		wordList = [ {
-			word: word,
-			db: options.db || config.db
-		} ];
-		break;
+		case 'def':
+			wordList = [ {
+				word: word,
+				db: options.db || config.db
+			} ];
+			break;
 
-	case 'multi':
-		wordList = word;
-		break;
+		case 'multi':
+			wordList = word;
+			break;
 
-	default:
-		options.error( 'error', 'Wrong action given.' );
-		return;
+		default:
+			options.error( 'error', 'Wrong action given.' );
+			return;
 	}
 
 	// Sanitize the wordList

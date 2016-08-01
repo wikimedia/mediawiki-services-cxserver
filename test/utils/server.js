@@ -29,7 +29,9 @@ config.conf.logging = {
 };
 // make a deep copy of it for later reference
 origConfig = extend( true, {}, config );
-stop = function () {};
+stop = function () {
+	return BBPromise.resolve();
+};
 options = null;
 runner = new ServiceRunner();
 
@@ -39,25 +41,27 @@ function start( opts ) {
 
 	if ( !assert.isDeepEqual( options, opts ) ) {
 		console.log( 'server options changed; restarting' );
-		stop();
-		options = opts;
-		// set up the config
-		config = extend( true, {}, origConfig );
-		extend( true, config.conf.services[ myServiceIdx ].conf, options );
-		return runner.run( config.conf )
-			.then( function ( servers ) {
-				var server = servers[ 0 ];
-				stop = function () {
-					console.log( 'stopping test server' );
-					server.close();
-					stop = function () {};
-				};
-				return true;
-			} );
+		return stop().then( function () {
+			options = opts;
+			// set up the config
+			config = extend( true, {}, origConfig );
+			extend( true, config.conf.services[ myServiceIdx ].conf, options );
+			return runner.start( config.conf )
+				.then( function () {
+					stop = function () {
+						console.log( 'stopping test server' );
+						return runner.stop().then( function () {
+							stop = function () {
+								return BBPromise.resolve();
+							};
+						} );
+					};
+					return true;
+				} );
+		} );
 	} else {
 		return BBPromise.resolve();
 	}
-
 }
 
 module.exports.config = config;

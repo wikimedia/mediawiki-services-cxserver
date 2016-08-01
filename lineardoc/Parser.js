@@ -31,7 +31,7 @@ blockTags = [
 	'map', 'object', 'pre', 'progress', 'video',
 	// non-annotation inline tags
 	'img', 'br'
- ];
+];
 
 /**
  * Parser to read an HTML stream into a Doc

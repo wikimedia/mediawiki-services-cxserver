@@ -1,5 +1,6 @@
 {
 	"preset": "wikimedia",
+	"requireVarDeclFirst": false,
 	"requireCamelCaseOrUpperCaseIdentifiers": {
 		"ignoreProperties": true
 	}

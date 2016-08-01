@@ -92,7 +92,7 @@ tests = [
 			'editorial page editor': 'editor de página del editorial'
 		}
 	}
- ];
+];
 
 describe( 'Apertium machine translation', function () {
 	before( function () {

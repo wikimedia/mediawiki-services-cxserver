@@ -1,5 +1,7 @@
 'use strict';
 
+require( 'core-js/shim' );
+
 var http = require( 'http' ),
 	BBPromise = require( 'bluebird' ),
 	express = require( 'express' ),
@@ -7,6 +9,7 @@ var http = require( 'http' ),
 	bodyParser = require( 'body-parser' ),
 	fs = BBPromise.promisifyAll( require( 'fs' ) ),
 	sUtil = require( './utils/util' ),
+	apiUtil = require( './utils/api-util' ),
 	packageInfo = require( './package.json' ),
 	path = require( 'path' ),
 	yaml = require( 'js-yaml' );
@@ -38,7 +41,7 @@ function initApp( options ) {
 	if ( app.conf.cors === undefined ) {
 		app.conf.cors = '*';
 	}
-	if ( !app.conf.csp ) {
+	if ( app.conf.csp === undefined ) {
 		app.conf.csp =
 			'default-src \'self\'; object-src \'none\'; media-src *; img-src *; style-src *; frame-ancestors \'self\'';
 	}
@@ -56,6 +59,9 @@ function initApp( options ) {
 			}
 		}
 	}
+
+	// set up the request templates for the APIs
+	apiUtil.setupApiTemplates( app );
 
 	// set up the spec
 	if ( !app.conf.spec ) {
@@ -107,15 +113,18 @@ function initApp( options ) {
 	// set the CORS and CSP headers.
 	app.all( '*', function ( req, res, next ) {
 		if ( app.conf.cors !== false ) {
-			res.header( 'Access-Control-Allow-Origin', app.conf.cors );
-			res.header( 'Access-Control-Allow-Headers', 'Accept, Authorization, X-Requested-With, Content-Type' );
+			res.header( 'access-control-allow-origin', app.conf.cors );
+			res.header( 'access-control-allow-headers', 'accept, authorization, x-requested-with, content-type' );
+			res.header( 'access-control-expose-headers', 'etag' );
 		}
-		res.header( 'X-XSS-Protection', '1; mode=block' );
-		res.header( 'X-Content-Type-Options', 'nosniff' );
-		res.header( 'X-Frame-Options', 'SAMEORIGIN' );
-		res.header( 'Content-Security-Policy', app.conf.csp );
-		res.header( 'X-Content-Security-Policy', app.conf.csp );
-		res.header( 'X-WebKit-CSP', app.conf.csp );
+		if ( app.conf.csp !== false ) {
+			res.header( 'x-xss-protection', '1; mode=block' );
+			res.header( 'x-content-type-options', 'nosniff' );
+			res.header( 'x-frame-options', 'SAMEORIGIN' );
+			res.header( 'content-security-policy', app.conf.csp );
+			res.header( 'x-content-security-policy', app.conf.csp );
+			res.header( 'x-webkit-csp', app.conf.csp );
+		}
 
 		sUtil.initAndLogRequest( req, app );
 
@@ -163,8 +172,6 @@ function loadRoutes( app ) {
 				route = require( __dirname + '/routes/' + fname );
 				return route( app );
 			} ).then( function ( route ) {
-				var prefix;
-
 				if ( route === undefined ) {
 					return undefined;
 				}
@@ -172,16 +179,20 @@ function loadRoutes( app ) {
 				if ( route.constructor !== Object || !route.path || !route.router || !( route.api_version || route.skip_domain ) ) {
 					throw new TypeError( 'routes/' + fname + ' does not export the correct object!' );
 				}
-				// wrap the route handlers with Promise.try() blocks
-				sUtil.wrapRouteHandlers( route.router );
-				// determine the path prefix
-				prefix = '';
-				if ( !route.skip_domain ) {
-					prefix = '/:domain/v' + route.api_version;
+				// normalise the path to be used as the mount point
+				if ( route.path[ 0 ] !== '/' ) {
+					route.path = '/' + route.path;
 				}
+				if ( route.path[ route.path.length - 1 ] !== '/' ) {
+					route.path = route.path + '/';
+				}
+				if ( !route.skip_domain ) {
+					route.path = '/:domain/v' + route.api_version + route.path;
+				}
+				// wrap the route handlers with Promise.try() blocks
+				sUtil.wrapRouteHandlers( route, app );
 				// all good, use that route
-				app.logger.log( 'info/route', 'Using route' + prefix + route.path );
-				app.use( prefix + route.path, route.router );
+				app.use( route.path, route.router );
 			} );
 		} ).then( function () {
 			// Catch and handle propagated errors
@@ -210,7 +221,8 @@ function createServer( app ) {
 		);
 	} ).then( function () {
 		app.logger.log( 'info',
-			'Worker ' + process.pid + ' listening on ' + app.conf.interface + ':' + app.conf.port );
+			'Worker ' + process.pid + ' listening on ' +
+			( app.conf.interface || '*' ) + ':' + app.conf.port );
 		return server;
 	} );
 }
