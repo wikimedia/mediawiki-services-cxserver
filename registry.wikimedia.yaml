@@ -238,6 +238,7 @@ source:
   - sw
   - szl
   - ta
+  - tcy
   - tet
   - te
   - tg
@@ -521,6 +522,7 @@ target:
   - sw
   - szl
   - ta
+  - tcy
   - tet
   - te
   - tg
