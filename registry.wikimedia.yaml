@@ -681,10 +681,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -692,6 +694,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -703,6 +706,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -711,12 +715,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -727,9 +737,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -740,6 +752,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     ar:
       - af
@@ -749,10 +762,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -760,6 +775,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -771,6 +787,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -779,12 +796,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -795,9 +818,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -808,6 +833,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     az:
       - af
@@ -818,10 +844,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -829,6 +857,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -840,6 +869,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -848,12 +878,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -864,9 +900,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -877,6 +915,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     ba:
       - af
@@ -886,10 +925,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -897,6 +938,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -908,6 +950,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -916,12 +959,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -932,9 +981,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -945,6 +996,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     'be-tarask':
       - af
@@ -955,10 +1007,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -966,6 +1020,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -977,6 +1032,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -985,12 +1041,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1001,9 +1063,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1014,6 +1078,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     be:
       - af
@@ -1023,10 +1088,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -1034,6 +1101,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1045,6 +1113,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1053,12 +1122,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1069,9 +1144,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1082,6 +1159,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     bn:
       - af
@@ -1091,10 +1169,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -1102,6 +1182,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1113,6 +1194,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1121,12 +1203,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1137,9 +1225,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1150,6 +1240,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     bg:
       - af
@@ -1159,10 +1250,12 @@ mt:
       - bn
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -1170,6 +1263,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1181,6 +1275,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1189,12 +1284,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1205,9 +1306,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1218,6 +1321,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     bs:
       - af
@@ -1227,10 +1331,12 @@ mt:
       - bn
       - bg
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -1238,6 +1344,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1249,6 +1356,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1257,12 +1365,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1273,9 +1387,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1286,6 +1402,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     ca:
       - af
@@ -1295,10 +1412,12 @@ mt:
       - bn
       - bg
       - bs
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -1306,6 +1425,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1317,6 +1437,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1325,12 +1446,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1341,9 +1468,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1354,6 +1483,88 @@ mt:
       - ur
       - uz
       - vi
+      - yi
+      - zh
+    ceb:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - yi
       - zh
     cs:
       - af
@@ -1364,9 +1575,11 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -1374,6 +1587,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1385,6 +1599,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1393,12 +1608,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1409,9 +1630,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1422,6 +1645,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     cy:
       - af
@@ -1432,9 +1656,11 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -1442,6 +1668,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1453,6 +1680,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1461,12 +1689,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1477,9 +1711,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1490,6 +1726,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     da:
       - af
@@ -1500,9 +1737,11 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - el
+      - eo
       - es
       - et
       - eu
@@ -1510,6 +1749,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1521,6 +1761,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1529,12 +1770,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1545,9 +1792,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1558,6 +1807,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     de:
       - af
@@ -1568,10 +1818,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -1579,6 +1831,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1590,6 +1843,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1598,12 +1852,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1614,9 +1874,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1627,6 +1889,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     el:
       - af
@@ -1637,9 +1900,11 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
+      - eo
       - es
       - et
       - eu
@@ -1647,6 +1912,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1658,6 +1924,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1666,12 +1933,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1682,9 +1955,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1695,6 +1970,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     en:
       - af
@@ -1705,10 +1981,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -1716,6 +1994,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1727,6 +2006,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1735,12 +2015,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1751,9 +2037,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1764,6 +2052,88 @@ mt:
       - ur
       - uz
       - vi
+      - yi
+      - zh
+    eo:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - yi
       - zh
     es:
       - af
@@ -1774,16 +2144,19 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - et
       - eu
       - fa
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1795,6 +2168,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1803,12 +2177,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1819,9 +2199,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1832,6 +2214,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     et:
       - af
@@ -1842,16 +2225,19 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - eu
       - fa
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1863,6 +2249,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1871,12 +2258,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1887,9 +2280,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1900,6 +2295,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     eu:
       - af
@@ -1910,16 +2306,19 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - fa
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1931,6 +2330,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -1939,12 +2339,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -1955,9 +2361,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -1968,6 +2376,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     fa:
       - af
@@ -1978,16 +2387,19 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -1999,6 +2411,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2007,12 +2420,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2023,9 +2442,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2036,6 +2457,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     fi:
       - af
@@ -2046,16 +2468,19 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
       - fa
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -2067,6 +2492,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2075,12 +2501,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2091,9 +2523,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2104,6 +2538,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     fr:
       - af
@@ -2114,16 +2549,19 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
       - fa
       - fi
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -2135,6 +2573,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2143,12 +2582,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2159,9 +2604,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2172,6 +2619,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     ga:
       - af
@@ -2182,16 +2630,19 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
       - fa
       - fi
       - fr
+      - gd
       - gl
       - gu
       - he
@@ -2203,6 +2654,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2211,12 +2663,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2227,9 +2685,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2240,6 +2700,88 @@ mt:
       - ur
       - uz
       - vi
+      - yi
+      - zh
+    gd:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - yi
       - zh
     gl:
       - af
@@ -2250,10 +2792,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -2261,6 +2805,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gu
       - he
       - hi
@@ -2271,6 +2816,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2279,12 +2825,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2295,9 +2847,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2308,6 +2862,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     gu:
       - af
@@ -2318,10 +2873,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -2329,6 +2886,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - he
       - hi
@@ -2339,6 +2897,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2347,12 +2906,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2363,9 +2928,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2376,6 +2943,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     he:
       - af
@@ -2386,10 +2954,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -2397,6 +2967,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - hi
@@ -2407,6 +2978,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2415,12 +2987,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2431,9 +3009,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2444,6 +3024,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     hi:
       - af
@@ -2454,10 +3035,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -2465,6 +3048,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -2475,6 +3059,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2483,12 +3068,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2499,9 +3090,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2512,6 +3105,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     hr:
       - af
@@ -2522,10 +3116,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -2533,6 +3129,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -2543,6 +3140,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2551,12 +3149,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2567,9 +3171,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2580,6 +3186,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     ht:
       - af
@@ -2590,10 +3197,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -2601,6 +3210,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -2611,6 +3221,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2619,12 +3230,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2635,9 +3252,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2648,6 +3267,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     hu:
       - af
@@ -2658,10 +3278,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -2669,6 +3291,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -2679,6 +3302,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2687,12 +3311,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2703,9 +3333,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2716,6 +3348,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     hy:
       - af
@@ -2726,10 +3359,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -2737,6 +3372,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -2747,6 +3383,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2755,12 +3392,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2771,9 +3414,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2784,6 +3429,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     id:
       - af
@@ -2794,10 +3440,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -2805,6 +3453,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -2815,6 +3464,7 @@ mt:
       - hy
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2823,12 +3473,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2839,9 +3495,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2852,6 +3510,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     is:
       - af
@@ -2862,10 +3521,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -2873,6 +3534,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -2883,6 +3545,7 @@ mt:
       - hy
       - id
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2891,12 +3554,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2907,9 +3576,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2920,6 +3591,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     it:
       - af
@@ -2930,10 +3602,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -2941,6 +3615,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -2952,6 +3627,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -2960,12 +3636,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -2976,9 +3658,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -2989,6 +3673,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     ja:
       - af
@@ -2999,10 +3684,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3010,6 +3697,88 @@ mt:
       - fi
       - fr
       - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - yi
+      - zh
+    jv:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
       - gl
       - gu
       - he
@@ -3029,12 +3798,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3045,9 +3820,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3058,6 +3835,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     ka:
       - af
@@ -3068,10 +3846,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3079,6 +3859,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3090,6 +3871,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - kk
       - kn
       - ko
@@ -3097,12 +3879,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3113,9 +3901,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3126,6 +3916,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     kk:
       - af
@@ -3136,10 +3927,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3147,6 +3940,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3158,6 +3952,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kn
       - ko
@@ -3165,12 +3960,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3181,9 +3982,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3194,6 +3997,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     kn:
       - af
@@ -3204,10 +4008,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3215,6 +4021,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3226,6 +4033,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - ko
@@ -3233,12 +4041,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3249,9 +4063,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3262,6 +4078,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     ko:
       - af
@@ -3272,10 +4089,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3283,6 +4102,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3294,6 +4114,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -3301,12 +4122,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3317,9 +4144,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3330,6 +4159,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     ky:
       - af
@@ -3340,10 +4170,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3351,6 +4183,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3362,6 +4195,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -3369,12 +4203,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3385,9 +4225,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3398,6 +4240,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     la:
       - af
@@ -3408,10 +4251,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3419,6 +4264,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3430,6 +4276,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -3437,12 +4284,18 @@ mt:
       - ky
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3453,9 +4306,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3466,6 +4321,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     lt:
       - af
@@ -3476,10 +4332,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3487,6 +4345,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3498,6 +4357,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -3505,12 +4365,18 @@ mt:
       - ky
       - la
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3521,9 +4387,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3534,6 +4402,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     lv:
       - af
@@ -3544,10 +4413,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3555,6 +4426,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3566,6 +4438,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -3573,12 +4446,18 @@ mt:
       - ky
       - la
       - lt
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3589,9 +4468,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3602,6 +4483,169 @@ mt:
       - ur
       - uz
       - vi
+      - yi
+      - zh
+    mi:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - yi
+      - zh
+    mhr:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mg
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - yi
       - zh
     mg:
       - af
@@ -3612,10 +4656,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3623,6 +4669,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3634,6 +4681,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -3642,11 +4690,17 @@ mt:
       - la
       - lt
       - lv
+      - mi
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3657,9 +4711,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3670,6 +4726,88 @@ mt:
       - ur
       - uz
       - vi
+      - yi
+      - zh
+    ml:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mhr
+      - mg
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - yi
       - zh
     mk:
       - af
@@ -3680,10 +4818,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3691,6 +4831,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3702,6 +4843,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -3710,11 +4852,17 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3725,9 +4873,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3738,6 +4888,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     mn:
       - af
@@ -3748,10 +4899,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3759,6 +4912,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3770,6 +4924,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -3778,11 +4933,17 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3793,9 +4954,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3806,6 +4969,168 @@ mt:
       - ur
       - uz
       - vi
+      - yi
+      - zh
+    mr:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - yi
+      - zh
+    mrj:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mr
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - yi
       - zh
     ms:
       - af
@@ -3816,10 +5141,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3827,6 +5154,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3838,6 +5166,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -3846,11 +5175,17 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3861,9 +5196,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3874,6 +5211,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     mt:
       - af
@@ -3884,10 +5222,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3895,6 +5235,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3906,6 +5247,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -3914,11 +5256,17 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3929,9 +5277,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -3942,6 +5292,89 @@ mt:
       - ur
       - uz
       - vi
+      - yi
+      - zh
+    ne:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - nb
+      - nl
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - yi
       - zh
     nl:
       - af
@@ -3952,10 +5385,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -3963,6 +5398,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -3974,6 +5410,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -3982,12 +5419,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -3998,9 +5441,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4011,6 +5456,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     nb:
       - af
@@ -4021,10 +5467,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4032,6 +5480,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4043,6 +5492,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4051,11 +5501,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
+      - ne
+      - nl
       - pa
       - pl
       - pt
@@ -4066,9 +5523,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4079,6 +5538,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     pa:
       - af
@@ -4089,10 +5549,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4100,6 +5562,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4111,6 +5574,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4119,12 +5583,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pl
       - pt
       - ro
@@ -4134,9 +5604,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4147,6 +5619,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     pl:
       - af
@@ -4157,10 +5630,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4168,6 +5643,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4179,6 +5655,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4187,12 +5664,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pt
       - ro
@@ -4202,9 +5685,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4215,6 +5700,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     pt:
       - af
@@ -4225,10 +5711,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4236,6 +5724,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4247,6 +5736,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4255,12 +5745,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - ro
@@ -4270,9 +5766,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4283,6 +5781,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     ro:
       - af
@@ -4293,10 +5792,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4304,6 +5805,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4315,6 +5817,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4323,12 +5826,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -4338,9 +5847,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4351,6 +5862,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     ru:
       - af
@@ -4361,10 +5873,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4372,6 +5886,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4383,6 +5898,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4391,12 +5907,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -4406,9 +5928,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4419,6 +5943,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     si:
       - af
@@ -4429,10 +5954,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4440,6 +5967,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4451,6 +5979,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4459,12 +5988,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -4474,9 +6009,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4487,6 +6024,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     sk:
       - af
@@ -4497,10 +6035,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4508,6 +6048,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4519,6 +6060,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4527,12 +6069,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -4542,9 +6090,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4555,6 +6105,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     sl:
       - af
@@ -4565,10 +6116,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4576,6 +6129,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4587,6 +6141,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4595,12 +6150,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -4610,9 +6171,11 @@ mt:
       - sk
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4623,6 +6186,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     sq:
       - af
@@ -4633,10 +6197,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4644,6 +6210,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4655,6 +6222,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4663,12 +6231,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -4678,9 +6252,11 @@ mt:
       - sk
       - sl
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4691,6 +6267,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     sr:
       - af
@@ -4701,10 +6278,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4712,6 +6291,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4723,6 +6303,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4731,12 +6312,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -4746,9 +6333,11 @@ mt:
       - sk
       - sl
       - sq
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4759,6 +6348,88 @@ mt:
       - ur
       - uz
       - vi
+      - yi
+      - zh
+    su:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - yi
       - zh
     sv:
       - af
@@ -4769,10 +6440,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4780,6 +6453,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4791,6 +6465,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4799,12 +6474,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -4815,8 +6496,10 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4827,6 +6510,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     sw:
       - af
@@ -4837,10 +6521,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4848,6 +6534,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4859,6 +6546,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4867,12 +6555,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -4883,8 +6577,10 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - ta
+      - te
       - tg
       - th
       - tl
@@ -4895,6 +6591,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     ta:
       - af
@@ -4905,10 +6602,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4916,6 +6615,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4927,6 +6627,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -4935,12 +6636,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -4951,8 +6658,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
+      - ta
+      - te
       - tg
       - th
       - tl
@@ -4963,6 +6673,88 @@ mt:
       - ur
       - uz
       - vi
+      - yi
+      - zh
+    te:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - yi
       - zh
     tg:
       - af
@@ -4973,10 +6765,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -4984,6 +6778,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -4995,6 +6790,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -5003,12 +6799,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -5019,9 +6821,12 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
+      - tg
       - th
       - tl
       - tr
@@ -5031,6 +6836,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     th:
       - af
@@ -5041,10 +6847,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -5052,6 +6860,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -5063,6 +6872,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -5071,12 +6881,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -5087,9 +6903,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - tl
       - tr
@@ -5099,6 +6917,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     tl:
       - af
@@ -5109,10 +6928,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -5120,6 +6941,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -5131,6 +6953,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -5139,12 +6962,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -5155,9 +6984,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tr
@@ -5167,6 +6998,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     tr:
       - af
@@ -5177,10 +7009,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -5188,6 +7022,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -5199,6 +7034,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -5207,12 +7043,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -5223,9 +7065,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -5235,6 +7079,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     tt:
       - af
@@ -5245,10 +7090,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -5256,6 +7103,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -5267,6 +7115,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -5275,12 +7124,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -5291,9 +7146,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -5303,6 +7160,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     udm:
       - af
@@ -5313,10 +7171,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -5324,6 +7184,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -5335,6 +7196,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -5343,12 +7205,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -5359,9 +7227,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -5371,6 +7241,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     uk:
       - af
@@ -5381,10 +7252,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -5392,6 +7265,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -5403,6 +7277,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -5411,12 +7286,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -5427,9 +7308,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -5439,6 +7322,7 @@ mt:
       - ur
       - uz
       - vi
+      - yi
       - zh
     ur:
       - af
@@ -5449,10 +7333,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -5460,6 +7346,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -5471,6 +7358,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -5479,12 +7367,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -5495,9 +7389,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -5507,6 +7403,7 @@ mt:
       - uk
       - uz
       - vi
+      - yi
       - zh
     uz:
       - af
@@ -5517,10 +7414,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -5528,6 +7427,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -5539,6 +7439,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -5547,12 +7448,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -5563,9 +7470,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -5575,6 +7484,7 @@ mt:
       - uk
       - ur
       - vi
+      - yi
       - zh
     vi:
       - af
@@ -5585,10 +7495,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -5596,6 +7508,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -5607,6 +7520,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -5615,12 +7529,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -5631,9 +7551,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -5643,8 +7565,9 @@ mt:
       - uk
       - ur
       - uz
+      - yi
       - zh
-    zh:
+    yi:
       - af
       - ar
       - ba
@@ -5653,10 +7576,12 @@ mt:
       - bg
       - bs
       - ca
+      - ceb
       - cs
       - cy
       - da
       - el
+      - eo
       - es
       - et
       - eu
@@ -5664,6 +7589,7 @@ mt:
       - fi
       - fr
       - ga
+      - gd
       - gl
       - gu
       - he
@@ -5675,6 +7601,7 @@ mt:
       - id
       - is
       - ja
+      - jv
       - ka
       - kk
       - kn
@@ -5683,12 +7610,18 @@ mt:
       - la
       - lt
       - lv
+      - mi
       - mg
+      - mhr
+      - ml
       - mk
       - mn
+      - mrj
+      - mr
       - ms
       - mt
       - nb
+      - ne
       - pa
       - pl
       - pt
@@ -5699,9 +7632,11 @@ mt:
       - sl
       - sq
       - sr
+      - su
       - sv
       - sw
       - ta
+      - te
       - tg
       - th
       - tl
@@ -5712,6 +7647,88 @@ mt:
       - ur
       - uz
       - vi
+      - zh
+    zh:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - yi
   defaults:
     'az-ar': source-mt
     'fa-ar': source-mt
@@ -5792,6 +7809,1041 @@ mt:
     'ru-pa': source-mt
     'en-si': source-mt
     'en-ta': source-mt
+    'af-ceb': source-mt
+    'ar-ceb': source-mt
+    'ba-ceb': source-mt
+    'be-ceb': source-mt
+    'bn-ceb': source-mt
+    'bg-ceb': source-mt
+    'bs-ceb': source-mt
+    'ca-ceb': source-mt
+    'cs-ceb': source-mt
+    'cy-ceb': source-mt
+    'da-ceb': source-mt
+    'el-ceb': source-mt
+    'en-ceb': source-mt
+    'eo-ceb': source-mt
+    'es-ceb': source-mt
+    'et-ceb': source-mt
+    'eu-ceb': source-mt
+    'fa-ceb': source-mt
+    'fi-ceb': source-mt
+    'fr-ceb': source-mt
+    'ga-ceb': source-mt
+    'gd-ceb': source-mt
+    'gl-ceb': source-mt
+    'gu-ceb': source-mt
+    'he-ceb': source-mt
+    'hi-ceb': source-mt
+    'hr-ceb': source-mt
+    'ht-ceb': source-mt
+    'hu-ceb': source-mt
+    'hy-ceb': source-mt
+    'id-ceb': source-mt
+    'is-ceb': source-mt
+    'ja-ceb': source-mt
+    'jv-ceb': source-mt
+    'ka-ceb': source-mt
+    'kk-ceb': source-mt
+    'kn-ceb': source-mt
+    'ko-ceb': source-mt
+    'ky-ceb': source-mt
+    'la-ceb': source-mt
+    'lt-ceb': source-mt
+    'lv-ceb': source-mt
+    'mg-ceb': source-mt
+    'mi-ceb': source-mt
+    'mhr-ceb': source-mt
+    'ml-ceb': source-mt
+    'mk-ceb': source-mt
+    'mn-ceb': source-mt
+    'mr-ceb': source-mt
+    'mrj-ceb': source-mt
+    'ms-ceb': source-mt
+    'mt-ceb': source-mt
+    'nb-ceb': source-mt
+    'ne-ceb': source-mt
+    'pa-ceb': source-mt
+    'pl-ceb': source-mt
+    'pt-ceb': source-mt
+    'ro-ceb': source-mt
+    'ru-ceb': source-mt
+    'si-ceb': source-mt
+    'sk-ceb': source-mt
+    'sl-ceb': source-mt
+    'sq-ceb': source-mt
+    'sr-ceb': source-mt
+    'su-ceb': source-mt
+    'sv-ceb': source-mt
+    'sw-ceb': source-mt
+    'ta-ceb': source-mt
+    'te-ceb': source-mt
+    'tg-ceb': source-mt
+    'th-ceb': source-mt
+    'tl-ceb': source-mt
+    'tr-ceb': source-mt
+    'tt-ceb': source-mt
+    'udm-ceb': source-mt
+    'uk-ceb': source-mt
+    'ur-ceb': source-mt
+    'uz-ceb': source-mt
+    'vi-ceb': source-mt
+    'yi-ceb': source-mt
+    'zh-ceb': source-mt
+    'af-eo': source-mt
+    'ar-eo': source-mt
+    'ba-eo': source-mt
+    'be-eo': source-mt
+    'bn-eo': source-mt
+    'bg-eo': source-mt
+    'bs-eo': source-mt
+    'ca-eo': source-mt
+    'ceb-eo': source-mt
+    'cs-eo': source-mt
+    'cy-eo': source-mt
+    'da-eo': source-mt
+    'el-eo': source-mt
+    'en-eo': source-mt
+    'es-eo': source-mt
+    'et-eo': source-mt
+    'eu-eo': source-mt
+    'fa-eo': source-mt
+    'fi-eo': source-mt
+    'fr-eo': source-mt
+    'ga-eo': source-mt
+    'gd-eo': source-mt
+    'gl-eo': source-mt
+    'gu-eo': source-mt
+    'he-eo': source-mt
+    'hi-eo': source-mt
+    'hr-eo': source-mt
+    'ht-eo': source-mt
+    'hu-eo': source-mt
+    'hy-eo': source-mt
+    'id-eo': source-mt
+    'is-eo': source-mt
+    'ja-eo': source-mt
+    'jv-eo': source-mt
+    'ka-eo': source-mt
+    'kk-eo': source-mt
+    'kn-eo': source-mt
+    'ko-eo': source-mt
+    'ky-eo': source-mt
+    'la-eo': source-mt
+    'lt-eo': source-mt
+    'lv-eo': source-mt
+    'mg-eo': source-mt
+    'mi-eo': source-mt
+    'mhr-eo': source-mt
+    'ml-eo': source-mt
+    'mk-eo': source-mt
+    'mn-eo': source-mt
+    'mr-eo': source-mt
+    'mrj-eo': source-mt
+    'ms-eo': source-mt
+    'mt-eo': source-mt
+    'nb-eo': source-mt
+    'ne-eo': source-mt
+    'pa-eo': source-mt
+    'pl-eo': source-mt
+    'pt-eo': source-mt
+    'ro-eo': source-mt
+    'ru-eo': source-mt
+    'si-eo': source-mt
+    'sk-eo': source-mt
+    'sl-eo': source-mt
+    'sq-eo': source-mt
+    'sr-eo': source-mt
+    'su-eo': source-mt
+    'sv-eo': source-mt
+    'sw-eo': source-mt
+    'ta-eo': source-mt
+    'te-eo': source-mt
+    'tg-eo': source-mt
+    'th-eo': source-mt
+    'tl-eo': source-mt
+    'tr-eo': source-mt
+    'tt-eo': source-mt
+    'udm-eo': source-mt
+    'uk-eo': source-mt
+    'ur-eo': source-mt
+    'uz-eo': source-mt
+    'vi-eo': source-mt
+    'yi-eo': source-mt
+    'zh-eo': source-mt
+    'af-gd': source-mt
+    'ar-gd': source-mt
+    'ba-gd': source-mt
+    'be-gd': source-mt
+    'bn-gd': source-mt
+    'bg-gd': source-mt
+    'bs-gd': source-mt
+    'ca-gd': source-mt
+    'ceb-gd': source-mt
+    'cs-gd': source-mt
+    'cy-gd': source-mt
+    'da-gd': source-mt
+    'el-gd': source-mt
+    'en-gd': source-mt
+    'eo-gd': source-mt
+    'es-gd': source-mt
+    'et-gd': source-mt
+    'eu-gd': source-mt
+    'fa-gd': source-mt
+    'fi-gd': source-mt
+    'fr-gd': source-mt
+    'ga-gd': source-mt
+    'gl-gd': source-mt
+    'gu-gd': source-mt
+    'he-gd': source-mt
+    'hi-gd': source-mt
+    'hr-gd': source-mt
+    'ht-gd': source-mt
+    'hu-gd': source-mt
+    'hy-gd': source-mt
+    'id-gd': source-mt
+    'is-gd': source-mt
+    'ja-gd': source-mt
+    'jv-gd': source-mt
+    'ka-gd': source-mt
+    'kk-gd': source-mt
+    'kn-gd': source-mt
+    'ko-gd': source-mt
+    'ky-gd': source-mt
+    'la-gd': source-mt
+    'lt-gd': source-mt
+    'lv-gd': source-mt
+    'mg-gd': source-mt
+    'mi-gd': source-mt
+    'mhr-gd': source-mt
+    'ml-gd': source-mt
+    'mk-gd': source-mt
+    'mn-gd': source-mt
+    'mr-gd': source-mt
+    'mrj-gd': source-mt
+    'ms-gd': source-mt
+    'mt-gd': source-mt
+    'nb-gd': source-mt
+    'ne-gd': source-mt
+    'pa-gd': source-mt
+    'pl-gd': source-mt
+    'pt-gd': source-mt
+    'ro-gd': source-mt
+    'ru-gd': source-mt
+    'si-gd': source-mt
+    'sk-gd': source-mt
+    'sl-gd': source-mt
+    'sq-gd': source-mt
+    'sr-gd': source-mt
+    'su-gd': source-mt
+    'sv-gd': source-mt
+    'sw-gd': source-mt
+    'ta-gd': source-mt
+    'te-gd': source-mt
+    'tg-gd': source-mt
+    'th-gd': source-mt
+    'tl-gd': source-mt
+    'tr-gd': source-mt
+    'tt-gd': source-mt
+    'udm-gd': source-mt
+    'uk-gd': source-mt
+    'ur-gd': source-mt
+    'uz-gd': source-mt
+    'vi-gd': source-mt
+    'yi-gd': source-mt
+    'zh-gd': source-mt
+    'af-jv': source-mt
+    'ar-jv': source-mt
+    'ba-jv': source-mt
+    'be-jv': source-mt
+    'bn-jv': source-mt
+    'bg-jv': source-mt
+    'bs-jv': source-mt
+    'ca-jv': source-mt
+    'ceb-jv': source-mt
+    'cs-jv': source-mt
+    'cy-jv': source-mt
+    'da-jv': source-mt
+    'el-jv': source-mt
+    'en-jv': source-mt
+    'eo-jv': source-mt
+    'es-jv': source-mt
+    'et-jv': source-mt
+    'eu-jv': source-mt
+    'fa-jv': source-mt
+    'fi-jv': source-mt
+    'fr-jv': source-mt
+    'ga-jv': source-mt
+    'gd-jv': source-mt
+    'gl-jv': source-mt
+    'gu-jv': source-mt
+    'he-jv': source-mt
+    'hi-jv': source-mt
+    'hr-jv': source-mt
+    'ht-jv': source-mt
+    'hu-jv': source-mt
+    'hy-jv': source-mt
+    'id-jv': source-mt
+    'is-jv': source-mt
+    'ja-jv': source-mt
+    'jv-jv': source-mt
+    'ka-jv': source-mt
+    'kk-jv': source-mt
+    'kn-jv': source-mt
+    'ko-jv': source-mt
+    'ky-jv': source-mt
+    'la-jv': source-mt
+    'lt-jv': source-mt
+    'lv-jv': source-mt
+    'mg-jv': source-mt
+    'mi-jv': source-mt
+    'mhr-jv': source-mt
+    'ml-jv': source-mt
+    'mk-jv': source-mt
+    'mn-jv': source-mt
+    'mr-jv': source-mt
+    'mrj-jv': source-mt
+    'ms-jv': source-mt
+    'mt-jv': source-mt
+    'nb-jv': source-mt
+    'ne-jv': source-mt
+    'pa-jv': source-mt
+    'pl-jv': source-mt
+    'pt-jv': source-mt
+    'ro-jv': source-mt
+    'ru-jv': source-mt
+    'si-jv': source-mt
+    'sk-jv': source-mt
+    'sl-jv': source-mt
+    'sq-jv': source-mt
+    'sr-jv': source-mt
+    'su-jv': source-mt
+    'sv-jv': source-mt
+    'sw-jv': source-mt
+    'ta-jv': source-mt
+    'te-jv': source-mt
+    'tg-jv': source-mt
+    'th-jv': source-mt
+    'tl-jv': source-mt
+    'tr-jv': source-mt
+    'tt-jv': source-mt
+    'udm-jv': source-mt
+    'uk-jv': source-mt
+    'ur-jv': source-mt
+    'uz-jv': source-mt
+    'vi-jv': source-mt
+    'yi-jv': source-mt
+    'zh-jv': source-mt
+    'af-mi': source-mt
+    'ar-mi': source-mt
+    'ba-mi': source-mt
+    'be-mi': source-mt
+    'bn-mi': source-mt
+    'bg-mi': source-mt
+    'bs-mi': source-mt
+    'ca-mi': source-mt
+    'ceb-mi': source-mt
+    'cs-mi': source-mt
+    'cy-mi': source-mt
+    'da-mi': source-mt
+    'el-mi': source-mt
+    'en-mi': source-mt
+    'eo-mi': source-mt
+    'es-mi': source-mt
+    'et-mi': source-mt
+    'eu-mi': source-mt
+    'fa-mi': source-mt
+    'fi-mi': source-mt
+    'fr-mi': source-mt
+    'ga-mi': source-mt
+    'gd-mi': source-mt
+    'gl-mi': source-mt
+    'gu-mi': source-mt
+    'he-mi': source-mt
+    'hi-mi': source-mt
+    'hr-mi': source-mt
+    'ht-mi': source-mt
+    'hu-mi': source-mt
+    'hy-mi': source-mt
+    'id-mi': source-mt
+    'is-mi': source-mt
+    'ja-mi': source-mt
+    'ka-mi': source-mt
+    'kk-mi': source-mt
+    'kn-mi': source-mt
+    'ko-mi': source-mt
+    'ky-mi': source-mt
+    'la-mi': source-mt
+    'lt-mi': source-mt
+    'lv-mi': source-mt
+    'mg-mi': source-mt
+    'mhr-mi': source-mt
+    'ml-mi': source-mt
+    'mk-mi': source-mt
+    'mn-mi': source-mt
+    'mr-mi': source-mt
+    'mrj-mi': source-mt
+    'ms-mi': source-mt
+    'mt-mi': source-mt
+    'nb-mi': source-mt
+    'ne-mi': source-mt
+    'pa-mi': source-mt
+    'pl-mi': source-mt
+    'pt-mi': source-mt
+    'ro-mi': source-mt
+    'ru-mi': source-mt
+    'si-mi': source-mt
+    'sk-mi': source-mt
+    'sl-mi': source-mt
+    'sq-mi': source-mt
+    'sr-mi': source-mt
+    'su-mi': source-mt
+    'sv-mi': source-mt
+    'sw-mi': source-mt
+    'ta-mi': source-mt
+    'te-mi': source-mt
+    'tg-mi': source-mt
+    'th-mi': source-mt
+    'tl-mi': source-mt
+    'tr-mi': source-mt
+    'tt-mi': source-mt
+    'udm-mi': source-mt
+    'uk-mi': source-mt
+    'ur-mi': source-mt
+    'uz-mi': source-mt
+    'vi-mi': source-mt
+    'yi-mi': source-mt
+    'zh-mi': source-mt
+    'af-mhr': source-mt
+    'ar-mhr': source-mt
+    'ba-mhr': source-mt
+    'be-mhr': source-mt
+    'bn-mhr': source-mt
+    'bg-mhr': source-mt
+    'bs-mhr': source-mt
+    'ca-mhr': source-mt
+    'ceb-mhr': source-mt
+    'cs-mhr': source-mt
+    'cy-mhr': source-mt
+    'da-mhr': source-mt
+    'el-mhr': source-mt
+    'en-mhr': source-mt
+    'eo-mhr': source-mt
+    'es-mhr': source-mt
+    'et-mhr': source-mt
+    'eu-mhr': source-mt
+    'fa-mhr': source-mt
+    'fi-mhr': source-mt
+    'fr-mhr': source-mt
+    'ga-mhr': source-mt
+    'gd-mhr': source-mt
+    'gl-mhr': source-mt
+    'gu-mhr': source-mt
+    'he-mhr': source-mt
+    'hi-mhr': source-mt
+    'hr-mhr': source-mt
+    'ht-mhr': source-mt
+    'hu-mhr': source-mt
+    'hy-mhr': source-mt
+    'id-mhr': source-mt
+    'is-mhr': source-mt
+    'ja-mhr': source-mt
+    'ka-mhr': source-mt
+    'kk-mhr': source-mt
+    'kn-mhr': source-mt
+    'ko-mhr': source-mt
+    'ky-mhr': source-mt
+    'la-mhr': source-mt
+    'lt-mhr': source-mt
+    'lv-mhr': source-mt
+    'mg-mhr': source-mt
+    'mi-mhr': source-mt
+    'ml-mhr': source-mt
+    'mk-mhr': source-mt
+    'mn-mhr': source-mt
+    'mr-mhr': source-mt
+    'mrj-mhr': source-mt
+    'ms-mhr': source-mt
+    'mt-mhr': source-mt
+    'nb-mhr': source-mt
+    'ne-mhr': source-mt
+    'pa-mhr': source-mt
+    'pl-mhr': source-mt
+    'pt-mhr': source-mt
+    'ro-mhr': source-mt
+    'ru-mhr': source-mt
+    'si-mhr': source-mt
+    'sk-mhr': source-mt
+    'sl-mhr': source-mt
+    'sq-mhr': source-mt
+    'sr-mhr': source-mt
+    'su-mhr': source-mt
+    'sv-mhr': source-mt
+    'sw-mhr': source-mt
+    'ta-mhr': source-mt
+    'te-mhr': source-mt
+    'tg-mhr': source-mt
+    'th-mhr': source-mt
+    'tl-mhr': source-mt
+    'tr-mhr': source-mt
+    'tt-mhr': source-mt
+    'udm-mhr': source-mt
+    'uk-mhr': source-mt
+    'ur-mhr': source-mt
+    'uz-mhr': source-mt
+    'vi-mhr': source-mt
+    'yi-mhr': source-mt
+    'zh-mhr': source-mt
+    'af-ml': source-mt
+    'ar-ml': source-mt
+    'ba-ml': source-mt
+    'be-ml': source-mt
+    'bn-ml': source-mt
+    'bg-ml': source-mt
+    'bs-ml': source-mt
+    'ca-ml': source-mt
+    'ceb-ml': source-mt
+    'cs-ml': source-mt
+    'cy-ml': source-mt
+    'da-ml': source-mt
+    'el-ml': source-mt
+    'en-ml': source-mt
+    'eo-ml': source-mt
+    'es-ml': source-mt
+    'et-ml': source-mt
+    'eu-ml': source-mt
+    'fa-ml': source-mt
+    'fi-ml': source-mt
+    'fr-ml': source-mt
+    'ga-ml': source-mt
+    'gd-ml': source-mt
+    'gl-ml': source-mt
+    'gu-ml': source-mt
+    'he-ml': source-mt
+    'hi-ml': source-mt
+    'hr-ml': source-mt
+    'ht-ml': source-mt
+    'hu-ml': source-mt
+    'hy-ml': source-mt
+    'id-ml': source-mt
+    'is-ml': source-mt
+    'ja-ml': source-mt
+    'ka-ml': source-mt
+    'kk-ml': source-mt
+    'kn-ml': source-mt
+    'ko-ml': source-mt
+    'ky-ml': source-mt
+    'la-ml': source-mt
+    'lt-ml': source-mt
+    'lv-ml': source-mt
+    'mg-ml': source-mt
+    'mi-ml': source-mt
+    'mhr-ml': source-mt
+    'mk-ml': source-mt
+    'mn-ml': source-mt
+    'mrj-ml': source-mt
+    'mr-ml': source-mt
+    'ms-ml': source-mt
+    'mt-ml': source-mt
+    'nb-ml': source-mt
+    'ne-ml': source-mt
+    'pa-ml': source-mt
+    'pl-ml': source-mt
+    'pt-ml': source-mt
+    'ro-ml': source-mt
+    'ru-ml': source-mt
+    'si-ml': source-mt
+    'sk-ml': source-mt
+    'sl-ml': source-mt
+    'sq-ml': source-mt
+    'sr-ml': source-mt
+    'su-ml': source-mt
+    'sv-ml': source-mt
+    'sw-ml': source-mt
+    'ta-ml': source-mt
+    'te-ml': source-mt
+    'tg-ml': source-mt
+    'th-ml': source-mt
+    'tl-ml': source-mt
+    'tr-ml': source-mt
+    'tt-ml': source-mt
+    'udm-ml': source-mt
+    'uk-ml': source-mt
+    'ur-ml': source-mt
+    'uz-ml': source-mt
+    'vi-ml': source-mt
+    'yi-ml': source-mt
+    'af-mrj': source-mt
+    'ar-mrj': source-mt
+    'ba-mrj': source-mt
+    'be-mrj': source-mt
+    'bn-mrj': source-mt
+    'bg-mrj': source-mt
+    'bs-mrj': source-mt
+    'ca-mrj': source-mt
+    'ceb-mrj': source-mt
+    'cs-mrj': source-mt
+    'cy-mrj': source-mt
+    'da-mrj': source-mt
+    'el-mrj': source-mt
+    'en-mrj': source-mt
+    'eo-mrj': source-mt
+    'es-mrj': source-mt
+    'et-mrj': source-mt
+    'eu-mrj': source-mt
+    'fa-mrj': source-mt
+    'fi-mrj': source-mt
+    'fr-mrj': source-mt
+    'ga-mrj': source-mt
+    'gd-mrj': source-mt
+    'gl-mrj': source-mt
+    'gu-mrj': source-mt
+    'he-mrj': source-mt
+    'hi-mrj': source-mt
+    'hr-mrj': source-mt
+    'ht-mrj': source-mt
+    'hu-mrj': source-mt
+    'hy-mrj': source-mt
+    'id-mrj': source-mt
+    'is-mrj': source-mt
+    'ja-mrj': source-mt
+    'ka-mrj': source-mt
+    'kk-mrj': source-mt
+    'kn-mrj': source-mt
+    'ko-mrj': source-mt
+    'ky-mrj': source-mt
+    'la-mrj': source-mt
+    'lt-mrj': source-mt
+    'lv-mrj': source-mt
+    'mg-mrj': source-mt
+    'mi-mrj': source-mt
+    'mhr-mrj': source-mt
+    'mk-mrj': source-mt
+    'ml-mrj': source-mt
+    'mn-mrj': source-mt
+    'mr-mrj': source-mt
+    'ms-mrj': source-mt
+    'mt-mrj': source-mt
+    'nb-mrj': source-mt
+    'ne-mrj': source-mt
+    'pa-mrj': source-mt
+    'pl-mrj': source-mt
+    'pt-mrj': source-mt
+    'ro-mrj': source-mt
+    'ru-mrj': source-mt
+    'si-mrj': source-mt
+    'sk-mrj': source-mt
+    'sl-mrj': source-mt
+    'sq-mrj': source-mt
+    'sr-mrj': source-mt
+    'su-mrj': source-mt
+    'sv-mrj': source-mt
+    'sw-mrj': source-mt
+    'ta-mrj': source-mt
+    'te-mrj': source-mt
+    'tg-mrj': source-mt
+    'th-mrj': source-mt
+    'tl-mrj': source-mt
+    'tr-mrj': source-mt
+    'tt-mrj': source-mt
+    'udm-mrj': source-mt
+    'uk-mrj': source-mt
+    'ur-mrj': source-mt
+    'uz-mrj': source-mt
+    'vi-mrj': source-mt
+    'yi-mrj': source-mt
+    'af-mr': source-mt
+    'ar-mr': source-mt
+    'ba-mr': source-mt
+    'be-mr': source-mt
+    'bn-mr': source-mt
+    'bg-mr': source-mt
+    'bs-mr': source-mt
+    'ca-mr': source-mt
+    'ceb-mr': source-mt
+    'cs-mr': source-mt
+    'cy-mr': source-mt
+    'da-mr': source-mt
+    'el-mr': source-mt
+    'en-mr': source-mt
+    'eo-mr': source-mt
+    'es-mr': source-mt
+    'et-mr': source-mt
+    'eu-mr': source-mt
+    'fa-mr': source-mt
+    'fi-mr': source-mt
+    'fr-mr': source-mt
+    'ga-mr': source-mt
+    'gd-mr': source-mt
+    'gl-mr': source-mt
+    'gu-mr': source-mt
+    'he-mr': source-mt
+    'hi-mr': source-mt
+    'hr-mr': source-mt
+    'ht-mr': source-mt
+    'hu-mr': source-mt
+    'hy-mr': source-mt
+    'id-mr': source-mt
+    'is-mr': source-mt
+    'ja-mr': source-mt
+    'ka-mr': source-mt
+    'kk-mr': source-mt
+    'kn-mr': source-mt
+    'ko-mr': source-mt
+    'ky-mr': source-mt
+    'la-mr': source-mt
+    'lt-mr': source-mt
+    'lv-mr': source-mt
+    'mg-mr': source-mt
+    'mi-mr': source-mt
+    'mhr-mr': source-mt
+    'mk-mr': source-mt
+    'ml-mr': source-mt
+    'mn-mr': source-mt
+    'mrj-mr': source-mt
+    'ms-mr': source-mt
+    'mt-mr': source-mt
+    'nb-mr': source-mt
+    'ne-mr': source-mt
+    'pa-mr': source-mt
+    'pl-mr': source-mt
+    'pt-mr': source-mt
+    'ro-mr': source-mt
+    'ru-mr': source-mt
+    'si-mr': source-mt
+    'sk-mr': source-mt
+    'sl-mr': source-mt
+    'sq-mr': source-mt
+    'sr-mr': source-mt
+    'su-mr': source-mt
+    'sv-mr': source-mt
+    'sw-mr': source-mt
+    'ta-mr': source-mt
+    'te-mr': source-mt
+    'tg-mr': source-mt
+    'th-mr': source-mt
+    'tl-mr': source-mt
+    'tr-mr': source-mt
+    'tt-mr': source-mt
+    'udm-mr': source-mt
+    'uk-mr': source-mt
+    'ur-mr': source-mt
+    'uz-mr': source-mt
+    'vi-mr': source-mt
+    'yi-mr': source-mt
+    'af-ne': source-mt
+    'ar-ne': source-mt
+    'ba-ne': source-mt
+    'be-ne': source-mt
+    'bn-ne': source-mt
+    'bg-ne': source-mt
+    'bs-ne': source-mt
+    'ca-ne': source-mt
+    'ceb-ne': source-mt
+    'cs-ne': source-mt
+    'cy-ne': source-mt
+    'da-ne': source-mt
+    'el-ne': source-mt
+    'en-ne': source-mt
+    'eo-ne': source-mt
+    'es-ne': source-mt
+    'et-ne': source-mt
+    'eu-ne': source-mt
+    'fa-ne': source-mt
+    'fi-ne': source-mt
+    'fr-ne': source-mt
+    'ga-ne': source-mt
+    'gd-ne': source-mt
+    'gl-ne': source-mt
+    'gu-ne': source-mt
+    'he-ne': source-mt
+    'hi-ne': source-mt
+    'hr-ne': source-mt
+    'ht-ne': source-mt
+    'hu-ne': source-mt
+    'hy-ne': source-mt
+    'id-ne': source-mt
+    'is-ne': source-mt
+    'ja-ne': source-mt
+    'ka-ne': source-mt
+    'kk-ne': source-mt
+    'kn-ne': source-mt
+    'ko-ne': source-mt
+    'ky-ne': source-mt
+    'la-ne': source-mt
+    'lt-ne': source-mt
+    'lv-ne': source-mt
+    'mg-ne': source-mt
+    'mi-ne': source-mt
+    'mhr-ne': source-mt
+    'mk-ne': source-mt
+    'mn-ne': source-mt
+    'mr-ne': source-mt
+    'mrj-ne': source-mt
+    'ms-ne': source-mt
+    'mt-ne': source-mt
+    'nb-ne': source-mt
+    'pa-ne': source-mt
+    'pl-ne': source-mt
+    'pt-ne': source-mt
+    'ro-ne': source-mt
+    'ru-ne': source-mt
+    'si-ne': source-mt
+    'sk-ne': source-mt
+    'sl-ne': source-mt
+    'sq-ne': source-mt
+    'sr-ne': source-mt
+    'su-ne': source-mt
+    'sv-ne': source-mt
+    'sw-ne': source-mt
+    'ta-ne': source-mt
+    'te-ne': source-mt
+    'tg-ne': source-mt
+    'th-ne': source-mt
+    'tl-ne': source-mt
+    'tr-ne': source-mt
+    'tt-ne': source-mt
+    'udm-ne': source-mt
+    'uk-ne': source-mt
+    'ur-ne': source-mt
+    'uz-ne': source-mt
+    'vi-ne': source-mt
+    'yi-ne': source-mt
+    'af-su': source-mt
+    'ar-su': source-mt
+    'ba-su': source-mt
+    'be-su': source-mt
+    'bn-su': source-mt
+    'bg-su': source-mt
+    'bs-su': source-mt
+    'ca-su': source-mt
+    'ceb-su': source-mt
+    'cs-su': source-mt
+    'cy-su': source-mt
+    'da-su': source-mt
+    'el-su': source-mt
+    'en-su': source-mt
+    'eo-su': source-mt
+    'es-su': source-mt
+    'et-su': source-mt
+    'eu-su': source-mt
+    'fa-su': source-mt
+    'fi-su': source-mt
+    'fr-su': source-mt
+    'ga-su': source-mt
+    'gd-su': source-mt
+    'gl-su': source-mt
+    'gu-su': source-mt
+    'he-su': source-mt
+    'hi-su': source-mt
+    'hr-su': source-mt
+    'ht-su': source-mt
+    'hu-su': source-mt
+    'hy-su': source-mt
+    'id-su': source-mt
+    'is-su': source-mt
+    'ja-su': source-mt
+    'ka-su': source-mt
+    'kk-su': source-mt
+    'kn-su': source-mt
+    'ko-su': source-mt
+    'ky-su': source-mt
+    'la-su': source-mt
+    'lt-su': source-mt
+    'lv-su': source-mt
+    'mg-su': source-mt
+    'mi-su': source-mt
+    'mhr-su': source-mt
+    'mk-su': source-mt
+    'mn-su': source-mt
+    'mr-su': source-mt
+    'mrj-su': source-mt
+    'ms-su': source-mt
+    'mt-su': source-mt
+    'nb-su': source-mt
+    'ne-su': source-mt
+    'pa-su': source-mt
+    'pl-su': source-mt
+    'pt-su': source-mt
+    'ro-su': source-mt
+    'ru-su': source-mt
+    'si-su': source-mt
+    'sk-su': source-mt
+    'sl-su': source-mt
+    'sq-su': source-mt
+    'sr-su': source-mt
+    'sv-su': source-mt
+    'sw-su': source-mt
+    'ta-su': source-mt
+    'te-su': source-mt
+    'tg-su': source-mt
+    'th-su': source-mt
+    'tl-su': source-mt
+    'tr-su': source-mt
+    'tt-su': source-mt
+    'udm-su': source-mt
+    'uk-su': source-mt
+    'ur-su': source-mt
+    'uz-su': source-mt
+    'vi-su': source-mt
+    'yi-su': source-mt
+    'af-te': source-mt
+    'ar-te': source-mt
+    'ba-te': source-mt
+    'be-te': source-mt
+    'bn-te': source-mt
+    'bg-te': source-mt
+    'bs-te': source-mt
+    'ca-te': source-mt
+    'ceb-te': source-mt
+    'cs-te': source-mt
+    'cy-te': source-mt
+    'da-te': source-mt
+    'el-te': source-mt
+    'en-te': source-mt
+    'eo-te': source-mt
+    'es-te': source-mt
+    'et-te': source-mt
+    'eu-te': source-mt
+    'fa-te': source-mt
+    'fi-te': source-mt
+    'fr-te': source-mt
+    'ga-te': source-mt
+    'gd-te': source-mt
+    'gl-te': source-mt
+    'gu-te': source-mt
+    'he-te': source-mt
+    'hi-te': source-mt
+    'hr-te': source-mt
+    'ht-te': source-mt
+    'hu-te': source-mt
+    'hy-te': source-mt
+    'id-te': source-mt
+    'is-te': source-mt
+    'ja-te': source-mt
+    'ka-te': source-mt
+    'kk-te': source-mt
+    'kn-te': source-mt
+    'ko-te': source-mt
+    'ky-te': source-mt
+    'la-te': source-mt
+    'lt-te': source-mt
+    'lv-te': source-mt
+    'mg-te': source-mt
+    'mi-te': source-mt
+    'mhr-te': source-mt
+    'mk-te': source-mt
+    'mn-te': source-mt
+    'mr-te': source-mt
+    'mrj-te': source-mt
+    'ms-te': source-mt
+    'mt-te': source-mt
+    'nb-te': source-mt
+    'ne-te': source-mt
+    'pa-te': source-mt
+    'pl-te': source-mt
+    'pt-te': source-mt
+    'ro-te': source-mt
+    'ru-te': source-mt
+    'si-te': source-mt
+    'sk-te': source-mt
+    'sl-te': source-mt
+    'sq-te': source-mt
+    'sr-te': source-mt
+    'su-te': source-mt
+    'sv-te': source-mt
+    'sw-te': source-mt
+    'ta-te': source-mt
+    'tg-te': source-mt
+    'th-te': source-mt
+    'tl-te': source-mt
+    'tr-te': source-mt
+    'tt-te': source-mt
+    'udm-te': source-mt
+    'uk-te': source-mt
+    'ur-te': source-mt
+    'uz-te': source-mt
+    'vi-te': source-mt
+    'yi-te': source-mt
+    'af-yi': source-mt
+    'ar-yi': source-mt
+    'ba-yi': source-mt
+    'be-yi': source-mt
+    'bn-yi': source-mt
+    'bg-yi': source-mt
+    'bs-yi': source-mt
+    'ca-yi': source-mt
+    'ceb-yi': source-mt
+    'cs-yi': source-mt
+    'cy-yi': source-mt
+    'da-yi': source-mt
+    'el-yi': source-mt
+    'en-yi': source-mt
+    'eo-yi': source-mt
+    'es-yi': source-mt
+    'et-yi': source-mt
+    'eu-yi': source-mt
+    'fa-yi': source-mt
+    'fi-yi': source-mt
+    'fr-yi': source-mt
+    'ga-yi': source-mt
+    'gd-yi': source-mt
+    'gl-yi': source-mt
+    'gu-yi': source-mt
+    'he-yi': source-mt
+    'hi-yi': source-mt
+    'hr-yi': source-mt
+    'ht-yi': source-mt
+    'hu-yi': source-mt
+    'hy-yi': source-mt
+    'id-yi': source-mt
+    'is-yi': source-mt
+    'ja-yi': source-mt
+    'ka-yi': source-mt
+    'kk-yi': source-mt
+    'kn-yi': source-mt
+    'ko-yi': source-mt
+    'ky-yi': source-mt
+    'la-yi': source-mt
+    'lt-yi': source-mt
+    'lv-yi': source-mt
+    'mg-yi': source-mt
+    'mi-yi': source-mt
+    'mhr-yi': source-mt
+    'mk-yi': source-mt
+    'mn-yi': source-mt
+    'mr-yi': source-mt
+    'mrj-yi': source-mt
+    'ms-yi': source-mt
+    'mt-yi': source-mt
+    'nb-yi': source-mt
+    'ne-yi': source-mt
+    'pa-yi': source-mt
+    'pl-yi': source-mt
+    'pt-yi': source-mt
+    'ro-yi': source-mt
+    'ru-yi': source-mt
+    'si-yi': source-mt
+    'sk-yi': source-mt
+    'sl-yi': source-mt
+    'sq-yi': source-mt
+    'sr-yi': source-mt
+    'su-yi': source-mt
+    'sv-yi': source-mt
+    'sw-yi': source-mt
+    'ta-yi': source-mt
+    'te-yi': source-mt
+    'tg-yi': source-mt
+    'th-yi': source-mt
+    'tl-yi': source-mt
+    'tr-yi': source-mt
+    'tt-yi': source-mt
+    'udm-yi': source-mt
+    'uk-yi': source-mt
+    'ur-yi': source-mt
+    'uz-yi': source-mt
+    'vi-yi': source-mt
+    'zh-yi': source-mt
     'nl-af': Apertium
     'mt-ar': Apertium
     'mk-bg': Apertium
