@@ -571,6 +571,7 @@ mt:
     af:
       - nl
     an:
+      - ca
       - es
     ar:
       - mt
@@ -581,6 +582,7 @@ mt:
     br:
       - fr
     ca:
+      - an
       - eo
       - es
       - fr
@@ -628,6 +630,7 @@ mt:
     it:
       - ca
       - es
+      - sc
     kk:
       - tt
     mk:
@@ -637,13 +640,16 @@ mt:
       - id
     mt:
       - ar
+    nb:
+      - da
+      - nn
+      - sv
     nl:
       - af
-    nb:
-      - nn
     nn:
       - da
       - nb
+      - sv
     oc:
       - ca
       - es
@@ -653,6 +659,8 @@ mt:
       - gl
     ro:
       - es
+    se:
+      - nb
     sh:
       - simple
       - sl
@@ -668,6 +676,8 @@ mt:
     sv:
       - da
       - is
+      - nb
+      - nn
     tt:
       - kk
     ur:
