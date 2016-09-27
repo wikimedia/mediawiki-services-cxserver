@@ -5,7 +5,7 @@ info:
   description: Content translation service for translating mediawiki pages between languages.
   termsOfService: https://wikimediafoundation.org/wiki/Terms_of_Use
   contact:
-    name: the Wikimedia Language Engineering team
+    name: the Wikimedia Language team
     url: https://www.mediawiki.org/wiki/Wikimedia_Language_engineering
   license:
     name: GPL-2.0+
@@ -91,7 +91,7 @@ paths:
     get:
       tags:
         - Dictionary
-      description: Fetch the dictionary meaning of a word.
+      description: Fetches the dictionary meaning of a word.
       produces:
         - application/json
       parameters:
@@ -156,7 +156,7 @@ paths:
     post:
       tags:
         - Machine translation
-      description: Fetch the machine translation.
+      description: Fetches the machine translation. Some providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
       consumes:
         - multipart/form-data
       produces:
@@ -174,7 +174,7 @@ paths:
           required: true
         - name: provider
           in: path
-          description: The machine translation provider Id
+          description: The machine translation provider id
           type: string
           required: false
           enum:
@@ -205,7 +205,7 @@ paths:
       tags:
         - Tools
         - Service information
-      description: List the tools for a language pair
+      description: Lists the tools for a language pair
       produces:
         - application/json
       parameters:
@@ -243,7 +243,7 @@ paths:
       tags:
         - Languages
         - Service information
-      description: List the language pairs supported by the server
+      description: Lists the language pairs supported by the server
       produces:
         - application/json
       x-amples:
