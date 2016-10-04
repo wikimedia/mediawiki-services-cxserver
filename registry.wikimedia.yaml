@@ -591,6 +591,10 @@ mt:
       - simple
     cy:
       - simple
+    da:
+      - nb
+      - nn
+      - sv
     en:
       - ca
       - eo
