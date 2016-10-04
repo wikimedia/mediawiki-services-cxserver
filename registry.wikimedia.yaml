@@ -626,6 +626,7 @@ mt:
     id:
       - ms
     is:
+      - simple
       - sv
     it:
       - ca

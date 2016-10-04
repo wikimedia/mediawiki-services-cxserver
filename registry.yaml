@@ -633,6 +633,7 @@ mt:
       - ms
     is:
       - en
+      - simple
       - sv
     it:
       - ca
