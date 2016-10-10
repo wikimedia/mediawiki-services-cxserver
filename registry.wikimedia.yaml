@@ -7915,6 +7915,28 @@ mt:
       - uz
       - vi
       - yi
+  Youdao:
+    en:
+      - zh
+    es:
+      - zh
+    fr:
+      - zh
+    ja:
+      - zh
+    ko:
+      - zh
+    pt:
+      - zh
+    ru:
+      - zh
+    zh:
+      - es
+      - fr
+      - ja
+      - ko
+      - pt
+      - ru
   defaults:
     'az-ar': source-mt
     'fa-ar': source-mt
@@ -7971,12 +7993,13 @@ mt:
     'en-zh': source-mt
     'es-zh': source-mt
     'fa-zh': source-mt
-    'id-zh': source-mt
     'fr-zh': source-mt
+    'id-zh': source-mt
     'ja-zh': source-mt
     'it-zh': source-mt
     'ko-zh': source-mt
     'nl-zh': source-mt
+    'pt-zh': source-mt
     'ru-zh': source-mt
     'sv-zh': source-mt
     'uk-zh': source-mt
