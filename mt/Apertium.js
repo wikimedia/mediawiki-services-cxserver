@@ -3,7 +3,8 @@
 var preq = require( 'preq' ),
 	util = require( 'util' ),
 	MTClient = require( './MTClient.js' ),
-	apertiumLangMapping = require( './Apertium.languagenames.json' );
+	apertiumLangMapping = require( './Apertium.languagenames.json' ),
+	postData;
 
 function Apertium( options ) {
 	this.logger = options.logger;
@@ -25,7 +26,7 @@ util.inherits( Apertium, MTClient );
  * @return {BBPromise} promise: Target language text
  */
 Apertium.prototype.translateText = function ( sourceLang, targetLang, sourceText ) {
-	return preq.post( {
+	postData = {
 		uri: this.conf.mt.apertium.api + '/translate',
 		body: {
 			markUnknown: 0,
@@ -33,8 +34,13 @@ Apertium.prototype.translateText = function ( sourceLang, targetLang, sourceText
 			format: 'txt',
 			q: sourceText
 		}
-	} ).then( function ( response ) {
+	};
+
+	return preq.post( postData ).then( function ( response ) {
 		return response.body.responseData.translatedText;
+	} ).catch( function () {
+		throw new Error( 'Translation with Apertium failed: ' +
+			sourceLang + '-' + targetLang );
 	} );
 };
 
