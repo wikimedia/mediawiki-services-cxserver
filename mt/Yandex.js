@@ -41,7 +41,8 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 	}
 
 	if ( sourceText.length > 10000 ) {
-		return BBPromise.reject( new Error( 'Source text too long' ) );
+		return BBPromise.reject( new Error( 'Source text too long ' ) +
+			sourceLang + '-' + targetLang );
 	}
 
 	sourceLang = yandexLanguageNameMap[ sourceLang ] || sourceLang;
@@ -62,7 +63,7 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 		return response.body.text[ 0 ];
 	} ).catch( function ( response ) {
 		throw new Error( 'Translation with Yandex failed. Error: ' +
-			self.getErrorName( response.body.code ) );
+			self.getErrorName( response.body.code ) + ' ' + sourceLang + '-' + targetLang );
 	} );
 };
 

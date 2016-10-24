@@ -99,7 +99,8 @@ Youdao.prototype.translateText = function ( sourceLang, targetLang, sourceText )
 	}
 
 	if ( sourceText.length > 10000 ) {
-		return BBPromise.reject( new Error( 'Source text too long' ) );
+		return BBPromise.reject( new Error( 'Source text too long ' ) +
+			sourceLang + targetLang );
 	}
 
 	postData = {
@@ -120,7 +121,8 @@ Youdao.prototype.translateText = function ( sourceLang, targetLang, sourceText )
 			return response.body.translation[ 0 ];
 		} else {
 			throw new Error( 'Translation with Youdao failed. Error: ' +
-				self.getErrorName( response.body.errorCode ) );
+				self.getErrorName( response.body.errorCode ) +
+					' ' + sourceLang + '>' + targetLang );
 		}
 	} );
 };
