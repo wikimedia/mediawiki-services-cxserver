@@ -17,7 +17,7 @@ Running the server
 $ npm start
 ```
 
-Then browse to ```http://localhost:8080/```. You'll see the server playground
+Then browse to ```http://localhost:8080/v1```. You'll see the server playground
 page.
 
 Configuration
@@ -29,7 +29,7 @@ Debugging
 ---------
 You need node-inspector installed.
 
-```$ npm debug```
+```$ node-debug app.js```
 
 It will open Chrome developer tools with the ContentTranslation source code.
 You can debug the code just like a web application. You can also edit the code
