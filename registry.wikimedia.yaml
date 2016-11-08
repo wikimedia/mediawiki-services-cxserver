@@ -691,6 +691,7 @@ mt:
       - hi
   Yandex:
     af:
+      - am
       - ar
       - ba
       - be
@@ -770,10 +771,96 @@ mt:
       - ur
       - uz
       - vi
+      - xh
+      - yi
+      - zh
+    am:
+      - af
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pap
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - xh
       - yi
       - zh
     ar:
       - af
+      - am
       - ba
       - be
       - bn
@@ -852,10 +939,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     az:
       - af
+      - am
       - ar
       - ba
       - be
@@ -935,10 +1024,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ba:
       - af
+      - am
       - ar
       - be
       - bn
@@ -1017,10 +1108,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     'be-tarask':
       - af
+      - am
       - ar
       - ba
       - be
@@ -1100,10 +1193,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     be:
       - af
+      - am
       - ar
       - ba
       - bn
@@ -1182,10 +1277,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     bn:
       - af
+      - am
       - ar
       - ba
       - be
@@ -1264,10 +1361,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     bg:
       - af
+      - am
       - ar
       - ba
       - be
@@ -1346,10 +1445,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     bs:
       - af
+      - am
       - ar
       - ba
       - be
@@ -1428,10 +1529,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ca:
       - af
+      - am
       - ar
       - ba
       - be
@@ -1510,10 +1613,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ceb:
       - af
+      - am
       - ar
       - ba
       - be
@@ -1592,10 +1697,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     cs:
       - af
+      - am
       - ar
       - ba
       - be
@@ -1674,10 +1781,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     cy:
       - af
+      - am
       - ar
       - ba
       - be
@@ -1756,10 +1865,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     da:
       - af
+      - am
       - ar
       - ba
       - be
@@ -1838,10 +1949,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     de:
       - af
+      - am
       - ar
       - ba
       - be
@@ -1921,10 +2034,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     el:
       - af
+      - am
       - ar
       - ba
       - be
@@ -2003,10 +2118,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     en:
       - af
+      - am
       - ar
       - ba
       - be
@@ -2086,10 +2203,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     eo:
       - af
+      - am
       - ar
       - ba
       - be
@@ -2168,10 +2287,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     es:
       - af
+      - am
       - ar
       - ba
       - be
@@ -2250,10 +2371,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     et:
       - af
+      - am
       - ar
       - ba
       - be
@@ -2332,10 +2455,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     eu:
       - af
+      - am
       - ar
       - ba
       - be
@@ -2414,10 +2539,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     fa:
       - af
+      - am
       - ar
       - ba
       - be
@@ -2496,10 +2623,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     fi:
       - af
+      - am
       - ar
       - ba
       - be
@@ -2578,10 +2707,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     fr:
       - af
+      - am
       - ar
       - ba
       - be
@@ -2660,10 +2791,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ga:
       - af
+      - am
       - ar
       - ba
       - be
@@ -2742,10 +2875,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     gd:
       - af
+      - am
       - ar
       - ba
       - be
@@ -2824,10 +2959,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     gl:
       - af
+      - am
       - ar
       - ba
       - be
@@ -2906,10 +3043,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     gu:
       - af
+      - am
       - ar
       - ba
       - be
@@ -2988,10 +3127,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     he:
       - af
+      - am
       - ar
       - ba
       - be
@@ -3070,10 +3211,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     hi:
       - af
+      - am
       - ar
       - ba
       - be
@@ -3152,10 +3295,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     hr:
       - af
+      - am
       - ar
       - ba
       - be
@@ -3234,10 +3379,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ht:
       - af
+      - am
       - ar
       - ba
       - be
@@ -3316,10 +3463,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     hu:
       - af
+      - am
       - ar
       - ba
       - be
@@ -3398,10 +3547,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     hy:
       - af
+      - am
       - ar
       - ba
       - be
@@ -3480,10 +3631,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     id:
       - af
+      - am
       - ar
       - ba
       - be
@@ -3562,10 +3715,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     is:
       - af
+      - am
       - ar
       - ba
       - be
@@ -3644,10 +3799,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     it:
       - af
+      - am
       - ar
       - ba
       - be
@@ -3727,10 +3884,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ja:
       - af
+      - am
       - ar
       - ba
       - be
@@ -3809,10 +3968,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     jv:
       - af
+      - am
       - ar
       - ba
       - be
@@ -3891,10 +4052,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ka:
       - af
+      - am
       - ar
       - ba
       - be
@@ -3973,10 +4136,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     kk:
       - af
+      - am
       - ar
       - ba
       - be
@@ -4055,10 +4220,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     kn:
       - af
+      - am
       - ar
       - ba
       - be
@@ -4137,10 +4304,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ko:
       - af
+      - am
       - ar
       - ba
       - be
@@ -4219,10 +4388,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ky:
       - af
+      - am
       - ar
       - ba
       - be
@@ -4301,10 +4472,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     la:
       - af
+      - am
       - ar
       - ba
       - be
@@ -4383,10 +4556,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     lt:
       - af
+      - am
       - ar
       - ba
       - be
@@ -4465,10 +4640,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     lv:
       - af
+      - am
       - ar
       - ba
       - be
@@ -4547,10 +4724,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     mi:
       - af
+      - am
       - ar
       - ba
       - be
@@ -4629,10 +4808,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     mhr:
       - af
+      - am
       - ar
       - ba
       - be
@@ -4711,10 +4892,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     mg:
       - af
+      - am
       - ar
       - ba
       - be
@@ -4793,10 +4976,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ml:
       - af
+      - am
       - ar
       - ba
       - be
@@ -4875,10 +5060,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     mk:
       - af
+      - am
       - ar
       - ba
       - be
@@ -4957,10 +5144,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     mn:
       - af
+      - am
       - ar
       - ba
       - be
@@ -5039,10 +5228,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     mr:
       - af
+      - am
       - ar
       - ba
       - be
@@ -5121,10 +5312,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     mrj:
       - af
+      - am
       - ar
       - ba
       - be
@@ -5202,10 +5395,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ms:
       - af
+      - am
       - ar
       - ba
       - be
@@ -5284,10 +5479,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     mt:
       - af
+      - am
       - ar
       - ba
       - be
@@ -5366,10 +5563,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ne:
       - af
+      - am
       - ar
       - ba
       - be
@@ -5449,10 +5648,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     nl:
       - af
+      - am
       - ar
       - ba
       - be
@@ -5532,10 +5733,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     nb:
       - af
+      - am
       - ar
       - ba
       - be
@@ -5615,10 +5818,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     pa:
       - af
+      - am
       - ar
       - ba
       - be
@@ -5697,10 +5902,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     pap:
       - af
+      - am
       - ar
       - ba
       - be
@@ -5779,10 +5986,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     pl:
       - af
+      - am
       - ar
       - ba
       - be
@@ -5861,10 +6070,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     pt:
       - af
+      - am
       - ar
       - ba
       - be
@@ -5943,10 +6154,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ro:
       - af
+      - am
       - ar
       - ba
       - be
@@ -6025,10 +6238,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ru:
       - af
+      - am
       - ar
       - ba
       - be
@@ -6107,10 +6322,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     si:
       - af
+      - am
       - ar
       - ba
       - be
@@ -6189,10 +6406,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     sk:
       - af
+      - am
       - ar
       - ba
       - be
@@ -6271,10 +6490,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     sl:
       - af
+      - am
       - ar
       - ba
       - be
@@ -6353,10 +6574,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     sq:
       - af
+      - am
       - ar
       - ba
       - be
@@ -6435,10 +6658,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     sr:
       - af
+      - am
       - ar
       - ba
       - be
@@ -6517,10 +6742,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     su:
       - af
+      - am
       - ar
       - ba
       - be
@@ -6599,10 +6826,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     sv:
       - af
+      - am
       - ar
       - ba
       - be
@@ -6681,10 +6910,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     sw:
       - af
+      - am
       - ar
       - ba
       - be
@@ -6763,10 +6994,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ta:
       - af
+      - am
       - ar
       - ba
       - be
@@ -6846,10 +7079,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     te:
       - af
+      - am
       - ar
       - ba
       - be
@@ -6928,10 +7163,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     tg:
       - af
+      - am
       - ar
       - ba
       - be
@@ -7011,10 +7248,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     th:
       - af
+      - am
       - ar
       - ba
       - be
@@ -7093,10 +7332,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     tl:
       - af
+      - am
       - ar
       - ba
       - be
@@ -7175,10 +7416,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     tr:
       - af
+      - am
       - ar
       - ba
       - be
@@ -7257,10 +7500,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     tt:
       - af
+      - am
       - ar
       - ba
       - be
@@ -7339,10 +7584,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     udm:
       - af
+      - am
       - ar
       - ba
       - be
@@ -7421,10 +7668,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     uk:
       - af
+      - am
       - ar
       - ba
       - be
@@ -7503,10 +7752,12 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
       - zh
     ur:
       - af
+      - am
       - ar
       - ba
       - be
@@ -7585,10 +7836,12 @@ mt:
       - uk
       - uz
       - vi
+      - xh
       - yi
       - zh
     uz:
       - af
+      - am
       - ar
       - ba
       - be
@@ -7667,10 +7920,12 @@ mt:
       - uk
       - ur
       - vi
+      - xh
       - yi
       - zh
     vi:
       - af
+      - am
       - ar
       - ba
       - be
@@ -7749,10 +8004,96 @@ mt:
       - uk
       - ur
       - uz
+      - xh
+      - yi
+      - zh
+    xh:
+      - af
+      - am
+      - ar
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - nb
+      - ne
+      - pa
+      - pap
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
       - yi
       - zh
     yi:
       - af
+      - am
       - ar
       - ba
       - be
@@ -7832,9 +8173,11 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - zh
     zh:
       - af
+      - am
       - ar
       - ba
       - be
@@ -7914,6 +8257,7 @@ mt:
       - ur
       - uz
       - vi
+      - xh
       - yi
   Youdao:
     en:
@@ -8019,6 +8363,7 @@ mt:
     'en-si': source-mt
     'en-ta': source-mt
     'af-ceb': source-mt
+    'am-ceb': source-mt
     'ar-ceb': source-mt
     'ba-ceb': source-mt
     'be-ceb': source-mt
@@ -8097,9 +8442,93 @@ mt:
     'ur-ceb': source-mt
     'uz-ceb': source-mt
     'vi-ceb': source-mt
+    'xh-ceb': source-mt
     'yi-ceb': source-mt
     'zh-ceb': source-mt
+    'af-am': source-mt
+    'ar-am': source-mt
+    'ba-am': source-mt
+    'be-am': source-mt
+    'bn-am': source-mt
+    'bg-am': source-mt
+    'bs-am': source-mt
+    'ca-am': source-mt
+    'cs-am': source-mt
+    'cy-am': source-mt
+    'da-am': source-mt
+    'el-am': source-mt
+    'en-am': source-mt
+    'eo-am': source-mt
+    'es-am': source-mt
+    'et-am': source-mt
+    'eu-am': source-mt
+    'fa-am': source-mt
+    'fi-am': source-mt
+    'fr-am': source-mt
+    'ga-am': source-mt
+    'gd-am': source-mt
+    'gl-am': source-mt
+    'gu-am': source-mt
+    'he-am': source-mt
+    'hi-am': source-mt
+    'hr-am': source-mt
+    'ht-am': source-mt
+    'hu-am': source-mt
+    'hy-am': source-mt
+    'id-am': source-mt
+    'is-am': source-mt
+    'ja-am': source-mt
+    'jv-am': source-mt
+    'ka-am': source-mt
+    'kk-am': source-mt
+    'kn-am': source-mt
+    'ko-am': source-mt
+    'ky-am': source-mt
+    'la-am': source-mt
+    'lt-am': source-mt
+    'lv-am': source-mt
+    'mg-am': source-mt
+    'mi-am': source-mt
+    'mhr-am': source-mt
+    'ml-am': source-mt
+    'mk-am': source-mt
+    'mn-am': source-mt
+    'mr-am': source-mt
+    'mrj-am': source-mt
+    'ms-am': source-mt
+    'mt-am': source-mt
+    'nb-am': source-mt
+    'ne-am': source-mt
+    'pa-am': source-mt
+    'pl-am': source-mt
+    'pt-am': source-mt
+    'ro-am': source-mt
+    'ru-am': source-mt
+    'si-am': source-mt
+    'sk-am': source-mt
+    'sl-am': source-mt
+    'sq-am': source-mt
+    'sr-am': source-mt
+    'su-am': source-mt
+    'sv-am': source-mt
+    'sw-am': source-mt
+    'ta-am': source-mt
+    'te-am': source-mt
+    'tg-am': source-mt
+    'th-am': source-mt
+    'tl-am': source-mt
+    'tr-am': source-mt
+    'tt-am': source-mt
+    'udm-am': source-mt
+    'uk-am': source-mt
+    'ur-am': source-mt
+    'uz-am': source-mt
+    'vi-am': source-mt
+    'xh-am': source-mt
+    'yi-am': source-mt
+    'zh-am': source-mt
     'af-eo': source-mt
+    'am-eo': source-mt
     'ar-eo': source-mt
     'ba-eo': source-mt
     'be-eo': source-mt
@@ -8178,9 +8607,11 @@ mt:
     'ur-eo': source-mt
     'uz-eo': source-mt
     'vi-eo': source-mt
+    'xh-eo': source-mt
     'yi-eo': source-mt
     'zh-eo': source-mt
     'af-gd': source-mt
+    'am-gd': source-mt
     'ar-gd': source-mt
     'ba-gd': source-mt
     'be-gd': source-mt
@@ -8259,9 +8690,11 @@ mt:
     'ur-gd': source-mt
     'uz-gd': source-mt
     'vi-gd': source-mt
+    'xh-gd': source-mt
     'yi-gd': source-mt
     'zh-gd': source-mt
     'af-jv': source-mt
+    'am-jv': source-mt
     'ar-jv': source-mt
     'ba-jv': source-mt
     'be-jv': source-mt
@@ -8341,9 +8774,11 @@ mt:
     'ur-jv': source-mt
     'uz-jv': source-mt
     'vi-jv': source-mt
+    'xh-jv': source-mt
     'yi-jv': source-mt
     'zh-jv': source-mt
     'af-mi': source-mt
+    'am-mi': source-mt
     'ar-mi': source-mt
     'ba-mi': source-mt
     'be-mi': source-mt
@@ -8421,9 +8856,11 @@ mt:
     'ur-mi': source-mt
     'uz-mi': source-mt
     'vi-mi': source-mt
+    'xh-mi': source-mt
     'yi-mi': source-mt
     'zh-mi': source-mt
     'af-mhr': source-mt
+    'am-mhr': source-mt
     'ar-mhr': source-mt
     'ba-mhr': source-mt
     'be-mhr': source-mt
@@ -8501,9 +8938,11 @@ mt:
     'ur-mhr': source-mt
     'uz-mhr': source-mt
     'vi-mhr': source-mt
+    'xh-mhr': source-mt
     'yi-mhr': source-mt
     'zh-mhr': source-mt
     'af-ml': source-mt
+    'am-ml': source-mt
     'ar-ml': source-mt
     'ba-ml': source-mt
     'be-ml': source-mt
@@ -8581,8 +9020,11 @@ mt:
     'ur-ml': source-mt
     'uz-ml': source-mt
     'vi-ml': source-mt
+    'xh-ml': source-mt
     'yi-ml': source-mt
+    'zh-ml': source-mt
     'af-mrj': source-mt
+    'am-mrj': source-mt
     'ar-mrj': source-mt
     'ba-mrj': source-mt
     'be-mrj': source-mt
@@ -8660,8 +9102,11 @@ mt:
     'ur-mrj': source-mt
     'uz-mrj': source-mt
     'vi-mrj': source-mt
+    'xh-mrj': source-mt
     'yi-mrj': source-mt
+    'zh-mrj': source-mt
     'af-mr': source-mt
+    'am-mr': source-mt
     'ar-mr': source-mt
     'ba-mr': source-mt
     'be-mr': source-mt
@@ -8739,8 +9184,11 @@ mt:
     'ur-mr': source-mt
     'uz-mr': source-mt
     'vi-mr': source-mt
+    'xh-mr': source-mt
     'yi-mr': source-mt
+    'zh-mr': source-mt
     'af-ne': source-mt
+    'am-ne': source-mt
     'ar-ne': source-mt
     'ba-ne': source-mt
     'be-ne': source-mt
@@ -8817,8 +9265,11 @@ mt:
     'ur-ne': source-mt
     'uz-ne': source-mt
     'vi-ne': source-mt
+    'xh-ne': source-mt
     'yi-ne': source-mt
+    'zh-ne': source-mt
     'af-su': source-mt
+    'am-su': source-mt
     'ar-su': source-mt
     'ba-su': source-mt
     'be-su': source-mt
@@ -8895,8 +9346,10 @@ mt:
     'ur-su': source-mt
     'uz-su': source-mt
     'vi-su': source-mt
+    'xh-su': source-mt
     'yi-su': source-mt
     'af-pap': source-mt
+    'am-pap': source-mt
     'ar-pap': source-mt
     'ba-pap': source-mt
     'be-pap': source-mt
@@ -8973,9 +9426,11 @@ mt:
     'ur-pap': source-mt
     'uz-pap': source-mt
     'vi-pap': source-mt
+    'xh-pap': source-mt
     'yi-pap': source-mt
     'zh-pap': source-mt
     'af-te': source-mt
+    'am-te': source-mt
     'ar-te': source-mt
     'ba-te': source-mt
     'be-te': source-mt
@@ -9053,7 +9508,9 @@ mt:
     'uz-te': source-mt
     'vi-te': source-mt
     'yi-te': source-mt
+    'xh-te': source-mt
     'af-yi': source-mt
+    'am-yi': source-mt
     'ar-yi': source-mt
     'ba-yi': source-mt
     'be-yi': source-mt
@@ -9131,7 +9588,89 @@ mt:
     'ur-yi': source-mt
     'uz-yi': source-mt
     'vi-yi': source-mt
+    'xh-yi': source-mt
     'zh-yi': source-mt
+    'af-xh': source-mt
+    'am-xh': source-mt
+    'ar-xh': source-mt
+    'ba-xh': source-mt
+    'be-xh': source-mt
+    'bn-xh': source-mt
+    'bg-xh': source-mt
+    'bs-xh': source-mt
+    'ca-xh': source-mt
+    'ceb-xh': source-mt
+    'cs-xh': source-mt
+    'cy-xh': source-mt
+    'da-xh': source-mt
+    'el-xh': source-mt
+    'en-xh': source-mt
+    'eo-xh': source-mt
+    'es-xh': source-mt
+    'et-xh': source-mt
+    'eu-xh': source-mt
+    'fa-xh': source-mt
+    'fi-xh': source-mt
+    'fr-xh': source-mt
+    'ga-xh': source-mt
+    'gd-xh': source-mt
+    'gl-xh': source-mt
+    'gu-xh': source-mt
+    'he-xh': source-mt
+    'hi-xh': source-mt
+    'hr-xh': source-mt
+    'ht-xh': source-mt
+    'hu-xh': source-mt
+    'hy-xh': source-mt
+    'id-xh': source-mt
+    'is-xh': source-mt
+    'ja-xh': source-mt
+    'ka-xh': source-mt
+    'kk-xh': source-mt
+    'kn-xh': source-mt
+    'ko-xh': source-mt
+    'ky-xh': source-mt
+    'la-xh': source-mt
+    'lt-xh': source-mt
+    'lv-xh': source-mt
+    'mg-xh': source-mt
+    'mi-xh': source-mt
+    'mhr-xh': source-mt
+    'mk-xh': source-mt
+    'mn-xh': source-mt
+    'mr-xh': source-mt
+    'mrj-xh': source-mt
+    'ms-xh': source-mt
+    'mt-xh': source-mt
+    'nb-xh': source-mt
+    'ne-xh': source-mt
+    'pa-xh': source-mt
+    'pl-xh': source-mt
+    'pt-xh': source-mt
+    'ro-xh': source-mt
+    'ru-xh': source-mt
+    'si-xh': source-mt
+    'sk-xh': source-mt
+    'sl-xh': source-mt
+    'sq-xh': source-mt
+    'sr-xh': source-mt
+    'su-xh': source-mt
+    'sv-xh': source-mt
+    'sw-xh': source-mt
+    'ta-xh': source-mt
+    'te-xh': source-mt
+    'tg-xh': source-mt
+    'th-xh': source-mt
+    'tl-xh': source-mt
+    'tr-xh': source-mt
+    'tt-xh': source-mt
+    'udm-xh': source-mt
+    'uk-xh': source-mt
+    'ur-xh': source-mt
+    'uz-xh': source-mt
+    'vi-xh': source-mt
+    'yi-xh': source-mt
+    'zh-xh': source-mt
     'nl-af': Apertium
     'mt-ar': Apertium
     'mk-bg': Apertium
