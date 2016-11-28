@@ -10,6 +10,8 @@ var BBPromise = require( 'bluebird' ),
  * Error instance wrapping HTTP error responses
  * for automatic error detection, logging and information leakage
  * in route handlers.
+ *
+ * @param {Response} response HTTP error response
  */
 function HTTPError( response ) {
 	var msg, key;
@@ -112,8 +114,8 @@ function wrapRouteHandlers( route, app ) {
 			layer.handle = function ( req, res, next ) {
 				var startTime = Date.now();
 				BBPromise.try( function () {
-						return origHandler( req, res, next );
-					} )
+					return origHandler( req, res, next );
+				} )
 					.catch( next )
 					.finally( function () {
 						var statusCode, statusClass, stat;
@@ -255,6 +257,7 @@ function initAndLogRequest( req, app ) {
 	req.headers = req.headers || {};
 	req.headers[ 'x-request-id' ] = req.headers[ 'x-request-id' ] || generateRequestId();
 	req.logger = app.logger.child( {
+		/* eslint camelcase:off */
 		request_id: req.headers[ 'x-request-id' ],
 		request: reqForLog( req, app.conf.log_header_whitelist )
 	} );

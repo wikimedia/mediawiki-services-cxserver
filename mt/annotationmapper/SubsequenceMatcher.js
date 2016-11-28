@@ -132,6 +132,10 @@ SubSequenceMatcher.prototype.findFuzzyMatch = function ( text, substring ) {
 
 /**
  * Sort function for maching positions based on length.
+ *
+ * @param {number} positionA
+ * @param {number} positionB
+ * @return {number}
  */
 function comparePositions( positionA, positionB ) {
 	if ( positionA.length < positionB.length ) {

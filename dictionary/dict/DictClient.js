@@ -39,6 +39,7 @@ function firstObj( list ) {
  * Sanitize the words
  *
  * @param {Object} words
+ * @return {Object} result
  */
 function parseWords( words ) {
 	var i, word, db, nDb, dbIdx,
@@ -235,7 +236,7 @@ function getDefs( words, options ) {
 				nextResponse();
 			}
 			// Continuing previous data
-
+			/* eslint no-fallthrough:off */
 			switch ( status ) {
 				// greetings
 				case '220':
@@ -418,7 +419,7 @@ function getDefs( words, options ) {
  * @param {Object} options
  */
 function lookup( word, options ) {
-	var defs, words, wordList = [],
+	var words, wordList = [],
 		action = options.action || 'def';
 
 	switch ( action ) {
@@ -441,7 +442,7 @@ function lookup( word, options ) {
 	// Sanitize the wordList
 	words = parseWords( wordList );
 	if ( words.count ) {
-		defs = getDefs( words, {
+		getDefs( words, {
 			action: options.action,
 			suggestions: !!options.suggestions,
 			error: options.error,

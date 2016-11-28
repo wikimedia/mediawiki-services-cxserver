@@ -23,10 +23,6 @@ function cheapBodyInnerHTML( html ) {
 	}
 }
 
-/**
- * @class PageLoader
- *
- */
 function PageLoader( app ) {
 	this.app = app;
 	this.log = app.logger.log || function () {};

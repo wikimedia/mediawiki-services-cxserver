@@ -85,6 +85,7 @@ module.exports = function ( appObj ) {
 	app = appObj;
 	return {
 		path: '/v1',
+		/* eslint camelcase:off */
 		skip_domain: true,
 		router: router
 	};

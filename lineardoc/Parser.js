@@ -60,7 +60,7 @@ Parser.prototype.onopentag = function ( tag ) {
 		this.builder.pushBlockTag( {
 			name: 'div',
 			attributes: {
-				class: 'cx-segment-block'
+				'class': 'cx-segment-block'
 			}
 		} );
 	}

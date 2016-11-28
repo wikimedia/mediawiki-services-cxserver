@@ -1,12 +1,9 @@
 'use strict';
 
-var app, HTTPError, router,
+var app, router,
 	sUtil = require( '../utils/util' ),
 	jwt = require( 'jsonwebtoken' ),
 	registry;
-
-// shortcut
-HTTPError = sUtil.HTTPError;
 
 /**
  * The main router object
@@ -61,7 +58,7 @@ router.get( '/mt/:from/:to/:provider?', function ( req, res ) {
 
 router.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 	var mtClients, mtClient, provider,
-		authzToken, authz, jwtConfig, sourceHtml,
+		authzToken, jwtConfig, sourceHtml,
 		from = req.params.from,
 		to = req.params.to;
 
@@ -91,7 +88,7 @@ router.post( '/mt/:from/:to/:provider?', function ( req, res ) {
 		jwtConfig = app.conf.jwt;
 
 		try {
-			authz = jwt.verify( authzToken, jwtConfig.secret, {
+			jwt.verify( authzToken, jwtConfig.secret, {
 				algorithms: jwtConfig.algorithms
 			} );
 		} catch ( err ) {
@@ -178,6 +175,7 @@ module.exports = function ( appObj ) {
 	app = appObj;
 	return {
 		path: '/v1/',
+		/* eslint camelcase:off */
 		api_version: 1,
 		router: router,
 		skip_domain: true

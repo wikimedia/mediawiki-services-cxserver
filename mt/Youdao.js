@@ -130,6 +130,7 @@ Youdao.prototype.translateText = function ( sourceLang, targetLang, sourceText )
 /**
  * Returns error name from error code.
  *
+ * @param {number} code Error code
  * @return {string}
  */
 Youdao.prototype.getErrorName = function ( code ) {

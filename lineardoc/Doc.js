@@ -21,6 +21,8 @@ var Utils = require( './Utils.js' );
  * @class
  *
  * @constructor
+ *
+ * @param {string} wrapperTag open/close tags
  */
 function Doc( wrapperTag ) {
 	this.items = [];
@@ -51,6 +53,7 @@ Doc.prototype.clone = function ( callback ) {
  * @method
  * @param {string} type Type of item: open|close|blockspace|textblock
  * @param {Object|string|TextBlock} item Open/close tag, space or text block
+ * @return {Object}
  * @chainable
  */
 Doc.prototype.addItem = function ( type, item ) {
@@ -150,7 +153,6 @@ Doc.prototype.getHtml = function () {
 			// textblock html list may be quite long, so concatenate now
 			html.push( textblock.getHtml() );
 		} else {
-			console.error( 'Unknown item type at ' + i );
 			throw new Error( 'Unknown item type: ' + type );
 		}
 	}
@@ -164,6 +166,7 @@ Doc.prototype.getHtml = function () {
  * Dump an XML Array version of the linear representation, for debugging
  *
  * @method
+ * @param {string} pad
  * @return {string[]} Array that will concatenate to an XML string representation
  */
 Doc.prototype.dumpXmlArray = function ( pad ) {
@@ -199,7 +202,6 @@ Doc.prototype.dumpXmlArray = function ( pad ) {
 			dump.push.apply( dump, textBlock.dumpXmlArray( pad + '  ' ) );
 			dump.push( pad + '</cxtextblock>' );
 		} else {
-			console.error( 'Unknown item type: ', this.items[ i ] );
 			throw new Error( 'Unknown item type: ' + type );
 		}
 	}

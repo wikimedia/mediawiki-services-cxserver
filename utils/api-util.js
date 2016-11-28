@@ -102,6 +102,7 @@ function setupApiTemplates( app ) {
 
 	// set up the RESTBase request template
 	if ( !app.conf.restbase_req ) {
+		/* eslint camelcase:off */
 		app.conf.restbase_req = {
 			method: '{{request.method}}',
 			uri: 'http://{{domain}}/api/rest_v1/{+path}',

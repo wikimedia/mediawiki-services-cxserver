@@ -2,7 +2,7 @@
 
 var SAXParser = require( 'sax' ).SAXParser,
 	util = require( 'util' ),
-	Utils =  require( './Utils.js' );
+	Utils = require( './Utils.js' );
 
 /**
  * Escape text for inclusion in HTML, not inside a tag.

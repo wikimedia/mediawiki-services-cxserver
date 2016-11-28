@@ -8,6 +8,8 @@ var TextChunk = require( './TextChunk.js' ),
  * @class
  *
  * @constructor
+ *
+ * @param {string} textChunks annotated inline text
  */
 function TextBlock( textChunks ) {
 	var i, len, cursor;
@@ -323,7 +325,7 @@ TextBlock.prototype.segment = function ( getBoundaries, getNextId ) {
 			currentTextChunks, {
 				name: 'span',
 				attributes: {
-					class: 'cx-segment',
+					'class': 'cx-segment',
 					'data-segmentid': getNextId( 'segment' )
 				}
 			}

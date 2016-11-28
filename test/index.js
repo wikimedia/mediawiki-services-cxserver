@@ -1,6 +1,21 @@
 'use strict';
 
-// Run jshint as part of normal testing
-require( 'mocha-jshint' )();
-// Run jscs as part of normal testing
-require( 'mocha-jscs' )();
+// Run eslint as part of normal testing
+var paths,
+	lint = require( 'mocha-eslint' );
+
+paths = [
+	'dictionary',
+	'mt',
+	'lineardoc',
+	'pageloader',
+	'registry',
+	'routes',
+	'segmentation',
+	'utils',
+	'tests/**/*.js',
+	'*.js'
+];
+
+// Run the tests
+lint( paths );

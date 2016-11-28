@@ -71,6 +71,7 @@ module.exports = function ( appObj ) {
 
 	return {
 		path: '/_info',
+		/* eslint camelcase:off */
 		skip_domain: true,
 		router: router
 	};

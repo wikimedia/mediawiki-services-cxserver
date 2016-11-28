@@ -1,7 +1,5 @@
 'use strict';
 
-require( 'core-js/shim' );
-
 var http = require( 'http' ),
 	BBPromise = require( 'bluebird' ),
 	express = require( 'express' ),
@@ -13,6 +11,8 @@ var http = require( 'http' ),
 	packageInfo = require( './package.json' ),
 	path = require( 'path' ),
 	yaml = require( 'js-yaml' );
+
+require( 'core-js/shim' );
 
 /**
  * Creates an express app and initialises it
@@ -36,6 +36,7 @@ function initApp( options ) {
 		app.conf.interface = '0.0.0.0';
 	}
 	if ( app.conf.compression_level === undefined ) {
+		/* eslint camelcase:off */
 		app.conf.compression_level = 3;
 	}
 	if ( app.conf.cors === undefined ) {
@@ -232,6 +233,9 @@ function createServer( app ) {
  * options and the logger and metrics-reporting objects from
  * service-runner and starts an HTTP server, attaching the application
  * object to it.
+ *
+ * @param {Object} options
+ * @return {Promise} a promise for an http server.
  */
 module.exports = function ( options ) {
 	return initApp( options )

@@ -70,6 +70,7 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 /**
  * Returns error name from error code.
  *
+ * @param {number} code Error code
  * @return {string}
  */
 Yandex.prototype.getErrorName = function ( code ) {

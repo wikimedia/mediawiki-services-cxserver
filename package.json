@@ -37,11 +37,11 @@
     "check-dependencies": "^0.12.0",
     "extend": "^3.0.0",
     "mocha": "^2.5.3",
-    "mocha-jscs": "^5.0.0",
-    "mocha-jshint": "^2.3.1",
+    "mocha-eslint": "^3.0.1",
     "mocha-lcov-reporter": "^1.2.0",
     "node-inspector": "^0.12.6",
-    "nsp": "^2.6.1"
+    "nsp": "^2.6.1",
+    "eslint-config-wikimedia": "0.3.0"
   },
   "scripts": {
     "start": "service-runner",

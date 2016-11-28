@@ -86,10 +86,11 @@ function getOpenTagHtml( tag ) {
  * @return {Object} Cloned tag
  */
 function cloneOpenTag( tag ) {
-	var attr, newTag = {
-		name: tag.name,
-		attributes: {}
-	};
+	var attr,
+		newTag = {
+			name: tag.name,
+			attributes: {}
+		};
 	for ( attr in tag.attributes ) {
 		newTag.attributes[ attr ] = tag.attributes[ attr ];
 	}
