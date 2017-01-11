@@ -1,6 +1,8 @@
 'use strict';
 
-var Utils = require( './Utils.js' );
+var Utils = require( './Utils.js' ),
+	crypto = require( 'crypto' );
+
 /**
  * An HTML document in linear representation.
  *
@@ -72,7 +74,7 @@ Doc.prototype.addItem = function ( type, item ) {
  * @return {Doc} Segmented version of document TODO: warning: *shallow copied*.
  */
 Doc.prototype.segment = function ( getBoundaries ) {
-	var i, len, item, tag, textBlock,
+	var i, len, item, tag, textBlock, hash,
 		newDoc = new Doc(),
 		nextId = 0;
 
@@ -92,6 +94,27 @@ Doc.prototype.segment = function ( getBoundaries ) {
 			if ( tag.attributes.id ) {
 				// Kept for restoring the old articles.
 				tag.attributes[ 'data-seqid' ] = getNextId( 'block' );
+				// If the item is a header, we make it a fixed length id using hash of the text content.
+				// Header ids are originally the header text to get the URL fragments working, but for
+				// CX, it is irrelevant and we need a fixed length id that can be used as DB key.
+				// The text inside this 'open tag' is in the next item(i+1).
+				if ( [ 'h1', 'h2', 'h3', 'h4', 'h5' ].indexOf( tag.name ) >= 0 &&
+					i + 1 < len &&
+					this.items[ i + 1 ].type === 'textblock'
+				) {
+					hash = crypto.createHash( 'sha256' );
+					hash.update( this.items[ i + 1 ].item.getPlainText() );
+					// 30 is the max length of ids we allow. We also prepend the sequence id
+					// just to make sure the ids don't collide if the same text repeats.
+					tag.attributes.id = (
+						tag.attributes[ 'data-seqid' ] + hash.digest( 'hex' )
+					).substr( 0, 30 );
+				} else if ( tag.attributes.id.length > 30 ) {
+					// At any case, make sure that the section id never exceeds 30 bytes
+					tag.attributes.id = (
+						tag.attributes[ 'data-seqid' ] + tag.attributes.id
+					).substr( 0, 30 );
+				}
 			} else {
 				tag.attributes.id = getNextId( 'block' );
 			}
