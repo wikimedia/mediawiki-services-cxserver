@@ -41,8 +41,8 @@ Yandex.prototype.translate = function ( sourceLang, targetLang, sourceText ) {
 	}
 
 	if ( sourceText.length > 10000 ) {
-		return BBPromise.reject( new Error( 'Source text too long ' ) +
-			sourceLang + '-' + targetLang );
+		return BBPromise.reject( new Error( 'Source text too long: ' +
+			sourceLang + '-' + targetLang ) );
 	}
 
 	sourceLang = yandexLanguageNameMap[ sourceLang ] || sourceLang;
