@@ -158,7 +158,7 @@ paths:
         - Machine translation
       description: Fetches the machine translation. Some providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
       consumes:
-        - multipart/form-data
+        - application/x-www-form-urlencoded
       produces:
         - application/json
       parameters:
