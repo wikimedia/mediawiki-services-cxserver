@@ -1,6 +1,22 @@
 #!/usr/bin/env node
-var sourceLang, targetLang, sourceHtml, script, args,
+var sourceLang, targetLang, sourceHtml, script, args, config, cxConfig,
+	fs = require( 'fs' ),
+	yaml = require( 'js-yaml' ),
 	Apertium = require( __dirname + '/../mt/Apertium.js' );
+
+config = yaml.load( fs.readFileSync( 'config.yaml' ) );
+if ( !config ) {
+	console.error( 'Failed to load config' );
+	process.exit( 1 );
+}
+cxConfig = config.services && Array.isArray( config.services ) &&
+	config.services.filter( function ( item ) {
+		return item && item.name === 'cxserver';
+	} )[ 0 ];
+if ( !cxConfig ) {
+	console.error( 'Cannot find cxserver config' );
+	process.exit( 1 );
+}
 
 script = process.argv[ 1 ];
 args = process.argv.slice( 2 );
@@ -22,13 +38,13 @@ process.stdin.on( 'data', function( data ) {
 	sourceHtml.push( data );
 } );
 process.stdin.on( 'end', function() {
-	new Apertium().translate(
+	new Apertium( cxConfig ).translate(
 		sourceLang,
 		targetLang,
 		sourceHtml.join( '' )
 	).then( function( targetHtml ) {
 		process.stdout.write( targetHtml + '\n' );
-	}, function( error ) {
+	} ).catch( function( error ) {
 		if ( error.stack ) {
 			console.error( 'error', error.stack );
 		} else {
