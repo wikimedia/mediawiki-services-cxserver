@@ -693,6 +693,7 @@ mt:
     af:
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -778,6 +779,7 @@ mt:
     am:
       - af
       - ar
+      - az
       - ba
       - be
       - bn
@@ -863,6 +865,7 @@ mt:
     ar:
       - af
       - am
+      - az
       - ba
       - be
       - bn
@@ -1035,6 +1038,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - be
       - bn
       - bg
@@ -1120,6 +1124,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -1206,6 +1211,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - bn
       - bg
@@ -1291,6 +1297,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bg
@@ -1376,6 +1383,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -1461,6 +1469,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -1546,6 +1555,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -1631,6 +1641,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -1716,6 +1727,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -1801,6 +1813,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -1886,6 +1899,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -1971,6 +1985,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -2057,6 +2072,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -2142,6 +2158,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -2228,6 +2245,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -2313,6 +2331,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -2398,6 +2417,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -2483,6 +2503,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -2568,6 +2589,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -2653,6 +2675,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -2738,6 +2761,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -2823,6 +2847,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -2908,6 +2933,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -2993,6 +3019,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -3078,6 +3105,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -3163,6 +3191,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -3248,6 +3277,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -3333,6 +3363,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -3418,6 +3449,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -3503,6 +3535,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -3588,6 +3621,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -3673,6 +3707,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -3758,6 +3793,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -3843,6 +3879,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -3929,6 +3966,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -4014,6 +4052,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -4099,6 +4138,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -4184,6 +4224,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -4269,6 +4310,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -4354,6 +4396,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -4439,6 +4482,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -4524,6 +4568,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -4609,6 +4654,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -4694,6 +4740,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -4779,6 +4826,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -4864,6 +4912,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -4949,6 +4998,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -5034,6 +5084,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -5119,6 +5170,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -5204,6 +5256,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -5289,6 +5342,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -5374,6 +5428,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -5459,6 +5514,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -5543,6 +5599,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -5628,6 +5685,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -5713,6 +5771,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -5799,6 +5858,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -5885,6 +5945,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -5971,6 +6032,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -6056,6 +6118,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -6141,6 +6204,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -6226,6 +6290,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -6311,6 +6376,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -6396,6 +6462,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -6481,6 +6548,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -6566,6 +6634,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -6651,6 +6720,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -6736,6 +6806,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -6821,6 +6892,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -6906,6 +6978,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -6991,6 +7064,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -7076,6 +7150,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -7161,6 +7236,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -7247,6 +7323,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -7332,6 +7409,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -7418,6 +7496,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -7503,6 +7582,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -7588,6 +7668,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -7673,6 +7754,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -7758,6 +7840,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -7843,6 +7926,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -7928,6 +8012,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -8013,6 +8098,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -8098,6 +8184,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -8183,6 +8270,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -8268,6 +8356,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -8353,6 +8442,7 @@ mt:
       - af
       - am
       - ar
+      - az
       - ba
       - be
       - bn
@@ -8537,6 +8627,90 @@ mt:
     'ru-pa': source-mt
     'en-si': source-mt
     'en-ta': source-mt
+    'af-az': source-mt
+    'am-az': source-mt
+    'ar-az': source-mt
+    'ba-az': source-mt
+    'be-az': source-mt
+    'be-tarask-az': source-mt
+    'bn-az': source-mt
+    'bg-az': source-mt
+    'bs-az': source-mt
+    'ca-az': source-mt
+    'cs-az': source-mt
+    'cy-az': source-mt
+    'da-az': source-mt
+    'el-az': source-mt
+    'en-az': source-mt
+    'eo-az': source-mt
+    'es-az': source-mt
+    'et-az': source-mt
+    'eu-az': source-mt
+    'fa-az': source-mt
+    'fi-az': source-mt
+    'fr-az': source-mt
+    'ga-az': source-mt
+    'gd-az': source-mt
+    'gl-az': source-mt
+    'gu-az': source-mt
+    'he-az': source-mt
+    'hi-az': source-mt
+    'hr-az': source-mt
+    'ht-az': source-mt
+    'hu-az': source-mt
+    'hy-az': source-mt
+    'id-az': source-mt
+    'is-az': source-mt
+    'ja-az': source-mt
+    'jv-az': source-mt
+    'ka-az': source-mt
+    'kk-az': source-mt
+    'kn-az': source-mt
+    'ko-az': source-mt
+    'ky-az': source-mt
+    'la-az': source-mt
+    'lt-az': source-mt
+    'lv-az': source-mt
+    'mg-az': source-mt
+    'mi-az': source-mt
+    'mhr-az': source-mt
+    'ml-az': source-mt
+    'mk-az': source-mt
+    'mn-az': source-mt
+    'mr-az': source-mt
+    'mrj-az': source-mt
+    'ms-az': source-mt
+    'mt-az': source-mt
+    'nb-az': source-mt
+    'ne-az': source-mt
+    'pa-az': source-mt
+    'pl-az': source-mt
+    'pt-az': source-mt
+    'ro-az': source-mt
+    'ru-az': source-mt
+    'si-az': source-mt
+    'sk-az': source-mt
+    'sl-az': source-mt
+    'sq-az': source-mt
+    'sr-az': source-mt
+    'su-az': source-mt
+    'sv-az': source-mt
+    'sw-az': source-mt
+    'ta-az': source-mt
+    'te-az': source-mt
+    'tg-az': source-mt
+    'th-az': source-mt
+    'tl-az': source-mt
+    'tr-az': source-mt
+    'tt-az': source-mt
+    'udm-az': source-mt
+    'uk-az': source-mt
+    'ur-az': source-mt
+    'uz-az': source-mt
+    'vi-az': source-mt
+    'xh-az': source-mt
+    'yi-az': source-mt
+    'zh-az': source-mt
     'af-ceb': source-mt
     'am-ceb': source-mt
     'ar-ceb': source-mt
