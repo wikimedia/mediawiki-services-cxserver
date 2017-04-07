@@ -8597,22 +8597,6 @@ mt:
     'ru-uk': source-mt
     'sk-uk': source-mt
     'sv-uk': source-mt
-    'cs-zh': source-mt
-    'de-zh': source-mt
-    'en-zh': source-mt
-    'es-zh': source-mt
-    'fa-zh': source-mt
-    'fr-zh': source-mt
-    'id-zh': source-mt
-    'ja-zh': source-mt
-    'it-zh': source-mt
-    'ko-zh': source-mt
-    'nl-zh': source-mt
-    'pt-zh': source-mt
-    'ru-zh': source-mt
-    'sv-zh': source-mt
-    'uk-zh': source-mt
-    'vi-zh': source-mt
     'en-bn': source-mt
     'eu-bn': source-mt
     'en-gu': source-mt
@@ -10102,6 +10086,89 @@ mt:
     'vi-xh': source-mt
     'yi-xh': source-mt
     'zh-xh': source-mt
+    'af-zh': Yandex
+    'am-zh': Yandex
+    'ar-zh': Yandex
+    'az-zh': Yandex
+    'ba-zh': Yandex
+    'be-zh': Yandex
+    'be-tarask-zh': Yandex
+    'bn-zh': Yandex
+    'bg-zh': Yandex
+    'bs-zh': Yandex
+    'ca-zh': Yandex
+    'ceb-zh': Yandex
+    'cs-zh': Yandex
+    'cy-zh': Yandex
+    'da-zh': Yandex
+    'el-zh': Yandex
+    'en-zh': Yandex
+    'eo-zh': Yandex
+    'es-zh': Yandex
+    'et-zh': Yandex
+    'eu-zh': Yandex
+    'fa-zh': Yandex
+    'fi-zh': Yandex
+    'fr-zh': Yandex
+    'ga-zh': Yandex
+    'gd-zh': Yandex
+    'gl-zh': Yandex
+    'gu-zh': Yandex
+    'he-zh': Yandex
+    'hi-zh': Yandex
+    'hr-zh': Yandex
+    'ht-zh': Yandex
+    'hu-zh': Yandex
+    'hy-zh': Yandex
+    'id-zh': Yandex
+    'is-zh': Yandex
+    'ja-zh': Yandex
+    'ka-zh': Yandex
+    'kk-zh': Yandex
+    'kn-zh': Yandex
+    'ko-zh': Yandex
+    'ky-zh': Yandex
+    'la-zh': Yandex
+    'lt-zh': Yandex
+    'lv-zh': Yandex
+    'mg-zh': Yandex
+    'mi-zh': Yandex
+    'mhr-zh': Yandex
+    'mk-zh': Yandex
+    'mn-zh': Yandex
+    'mr-zh': Yandex
+    'mrj-zh': Yandex
+    'ms-zh': Yandex
+    'mt-zh': Yandex
+    'nb-zh': Yandex
+    'ne-zh': Yandex
+    'pa-zh': Yandex
+    'pl-zh': Yandex
+    'pt-zh': Yandex
+    'ro-zh': Yandex
+    'ru-zh': Yandex
+    'si-zh': Yandex
+    'sk-zh': Yandex
+    'sl-zh': Yandex
+    'sq-zh': Yandex
+    'sr-zh': Yandex
+    'su-zh': Yandex
+    'sv-zh': Yandex
+    'sw-zh': Yandex
+    'ta-zh': Yandex
+    'te-zh': Yandex
+    'tg-zh': Yandex
+    'th-zh': Yandex
+    'tl-zh': Yandex
+    'tr-zh': Yandex
+    'tt-zh': Yandex
+    'udm-zh': Yandex
+    'uk-zh': Yandex
+    'ur-zh': Yandex
+    'uz-zh': Yandex
+    'vi-zh': Yandex
+    'yi-zh': Yandex
+    'xh-zh': Yandex
     'nl-af': Apertium
     'mt-ar': Apertium
     'mk-bg': Apertium
