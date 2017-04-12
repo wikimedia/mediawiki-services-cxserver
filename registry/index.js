@@ -59,7 +59,7 @@ function getToolSet( from, to ) {
 }
 
 /**
- * Get the available toolset for the given language pair.
+ * Get the valid toolsets for the given language pair.
  * If the provider name is given, it is validated.
  * If provider name is not given, the first one that appears in the registry will be returned.
  * If not valid provider is found, the function returns null.
