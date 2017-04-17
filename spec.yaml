@@ -200,12 +200,38 @@ paths:
               contents: /.+/
             headers:
               content-type: application/json
+  /v1/list/tool/{tool}:
+    get:
+      tags:
+        - Tools
+        - Service information
+      description: Lists the tools for all language pairs
+      produces:
+        - application/json
+      parameters:
+        - name: tool
+          in: path
+          description: The tool name
+          type: string
+          required: true
+          enum:
+           - mt
+           - dictionary
+      x-amples:
+        - title: Get the tools for all language pairs
+          request:
+            params:
+              tool: mt
+          response:
+            status: 200
+            headers:
+              content-type: application/json
   /v1/list/{tool}{/from}{/to}:
     get:
       tags:
         - Tools
         - Service information
-      description: Lists the tools for a language pair
+      description: Lists all language pairs that tool supports
       produces:
         - application/json
       parameters:

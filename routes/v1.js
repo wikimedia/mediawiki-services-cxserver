@@ -164,6 +164,29 @@ router.get( '/list/:tool/:from?/:to?', function ( req, res ) {
 } );
 
 /**
+ * Get a list of all language pairs that tool supports.
+ */
+router.get( '/list/tool/:tool', function ( req, res ) {
+	var result,
+		tool = req.params.tool;
+
+	registry = require( __dirname + '/../registry' )( app );
+	if ( tool === 'mt' ) {
+		result = registry.getMTPairs();
+	}
+	if ( tool === 'dictionary' ) {
+		result = registry.getDictionaryPairs();
+	}
+
+	if ( !result ) {
+		res.status( 404 ).end( 'Unknown tool' );
+		return;
+	}
+
+	res.json( result );
+} );
+
+/**
  * Get a list of all language pairs.
  */
 router.get( '/languagepairs', function ( req, res ) {
