@@ -208,6 +208,14 @@ router.get( '/languagepairs', function ( req, res ) {
 	res.json( registry.getLanguagePairs() );
 } );
 
+/**
+ * Get a list of all language pairs.
+ */
+router.get( '/list/languagepairs', function ( req, res ) {
+	registry = require( __dirname + '/../registry' )( app );
+	res.json( registry.getLanguagePairs() );
+} );
+
 module.exports = function ( appObj ) {
 	app = appObj;
 	return {
