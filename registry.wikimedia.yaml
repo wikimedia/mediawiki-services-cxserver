@@ -9181,6 +9181,9 @@ mt:
       - ko
       - pt
       - ru
+  Matxin:
+    es:
+      - eu
   defaults:
     # source-mt : Source text as default MT option.
     'en-am': source-mt

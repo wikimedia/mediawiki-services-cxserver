@@ -68,4 +68,6 @@ services:
         youdao:
           api: https://fanyi.youdao.com/paidapi/fanyiapi
           key: null
+        matxin:
+          api: http://matxin.elhuyar.eus/API
       registry: ./registry.wikimedia.yaml

@@ -179,6 +179,7 @@ paths:
           required: false
           enum:
            - Apertium
+           - Matxin
         - name: html
           in: formData
           description: The HTML content to translate
