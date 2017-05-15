@@ -730,11 +730,13 @@ mt:
       - jv
       - ka
       - kk
+      - km
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -747,6 +749,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -815,12 +818,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -833,6 +838,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -901,12 +907,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -919,6 +927,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -987,12 +996,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -1005,6 +1016,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -1073,12 +1085,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -1091,6 +1105,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -1160,12 +1175,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -1178,6 +1195,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -1246,12 +1264,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -1264,6 +1284,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -1332,12 +1353,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -1350,6 +1373,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -1418,12 +1442,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -1436,6 +1462,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -1504,12 +1531,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -1522,6 +1551,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -1590,12 +1620,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -1608,6 +1640,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -1676,12 +1709,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -1694,6 +1729,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -1762,12 +1798,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -1780,6 +1818,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -1848,12 +1887,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -1866,6 +1907,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -1934,12 +1976,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -1952,6 +1996,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -2021,12 +2066,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -2039,6 +2086,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -2107,12 +2155,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -2125,6 +2175,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -2194,12 +2245,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -2212,6 +2265,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -2280,12 +2334,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -2298,6 +2354,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -2366,12 +2423,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -2384,6 +2443,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -2452,12 +2512,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -2470,6 +2532,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -2538,12 +2601,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -2556,6 +2621,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -2624,12 +2690,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -2642,6 +2710,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -2710,12 +2779,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -2728,6 +2799,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -2796,12 +2868,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -2814,6 +2888,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -2882,12 +2957,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -2900,6 +2977,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -2968,12 +3046,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -2986,6 +3066,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -3054,12 +3135,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -3072,6 +3155,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -3140,12 +3224,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -3158,6 +3244,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -3226,12 +3313,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -3244,6 +3333,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -3312,12 +3402,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -3330,6 +3422,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -3398,12 +3491,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -3416,6 +3511,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -3484,12 +3580,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -3502,6 +3600,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -3570,12 +3669,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -3588,6 +3689,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -3656,12 +3758,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -3674,6 +3778,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -3742,12 +3847,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -3760,6 +3867,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -3828,12 +3936,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -3846,6 +3956,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -3915,12 +4026,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -3933,6 +4046,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -4001,12 +4115,14 @@ mt:
       - is
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -4019,6 +4135,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -4087,12 +4204,14 @@ mt:
       - is
       - ja
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -4105,6 +4224,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -4173,12 +4293,14 @@ mt:
       - is
       - ja
       - jv
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -4191,6 +4313,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -4265,6 +4388,7 @@ mt:
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -4277,6 +4401,96 @@ mt:
       - mr
       - ms
       - mt
+      - my
+      - nb
+      - ne
+      - pa
+      - pap
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - xh
+      - yi
+      - zh
+    km:
+      - af
+      - am
+      - ar
+      - az
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - kn
+      - kk
+      - ko
+      - ky
+      - la
+      - lb
+      - lo
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - my
       - nb
       - ne
       - pa
@@ -4346,11 +4560,13 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -4363,6 +4579,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -4432,11 +4649,13 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -4449,6 +4668,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -4518,11 +4738,13 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -4535,6 +4757,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -4604,11 +4827,13 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -4621,6 +4846,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -4690,6 +4916,7 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
@@ -4707,6 +4934,95 @@ mt:
       - mr
       - ms
       - mt
+      - my
+      - nb
+      - ne
+      - pa
+      - pap
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - xh
+      - yi
+      - zh
+    lo:
+      - af
+      - am
+      - ar
+      - az
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - km
+      - kk
+      - ko
+      - ky
+      - la
+      - lb
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
+      - my
       - nb
       - ne
       - pa
@@ -4776,12 +5092,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lv
       - mi
       - mg
@@ -4793,6 +5111,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -4862,12 +5181,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - mi
       - mg
@@ -4879,6 +5200,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -4948,12 +5270,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mg
@@ -4965,6 +5289,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -5034,12 +5359,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -5051,6 +5378,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -5120,12 +5448,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -5137,6 +5467,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -5206,12 +5537,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -5223,6 +5556,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -5292,12 +5626,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -5309,6 +5645,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -5378,12 +5715,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -5395,6 +5734,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -5464,12 +5804,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -5481,6 +5823,7 @@ mt:
       - mrj
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -5550,12 +5893,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -5566,6 +5911,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -5635,12 +5981,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -5652,6 +6000,7 @@ mt:
       - mrj
       - mr
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -5721,12 +6070,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -5738,6 +6089,96 @@ mt:
       - mrj
       - mr
       - ms
+      - my
+      - nb
+      - ne
+      - pa
+      - pap
+      - pl
+      - pt
+      - ro
+      - ru
+      - si
+      - sk
+      - sl
+      - sq
+      - sr
+      - su
+      - sv
+      - sw
+      - ta
+      - te
+      - tg
+      - th
+      - tl
+      - tr
+      - tt
+      - udm
+      - uk
+      - ur
+      - uz
+      - vi
+      - xh
+      - yi
+      - zh
+    my:
+      - af
+      - am
+      - ar
+      - az
+      - ba
+      - be
+      - bn
+      - bg
+      - bs
+      - ca
+      - ceb
+      - cs
+      - cy
+      - da
+      - el
+      - eo
+      - es
+      - et
+      - eu
+      - fa
+      - fi
+      - fr
+      - ga
+      - gd
+      - gl
+      - gu
+      - he
+      - hi
+      - hr
+      - ht
+      - hu
+      - hy
+      - id
+      - is
+      - ja
+      - jv
+      - ka
+      - km
+      - kk
+      - kn
+      - ko
+      - ky
+      - la
+      - lb
+      - lo
+      - lt
+      - lv
+      - mi
+      - mg
+      - mhr
+      - ml
+      - mk
+      - mn
+      - mrj
+      - mr
+      - ms
+      - mt
       - nb
       - ne
       - pa
@@ -5807,12 +6248,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -5825,6 +6268,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - nl
       - pa
@@ -5894,12 +6338,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -5912,6 +6358,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -5981,12 +6428,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -5999,6 +6448,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - ne
       - nl
       - pa
@@ -6068,12 +6518,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -6086,6 +6538,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pap
@@ -6154,12 +6607,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -6172,6 +6627,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -6240,12 +6696,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -6258,6 +6716,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -6326,12 +6785,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -6344,6 +6805,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -6412,12 +6874,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -6430,6 +6894,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -6498,12 +6963,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -6516,6 +6983,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -6584,12 +7052,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -6602,6 +7072,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -6670,12 +7141,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -6688,6 +7161,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -6756,12 +7230,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -6774,6 +7250,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -6842,12 +7319,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -6860,6 +7339,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -6928,12 +7408,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -6946,6 +7428,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -7014,12 +7497,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -7032,6 +7517,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -7100,12 +7586,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -7118,6 +7606,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -7186,12 +7675,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -7204,6 +7695,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -7272,12 +7764,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -7290,6 +7784,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -7359,12 +7854,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -7377,6 +7874,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -7445,12 +7943,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -7463,6 +7963,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -7532,12 +8033,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -7550,6 +8053,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -7618,12 +8122,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -7636,6 +8142,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -7704,12 +8211,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -7722,6 +8231,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -7790,12 +8300,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -7808,6 +8320,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -7876,12 +8389,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -7894,6 +8409,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -7962,12 +8478,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -7980,6 +8498,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -8048,12 +8567,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -8066,6 +8587,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -8134,12 +8656,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -8152,6 +8676,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -8220,12 +8745,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -8238,6 +8765,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -8306,12 +8834,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -8324,6 +8854,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -8392,12 +8923,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -8410,6 +8943,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -8478,12 +9012,14 @@ mt:
       - ja
       - jv
       - ka
+      - km
       - kk
       - kn
       - ko
       - ky
       - la
       - lb
+      - lo
       - lt
       - lv
       - mi
@@ -8496,6 +9032,7 @@ mt:
       - mr
       - ms
       - mt
+      - my
       - nb
       - ne
       - pa
@@ -8682,6 +9219,94 @@ mt:
     'he-gu': source-mt
     'hi-gu': source-mt
     'pt-gu': source-mt
+    'af-km': source-mt
+    'am-km': source-mt
+    'ar-km': source-mt
+    'az-km': source-mt
+    'ba-km': source-mt
+    'be-km': source-mt
+    'bn-km': source-mt
+    'bg-km': source-mt
+    'bs-km': source-mt
+    'ca-km': source-mt
+    'ceb-km': source-mt
+    'cs-km': source-mt
+    'cy-km': source-mt
+    'da-km': source-mt
+    'el-km': source-mt
+    'en-km': source-mt
+    'eo-km': source-mt
+    'es-km': source-mt
+    'et-km': source-mt
+    'eu-km': source-mt
+    'fa-km': source-mt
+    'fi-km': source-mt
+    'fr-km': source-mt
+    'ga-km': source-mt
+    'gd-km': source-mt
+    'gl-km': source-mt
+    'gu-km': source-mt
+    'he-km': source-mt
+    'hi-km': source-mt
+    'hr-km': source-mt
+    'ht-km': source-mt
+    'hu-km': source-mt
+    'hy-km': source-mt
+    'id-km': source-mt
+    'is-km': source-mt
+    'ja-km': source-mt
+    'jv-km': source-mt
+    'ka-km': source-mt
+    'kk-km': source-mt
+    'kn-km': source-mt
+    'ko-km': source-mt
+    'ky-km': source-mt
+    'la-km': source-mt
+    'lb-km': source-mt
+    'lo-km': source-mt
+    'lt-km': source-mt
+    'lv-km': source-mt
+    'mi-km': source-mt
+    'mg-km': source-mt
+    'mhr-km': source-mt
+    'ml-km': source-mt
+    'mk-km': source-mt
+    'mn-km': source-mt
+    'mrj-km': source-mt
+    'mr-km': source-mt
+    'ms-km': source-mt
+    'my-km': source-mt
+    'nb-km': source-mt
+    'ne-km': source-mt
+    'pa-km': source-mt
+    'pap-km': source-mt
+    'pl-km': source-mt
+    'pt-km': source-mt
+    'ro-km': source-mt
+    'ru-km': source-mt
+    'si-km': source-mt
+    'sk-km': source-mt
+    'sl-km': source-mt
+    'sq-km': source-mt
+    'sr-km': source-mt
+    'su-km': source-mt
+    'sv-km': source-mt
+    'sw-km': source-mt
+    'ta-km': source-mt
+    'te-km': source-mt
+    'tg-km': source-mt
+    'th-km': source-mt
+    'tl-km': source-mt
+    'tr-km': source-mt
+    'tt-km': source-mt
+    'udm-km': source-mt
+    'uk-km': source-mt
+    'ur-km': source-mt
+    'uz-km': source-mt
+    'vi-km': source-mt
+    'xh-km': source-mt
+    'yi-km': source-mt
+    'zh-km': source-mt
     'en-kn': source-mt
     'fr-kn': source-mt
     'cs-la': source-mt
@@ -8693,6 +9318,94 @@ mt:
     'hu-la': source-mt
     'it-la': source-mt
     'de-lb': source-mt
+    'af-lo': source-mt
+    'am-lo': source-mt
+    'ar-lo': source-mt
+    'az-lo': source-mt
+    'ba-lo': source-mt
+    'be-lo': source-mt
+    'bn-lo': source-mt
+    'bg-lo': source-mt
+    'bs-lo': source-mt
+    'ca-lo': source-mt
+    'ceb-lo': source-mt
+    'cs-lo': source-mt
+    'cy-lo': source-mt
+    'da-lo': source-mt
+    'el-lo': source-mt
+    'en-lo': source-mt
+    'eo-lo': source-mt
+    'es-lo': source-mt
+    'et-lo': source-mt
+    'eu-lo': source-mt
+    'fa-lo': source-mt
+    'fi-lo': source-mt
+    'fr-lo': source-mt
+    'ga-lo': source-mt
+    'gd-lo': source-mt
+    'gl-lo': source-mt
+    'gu-lo': source-mt
+    'he-lo': source-mt
+    'hi-lo': source-mt
+    'hr-lo': source-mt
+    'ht-lo': source-mt
+    'hu-lo': source-mt
+    'hy-lo': source-mt
+    'id-lo': source-mt
+    'is-lo': source-mt
+    'ja-lo': source-mt
+    'jv-lo': source-mt
+    'ka-lo': source-mt
+    'kk-lo': source-mt
+    'km-lo': source-mt
+    'kn-lo': source-mt
+    'ko-lo': source-mt
+    'ky-lo': source-mt
+    'la-lo': source-mt
+    'lb-lo': source-mt
+    'lt-lo': source-mt
+    'lv-lo': source-mt
+    'mi-lo': source-mt
+    'mg-lo': source-mt
+    'mhr-lo': source-mt
+    'ml-lo': source-mt
+    'mk-lo': source-mt
+    'mn-lo': source-mt
+    'mrj-lo': source-mt
+    'mr-lo': source-mt
+    'ms-lo': source-mt
+    'my-lo': source-mt
+    'nb-lo': source-mt
+    'ne-lo': source-mt
+    'pa-lo': source-mt
+    'pap-lo': source-mt
+    'pl-lo': source-mt
+    'pt-lo': source-mt
+    'ro-lo': source-mt
+    'ru-lo': source-mt
+    'si-lo': source-mt
+    'sk-lo': source-mt
+    'sl-lo': source-mt
+    'sq-lo': source-mt
+    'sr-lo': source-mt
+    'su-lo': source-mt
+    'sv-lo': source-mt
+    'sw-lo': source-mt
+    'ta-lo': source-mt
+    'te-lo': source-mt
+    'tg-lo': source-mt
+    'th-lo': source-mt
+    'tl-lo': source-mt
+    'tr-lo': source-mt
+    'tt-lo': source-mt
+    'udm-lo': source-mt
+    'uk-lo': source-mt
+    'ur-lo': source-mt
+    'uz-lo': source-mt
+    'vi-lo': source-mt
+    'xh-lo': source-mt
+    'yi-lo': source-mt
+    'zh-lo': source-mt
     'el-mhr': source-mt
     'af-ml': source-mt
     'am-ml': source-mt
@@ -8858,6 +9571,94 @@ mt:
     'xh-mr': source-mt
     'yi-mr': source-mt
     'zh-mr': source-mt
+    'af-my': source-mt
+    'am-my': source-mt
+    'ar-my': source-mt
+    'az-my': source-mt
+    'ba-my': source-mt
+    'be-my': source-mt
+    'bn-my': source-mt
+    'bg-my': source-mt
+    'bs-my': source-mt
+    'ca-my': source-mt
+    'ceb-my': source-mt
+    'cs-my': source-mt
+    'cy-my': source-mt
+    'da-my': source-mt
+    'el-my': source-mt
+    'en-my': source-mt
+    'eo-my': source-mt
+    'es-my': source-mt
+    'et-my': source-mt
+    'eu-my': source-mt
+    'fa-my': source-mt
+    'fi-my': source-mt
+    'fr-my': source-mt
+    'ga-my': source-mt
+    'gd-my': source-mt
+    'gl-my': source-mt
+    'gu-my': source-mt
+    'he-my': source-mt
+    'hi-my': source-mt
+    'hr-my': source-mt
+    'ht-my': source-mt
+    'hu-my': source-mt
+    'hy-my': source-mt
+    'id-my': source-mt
+    'is-my': source-mt
+    'ja-my': source-mt
+    'jv-my': source-mt
+    'ka-my': source-mt
+    'kk-my': source-mt
+    'km-my': source-mt
+    'kn-my': source-mt
+    'ko-my': source-mt
+    'ky-my': source-mt
+    'la-my': source-mt
+    'lb-my': source-mt
+    'lo-my': source-mt
+    'lt-my': source-mt
+    'lv-my': source-mt
+    'mi-my': source-mt
+    'mg-my': source-mt
+    'mhr-my': source-mt
+    'ml-my': source-mt
+    'mk-my': source-mt
+    'mn-my': source-mt
+    'mrj-my': source-mt
+    'mr-my': source-mt
+    'ms-my': source-mt
+    'nb-my': source-mt
+    'ne-my': source-mt
+    'pa-my': source-mt
+    'pap-my': source-mt
+    'pl-my': source-mt
+    'pt-my': source-mt
+    'ro-my': source-mt
+    'ru-my': source-mt
+    'si-my': source-mt
+    'sk-my': source-mt
+    'sl-my': source-mt
+    'sq-my': source-mt
+    'sr-my': source-mt
+    'su-my': source-mt
+    'sv-my': source-mt
+    'sw-my': source-mt
+    'ta-my': source-mt
+    'te-my': source-mt
+    'tg-my': source-mt
+    'th-my': source-mt
+    'tl-my': source-mt
+    'tr-my': source-mt
+    'tt-my': source-mt
+    'udm-my': source-mt
+    'uk-my': source-mt
+    'ur-my': source-mt
+    'uz-my': source-mt
+    'vi-my': source-mt
+    'xh-my': source-mt
+    'yi-my': source-mt
+    'zh-my': source-mt
     'af-ne': source-mt
     'am-ne': source-mt
     'ar-ne': source-mt
