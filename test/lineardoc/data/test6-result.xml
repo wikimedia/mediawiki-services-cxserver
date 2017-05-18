@@ -1,0 +1,12 @@
+<ol>
+<cxblockspace/>
+<li>
+<cxtextblock>
+  <cxtextchunk tags="span:rel=mw:referencedBy span a:href=./Main_Page#cite_ref-x_1-0 span:class=mw-linkback-text">1 </cxtextchunk>
+  <cxtextchunk tags="span:rel=mw:referencedBy span a:href=./Main_Page#cite_ref-x_1-1 span:class=mw-linkback-text">2 </cxtextchunk>
+  <cxtextchunk> </cxtextchunk>
+  <cxtextchunk tags="span:id=mw-reference-text-cite_note-x-1,class=mw-reference-text">foo</cxtextchunk>
+</cxtextblock>
+</li>
+<cxblockspace/>
+</ol>

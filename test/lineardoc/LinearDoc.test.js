@@ -9,7 +9,7 @@ describe( 'LinearDoc', function () {
 	it( 'should be possible to linearise all kind of HTML inputs', function () {
 		var parser, testXhtmlFile, resultXmlFile, resultXhtmlFile, testXhtml, resultXml,
 			resultXhtml, i,
-			numTests = 5;
+			numTests = 6;
 		for ( i = 1; i <= numTests; i++ ) {
 			testXhtmlFile = __dirname + '/data/test' + i + '.xhtml';
 			resultXmlFile = __dirname + '/data/test' + i + '-result.xml';
