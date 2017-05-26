@@ -264,6 +264,34 @@ paths:
             status: 200
             headers:
               content-type: application/json
+  /v1/list/pair/{from}/{to}:
+    get:
+      tags:
+        - Tools
+      description: Lists the tools for a given language pair
+      produces:
+        - application/json
+      parameters:
+        - name: from
+          in: path
+          description: The source language code
+          type: string
+          required: true
+        - name: to
+          in: path
+          description: The target language code
+          type: string
+          required: true
+      x-amples:
+        - title: Get the tools between two language pairs
+          request:
+            params:
+              from: en
+              to: es
+          response:
+            status: 200
+            headers:
+              content-type: application/json
   /v1/languagepairs:
     get:
       tags:

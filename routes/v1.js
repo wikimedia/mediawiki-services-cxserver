@@ -187,6 +187,20 @@ router.get( '/list/tool/:tool', function ( req, res ) {
 } );
 
 /**
+ * Lists the available tools for a language pair.
+ */
+router.get( '/list/pair/:from/:to', function ( req, res ) {
+	var result,
+		from = req.params.from,
+		to = req.params.to;
+
+	registry = require( __dirname + '/../registry' )( app );
+	result = registry.getToolSet( from, to );
+
+	res.json( result );
+} );
+
+/**
  * Get a list of all language pairs.
  */
 router.get( '/languagepairs', function ( req, res ) {
