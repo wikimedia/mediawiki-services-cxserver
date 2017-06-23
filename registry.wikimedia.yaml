@@ -118,6 +118,7 @@ source:
   - kab
   - ka
   - kbd
+  - kbp
   - kg
   - ki
   - kk
@@ -404,6 +405,7 @@ target:
   - kab
   - ka
   - kbd
+  - kbp
   - kg
   - ki
   - kk
