@@ -92,8 +92,6 @@ Doc.prototype.segment = function ( getBoundaries ) {
 		if ( this.items[ i ].type === 'open' ) {
 			tag = Utils.cloneOpenTag( item.item );
 			if ( tag.attributes.id ) {
-				// Kept for restoring the old articles.
-				tag.attributes[ 'data-seqid' ] = getNextId( 'block' );
 				// If the item is a header, we make it a fixed length id using hash of the text content.
 				// Header ids are originally the header text to get the URL fragments working, but for
 				// CX, it is irrelevant and we need a fixed length id that can be used as DB key.
