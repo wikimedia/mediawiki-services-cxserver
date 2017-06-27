@@ -29,18 +29,22 @@ function PageLoader( app ) {
 }
 
 /**
- * @param {string} page
- * @param {string} sourceLanguage
- * @param {string} revision
+ * @param {string} page The page title
+ * @param {string} source The language code or the domain of the wiki
+ * @param {string} revision The revision id
  * @return {Promise}
  */
-PageLoader.prototype.load = function ( page, sourceLanguage, revision ) {
+PageLoader.prototype.load = function ( page, source, revision ) {
 	var path, domain, restReq;
 
 	path = 'page/html/' + encodeURIComponent( page );
-	// TODO: When we support projects other than wikipedia, probably
-	// the client need to pass domain instead of language.
-	domain = sourceLanguage + '.wikipedia.org';
+	if ( /.+\.org$/.test( source ) ) {
+		// We got an actual domain
+		domain = source;
+	} else {
+		// Assume the client means a WP project
+		domain = source + '.wikipedia.org';
+	}
 
 	if ( revision ) {
 		path += '/' + revision;
@@ -49,8 +53,8 @@ PageLoader.prototype.load = function ( page, sourceLanguage, revision ) {
 	restReq = {
 		method: 'get',
 		headers: {
-			// See https://www.mediawiki.org/wiki/Specs/HTML/1.2.1
-			Accept: 'text/html; charset=utf-8; profile="https://www.mediawiki.org/wiki/Specs/HTML/1.2.1"'
+			// See https://www.mediawiki.org/wiki/Specs/HTML/1.5.0
+			accept: 'text/html; charset=utf-8; profile="https://www.mediawiki.org/wiki/Specs/HTML/1.5.0"'
 		}
 	};
 

@@ -63,7 +63,7 @@ paths:
       parameters:
         - name: language
           in: path
-          description: The language code of the wiki
+          description: The language code or the domain of the wiki
           type: string
           required: true
         - name: title
