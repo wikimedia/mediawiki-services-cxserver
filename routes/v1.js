@@ -141,28 +141,6 @@ router.get( '/dictionary/:word/:from/:to/:provider?', function ( req, res ) {
 	);
 } );
 
-router.get( '/list/:tool/:from?/:to?', function ( req, res ) {
-	var toolset, result = {},
-		tool = req.params.tool,
-		from = req.params.from,
-		to = req.params.to;
-
-	registry = require( __dirname + '/../registry' )( app );
-	if ( from && to ) {
-		toolset = registry.getToolSet( from, to );
-		result[ tool ] = toolset[ tool ];
-		result[ 'default' ] = toolset.default;
-	} else if ( tool ) {
-		if ( tool === 'mt' ) {
-			result = registry.getMTPairs();
-		}
-		if ( tool === 'dictionary' ) {
-			result = registry.getDictionaryPairs();
-		}
-	}
-	res.json( result );
-} );
-
 /**
  * Get a list of all language pairs that tool supports.
  */
@@ -214,6 +192,28 @@ router.get( '/languagepairs', function ( req, res ) {
 router.get( '/list/languagepairs', function ( req, res ) {
 	registry = require( __dirname + '/../registry' )( app );
 	res.json( registry.getLanguagePairs() );
+} );
+
+router.get( '/list/:tool/:from?/:to?', function ( req, res ) {
+	var toolset, result = {},
+		tool = req.params.tool,
+		from = req.params.from,
+		to = req.params.to;
+
+	registry = require( __dirname + '/../registry' )( app );
+	if ( from && to ) {
+		toolset = registry.getToolSet( from, to );
+		result[ tool ] = toolset[ tool ];
+		result[ 'default' ] = toolset.default;
+	} else if ( tool ) {
+		if ( tool === 'mt' ) {
+			result = registry.getMTPairs();
+		}
+		if ( tool === 'dictionary' ) {
+			result = registry.getDictionaryPairs();
+		}
+	}
+	res.json( result );
 } );
 
 module.exports = function ( appObj ) {
