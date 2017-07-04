@@ -84,7 +84,7 @@ tests = [
 	{
 		title: 'Find longest match among multiple matches',
 		source: '<p id="8"><span class="cx-segment" data-segmentid="9"><a class="cx-link" data-linkid="17" href="./The_New_York_Times" rel="mw:WikiLink" title="The New York Times">The New York Times</a>, which has an <b>executive editor</b> over the news pages and an <b>editorial page editor</b> over opinion pages.</span></p>',
-		target: '<p id="8"><span class="cx-segment" data-segmentid="9"><a class="cx-link" data-linkid="17" href="./The_New_York_Times" rel="mw:WikiLink" title="The New York Times">The New York Times</a>, el cual tiene un <b>editor ejecutivo</b> sobre las páginas noticiosas y un <b>editor de página del editorial</b> encima páginas de opinión.</span></p>',
+		target: '<p id="8"><span data-segmentid="9" class="cx-segment"><a title="The New York Times" rel="mw:WikiLink" href="./The_New_York_Times" data-linkid="17" class="cx-link">The New York Times</a>, el cual tiene un <b>editor ejecutivo</b> sobre las páginas noticiosas y un <b>editor de página del editorial</b> encima páginas de opinión.</span></p>',
 		textTranslations: {
 			'The New York Times, which has an executive editor over the news pages and an editorial page editor over opinion pages.': 'The New York Times, el cual tiene un editor ejecutivo sobre las páginas noticiosas y un editor de página del editorial encima páginas de opinión.',
 			'The New York Times': 'The New York Times',
