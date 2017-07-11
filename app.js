@@ -6,8 +6,8 @@ var http = require( 'http' ),
 	compression = require( 'compression' ),
 	bodyParser = require( 'body-parser' ),
 	fs = BBPromise.promisifyAll( require( 'fs' ) ),
-	sUtil = require( './utils/util' ),
-	apiUtil = require( './utils/api-util' ),
+	sUtil = require( './lib/util' ),
+	apiUtil = require( './lib/api-util' ),
 	packageInfo = require( './package.json' ),
 	path = require( 'path' ),
 	yaml = require( 'js-yaml' );
@@ -159,7 +159,7 @@ function initApp( options ) {
  */
 function loadRoutes( app ) {
 	// get the list of files in routes/
-	return fs.readdirAsync( __dirname + '/routes' )
+	return fs.readdirAsync( __dirname + '/lib/routes' )
 		.map( function ( fname ) {
 			var route;
 
@@ -170,7 +170,7 @@ function loadRoutes( app ) {
 					return undefined;
 				}
 				// import the route file
-				route = require( __dirname + '/routes/' + fname );
+				route = require( __dirname + '/lib/routes/' + fname );
 				return route( app );
 			} ).then( function ( route ) {
 				if ( route === undefined ) {

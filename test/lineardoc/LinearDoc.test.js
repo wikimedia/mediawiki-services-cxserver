@@ -1,7 +1,7 @@
 'use strict';
 
 var assert = require( '../utils/assert.js' ),
-	LinearDoc = require( '../../lineardoc' ),
+	LinearDoc = require( '../../lib/lineardoc' ),
 	fs = require( 'fs' ),
 	transTests = require( __dirname + '/translate.test.json' );
 

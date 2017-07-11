@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var script, xhtmlSource, xhtml, parser,
 	fs = require( 'fs' ),
-	LinearDoc = require( __dirname + '/../lineardoc' );
+	LinearDoc = require( __dirname + '/../lib/lineardoc' );
 
 script = process.argv[ 1 ];
 if ( process.argv.length !== 3 ) {
