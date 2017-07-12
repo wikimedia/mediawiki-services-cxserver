@@ -53,6 +53,7 @@ source:
   - cy
   - da
   - de
+  - din
   - diq
   - dsb
   - dty
@@ -340,6 +341,7 @@ target:
   - cy
   - da
   - de
+  - din
   - diq
   - dsb
   - dty
