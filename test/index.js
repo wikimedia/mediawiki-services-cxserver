@@ -5,16 +5,14 @@ var paths,
 	lint = require( 'mocha-eslint' );
 
 paths = [
-	'dictionary',
-	'mt',
-	'lineardoc',
-	'pageloader',
-	'registry',
-	'routes',
-	'segmentation',
-	'utils',
-	'tests/**/*.js',
-	'*.js'
+	'lib/*.js',
+	'lib/dictionary',
+	'lib/lineardoc',
+	'lib/mt',
+	'lib/pageloader',
+	'lib/routes',
+	'lib/segmentation',
+	'tests/**/*.js'
 ];
 
 // Run the tests

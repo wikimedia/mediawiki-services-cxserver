@@ -5,7 +5,7 @@ var tests,
 	server = require( '../utils/server.js' ),
 	BBPromise = require( 'bluebird' ),
 	async = require( 'async' ),
-	Apertium = require( '../../mt' ).Apertium;
+	Apertium = require( '../../lib/mt' ).Apertium;
 
 // In each case, below, just "source" and "textTranslations" should be sufficient for linearDoc
 // to derive "target".  // The plaintext strings in "textTranslations" are real Apertium output.

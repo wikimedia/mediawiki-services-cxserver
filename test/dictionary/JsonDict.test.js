@@ -2,7 +2,7 @@
 
 var assert = require( '../utils/assert.js' ),
 	server = require( '../utils/server.js' ),
-	Dictionary = require( '../../dictionary' );
+	Dictionary = require( '../../lib/dictionary' );
 
 describe( 'JsonDict', function () {
 
