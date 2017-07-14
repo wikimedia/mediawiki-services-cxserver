@@ -1,0 +1,9 @@
+[
+	{
+		"desc": "Link adaptation basic test",
+		"from": "en",
+		"to": "es",
+		"source": "<p><a rel='mw:WikiLink' href='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel='mw:WikiLink' href='Atomic number'>atomic number</a> 8.</p>",
+		"result": "<p><a adapted='true' href='Oxygen' rel='mw:WikiLink'>Oxygen</a> is a chemical element with symbol O and <a adapted='true' href='Atomic number' rel='mw:WikiLink'>atomic number</a> 8.</p>"
+	}
+]
