@@ -5,7 +5,8 @@
 		"browser": true,
 		"jquery": true,
 		"qunit": true,
-		"node": true
+		"node": true,
+		"mocha": true
 	},
 	"globals": {
 		"require": false

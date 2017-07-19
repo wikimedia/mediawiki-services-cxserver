@@ -1,7 +1,6 @@
 'use strict';
 
-var fs = require( 'fs' ),
-	assert = require( '../utils/assert.js' ),
+var assert = require( '../utils/assert.js' ),
 	server = require( '../utils/server.js' ),
 	LinearDoc = require( '../../lib/lineardoc' ),
 	async = require( 'async' ),
@@ -16,20 +15,17 @@ function normalize( html ) {
 }
 
 describe( 'Adaptation tests', function () {
-	before( function () {
-		return server.start();
-	} );
-
 	async.forEach( tests, function ( test ) {
 		var expectedResultData, adapter;
 
-		adapter = new Adapter( test.from, test.to, server );
-		adapter.adapt( test.source ).then( function( result ) {
-			result = normalize( result.getHtml() );
-			expectedResultData = normalize( test.result );
-			it( 'should not have any errors when: ' + test.desc, function () {
+		adapter = new Adapter( test.from, test.to, server.config );
+		it( 'should not have any errors when: ' + test.desc, function () {
+			return adapter.adapt( test.source ).then( function( result ) {
+				result = normalize( result.getHtml() );
+				expectedResultData = normalize( test.result );
 				assert.deepEqual( result, expectedResultData, test.source + ': ' + test.desc || '' );
 			} );
 		} );
 	} );
+
 } );

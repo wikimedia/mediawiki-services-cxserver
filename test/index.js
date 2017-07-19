@@ -9,6 +9,7 @@ paths = [
 	'lib/dictionary',
 	'lib/lineardoc',
 	'lib/mt',
+	'lib/mw',
 	'lib/pageloader',
 	'lib/routes',
 	'lib/segmentation',
