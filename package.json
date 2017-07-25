@@ -55,7 +55,7 @@
   },
   "main": "./app.js",
   "deploy": {
-    "node": "6.9.1",
+    "node": "6.11.1",
     "target": "debian",
     "dependencies": {
       "_all": []
