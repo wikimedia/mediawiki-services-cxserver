@@ -15,9 +15,6 @@
     "node": ">=4.4.6"
   },
   "dependencies": {
-    "jsonwebtoken": "~5.6.0",
-    "sax": "1.2.1",
-    "html-entities": "1.2.0",
     "bluebird": "^3.4.1",
     "body-parser": "^1.15.2",
     "bunyan": "^1.8.1",
@@ -26,9 +23,13 @@
     "core-js": "^2.4.1",
     "domino": "^1.0.25",
     "express": "^4.14.0",
+    "html-entities": "1.2.0",
     "js-yaml": "^3.6.1",
+    "jsonwebtoken": "~5.6.0",
+    "language-data": "git+https://github.com/santhoshtr/language-data#master",
     "mediawiki-title": "^0.6.3",
     "preq": "^0.5.2",
+    "sax": "1.2.1",
     "service-runner": "^2.2.5",
     "swagger-router": "^0.4.6",
     "swagger-ui": "git+https://github.com/wikimedia/swagger-ui#master",
