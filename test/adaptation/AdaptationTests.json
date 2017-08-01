@@ -40,5 +40,19 @@
 		"to": "es",
 		"source": "<ul class='gallery mw-gallery-packed' typeof='mw:Extension/gallery' about='#mwt2' data-mw='{\"name\":\"gallery\",\"attrs\":{\"mode\":\"packed\"},\"body\":{\"extsrc\":\"\\r\\nFile:Nilgiri Tahr 1.jpg|[[Nilgiri tahr]]\\r\\nFile:Malabar Giant Squirrel77.jpg|[[Malabar Giant Squirrel]], [[Silent Valley National Park]]\\r\\nFile:Periyar Thekkady.jpg|Elephants at Thekkady\\r\\nFile:Rhacophorus malabaricus.jpg|[[Rhacophorus malabaricus]]\\r\\nFile:Brahminy kite2.jpg|[[Brahminy kite]]\\r\\nFile:Goldenbacked woodpecker.jpg|[[Dinopium benghalense|Lesser golden-backed woodpecker]] water\\r\\n\"}}' id='mwAQ'></ul>",
 		"result": "<ul about=\"#mwt2\" class=\"gallery mw-gallery-packed\" data-mw=\"{&#34;name&#34;:&#34;gallery&#34;,&#34;attrs&#34;:{&#34;mode&#34;:&#34;packed&#34;},&#34;body&#34;:{&#34;extsrc&#34;:&#34;\\nArchivo:Nilgiri Tahr 1.jpg|[[Nilgiri tahr]]\\nArchivo:Malabar Giant Squirrel77.jpg|[[Malabar Giant Squirrel|Malabar Ardilla giganta]], [[Silent Valley National Park|Valle Silencioso Parque Nacional]]\\nArchivo:Periyar Thekkady.jpg|Elefantes en Thekkady\\nArchivo:Rhacophorus malabaricus.jpg|[[Rhacophorus malabaricus]]\\nArchivo:Brahminy kite2.jpg|[[Brahminy kite|Brahminy Cometa]]\\nArchivo:Goldenbacked woodpecker.jpg|[[Dinopium benghalense|Menor dorado-reculado woodpecker]] agua\\n&#34;}}\" id=\"mwAQ\" typeof=\"mw:Extension/gallery\"></ul>"
+	},
+	{
+		"desc": "Category adaptation",
+		"from": "en",
+		"to": "ml",
+		"source": "<p><link rel='mw:PageProp/Category' href='./Category:Planets'/></p>",
+		"result": "<p><link href='വർഗ്ഗം:ഗ്രഹങ്ങൾ' rel='mw:PageProp/Category' /></p>"
+	},
+	{
+		"desc": "Category adaptation - target category does not exist",
+		"from": "en",
+		"to": "ml",
+		"source": "<p><link rel='mw:PageProp/Category' href='./Category:Planets_with_life'/></p>",
+		"result": "<p><link data-cx='{&#34;adapted&#34;:false,&#34;sourceTitle&#34;:&#34;Category:Planets with life&#34;}' href='./Category:Planets_with_life' rel='mw:PageProp/Category' /></p>"
 	}
 ]
