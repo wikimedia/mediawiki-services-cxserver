@@ -66,6 +66,8 @@ services:
           api: https://translate.yandex.net
           key: null
         youdao:
-          api: https://fanyi.youdao.com/paidapi/fanyiapi
+          api: https://openapi.youdao.com/api
           key: null
+          salt: null
+          secret: null
       registry: ./registry.yaml
