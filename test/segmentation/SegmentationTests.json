@@ -28,7 +28,7 @@
 			"result": "result-3.html"
 		},
 		{
-			"desc": "Multiple sections - a div and paragraph",
+			"desc": "Multiple sections - div, h1, paragraph",
 			"source": "test-4.html",
 			"result": "result-4.html"
 		},
