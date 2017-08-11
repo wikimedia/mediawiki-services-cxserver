@@ -15,6 +15,7 @@
     "node": ">=4.4.6"
   },
   "dependencies": {
+    "@google-cloud/translate": "^1.0.0",
     "bluebird": "^3.4.1",
     "body-parser": "^1.15.2",
     "bunyan": "^1.8.1",
@@ -22,6 +23,7 @@
     "compression": "^1.6.2",
     "core-js": "^2.4.1",
     "domino": "^1.0.25",
+    "dompurify": "^0.9.0",
     "express": "^4.14.0",
     "html-entities": "1.2.0",
     "js-yaml": "^3.6.1",
@@ -32,9 +34,7 @@
     "sax": "1.2.1",
     "service-runner": "^2.2.5",
     "swagger-router": "^0.4.6",
-    "swagger-ui": "git+https://github.com/wikimedia/swagger-ui#master",
-    "dompurify": "^0.9.0",
-    "jsdom": "^10.1.0"
+    "swagger-ui": "git+https://github.com/wikimedia/swagger-ui#master"
   },
   "devDependencies": {
     "async": "^1.4.2",

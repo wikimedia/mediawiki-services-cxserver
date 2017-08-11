@@ -1172,6 +1172,11 @@ mt:
       - zh
     zh:
       - en
+  Google:
+    en:
+      - zh
+    zh:
+      - en
 dictionary:
   Dictd:
     en:

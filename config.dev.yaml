@@ -50,7 +50,7 @@ services:
       user_agent: cxserver
       restbase_req:
         method: '{{request.method}}'
-        uri: https://{{domain}}/api/rest_v1/{+path}
+        uri: http://localhost:7231/localhost/v1/{+path}
         query: '{{ default(request.query, {}) }}'
         headers: '{{request.headers}}'
         body: '{{request.body}}'
@@ -66,6 +66,11 @@ services:
           api: https://translate.yandex.net
           key: null
         youdao:
-          api: https://fanyi.youdao.com/paidapi/fanyiapi
-          key: null
+          api: https://openapi.youdao.com/api
+          key: 1c2c986083209bd1
+          salt: 1c2c986083209bd1
+          secret: WpqYxcLop6ImHC0XOFjqpzqUzwDDU0Nf
+        google:
+          api: https://accounts.google.com/o/oauth2/auth
+          keyfile: gtxtranslator-43de00eb1361.json
       registry: ./registry.yaml
