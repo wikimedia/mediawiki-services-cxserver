@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var script, xhtmlSource, xhtml, result, segmenter,
 	fs = require( 'fs' ),
-	Segmenter = require( __dirname + '/../lib/segmentation/CXSegmenter' ).CXSegmenter,
+	Segmenter = require( __dirname + '/../lib/segmentation/CXSegmenter' ),
 	LinearDoc = require( __dirname + '/../lib/lineardoc' );
 
 function normalize( html ) {

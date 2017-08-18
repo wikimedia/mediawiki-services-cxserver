@@ -4,7 +4,7 @@ var fs = require( 'fs' ),
 	lang, i, len, lang, test, tests,
 	assert = require( '../utils/assert.js' ),
 	LinearDoc = require( '../../lib/lineardoc' ),
-	Segmenter = require( '../../lib/segmentation/CXSegmenter' ).CXSegmenter,
+	Segmenter = require( '../../lib/segmentation/CXSegmenter' ),
 	allTests = require( './SegmentationTests.json' );
 
 function normalize( html ) {
