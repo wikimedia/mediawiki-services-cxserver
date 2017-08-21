@@ -1,0 +1,61 @@
+[
+	{
+		"desc": "Adapting a reference with plain text content",
+		"from": "en",
+		"to": "es",
+		"source": {
+			"attributes": {
+				"id": "trncttm-1",
+				"rel": "dc:references",
+				"typeof": "mw:Extension/ref",
+				"class": "mw-ref",
+				"data-mw": "{\"name\":\"ref\",\"body\":{\"html\":\"Hello reference\"}}"
+			}
+		},
+		"result": {
+			"attributes": {
+				"id": "trncttm-1",
+				"rel": "dc:references",
+				"typeof": "mw:Extension/ref",
+				"class": "mw-ref",
+				"data-mw": {
+					"name": "ref",
+					"body": {
+						"html": "[en→es]Hello reference"
+					}
+				},
+				"data-cx": {
+					"adapted": true
+				}
+			}
+		}
+	},
+	{
+		"desc": "Not adapting a reference with no data-mw.body",
+		"from": "en",
+		"to": "es",
+		"source": {
+			"attributes": {
+				"id": "trncttm-2",
+				"rel": "dc:references",
+				"typeof": "mw:Extension/ref",
+				"class": "mw-ref",
+				"data-mw": "{\"name\":\"ref\"}"
+			}
+		},
+		"result": {
+			"attributes": {
+				"id": "trncttm-2",
+				"rel": "dc:references",
+				"typeof": "mw:Extension/ref",
+				"class": "mw-ref",
+				"data-mw": {
+					"name": "ref"
+				},
+				"data-cx": {
+					"adapted": false
+				}
+			}
+		}
+	}
+]

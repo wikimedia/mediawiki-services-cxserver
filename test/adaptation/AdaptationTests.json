@@ -54,5 +54,12 @@
 		"to": "ml",
 		"source": "<p><link rel='mw:PageProp/Category' href='./Category:Planets_with_life'/></p>",
 		"result": "<p><link data-cx='{&#34;adapted&#34;:false,&#34;sourceTitle&#34;:&#34;Category:Planets with life&#34;}' href='./Category:Planets_with_life' rel='mw:PageProp/Category' /></p>"
+	},
+	{
+		"desc": "Reference adaptation test without a reference template",
+		"from": "en",
+		"to": "es",
+		"source": "<p id='mwEA'><span typeof='mw:Extension/ref' data-mw='{&quot;name&quot;:&quot;ref&quot;,&quot;body&quot;:{&quot;html&quot;:&quot;Hello reference.&quot;}}' class='mw-ref'><a style='counter-reset: mw-Ref 1;'><span class='mw-reflink-text'>[1]</span></a></span></p>",
+		"result": "<p id='mwEA'><span typeof='mw:Extension/ref' data-mw='{&quot;name&quot;:&quot;ref&quot;,&quot;body&quot;:{&quot;html&quot;:&quot;Hola Remisión.&quot;}}' class='mw-ref'><a style='counter-reset: mw-Ref 1;'><span class='mw-reflink-text'>[1]</span></a></span></p>"
 	}
 ]
