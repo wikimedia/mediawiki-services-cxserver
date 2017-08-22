@@ -586,6 +586,8 @@ mt:
       - mt
     ast:
       - es
+    be:
+      - ru
     bg:
       - mk
     br:
@@ -673,6 +675,8 @@ mt:
       - gl
     ro:
       - es
+    ru:
+      - be
     se:
       - nb
     sh:
@@ -10123,6 +10127,7 @@ mt:
     'xh-zh': Yandex
     'nl-af': Apertium
     'mt-ar': Apertium
+    'ru-be': Apertium
     'mk-bg': Apertium
     'en-ca': Apertium
     'es-ca': Apertium
@@ -10154,6 +10159,7 @@ mt:
     'ca-pt': Apertium
     'es-pt': Apertium
     'gl-pt': Apertium
+    'be-ru': Apertium
     'sh-sl': Apertium
     'mk-sr': Apertium
     'sl-sr': Apertium
