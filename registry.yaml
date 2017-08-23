@@ -586,6 +586,8 @@ mt:
       - mt
     ast:
       - es
+    be:
+      - ru
     bg:
       - mk
     br:
@@ -680,6 +682,8 @@ mt:
       - gl
     ro:
       - es
+    ru:
+      - be
     se:
       - nb
     sh:
