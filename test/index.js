@@ -13,6 +13,7 @@ paths = [
 	'lib/pageloader',
 	'lib/routes',
 	'lib/segmentation',
+	'lib/translationunits',
 	'tests/**/*.js'
 ];
 
