@@ -4,6 +4,7 @@ var assert = require( '../utils/assert.js' ),
 	server = require( '../utils/server.js' ),
 	LinearDoc = require( '../../lib/lineardoc' ),
 	async = require( 'async' ),
+	Apertium = require( '../../lib/mt' ).Apertium,
 	Adapter = require( '../../lib/Adapter' ),
 	tests = require( './AdaptationTests.json' );
 
@@ -16,11 +17,13 @@ function normalize( html ) {
 
 describe( 'Adaptation tests', function () {
 	async.forEach( tests, function ( test ) {
-		var expectedResultData, adapter;
+		var expectedResultData, adapter, cxserver;
 
-		adapter = new Adapter( test.from, test.to, server.config );
+		cxserver = server.config.conf.services[ server.config.conf.services.length - 1 ];
+		cxserver.conf.mtClient = new Apertium( cxserver );
+		adapter = new Adapter( test.from, test.to, cxserver );
 		it( 'should not have any errors when: ' + test.desc, function () {
-			return adapter.adapt( test.source ).then( function( result ) {
+			return adapter.adapt( test.source ).then( ( result ) => {
 				result = normalize( result.getHtml() );
 				expectedResultData = normalize( test.result );
 				assert.deepEqual( result, expectedResultData, test.source + ': ' + test.desc || '' );
