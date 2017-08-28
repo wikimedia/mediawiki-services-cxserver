@@ -14,7 +14,7 @@ if ( process.argv.length !== 3 ) {
 
 xhtmlSource = process.argv[ 2 ];
 xhtml = fs.readFileSync( xhtmlSource, 'utf8' );
-parser = new LinearDoc.Parser();
+parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
 parser.init();
 parser.write( xhtml );
 process.stdout.write( parser.builder.doc.dumpXml() );

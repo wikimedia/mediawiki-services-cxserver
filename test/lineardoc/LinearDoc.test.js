@@ -18,7 +18,7 @@ describe( 'LinearDoc', function () {
 			testXhtml = fs.readFileSync( testXhtmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
 			resultXml = fs.readFileSync( resultXmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
 			resultXhtml = fs.readFileSync( resultXhtmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
-			parser = new LinearDoc.Parser();
+			parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
 			parser.init();
 			parser.write( testXhtml );
 			assert.deepEqual(
@@ -39,7 +39,7 @@ describe( 'LinearDoc', function () {
 
 		for ( i = 0, len = transTests.length; i < len; i++ ) {
 			test = transTests[ i ];
-			parser = new LinearDoc.Parser();
+			parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
 			parser.init();
 			parser.write( '<div>' + test.source + '</div>' );
 			doc = parser.builder.doc;
