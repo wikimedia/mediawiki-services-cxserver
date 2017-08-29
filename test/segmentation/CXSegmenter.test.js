@@ -1,7 +1,6 @@
 'use strict';
 
-var fs = require( 'fs' ),
-	lang, i, len, lang, test, tests,
+const fs = require( 'fs' ),
 	assert = require( '../utils/assert.js' ),
 	LinearDoc = require( '../../lib/lineardoc' ),
 	Segmenter = require( '../../lib/segmentation/CXSegmenter' ),
@@ -14,32 +13,29 @@ function normalize( html ) {
 	return normalizer.getHtml();
 }
 
-function runTest( test ) {
-	var segmenter, result, testData, expectedResultData;
+function runTest( test, lang ) {
+	let testData = fs.readFileSync( __dirname + '/data/' + test.source, 'utf8' );
 
-	describe( 'Segmentation tests', function () {
-		testData = fs.readFileSync( __dirname + '/data/' + test.source, 'utf8' );
-
-		segmenter = new Segmenter( testData, lang );
-		segmenter.segment();
-		result = normalize( segmenter.getSegmentedContent() );
-		expectedResultData = normalize(
-			fs.readFileSync( __dirname + '/data/' + test.result, 'utf8' )
-		);
-		it( 'should not have any errors when: ' + test.desc, function () {
-			assert.deepEqual( result, expectedResultData, test.source + ': ' + test.desc || '' );
-		} );
+	let segmenter = new Segmenter( testData, lang );
+	segmenter.segment();
+	let result = normalize( segmenter.getSegmentedContent() );
+	let expectedResultData = normalize(
+		fs.readFileSync( __dirname + '/data/' + test.result, 'utf8' )
+	);
+	it( 'should not have any errors when: ' + test.desc, () => {
+		assert.deepEqual( result, expectedResultData, test.source + ': ' + test.desc || '' );
 	} );
 }
 
-for ( lang in allTests ) {
-	tests = allTests[ lang ];
-	len = tests.length;
-	for ( i = 0; i < len; i++ ) {
-		test = tests[ i ];
-		if ( test.skip ) {
-			continue;
+for ( let lang in allTests ) {
+	describe( 'Segmentation tests for ' + lang, () => {
+		let tests = allTests[ lang ];
+		let len = tests.length;
+		for ( let i = 0; i < len; i++ ) {
+			if ( tests[ i ].skip ) {
+				continue;
+			}
+			runTest( tests[ i ], lang );
 		}
-		runTest( test );
-	}
+	} );
 }
