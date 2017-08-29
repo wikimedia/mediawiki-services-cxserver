@@ -48,6 +48,10 @@ services:
       #   - domain1.com
       #   - domain2.org
       user_agent: cxserver
+      # Mediawiki host name. Example {lang}.wikisource.org which get expanded internally to
+      # es.wikisource.org in a spanish language context.
+      # Do not prefix with http or https://
+      # mw_host: '{lang}.wikipedia.org'
       mwapi_req:
         body: "{{request.body}}"
         query: "{{ default(request.query, {}) }}"
