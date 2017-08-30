@@ -1,0 +1,131 @@
+af:
+  - nl
+an:
+  - ca
+  - es
+ar:
+  - mt
+ast:
+  - es
+be:
+  - ru
+bg:
+  - mk
+br:
+  - fr
+ca:
+  - an
+  - en
+  - eo
+  - es
+  - fr
+  - oc
+  - pt
+  - simple
+cy:
+  - en
+  - simple
+da:
+  - nb
+  - nn
+  - sv
+en:
+  - ca
+  - eo
+  - es
+  - gl
+  - sh
+eo:
+  - en
+  - simple
+es:
+  - an
+  - ast
+  - ca
+  - en
+  - eo
+  - fr
+  - gl
+  - it
+  - oc
+  - pt
+  - simple
+eu:
+  - en
+  - es
+  - simple
+fr:
+  - ca
+  - eo
+  - es
+gl:
+  - en
+  - es
+  - pt
+  - simple
+hi:
+  - ur
+id:
+  - ms
+is:
+  - en
+  - simple
+  - sv
+it:
+  - ca
+  - es
+  - sc
+kk:
+  - tt
+mk:
+  - bg
+  - sr
+ms:
+  - id
+mt:
+  - ar
+nb:
+  - da
+  - nn
+  - sv
+nl:
+  - af
+nn:
+  - da
+  - nb
+  - sv
+oc:
+  - ca
+  - es
+pt:
+  - ca
+  - es
+  - gl
+ro:
+  - es
+ru:
+  - be
+se:
+  - nb
+sh:
+  - en
+  - simple
+  - sl
+simple:
+  - ca
+  - eo
+  - es
+  - gl
+  - sh
+sl:
+  - sh
+  - sr
+sv:
+  - da
+  - is
+  - nb
+  - nn
+tt:
+  - kk
+ur:
+  - hi

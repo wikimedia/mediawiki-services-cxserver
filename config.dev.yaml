@@ -66,16 +66,24 @@ services:
         secret: ''
         algorithms:
           - HS256
+      languages: config/languages.yaml
       mt:
-        # Apertium web API URL
-        apertium:
+        Apertium:
           api: http://apertium.wmflabs.org
-        yandex:
+          languages: config/Apertium.yaml
+        Yandex:
           api: https://translate.yandex.net
           key: null
-        youdao:
+          languages: config/Yandex.yaml
+        Youdao:
           api: https://fanyi.youdao.com/paidapi/fanyiapi
           key: null
-        matxin:
+          languages: config/Youdao.yaml
+        Matxin:
           api: http://matxin.elhuyar.eus/API
-      registry: ./registry.yaml
+          languages: config/Matxin.yaml
+      dictionary:
+        Dictd:
+          languages: config/Dictd.yaml
+        JsonDict:
+          languages: config/JsonDict.yaml
