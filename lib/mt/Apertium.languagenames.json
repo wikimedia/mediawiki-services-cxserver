@@ -8,6 +8,7 @@
 	"br": "bre",
 	"bs": "hbs_BS",
 	"ca": "cat",
+	"crh": "crh",
 	"cy": "cym",
 	"da": "dan",
 	"en": "eng",
@@ -41,6 +42,7 @@
 	"sl": "slv",
 	"sr": "hbs_SR",
 	"sv": "swe",
+	"tr": "tur",
 	"tt": "tat",
 	"ur": "urd"
 }
