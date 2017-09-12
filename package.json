@@ -27,7 +27,7 @@
     "js-yaml": "^3.6.1",
     "jsonwebtoken": "~5.6.0",
     "language-data": "git+https://github.com/wikimedia/language-data#master",
-    "mediawiki-title": "^0.6.3",
+    "mediawiki-title": "^0.6.4",
     "preq": "^0.5.2",
     "sax": "1.2.1",
     "service-runner": "^2.2.5",
