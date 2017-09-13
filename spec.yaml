@@ -355,20 +355,6 @@ paths:
             status: 200
             headers:
               content-type: application/json
-  /v1/languagepairs:
-    get:
-      tags:
-        - Languages
-        - Service information
-      description: Lists the language pairs supported by the server
-      produces:
-        - application/json
-      x-amples:
-        - title: Get all the language pairs
-          response:
-            status: 200
-            headers:
-              content-type: application/json
   # from routes/info.js
   /_info:
     get:
