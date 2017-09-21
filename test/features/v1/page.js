@@ -28,7 +28,7 @@ describe( 'page gets', function () {
 			// this should be the right page
 			assert.deepEqual( res.body.title, 'Oxygen', 'Got the correct title' );
 			// Must have revision id
-			assert.ok( parseInt( res.body.revision, 10 ) >= 683049648 );
+			assert.ok( +res.body.revision >= 683049648 );
 		} );
 	} );
 
