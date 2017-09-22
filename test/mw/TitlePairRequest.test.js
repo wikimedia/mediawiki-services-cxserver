@@ -54,7 +54,7 @@ describe( 'Title pair tests', function () {
 			context: server.config
 		} );
 		it( 'should adapt the title when: ' + test.desc, function () {
-			return request.get( test.source ).then( function( result ) {
+			return request.get( test.source ).then( function ( result ) {
 				assert.deepEqual( result.targetTitle, test.result );
 			} );
 		} );
@@ -67,7 +67,7 @@ describe( 'Title pair tests - batching', function () {
 	it( 'should have the queue size 50', function () {
 		var i, titlePairRequest;
 		oldGetRequestPromise = TitlePairRequest.prototype.getRequestPromise;
-		TitlePairRequest.prototype.getRequestPromise = function( subqueue ) {
+		TitlePairRequest.prototype.getRequestPromise = function ( subqueue ) {
 			assert.deepEqual( subqueue.length, 50 );
 			return Promise.resolve( {} );
 		};

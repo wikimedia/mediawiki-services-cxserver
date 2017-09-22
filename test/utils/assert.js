@@ -1,5 +1,7 @@
 'use strict';
 
+/* eslint-disable no-console */
+
 var assert = require( 'assert' );
 
 function deepEqual( result, expected, message ) {
@@ -28,6 +30,9 @@ function notDeepEqual( result, expected, message ) {
 
 /**
  * Asserts whether the return status was as expected
+ *
+ * @param {Object} res Result
+ * @param {string} expected Status
  */
 function status( res, expected ) {
 	deepEqual( res.status, expected,
@@ -36,6 +41,9 @@ function status( res, expected ) {
 
 /**
  * Asserts whether content type was as expected
+ *
+ * @param {Object} res Result
+ * @param {string} expected Content type
  */
 function contentType( res, expected ) {
 	var actual = res.headers[ 'content-type' ];

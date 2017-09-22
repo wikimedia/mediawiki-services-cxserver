@@ -1,5 +1,7 @@
 'use strict';
 
+/* eslint-disable no-console */
+
 var bunyan = require( 'bunyan' );
 
 function logStream( logStdout ) {
@@ -10,7 +12,7 @@ function logStream( logStdout ) {
 		level: 'warn'
 	} );
 
-	function write( chunk /*, encoding, callback */ ) {
+	function write( chunk /* , encoding, callback */ ) {
 		var entry, level, levelMatch;
 
 		try {

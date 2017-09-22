@@ -6,15 +6,8 @@ var paths,
 
 paths = [
 	'lib/*.js',
-	'lib/dictionary',
-	'lib/lineardoc',
-	'lib/mt',
-	'lib/mw',
-	'lib/pageloader',
-	'lib/routes',
-	'lib/segmentation',
-	'lib/translationunits',
-	'tests/**/*.js'
+	'lib/**/*.js',
+	'test/**/*.js'
 ];
 
 // Run the tests
