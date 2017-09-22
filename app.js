@@ -36,7 +36,7 @@ function initApp( options ) {
 		app.conf.interface = '0.0.0.0';
 	}
 	if ( app.conf.compression_level === undefined ) {
-		/* eslint camelcase:off */
+		// eslint-disable-next-line camelcase
 		app.conf.compression_level = 3;
 	}
 	if ( app.conf.cors === undefined ) {
