@@ -35,14 +35,13 @@ describe( 'LinearDoc', function () {
 	} );
 
 	it( 'should be possible to reconstruct the HTML from LinearDoc', function () {
-		var parser, textBlock1, textBlock2, i, len, test, doc;
+		var parser, textBlock1, textBlock2, i, len, test;
 
 		for ( i = 0, len = transTests.length; i < len; i++ ) {
 			test = transTests[ i ];
 			parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
 			parser.init();
 			parser.write( '<div>' + test.source + '</div>' );
-			doc = parser.builder.doc;
 			textBlock1 = parser.builder.doc.items[ 1 ].item;
 			assert.deepEqual(
 				textBlock1.getHtml(),

@@ -9,7 +9,6 @@ var http = require( 'http' ),
 	sUtil = require( './lib/util' ),
 	apiUtil = require( './lib/api-util' ),
 	packageInfo = require( './package.json' ),
-	path = require( 'path' ),
 	yaml = require( 'js-yaml' );
 
 require( 'core-js/shim' );

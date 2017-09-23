@@ -1,5 +1,7 @@
 'use strict';
 
+/* eslint-disable no-console */
+
 var config, origConfig, myServiceIdx, myService,
 	stop, options, runner,
 	BBPromise = require( 'bluebird' ),
@@ -20,6 +22,7 @@ myServiceIdx = config.conf.services.length - 1;
 myService = config.conf.services[ myServiceIdx ];
 config.uri = 'http://localhost:' + myService.conf.port + '/';
 // no forking, run just one process when testing
+// eslint-disable-next-line camelcase
 config.conf.num_workers = 0;
 // have a separate, in-memory logger only
 config.conf.logging = {
