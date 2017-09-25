@@ -15,8 +15,6 @@
 		"require": false
 	},
 	"rules": {
-		"dot-notation": 0,
-		"wrap-iife": 0,
-		"one-var": ["error", {"var": "always"}]
+		"one-var": [ "error", { "var": "always" } ]
 	}
 }
