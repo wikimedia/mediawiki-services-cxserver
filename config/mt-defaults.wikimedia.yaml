@@ -962,6 +962,7 @@
 'pt-gl': Apertium
 'ur-hi': Apertium
 'ms-id': Apertium
+'es-it': Apertium
 'sv-is': Apertium
 'tt-kk': Apertium
 'bg-mk': Apertium
@@ -972,6 +973,8 @@
 'es-pt': Apertium
 'gl-pt': Apertium
 'be-ru': Apertium
+'ca-sc': Apertium
+'it-sc': Apertium
 'sh-sl': Apertium
 'mk-sr': Apertium
 'sl-sr': Apertium
