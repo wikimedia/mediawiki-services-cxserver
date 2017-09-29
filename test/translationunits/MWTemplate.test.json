@@ -1,56 +1,150 @@
 [
 	{
-		"desc":"Babel template",
-		"from":"fi",
-		"to":"sl",
-		"source":{
-			"attributes":{
-				"id":"mwSQ",
-				"typeof":"mw:Transclusion",
-				"data-mw":{
-					"parts":[
+		"desc": "Babel template",
+		"from": "fi",
+		"to": "sl",
+		"source": {
+			"attributes": {
+				"id": "mwSQ",
+				"typeof": "mw:Transclusion",
+				"data-mw": {
+					"parts": [
 						{
-							"template":{
-								"target":{
-									"wt":"Babel",
-									"href":"./Malline:Babel"
+							"template": {
+								"target": {
+									"wt": "Babel",
+									"href": "./Malline:Babel"
 								},
-								"params":{
-									"1":{
-										"wt":"fi"
+								"params": {
+									"1": {
+										"wt": "fi"
 									}
 								},
-								"i":0
+								"i": 0
 							}
 						}
 					]
 				}
 			}
 		},
-		"result":{
-			"attributes":{
-				"data-cx":[
+		"result": {
+			"attributes": {
+				"data-cx": [
 					{
-						"adapted":true
+						"adapted": true
 					}
 				],
-				"data-mw":{
-					"parts":[
+				"data-mw": {
+					"parts": [
 						{
-							"template":{
-								"target":{
-									"wt":"Babilon",
-									"href":"./Predloga:Babilon"
+							"template": {
+								"target": {
+									"wt": "Babilon",
+									"href": "./Predloga:Babilon"
 								},
-								"params":{
-									"1":{
-										"wt":"fi"
+								"params": {
+									"1": {
+										"wt": "fi"
 									}
 								},
-								"i":0
+								"i": 0
 							}
 						}
 					]
+				}
+			}
+		}
+	},
+	{
+		"desc": "Cite web template",
+		"from": "en",
+		"to": "fr",
+		"source": {
+			"attributes": {
+				"id": "mwSQ",
+				"typeof": "mw:Transclusion",
+				"data-mw": {
+					"parts": [{
+						"template": {
+							"target": {
+								"wt": "cite web",
+								"href": "./Template:Cite_web"
+							},
+							"params": {
+								"url": {
+									"wt": "http://www.example.org/ "
+								},
+								"title": {
+									"wt": "My Favorite Things, Part II "
+								},
+								"last": {
+									"wt": "Doe "
+								},
+								"first": {
+									"wt": "John "
+								},
+								"publisher": {
+									"wt": " Open Publishing "
+								},
+								"date": {
+									"wt": "30 April 2005 "
+								},
+								"website": {
+									"wt": "Encyclopedia of Things "
+								},
+								"access-date ": {
+									"wt": "26 June 2016 "
+								}
+							},
+							"i": 0
+						}
+					   }]
+				}
+			}
+		},
+		"result": {
+			"attributes": {
+				"data-cx": [
+					{
+						"adapted": true
+					}
+				],
+				"data-mw": {
+					"parts": [{
+						"template": {
+							"target": {
+								"wt": "Lien web",
+								"href": "./Modèle:Lien web"
+							},
+							"params": {
+								"url": {
+									"wt": "http://www.example.org/ "
+								},
+								"title": {
+									"wt": "My Favorite Things, Part II "
+								},
+								"last": {
+									"wt": "Doe "
+								},
+								"first": {
+									"wt": "John "
+								},
+								"publisher": {
+									"wt": " Open Publishing "
+								},
+								"date": {
+									"wt": "30 April 2005 "
+								},
+								"website": {
+									"wt": "Encyclopedia of Things "
+								},
+								"access-date ": {
+									"wt": "26 June 2016 "
+								}
+							},
+							"i": 0
+						}
+					}]
 				}
 			}
 		}
