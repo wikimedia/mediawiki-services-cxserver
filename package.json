@@ -22,7 +22,7 @@
     "compression": "^1.6.2",
     "core-js": "^2.4.1",
     "domino": "^1.0.25",
-    "express": "^4.14.0",
+    "express": "^4.16.0",
     "html-entities": "1.2.0",
     "js-yaml": "^3.6.1",
     "jsonwebtoken": "~5.6.0",
