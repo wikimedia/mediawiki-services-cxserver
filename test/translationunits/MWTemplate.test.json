@@ -120,25 +120,25 @@
 								"url": {
 									"wt": "http://www.example.org/ "
 								},
-								"title": {
+								"titre": {
 									"wt": "My Favorite Things, Part II "
 								},
-								"last": {
+								"auteur1": {
 									"wt": "Doe "
 								},
-								"first": {
+								"prénom1": {
 									"wt": "John "
 								},
-								"publisher": {
+								"éditeur": {
 									"wt": " Open Publishing "
 								},
 								"date": {
 									"wt": "30 April 2005 "
 								},
-								"website": {
+								"série": {
 									"wt": "Encyclopedia of Things "
 								},
-								"access-date ": {
+								"consulté le": {
 									"wt": "26 June 2016 "
 								}
 							},
