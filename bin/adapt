@@ -2,6 +2,7 @@
 const fs = require( 'fs' ),
 	yaml = require( 'js-yaml' ),
 	Adapter = require( __dirname + '/../lib/Adapter' ),
+	TestClient = require( __dirname + '/../lib/mt' ).TestClient,
 	Normalizer = require( __dirname + '/../lib/lineardoc' ).Normalizer;
 
 let config = yaml.load( fs.readFileSync( 'config.yaml' ) );
@@ -35,6 +36,8 @@ if ( xhtml.trim() === '' || process.argv.length !== 4 ) {
 	process.exit( 1 );
 
 }
+
+cxConfig.conf.mtClient = new TestClient( cxConfig );
 
 let from = process.argv[ 2 ];
 let to = process.argv[ 3 ];

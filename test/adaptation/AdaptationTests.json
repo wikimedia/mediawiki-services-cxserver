@@ -677,6 +677,37 @@
 		}
 	},
 	{
+		"desc": "Image adaptation - Inline image with figure-inline tag",
+		"from": "en",
+		"to": "ru",
+		"source": "<p><figure-inline class='mw-default-size mw-halign-left' typeof='mw:Image/Frameless' data-mw='{\"caption\":\"Some caption\"}' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a></figure-inline></p>",
+		"resultAttributes": {
+			"mwUQ": {
+				"data-mw": {
+					"caption": "[en→ru]Some caption"
+				},
+				"data-cx": {
+					"adapted": true,
+					"imageSource": "//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG",
+					"resource": "./File:Philos_experiment_of_the_burning_candle.PNG"
+				}
+			}
+		}
+	},
+	{
+		"desc": "Image adaptation - Inline image with span tag - Not supported",
+		"from": "en",
+		"to": "ru",
+		"source": "<p><span class='mw-default-size mw-halign-left' typeof='mw:Image/Frameless' data-mw='{\"caption\":\"Some caption\"}' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a></span></p>",
+		"resultAttributes": {
+			"mwUQ": {
+				"data-mw": {
+					"caption": "Some caption"
+				}
+			}
+		}
+	},
+	{
 		"desc": "Image adaptation- source and target language directions differs",
 		"from": "en",
 		"to": "he",
@@ -715,7 +746,7 @@
 				}
 			}
 		}
-		},
+	},
 	{
 		"desc": "Image adaptation- image is not in commons",
 		"from": "en",
@@ -725,6 +756,7 @@
 			"mwUQ": {
 				"data-cx": {
 					"adapted": false,
+					"imageSource": "//upload.wikimedia.org/wikipedia/mediawiki/e/e6/Philos_experiment_of_the_burning_candle.PNG",
 					"resource": "./File:Philos_experiment_of_the_burning_candle.PNG"
 				}
 			},
