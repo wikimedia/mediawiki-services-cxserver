@@ -4,6 +4,7 @@
 		"from": "en",
 		"to": "es",
 		"source": {
+			"name": "a",
 			"attributes": {
 				"rel": "mw:WikiLink",
 				"href": "Oxygen",
@@ -49,6 +50,7 @@
 		"from": "en",
 		"to": "es",
 		"source": {
+			"name": "a",
 			"attributes": {
 				"rel": "mw:WikiLink",
 				"href": "Atomic number",
@@ -56,6 +58,7 @@
 			}
 		},
 		"result": {
+			"name": "a",
 			"attributes": {
 				"rel": "mw:WikiLink",
 				"href": "Número atómico",
@@ -93,6 +96,7 @@
 		"from": "en",
 		"to": "es",
 		"source": {
+			"name": "a",
 			"attributes": {
 				"rel": "mw:WikiLink",
 				"href": "./Atomic number",
@@ -137,6 +141,7 @@
 		"from": "en",
 		"to": "es",
 		"source": {
+			"name": "a",
 			"attributes": {
 				"rel": "mw:WikiLink",
 				"href": "./The_Godfather_(wrestler)",
@@ -178,6 +183,7 @@
 		"from": "en",
 		"to": "es",
 		"source": {
+			"name": "a",
 			"attributes": {
 				"rel": "mw:WikiLink",
 				"href": "./List_of_planets_with_life",

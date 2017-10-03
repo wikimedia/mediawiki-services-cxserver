@@ -4,6 +4,7 @@
 		"from": "en",
 		"to": "es",
 		"source": {
+			"name": "span",
 			"attributes": {
 				"id": "trncttm-1",
 				"rel": "dc:references",
@@ -35,6 +36,7 @@
 		"from": "en",
 		"to": "es",
 		"source": {
+			"name": "span",
 			"attributes": {
 				"id": "trncttm-2",
 				"rel": "dc:references",
