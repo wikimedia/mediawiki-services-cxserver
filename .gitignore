@@ -5,7 +5,7 @@
 .idea
 .bundle/
 *.log
-config.js
+config.yaml
 docs
 node_modules
 log/

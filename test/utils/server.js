@@ -14,7 +14,7 @@ var config, origConfig, myServiceIdx, myService,
 
 // set up the configuration
 config = {
-	conf: yaml.safeLoad( fs.readFileSync( __dirname + '/../../config.yaml' ) )
+	conf: yaml.safeLoad( fs.readFileSync( __dirname + '/../../config.dev.yaml' ) )
 };
 // build the API endpoint URI by supposing the actual service
 // is the last one in the 'services' list in the config file
