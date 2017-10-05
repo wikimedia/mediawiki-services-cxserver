@@ -182,7 +182,7 @@ paths:
            - Matxin
         - name: html
           in: formData
-          description: The HTML content to translate
+          description: The HTML or plaintext content to translate
           type: string
           required: true
           x-textarea: true
