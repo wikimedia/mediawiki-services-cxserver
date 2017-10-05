@@ -148,5 +148,125 @@
 				}
 			}
 		}
+	},
+	{
+		"desc": "Multi-part template for columns",
+		"from": "en",
+		"to": "sv",
+		"source": {
+			"attributes": {
+				"id": "mwZw",
+				"typeof": "mw:Transclusion",
+				"data-mw": {
+					"parts": [
+						{
+							"template": {
+								"target": {
+									"wt": "col-begin",
+									"href": "./Template:Col-begin"
+								},
+								"params": {},
+								"i": 0
+							}
+						},
+						{
+							"template": {
+								"target": {
+									"wt": "col-break",
+									"href": "./Template:Col-break"
+								},
+								"params": {},
+								"i": 1
+							}
+						},
+						"\n* [[Arcosanti]]\n* [[Autonomous building]]\n* [[Bionic architecture]]\n* [[Dubai City Tower]]\n* [[Earthship]]\n* [[Megastructure]]\n* [[Proposed tall buildings and structures]]\n",
+						{
+							"template": {
+								"target": {
+									"wt": "col-break",
+									"href": "./Template:Col-break"
+								},
+								"params": {
+									"gap": {
+										"wt": "4em"
+									}
+								},
+								"i": 2
+							}
+						},
+						"\n* [[Shimizu Mega-City Pyramid]]\n* [[Underground city]]\n* [[Urban ecology]]\n* [[Vertical farming]]\n",
+						{
+							"template": {
+								"target": {
+									"wt": "col-end",
+									"href": "./Template:Col-end"
+								},
+								"params": {},
+								"i": 3
+							}
+						}
+					]
+				}
+			}
+		},
+		"result": {
+			"attributes": {
+				"data-cx": [
+					{
+						"adapted": true
+					}
+				],
+				"data-mw": {
+					"parts": [
+						{
+							"template": {
+								"target": {
+									"wt": "Col-begin",
+									"href": "./Mall:Col-begin"
+								},
+								"params": {},
+								"i": 0
+							}
+						},
+						{
+							"template": {
+								"target": {
+									"wt": "Col-break",
+									"href": "./Mall:Col-break"
+								},
+								"params": {},
+								"i": 1
+							}
+						},
+						"\n* [[Arcosanti]]\n* [[Autonomous building]]\n* [[Bionic architecture]]\n* [[Dubai City Tower]]\n* [[Earthship]]\n* [[Megastructure]]\n* [[Proposed tall buildings and structures]]\n",
+						{
+							"template": {
+								"target": {
+									"wt": "Col-break",
+									"href": "./Mall:Col-break"
+								},
+								"params": {
+									"gap": {
+										"wt": "4em"
+									}
+								},
+								"i": 2
+							}
+						},
+						"\n* [[Shimizu Mega-City Pyramid]]\n* [[Underground city]]\n* [[Urban ecology]]\n* [[Vertical farming]]\n",
+						{
+							"template": {
+								"target": {
+									"wt": "Col-end",
+									"href": "./Mall:Col-end"
+								},
+								"params": {},
+								"i": 3
+							}
+						}
+					]
+				}
+			}
+		}
 	}
 ]

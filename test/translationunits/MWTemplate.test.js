@@ -68,11 +68,11 @@ describe( 'Template adaptation', () => {
 			return translationunit.adapt( test.source ).then( ( adaptedNode ) => {
 				const actualDataCX = JSON.parse( adaptedNode.attributes[ 'data-cx' ] );
 				const expectedDataCX = test.result.attributes[ 'data-cx' ];
-				assert.deepEqual( expectedDataCX.adapted, actualDataCX.adapted, 'Adaptation status matches' );
+				assert.deepEqual( actualDataCX.adapted, expectedDataCX.adapted, 'Adaptation status matches' );
 
 				const actualDataMW = JSON.parse( adaptedNode.attributes[ 'data-mw' ] );
 				const expectedDataMW = test.result.attributes[ 'data-mw' ];
-				assert.deepEqual( expectedDataMW, actualDataMW, 'data-mw matches' );
+				assert.deepEqual( actualDataMW, expectedDataMW, 'data-mw matches' );
 			} );
 		} );
 	} );
