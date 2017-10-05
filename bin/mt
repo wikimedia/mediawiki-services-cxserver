@@ -5,7 +5,7 @@ const fs = require( 'fs' ),
 
 const config = yaml.load( fs.readFileSync( 'config.yaml' ) );
 if ( !config ) {
-	console.error( 'Failed to load config' );
+	process.stderr.write( 'Failed to load config' );
 	process.exit( 1 );
 }
 const cxConfig = config.services && Array.isArray( config.services ) &&
@@ -13,7 +13,7 @@ const cxConfig = config.services && Array.isArray( config.services ) &&
 		return item && item.name === 'cxserver';
 	} )[ 0 ];
 if ( !cxConfig ) {
-	console.error( 'Cannot find cxserver config' );
+	process.stderr.write( 'Cannot find cxserver config' );
 	process.exit( 1 );
 }
 
@@ -42,7 +42,7 @@ if ( sourceHtml.trim() === '' ) {
 }
 
 if ( !MTClients[ mtService ] ) {
-	console.error( `Cannot find MT service: ${mtService}` );
+	process.stderr.write( `Cannot find MT service: ${mtService}` );
 	process.exit( 1 );
 }
 
@@ -56,9 +56,9 @@ return mt.translate(
 	process.stdout.write( targetHtml + '\n' );
 } ).catch( ( error ) => {
 	if ( error.stack ) {
-		console.error( 'error', error.stack );
+		process.stderr.write( error.stack );
 	} else {
-		console.error( 'error', error );
+		process.stderr.write( error );
 	}
 	process.exit( 2 );
 } );

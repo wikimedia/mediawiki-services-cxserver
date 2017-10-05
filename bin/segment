@@ -1,19 +1,18 @@
 #!/usr/bin/env node
-var script, xhtmlSource, xhtml, result, segmenter,
-	fs = require( 'fs' ),
+const fs = require( 'fs' ),
 	Segmenter = require( __dirname + '/../lib/segmentation/CXSegmenter' ),
 	LinearDoc = require( __dirname + '/../lib/lineardoc' );
 
 function normalize( html ) {
-	var normalizer = new LinearDoc.Normalizer();
+	const normalizer = new LinearDoc.Normalizer();
 	normalizer.init();
 	normalizer.write( html.replace( /(\r\n|\n|\t|\r)/gm, '' ) );
 	return normalizer.getHtml();
 }
 
-html = fs.readFileSync( '/dev/stdin', 'utf8' );
+const html = fs.readFileSync( '/dev/stdin', 'utf8' );
 if ( html.trim() === '' ) {
-	script = process.argv[ 1 ];
+	const script = process.argv[ 1 ];
 	process.stderr.write(
 		'Usage: node ' + script + ' < file\n' +
 		'Input must be wrapped in a block element such as <p>...</p> or <div>..</div>.\n'
@@ -22,7 +21,7 @@ if ( html.trim() === '' ) {
 
 }
 
-segmenter = new Segmenter( html, 'en' );
+const segmenter = new Segmenter( html, 'en' );
 segmenter.segment();
-result = normalize( segmenter.getSegmentedContent() );
+const result = normalize( segmenter.getSegmentedContent() );
 process.stdout.write( result + '\n' );
