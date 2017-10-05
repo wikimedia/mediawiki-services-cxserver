@@ -1,11 +1,10 @@
 #!/usr/bin/env node
-var script, xhtml, parser,
-	fs = require( 'fs' ),
+const fs = require( 'fs' ),
 	LinearDoc = require( __dirname + '/../lib/lineardoc' );
 
-xhtml = fs.readFileSync( '/dev/stdin', 'utf8' );
+const xhtml = fs.readFileSync( '/dev/stdin', 'utf8' );
 if ( xhtml.trim() === '' ) {
-	script = process.argv[ 1 ];
+	const script = process.argv[ 1 ];
 	process.stderr.write(
 		'Usage: node ' + script + ' < file\n' +
 		'Input must be wrapped in a block element such as <p>...</p> or <div>..</div>.\n'
@@ -14,7 +13,7 @@ if ( xhtml.trim() === '' ) {
 
 }
 
-parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
+const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
 parser.init();
 parser.write( xhtml );
 process.stdout.write( parser.builder.doc.dumpXml() );

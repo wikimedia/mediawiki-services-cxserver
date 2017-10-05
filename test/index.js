@@ -7,7 +7,11 @@ var paths,
 paths = [
 	'lib/*.js',
 	'lib/**/*.js',
-	'test/**/*.js'
+	'test/**/*.js',
+	'bin/mt',
+	'bin/adapt',
+	'bin/linearize',
+	'bin/segment'
 ];
 
 // Run the tests
