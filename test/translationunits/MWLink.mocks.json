@@ -1,0 +1,179 @@
+{
+    "titleinfo/en": {
+        "Oxygen": {
+            "pageid": 22303,
+            "ns": 0,
+            "title": "Oxygen",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2017-10-07T00:57:10Z",
+            "lastrevid": 800533507,
+            "length": 97172,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Liquid_oxygen_in_a_beaker_4.jpg/66px-Liquid_oxygen_in_a_beaker_4.jpg",
+                "width": 66,
+                "height": 80
+            },
+            "pageimage": "Liquid_oxygen_in_a_beaker_4.jpg",
+            "terms": {
+                "description": [
+                    "element with the atomic number of 8"
+                ]
+            }
+        },
+        "Atomic number": {
+            "pageid": 673,
+            "ns": 0,
+            "title": "Atomic number",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2017-10-05T18:47:27Z",
+            "lastrevid": 803953285,
+            "length": 14093,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Atomic_number_depiction.jpg/80px-Atomic_number_depiction.jpg",
+                "width": 80,
+                "height": 49
+            },
+            "pageimage": "Atomic_number_depiction.jpg",
+            "terms": {
+                "description": [
+                    "number of protons found in the nucleus of an atom"
+                ]
+            }
+        },
+        "The Godfather (wrestler)": {
+            "pageid": 591648,
+            "ns": 0,
+            "title": "The Godfather (wrestler)",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2017-10-04T08:11:03Z",
+            "lastrevid": 802353261,
+            "length": 36128,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg/51px-Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg",
+                "width": 51,
+                "height": 80
+            },
+            "pageimage": "Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg",
+            "terms": {
+                "description": [
+                    "professional wrestler, strip club manager"
+                ]
+            }
+        },
+        "List of planets with life": {
+            "ns": 0,
+            "title": "List of planets with life",
+            "missing": "",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr"
+        },
+        "#titles": {
+            "./Atomic number": "Atomic number",
+            "./The_Godfather_(wrestler)": "The Godfather (wrestler)",
+            "./List_of_planets_with_life": "List of planets with life"
+        }
+    },
+    "titlepair/en/es": {
+        "Oxygen": {
+            "sourceTitle": "Oxygen",
+            "targetTitle": "Oxígeno",
+            "missing": false
+        },
+        "Atomic number": {
+            "sourceTitle": "Atomic number",
+            "targetTitle": "Número atómico",
+            "missing": false
+        },
+        "The Godfather (wrestler)": {
+            "sourceTitle": "The Godfather (wrestler)",
+            "targetTitle": "Charles Wright (luchador)",
+            "missing": false
+        },
+        "List of planets with life": {
+            "sourceTitle": "List of planets with life"
+        },
+        "#titles": {
+            "./Atomic number": "Atomic number",
+            "./The_Godfather_(wrestler)": "The Godfather (wrestler)",
+            "./List_of_planets_with_life": "List of planets with life"
+        }
+    },
+    "titleinfo/es": {
+        "Oxígeno": {
+            "pageid": 3267,
+            "ns": 0,
+            "title": "Oxígeno",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2017-10-04T10:46:28Z",
+            "lastrevid": 102341112,
+            "length": 104748,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/O%2C8.jpg/80px-O%2C8.jpg",
+                "width": 80,
+                "height": 40
+            },
+            "pageimage": "O,8.jpg",
+            "terms": {
+                "description": [
+                    "elemento químico"
+                ]
+            }
+        },
+        "Número atómico": {
+            "pageid": 1980,
+            "ns": 0,
+            "title": "Número atómico",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2017-09-09T23:38:13Z",
+            "lastrevid": 100517772,
+            "length": 8663,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
+                "width": 80,
+                "height": 80
+            },
+            "pageimage": "Element_identity.png",
+            "terms": {
+                "description": [
+                    "número total de protones que tiene el átomo"
+                ]
+            }
+        },
+        "Charles Wright (luchador)": {
+            "pageid": 2834764,
+            "ns": 0,
+            "title": "Charles Wright (luchador)",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2017-09-24T15:23:54Z",
+            "lastrevid": 102003136,
+            "length": 25106,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Paul_Wright_AKA_%28The_Godfather%29.jpg/50px-Paul_Wright_AKA_%28The_Godfather%29.jpg",
+                "width": 50,
+                "height": 80
+            },
+            "pageimage": "Paul_Wright_AKA_(The_Godfather).jpg"
+        },
+        "#titles": {}
+    }
+}

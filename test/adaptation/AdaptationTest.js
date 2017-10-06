@@ -1,18 +1,26 @@
 'use strict';
 
-const assert = require( 'assert' ),
-	server = require( '../utils/server.js' ),
-	async = require( 'async' ),
-	TestClient = require( '../../lib/mt' ).TestClient,
-	Adapter = require( '../../lib/Adapter' ),
-	tests = require( './AdaptationTests.json' ),
-	jsdom = require( 'jsdom' );
+const Adapter = require( '../../lib/Adapter' );
+const MWApiRequestManager = require( '../../lib/mw/ApiRequestManager' );
+const TestClient = require( '../../lib/mt' ).TestClient;
+const TestUtils = require( '../testutils' );
+const assert = require( 'assert' );
+const async = require( 'async' );
+const jsdom = require( 'jsdom' );
+const server = require( '../utils/server' );
+
+const mocks = require( './AdaptationTests.mocks.json' );
+const tests = require( './AdaptationTests.json' );
 
 describe( 'Adaptation tests', () => {
-	async.forEach( tests, ( test ) => {
+	const api = new MWApiRequestManager( server.config );
+	const mocker = new TestUtils( api );
+	mocker.setup( mocks );
+
+	async.each( tests, ( test, done ) => {
 		const cxserver = server.config.conf.services[ server.config.conf.services.length - 1 ];
 		cxserver.conf.mtClient = new TestClient( cxserver );
-		const adapter = new Adapter( test.from, test.to, cxserver );
+		const adapter = new Adapter( test.from, test.to, api, cxserver );
 		it( test.desc, () => {
 			return adapter.adapt( test.source ).then( ( result ) => {
 				const actualDom = new jsdom.JSDOM( result.getHtml() );
@@ -29,7 +37,8 @@ describe( 'Adaptation tests', () => {
 						}
 					}
 				}
+				done( null );
 			} );
 		} );
-	} );
+	}, mocker.dump.bind( mocker, 'test/adaptation/AdaptationTests.mocks.json' ) );
 } );

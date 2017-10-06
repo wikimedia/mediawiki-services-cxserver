@@ -1,0 +1,3618 @@
+{
+    "titlepair/fi/sl": {
+        "Malline:Babel": {
+            "sourceTitle": "Malline:Babel",
+            "targetTitle": "Predloga:Babilon",
+            "missing": false
+        },
+        "#titles": {
+            "./Malline:Babel": "Malline:Babel"
+        }
+    },
+    "templatedata/fi": {
+        "Malline:Babel": {
+            "title": "Malline:Babel",
+            "params": {
+                "1": {},
+                "2": {},
+                "3": {},
+                "4": {},
+                "5": {},
+                "6": {},
+                "7": {},
+                "8": {},
+                "9": {},
+                "10": {},
+                "11": {},
+                "12": {},
+                "13": {},
+                "14": {},
+                "15": {},
+                "16": {},
+                "17": {},
+                "18": {},
+                "19": {},
+                "20": {},
+                "21": {},
+                "22": {},
+                "23": {},
+                "24": {},
+                "25": {},
+                "26": {},
+                "27": {},
+                "28": {},
+                "29": {},
+                "30": {}
+            }
+        },
+        "#titles": {
+            "./Malline:Babel": "Malline:Babel"
+        }
+    },
+    "templatedata/sl": {
+        "Predloga:Babilon": {
+            "title": "Predloga:Babilon",
+            "params": {
+                "1": {},
+                "2": {},
+                "3": {},
+                "4": {},
+                "5": {},
+                "6": {},
+                "7": {},
+                "8": {},
+                "9": {},
+                "10": {},
+                "11": {},
+                "12": {},
+                "13": {},
+                "14": {},
+                "15": {},
+                "16": {},
+                "17": {},
+                "18": {},
+                "19": {},
+                "20": {},
+                "21": {},
+                "22": {},
+                "23": {},
+                "24": {},
+                "25": {},
+                "26": {},
+                "27": {},
+                "28": {},
+                "29": {},
+                "30": {},
+                "31": {},
+                "32": {},
+                "33": {},
+                "34": {},
+                "35": {},
+                "36": {},
+                "37": {},
+                "38": {},
+                "39": {},
+                "40": {},
+                "41": {},
+                "42": {},
+                "43": {},
+                "44": {},
+                "45": {},
+                "46": {},
+                "47": {},
+                "48": {},
+                "49": {},
+                "50": {},
+                "51": {},
+                "52": {},
+                "53": {},
+                "54": {},
+                "55": {},
+                "56": {},
+                "57": {},
+                "58": {},
+                "59": {},
+                "60": {},
+                "61": {},
+                "62": {},
+                "63": {},
+                "64": {},
+                "65": {},
+                "66": {},
+                "67": {},
+                "68": {},
+                "69": {},
+                "70": {},
+                "71": {},
+                "72": {},
+                "73": {},
+                "74": {},
+                "75": {},
+                "76": {},
+                "77": {},
+                "78": {},
+                "79": {},
+                "80": {},
+                "81": {},
+                "82": {},
+                "83": {},
+                "84": {},
+                "85": {},
+                "86": {},
+                "87": {},
+                "88": {},
+                "89": {},
+                "90": {},
+                "91": {},
+                "92": {},
+                "93": {},
+                "94": {},
+                "95": {},
+                "96": {},
+                "97": {},
+                "98": {},
+                "99": {},
+                "100": {},
+                "align": {},
+                "left": {},
+                "bottom": {},
+                "width": {},
+                "bordercolor": {},
+                "solid": {},
+                "textcolor": {},
+                "extra-css": {},
+                "color": {},
+                "header": {},
+                "posebna-polja": {}
+            }
+        },
+        "#titles": {}
+    },
+    "titlepair/en/fr": {
+        "Template:Cite web": {
+            "sourceTitle": "Template:Cite web",
+            "targetTitle": "Modèle:Lien web",
+            "missing": false
+        },
+        "#titles": {
+            "./Template:Cite_web": "Template:Cite web"
+        }
+    },
+    "templatedata/en": {
+        "Template:Cite web": {
+            "title": "Template:Cite web",
+            "description": {
+                "en": "Formats a citation to a website using the provided information such as URL and title. Used only for sources that are not correctly described by the specific citation templates for books, journals, news sources, etc."
+            },
+            "params": {
+                "url": {
+                    "label": {
+                        "en": "URL"
+                    },
+                    "description": {
+                        "en": "The URL of the online location where the text of the publication can be found. Requires schemes of the type \"http://...\" or maybe even the  protocol relative scheme \"//...\""
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "URL"
+                    ],
+                    "required": true,
+                    "example": {
+                        "en": "https://www.metacritic.com//..."
+                    },
+                    "suggested": false,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "title": {
+                    "label": {
+                        "en": "Title"
+                    },
+                    "description": {
+                        "en": "The title of the source page on the website; will display with quotation marks added. Usually found at the top of you web browser. Not the name of the website."
+                    },
+                    "type": "string",
+                    "required": true,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "date": {
+                    "label": {
+                        "en": "Source date"
+                    },
+                    "description": {
+                        "en": "Full date when the source was published; if unknown, use access-date instead; do not wikilink"
+                    },
+                    "type": "date",
+                    "suggested": true,
+                    "required": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "access-date": {
+                    "label": {
+                        "en": "URL access date"
+                    },
+                    "description": {
+                        "en": "The full date when the original URL was accessed; do not wikilink"
+                    },
+                    "type": "date",
+                    "aliases": [
+                        "accessdate"
+                    ],
+                    "suggested": true,
+                    "required": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "website": {
+                    "label": {
+                        "en": "Website"
+                    },
+                    "description": {
+                        "en": "Name of the website; may be wikilinked; will display in italics. Having both 'Publisher' and 'Website' is redundant in most cases"
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "work"
+                    ],
+                    "suggested": true,
+                    "example": {
+                        "en": "Rotten Tomatoes"
+                    },
+                    "required": false,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "publisher": {
+                    "label": {
+                        "en": "Publisher"
+                    },
+                    "description": {
+                        "en": "Name of the publisher; may be wikilinked. Having both 'Publisher' and 'Website' is redundant in most cases. "
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "\"CBS Interactive\" which owns \"Metacritic.com\""
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "last": {
+                    "label": {
+                        "en": "Last name"
+                    },
+                    "description": {
+                        "en": "The surname of the author; don't wikilink, use 'authorlink'; can suffix with a numeral to add additional authors"
+                    },
+                    "aliases": [
+                        "last1",
+                        "author",
+                        "author1",
+                        "author1-last",
+                        "author-last",
+                        "surname1",
+                        "author-last1",
+                        "subject1",
+                        "surname",
+                        "author-last",
+                        "subject"
+                    ],
+                    "type": "line",
+                    "suggested": true,
+                    "required": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "first": {
+                    "label": {
+                        "en": "First name"
+                    },
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the author; don't wikilink, use 'authorlink'; can suffix with a numeral to add additional authors"
+                    },
+                    "aliases": [
+                        "given",
+                        "author-first",
+                        "first1",
+                        "given1",
+                        "author-first1",
+                        "author1-first"
+                    ],
+                    "type": "line",
+                    "suggested": true,
+                    "required": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "authorlink": {
+                    "label": {
+                        "en": "Author link"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the author; can suffix with a numeral to add additional authors"
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author-link",
+                        "subjectlink",
+                        "subject-link",
+                        "authorlink1",
+                        "author-link1",
+                        "author1-link",
+                        "subjectlink1",
+                        "author1link",
+                        "subject-link1",
+                        "subject1-link",
+                        "subject1link"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "last2": {
+                    "label": {
+                        "en": "Last name 2"
+                    },
+                    "description": {
+                        "en": "The surname of the second author; don't wikilink, use 'authorlink2'."
+                    },
+                    "type": "line",
+                    "aliases": [
+                        "author2"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "first2": {
+                    "label": {
+                        "en": "First name 2"
+                    },
+                    "type": "line",
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the second author; don't wikilink."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "authorlink2": {
+                    "label": {
+                        "en": "Author link 2"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the second author."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author2-link"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "others": {
+                    "label": {
+                        "en": "Others"
+                    },
+                    "description": {
+                        "en": "Used to record other (non-author) contributions to the work, such as 'Illustrated by John Smith' or 'Translated by John Smith'. Only one ''others'' parameter is allowed: e.g., 'Illustrated by Jane Doe; Translated by John Smith'"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "year": {
+                    "label": {
+                        "en": "Year of publication"
+                    },
+                    "description": {
+                        "en": "Year of the source being referenced; use 'date' instead, if month and day are also known"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "orig-year": {
+                    "label": {
+                        "en": "Original year"
+                    },
+                    "description": {
+                        "en": "Original year of publication; provide specifics"
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "origyear"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor-last": {
+                    "label": {
+                        "en": "Editor last name"
+                    },
+                    "description": {
+                        "en": "The surname of the editor; don't wikilink, use 'editor-link'; can suffix with a numeral to add additional editors."
+                    },
+                    "type": "line",
+                    "aliases": [
+                        "editor1-last",
+                        "   editor",
+                        "   editors"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor-first": {
+                    "label": {
+                        "en": "Editor first name"
+                    },
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the editor; don't wikilink, use 'editor-link'; can suffix with a numeral to add additional editors; alias of 'editor1-first'"
+                    },
+                    "type": "line",
+                    "aliases": [
+                        "editor1-first"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor-link": {
+                    "label": {
+                        "en": "Editor link"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the editor; can suffix with a numeral to add additional editors"
+                    },
+                    "aliases": [
+                        "editor1-link"
+                    ],
+                    "type": "wiki-page-name",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "series": {
+                    "label": {
+                        "en": "Series identifier"
+                    },
+                    "description": {
+                        "en": "Series identifier when the source is part of a series, such as a book series or a journal"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "location": {
+                    "label": {
+                        "en": "Location of publication"
+                    },
+                    "description": {
+                        "en": "Geographical place of publication; usually not wikilinked; omit when the publication name includes place; alias of 'place'"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "publication-place": {
+                    "label": {
+                        "en": "Place of publication"
+                    },
+                    "description": {
+                        "en": "Publication place shows after title; if 'place' or 'location' are also given, they are displayed before the title prefixed with 'written at'"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "publication-date": {
+                    "label": {
+                        "en": "Publication date"
+                    },
+                    "description": {
+                        "en": "Date of publication when different from the date the work was written; do not wikilink"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "page": {
+                    "label": {
+                        "en": "Page"
+                    },
+                    "description": {
+                        "en": "Page in the source that supports the content; displays after 'p.'"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "pages": {
+                    "label": {
+                        "en": "Pages"
+                    },
+                    "description": {
+                        "en": "Pages in the source that support the content (not an indication of the number of pages in the source; displays after 'pp.'"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "nopp": {
+                    "label": {
+                        "en": "No pp"
+                    },
+                    "description": {
+                        "en": "Set to 'y' to suppress the 'p.' or 'pp.' display with 'page' or 'pages' when inappropriate (such as 'Front cover')"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "at": {
+                    "label": {
+                        "en": "At"
+                    },
+                    "description": {
+                        "en": "May be used instead of 'page' or 'pages' where a page number is inappropriate or insufficient"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "language": {
+                    "label": {
+                        "en": "Language"
+                    },
+                    "description": {
+                        "en": "The language in which the source is written, if not English; use the full language name; do not use icons or templates"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "script-title": {
+                    "label": {
+                        "en": "Script title"
+                    },
+                    "description": {
+                        "en": "For titles in languages that do not use a Latin-based alphabet (Arabic, Chinese, Cyrillic, Greek, Hebrew, Japanese, Korean, Vietnamese, etc). Prefix with two-character ISO639-1 language code followed by a colon. For Japanese use: |script-title=ja:..."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "trans-title": {
+                    "label": {
+                        "en": "Translated title"
+                    },
+                    "description": {
+                        "en": "An English language title, if the source cited is in a foreign language; 'language' is recommended"
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "trans_title"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "type": {
+                    "label": {
+                        "en": "Type"
+                    },
+                    "description": {
+                        "en": "Additional information about the media type of the source; format in sentence case"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "format": {
+                    "label": {
+                        "en": "Format"
+                    },
+                    "description": {
+                        "en": "Format of the work referred to by 'url'; examples: PDF, DOC, XLS; do not specify HTML"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "arxiv": {
+                    "label": {
+                        "en": "arXiv identifier"
+                    },
+                    "description": {
+                        "en": "An identifier for arXive electronic preprints of scientific papers"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "asin": {
+                    "label": {
+                        "en": "ASIN"
+                    },
+                    "description": {
+                        "en": "Amazon Standard Identification Number; 10 characters"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "asin-tld": {
+                    "label": {
+                        "en": "ASIN TLD"
+                    },
+                    "description": {
+                        "en": "ASIN top-level domain for Amazon sites other than the US"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "bibcode": {
+                    "label": {
+                        "en": "Bibcode"
+                    },
+                    "description": {
+                        "en": "Bibliographic Reference Code (REFCODE); 19 characters"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "biorxiv": {
+                    "label": {
+                        "en": "biorXiv"
+                    },
+                    "description": {
+                        "en": "biorXiv identifier; 6 digits"
+                    },
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "citeseerx": {
+                    "label": {
+                        "en": "CiteSeerX"
+                    },
+                    "description": {
+                        "en": "CiteSeerX identifier; found after the 'doi=' query parameter"
+                    },
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "doi": {
+                    "label": {
+                        "en": "DOI"
+                    },
+                    "description": {
+                        "en": "Digital Object Identifier; begins with '10.'"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "doi-broken-date": {
+                    "label": {
+                        "en": "DOI broken date"
+                    },
+                    "description": {
+                        "en": "The date that the DOI was determined to be broken"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "isbn": {
+                    "label": {
+                        "en": "ISBN"
+                    },
+                    "description": {
+                        "en": "International Standard Book Number; use the 13-digit ISBN where possible"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "issn": {
+                    "label": {
+                        "en": "ISSN"
+                    },
+                    "description": {
+                        "en": "International Standard Serial Number; 8 characters; may be split into two groups of four using a hyphen"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "jfm": {
+                    "label": {
+                        "en": "jfm code"
+                    },
+                    "description": {
+                        "en": "Jahrbuch über die Fortschritte der Mathematik classification code"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "jstor": {
+                    "label": {
+                        "en": "JSTOR"
+                    },
+                    "description": {
+                        "en": "JSTOR identifier"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "lccn": {
+                    "label": {
+                        "en": "LCCN"
+                    },
+                    "description": {
+                        "en": "Library of Congress Control Number"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "mr": {
+                    "label": {
+                        "en": "MR"
+                    },
+                    "description": {
+                        "en": "Mathematical Reviews identifier"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "oclc": {
+                    "label": {
+                        "en": "OCLC"
+                    },
+                    "description": {
+                        "en": "Online Computer Library Center number"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "ol": {
+                    "label": {
+                        "en": "OL"
+                    },
+                    "description": {
+                        "en": "Open Library identifier"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "osti": {
+                    "label": {
+                        "en": "OSTI"
+                    },
+                    "description": {
+                        "en": "Office of Scientific and Technical Information identifier"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "pmc": {
+                    "label": {
+                        "en": "PMC"
+                    },
+                    "description": {
+                        "en": "PubMed Center article number"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "pmid": {
+                    "label": {
+                        "en": "PMID"
+                    },
+                    "description": {
+                        "en": "PubMed Unique Identifier"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "rfc": {
+                    "label": {
+                        "en": "RFC"
+                    },
+                    "description": {
+                        "en": "Request for Comments number"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "ssrn": {
+                    "label": {
+                        "en": "SSRN"
+                    },
+                    "description": {
+                        "en": "Social Science Research Network"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "zbl": {
+                    "label": {
+                        "en": "Zbl"
+                    },
+                    "description": {
+                        "en": "Zentralblatt MATH journal identifier"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "id": {
+                    "label": {
+                        "en": "id"
+                    },
+                    "description": {
+                        "en": "A unique identifier used where none of the specialized ones are applicable"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "archive-url": {
+                    "label": {
+                        "en": "Archive URL"
+                    },
+                    "aliases": [
+                        "archiveurl"
+                    ],
+                    "description": {
+                        "en": "The URL of an archived copy of a web page, if or in case the URL becomes unavailable; requires 'archive-date'"
+                    },
+                    "type": "string",
+                    "suggested": true,
+                    "required": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "archive-date": {
+                    "label": {
+                        "en": "Archive date"
+                    },
+                    "aliases": [
+                        "archivedate"
+                    ],
+                    "description": {
+                        "en": "Date when the original URL was archived; do not wikilink"
+                    },
+                    "type": "string",
+                    "suggested": true,
+                    "required": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "dead-url": {
+                    "label": {
+                        "en": "Dead URL"
+                    },
+                    "aliases": [
+                        "deadurl"
+                    ],
+                    "description": {
+                        "en": "If set to 'no', the title display is adjusted; useful for when the URL is archived preemptively but still live"
+                    },
+                    "type": "string",
+                    "suggested": true,
+                    "required": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "quote": {
+                    "label": {
+                        "en": "Quote"
+                    },
+                    "description": {
+                        "en": "Relevant text quoted from the source; displays last, enclosed in quotes; must include terminating punctuation"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "ref": {
+                    "label": {
+                        "en": "Ref"
+                    },
+                    "description": {
+                        "en": "An anchor identifier; can be made the target of wikilinks to full references; special value 'harv' generates an anchor suitable for the harv template"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "separator": {
+                    "label": {
+                        "en": "Separator"
+                    },
+                    "description": {
+                        "en": "The punctuation used to separate lists of authors, editors, etc.; a space must be encoded as &#32; do not use an asterisk, colon, or hash mark"
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null
+                },
+                "postscript": {
+                    "label": {
+                        "en": "Postscript"
+                    },
+                    "description": {
+                        "en": "The closing punctuation for the citation; ignored if 'quote' is defined"
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null
+                },
+                "layurl": {
+                    "label": {
+                        "en": "Lay URL"
+                    },
+                    "description": {
+                        "en": "URL link to a non-technical summary or review of the source; alias of 'laysummary'"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "laysource": {
+                    "label": {
+                        "en": "Lay source"
+                    },
+                    "description": {
+                        "en": "Name of the source of the laysummary; displays in italics, preceded by an en dash"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "laydate": {
+                    "label": {
+                        "en": "Lay date"
+                    },
+                    "description": {
+                        "en": "Date of the summary; displays in parentheses"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "author-mask": {
+                    "label": {
+                        "en": "Author mask"
+                    },
+                    "description": {
+                        "en": "Replaces the name of the first author with em dashes or text; set to a numeric value 'n' to set the dash 'n' em spaces wide; set to a text value to display the text without a trailing author separator; for example, 'with' instead"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "last3": {
+                    "label": {
+                        "en": "Last name 3"
+                    },
+                    "description": {
+                        "en": "The surname of the third author; don't wikilink, use 'authorlink3'."
+                    },
+                    "type": "line",
+                    "aliases": [
+                        "author3"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "first3": {
+                    "label": {
+                        "en": "First name 3"
+                    },
+                    "type": "line",
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the third author; don't wikilink."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "authorlink3": {
+                    "label": {
+                        "en": "Author link 3"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the third author."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author3-link"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "last4": {
+                    "label": {
+                        "en": "Last name 4"
+                    },
+                    "description": {
+                        "en": "The surname of the fourth author; don't wikilink, use 'authorlink4'."
+                    },
+                    "type": "line",
+                    "aliases": [
+                        "author4"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "first4": {
+                    "label": {
+                        "en": "First name 4"
+                    },
+                    "type": "line",
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the fourth author; don't wikilink."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "authorlink4": {
+                    "label": {
+                        "en": "Author link 4"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the fourth author."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author4-link"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "last5": {
+                    "label": {
+                        "en": "Last name 5"
+                    },
+                    "description": {
+                        "en": "The surname of the fifth author; don't wikilink, use 'authorlink5'."
+                    },
+                    "type": "line",
+                    "aliases": [
+                        "author5"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "first5": {
+                    "label": {
+                        "en": "First name 5"
+                    },
+                    "type": "line",
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the fifth author; don't wikilink."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "authorlink5": {
+                    "label": {
+                        "en": "Author link 5"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the fifth author."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author5-link"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "last6": {
+                    "label": {
+                        "en": "Last name 6"
+                    },
+                    "description": {
+                        "en": "The surname of the sixth author; don't wikilink, use 'authorlink6'."
+                    },
+                    "type": "line",
+                    "aliases": [
+                        "author6"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "first6": {
+                    "label": {
+                        "en": "First name 6"
+                    },
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the sixth author; don't wikilink."
+                    },
+                    "type": "line",
+                    "aliases": [
+                        "author6-link"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "authorlink6": {
+                    "label": {
+                        "en": "Author link 6"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the sixth author."
+                    },
+                    "type": "wiki-page-name",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "last7": {
+                    "label": {
+                        "en": "Last name 7"
+                    },
+                    "description": {
+                        "en": "The surname of the seventh author; don't wikilink, use 'authorlink7'."
+                    },
+                    "type": "line",
+                    "aliases": [
+                        "author7"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "first7": {
+                    "label": {
+                        "en": "First name 7"
+                    },
+                    "type": "line",
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the seventh author; don't wikilink."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "authorlink7": {
+                    "label": {
+                        "en": "Author link 7"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the seventh author."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author7-link"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "last8": {
+                    "label": {
+                        "en": "Last name 8"
+                    },
+                    "description": {
+                        "en": "The surname of the eighth author; don't wikilink, use 'authorlink8'."
+                    },
+                    "type": "line",
+                    "aliases": [
+                        "author8"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "first8": {
+                    "label": {
+                        "en": "First name 8"
+                    },
+                    "type": "line",
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the eighth author; don't wikilink."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "authorlink8": {
+                    "label": {
+                        "en": "Author link 8"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the eighth author."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author8-link"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "last9": {
+                    "label": {
+                        "en": "Last name 9"
+                    },
+                    "description": {
+                        "en": "The surname of the ninth author; don't wikilink, use 'authorlink9'. If nine authors are defined, then only eight will show and 'et al.' will show in place of the last author."
+                    },
+                    "type": "line",
+                    "aliases": [
+                        "author9"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "first9": {
+                    "label": {
+                        "en": "First name 9"
+                    },
+                    "type": "line",
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the ninth author; don't wikilink."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "authorlink9": {
+                    "label": {
+                        "en": "Author link 9"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the ninth author."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author9-link"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "author-name-separator": {
+                    "label": {
+                        "en": "Author name separator"
+                    },
+                    "description": {
+                        "en": "Changes the separator between last and first names; defaults to a comma and space; a space must be encoded as &#32; do not use an asterisk, colon, or hash mark"
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": ", "
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null
+                },
+                "author-separator": {
+                    "label": {
+                        "en": "Author separator"
+                    },
+                    "description": {
+                        "en": "Changes the separator between authors; defaults to a semicolon and space; a space must be encoded as &#32; do not use an asterisk, colon, or hash mark"
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "; "
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null
+                },
+                "display-authors": {
+                    "label": {
+                        "en": "Display authors"
+                    },
+                    "description": {
+                        "en": "Number of authors to display before 'et al.' is used; default is to do so after 8 of 9 are listed."
+                    },
+                    "type": "number",
+                    "default": {
+                        "en": "8"
+                    },
+                    "aliases": [
+                        "displayauthors"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null
+                },
+                "lastauthoramp": {
+                    "label": {
+                        "en": "Last author ampersand"
+                    },
+                    "description": {
+                        "en": "When set to any value, changes the separator between the last two names of the author list to 'space ampersand space'"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor2-last": {
+                    "label": {
+                        "en": "Editor last name 2"
+                    },
+                    "description": {
+                        "en": "The surname of the second editor; don't wikilink, use 'editor2-link'."
+                    },
+                    "aliases": [
+                        "editor2"
+                    ],
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor2-first": {
+                    "label": {
+                        "en": "Editor first name 2"
+                    },
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the second editor; don't wikilink."
+                    },
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor3-last": {
+                    "label": {
+                        "en": "Editor last name 3"
+                    },
+                    "description": {
+                        "en": "The surname of the third editor; don't wikilink, use 'editor3-link'."
+                    },
+                    "aliases": [
+                        "editor3"
+                    ],
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor3-first": {
+                    "label": {
+                        "en": "Editor first name 3"
+                    },
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the third editor; don't wikilink."
+                    },
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor4-last": {
+                    "label": {
+                        "en": "Editor last name 4"
+                    },
+                    "description": {
+                        "en": "The surname of the fourth editor; don't wikilink, use 'editor4-link'."
+                    },
+                    "aliases": [
+                        "editor4"
+                    ],
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor4-first": {
+                    "label": {
+                        "en": "Editor first name 4"
+                    },
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the fourth editor; don't wikilink."
+                    },
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor5-last": {
+                    "label": {
+                        "en": "Editor last name 5"
+                    },
+                    "description": {
+                        "en": "The surname of the fifth editor; don't wikilink, use 'editor5-link'."
+                    },
+                    "aliases": [
+                        "editor5"
+                    ],
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor5-first": {
+                    "label": {
+                        "en": "Editor first name 5"
+                    },
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the fifth editor; don't wikilink."
+                    },
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor6-last": {
+                    "label": {
+                        "en": "Editor last name 6"
+                    },
+                    "description": {
+                        "en": "The surname of the sixth editor; don't wikilink, use 'editor6-link'."
+                    },
+                    "aliases": [
+                        "editor6"
+                    ],
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor6-first": {
+                    "label": {
+                        "en": "Editor first name 6"
+                    },
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the sixth editor; don't wikilink."
+                    },
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor7-last": {
+                    "label": {
+                        "en": "Editor last name 7"
+                    },
+                    "description": {
+                        "en": "The surname of the seventh editor; don't wikilink, use 'editor7-link'."
+                    },
+                    "aliases": [
+                        "editor7"
+                    ],
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor7-first": {
+                    "label": {
+                        "en": "Editor first name 7"
+                    },
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the seventh editor; don't wikilink."
+                    },
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor8-last": {
+                    "label": {
+                        "en": "Editor last name 8"
+                    },
+                    "description": {
+                        "en": "The surname of the eighth editor; don't wikilink, use 'editor8-link'."
+                    },
+                    "aliases": [
+                        "editor8"
+                    ],
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor8-first": {
+                    "label": {
+                        "en": "Editor first name 8"
+                    },
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the eighth editor; don't wikilink."
+                    },
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor9-last": {
+                    "label": {
+                        "en": "Editor last name 9"
+                    },
+                    "description": {
+                        "en": "The surname of the ninth editor; don't wikilink, use 'editor9-link'."
+                    },
+                    "aliases": [
+                        "editor9"
+                    ],
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor9-first": {
+                    "label": {
+                        "en": "Editor first name 9"
+                    },
+                    "description": {
+                        "en": "Given or first name, middle names, or initials of the ninth editor; don't wikilink."
+                    },
+                    "type": "line",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor2-link": {
+                    "label": {
+                        "en": "Editor link 2"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the second editor."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor2link",
+                        "editorlink2"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor3-link": {
+                    "label": {
+                        "en": "Editor link 3"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the third editor."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor3link",
+                        "editorlink3"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor4-link": {
+                    "label": {
+                        "en": "Editor link 4"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the fourth editor."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor4link",
+                        "editorlink4"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor5-link": {
+                    "label": {
+                        "en": "Editor link 5"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the fifth editor."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor5link",
+                        "editorlink5"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor6-link": {
+                    "label": {
+                        "en": "Editor link 6"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the sixth editor."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor6link",
+                        "editorlink6"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor7-link": {
+                    "label": {
+                        "en": "Editor link 7"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the seventh editor."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor7link",
+                        "editorlink7"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor8-link": {
+                    "label": {
+                        "en": "Editor link 8"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the eighth editor."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor8link",
+                        "editorlink8"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "editor9-link": {
+                    "label": {
+                        "en": "Editor link 9"
+                    },
+                    "description": {
+                        "en": "Title of existing Wikipedia article about the ninth editor."
+                    },
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor9link",
+                        "editorlink9"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "subscription": {
+                    "label": {
+                        "en": "Subscription required"
+                    },
+                    "description": {
+                        "en": "When set to yes, displays “(subscription required)” to indicate an online source that requires subscription"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "registration": {
+                    "label": {
+                        "en": "Registration required"
+                    },
+                    "description": {
+                        "en": "When set to yes, displays “(registration required)” to indicate an online source that requires registration"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "edition": {
+                    "label": {
+                        "en": "Edition"
+                    },
+                    "type": "string",
+                    "description": {
+                        "en": "Specify the edition or revision of the source, when applicable. For example: '2nd' or '5.1'. What you supply here is suffixed by ' ed.'"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "url-access": {
+                    "label": {
+                        "en": "URL access level"
+                    },
+                    "description": {
+                        "en": "Classification of the access restrictions on the URL ('registration', 'subscription' or 'limited')"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "bibcode-access": {
+                    "label": {
+                        "en": "Bibcode access level"
+                    },
+                    "description": {
+                        "en": "If the full text is available from ADS via this Bibcode, type 'free'."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "doi-access": {
+                    "label": {
+                        "en": "DOI access level"
+                    },
+                    "description": {
+                        "en": "If the full text is free to read via the DOI, type 'free'."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "hdl-access": {
+                    "label": {
+                        "en": "HDL access level"
+                    },
+                    "description": {
+                        "en": "If the full text is free to read via the HDL, type 'free'."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "jstor-access": {
+                    "label": {
+                        "en": "Jstor access level"
+                    },
+                    "description": {
+                        "en": "If the full text is free to read on Jstor, type 'free'."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "ol-access": {
+                    "label": {
+                        "en": "OpenLibrary access level"
+                    },
+                    "description": {
+                        "en": "If the full text is free to read on OpenLibrary, type 'free'."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "osti-access": {
+                    "label": {
+                        "en": "OSTI access level"
+                    },
+                    "description": {
+                        "en": "If the full text is free to read on OSTI, type 'free'."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "authors": {
+                    "label": {
+                        "en": "Authors list"
+                    },
+                    "description": {
+                        "en": "List of authors as a free form list. Use of this parameter is discouraged, \"lastn\" to \"firstn\" are preferable. Warning: do not use if last or any of its aliases are used."
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "people",
+                        "host",
+                        "credits"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                }
+            },
+            "maps": {
+                "proveit": {
+                    "main": "title",
+                    "textarea": [
+                        "quote"
+                    ]
+                },
+                "citoid": {
+                    "title": "title",
+                    "url": "url",
+                    "subject": "title",
+                    "publicationTitle": "website",
+                    "blogTitle": "website",
+                    "forumTitle": "website",
+                    "seriesTitle": "website",
+                    "websiteTitle": "website",
+                    "publisher": "publisher",
+                    "date": "date",
+                    "PMCID": "pmc",
+                    "PMID": "pmid",
+                    "oclc": "oclc",
+                    "pages": "pages",
+                    "series": "series",
+                    "accessDate": "access-date",
+                    "DOI": "doi",
+                    "language": "language",
+                    "contributor": "others",
+                    "author": [
+                        [
+                            "first",
+                            "last"
+                        ],
+                        [
+                            "first2",
+                            "last2"
+                        ],
+                        [
+                            "first3",
+                            "last3"
+                        ],
+                        [
+                            "first4",
+                            "last4"
+                        ],
+                        [
+                            "first5",
+                            "last5"
+                        ],
+                        [
+                            "first6",
+                            "last6"
+                        ],
+                        [
+                            "first7",
+                            "last7"
+                        ],
+                        [
+                            "first8",
+                            "last8"
+                        ],
+                        [
+                            "first9",
+                            "last9"
+                        ]
+                    ],
+                    "editor": [
+                        [
+                            "editor-first",
+                            "editor-last"
+                        ],
+                        [
+                            "editor2-first",
+                            "editor2-last"
+                        ],
+                        [
+                            "editor3-first",
+                            "editor3-last"
+                        ],
+                        [
+                            "editor4-first",
+                            "editor4-last"
+                        ],
+                        [
+                            "editor5-first",
+                            "editor5-last"
+                        ],
+                        [
+                            "editor6-first",
+                            "editor6-last"
+                        ],
+                        [
+                            "editor7-first",
+                            "editor7-last"
+                        ],
+                        [
+                            "editor8-first",
+                            "editor8-last"
+                        ],
+                        [
+                            "editor9-first",
+                            "editor9-last"
+                        ]
+                    ]
+                }
+            },
+            "paramOrder": [
+                "url",
+                "title",
+                "last",
+                "first",
+                "authorlink",
+                "authors",
+                "last2",
+                "first2",
+                "authorlink2",
+                "date",
+                "year",
+                "editor-last",
+                "editor-first",
+                "editor-link",
+                "editor2-last",
+                "editor2-first",
+                "editor2-link",
+                "website",
+                "series",
+                "publisher",
+                "location",
+                "page",
+                "pages",
+                "at",
+                "language",
+                "script-title",
+                "trans-title",
+                "type",
+                "format",
+                "others",
+                "orig-year",
+                "publication-place",
+                "publication-date",
+                "nopp",
+                "arxiv",
+                "asin",
+                "asin-tld",
+                "bibcode",
+                "biorxiv",
+                "citeseerx",
+                "doi",
+                "doi-broken-date",
+                "isbn",
+                "issn",
+                "jfm",
+                "jstor",
+                "lccn",
+                "mr",
+                "oclc",
+                "ol",
+                "osti",
+                "pmc",
+                "pmid",
+                "rfc",
+                "ssrn",
+                "zbl",
+                "id",
+                "url-access",
+                "archive-url",
+                "archive-date",
+                "dead-url",
+                "access-date",
+                "quote",
+                "ref",
+                "postscript",
+                "subscription",
+                "registration",
+                "separator",
+                "layurl",
+                "laysource",
+                "laydate",
+                "author-mask",
+                "last3",
+                "first3",
+                "authorlink3",
+                "last4",
+                "first4",
+                "authorlink4",
+                "last5",
+                "first5",
+                "authorlink5",
+                "last6",
+                "first6",
+                "authorlink6",
+                "last7",
+                "first7",
+                "authorlink7",
+                "last8",
+                "first8",
+                "authorlink8",
+                "last9",
+                "first9",
+                "authorlink9",
+                "author-name-separator",
+                "author-separator",
+                "display-authors",
+                "lastauthoramp",
+                "editor3-last",
+                "editor3-first",
+                "editor3-link",
+                "editor4-last",
+                "editor4-first",
+                "editor4-link",
+                "editor5-last",
+                "editor5-first",
+                "editor5-link",
+                "editor6-last",
+                "editor6-first",
+                "editor6-link",
+                "editor7-last",
+                "editor7-first",
+                "editor7-link",
+                "editor8-last",
+                "editor8-first",
+                "editor8-link",
+                "editor9-last",
+                "editor9-first",
+                "editor9-link",
+                "edition",
+                "bibcode-access",
+                "doi-access",
+                "hdl-access",
+                "jstor-access",
+                "ol-access",
+                "osti-access"
+            ],
+            "format": "inline",
+            "sets": []
+        },
+        "Template:Col-begin": {
+            "title": "Template:Col-begin",
+            "description": {
+                "en": "This template starts a multi-column table."
+            },
+            "params": {
+                "width": {
+                    "label": {
+                        "en": "Table width"
+                    },
+                    "type": "string",
+                    "description": {
+                        "en": "The width of the complete table,  defined as a percent (ie 50%), typically no more than 95%"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                }
+            },
+            "format": null,
+            "paramOrder": [
+                "width"
+            ],
+            "sets": [],
+            "maps": {}
+        },
+        "Template:Col-end": {
+            "title": "Template:Col-end",
+            "description": {
+                "en": "This template ends a multi-column table started with Col-begin. This template takes no parameters. "
+            },
+            "params": {},
+            "format": null,
+            "paramOrder": [],
+            "sets": [],
+            "maps": {}
+        },
+        "Template:Col-break": {
+            "title": "Template:Col-break",
+            "description": {
+                "en": "This template triggers the start of each column in a multi-column table."
+            },
+            "params": {
+                "width": {
+                    "label": {
+                        "en": "Column width"
+                    },
+                    "type": "string",
+                    "description": {
+                        "en": "Width of the column, defined as a percent (ie 50%)"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                }
+            },
+            "format": null,
+            "paramOrder": [
+                "width"
+            ],
+            "sets": [],
+            "maps": {}
+        },
+        "#titles": {
+            "./Template:Cite_web": "Template:Cite web",
+            "./Template:Col-begin": "Template:Col-begin",
+            "./Template:Col-end": "Template:Col-end",
+            "./Template:Col-break": "Template:Col-break"
+        }
+    },
+    "templatedata/fr": {
+        "Modèle:Lien web": {
+            "title": "Modèle:Lien web",
+            "description": {
+                "fr": "Pour mettre un site web en référence (menu \"Citer\") ou dans un modèle (menu \"Insérer\"), remplissez les champ suivants. \nLes astérisques * (à côté du nom du champ) sont les champs obligatoires pour que la référence ou le modèle s'affiche correctement."
+            },
+            "params": {
+                "langue": {
+                    "suggested": true,
+                    "description": {
+                        "fr": "Langue dans laquelle est écrite la page web. Au choix : \n- nom de la langue en français (français, anglais, russe, etc.) ; \n- code langue (fr, en, etc). Voir la page: « Modèle:Code langue 2#Liste des codes »."
+                    },
+                    "type": "line",
+                    "aliases": [
+                        "lang",
+                        "language"
+                    ],
+                    "default": {
+                        "fr": "français"
+                    },
+                    "label": null,
+                    "required": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null
+                },
+                "format": {
+                    "description": {
+                        "fr": "Format du texte du lien (par exemple pdf, doc ou xls) qui sera affiché entre crochets. HTML est le format par défaut et ne sera pas indiqué."
+                    },
+                    "type": "line",
+                    "example": {
+                        "fr": "pdf"
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "auteur1": {
+                    "description": {
+                        "fr": "Le nom de l'auteur de la page web."
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "auteurs",
+                        "auteur",
+                        "author"
+                    ],
+                    "example": {
+                        "fr": "Marguerite Yourcenar"
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "date": {
+                    "suggested": true,
+                    "description": {
+                        "fr": "Formats acceptés:  07/05/2015 ou 07-05-2015 ou 7 mai 2015 ou 07 mai 2015 ou  2015-05-07"
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "en ligne le",
+                        "en ligne"
+                    ],
+                    "example": {
+                        "fr": "9 novembre 1989"
+                    },
+                    "label": null,
+                    "required": false,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "nom1": {
+                    "type": "string",
+                    "aliases": [
+                        "nom",
+                        "last1",
+                        "last"
+                    ],
+                    "description": {
+                        "fr": "Nom de famille de l'auteur (paramètre alternatif à auteur)."
+                    },
+                    "example": {
+                        "fr": "Poe"
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "prénom1": {
+                    "aliases": [
+                        "prénom",
+                        "first1",
+                        "first"
+                    ],
+                    "type": "string",
+                    "description": {
+                        "fr": "Prénom de l'auteur (paramètre alternatif à auteur)."
+                    },
+                    "example": {
+                        "fr": "Edgar Allan"
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "lien auteur": {
+                    "description": {
+                        "fr": "Nom de l'article Wikipédia consacré à l'auteur."
+                    },
+                    "type": "string",
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "responsabilité1": {
+                    "type": "string",
+                    "description": {
+                        "fr": "Responsabilité assumée par le premier auteur."
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "directeur1": {
+                    "type": "string",
+                    "description": {
+                        "fr": "Si le premier auteur est aussi directeur de publication (si c'est le cas, indiquer oui)."
+                    },
+                    "example": {
+                        "fr": "oui"
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "auteur2": {
+                    "description": {
+                        "fr": "Le nom du deuxième auteur de la page web."
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "author2"
+                    ],
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "nom2": {
+                    "type": "string",
+                    "aliases": [
+                        "last2"
+                    ],
+                    "description": {
+                        "fr": "Nom de famille du deuxième auteur (paramètre alternatif à auteur2)."
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "prénom2": {
+                    "aliases": [
+                        "first2"
+                    ],
+                    "type": "string",
+                    "description": {
+                        "fr": "Prénom du deuxième auteur (paramètre alternatif à auteur2)."
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "lien auteur2": {
+                    "description": {
+                        "fr": "Nom de l'article Wikipédia consacré au deuxième auteur."
+                    },
+                    "type": "string",
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "responsabilité2": {
+                    "type": "string",
+                    "description": {
+                        "fr": "Responsabilité assumée par le deuxième auteur."
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "directeur2": {
+                    "type": "string",
+                    "description": {
+                        "fr": "Si le deuxième auteur est aussi directeur de publication (si c'est le cas, indiquer oui)."
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "et al.": {
+                    "label": {
+                        "fr": "et al. ?"
+                    },
+                    "type": "string",
+                    "description": {
+                        "fr": "Si ce paramètre vaut oui, « et al. » sera inséré à la fin de la chaîne de responsabilité principale (ce qui indique que tous les auteurs ne sont pas cités — volontairement ou non)."
+                    },
+                    "aliases": [
+                        "et alii"
+                    ],
+                    "example": {
+                        "fr": "oui"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "auteur institutionnel": {
+                    "type": "string",
+                    "description": {
+                        "fr": "Si l'auteur n'est pas un personne physique, mais une personne morale (organisation, association, entreprise…)."
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "coauteurs": {
+                    "description": {
+                        "fr": "D’autres auteurs (facultatif et uniquement si auteur est donné)."
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "coauteur",
+                        "coauthors"
+                    ],
+                    "deprecated": true,
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "autovalue": null,
+                    "default": null
+                },
+                "traducteur": {
+                    "label": {
+                        "fr": "Traducteur"
+                    },
+                    "type": "string",
+                    "description": {
+                        "fr": "Nom du (des) traducteur(s) de l’article ; mettre un (dir.) s’il existe un traducteur principal."
+                    },
+                    "aliases": [
+                        "trad",
+                        "traduction"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "photographe": {
+                    "label": {
+                        "fr": "Photographe"
+                    },
+                    "type": "string",
+                    "description": {
+                        "fr": "Nom de la personne ayant réalisé les photographies s'il y en a."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "titre": {
+                    "label": {
+                        "fr": "Titre de la page"
+                    },
+                    "type": "string",
+                    "required": true,
+                    "aliases": [
+                        "title"
+                    ],
+                    "suggested": false,
+                    "description": null,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "sous-titre": {
+                    "label": {
+                        "fr": "Sous-titre"
+                    },
+                    "type": "string",
+                    "description": {
+                        "fr": "Sous-titre de l’article."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "url": {
+                    "label": {
+                        "fr": "Adresse web (URL)"
+                    },
+                    "description": {
+                        "fr": "URL (adresse) de la page web."
+                    },
+                    "type": "string",
+                    "required": true,
+                    "aliases": [
+                        "url texte",
+                        "lire en ligne"
+                    ],
+                    "example": {
+                        "fr": "http://www.lemonde.fr/campus/article/2015/05/19/si-l-apprentissage-des-langues-est-une-priorite-c-est-en-primaire-qu-il-faut-porter-l-effort_4636373_4401467.html"
+                    },
+                    "suggested": false,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "série": {
+                    "description": {
+                        "fr": "Nom de la série ou de la collection."
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "work"
+                    ],
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "site": {
+                    "suggested": true,
+                    "description": {
+                        "fr": "Indiquer le nom du site (avec un wikilien vers l'article Wikipédia, s'il existe) ou, si le nom du site n'est pas explicite, une description en quelques mots."
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "périodique",
+                        "website"
+                    ],
+                    "example": {
+                        "fr": "lemonde.fr"
+                    },
+                    "label": null,
+                    "required": false,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "lieu": {
+                    "label": {
+                        "fr": "Lieu d'édition"
+                    },
+                    "type": "string",
+                    "description": {
+                        "fr": "Lieu d'édition du périodique."
+                    },
+                    "aliases": [
+                        "lieu édition",
+                        "location"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "éditeur": {
+                    "description": {
+                        "fr": "L’éditeur du support bibliographique."
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "publisher",
+                        "editeur"
+                    ],
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "jour": {
+                    "description": {
+                        "fr": "Le jour de publication comme 20."
+                    },
+                    "type": "number",
+                    "aliases": [
+                        "day"
+                    ],
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "mois": {
+                    "description": {
+                        "fr": "Le mois de publication comme juillet."
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "month"
+                    ],
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "année": {
+                    "description": {
+                        "fr": "L’année en quatre chiffres comme 2013."
+                    },
+                    "type": "number",
+                    "aliases": [
+                        "year"
+                    ],
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "isbn": {
+                    "label": {
+                        "fr": "ISBN"
+                    },
+                    "description": {
+                        "fr": "ISBN du support bibliographique."
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "ISBN"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "issn": {
+                    "type": "string",
+                    "label": {
+                        "fr": "ISSN"
+                    },
+                    "description": {
+                        "fr": "ISSN de la publication."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "oclc": {
+                    "type": "number",
+                    "label": {
+                        "fr": "OCLC"
+                    },
+                    "description": {
+                        "fr": "Identifiant OCLC."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "pmid": {
+                    "label": {
+                        "fr": "PMID"
+                    },
+                    "type": "number",
+                    "description": {
+                        "fr": "Identifiant PubMed."
+                    },
+                    "aliases": [
+                        "PMID"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "pmcid": {
+                    "label": {
+                        "fr": "PMCID"
+                    },
+                    "type": "string",
+                    "description": {
+                        "fr": "Identifiant PubMed Central."
+                    },
+                    "aliases": [
+                        "pmc"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "doi": {
+                    "label": {
+                        "fr": "DOI"
+                    },
+                    "type": "string",
+                    "description": {
+                        "fr": "Identifiant Digital Object Identifier."
+                    },
+                    "aliases": [
+                        "DOI"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "jstor": {
+                    "label": {
+                        "fr": "JStor"
+                    },
+                    "type": "string",
+                    "description": {
+                        "fr": "Identifiant Serial Item and Contribution Identifier."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "bibcode": {
+                    "type": "string",
+                    "description": {
+                        "fr": "Identifiant bibcode."
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "math reviews": {
+                    "type": "string",
+                    "description": {
+                        "fr": "Identifiant MR."
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "zbl": {
+                    "type": "string",
+                    "label": {
+                        "fr": "zbMATH"
+                    },
+                    "description": {
+                        "fr": "Identifiant zbMATH."
+                    },
+                    "aliases": [
+                        "zbmath"
+                    ],
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "arxiv": {
+                    "type": "string",
+                    "label": {
+                        "fr": "arXiv"
+                    },
+                    "description": {
+                        "fr": "Identifiant arXiv."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "consulté le": {
+                    "suggested": true,
+                    "description": {
+                        "fr": "La date d’accès au lien. Permet de surveiller l’obsolescence du lien."
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "accessdate",
+                        "consulté",
+                        "consultée le"
+                    ],
+                    "autovalue": "",
+                    "example": {
+                        "fr": "13 avril 2015"
+                    },
+                    "label": null,
+                    "required": false,
+                    "deprecated": false,
+                    "default": null
+                },
+                "extrait": {
+                    "description": {
+                        "fr": "Permet de formater une citation de la publication dans la note de fin de page."
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "citation",
+                        "quote"
+                    ],
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "page": {
+                    "description": {
+                        "fr": "Un numéro, une liste ou une plage de pages. Est à associer à une citation."
+                    },
+                    "type": "string",
+                    "aliases": [
+                        "pages",
+                        "passage"
+                    ],
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "id": {
+                    "label": {
+                        "fr": "id"
+                    },
+                    "description": {
+                        "fr": "Identifiant unique dans la page qui inclut le modèle, permettant de créer un lien ancré vers cette référence."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "libellé": {
+                    "type": "string",
+                    "description": {
+                        "fr": "Libellé permettant d'identifier un renvoi bibliographique."
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "traduction titre": {
+                    "label": {
+                        "fr": "Traduction en français du titre"
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "description": null,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "description": {
+                    "description": {
+                        "fr": "Si la page web n'a pas de titre ou un titre trop vague, ce paramètre permet d'avoir une description en français de l’intérêt de cette page. Si la page à un titre cela peut permettre d'ajouter des informations importante comme un identifiant, numéro..."
+                    },
+                    "type": "string",
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                }
+            },
+            "maps": {
+                "citoid": {
+                    "language": "langue",
+                    "director": [
+                        [
+                            "prénom1",
+                            "nom1"
+                        ],
+                        [
+                            "prénom2",
+                            "nom2"
+                        ]
+                    ],
+                    "podcaster": [
+                        [
+                            "prénom1",
+                            "nom1"
+                        ],
+                        [
+                            "prénom2",
+                            "nom2"
+                        ]
+                    ],
+                    "author": [
+                        [
+                            "prénom1",
+                            "nom1"
+                        ],
+                        [
+                            "prénom2",
+                            "nom2"
+                        ]
+                    ],
+                    "title": "titre",
+                    "subject": "titre",
+                    "url": "url",
+                    "series": "série",
+                    "websiteTitle": "site",
+                    "publicationTitle": "site",
+                    "blogTitle": "site",
+                    "forumTitle": "site",
+                    "publisher": "éditeur",
+                    "studio": "éditeur",
+                    "date": "date",
+                    "ISBN": [
+                        "isbn"
+                    ],
+                    "ISSN": [
+                        "issn"
+                    ],
+                    "PMID": "pmid",
+                    "PMCID": "pmcid",
+                    "DOI": "doi",
+                    "accessDate": "consulté le",
+                    "pages": "page"
+                }
+            },
+            "paramOrder": [
+                "langue",
+                "format",
+                "auteur1",
+                "nom1",
+                "prénom1",
+                "lien auteur",
+                "responsabilité1",
+                "directeur1",
+                "auteur2",
+                "nom2",
+                "prénom2",
+                "lien auteur2",
+                "responsabilité2",
+                "directeur2",
+                "et al.",
+                "auteur institutionnel",
+                "coauteurs",
+                "traducteur",
+                "photographe",
+                "titre",
+                "sous-titre",
+                "traduction titre",
+                "description",
+                "url",
+                "série",
+                "site",
+                "lieu",
+                "éditeur",
+                "jour",
+                "mois",
+                "année",
+                "date",
+                "isbn",
+                "issn",
+                "oclc",
+                "pmid",
+                "pmcid",
+                "doi",
+                "jstor",
+                "bibcode",
+                "math reviews",
+                "zbl",
+                "arxiv",
+                "consulté le",
+                "extrait",
+                "page",
+                "id",
+                "libellé"
+            ],
+            "format": null,
+            "sets": []
+        },
+        "#titles": {}
+    },
+    "titlepair/en/sv": {
+        "Template:Col-begin": {
+            "sourceTitle": "Template:Col-begin",
+            "targetTitle": "Mall:Col-begin",
+            "missing": false
+        },
+        "Template:Col-break": {
+            "sourceTitle": "Template:Col-break",
+            "targetTitle": "Mall:Col-break",
+            "missing": false
+        },
+        "Template:Col-end": {
+            "sourceTitle": "Template:Col-end",
+            "targetTitle": "Mall:Col-end",
+            "missing": false
+        },
+        "#titles": {
+            "./Template:Col-begin": "Template:Col-begin",
+            "./Template:Col-break": "Template:Col-break",
+            "./Template:Col-end": "Template:Col-end"
+        }
+    },
+    "templatedata/sv": {
+        "Mall:Col-begin": {
+            "title": "Mall:Col-begin",
+            "params": {
+                "class": {},
+                "bgColor": {},
+                "width": {},
+                "font-size": {}
+            }
+        },
+        "Mall:Col-end": {
+            "title": "Mall:Col-end",
+            "params": {}
+        },
+        "Mall:Col-break": {
+            "title": "Mall:Col-break",
+            "params": {
+                "width": {},
+                "align": {},
+                "valign": {},
+                "gap": {}
+            }
+        },
+        "#titles": {}
+    }
+}

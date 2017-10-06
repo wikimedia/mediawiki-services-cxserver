@@ -1,17 +1,25 @@
 'use strict';
 
-var assert = require( '../utils/assert.js' ),
-	server = require( '../utils/server.js' ),
-	async = require( 'async' ),
-	Adapter = require( '../../lib/Adapter' ),
-	tests = require( './MWLink.test.json' );
+const Adapter = require( '../../lib/Adapter' );
+const MWApiRequestManager = require( '../../lib/mw/ApiRequestManager' );
+const TestUtils = require( '../testutils' );
+const assert = require( '../utils/assert' );
+const async = require( 'async' );
+const server = require( '../utils/server' );
+
+const mocks = require( './MWLink.mocks.json' );
+const tests = require( './MWLink.test.json' );
 
 describe( 'Link Adaptation tests', function () {
-	async.forEach( tests, function ( test ) {
+	const api = new MWApiRequestManager( server.config );
+	const mocker = new TestUtils( api );
+	mocker.setup( mocks );
+
+	async.each( tests, function ( test, done ) {
 		it( 'should not have any errors when: ' + test.desc, function () {
 			var translationunit, adapter;
 
-			adapter = new Adapter( test.from, test.to, server.config );
+			adapter = new Adapter( test.from, test.to, api, server.config );
 			translationunit = adapter.getAdapter( test.source );
 			return translationunit.adapt( test.source ).then( function ( adaptedNode ) {
 				let expectedDataCX, actualDataCX;
@@ -30,7 +38,8 @@ describe( 'Link Adaptation tests', function () {
 					assert.deepEqual( !!actualDataCX.targetTitle.pageimage, !!expectedDataCX.targetTitle.pageimage );
 					assert.deepEqual( !!actualDataCX.targetTitle.terms, !!expectedDataCX.targetTitle.terms );
 				}
+				done( null );
 			} );
 		} );
-	} );
+	}, mocker.dump.bind( mocker, 'test/translationunits/MWLink.mocks.json' ) );
 } );

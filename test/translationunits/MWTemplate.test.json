@@ -110,7 +110,7 @@
 					}
 				],
 				"data-mw": {
-					"parts": [{
+					"parts": [ {
 						"template": {
 							"target": {
 								"wt": "Lien web",
@@ -144,7 +144,7 @@
 							},
 							"i": 0
 						}
-					}]
+					} ]
 				}
 			}
 		}

@@ -1,19 +1,27 @@
 'use strict';
 
-const assert = require( '../utils/assert.js' ),
-	server = require( '../utils/server.js' ),
-	async = require( 'async' ),
-	Adapter = require( '../../lib/Adapter' ),
-	TestClient = require( '../../lib/mt' ).TestClient,
-	tests = require( './MWReference.test.json' );
+const Adapter = require( '../../lib/Adapter' );
+const MWApiRequestManager = require( '../../lib/mw/ApiRequestManager' );
+const TestClient = require( '../../lib/mt' ).TestClient;
+const TestUtils = require( '../testutils' );
+const assert = require( '../utils/assert' );
+const async = require( 'async' );
+const server = require( '../utils/server.js' );
+
+// const mocks = require( './MWReference.mocks.json' );
+const tests = require( './MWReference.test.json' );
 
 describe( 'Reference adaptation', () => {
 	let config = server.config;
 	config.conf.mtClient = new TestClient( config );
+	const api = new MWApiRequestManager( config );
+	// TODO: Currently this is not making any api requests
+	const mocker = new TestUtils( api );
+	// mocker.setup( mocks );
 
-	async.forEach( tests, ( test ) => {
+	async.each( tests, ( test, done ) => {
 		it( test.desc, () => {
-			const adapter = new Adapter( test.from, test.to, server.config );
+			const adapter = new Adapter( test.from, test.to, api, server.config );
 			const translationunit = adapter.getAdapter( test.source );
 
 			assert.ok( adapter, 'There is an adapter for references' );
@@ -21,13 +29,14 @@ describe( 'Reference adaptation', () => {
 			return translationunit.adapt( test.source ).then( ( adaptedNode ) => {
 				const expectedDataCX = JSON.parse( adaptedNode.attributes[ 'data-cx' ] );
 				const actualDataCX = test.result.attributes[ 'data-cx' ];
-				assert.deepEqual( expectedDataCX, actualDataCX, 'data-cx matches' );
+				assert.deepEqual( actualDataCX, expectedDataCX, 'data-cx matches' );
 
 				const expectedDataMW = JSON.parse( adaptedNode.attributes[ 'data-mw' ] );
 				const actualDataMW = test.result.attributes[ 'data-mw' ];
-				assert.deepEqual( expectedDataMW, actualDataMW, 'data-mw matches' );
+				assert.deepEqual( actualDataMW, expectedDataMW, 'data-mw matches' );
 
+				done( null );
 			} );
 		} );
-	} );
+	}, mocker.dump.bind( mocker, 'test/translationunits/MWReference.mocks.json' ) );
 } );
