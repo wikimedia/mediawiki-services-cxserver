@@ -86,6 +86,7 @@ services:
         Matxin:
           api: http://matxin.elhuyar.eus/API
           languages: config/Matxin.yaml
+          key: null
       dictionary:
         Dictd:
           languages: config/Dictd.yaml
