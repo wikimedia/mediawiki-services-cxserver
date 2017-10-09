@@ -33,7 +33,7 @@
     "service-runner": "^2.2.5",
     "swagger-router": "^0.4.6",
     "swagger-ui": "git+https://github.com/wikimedia/swagger-ui#master",
-    "dompurify": "^0.9.0",
+    "dompurify": "^1.0.2",
     "jsdom": "^10.1.0"
   },
   "devDependencies": {
