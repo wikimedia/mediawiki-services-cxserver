@@ -7,7 +7,6 @@ var http = require( 'http' ),
 	bodyParser = require( 'body-parser' ),
 	fs = BBPromise.promisifyAll( require( 'fs' ) ),
 	sUtil = require( './lib/util' ),
-	apiUtil = require( './lib/api-util' ),
 	packageInfo = require( './package.json' ),
 	yaml = require( 'js-yaml' );
 
@@ -59,9 +58,6 @@ function initApp( options ) {
 			}
 		}
 	}
-
-	// set up the request templates for the APIs
-	apiUtil.setupApiTemplates( app );
 
 	// set up the spec
 	if ( !app.conf.spec ) {
