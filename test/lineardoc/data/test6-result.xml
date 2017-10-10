@@ -1,0 +1,46 @@
+<body>
+	<cxblockspace />
+	<cxblockspace />
+	<h1>
+		<cxtextblock>  <cxtextchunk>1</cxtextchunk></cxtextblock>
+	</h1><cxblockspace />
+	<p>
+		<cxtextblock>  <cxtextchunk>a</cxtextchunk></cxtextblock>
+	</p>
+	<cxblockspace /><cxblockspace />
+	<cxblockspace />
+	<h1>
+		<cxtextblock>  <cxtextchunk>2</cxtextchunk></cxtextblock>
+	</h1>
+	<cxblockspace />
+	<p>
+		<cxtextblock>  <cxtextchunk>b</cxtextchunk></cxtextblock>
+	</p>
+	<cxblockspace /><cxblockspace />
+	<h2>
+		<cxtextblock>  <cxtextchunk>2.1</cxtextchunk></cxtextblock>
+	</h2><cxblockspace />
+	<p>
+		<cxtextblock>  <cxtextchunk>c</cxtextchunk></cxtextblock>
+	</p>
+	<cxblockspace /><cxblockspace /><cxblockspace />
+	<h2>
+		<cxtextblock>  <cxtextchunk>2.2</cxtextchunk></cxtextblock>
+	</h2>
+	<cxblockspace />
+	<p>
+		<cxtextblock>  <cxtextchunk>d</cxtextchunk></cxtextblock>
+	</p>
+	<cxblockspace /><cxblockspace />
+	<h3>
+		<cxtextblock>  <cxtextchunk>2.2.1</cxtextchunk></cxtextblock>
+	</h3>
+	<cxblockspace />
+	<p>
+		<cxtextblock>  <cxtextchunk>e</cxtextchunk></cxtextblock>
+	</p>
+	<cxblockspace /><cxblockspace /><cxblockspace /><cxblockspace /><cxblockspace />
+	<h1><cxtextblock>  <cxtextchunk>3</cxtextchunk></cxtextblock>
+	</h1><cxblockspace />
+	<p><cxtextblock>  <cxtextchunk>f</cxtextchunk></cxtextblock></p><cxblockspace /><cxblockspace />
+</body>
