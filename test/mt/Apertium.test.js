@@ -95,9 +95,6 @@ tests = [
 ];
 
 describe( 'Apertium machine translation', function () {
-	before( function () {
-		return server.start();
-	} );
 	async.forEach( tests, function ( test ) {
 		it( 'Test: ' + test.title, function () {
 			var textTranslations, apertium;
