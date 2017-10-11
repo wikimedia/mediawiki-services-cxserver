@@ -1,5 +1,53 @@
 [
 	{
+		"desc": "Template with no equivalents",
+		"from": "fi",
+		"to": "ajt",
+		"source": {
+			"attributes": {
+				"id": "mwPL",
+				"typeof": "mw:Transclusion",
+				"data-mw": {
+					"parts": [
+						{
+							"template": {
+								"target": {
+									"wt": "Parasym",
+									"href": "./Malline:Parasym"
+								},
+								"params": {},
+								"i": 0
+							}
+						}
+					]
+				}
+			}
+		},
+		"result": {
+			"attributes": {
+				"data-cx": [
+					{
+						"adapted": false
+					}
+				],
+				"data-mw": {
+					"parts": [
+						{
+							"template": {
+								"target": {
+									"wt": "Parasym",
+									"href": "./Malline:Parasym"
+								},
+								"params": {},
+								"i": 0
+							}
+						}
+					]
+				}
+			}
+		}
+	},
+	{
 		"desc": "Babel template",
 		"from": "fi",
 		"to": "sl",

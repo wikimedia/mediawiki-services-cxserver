@@ -1,4 +1,12 @@
 {
+    "titlepair/fi/ajt": {
+        "Malline:Parasym": {
+            "sourceTitle": "Malline:Parasym"
+        },
+        "#titles": {
+            "./Malline:Parasym": "Malline:Parasym"
+        }
+    },
     "titlepair/fi/sl": {
         "Malline:Babel": {
             "sourceTitle": "Malline:Babel",
