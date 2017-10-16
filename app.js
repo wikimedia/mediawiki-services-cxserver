@@ -148,7 +148,7 @@ function loadRoutes( app ) {
 				}
 				// import the route file
 				route = require( __dirname + '/lib/routes/' + fname );
-				return route( app );
+				return route.create ? route.create( app ) : route( app );
 			} ).then( function ( route ) {
 				if ( route === undefined ) {
 					return undefined;

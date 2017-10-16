@@ -201,54 +201,6 @@ paths:
               contents: /.+/
             headers:
               content-type: application/json
-  /v1/translate/{from}/{to}{/provider}:
-    post:
-      tags:
-        - Machine translation
-      description: Translate the given content from source language to target langauge. Also adapt the content for the target language wiki. Some machine translation providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
-      consumes:
-        - application/x-www-form-urlencoded
-      produces:
-        - application/json
-      parameters:
-        - name: from
-          in: path
-          description: The source language code
-          type: string
-          required: true
-        - name: to
-          in: path
-          description: The target language code
-          type: string
-          required: true
-        - name: provider
-          in: path
-          description: The machine translation provider id
-          type: string
-          required: false
-          enum:
-           - Apertium
-        - name: html
-          in: formData
-          description: The HTML content to translate
-          type: string
-          required: true
-          x-textarea: true
-      x-amples:
-        - title: Machine translate an HTML fragment using Apertium, adapt the links to target language wiki.
-          request:
-            params:
-              from: en
-              to: es
-              provider: Apertium
-            body:
-              html: <p><a rel="mw:WikiLink" href='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='Atomic number'>atomic number</a> 8.</p>
-          response:
-            status: 200
-            body:
-              contents: /.+/
-            headers:
-              content-type: application/json
   /v1/list/tool/{tool}:
     get:
       tags:
@@ -355,6 +307,56 @@ paths:
             status: 200
             headers:
               content-type: application/json
+  # from routes/v2.js
+  /v2/translate/{from}/{to}{/provider}:
+    post:
+      tags:
+        - Machine translation
+      description: Translate the given content from source language to target langauge. Also adapt the content for the target language wiki. Some machine translation providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
+      consumes:
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+      parameters:
+        - name: from
+          in: path
+          description: The source language code
+          type: string
+          required: true
+        - name: to
+          in: path
+          description: The target language code
+          type: string
+          required: true
+        - name: provider
+          in: path
+          description: The machine translation provider id
+          type: string
+          required: false
+          enum:
+           - Apertium
+        - name: html
+          in: formData
+          description: The HTML content to translate
+          type: string
+          required: true
+          x-textarea: true
+      x-amples:
+        - title: Machine translate an HTML fragment using Apertium, adapt the links to target language wiki.
+          request:
+            params:
+              from: en
+              to: es
+              provider: Apertium
+            body:
+              html: <p><a rel="mw:WikiLink" href='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='Atomic number'>atomic number</a> 8.</p>
+          response:
+            status: 200
+            body:
+              contents: /.+/
+            headers:
+              content-type: application/json
+
   # from routes/info.js
   /_info:
     get:
@@ -379,7 +381,6 @@ paths:
     get:
       tags:
         - Service information
-        - Service name
       description: Gets the name of the service
       produces:
         - application/json
@@ -396,7 +397,6 @@ paths:
     get:
       tags:
         - Service information
-        - Service version
       description: Gets the running version of the service
       produces:
         - application/json
@@ -413,7 +413,6 @@ paths:
     get:
       tags:
         - Service information
-        - Service homepage
       description: Redirects to the home page
       x-amples:
         - title: redirect to the home page
