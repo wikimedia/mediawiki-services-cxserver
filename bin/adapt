@@ -3,7 +3,8 @@ const fs = require( 'fs' ),
 	yaml = require( 'js-yaml' ),
 	Adapter = require( __dirname + '/../lib/Adapter' ),
 	TestClient = require( __dirname + '/../lib/mt' ).TestClient,
-	Normalizer = require( __dirname + '/../lib/lineardoc' ).Normalizer;
+	Normalizer = require( __dirname + '/../lib/lineardoc' ).Normalizer,
+	MWApiRequestManager = require( __dirname + '/../lib/mw/ApiRequestManager' );
 
 let config = yaml.load( fs.readFileSync( 'config.yaml' ) );
 if ( !config ) {
@@ -39,9 +40,10 @@ if ( xhtml.trim() === '' || process.argv.length !== 4 ) {
 
 cxConfig.conf.mtClient = new TestClient( cxConfig );
 
-let from = process.argv[ 2 ];
-let to = process.argv[ 3 ];
-let adapter = new Adapter( from, to, cxConfig );
+const from = process.argv[ 2 ];
+const to = process.argv[ 3 ];
+const api = new MWApiRequestManager( cxConfig );
+const adapter = new Adapter( from, to, api, cxConfig );
 adapter.adapt( xhtml ).then( function ( result ) {
 	result = normalize( result.getHtml() );
 	process.stdout.write( result + '\n' );
