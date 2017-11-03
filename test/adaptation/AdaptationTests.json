@@ -108,6 +108,7 @@
 			},
 			"mwCw": {
 				"href": "Número atómico",
+				"title": "Número atómico",
 				"data-cx": {
 					"adapted": true,
 					"targetTitle": {
@@ -137,6 +138,7 @@
 				}
 			},
 			"mwDA": {
+				"href": "Anfígeno",
 				"title": "Anfígeno",
 				"data-cx": {
 					"adapted": true,
@@ -159,7 +161,6 @@
 				}
 			},
 			"mwDQ": {
-				"title": "Group (periodic table)",
 				"data-cx": {
 					"adapted": false,
 					"sourceTitle": {
@@ -177,6 +178,7 @@
 				}
 			},
 			"mwDg": {
+				"href": "Tabla periódica de los elementos",
 				"title": "Tabla periódica de los elementos",
 				"data-cx": {
 					"adapted": true,
@@ -207,6 +209,7 @@
 				}
 			},
 			"mwDw": {
+				"href": "Reacción química",
 				"title": "Reacción química",
 				"data-cx": {
 					"adapted": true,
@@ -232,6 +235,7 @@
 				}
 			},
 			"mwEA": {
+				"href": "No metal",
 				"title": "No metal",
 				"data-cx": {
 					"adapted": true,
@@ -258,6 +262,7 @@
 			},
 			"mwEQ": {
 				"href": "Oxidante",
+				"title": "Oxidante",
 				"data-cx": {
 					"adapted": true,
 					"targetTitle": {
@@ -318,6 +323,7 @@
 				}
 			},
 			"mwEw": {
+				"href": "Compuesto químico",
 				"title": "Compuesto químico",
 				"data-cx": {
 					"adapted": true,
@@ -348,6 +354,7 @@
 				}
 			},
 			"mwFA": {
+				"href": "Abundancia de los elementos químicos",
 				"title": "Abundancia de los elementos químicos",
 				"data-cx": {
 					"adapted": true,
@@ -367,6 +374,7 @@
 				}
 			},
 			"mwFQ": {
+				"href": "Hidrógeno",
 				"title": "Hidrógeno",
 				"data-cx": {
 					"adapted": true,
@@ -397,6 +405,7 @@
 				}
 			},
 			"mwFg": {
+				"href": "Helio",
 				"title": "Helio",
 				"data-cx": {
 					"adapted": true,
@@ -428,6 +437,7 @@
 			},
 			"mwFw": {
 				"href": "Condiciones normalizadas de presión y temperatura",
+				"title": "Condiciones normalizadas de presión y temperatura",
 				"data-cx": {
 					"adapted": true,
 					"targetTitle": {
@@ -444,6 +454,7 @@
 				}
 			},
 			"mwGA": {
+				"href": "Enlace químico",
 				"title": "Enlace químico",
 				"data-cx": {
 					"adapted": true,
@@ -469,6 +480,7 @@
 				}
 			},
 			"mwGQ": {
+				"href": "Alótropos del oxígeno",
 				"title": "Alótropos del oxígeno",
 				"data-cx": {
 					"adapted": true,
@@ -483,6 +495,7 @@
 				}
 			},
 			"mwGg": {
+				"href": "Molécula diatómica",
 				"title": "Molécula diatómica",
 				"data-cx": {
 					"adapted": true,
@@ -510,6 +523,7 @@
 				}
 			},
 			"mwGw": {
+				"href": "Gas",
 				"title": "Gas",
 				"data-cx": {
 					"adapted": true,
@@ -540,6 +554,8 @@
 				}
 			},
 			"mwHQ": {
+				"href": "Atmósfera terrestre",
+				"title": "Atmósfera terrestre",
 				"data-cx": {
 					"adapted": true,
 					"targetTitle": {
@@ -569,6 +585,8 @@
 				}
 			},
 			"mwHg": {
+				"href": "Atmósfera terrestre",
+				"title": "Atmósfera terrestre",
 				"data-cx": {
 					"adapted": true,
 					"targetTitle": {
@@ -598,6 +616,8 @@
 				}
 			},
 			"mwHw": {
+				"href": "Corteza terrestre",
+				"title": "Corteza terrestre",
 				"data-cx": {
 					"adapted": true,
 					"targetTitle": {
@@ -635,6 +655,8 @@
 		"source": "<figure class='mw-default-size mw-halign-left' typeof='mw:Image/Thumb' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a><figcaption id='mwVA'><a rel='mw:WikiLink' href='./Philo_of_Byzantium' title='Philo of Byzantium' id='mwVQ'>Philo's</a> experiment inspired later <a rel='mw:WikiLink' href='./Detective' title='Detective' id='mwVg'>investigators</a>.</figcaption></figure>",
 		"resultAttributes": {
 			"mwVQ": {
+				"href": "Филон Византийский",
+				"title": "Филон Византийский",
 				"data-cx": {
 					"adapted": true,
 					"targetTitle": {
@@ -651,6 +673,8 @@
 				}
 			},
 			"mwVg": {
+				"href": "Детектив (профессия)",
+				"title": "Детектив (профессия)",
 				"data-cx": {
 					"adapted": true,
 					"targetTitle": {
@@ -817,6 +841,7 @@
 		"source": "<p><link id='mwUQ' rel='mw:PageProp/Category' href='./Category:Planets'/></p>",
 		"resultAttributes": {
 			"mwUQ": {
+				"href": "വർഗ്ഗം:ഗ്രഹങ്ങൾ",
 				"data-cx": {
 					"adapted": true,
 					"sourceTitle": "Category:Planets",
