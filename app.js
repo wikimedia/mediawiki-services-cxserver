@@ -1,16 +1,15 @@
 'use strict';
 
-var http = require( 'http' ),
-	BBPromise = require( 'bluebird' ),
-	express = require( 'express' ),
-	compression = require( 'compression' ),
-	bodyParser = require( 'body-parser' ),
-	fs = BBPromise.promisifyAll( require( 'fs' ) ),
-	sUtil = require( './lib/util' ),
-	packageInfo = require( './package.json' ),
-	yaml = require( 'js-yaml' );
-
-require( 'core-js/shim' );
+const http = require( 'http' );
+const BBPromise = require( 'bluebird' );
+const express = require( 'express' );
+const compression = require( 'compression' );
+const bodyParser = require( 'body-parser' );
+const fs = BBPromise.promisifyAll( require( 'fs' ) );
+const sUtil = require( './lib/util' );
+const packageInfo = require( './package.json' );
+const yaml = require( 'js-yaml' );
+const addShutdown = require( 'http-shutdown' );
 
 /**
  * Creates an express app and initialises it
@@ -59,16 +58,31 @@ function initApp( options ) {
 		}
 	}
 
+	// set up header whitelisting for logging
+	if ( !app.conf.log_header_whitelist ) {
+		// eslint-disable-next-line camelcase
+		app.conf.log_header_whitelist = [
+			'cache-control', 'content-type', 'content-length', 'if-match',
+			'user-agent', 'x-request-id'
+		];
+	}
+
+	// eslint-disable-next-line camelcase
+	app.conf.log_header_whitelist = new RegExp( `^(?:${app.conf.log_header_whitelist.map( ( item ) => {
+		return item.trim();
+	} ).join( '|' )})$`, 'i' );
+
 	// set up the spec
 	if ( !app.conf.spec ) {
-		app.conf.spec = __dirname + '/spec.yaml';
+		app.conf.spec = `${__dirname}/spec.yaml`;
+
 	}
 
 	if ( app.conf.spec.constructor !== Object ) {
 		try {
 			app.conf.spec = yaml.safeLoad( fs.readFileSync( app.conf.spec ) );
 		} catch ( e ) {
-			app.logger.log( 'warn/spec', 'Could not load the spec: ' + e );
+			app.logger.log( 'warn/spec', `Could not load the spec: ${e}` );
 			app.conf.spec = {};
 		}
 	}
@@ -136,48 +150,47 @@ function initApp( options ) {
  */
 function loadRoutes( app ) {
 	// get the list of files in routes/
-	return fs.readdirAsync( __dirname + '/lib/routes' )
-		.map( function ( fname ) {
-			var route;
-
-			return BBPromise.try( function () {
-				// ... and then load each route
-				// but only if it's a js file
-				if ( !/\.js$/.test( fname ) ) {
-					return undefined;
-				}
-				// import the route file
-				route = require( __dirname + '/lib/routes/' + fname );
-				return route.create ? route.create( app ) : route( app );
-			} ).then( function ( route ) {
-				if ( route === undefined ) {
-					return undefined;
-				}
-				// check that the route exports the object we need
-				if ( route.constructor !== Object || !route.path || !route.router || !( route.api_version || route.skip_domain ) ) {
-					throw new TypeError( 'routes/' + fname + ' does not export the correct object!' );
-				}
-				// normalise the path to be used as the mount point
-				if ( route.path[ 0 ] !== '/' ) {
-					route.path = '/' + route.path;
-				}
-				if ( route.path[ route.path.length - 1 ] !== '/' ) {
-					route.path = route.path + '/';
-				}
-				if ( !route.skip_domain ) {
-					route.path = '/:domain/v' + route.api_version + route.path;
-				}
-				// wrap the route handlers with Promise.try() blocks
-				sUtil.wrapRouteHandlers( route, app );
-				// all good, use that route
-				app.use( route.path, route.router );
-			} );
-		} ).then( function () {
-			// Catch and handle propagated errors
-			sUtil.setErrorHandler( app );
-			// route loading is now complete, return the app object
-			return BBPromise.resolve( app );
+	return fs.readdirAsync( `${__dirname}/lib/routes` ).map( ( fname ) => {
+		return BBPromise.try( function () {
+			// ... and then load each route
+			// but only if it's a js file
+			if ( !/\.js$/.test( fname ) ) {
+				return undefined;
+			}
+			// import the route file
+			const route = require( `${__dirname}/lib/routes/${fname}` );
+			return route.create ? route.create( app ) : route( app );
+		} ).then( ( route ) => {
+			if ( route === undefined ) {
+				return undefined;
+			}
+			// check that the route exports the object we need
+			if ( route.constructor !== Object || !route.path || !route.router ||
+					!( route.api_version || route.skip_domain )
+			) {
+				throw new TypeError( `routes/${fname} does not export the correct object!` );
+			}
+			// normalise the path to be used as the mount point
+			if ( route.path[ 0 ] !== '/' ) {
+				route.path = `/${route.path}`;
+			}
+			if ( route.path[ route.path.length - 1 ] !== '/' ) {
+				route.path = `${route.path}/`;
+			}
+			if ( !route.skip_domain ) {
+				route.path = `/:domain/v${route.api_version}${route.path}`;
+			}
+			// wrap the route handlers with Promise.try() blocks
+			sUtil.wrapRouteHandlers( route, app );
+			// all good, use that route
+			app.use( route.path, route.router );
 		} );
+	} ).then( () => {
+		// Catch and handle propagated errors
+		sUtil.setErrorHandler( app );
+		// route loading is now complete, return the app object
+		return BBPromise.resolve( app );
+	} );
 }
 
 /**
@@ -191,16 +204,16 @@ function createServer( app ) {
 	// attaches the app to it, and starts accepting
 	// incoming client requests
 	var server;
-	return new BBPromise( function ( resolve ) {
+	return new BBPromise( ( resolve ) => {
 		server = http.createServer( app ).listen(
 			app.conf.port,
 			app.conf.interface,
 			resolve
 		);
-	} ).then( function () {
+		server = addShutdown( server );
+	} ).then( () => {
 		app.logger.log( 'info',
-			'Worker ' + process.pid + ' listening on ' +
-			( app.conf.interface || '*' ) + ':' + app.conf.port );
+			`Worker ${process.pid} listening on ${app.conf.interface || '*'}:${app.conf.port}` );
 		return server;
 	} );
 }

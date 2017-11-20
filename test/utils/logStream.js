@@ -1,30 +1,28 @@
 'use strict';
 
-/* eslint-disable no-console */
-
 var bunyan = require( 'bunyan' );
 
 function logStream( logStdout ) {
-	var parrot, log = [];
 
-	parrot = bunyan.createLogger( {
+	let log = [];
+	let parrot = bunyan.createLogger( {
 		name: 'test-logger',
 		level: 'warn'
 	} );
 
-	function write( chunk /* , encoding, callback */ ) {
-		var entry, level, levelMatch;
-
+	// eslint-disable-next-line no-unused-vars
+	function write( chunk, encoding, callback ) {
 		try {
-			entry = JSON.parse( chunk );
-			levelMatch = /^(\w+)/.exec( entry.levelPath );
+			let entry = JSON.parse( chunk );
+			let levelMatch = /^(\w+)/.exec( entry.levelPath );
 			if ( logStdout && levelMatch ) {
-				level = levelMatch[ 1 ];
+				let level = levelMatch[ 1 ];
 				if ( parrot[ level ] ) {
 					parrot[ level ]( entry );
 				}
 			}
 		} catch ( e ) {
+			// eslint-disable-next-line no-console
 			console.error( 'something went wrong trying to parrot a log entry', e, chunk );
 		}
 
@@ -32,15 +30,18 @@ function logStream( logStdout ) {
 	}
 
 	// to implement the stream writer interface
-	// function end( chunk, encoding, callback ) {}
+	// eslint-disable-next-line no-unused-vars
+	function end( chunk, encoding, callback ) {
+	}
 
 	function get() {
 		return log;
 	}
 
 	function slice() {
-		var begin = log.length,
-			end = null;
+
+		let begin = log.length;
+		let end = null;
 
 		function halt() {
 			if ( end === null ) {
@@ -61,7 +62,7 @@ function logStream( logStdout ) {
 
 	return {
 		write: write,
-		// end: end,
+		end: end,
 		slice: slice,
 		get: get
 	};

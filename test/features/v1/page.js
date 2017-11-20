@@ -1,11 +1,15 @@
 'use strict';
 
-var preq = require( 'preq' ),
-	assert = require( '../../utils/assert.js' ),
-	server = require( '../../utils/server.js' );
+const preq = require( 'preq' );
+const assert = require( '../../utils/assert.js' );
+const server = require( '../../utils/server.js' );
+
+if ( !server.stopHookAdded ) {
+	server.stopHookAdded = true;
+	after( () => server.stop() );
+}
 
 describe( 'page gets', function () {
-	var uri;
 	this.timeout( 20000 );
 
 	before( function () {
@@ -13,12 +17,12 @@ describe( 'page gets', function () {
 	} );
 
 	// common URI prefix for the page
-	uri = server.config.uri + 'v1/page/en/Oxygen';
+	let uri = server.config.uri + 'v1/page/en/Oxygen';
 
-	it( 'should get the whole page body', function () {
+	it( 'should get the whole page body', () => {
 		return preq.get( {
 			uri: uri
-		} ).then( function ( res ) {
+		} ).then( ( res ) => {
 			// check the status
 			assert.status( res, 200 );
 			// check the returned Content-Type header
@@ -32,13 +36,13 @@ describe( 'page gets', function () {
 		} );
 	} );
 
-	it( 'should throw a 404 for a non-existent page', function () {
+	it( 'should throw a 404 for a non-existent page', () => {
 		return preq.get( {
 			uri: server.config.uri + 'v1/page/Wikipedia_content_translation_system'
-		} ).then( function ( res ) {
+		} ).then( ( res ) => {
 			// if we are here, no error was thrown, not good
 			throw new Error( 'Expected an error to be thrown, got status: ', res.status );
-		}, function ( err ) {
+		}, ( err ) => {
 			// inspect the status
 			assert.deepEqual( err.status, 404 );
 		} );
