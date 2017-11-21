@@ -13,12 +13,19 @@ function normalize( html ) {
 	return normalizer.getHtml();
 }
 
+function getParsedDoc( content ) {
+	const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
+	parser.init();
+	parser.write( content );
+	return parser.builder.doc;
+}
+
 function runTest( test, lang ) {
 	let testData = fs.readFileSync( __dirname + '/data/' + test.source, 'utf8' );
-
-	let segmenter = new Segmenter( testData, lang );
-	segmenter.segment();
-	let result = normalize( segmenter.getSegmentedContent() );
+	let parsedDoc = getParsedDoc( testData );
+	let segmenter = new Segmenter();
+	let segmentedLinearDoc = segmenter.segment( parsedDoc, lang );
+	let result = normalize( segmentedLinearDoc.getHtml() );
 	let expectedResultData = normalize(
 		fs.readFileSync( __dirname + '/data/' + test.result, 'utf8' )
 	);

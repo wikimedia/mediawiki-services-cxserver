@@ -10,6 +10,13 @@ function normalize( html ) {
 	return normalizer.getHtml();
 }
 
+function getParsedDoc( content ) {
+	const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
+	parser.init();
+	parser.write( content );
+	return parser.builder.doc;
+}
+
 const html = fs.readFileSync( '/dev/stdin', 'utf8' );
 if ( html.trim() === '' ) {
 	const script = process.argv[ 1 ];
@@ -21,7 +28,8 @@ if ( html.trim() === '' ) {
 
 }
 
-const segmenter = new Segmenter( html, 'en' );
-segmenter.segment();
-const result = normalize( segmenter.getSegmentedContent() );
+let parsedDoc = getParsedDoc( html );
+let segmenter = new Segmenter();
+let segmentedLinearDoc = segmenter.segment( parsedDoc, 'en' );
+const result = normalize( segmentedLinearDoc.getHtml() );
 process.stdout.write( result + '\n' );
