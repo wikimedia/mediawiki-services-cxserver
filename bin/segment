@@ -6,12 +6,14 @@ const fs = require( 'fs' ),
 function normalize( html ) {
 	const normalizer = new LinearDoc.Normalizer();
 	normalizer.init();
-	normalizer.write( html.replace( /(\r\n|\n|\t|\r)/gm, '' ) );
+	normalizer.write( html.replace( /[\t\r\n]+/g, '' ) );
 	return normalizer.getHtml();
 }
 
 function getParsedDoc( content ) {
-	const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
+	const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer(), {
+		wrapSections: true
+	} );
 	parser.init();
 	parser.write( content );
 	return parser.builder.doc;
