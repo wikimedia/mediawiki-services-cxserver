@@ -9,3 +9,6 @@ config.yaml
 docs
 node_modules
 log/
+
+# Dockerfile (used for deploy)
+Dockerfile
