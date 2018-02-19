@@ -21,24 +21,30 @@ function getParsedDoc( content ) {
 
 /* eslint-disable no-multi-str */
 const sourceHTML = `<body>
-    <p>Paragraph <b>bold</b> <a href="/wiki/Title">Title</a>.</p>
-    <h3>Heading</h3>
-    <table><tr><td>data</td></tr></table>
-    <div>Content<div>innerdiv</div></div>
-    <p>Content<div>Div in paragraph</div></p>
-    <ol><li>Item</li><li>Item</li></ol>
-    <link href="./Category:Oxygen#%20" id="mwCKQ" rel="mw:PageProp/Category" />
-    </body>`;
+	<section data-mw-section-id="0">
+	<p>Paragraph <b>bold</b> <a href="/wiki/Title">Title</a>.</p>
+	</section>
+	<section data-mw-section-id="1">
+	<h3>Heading</h3>
+	<table><tr><td>data</td></tr></table>
+	<div>Content<div>innerdiv</div></div>
+	</section>
+	<section data-mw-section-id="2">
+	<p>Content<div>Div in paragraph</div></p>
+	<ol><li>Item</li><li>Item</li></ol>
+	<link href="./Category:Oxygen#%20" id="mwCKQ" rel="mw:PageProp/Category" />
+	</section>
+	</body>`;
 
 const expectedSectionWrappedHTML = `<body>
-    <section rel="cx:Section"><p>Paragraph <b>bold</b> <a href="/wiki/Title">Title</a>.</p></section>
-    <section rel="cx:Section"><h3>Heading</h3></section>
-    <section rel="cx:Section"><table><tr><td>data</td></tr></table></section>
-    <section rel="cx:Section"><div>Content<div>innerdiv</div></div></section>
-    <section rel="cx:Section"><p>Content<div>Div in paragraph</div></p></section>
-    <section rel="cx:Section"><ol><li>Item</li><li>Item</li></ol></section>
-    <link href="./Category:Oxygen#%20" id="mwCKQ" rel="mw:PageProp/Category" />
-    </body>`;
+	<section rel="cx:Section"><p>Paragraph <b>bold</b> <a href="/wiki/Title">Title</a>.</p></section>
+	<section rel="cx:Section"><h3>Heading</h3></section>
+	<section rel="cx:Section"><table><tr><td>data</td></tr></table></section>
+	<section rel="cx:Section"><div>Content<div>innerdiv</div></div></section>
+	<section rel="cx:Section"><p>Content<div>Div in paragraph</div></p></section>
+	<section rel="cx:Section"><ol><li>Item</li><li>Item</li></ol></section>
+	<link href="./Category:Oxygen#%20" id="mwCKQ" rel="mw:PageProp/Category" />
+	</body>`;
 
 describe( 'Section wrapping test', () => {
 	const parsedDoc = getParsedDoc( sourceHTML );
