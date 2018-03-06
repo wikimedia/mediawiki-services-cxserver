@@ -22,7 +22,7 @@ function getParsedDoc( content ) {
 /* eslint-disable no-multi-str */
 const sourceHTML = `<body>
 	<section data-mw-section-id="0">
-	<p>Paragraph <b>bold</b> <a href="/wiki/Title">Title</a>.</p>
+	<p id="mwAb">Paragraph <b>bold</b> <a href="/wiki/Title">Title</a>.</p>
 	</section>
 	<section data-mw-section-id="1">
 	<h3>Heading</h3>
@@ -65,10 +65,12 @@ const sourceHTML = `<body>
 	<table class="metadata plainlinks stub" role="presentation" style="background:transparent" about="#mwt8" id="mwJw">
 	<tbody></tbody>
 	</table>
+	<span id="empty_inline_annotation_transclusion" about="#mwt335" typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"anchor","href":"./Template:Anchor"},"params":{"1":{"wt":"partial pressure"}},"i":0}}]}'></span>
+	<link rel="mw:PageProp/Category" href="./Category:Wikipedia_indefinitely_move-protected_pages#Oxygen" about="#mwt3" typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"pp-move-indef","href":"./Template:Pp-move-indef"},"params":{},"i":0}}]}' id="mwBg" />
 	</body>`;
 
 const expectedSectionWrappedHTML = `<body>
-	<section rel="cx:Section"><p>Paragraph <b>bold</b> <a href="/wiki/Title">Title</a>.</p></section>
+	<section rel="cx:Section"><p id="mwAb">Paragraph <b>bold</b> <a href="/wiki/Title">Title</a>.</p></section>
 	<section rel="cx:Section"><h3>Heading</h3></section>
 	<section rel="cx:Section"><table><tr><td>data</td></tr></table></section>
 	<section rel="cx:Section"><div>Content<div>innerdiv</div></div></section>
@@ -112,6 +114,12 @@ const expectedSectionWrappedHTML = `<body>
 	<table class="metadata plainlinks stub" role="presentation" style="background:transparent" about="#mwt8" id="mwJw">
 	<tbody></tbody>
 	</table>
+	</section>
+	<section rel="cx:Section">
+	<span id="empty_inline_annotation_transclusion" about="#mwt335" typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"anchor","href":"./Template:Anchor"},"params":{"1":{"wt":"partial pressure"}},"i":0}}]}'></span>
+	</section>
+	<section rel="cx:Section">
+	<link rel="mw:PageProp/Category" href="./Category:Wikipedia_indefinitely_move-protected_pages#Oxygen" about="#mwt3" typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"pp-move-indef","href":"./Template:Pp-move-indef"},"params":{},"i":0}}]}' id="mwBg" />
 	</section>
 	</body>`;
 
