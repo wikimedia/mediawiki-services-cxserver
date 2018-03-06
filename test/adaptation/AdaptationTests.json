@@ -835,36 +835,6 @@
 		}
 	},
 	{
-		"desc": "Category adaptation",
-		"from": "en",
-		"to": "ml",
-		"source": "<p><link id='mwUQ' rel='mw:PageProp/Category' href='./Category:Planets'/></p>",
-		"resultAttributes": {
-			"mwUQ": {
-				"href": "വർഗ്ഗം:ഗ്രഹങ്ങൾ",
-				"data-cx": {
-					"adapted": true,
-					"sourceTitle": "Category:Planets",
-					"targetTitle": "വർഗ്ഗം:ഗ്രഹങ്ങൾ"
-				}
-			}
-		}
-	},
-	{
-		"desc": "Category adaptation - target category does not exist",
-		"from": "en",
-		"to": "ml",
-		"source": "<p><link id='mwUQ' rel='mw:PageProp/Category' href='./Category:Planets_with_life'/></p>",
-		"resultAttributes": {
-			"mwUQ": {
-				"data-cx": {
-					"adapted": false,
-					"sourceTitle": "Category:Planets with life"
-				}
-			}
-		}
-	},
-	{
 		"desc": "Reference adaptation test without a reference template",
 		"from": "en",
 		"to": "es",

@@ -308,6 +308,46 @@ paths:
             headers:
               content-type: application/json
   # from routes/v2.js
+  /v2/page/{sourcelanguage}/{targetlanguage}/{title}{/revision}:
+    get:
+      tags:
+        - Page content
+      description: Fetches segmented mediawiki page
+      produces:
+        - application/json
+      parameters:
+        - name: sourcelanguage
+          in: path
+          description: The language code or the domain of the source wiki
+          type: string
+          required: true
+        - name: targetlanguage
+          in: path
+          description: The language code or the domain of the target wiki
+          type: string
+          required: true
+        - name: title
+          in: path
+          description: The page title
+          type: string
+          required: true
+        - name: revision
+          in: path
+          description: The page revision id
+          type: string
+          required: false
+      x-amples:
+        - title: Fetch enwiki Oxygen page
+          request:
+            params:
+              sourcelanguage: en
+              targetlanguage: es
+              title: Pickling
+              revision: 825871454
+          response:
+            status: 200
+            headers:
+              content-type: application/json
   /v2/translate/{from}/{to}{/provider}:
     post:
       tags:
