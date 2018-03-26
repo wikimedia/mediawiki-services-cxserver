@@ -36,7 +36,7 @@ describe( 'v2 api - page gets', function () {
 			// Must have segmented content
 			assert.ok( +res.body.segmentedContent.length >= 100 );
 			// Must have adapted categories
-			assert.ok( +res.body.categories.length >= 5 );
+			assert.ok( +res.body.categories.length >= 1 );
 		} );
 	} );
 

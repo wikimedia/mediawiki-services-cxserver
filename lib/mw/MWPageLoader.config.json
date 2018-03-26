@@ -1,0 +1,17 @@
+{
+	"removableSections": {
+		"classes": [
+			"noprint",
+			"nomobile",
+			"navbox",
+			"hatnote",
+			"metadata",
+			"sisterproject",
+			"vertical-navbox",
+			"sistersitebox"
+		],
+		"rdfa": [
+			"mw:Extension/timeline"
+		]
+	}
+}

@@ -1,7 +1,8 @@
 'use strict';
 
 const assert = require( '../utils/assert.js' ),
-	LinearDoc = require( '../../lib/lineardoc' );
+	LinearDoc = require( '../../lib/lineardoc' ),
+	MWPageLoaderConfig = require( '../../lib/mw/MWPageLoader.config.json' );
 
 function normalize( html ) {
 	var normalizer = new LinearDoc.Normalizer();
@@ -11,7 +12,9 @@ function normalize( html ) {
 }
 
 function getParsedDoc( content ) {
-	const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer(), {
+	const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer(
+		{ removableSections: MWPageLoaderConfig.removableSections }
+	), {
 		wrapSections: true
 	} );
 	parser.init();
@@ -62,11 +65,18 @@ const sourceHTML = `<body>
 	<link rel="mw:PageProp/Category" href="./Category:All_stub_articles" about="#mwt8" typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"nervous-system-drug-stub","href":"./Template:Nervous-system-drug-stub"},"params":{},"i":0}}]}'
 	id="mwJg" />
 	<link rel="mw:PageProp/Category" href="./Category:Nervous_system_drug_stubs" about="#mwt8" />
-	<table class="metadata plainlinks stub" role="presentation" style="background:transparent" about="#mwt8" id="mwJw">
+	<table class="plainlinks stub" role="presentation" style="background:transparent" about="#mwt8" id="mwJw">
 	<tbody></tbody>
 	</table>
 	<span id="empty_inline_annotation_transclusion" about="#mwt335" typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"anchor","href":"./Template:Anchor"},"params":{"1":{"wt":"partial pressure"}},"i":0}}]}'></span>
 	<link rel="mw:PageProp/Category" href="./Category:Wikipedia_indefinitely_move-protected_pages#Oxygen" about="#mwt3" typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"pp-move-indef","href":"./Template:Pp-move-indef"},"params":{},"i":0}}]}' id="mwBg" />
+	<section data-mw-section-id="61">
+	<div role="navigation" class="navbox" about="#mwt61" typeof="mw:Transclusion" data-mw="{}">
+	Section to be removed from output based on the navbox class
+	</div>
+	<link rel="mw:PageProp/Category" href="./Category:Food_preparation" about="#mwt61">
+	<span about="#mwt61">Fragment 2</span>
+	</section>
 	</body>`;
 
 const expectedSectionWrappedHTML = `<body>
@@ -111,7 +121,7 @@ const expectedSectionWrappedHTML = `<body>
 	<link rel="mw:PageProp/Category" href="./Category:All_stub_articles" about="#mwt8" typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"nervous-system-drug-stub","href":"./Template:Nervous-system-drug-stub"},"params":{},"i":0}}]}'
 	id="mwJg" />
 	<link rel="mw:PageProp/Category" href="./Category:Nervous_system_drug_stubs" about="#mwt8" />
-	<table class="metadata plainlinks stub" role="presentation" style="background:transparent" about="#mwt8" id="mwJw">
+	<table class="plainlinks stub" role="presentation" style="background:transparent" about="#mwt8" id="mwJw">
 	<tbody></tbody>
 	</table>
 	</section>
