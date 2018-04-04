@@ -10,8 +10,6 @@
 			"vertical-navbox",
 			"sistersitebox"
 		],
-		"rdfa": [
-			"mw:Extension/timeline"
-		]
+		"rdfa": []
 	}
 }
