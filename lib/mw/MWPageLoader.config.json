@@ -13,6 +13,25 @@
 		],
 		"rdfa": [
 			"mw:Extension/indicator"
+		],
+		"templates": [
+			"Anchor",
+			"DEFAULTSORT",
+			"EngvarA",
+			"EngvarB",
+			"good article",
+			"Use American English",
+			"Use Australian English",
+			"Use Bangladeshi English",
+			"Use British English Oxford spelling",
+			"Use British English",
+			"Use Canadian English",
+			"Use dmy dates",
+			"Use mdy dates",
+			"Use Harvard referencing",
+			"Use Hong Kong English",
+			"Use Indian English",
+			"Void"
 		]
 	}
 }
