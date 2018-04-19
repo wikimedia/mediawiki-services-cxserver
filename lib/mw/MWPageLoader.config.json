@@ -11,6 +11,8 @@
 			"vertical-navbox",
 			"sistersitebox"
 		],
-		"rdfa": []
+		"rdfa": [
+			"mw:Extension/indicator"
+		]
 	}
 }
