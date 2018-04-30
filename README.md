@@ -13,9 +13,7 @@ Install the dependencies:
 Running the server
 ------------------
 
-```
-$ npm start
-```
+```$ npm start```
 
 Then browse to ```http://localhost:8080/v1```. You'll see the server playground
 page.
@@ -24,6 +22,8 @@ Configuration
 -------------
 An default configuration file is given as config.dev.yaml. Copy it to config.yaml
 to customize. Restart server to read changes.
+
+To know more about registry configuration, see doc/Registry.md
 
 Debugging
 ---------
