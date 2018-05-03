@@ -25,9 +25,7 @@
 							"width": 80,
 							"height": 40
 						},
-						"terms": {
-							"description": ["elemento químico", "elemento químico"]
-						}
+						"description": "elemento químico"
 					},
 					"sourceTitle": {
 						"title": "Oxygen",
@@ -36,12 +34,9 @@
 							"width": 66,
 							"height": 80
 						},
-						"terms": {
-							"description": ["element with the atomic number of 8", "element with the atomic number of 8"]
-						}
+						"description": "element with the atomic number of 8"
 					}
 				}
-
 			}
 		}
 	},
@@ -72,9 +67,7 @@
 							"width": 80,
 							"height": 80
 						},
-						"terms": {
-							"description": ["número total de protones que tiene el átomo", "número total de protones que tiene el átomo"]
-						}
+						"description": "número total de protones que tiene el átomo"
 					},
 					"sourceTitle": {
 						"title": "Atomic number",
@@ -83,9 +76,7 @@
 							"width": 80,
 							"height": 49
 						},
-						"terms": {
-							"description": ["number of protons found in the nucleus of an atom", "number of protons found in the nucleus of an atom"]
-						}
+						"description": "number of protons found in the nucleus of an atom"
 					}
 				}
 			}
@@ -117,9 +108,7 @@
 							"width": 80,
 							"height": 80
 						},
-						"terms": {
-							"description": ["número total de protones que tiene el átomo", "número total de protones que tiene el átomo"]
-						}
+						"description": "número total de protones que tiene el átomo"
 					},
 					"sourceTitle": {
 						"title": "Atomic number",
@@ -128,9 +117,7 @@
 							"width": 80,
 							"height": 49
 						},
-						"terms": {
-							"description": ["number of protons found in the nucleus of an atom", "number of protons found in the nucleus of an atom"]
-						}
+						"description": "number of protons found in the nucleus of an atom"
 					}
 				}
 			}
@@ -170,14 +157,12 @@
 							"width": 51,
 							"height": 80
 						},
-						"terms": {
-							"description": ["professional wrestler, strip club manager"]
-						}
+						"description": "professional wrestler, strip club manager"
 					}
 				}
 			}
 		}
-    },
+	},
 	{
 		"desc": "Target title does not exist",
 		"from": "en",
@@ -198,8 +183,7 @@
 				"data-cx": {
 					"adapted": false,
 					"sourceTitle": {
-						"title": "List of planets with life",
-						"terms": {}
+						"title": "List of planets with life"
 					},
 					"targetTitle": {}
 				}
