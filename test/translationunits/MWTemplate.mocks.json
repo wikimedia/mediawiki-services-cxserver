@@ -492,8 +492,8 @@
                     "type": "line",
                     "aliases": [
                         "editor1-last",
-                        "   editor",
-                        "   editors"
+                        "editor",
+                        "editors"
                     ],
                     "required": false,
                     "suggested": false,
@@ -2341,6 +2341,24 @@
                     "deprecated": false,
                     "autovalue": null,
                     "default": null
+                },
+                "via": {
+                    "label": {
+                        "en": "Published via"
+                    },
+                    "description": {
+                        "en": "Name of the entity hosting the original copy of the work, if different from the publisher. This entity is committed not to alter the work. GitHub, SourceForge, CodePlex, YouTube, Vimeo, Dailymotion and Netflix are examples of service dedicated to acting on behalf of the publisher, but Archive.org, Wikimedia Commons and grc.com have done this on certain occasions."
+                    },
+                    "example": {
+                        "en": "\"GitHub\", which hosts \"Visual Studio Code\" on behalf of \"Microsoft\""
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
                 }
             },
             "maps": {
@@ -2482,6 +2500,7 @@
                 "orig-year",
                 "publication-place",
                 "publication-date",
+                "via",
                 "nopp",
                 "arxiv",
                 "asin",
@@ -2774,20 +2793,6 @@
                     "required": false,
                     "suggested": false,
                     "deprecated": false,
-                    "autovalue": null,
-                    "default": null
-                },
-                "lien auteur": {
-                    "description": {
-                        "fr": "Nom de l'article Wikipédia consacré à l'auteur."
-                    },
-                    "type": "string",
-                    "label": null,
-                    "required": false,
-                    "suggested": false,
-                    "example": null,
-                    "deprecated": false,
-                    "aliases": [],
                     "autovalue": null,
                     "default": null
                 },
@@ -3359,6 +3364,8 @@
                     "type": "string",
                     "aliases": [
                         "accessdate",
+                        "access-date",
+                        "Consulté le",
                         "consulté",
                         "consultée le"
                     ],
@@ -3462,6 +3469,77 @@
                     "aliases": [],
                     "autovalue": null,
                     "default": null
+                },
+                "archive-url": {
+                    "aliases": [
+                        "archiveurl"
+                    ],
+                    "label": {
+                        "fr": "archive-url"
+                    },
+                    "description": {
+                        "fr": "Adresse url d'une archive du lien donné dans Lien"
+                    },
+                    "type": "url",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "archive-date": {
+                    "aliases": [
+                        "archivedate"
+                    ],
+                    "label": {
+                        "fr": "archive-date"
+                    },
+                    "description": {
+                        "fr": "Date à préciser dans le libellé du lien vers l'archive"
+                    },
+                    "type": "date",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "brisé le": {
+                    "aliases": [
+                        "dead-url",
+                        "deadurl"
+                    ],
+                    "label": {
+                        "fr": "brisé le"
+                    },
+                    "description": {
+                        "fr": "permet de signaler si un lien est brisé"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "lien auteur1": {
+                    "aliases": [
+                        "lien auteur"
+                    ],
+                    "description": {
+                        "fr": "Nom de l'article Wikipédia consacré à l'auteur."
+                    },
+                    "type": "string",
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
                 }
             },
             "maps": {
@@ -3527,7 +3605,7 @@
                 "auteur1",
                 "nom1",
                 "prénom1",
-                "lien auteur",
+                "lien auteur1",
                 "responsabilité1",
                 "directeur1",
                 "auteur2",
@@ -3569,7 +3647,10 @@
                 "extrait",
                 "page",
                 "id",
-                "libellé"
+                "libellé",
+                "archive-url",
+                "archive-date",
+                "brisé le"
             ],
             "format": null,
             "sets": []
