@@ -27,12 +27,8 @@ To know more about registry configuration, see doc/Registry.md
 
 Debugging
 ---------
-You need node-inspector installed.
-
-```$ node-debug app.js```
-
-It will open Chrome developer tools with the ContentTranslation source code.
-You can debug the code just like a web application. You can also edit the code
+You can debug ContentTranslation with Chrome developer tools and inbuilt
+debugger from nodejs just like a web application. You can also edit the code
 and save from the debugger.
 
 Testing
