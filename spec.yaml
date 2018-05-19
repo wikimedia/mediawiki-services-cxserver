@@ -326,7 +326,7 @@ paths:
     post:
       tags:
         - Machine translation
-      description: Translate the given content from source language to target langauge. Also adapt the content for the target language wiki. Some machine translation providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
+      description: Translate the given content from source language to target language. Also adapt the content for the target language wiki. Some machine translation providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
       consumes:
         - application/x-www-form-urlencoded
       produces:
