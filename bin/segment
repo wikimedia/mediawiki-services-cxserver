@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const fs = require( 'fs' ),
 	Segmenter = require( __dirname + '/../lib/segmentation/CXSegmenter' ),
+	MWPageLoaderConfig = require( __dirname + '/../lib/mw/MWPageLoader.config.json' ),
 	LinearDoc = require( __dirname + '/../lib/lineardoc' );
 
 function normalize( html ) {
@@ -11,7 +12,9 @@ function normalize( html ) {
 }
 
 function getParsedDoc( content ) {
-	const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer(), {
+	const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer( {
+		removableSections: MWPageLoaderConfig.removableSections
+	} ), {
 		wrapSections: true
 	} );
 	parser.init();
