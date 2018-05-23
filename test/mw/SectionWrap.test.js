@@ -128,9 +128,6 @@ const expectedSectionWrappedHTML = `<body>
 	<section rel="cx:Section">
 	<span id="empty_inline_annotation_transclusion" about="#mwt335" typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"anchor","href":"./Template:Anchor"},"params":{"1":{"wt":"partial pressure"}},"i":0}}]}'></span>
 	</section>
-	<section rel="cx:Section">
-	<link rel="mw:PageProp/Category" href="./Category:Wikipedia_indefinitely_move-protected_pages#Oxygen" about="#mwt3" typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"pp-move-indef","href":"./Template:Pp-move-indef"},"params":{},"i":0}}]}' id="mwBg" />
-	</section>
 	</body>`;
 
 describe( 'Section wrapping test', () => {

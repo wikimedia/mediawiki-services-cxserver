@@ -1,36 +1,34 @@
 {
 	"removableSections": {
 		"classes": [
-			"noprint",
-			"nomobile",
-			"navbox",
-			"navbar",
+			"ambox",
 			"hatnote",
 			"metadata",
+			"navbar",
+			"navbox",
+			"nomobile",
+			"noprint",
 			"sisterproject",
-			"vertical-navbox",
-			"sistersitebox"
+			"sistersitebox",
+			"vertical-navbox"
 		],
 		"rdfa": [
 			"mw:Extension/indicator"
 		],
 		"templates": [
+			"/^pp(-.*)?$/",
+			"/^Articles (for|with|needing|containing).*$/",
+			"/^Engvar[AB]$/",
+			"/^Use[\\sa-z]+(English|spelling|referencing)$/",
+			"/^Use [DMY]+ dates$/",
+			"/^Wikipedia articles (for|with|needing|containing).*$/",
 			"Anchor",
 			"DEFAULTSORT",
-			"EngvarA",
-			"EngvarB",
+			"Esborrany",
+			"Featured article",
+			"FR",
 			"good article",
-			"Use American English",
-			"Use Australian English",
-			"Use Bangladeshi English",
-			"Use British English Oxford spelling",
-			"Use British English",
-			"Use Canadian English",
-			"Use dmy dates",
-			"Use mdy dates",
-			"Use Harvard referencing",
-			"Use Hong Kong English",
-			"Use Indian English",
+			"Stub",
 			"Void"
 		]
 	}
