@@ -35,3 +35,5 @@ let segmenter = new Segmenter();
 let segmentedLinearDoc = segmenter.segment( parsedDoc, 'en' );
 const result = normalize( segmentedLinearDoc.getHtml() );
 process.stdout.write( result + '\n' );
+process.stdout.write( '==Categories==\n' );
+process.stdout.write( JSON.stringify( parsedDoc.categories, null, 2 ) + '\n' );
