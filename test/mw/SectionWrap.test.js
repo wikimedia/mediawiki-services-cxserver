@@ -61,7 +61,7 @@ const sourceHTML = `<body>
 	<dl id="mwAW8">
 	<dd id="mwAXA">3 Fe + 4 H<sub id="mwAXE">2</sub></dd>
 	</dl>
-	<link href="./Category:Oxygen#%20" id="mwCKQ" rel="mw:PageProp/Category" />
+	<link href="./Category:Category1" id="mwCKQ" rel="mw:PageProp/Category" />
 	<link rel="mw:PageProp/Category" href="./Category:All_stub_articles" about="#mwt8" typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"nervous-system-drug-stub","href":"./Template:Nervous-system-drug-stub"},"params":{},"i":0}}]}'
 	id="mwJg" />
 	<link rel="mw:PageProp/Category" href="./Category:Nervous_system_drug_stubs" about="#mwt8" />
@@ -139,5 +139,55 @@ describe( 'Section wrapping test', () => {
 	const expectedResultData = normalize( expectedSectionWrappedHTML );
 	it( 'should not have any errors when section wrapping', () => {
 		assert.deepEqual( result, expectedResultData );
+	} );
+} );
+
+const sectionWithCategories = `
+	<body class="mw-content-ltr sitedir-ltr ltr mw-body-content parsoid-body mediawiki mw-parser-output" dir="ltr" id="mwAA" lang="en">
+	<section id="cxSourceSection79" rel="cx:Section">
+	<p id="mwAdo">
+
+	<figure-inline about="#mwt87" class="noviewer" data-mw="{&#34;parts&#34;:[{&#34;template&#34;:{&#34;target&#34;:{&#34;wt&#34;:&#34;Commonscat-inline&#34;,&#34;href&#34;:&#34;./Template:Commonscat-inline&#34;},&#34;params&#34;:{&#34;1&#34;:{&#34;wt&#34;:&#34;Attack aircraft&#34;}},&#34;i&#34;:0}}]}" id="mwAds" typeof="mw:Transclusion mw:Image"><a href="./File:Commons-logo.svg">
+	<link href="./Category:Articles with inline" about="#mwt87" id="mwAd8" rel="mw:PageProp/Category" />
+	<img alt="" data-file-height="1376" data-file-type="drawing" data-file-width="1024" height="16" resource="./File:Commons-logo.svg" src="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/12px-Commons-logo.svg.png" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/24px-Commons-logo.svg.png 2x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/18px-Commons-logo.svg.png 1.5x" width="12" /></a>
+	</figure-inline>
+
+	<span class="cx-segment" data-segmentid="439"><span about="#mwt87"> Media related to </span>
+	<a about="#mwt87" class="cx-link" data-linkid="440" href="https://commons.wikimedia.org/wiki/Category:Attack%20aircraft" rel="mw:WikiLink/Interwiki" title="commons:Category:Attack aircraft">Attack aircraft</a>
+	<span about="#mwt87"> at Wikimedia Commons</span>
+	</span>
+	</p>
+
+	<p>Another para</p>
+	<link href="./Category:Fighter_aircraft" id="mwAd4" rel="mw:PageProp/Category" />
+	<link href="./Category:Attack_aircraft#%20" id="mwAd8" rel="mw:PageProp/Category" />
+
+	</section>`;
+
+const sectionWithCategoriesExpectedHtml = `
+	<body class="mw-content-ltr sitedir-ltr ltr mw-body-content parsoid-body mediawiki mw-parser-output" dir="ltr" id="mwAA" lang="en">
+	<section id="cxSourceSection79" rel="cx:Section"><section rel="cx:Section"><p id="mwAdo">
+
+	<figure-inline about="#mwt87" class="noviewer" data-mw="{&#34;parts&#34;:[{&#34;template&#34;:{&#34;target&#34;:{&#34;wt&#34;:&#34;Commonscat-inline&#34;,&#34;href&#34;:&#34;./Template:Commonscat-inline&#34;},&#34;params&#34;:{&#34;1&#34;:{&#34;wt&#34;:&#34;Attack aircraft&#34;}},&#34;i&#34;:0}}]}" id="mwAds" typeof="mw:Transclusion mw:Image"><a href="./File:Commons-logo.svg">
+	<link about="#mwt87" href="./Category:Articles with inline" id="mwAd8" rel="mw:PageProp/Category" />
+	<img alt="" data-file-height="1376" data-file-type="drawing" data-file-width="1024" height="16" resource="./File:Commons-logo.svg" src="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/12px-Commons-logo.svg.png" srcset="//upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/24px-Commons-logo.svg.png 2x, //upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/18px-Commons-logo.svg.png 1.5x" width="12" /></a>
+	</figure-inline>
+
+	<span class="cx-segment" data-segmentid="439"><span about="#mwt87"> Media related to </span>
+	<a about="#mwt87" class="cx-link" data-linkid="440" href="https://commons.wikimedia.org/wiki/Category:Attack%20aircraft" rel="mw:WikiLink/Interwiki" title="commons:Category:Attack aircraft">Attack aircraft</a>
+	<span about="#mwt87"> at Wikimedia Commons</span></span></p></section><section rel="cx:Section">
+
+	<p>Another para</p>
+
+	</section>
+	</section>`;
+
+describe( 'Section wrapping test, check extracted categories', () => {
+	const parsedDoc = getParsedDoc( sectionWithCategories );
+	const result = normalize( parsedDoc.getHtml() );
+	const expectedResultData = normalize( sectionWithCategoriesExpectedHtml );
+	it( 'should not have any errors when section wrapping and extract categories', () => {
+		assert.deepEqual( result, expectedResultData );
+		assert.deepEqual( Object.keys( parsedDoc.categories ).length, 2 );
 	} );
 } );
