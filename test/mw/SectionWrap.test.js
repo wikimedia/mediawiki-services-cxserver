@@ -2,7 +2,8 @@
 
 const assert = require( '../utils/assert.js' ),
 	LinearDoc = require( '../../lib/lineardoc' ),
-	MWPageLoaderConfig = require( '../../lib/mw/MWPageLoader.config.json' );
+	fs = require( 'fs' ),
+	yaml = require( 'js-yaml' );
 
 function normalize( html ) {
 	var normalizer = new LinearDoc.Normalizer();
@@ -12,8 +13,9 @@ function normalize( html ) {
 }
 
 function getParsedDoc( content ) {
+	const pageloaderConfig = yaml.safeLoad( fs.readFileSync( 'config/MWPageLoader.yaml' ) );
 	const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer(
-		{ removableSections: MWPageLoaderConfig.removableSections }
+		{ removableSections: pageloaderConfig.removableSections }
 	), {
 		wrapSections: true
 	} );

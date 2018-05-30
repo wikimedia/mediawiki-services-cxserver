@@ -1,0 +1,29 @@
+removableSections:
+  classes:
+  - ambox
+  - hatnote
+  - metadata
+  - navbar
+  - navbox
+  - nomobile
+  - noprint
+  - sisterproject
+  - sistersitebox
+  - vertical-navbox
+  rdfa:
+  - mw:Extension/indicator
+  templates:
+  - /^pp(-.*)?$/
+  - /^Articles (for|with|needing|containing).*$/
+  - /^Engvar[AB]$/
+  - /^Use[\sa-z]+(English|spelling|referencing)$/
+  - /^Use [DMY]+ dates$/
+  - /^Wikipedia articles (for|with|needing|containing).*$/
+  - Anchor
+  - DEFAULTSORT
+  - Esborrany # Stub category in es.wikipedia
+  - Featured article
+  - FR
+  - good article
+  - Stub
+  - Void
