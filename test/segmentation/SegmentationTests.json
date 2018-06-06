@@ -111,6 +111,11 @@
 			"desc": "Do not break inside of links with abbreviations. Example: Carl E. Wieman. See https://phabricator.wikimedia.org/T99504",
 			"source": "test-24.html",
 			"result": "result-24.html"
+		},
+		{
+			"desc": "A non-segmentable text chunk inside a textblock should not mark the whole text chunk non-segmentable",
+			"source": "test-25.html",
+			"result": "result-25.html"
 		}
 	],
 	"hi": [
