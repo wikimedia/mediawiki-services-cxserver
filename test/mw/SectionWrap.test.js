@@ -127,9 +127,6 @@ const expectedSectionWrappedHTML = `<body>
 	<tbody></tbody>
 	</table>
 	</section>
-	<section rel="cx:Section">
-	<span id="empty_inline_annotation_transclusion" about="#mwt335" typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"anchor","href":"./Template:Anchor"},"params":{"1":{"wt":"partial pressure"}},"i":0}}]}'></span>
-	</section>
 	</body>`;
 
 describe( 'Section wrapping test', () => {
