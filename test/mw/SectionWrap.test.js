@@ -187,3 +187,49 @@ describe( 'Section wrapping test, check extracted categories', () => {
 		assert.deepEqual( Object.keys( parsedDoc.categories ).length, 2 );
 	} );
 } );
+
+const nestedSectionsWithTransclusion = `
+	<body>
+	<section data-mw-section-id="2" id="mwVw">
+	<p id="mw5Q">
+	<span about="#mwt216" typeof="mw:Transclusion" data-mw="{}" id="mw7Q">10,000</span>
+	<span typeof="mw:Entity" about="#mwt216">&nbsp;</span>
+	<span about="#mwt216">m (33,000</span>
+	<span about="#mwt216">mi)</span> in the
+	</p>
+	<section data-mw-section-id="3" id="mwXw">
+	<h3>Heading</h3>
+	<p>Para1</p>
+	<p>Para2</p>
+	</section>
+	</section>
+	</body>`;
+
+const nestedSectionsWithTransclusionExpected = `
+	<body>
+	<section rel="cx:Section">
+	<p id="mw5Q">
+	<span about="#mwt216" data-mw="{}" id="mw7Q" typeof="mw:Transclusion">10,000</span>
+	<span about="#mwt216" typeof="mw:Entity">&nbsp;</span>
+	<span about="#mwt216">m (33,000</span>
+	<span about="#mwt216">mi)</span> in the</p>
+	</section>
+	<section rel="cx:Section">
+	<h3>Heading</h3>
+	</section>
+	<section rel="cx:Section">
+	<p>Para1</p>
+	</section>
+	<section rel="cx:Section">
+	<p>Para2</p>
+	</section>
+	</body>`;
+
+describe( 'Section wrapping test, with nested sections and tricky transclusion context', () => {
+	const parsedDoc = getParsedDoc( nestedSectionsWithTransclusion );
+	const result = normalize( parsedDoc.getHtml() );
+	const expectedResultData = normalize( nestedSectionsWithTransclusionExpected );
+	it( 'should not have any errors when section wrapping and extract categories', () => {
+		assert.deepEqual( result, expectedResultData );
+	} );
+} );
