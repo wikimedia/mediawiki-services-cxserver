@@ -14,7 +14,7 @@ function normalize( html ) {
 
 describe( 'LinearDoc', () => {
 	it( 'should be possible to linearise all kind of HTML inputs', () => {
-		const numTests = 6;
+		const numTests = 7;
 		for ( let i = 1; i <= numTests; i++ ) {
 			const testXhtmlFile = __dirname + '/data/test' + i + '.xhtml';
 			const resultXmlFile = __dirname + '/data/test' + i + '-result.xml';
