@@ -87,6 +87,11 @@ services:
           api: http://matxin.elhuyar.eus/API
           languages: config/Matxin.yaml
           key: null
+        LingoCloud:
+          api: https://api.interpreter.caiyunai.com/v1
+          account: wikimedia
+          key: null
+          languages: config/LingoCloud.yaml
       dictionary:
         Dictd:
           languages: config/Dictd.yaml

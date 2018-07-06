@@ -88,6 +88,11 @@ services:
           api: https://fanyi.youdao.com/paidapi/fanyiapi
           key: null
           languages: config/Youdao.yaml
+        LingoCloud:
+          api: https://api.interpreter.caiyunai.com/v1
+          account: wikimedia
+          key: null
+          languages: config/LingoCloud.yaml
         defaults: config/mt-defaults.wikimedia.yaml
       dictionary:
         JsonDict:
