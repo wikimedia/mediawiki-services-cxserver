@@ -19,7 +19,7 @@
 	"expect": "The <u>hound</u> (<b>enormous and brown<span typeof=\"mw:Extension/ref\">[1]</span><span typeof=\"mw:Extension/ref\">[2]</span></b>) from <a href=\"GB\">Great Britain</a><span typeof=\"mw:Extension/ref\">[3]</span>.<img /> "
 },
 {
-	"source": "x <span data-mw=\"foo\" />y <span data-mw=\"bar\" />z. ",
+	"source": "x <span data-mw=\"foo\" typeof=\"mw:Extension/ref\" />y <span data-mw=\"bar\" typeof=\"mw:Extension/ref\" />z. ",
 	"targetText": "Z X Y. ",
 	"rangeMappings": [
 		{
@@ -31,13 +31,13 @@
 			"target": { "start": 0, "length": 1 }
 		}
 	],
-	"expect": "Z X Y<span data-mw=\"foo\" />.<span data-mw=\"bar\" /> "
+	"expect": "Z X Y<span data-mw=\"foo\" typeof=\"mw:Extension/ref\" />.<span data-mw=\"bar\" typeof=\"mw:Extension/ref\" /> "
 },
 {
-	"source": "<span data-mw=\"x\">\n</span>",
+	"source": "<span data-mw=\"x\" typeof=\"mw:Extension/ref\">\n</span>",
 	"targetText": "",
 	"rangeMappings": [],
-	"expect": "<span data-mw=\"x\">\n</span>"
+	"expect": "<span data-mw=\"x\" typeof=\"mw:Extension/ref\">\n</span>"
 },
 {
 	"source": "s <span>\n</span>",
