@@ -116,6 +116,11 @@
 			"desc": "A non-segmentable text chunk inside a textblock should not mark the whole text chunk non-segmentable",
 			"source": "test-25.html",
 			"result": "result-25.html"
+		},
+		{
+			"desc": "Figure-inline inside a transclusions",
+			"source": "test-figure-inline.html",
+			"result": "result-figure-inline.html"
 		}
 	],
 	"hi": [
