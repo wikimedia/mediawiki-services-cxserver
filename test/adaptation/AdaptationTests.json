@@ -629,9 +629,7 @@
 					"caption": "[en→ru]Some caption"
 				},
 				"data-cx": {
-					"adapted": true,
-					"imageSource": "//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG",
-					"resource": "./File:Philos_experiment_of_the_burning_candle.PNG"
+					"adapted": true
 				}
 			}
 		}

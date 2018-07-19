@@ -9,7 +9,7 @@ const fs = require( 'fs' ),
 function normalize( html ) {
 	var normalizer = new LinearDoc.Normalizer();
 	normalizer.init();
-	normalizer.write( html.replace( /(\r\n|\n|\t|\r)/gm, '' ) );
+	normalizer.write( html.replace( /[\t\r\n]+/gm, '' ) );
 	return normalizer.getHtml();
 }
 
