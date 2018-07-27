@@ -121,6 +121,11 @@
 			"desc": "Figure-inline inside a transclusions",
 			"source": "test-figure-inline.html",
 			"result": "result-figure-inline.html"
+		},
+		{
+			"desc": "Video tag in figure tag",
+			"source": "video-test.html",
+			"result": "video-result.html"
 		}
 	],
 	"hi": [
