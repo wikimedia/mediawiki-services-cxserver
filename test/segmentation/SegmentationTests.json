@@ -131,6 +131,21 @@
 			"desc": "Video tag in figure tag",
 			"source": "video-test.html",
 			"result": "video-result.html"
+		},
+		{
+			"desc": "Audio tag in figure tag",
+			"source": "audio-test.html",
+			"result": "audio-result.html"
+		},
+		{
+			"desc": "Audio tag in figure-inline tag",
+			"source": "audio-inline-test.html",
+			"result": "audio-inline-result.html"
+		},
+		{
+			"desc": "Video tag in figure-inline tag",
+			"source": "video-inline-test.html",
+			"result": "video-inline-result.html"
 		}
 	],
 	"hi": [
