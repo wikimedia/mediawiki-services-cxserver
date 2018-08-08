@@ -118,6 +118,11 @@
 			"result": "result-25.html"
 		},
 		{
+			"desc": "Figure-inline segmentation. Do not violate the MediaWiki DOM spec https://www.mediawiki.org/wiki/Specs/HTML#Images",
+			"source": "test-figure-inline-segmentation.html",
+			"result": "result-figure-inline-segmentation.html"
+		},
+		{
 			"desc": "Figure-inline inside a transclusions",
 			"source": "test-figure-inline.html",
 			"result": "result-figure-inline.html"
