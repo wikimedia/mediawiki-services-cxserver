@@ -119,14 +119,6 @@ const expectedSectionWrappedHTML = `<body>
 	<dd id="mwAXA">3 Fe + 4 H<sub id="mwAXE">2</sub></dd>
 	</dl>
 	</section>
-	<section rel="cx:Section">
-	<link rel="mw:PageProp/Category" href="./Category:All_stub_articles" about="#mwt8" typeof="mw:Transclusion" data-mw='{"parts":[{"template":{"target":{"wt":"nervous-system-drug-stub","href":"./Template:Nervous-system-drug-stub"},"params":{},"i":0}}]}'
-	id="mwJg" />
-	<link rel="mw:PageProp/Category" href="./Category:Nervous_system_drug_stubs" about="#mwt8" />
-	<table class="plainlinks stub" role="presentation" style="background:transparent" about="#mwt8" id="mwJw">
-	<tbody></tbody>
-	</table>
-	</section>
 	</body>`;
 
 describe( 'Section wrapping test', () => {
