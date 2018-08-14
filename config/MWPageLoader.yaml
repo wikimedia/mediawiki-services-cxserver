@@ -25,5 +25,5 @@ removableSections:
   - Featured article
   - FR
   - good article
-  - Stub
+  - /^(.*-)?Stub$/
   - Void
