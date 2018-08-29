@@ -133,11 +133,12 @@ function initApp( options ) {
 	} ) );
 	// use the application/x-www-form-urlencoded parser
 	app.use( bodyParser.urlencoded( {
-		extended: true
+		extended: true,
+		limit: 500000 // 0.5 megabyte
 	} ) );
 	// use the JSON body parser
 	app.use( bodyParser.json( {
-		limit: 50000
+		limit: 500000
 	} ) );
 	return BBPromise.resolve( app );
 }
