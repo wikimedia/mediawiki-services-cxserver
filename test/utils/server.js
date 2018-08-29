@@ -52,8 +52,8 @@ function start( _options ) {
 				.then( ( serviceReturns ) => {
 					module.exports.stop = () => {
 						console.log( 'stopping test server' ); // eslint-disable-line no-console
-						serviceReturns.forEach( servers =>
-							servers.forEach( server =>
+						serviceReturns.forEach( ( servers ) =>
+							servers.forEach( ( server ) =>
 								server.shutdown() ) );
 						return runner.stop().then( () => {
 							module.exports.stop = () => {
