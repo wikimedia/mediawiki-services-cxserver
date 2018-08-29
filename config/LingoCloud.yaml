@@ -2,6 +2,8 @@ en:
   - zh
 ja:
   - zh
+simple:
+  - zh
 zh:
   - ja
-
+  - simple
