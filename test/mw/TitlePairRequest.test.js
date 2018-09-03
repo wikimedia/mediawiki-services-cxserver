@@ -41,6 +41,13 @@ tests = [
 		sourceLanguage: 'en',
 		targetLanguage: 'or',
 		desc: 'Corresponding title exist in target language and given title need normalization, has parenthesis'
+	},
+	{
+		source: 'Category:%22Related_ethnic_groups%22_needing_confirmation',
+		result: 'श्रेणी:पुष्टि की ज़रूरत वाले "सम्बंधित जाति समूह"',
+		sourceLanguage: 'en',
+		targetLanguage: 'hi',
+		desc: 'Source title is percentage encoded, but should not throw error, should return corresponding title'
 	}
 ];
 
