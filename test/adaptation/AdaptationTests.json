@@ -28,7 +28,7 @@
 							"width": 66,
 							"height": 80
 						},
-						"description": "element with the atomic number of 8"
+						"description": "chemical element with atomic number 8"
 					}
 				}
 			}
@@ -86,11 +86,11 @@
 						"title": "Chemical element",
 						"pagelanguage": "en",
 						"thumbnail": {
-							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Periodic_Table_Chart.png/80px-Periodic_Table_Chart.png",
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
 							"width": 80,
-							"height": 43
+							"height": 42
 						},
-						"description": "each instance has the same specified number of protons in its atomic nucleus, and is itself also a class"
+						"description": "a species of atoms having the same number of protons in the atomic nucleus"
 					}
 				}
 			},
@@ -149,9 +149,9 @@
 						"title": "Group (periodic table)",
 						"pagelanguage": "en",
 						"thumbnail": {
-							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Periodic_Table_Chart.png/80px-Periodic_Table_Chart.png",
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
 							"width": 80,
-							"height": 43
+							"height": 42
 						},
 						"description": "column of elements in the periodic table of the chemical elements"
 					}
@@ -166,9 +166,9 @@
 						"title": "Tabla periódica de los elementos",
 						"pagelanguage": "es",
 						"thumbnail": {
-							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tabla_periodica.png/80px-Tabla_periodica.png",
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Periodic_table_large-es-updated-2018.svg/80px-Periodic_table_large-es-updated-2018.svg.png",
 							"width": 80,
-							"height": 43
+							"height": 44
 						},
 						"description": "tabla que clasifica, organiza y distribuye los distintos elementos químicos, conforme a sus propiedades y características"
 					},
@@ -202,7 +202,7 @@
 							"width": 72,
 							"height": 80
 						},
-						"description": "process that leads to the transformation of one set of chemical substances to another; encompass changes that only involve the positions of electrons in the forming and breaking of chemical bonds between atoms, with no change to the nuclei"
+						"description": "process that results in the interconversion of chemical species"
 					}
 				}
 			}
