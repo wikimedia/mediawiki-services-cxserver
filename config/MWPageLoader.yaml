@@ -5,8 +5,6 @@ removableSections:
   - metadata
   - navbar
   - navbox
-  - nomobile
-  - noprint
   - sisterproject
   - sistersitebox
   - vertical-navbox

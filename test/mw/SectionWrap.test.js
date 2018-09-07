@@ -32,7 +32,7 @@ const sourceHTML = `<body>
 	<section data-mw-section-id="1">
 	<h3>Heading</h3>
 	<table><tr><td>data</td></tr></table>
-	<div>Content<div>innerdiv</div></div>
+	<div id="mwAc">Content<div>innerdiv</div></div>
 	</section>
 	<section data-mw-section-id="2">
 	<p>Content<div>Div in paragraph</div></p>
@@ -85,7 +85,7 @@ const expectedSectionWrappedHTML = `<body>
 	<section rel="cx:Section"><p id="mwAb">Paragraph <b>bold</b> <a href="/wiki/Title">Title</a>.</p></section>
 	<section rel="cx:Section"><h3>Heading</h3></section>
 	<section rel="cx:Section"><table><tr><td>data</td></tr></table></section>
-	<section rel="cx:Section"><div>Content<div>innerdiv</div></div></section>
+	<section rel="cx:Section"><div id="mwAc">Content<div>innerdiv</div></div></section>
 	<section rel="cx:Section"><p>Content<div>Div in paragraph</div></p></section>
 	<section rel="cx:Section"><ol><li>Item</li><li>Item</li></ol></section>
 	<section rel="cx:Section">
@@ -122,7 +122,8 @@ const expectedSectionWrappedHTML = `<body>
 	</body>`;
 
 describe( 'Section wrapping test', () => {
-	const parsedDoc = getParsedDoc( sourceHTML );
+	let parsedDoc = getParsedDoc( sourceHTML );
+	parsedDoc = parsedDoc.wrapSections();
 	const result = normalize( parsedDoc.getHtml() );
 	const expectedResultData = normalize( expectedSectionWrappedHTML );
 	it( 'should not have any errors when section wrapping', () => {
@@ -176,12 +177,13 @@ const sectionWithCategoriesExpectedHtml = `
 	</body>`;
 
 describe( 'Section wrapping test, check extracted categories', () => {
-	const parsedDoc = getParsedDoc( sectionWithCategories );
+	let parsedDoc = getParsedDoc( sectionWithCategories );
+	parsedDoc = parsedDoc.wrapSections();
 	const result = normalize( parsedDoc.getHtml() );
 	const expectedResultData = normalize( sectionWithCategoriesExpectedHtml );
 	it( 'should not have any errors when section wrapping and extract categories', () => {
 		assert.deepEqual( result, expectedResultData );
-		assert.deepEqual( Object.keys( parsedDoc.categories ).length, 2 );
+		assert.deepEqual( parsedDoc.categories.length, 2 );
 	} );
 } );
 
@@ -196,7 +198,7 @@ const nestedSectionsWithTransclusion = `
 	</p>
 	<section data-mw-section-id="3" id="mwXw">
 	<h3>Heading</h3>
-	<p>Para1</p>
+	<p id="mw6Q">Para1</p>
 	<p>Para2</p>
 	</section>
 	</section>
@@ -215,7 +217,7 @@ const nestedSectionsWithTransclusionExpected = `
 	<h3>Heading</h3>
 	</section>
 	<section rel="cx:Section">
-	<p>Para1</p>
+	<p id="mw6Q">Para1</p>
 	</section>
 	<section rel="cx:Section">
 	<p>Para2</p>
@@ -223,7 +225,8 @@ const nestedSectionsWithTransclusionExpected = `
 	</body>`;
 
 describe( 'Section wrapping test, with nested sections and tricky transclusion context', () => {
-	const parsedDoc = getParsedDoc( nestedSectionsWithTransclusion );
+	let parsedDoc = getParsedDoc( nestedSectionsWithTransclusion );
+	parsedDoc = parsedDoc.wrapSections();
 	const result = normalize( parsedDoc.getHtml() );
 	const expectedResultData = normalize( nestedSectionsWithTransclusionExpected );
 	it( 'should not have any errors when section wrapping and extract categories', () => {
