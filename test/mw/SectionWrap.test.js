@@ -1,6 +1,7 @@
 'use strict';
 
-const assert = require( '../utils/assert.js' ),
+const async = require( 'async' ),
+	assert = require( '../utils/assert.js' ),
 	LinearDoc = require( '../../lib/lineardoc' ),
 	fs = require( 'fs' ),
 	yaml = require( 'js-yaml' );
@@ -121,16 +122,6 @@ const expectedSectionWrappedHTML = `<body>
 	</section>
 	</body>`;
 
-describe( 'Section wrapping test', () => {
-	let parsedDoc = getParsedDoc( sourceHTML );
-	parsedDoc = parsedDoc.wrapSections();
-	const result = normalize( parsedDoc.getHtml() );
-	const expectedResultData = normalize( expectedSectionWrappedHTML );
-	it( 'should not have any errors when section wrapping', () => {
-		assert.deepEqual( result, expectedResultData );
-	} );
-} );
-
 const sectionWithCategories = `
 	<body class="mw-content-ltr sitedir-ltr ltr mw-body-content parsoid-body mediawiki mw-parser-output" dir="ltr" id="mwAA" lang="en">
 	<section data-mw-section-id="0">
@@ -176,17 +167,6 @@ const sectionWithCategoriesExpectedHtml = `
 	</section>
 	</body>`;
 
-describe( 'Section wrapping test, check extracted categories', () => {
-	let parsedDoc = getParsedDoc( sectionWithCategories );
-	parsedDoc = parsedDoc.wrapSections();
-	const result = normalize( parsedDoc.getHtml() );
-	const expectedResultData = normalize( sectionWithCategoriesExpectedHtml );
-	it( 'should not have any errors when section wrapping and extract categories', () => {
-		assert.deepEqual( result, expectedResultData );
-		assert.deepEqual( parsedDoc.categories.length, 2 );
-	} );
-} );
-
 const nestedSectionsWithTransclusion = `
 	<body>
 	<section data-mw-section-id="2" id="mwVw">
@@ -224,12 +204,99 @@ const nestedSectionsWithTransclusionExpected = `
 	</section>
 	</body>`;
 
-describe( 'Section wrapping test, with nested sections and tricky transclusion context', () => {
-	let parsedDoc = getParsedDoc( nestedSectionsWithTransclusion );
-	parsedDoc = parsedDoc.wrapSections();
-	const result = normalize( parsedDoc.getHtml() );
-	const expectedResultData = normalize( nestedSectionsWithTransclusionExpected );
-	it( 'should not have any errors when section wrapping and extract categories', () => {
-		assert.deepEqual( result, expectedResultData );
+const sectionWithBlankTemplate = `
+<body>
+<section data-mw-section-id="0" id="mwAQ">
+<div class="shortdescription nomobile noexcerpt noprint searchaux" style="display:none" about="#mwt3" typeof="mw:Transclusion" data-mw="{}" id="mwAw">City in  Virovitica-Podravina, Croatia</div>
+<link rel="mw:PageProp/Category" href="./Category:Articles_with_short_description" about="#mwt3">
+<table class="infobox" id="mwBV"></table>
+</section>
+</body>`;
+
+const sectionWithBlankTemplateExpected = `
+<body>
+<section rel="cx:Section">
+<div about="#mwt3" class="shortdescription nomobile noexcerpt noprint searchaux" data-mw="{}" id="mwAw" style="display:none" typeof="mw:Transclusion">City in  Virovitica-Podravina, Croatia</div>
+<link about="#mwt3" href="./Category:Articles_with_short_description" rel="mw:PageProp/Category"></link>
+</section>
+<section rel="cx:Section">
+<table class="infobox" id="mwBV"></table></section>
+</body>`;
+
+const wholeBodySource = `
+<html>
+<head></head>
+<body id="mwAA" lang="en" >
+<section data-mw-section-id="1" id="mwAQ">
+<div typeof="mw:Transclusion" about="#mwt2" data-mw="{}" id="mwAw">Some text content</div>
+<table about="#mwt2"><tr><td>used value</td></tr></table>
+</section>
+<section data-mw-section-id="2" id="mwAQ">
+<span typeof="mw:Transclusion" about="#mwt3" data-mw="{}" id="mwAw">Some text content</span>
+<table about="#mwt3"><tr><td>used value</td></tr></table>
+</section>
+</body>
+</html>`;
+
+const wholeBodyResult = `
+<html>
+<head></head>
+<body id="mwAA" lang="en">
+<section rel="cx:Section">
+<div about="#mwt2" data-mw="{}" id="mwAw" typeof="mw:Transclusion">Some text content</div>
+<table about="#mwt2"><tr><td>used value</td></tr></table>
+</section>
+<section rel="cx:Section">
+<span about="#mwt3" data-mw="{}" id="mwAw" typeof="mw:Transclusion">Some text content</span>
+<table about="#mwt3"><tr><td>used value</td></tr></table>
+</section>
+</body>
+</html>`;
+
+const tests = [
+	{
+		desc: 'section has common pattern of elements',
+		source: sourceHTML,
+		result: expectedSectionWrappedHTML,
+		categories: 1
+	},
+	{
+		desc: 'section has categories to be extracted',
+		source: sectionWithCategories,
+		result: sectionWithCategoriesExpectedHtml,
+		categories: 2
+	},
+	{
+		desc: 'content has nested sections and tricky transclusion context',
+		source: nestedSectionsWithTransclusion,
+		result: nestedSectionsWithTransclusionExpected,
+		categories: 0
+	},
+	{
+		desc: 'content has blank template and then an unrelated table',
+		source: sectionWithBlankTemplate,
+		result: sectionWithBlankTemplateExpected,
+		categories: 0
+	},
+	{
+		desc: 'content is complete page content with html, head tags and body having two templates with fragments',
+		source: wholeBodySource,
+		result: wholeBodyResult,
+		categories: 0
+	}
+];
+
+describe( 'Section wrap tests', ()=> {
+	async.forEach( tests, ( test ) => {
+		const parsedDoc = getParsedDoc( test.source );
+		const wrappedSectionDoc = parsedDoc.wrapSections();
+		const result = normalize( wrappedSectionDoc.getHtml() );
+		const expectedResultData = normalize( test.result );
+		it( 'should parse correctly when ' + test.desc, () => {
+			assert.deepEqual( result, expectedResultData );
+		} );
+		it( 'should extract correct number of categories when ' + test.desc, () => {
+			assert.deepEqual( parsedDoc.categories.length, test.categories );
+		} );
 	} );
 } );
