@@ -29,14 +29,31 @@ describe( 'Link Adaptation tests', function () {
 				expectedDataCX = JSON.parse( adaptedNode.attributes[ 'data-cx' ] );
 				actualDataCX = test.result.attributes[ 'data-cx' ];
 				assert.deepEqual( expectedDataCX.adapted, actualDataCX.adapted );
-				assert.deepEqual( !!actualDataCX.sourceTitle.thumbnail, !!expectedDataCX.sourceTitle.thumbnail );
-				assert.deepEqual( !!actualDataCX.sourceTitle.pageimage, !!expectedDataCX.sourceTitle.pageimage );
-				assert.deepEqual( !!actualDataCX.sourceTitle.description, !!expectedDataCX.sourceTitle.description );
+				assert.deepEqual(
+					!!actualDataCX.sourceTitle.thumbnail,
+					!!expectedDataCX.sourceTitle.thumbnail
+				);
+				assert.deepEqual(
+					!!actualDataCX.sourceTitle.pageimage,
+					!!expectedDataCX.sourceTitle.pageimage
+				);
+				assert.deepEqual( !!actualDataCX.sourceTitle.description,
+					!!expectedDataCX.sourceTitle.description
+				);
 				if ( expectedDataCX.adapted ) {
-					assert.deepEqual( expectedDataCX.targetTitle.pageid, actualDataCX.targetTitle.pageid );
-					assert.deepEqual( !!actualDataCX.targetTitle.thumbnail, !!expectedDataCX.targetTitle.thumbnail );
-					assert.deepEqual( !!actualDataCX.targetTitle.pageimage, !!expectedDataCX.targetTitle.pageimage );
-					assert.deepEqual( !!actualDataCX.targetTitle.description, !!expectedDataCX.targetTitle.description );
+					assert.deepEqual(
+						expectedDataCX.targetTitle.pageid,
+						actualDataCX.targetTitle.pageid
+					);
+					assert.deepEqual( !!actualDataCX.targetTitle.thumbnail,
+						!!expectedDataCX.targetTitle.thumbnail
+					);
+					assert.deepEqual( !!actualDataCX.targetTitle.pageimage,
+						!!expectedDataCX.targetTitle.pageimage
+					);
+					assert.deepEqual( !!actualDataCX.targetTitle.description,
+						!!expectedDataCX.targetTitle.description
+					);
 				}
 				done( null );
 			} );

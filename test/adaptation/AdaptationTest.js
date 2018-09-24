@@ -31,11 +31,14 @@ describe( 'Adaptation tests', () => {
 					for ( let id in test.resultAttributes ) {
 						assert.ok( actualDom.window.document.getElementById( id ), `Element with id ${id} exists in the result` );
 						for ( let attribute in test.resultAttributes[ id ] ) {
-							const actualAttributeValue = actualDom.window.document.getElementById( id )
-								.getAttribute( attribute );
+							const actualAttributeValue = actualDom.window.document
+								.getElementById( id ).getAttribute( attribute );
 							const expectedAttributeValue = test.resultAttributes[ id ][ attribute ];
 							if ( typeof expectedAttributeValue === 'object' ) {
-								assert.deepEqual( JSON.parse( actualAttributeValue ), expectedAttributeValue );
+								assert.deepEqual(
+									JSON.parse( actualAttributeValue ),
+									expectedAttributeValue
+								);
 							} else {
 								assert.deepEqual( actualAttributeValue, expectedAttributeValue );
 							}

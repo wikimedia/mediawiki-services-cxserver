@@ -57,7 +57,9 @@ const test = {
 	}
 };
 describe( 'Template parameter mapping test', () => {
-	const mapper = new TemplateParameterMapper( test.sourceParams, test.sourceTemplateData, test.targetTemplateData );
+	const mapper = new TemplateParameterMapper(
+		test.sourceParams, test.sourceTemplateData, test.targetTemplateData
+	);
 	it( 'should not have any errors while mapping params', () => {
 		assert.deepEqual( mapper.getParameterMap(), ( test.expectedParamMapping ) );
 	} );

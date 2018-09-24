@@ -110,7 +110,9 @@ function constructTests( paths, defParams ) {
 				ex.request = ex.request || {};
 				ret.push( constructTestCase(
 					ex.title,
-					uri.toString( { params: Object.assign( {}, defParams, ex.request.params || {} ) } ),
+					uri.toString( {
+						params: Object.assign( {}, defParams, ex.request.params || {} )
+					} ),
 					method,
 					ex.request,
 					ex.response || {}
