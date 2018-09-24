@@ -6,13 +6,19 @@ const assert = require( '../utils/assert' );
 const test = {
 	sourceParams: {
 		0: { wt: 'FirstValue' },
-		name: { wt: 'NameValue' },
+		srcName: { wt: 'NameValue' },
 		firstname: { wt: 'FirstNameValue' },
 		'namewithatailingspace ': { wt: 'SomeValue' },
 		author: { wt: 'AuthorName' },
-		'author-link1': { wt: 'author-link1-value' }
+		'author-link1': { wt: 'author-link1-value' },
+		datum: { wt: '25/12/2018' }
 	},
 	sourceTemplateData: {
+		maps: {
+			citoid: {
+				date: 'Datum'
+			}
+		},
 		params: {
 			name: {
 				aliases: [ 'srcName' ]
@@ -20,10 +26,18 @@ const test = {
 			firstname: { aliases: [ 'first-name' ] },
 			'namewithatailingspace ': {},
 			author: { aliases: [ 'writer' ] },
-			'author-link1': { aliases: [ 'authorlink' ] }
+			'author-link1': { aliases: [ 'authorlink' ] },
+			datum: {},
+			titel: {}
 		}
 	},
 	targetTemplateData: {
+		maps: {
+			citoid: {
+				edition: 'edition',
+				publicationTitle: 'title'
+			}
+		},
 		params: {
 			título: {
 				aliases: [ 'Name', 'nombre' ]
@@ -38,14 +52,15 @@ const test = {
 			},
 			'escritor-link': {
 				aliases: [ 'authorlink' ]
-			}
+			},
+			date: {}
 		}
 	},
 	expectedParamMapping: {
 		// Unnamed param name
 		0: '0',
-		// Mapped by aliases of target
-		name: 'título',
+		// Mapped by aliases of source and target
+		srcName: 'título',
 		// Mapped by aliases of target
 		firstname: 'primero-título',
 		// Normalized source name, target name match
@@ -53,7 +68,8 @@ const test = {
 		// Mapped by aliases of source and target
 		author: 'escritor',
 		// Mapped by aliases of source and target
-		'author-link1': 'escritor-link'
+		'author-link1': 'escritor-link',
+		datum: 'date'
 	}
 };
 describe( 'Template parameter mapping test', () => {
