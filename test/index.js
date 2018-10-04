@@ -7,6 +7,7 @@ var paths,
 paths = [
 	'lib/*.js',
 	'lib/**/*.js',
+	'config/*.js',
 	'test/**/*.js',
 	'bin/mt',
 	'bin/adapt',
