@@ -253,6 +253,45 @@ const wholeBodyResult = `
 </body>
 </html>`;
 
+const sectionWithMeta = `
+<body id="mwAA" lang="he">
+<section data-mw-section-id="0" id="mwAQ">
+<meta property="mw:PageProp/displaytitle" content="פלמינג: האיש שרצה להיות בונד" id="mwAg" />
+<table class="infobox" style="width: 270px; font-size: 95%;" about="#mwt2" typeof="mw:Transclusion" data-mw='{}' id="mwAw">
+	<caption style="background: #C6C9FF;  border:1px solid #aaaaaa; border-bottom:0px;">פלמינג: האיש שרצה להיות
+		בונד<br />Fleming: The Man Who Would Be Bond</caption>
+	<tbody>
+		<tr>
+			<td colspan="2" style="text-align:center"></td>
+		</tr>
+	</tbody>
+</table>
+<link rel="mw:PageProp/Category" href="./קטגוריה:ויקינתונים_-_השוואת_ערכים:_חסר" about="#mwt2" />
+<p id="mwBQ"><b id="mwBg">פלמינג: האיש שרצה להיות בונד</b></p>
+</section>
+</body>
+`;
+
+const sectionWithMetaResult = `
+<body id="mwAA" lang="he">
+<section rel="cx:Section">
+<meta content="פלמינג: האיש שרצה להיות בונד" id="mwAg" property="mw:PageProp/displaytitle" />
+</section>
+<section rel="cx:Section">
+<table about="#mwt2" class="infobox" data-mw="{}" id="mwAw" style="width: 270px; font-size: 95%;" typeof="mw:Transclusion">
+<caption style="background: #C6C9FF;  border:1px solid #aaaaaa; border-bottom:0px;">פלמינג: האיש שרצה להיותבונד
+<br />Fleming: The Man Who Would Be Bond</caption>
+<tbody>
+<tr><td colspan="2" style="text-align:center"></td></tr></tbody>
+</table><link about="#mwt2" href="./קטגוריה:ויקינתונים_-_השוואת_ערכים:_חסר" rel="mw:PageProp/Category" />
+</section>
+<section rel="cx:Section">
+<p id="mwBQ"><b id="mwBg">פלמינג: האיש שרצה להיות בונד</b>
+</p>
+</section>
+</body>"
+`;
+
 const tests = [
 	{
 		desc: 'section has common pattern of elements',
@@ -282,6 +321,12 @@ const tests = [
 		desc: 'content is complete page content with html, head tags and body having two templates with fragments',
 		source: wholeBodySource,
 		result: wholeBodyResult,
+		categories: 0
+	},
+	{
+		desc: 'Content has self closing meta tag',
+		source: sectionWithMeta,
+		result: sectionWithMetaResult,
 		categories: 0
 	}
 ];
