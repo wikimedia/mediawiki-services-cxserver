@@ -62,4 +62,21 @@ describe( 'LinearDoc', () => {
 			);
 		}
 	} );
+
+	it( 'should be possible to reduce and expand a document', () => {
+		const testXhtmlFile = __dirname + '/data/test-figure-inline.html';
+		const contentForReduce = fs.readFileSync( testXhtmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
+		const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
+		parser.init();
+		parser.write( contentForReduce );
+		const { reducedDoc, attrDump } = parser.builder.doc.reduce();
+		assert.deepEqual( Object.keys( attrDump ).length, 16, 'Attributes for 16 tags extracted.' );
+		let expandedDoc = reducedDoc.expand( attrDump );
+		assert.deepEqual(
+			normalize( expandedDoc.getHtml() ),
+			normalize( contentForReduce ),
+			'Restored the original html after reduce and expand.'
+		);
+	} );
+
 } );
