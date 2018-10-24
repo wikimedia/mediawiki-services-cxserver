@@ -1,6 +1,6 @@
 'use strict';
 
-class TransformYandexLang {
+class TransformLanguages {
 	constructor( conf ) {
 		this.langs = conf.languages;
 		this.notAsTarget = conf.notAsTarget || [];
@@ -19,4 +19,4 @@ class TransformYandexLang {
 
 }
 
-module.exports = TransformYandexLang;
+module.exports = TransformLanguages;

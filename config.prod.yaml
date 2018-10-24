@@ -80,6 +80,10 @@ services:
           api: http://matxin.elhuyar.eus/API
           key: null
           languages: config/Matxin.yaml
+        Google:
+          api: https://www.googleapis.com/language/translate/v2
+          key: null
+          languages: config/Google.yaml
         Yandex:
           api: https://translate.yandex.net
           key: null

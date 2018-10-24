@@ -6,14 +6,11 @@ notAsTarget:
   - it
 languages:
   - af
-  - am
   - ar
   - az
-  - ba
   - be
-  - be-tarask
-  - bn
   - bg
+  - bn
   - bs
   - ca
   - ceb
@@ -31,9 +28,9 @@ languages:
   - fi
   - fr
   - ga
-  - gd
   - gl
   - gu
+  - ha
   - he
   - hi
   - hr
@@ -41,6 +38,7 @@ languages:
   - hu
   - hy
   - id
+  - ig
   - is
   - it
   - ja
@@ -50,38 +48,35 @@ languages:
   - km
   - kn
   - ko
-  - ky
   - la
-  - lb
   - lo
   - lt
   - lv
-  - mi
   - mg
-  - mhr
-  - ml
+  - mi
   - mk
+  - ml
   - mn
-  - mrj
   - mr
   - ms
   - mt
   - my
-  - nb
   - ne
   - nl
+  - no
+  - ny
   - pa
-  - pap
   - pl
   - pt
   - ro
   - ru
   - si
-  - simple
   - sk
   - sl
+  - so
   - sq
   - sr
+  - st
   - su
   - sv
   - sw
@@ -89,14 +84,12 @@ languages:
   - te
   - tg
   - th
-  - tl
   - tr
-  - tt
-  - udm
   - uk
   - ur
   - uz
   - vi
-  - xh
   - yi
+  - yo
   - zh
+  - zu

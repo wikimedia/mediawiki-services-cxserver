@@ -74,7 +74,12 @@ services:
       mt:
         Apertium:
           api: http://apertium.wmflabs.org
+          # For packaging reasons use separate configuration
           languages: config/Apertium.yaml
+        Google:
+          api: https://www.googleapis.com/language/translate/v2
+          key: null
+          languages: config/Google.yaml
         Yandex:
           api: https://translate.yandex.net
           key: null
