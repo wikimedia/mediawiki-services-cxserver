@@ -95,4 +95,30 @@ describe( 'LinearDoc', () => {
 		);
 	} );
 
+	it( 'test HTML expand with external attributes inserted', () => {
+		const corruptedDoc = `<p id="1">
+			<b id="2" onclick="doSomething();">Externally inserted attribute.</b>
+			<a href="navigateThere();">Externally inserted tag</a>
+			<span id="mwEz">Element with only id attribute is fine.</span>
+			</p>`;
+		const sanitizedExpandedDoc = `<p class="paragraph" id="mwEq">
+			<b class="bold" id="mwEs">Externally inserted attribute.</b>
+			<a>Externally inserted tag</a>
+			<span id="mwEz">Element with only id attribute is fine.</span>
+			</p>`;
+		const attrDump = {
+			1: { id: 'mwEq', 'class': 'paragraph' },
+			2: { id: 'mwEs', 'class': 'bold' }
+		};
+		const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
+		parser.init();
+		parser.write( corruptedDoc );
+		let expandedDoc = parser.builder.doc.expand( attrDump );
+		assert.deepEqual(
+			normalize( expandedDoc.getHtml() ),
+			normalize( sanitizedExpandedDoc ),
+			'Expanded the corrupted document by removing all externally inserted attributes.'
+		);
+	} );
+
 } );
