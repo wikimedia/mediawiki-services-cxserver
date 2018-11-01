@@ -26,6 +26,7 @@ describe( 'LinearDoc', () => {
 			const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
 			parser.init();
 			parser.write( testXhtml );
+			assert.ok( !LinearDoc.Utils.isBlockTemplate( parser.builder.doc ), 'Not a section with block template' );
 			assert.deepEqual(
 				normalize( parser.builder.doc.dumpXml() ),
 				normalize( expectedXml ),
@@ -121,4 +122,12 @@ describe( 'LinearDoc', () => {
 		);
 	} );
 
+	it( 'test if the content is block level template', () => {
+		const testXhtmlFile = __dirname + '/data/test-block-template-section.html';
+		const contentForTest = fs.readFileSync( testXhtmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
+		const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
+		parser.init();
+		parser.write( contentForTest );
+		assert.ok( LinearDoc.Utils.isBlockTemplate( parser.builder.doc ), 'Section with block template' );
+	} );
 } );
