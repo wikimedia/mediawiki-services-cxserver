@@ -5,16 +5,13 @@
 	},
 	"env": {
 		"es6": true,
-		"browser": true,
-		"jquery": true,
-		"qunit": true,
-		"node": true,
-		"mocha": true
+		"node": true
 	},
 	"globals": {
 		"require": false
 	},
 	"rules": {
-		"one-var": [ "error", { "var": "always" } ]
+		"one-var": [ "error", { "var": "always" } ],
+		"max-len": 0
 	}
 }

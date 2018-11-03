@@ -43,7 +43,7 @@
     "async": "^2.6.1",
     "check-dependencies": "^1.1.0",
     "eslint": "^5.8.0",
-    "eslint-config-wikimedia": "0.7.2",
+    "eslint-config-wikimedia": "0.8.1",
     "extend": "^3.0.2",
     "mocha": "^5.2.0",
     "mocha-eslint": "^4.1.0",
