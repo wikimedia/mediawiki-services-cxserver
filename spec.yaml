@@ -119,7 +119,7 @@ paths:
            - JsonDict
            - Dictd
       x-amples:
-        - title: Fetch dictionay meaning with a given provider
+        - title: Fetch dictionary meaning with a given provider
           request:
             params:
               word: water
@@ -136,7 +136,7 @@ paths:
                     - fd-eng-spa
             headers:
               content-type: application/json
-        - title: Fetch dictionay meaning without specifying a provider
+        - title: Fetch dictionary meaning without specifying a provider
           request:
             params:
               word: water
