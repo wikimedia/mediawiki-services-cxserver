@@ -9,10 +9,8 @@ paths = [
 	'lib/**/*.js',
 	'config/*.js',
 	'test/**/*.js',
-	'bin/mt',
-	'bin/adapt',
-	'bin/linearize',
-	'bin/segment'
+	'bin/*',
+	'!bin/generateDocs.sh'
 ];
 
 // Run the tests
