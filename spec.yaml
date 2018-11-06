@@ -18,16 +18,12 @@ paths:
     get:
       tags:
         - Root
-        - Robots
       description: Gets robots.txt
       x-amples:
         - title: robots.txt check
           request: {}
           response:
             status: 200
-            headers:
-              user-agent: '*'
-              disallow: '/'
   /:
     get:
       tags:

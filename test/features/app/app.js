@@ -11,7 +11,7 @@ if ( !server.stopHookAdded ) {
 
 describe( 'express app', function () {
 
-	this.timeout( 20000 ); // eslint-disable-line no-invalid-this
+	this.timeout( 200 ); // eslint-disable-line no-invalid-this
 
 	before( () => { return server.start(); } );
 
@@ -20,7 +20,6 @@ describe( 'express app', function () {
 			uri: `${server.config.uri}robots.txt`
 		} ).then( ( res ) => {
 			assert.deepEqual( res.status, 200 );
-			assert.deepEqual( res.headers.disallow, '/' );
 		} );
 	} );
 
@@ -31,7 +30,6 @@ describe( 'express app', function () {
 		return preq.get( {
 			uri: `${server.config.uri}robots.txt`
 		} ).then( ( res ) => {
-			assert.deepEqual( res.status, 200 );
 			assert.deepEqual( res.headers[ 'access-control-allow-origin' ], '*' );
 			assert.deepEqual( !!res.headers[ 'access-control-allow-headers' ], true );
 			assert.deepEqual( !!res.headers[ 'access-control-expose-headers' ], true );
@@ -45,7 +43,6 @@ describe( 'express app', function () {
 		return preq.get( {
 			uri: `${server.config.uri}robots.txt`
 		} ).then( ( res ) => {
-			assert.deepEqual( res.status, 200 );
 			assert.deepEqual( res.headers[ 'x-xss-protection' ], '1; mode=block' );
 			assert.deepEqual( res.headers[ 'x-content-type-options' ], 'nosniff' );
 			assert.deepEqual( res.headers[ 'x-frame-options' ], 'SAMEORIGIN' );
