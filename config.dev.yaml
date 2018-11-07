@@ -97,6 +97,8 @@ services:
           account: wikimedia
           key: null
           languages: config/LingoCloud.yaml
+        TestClient:
+          languages: config/TestClient.yaml
       dictionary:
         Dictd:
           languages: config/Dictd.yaml

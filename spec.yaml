@@ -187,12 +187,12 @@ paths:
           required: true
           x-textarea: true
       x-amples:
-        - title: Machine translate an HTML fragment using Apertium.
+        - title: Machine translate an HTML fragment using TestClient.
           request:
             params:
               from: en
               to: es
-              provider: Apertium
+              provider: TestClient
             body:
               html: <p><a href='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a href='Atomic number'>atomic number</a> 8.</p>
           response:
@@ -349,6 +349,7 @@ paths:
           required: false
           enum:
            - Apertium
+           - Matxin
         - name: html
           in: formData
           description: The HTML content to translate
@@ -356,12 +357,12 @@ paths:
           required: true
           x-textarea: true
       x-amples:
-        - title: Machine translate an HTML fragment using Apertium, adapt the links to target language wiki.
+        - title: Machine translate an HTML fragment using TestClient, adapt the links to target language wiki.
           request:
             params:
               from: en
               to: es
-              provider: Apertium
+              provider: TestClient
             body:
               html: <p><a rel="mw:WikiLink" href='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='Atomic number'>atomic number</a> 8.</p>
           response:
