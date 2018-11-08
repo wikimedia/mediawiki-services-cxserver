@@ -1,190 +1,10 @@
 {
-    "titlepair/fi/ajt": {
-        "Malline:Parasym": {
-            "sourceTitle": "Malline:Parasym"
-        },
-        "#titles": {
-            "./Malline:Parasym": "Malline:Parasym"
-        }
-    },
-    "titlepair/fi/sl": {
-        "Malline:Babel": {
-            "sourceTitle": "Malline:Babel",
-            "targetTitle": "Predloga:Babilon",
-            "missing": false
-        },
-        "#titles": {
-            "./Malline:Babel": "Malline:Babel"
-        }
-    },
-    "templatedata/fi": {
-        "Malline:Babel": {
-            "title": "Malline:Babel",
-            "params": {
-                "1": {},
-                "2": {},
-                "3": {},
-                "4": {},
-                "5": {},
-                "6": {},
-                "7": {},
-                "8": {},
-                "9": {},
-                "10": {},
-                "11": {},
-                "12": {},
-                "13": {},
-                "14": {},
-                "15": {},
-                "16": {},
-                "17": {},
-                "18": {},
-                "19": {},
-                "20": {},
-                "21": {},
-                "22": {},
-                "23": {},
-                "24": {},
-                "25": {},
-                "26": {},
-                "27": {},
-                "28": {},
-                "29": {},
-                "30": {}
-            }
-        },
-        "#titles": {
-            "./Malline:Babel": "Malline:Babel"
-        }
-    },
-    "templatedata/sl": {
-        "Predloga:Babilon": {
-            "title": "Predloga:Babilon",
-            "params": {
-                "1": {},
-                "2": {},
-                "3": {},
-                "4": {},
-                "5": {},
-                "6": {},
-                "7": {},
-                "8": {},
-                "9": {},
-                "10": {},
-                "11": {},
-                "12": {},
-                "13": {},
-                "14": {},
-                "15": {},
-                "16": {},
-                "17": {},
-                "18": {},
-                "19": {},
-                "20": {},
-                "21": {},
-                "22": {},
-                "23": {},
-                "24": {},
-                "25": {},
-                "26": {},
-                "27": {},
-                "28": {},
-                "29": {},
-                "30": {},
-                "31": {},
-                "32": {},
-                "33": {},
-                "34": {},
-                "35": {},
-                "36": {},
-                "37": {},
-                "38": {},
-                "39": {},
-                "40": {},
-                "41": {},
-                "42": {},
-                "43": {},
-                "44": {},
-                "45": {},
-                "46": {},
-                "47": {},
-                "48": {},
-                "49": {},
-                "50": {},
-                "51": {},
-                "52": {},
-                "53": {},
-                "54": {},
-                "55": {},
-                "56": {},
-                "57": {},
-                "58": {},
-                "59": {},
-                "60": {},
-                "61": {},
-                "62": {},
-                "63": {},
-                "64": {},
-                "65": {},
-                "66": {},
-                "67": {},
-                "68": {},
-                "69": {},
-                "70": {},
-                "71": {},
-                "72": {},
-                "73": {},
-                "74": {},
-                "75": {},
-                "76": {},
-                "77": {},
-                "78": {},
-                "79": {},
-                "80": {},
-                "81": {},
-                "82": {},
-                "83": {},
-                "84": {},
-                "85": {},
-                "86": {},
-                "87": {},
-                "88": {},
-                "89": {},
-                "90": {},
-                "91": {},
-                "92": {},
-                "93": {},
-                "94": {},
-                "95": {},
-                "96": {},
-                "97": {},
-                "98": {},
-                "99": {},
-                "100": {},
-                "align": {},
-                "left": {},
-                "bottom": {},
-                "width": {},
-                "bordercolor": {},
-                "solid": {},
-                "textcolor": {},
-                "extra-css": {},
-                "color": {},
-                "header": {},
-                "posebna-polja": {}
-            }
+    "templatedata/ca": {
+        "Plantilla:London Gazette": {
+            "title": "Plantilla:London Gazette",
+            "params": {}
         },
         "#titles": {}
-    },
-    "titlepair/en/fr": {
-        "Template:Cite web": {
-            "sourceTitle": "Template:Cite web",
-            "targetTitle": "Modèle:Lien web",
-            "missing": false
-        },
-        "#titles": {
-            "./Template:Cite_web": "Template:Cite web"
-        }
     },
     "templatedata/en": {
         "Template:Cite web": {
@@ -623,7 +443,7 @@
                         "en": "Pages"
                     },
                     "description": {
-                        "en": "Pages in the source that support the content (not an indication of the number of pages in the source; displays after 'pp.'"
+                        "en": "Pages in the source that support the content (not an indication of the number of pages in the source); displays after 'pp.'"
                     },
                     "type": "string",
                     "required": false,
@@ -2668,12 +2488,308 @@
             "sets": [],
             "maps": {}
         },
-        "#titles": {
-            "./Template:Cite_web": "Template:Cite web",
-            "./Template:Col-begin": "Template:Col-begin",
-            "./Template:Col-end": "Template:Col-end",
-            "./Template:Col-break": "Template:Col-break"
-        }
+        "Template:London Gazette": {
+            "title": "Template:London Gazette",
+            "params": {
+                "issue": {
+                    "label": {
+                        "en": "Issue"
+                    },
+                    "description": {
+                        "en": "The issue number of the referenced Gazette (to find this from the date, consult WP:London Gazette Index)"
+                    },
+                    "example": {
+                        "en": "33000"
+                    },
+                    "type": "number",
+                    "required": true,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "date": {
+                    "label": {
+                        "en": "Date"
+                    },
+                    "description": {
+                        "en": "The publication date of the referenced Gazette. This should be in the format day month year."
+                    },
+                    "example": {
+                        "en": "9 December 1924"
+                    },
+                    "type": "date",
+                    "required": true,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "page": {
+                    "label": {
+                        "en": "Page"
+                    },
+                    "description": {
+                        "en": "The page of the referenced Gazette on which the citation is found - Except when citing a whole issue, for example for the Birthday Honours List."
+                    },
+                    "example": {
+                        "en": "123"
+                    },
+                    "type": "wiki-page-name",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "pages": {
+                    "label": {
+                        "en": "Pages"
+                    },
+                    "description": {
+                        "en": "The page range of the reference Gazette in the form number–number where the two page numbers are separated by a ndash"
+                    },
+                    "example": {
+                        "en": "123–124"
+                    },
+                    "type": "wiki-page-name",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "supp": {
+                    "label": {
+                        "en": "Supplement"
+                    },
+                    "description": {
+                        "en": "For a link in a supplement to a Gazette - To correctly format the URL to link to a page in a Gazette supplement, set this parameter to the number of the supplement (typically, supp=1); otherwise omit it."
+                    },
+                    "example": {
+                        "en": "1"
+                    },
+                    "type": "number",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "display-supp": {
+                    "label": {
+                        "en": "Display-supppement"
+                    },
+                    "description": {
+                        "en": "Some supplements are accessed without an alteration to the standard ULR in which case use this parameter and not the supp parameter."
+                    },
+                    "example": {
+                        "en": "1"
+                    },
+                    "type": "number",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "nolink": {
+                    "description": {
+                        "en": "To display the name of the Gazette without a wikilink (e.g. if there are multiple uses of the template on the same page, allow the link on the first but disable the rest)"
+                    },
+                    "example": {
+                        "en": "y"
+                    },
+                    "type": "string",
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "city": {
+                    "label": {
+                        "en": "City"
+                    },
+                    "description": {
+                        "en": "Either |city=e for Edinburgh Gazette, |city=b for Belfast Gazette or |city=o for the Oxford Gazette as the first 23 issues of the London Gazette were titled. The city names may also be spelt out in full if you prefer, e.g. |city=Edinburgh"
+                    },
+                    "example": {
+                        "en": "e"
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "London"
+                    },
+                    "autovalue": "",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": []
+                },
+                "title": {
+                    "label": {
+                        "en": "Title"
+                    },
+                    "description": {
+                        "en": "Sets a title"
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "No. <code>issue</code>"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null
+                },
+                "quote": {
+                    "label": {
+                        "en": "Quote"
+                    },
+                    "description": {
+                        "en": "Appends a quote to the end of the template."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "ref": {
+                    "label": {
+                        "en": "Ref"
+                    },
+                    "description": {
+                        "en": "Used in conjunction with the harv template. It can be altered to any value"
+                    },
+                    "default": {
+                        "en": "Gazette <code>issue</code>"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "type": "unknown"
+                },
+                "mode": {
+                    "label": {
+                        "en": "Mode"
+                    },
+                    "description": {
+                        "en": "Setting ''mode=cs2'' changes the style to ensure consistency with Citation style 2, as produced by the Citation template"
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "cs1"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null
+                },
+                "postscript": {
+                    "label": {
+                        "en": "Postscript"
+                    },
+                    "description": {
+                        "en": "To remove the final period, or change it to any other character — now semi-redundant use the <code>mode</code> parameter  instead."
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null
+                }
+            },
+            "description": {
+                "en": "This template is used to provide references to pages in the London Gazette online archive website. The London Gazette is the official newspaper of the British government for England and Wales in which all official notices are published. The template is provided to simplify the entering of addresses. An index by number/date (i.e. if you know the number or date you can find the document) is at WP:London Gazette Index.\n\nThe template may also be used to provide references to pages in the of the Edinburgh Gazette online archives and to Belfast Gazette online archives."
+            },
+            "paramOrder": [
+                "issue",
+                "date",
+                "page",
+                "pages",
+                "supp",
+                "display-supp",
+                "nolink",
+                "city",
+                "title",
+                "quote",
+                "ref",
+                "mode",
+                "postscript"
+            ],
+            "format": "block",
+            "sets": [],
+            "maps": {}
+        },
+        "#titles": {}
+    },
+    "titlepair/en/ca": {
+        "Template:London Gazette": {
+            "sourceTitle": "Template:London Gazette",
+            "targetTitle": "Plantilla:London Gazette",
+            "missing": false
+        },
+        "#titles": {}
+    },
+    "templatedata/sv": {
+        "Mall:Col-begin": {
+            "title": "Mall:Col-begin",
+            "params": {}
+        },
+        "Mall:Col-end": {
+            "title": "Mall:Col-end",
+            "params": {}
+        },
+        "Mall:Col-break": {
+            "title": "Mall:Col-break",
+            "params": {
+                "{{#if:{{{width<includeonly>|</includeonly>}}}|width": {}
+            }
+        },
+        "#titles": {}
+    },
+    "titlepair/en/sv": {
+        "Template:Col-begin": {
+            "sourceTitle": "Template:Col-begin",
+            "targetTitle": "Mall:Col-begin",
+            "missing": false
+        },
+        "Template:Col-break": {
+            "sourceTitle": "Template:Col-break",
+            "targetTitle": "Mall:Col-break",
+            "missing": false
+        },
+        "Template:Col-end": {
+            "sourceTitle": "Template:Col-end",
+            "targetTitle": "Mall:Col-end",
+            "missing": false
+        },
+        "#titles": {}
     },
     "templatedata/fr": {
         "Modèle:Lien web": {
@@ -3048,7 +3164,7 @@
                         "lire en ligne"
                     ],
                     "example": {
-                        "fr": "http://www.lemonde.fr/campus/article/2015/05/19/si-l-apprentissage-des-langues-est-une-priorite-c-est-en-primaire-qu-il-faut-porter-l-effort_4636373_4401467.html"
+                        "fr": "https://www.lemonde.fr/campus/article/2015/05/19/si-l-apprentissage-des-langues-est-une-priorite-c-est-en-primaire-qu-il-faut-porter-l-effort_4636373_4401467.html"
                     },
                     "suggested": false,
                     "deprecated": false,
@@ -3509,7 +3625,8 @@
                 "brisé le": {
                     "aliases": [
                         "dead-url",
-                        "deadurl"
+                        "deadurl",
+                        "lien brisé"
                     ],
                     "label": {
                         "fr": "brisé le"
@@ -3517,9 +3634,11 @@
                     "description": {
                         "fr": "permet de signaler si un lien est brisé"
                     },
+                    "example": {
+                        "fr": "4 juin 2018, oui"
+                    },
                     "required": false,
                     "suggested": false,
-                    "example": null,
                     "deprecated": false,
                     "autovalue": null,
                     "default": null,
@@ -3657,50 +3776,220 @@
         },
         "#titles": {}
     },
-    "titlepair/en/sv": {
-        "Template:Col-begin": {
-            "sourceTitle": "Template:Col-begin",
-            "targetTitle": "Mall:Col-begin",
+    "titlepair/en/fr": {
+        "Template:Cite web": {
+            "sourceTitle": "Template:Cite web",
+            "targetTitle": "Modèle:Lien web",
             "missing": false
         },
-        "Template:Col-break": {
-            "sourceTitle": "Template:Col-break",
-            "targetTitle": "Mall:Col-break",
-            "missing": false
-        },
-        "Template:Col-end": {
-            "sourceTitle": "Template:Col-end",
-            "targetTitle": "Mall:Col-end",
-            "missing": false
-        },
-        "#titles": {
-            "./Template:Col-begin": "Template:Col-begin",
-            "./Template:Col-break": "Template:Col-break",
-            "./Template:Col-end": "Template:Col-end"
-        }
+        "#titles": {}
     },
-    "templatedata/sv": {
-        "Mall:Col-begin": {
-            "title": "Mall:Col-begin",
-            "params": {
-                "class": {},
-                "bgColor": {},
-                "width": {},
-                "font-size": {}
-            }
-        },
-        "Mall:Col-end": {
-            "title": "Mall:Col-end",
+    "templatedata/sl": {
+        "Predloga:Babilon": {
+            "title": "Predloga:Babilon",
             "params": {}
         },
-        "Mall:Col-break": {
-            "title": "Mall:Col-break",
-            "params": {
-                "width": {},
-                "align": {},
-                "valign": {},
-                "gap": {}
-            }
+        "#titles": {}
+    },
+    "templatedata/fi": {
+        "Malline:Babel": {
+            "title": "Malline:Babel",
+            "params": {}
+        },
+        "#titles": {}
+    },
+    "titlepair/fi/sl": {
+        "Malline:Babel": {
+            "sourceTitle": "Malline:Babel",
+            "targetTitle": "Predloga:Babilon",
+            "missing": false
+        },
+        "#titles": {}
+    },
+    "titlepair/fi/ajt": {
+        "Malline:Parasym": {
+            "sourceTitle": "Malline:Parasym"
+        },
+        "#titles": {}
+    },
+    "titlepair/en/es": {
+        "Template:Infobox Finnish municipality": {
+            "sourceTitle": "Template:Infobox Finnish municipality"
+        },
+        "Category:Pages using div col with unknown parameters": {
+            "sourceTitle": "Category:Pages using div col with unknown parameters"
+        },
+        "Category:Food preservation": {
+            "sourceTitle": "Category:Food preservation",
+            "targetTitle": "Categoría:Preservación de alimentos",
+            "missing": false
+        },
+        "Category:Cooking techniques": {
+            "sourceTitle": "Category:Cooking techniques",
+            "targetTitle": "Categoría:Técnicas culinarias",
+            "missing": false
+        },
+        "Category:Pickles": {
+            "sourceTitle": "Category:Pickles",
+            "targetTitle": "Categoría:Encurtidos",
+            "missing": false
+        },
+        "Category:World cuisine": {
+            "sourceTitle": "Category:World cuisine"
+        },
+        "Category:Culinary terminology": {
+            "sourceTitle": "Category:Culinary terminology"
+        },
+        "Atomic number": {
+            "sourceTitle": "Atomic number",
+            "targetTitle": "Número atómico",
+            "missing": false
+        },
+        "Oxygen": {
+            "sourceTitle": "Oxygen",
+            "targetTitle": "Oxígeno",
+            "missing": false
+        },
+        "The Godfather (wrestler)": {
+            "sourceTitle": "The Godfather (wrestler)",
+            "targetTitle": "Charles Wright (luchador)",
+            "missing": false
+        },
+        "List of planets with life": {
+            "sourceTitle": "List of planets with life"
+        },
+        "#titles": {}
+    },
+    "titleinfo/en": {
+        "Atomic number": {
+            "pageid": 673,
+            "ns": 0,
+            "title": "Atomic number",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2018-11-07T09:29:02Z",
+            "lastrevid": 867682942,
+            "length": 13688,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Atomic_number_depiction.jpg/80px-Atomic_number_depiction.jpg",
+                "width": 80,
+                "height": 49
+            },
+            "pageimage": "Atomic_number_depiction.jpg",
+            "description": "number of protons found in the nucleus of an atom",
+            "descriptionsource": "central"
+        },
+        "Oxygen": {
+            "pageid": 22303,
+            "ns": 0,
+            "title": "Oxygen",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2018-11-08T22:09:59Z",
+            "lastrevid": 865817754,
+            "length": 101048,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Liquid_oxygen_in_a_beaker_4.jpg/66px-Liquid_oxygen_in_a_beaker_4.jpg",
+                "width": 66,
+                "height": 80
+            },
+            "pageimage": "Liquid_oxygen_in_a_beaker_4.jpg",
+            "description": "chemical element with atomic number 8",
+            "descriptionsource": "local"
+        },
+        "The Godfather (wrestler)": {
+            "pageid": 591648,
+            "ns": 0,
+            "title": "The Godfather (wrestler)",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2018-11-08T13:05:59Z",
+            "lastrevid": 867861380,
+            "length": 31331,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg/51px-Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg",
+                "width": 51,
+                "height": 80
+            },
+            "pageimage": "Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg",
+            "description": "American professional wrestler",
+            "descriptionsource": "central"
+        },
+        "List of planets with life": {
+            "ns": 0,
+            "title": "List of planets with life",
+            "missing": "",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr"
+        },
+        "#titles": {}
+    },
+    "titleinfo/es": {
+        "Número atómico": {
+            "pageid": 1980,
+            "ns": 0,
+            "title": "Número atómico",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2018-10-15T21:47:04Z",
+            "lastrevid": 111297029,
+            "length": 8669,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
+                "width": 80,
+                "height": 80
+            },
+            "pageimage": "Element_identity.png",
+            "description": "número total de protones que tiene el átomo",
+            "descriptionsource": "central"
+        },
+        "Oxígeno": {
+            "pageid": 3267,
+            "ns": 0,
+            "title": "Oxígeno",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2018-11-09T06:06:49Z",
+            "lastrevid": 111875280,
+            "length": 105886,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/O%2C8.jpg/80px-O%2C8.jpg",
+                "width": 80,
+                "height": 40
+            },
+            "pageimage": "O,8.jpg",
+            "description": "elemento químico",
+            "descriptionsource": "central"
+        },
+        "Charles Wright (luchador)": {
+            "pageid": 2834764,
+            "ns": 0,
+            "title": "Charles Wright (luchador)",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2018-11-06T02:17:28Z",
+            "lastrevid": 111260678,
+            "length": 24756,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Paul_Wright_AKA_%28The_Godfather%29.jpg/50px-Paul_Wright_AKA_%28The_Godfather%29.jpg",
+                "width": 50,
+                "height": 80
+            },
+            "pageimage": "Paul_Wright_AKA_(The_Godfather).jpg"
         },
         "#titles": {}
     }

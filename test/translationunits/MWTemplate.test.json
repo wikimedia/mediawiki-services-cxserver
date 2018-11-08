@@ -234,11 +234,7 @@
 									"wt": "col-break",
 									"href": "./Template:Col-break"
 								},
-								"params": {
-									"gap": {
-										"wt": "4em"
-									}
-								},
+								"params": {},
 								"i": 2
 							}
 						},
@@ -293,11 +289,7 @@
 									"wt": "Col-break",
 									"href": "./Mall:Col-break"
 								},
-								"params": {
-									"gap": {
-										"wt": "4em"
-									}
-								},
+								"params": {},
 								"i": 2
 							}
 						},
@@ -310,6 +302,59 @@
 								},
 								"params": {},
 								"i": 3
+							}
+						}
+					]
+				}
+			}
+		}
+	},
+	{
+		"desc": "Template with equivalents, but target template data missing, no params mapped",
+		"from": "en",
+		"to": "ca",
+		"source": {
+			"attributes": {
+				"id": "mwPL",
+				"typeof": "mw:Transclusion",
+				"data-mw": {
+					"parts": [
+						{
+							"template": {
+								"target": {
+									"wt": "London Gazette",
+									"href": "./Template:London Gazette"
+								},
+								"params": {
+									"issue":{"wt":"57855"},
+									"date":{"wt":"31 December 2005"},
+									"pages":{"wt":"23"},
+									"supp":{"wt":"1"}
+								},
+								"i": 0
+							}
+						}
+					]
+				}
+			}
+		},
+		"result": {
+			"attributes": {
+				"data-cx": [
+					{
+						"adapted": false
+					}
+				],
+				"data-mw": {
+					"parts": [
+						{
+							"template": {
+								"target": {
+									"wt": "London Gazette",
+									"href": "./Plantilla:London Gazette"
+								},
+								"params": {},
+								"i": 0
 							}
 						}
 					]
