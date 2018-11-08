@@ -91,5 +91,12 @@
 				}
 			}
 		}
+	},
+	{
+		"desc": "Mark the reference adaptation failed when the content defined in template not adapted",
+		"from": "en",
+		"to": "ca",
+		"source": "reference-adaptation-wth-template-test.html",
+		"result": "reference-adaptation-wth-template-result.html"
 	}
 ]
