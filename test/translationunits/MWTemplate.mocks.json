@@ -1,8 +1,70 @@
 {
-    "templatedata/ca": {
-        "Plantilla:London Gazette": {
-            "title": "Plantilla:London Gazette",
-            "params": {}
+    "templatedata/or": {
+        "ଛାଞ୍ଚ:Infobox medical condition (new)": {
+            "title": "ଛାଞ୍ଚ:Infobox medical condition (new)",
+            "params": {
+                "background": {},
+                "Background": {},
+                "name": {},
+                "Name": {},
+                "image": {},
+                "Image": {},
+                "image_size": {},
+                "Width": {},
+                "width": {},
+                "alt": {},
+                "Alt": {},
+                "caption": {},
+                "Caption": {},
+                "Synonym": {},
+                "synonym": {},
+                "Synonyms": {},
+                "synonyms": {},
+                "pronounce": {},
+                "Pronounce": {},
+                "pronounce comment": {},
+                "pronounce ref": {},
+                "pronounce 2": {},
+                "field": {},
+                "Field": {},
+                "specialty": {},
+                "Specialty": {},
+                "Speciality": {},
+                "speciality": {},
+                "style": {},
+                "symptoms": {},
+                "Symptoms": {},
+                "onset": {},
+                "Onset": {},
+                "duration": {},
+                "Duration": {},
+                "causes": {},
+                "Causes": {},
+                "cause": {},
+                "Cause": {},
+                "risks": {},
+                "Risks": {},
+                "risk": {},
+                "Risk": {},
+                "diagnosis": {},
+                "Diagnosis": {},
+                "differential": {},
+                "Differential": {},
+                "Differential diagnosis": {},
+                "differential diagnosis": {},
+                "diff": {},
+                "Diff": {},
+                "prevention": {},
+                "Prevention": {},
+                "medication": {},
+                "Medication": {},
+                "treatment": {},
+                "Treatment": {},
+                "frequency": {},
+                "Frequency": {},
+                "Deaths": {},
+                "deaths": {}
+            }
         },
         "#titles": {}
     },
@@ -2746,6 +2808,390 @@
             "sets": [],
             "maps": {}
         },
+        "Template:Infobox medical condition (new)": {
+            "title": "Template:Infobox medical condition (new)",
+            "params": {
+                "name": {
+                    "description": {
+                        "en": "Name of disease or medical condition (should be the same as the title of the article)"
+                    },
+                    "type": "string",
+                    "required": true,
+                    "example": {
+                        "en": "Posttraumatic stress disorder"
+                    },
+                    "label": null,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "synonym": {
+                    "description": {
+                        "en": "Common terms for the illness or condition."
+                    },
+                    "example": {
+                        "en": "Upper respiratory tract infection - \"common cold\", \"bug\", \"snuffles\""
+                    },
+                    "type": "string",
+                    "suggested": false,
+                    "label": null,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "image": {
+                    "description": {
+                        "en": "Image file"
+                    },
+                    "example": {
+                        "en": "USMC-120503-M-9426J-001.jpg"
+                    },
+                    "type": "wiki-file-name",
+                    "suggested": true,
+                    "label": null,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "alt": {
+                    "description": {
+                        "en": "Brief description of image for individuals who cannot see the image."
+                    },
+                    "example": {
+                        "en": "Painting by Monet of water lillies"
+                    },
+                    "type": "string",
+                    "suggested": true,
+                    "label": null,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "caption": {
+                    "description": {
+                        "en": "Caption for the image."
+                    },
+                    "example": {
+                        "en": "Claude Monet, The Water Lilies - Setting Sun, 1920–1926, Musée de l'Orangerie"
+                    },
+                    "type": "string",
+                    "suggested": true,
+                    "label": null,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "image_size": {
+                    "description": {
+                        "en": "Size of image. (See MOS:IMAGE for help.)"
+                    },
+                    "type": "string",
+                    "suggested": false,
+                    "label": null,
+                    "required": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "pronounce": {
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "description": null,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "specialty": {
+                    "description": {
+                        "en": "Main health specialties involved with diagnosis and treatment of the disorder."
+                    },
+                    "example": {
+                        "en": "Psychiatry, clinical psychology"
+                    },
+                    "type": "string",
+                    "suggested": false,
+                    "label": null,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "symptoms": {
+                    "description": {
+                        "en": "Brief description of most common symptoms (or symptom clusters)"
+                    },
+                    "example": {
+                        "en": "Disturbing thoughts, feelings, or dreams related to the event; mental or physical distress to trauma-related cues; efforts to avoid trauma-related situations; increased fight-or-flight response"
+                    },
+                    "type": "string",
+                    "suggested": false,
+                    "label": null,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "onset": {
+                    "description": {
+                        "en": "Typical or average age of onset (if known)"
+                    },
+                    "example": {
+                        "en": "Schizophrenia - Early adulthood"
+                    },
+                    "type": "string",
+                    "suggested": false,
+                    "label": null,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "duration": {
+                    "description": {
+                        "en": "Average or median duration of illness or range (if known)"
+                    },
+                    "example": {
+                        "en": "Upper respiratory tract infection - 7 to 14 days"
+                    },
+                    "type": "string",
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "types": {
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "description": null,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "causes": {
+                    "description": {
+                        "en": "Cause of the disease (if known). Try to separate from risk factors, although some overlap is common."
+                    },
+                    "example": {
+                        "en": "Diabetes (Type 2) - Family history; obesity; sedentary lifestyle; age over 45"
+                    },
+                    "type": "string",
+                    "suggested": false,
+                    "label": null,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "risks": {
+                    "description": {
+                        "en": "Risk factors"
+                    },
+                    "example": {
+                        "en": "Heart disease - Smoking; high blood pressure; high cholesterol; obesity; family history (genetics)"
+                    },
+                    "type": "string",
+                    "suggested": false,
+                    "label": null,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "diagnosis": {
+                    "description": {
+                        "en": "How is the illness usually diagnosed? For example: Based on symptoms, medical imagine, genetic testing, blood tests, etc."
+                    },
+                    "type": "string",
+                    "suggested": false,
+                    "label": null,
+                    "required": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "differential": {
+                    "description": {
+                        "en": "Differential diagnosis (what other disease or conditions should be evaluated before concluding patient has the illness)."
+                    },
+                    "example": {
+                        "en": "Crohn's disease - Gastritis, gallstones, peptic ulcer, abdominal aortic aneurysm, constipation, irritable bowel syndrome, ulcerative colitis"
+                    },
+                    "type": "string",
+                    "suggested": false,
+                    "label": null,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "prevention": {
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "description": null,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "treatment": {
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "description": null,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "medication": {
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "description": null,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "prognosis": {
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "description": null,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "frequency": {
+                    "description": {
+                        "en": "Incidence (rate of newly diagnosed cases of the disease during a specified period of time, e.g., one month or one year); Period prevalence (the actual number people with the disease during a specified period of time); Lifetime prevalence (the proportion of people who have had the disorder at some time in their life); Lifetime morbid risk (the proportion of people who will eventually develop the disorder at some time in their life whether or not they have a lifetime history at the time of assessment)."
+                    },
+                    "example": {
+                        "en": "PTSD - \t8.7% (lifetime risk); 3.5% (12-month risk, US)"
+                    },
+                    "type": "string",
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "deaths": {
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "description": null,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                }
+            },
+            "description": {
+                "en": "Template Data for Infobox medical conditions (new)"
+            },
+            "format": null,
+            "paramOrder": [
+                "name",
+                "synonym",
+                "image",
+                "alt",
+                "caption",
+                "image_size",
+                "pronounce",
+                "specialty",
+                "symptoms",
+                "onset",
+                "duration",
+                "types",
+                "causes",
+                "risks",
+                "diagnosis",
+                "differential",
+                "prevention",
+                "treatment",
+                "medication",
+                "prognosis",
+                "frequency",
+                "deaths"
+            ],
+            "sets": [],
+            "maps": {}
+        },
+        "#titles": {}
+    },
+    "titlepair/en/or": {
+        "Template:Infobox medical condition (new)": {
+            "sourceTitle": "Template:Infobox medical condition (new)",
+            "targetTitle": "ଛାଞ୍ଚ:Infobox medical condition (new)",
+            "missing": false
+        },
+        "#titles": {}
+    },
+    "templatedata/ca": {
+        "Plantilla:London Gazette": {
+            "title": "Plantilla:London Gazette",
+            "params": {
+                "1": {},
+                "2": {},
+                "issue": {},
+                "startpage": {},
+                "date": {},
+                "linkeddate": {},
+                "nolink": {},
+                "city": {},
+                "supp": {},
+                "separator": {},
+                "endpage": {},
+                "accessdate": {},
+                "ps": {}
+            }
+        },
         "#titles": {}
     },
     "titlepair/en/ca": {
@@ -3787,7 +4233,119 @@
     "templatedata/sl": {
         "Predloga:Babilon": {
             "title": "Predloga:Babilon",
-            "params": {}
+            "params": {
+                "1": {},
+                "2": {},
+                "3": {},
+                "4": {},
+                "5": {},
+                "6": {},
+                "7": {},
+                "8": {},
+                "9": {},
+                "10": {},
+                "11": {},
+                "12": {},
+                "13": {},
+                "14": {},
+                "15": {},
+                "16": {},
+                "17": {},
+                "18": {},
+                "19": {},
+                "20": {},
+                "21": {},
+                "22": {},
+                "23": {},
+                "24": {},
+                "25": {},
+                "26": {},
+                "27": {},
+                "28": {},
+                "29": {},
+                "30": {},
+                "31": {},
+                "32": {},
+                "33": {},
+                "34": {},
+                "35": {},
+                "36": {},
+                "37": {},
+                "38": {},
+                "39": {},
+                "40": {},
+                "41": {},
+                "42": {},
+                "43": {},
+                "44": {},
+                "45": {},
+                "46": {},
+                "47": {},
+                "48": {},
+                "49": {},
+                "50": {},
+                "51": {},
+                "52": {},
+                "53": {},
+                "54": {},
+                "55": {},
+                "56": {},
+                "57": {},
+                "58": {},
+                "59": {},
+                "60": {},
+                "61": {},
+                "62": {},
+                "63": {},
+                "64": {},
+                "65": {},
+                "66": {},
+                "67": {},
+                "68": {},
+                "69": {},
+                "70": {},
+                "71": {},
+                "72": {},
+                "73": {},
+                "74": {},
+                "75": {},
+                "76": {},
+                "77": {},
+                "78": {},
+                "79": {},
+                "80": {},
+                "81": {},
+                "82": {},
+                "83": {},
+                "84": {},
+                "85": {},
+                "86": {},
+                "87": {},
+                "88": {},
+                "89": {},
+                "90": {},
+                "91": {},
+                "92": {},
+                "93": {},
+                "94": {},
+                "95": {},
+                "96": {},
+                "97": {},
+                "98": {},
+                "99": {},
+                "100": {},
+                "align": {},
+                "left": {},
+                "bottom": {},
+                "width": {},
+                "bordercolor": {},
+                "solid": {},
+                "textcolor": {},
+                "extra-css": {},
+                "color": {},
+                "header": {},
+                "posebna-polja": {}
+            }
         },
         "#titles": {}
     },
@@ -3809,187 +4367,6 @@
     "titlepair/fi/ajt": {
         "Malline:Parasym": {
             "sourceTitle": "Malline:Parasym"
-        },
-        "#titles": {}
-    },
-    "titlepair/en/es": {
-        "Template:Infobox Finnish municipality": {
-            "sourceTitle": "Template:Infobox Finnish municipality"
-        },
-        "Category:Pages using div col with unknown parameters": {
-            "sourceTitle": "Category:Pages using div col with unknown parameters"
-        },
-        "Category:Food preservation": {
-            "sourceTitle": "Category:Food preservation",
-            "targetTitle": "Categoría:Preservación de alimentos",
-            "missing": false
-        },
-        "Category:Cooking techniques": {
-            "sourceTitle": "Category:Cooking techniques",
-            "targetTitle": "Categoría:Técnicas culinarias",
-            "missing": false
-        },
-        "Category:Pickles": {
-            "sourceTitle": "Category:Pickles",
-            "targetTitle": "Categoría:Encurtidos",
-            "missing": false
-        },
-        "Category:World cuisine": {
-            "sourceTitle": "Category:World cuisine"
-        },
-        "Category:Culinary terminology": {
-            "sourceTitle": "Category:Culinary terminology"
-        },
-        "Atomic number": {
-            "sourceTitle": "Atomic number",
-            "targetTitle": "Número atómico",
-            "missing": false
-        },
-        "Oxygen": {
-            "sourceTitle": "Oxygen",
-            "targetTitle": "Oxígeno",
-            "missing": false
-        },
-        "The Godfather (wrestler)": {
-            "sourceTitle": "The Godfather (wrestler)",
-            "targetTitle": "Charles Wright (luchador)",
-            "missing": false
-        },
-        "List of planets with life": {
-            "sourceTitle": "List of planets with life"
-        },
-        "#titles": {}
-    },
-    "titleinfo/en": {
-        "Atomic number": {
-            "pageid": 673,
-            "ns": 0,
-            "title": "Atomic number",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2018-11-07T09:29:02Z",
-            "lastrevid": 867682942,
-            "length": 13688,
-            "thumbnail": {
-                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Atomic_number_depiction.jpg/80px-Atomic_number_depiction.jpg",
-                "width": 80,
-                "height": 49
-            },
-            "pageimage": "Atomic_number_depiction.jpg",
-            "description": "number of protons found in the nucleus of an atom",
-            "descriptionsource": "central"
-        },
-        "Oxygen": {
-            "pageid": 22303,
-            "ns": 0,
-            "title": "Oxygen",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2018-11-08T22:09:59Z",
-            "lastrevid": 865817754,
-            "length": 101048,
-            "thumbnail": {
-                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Liquid_oxygen_in_a_beaker_4.jpg/66px-Liquid_oxygen_in_a_beaker_4.jpg",
-                "width": 66,
-                "height": 80
-            },
-            "pageimage": "Liquid_oxygen_in_a_beaker_4.jpg",
-            "description": "chemical element with atomic number 8",
-            "descriptionsource": "local"
-        },
-        "The Godfather (wrestler)": {
-            "pageid": 591648,
-            "ns": 0,
-            "title": "The Godfather (wrestler)",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2018-11-08T13:05:59Z",
-            "lastrevid": 867861380,
-            "length": 31331,
-            "thumbnail": {
-                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg/51px-Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg",
-                "width": 51,
-                "height": 80
-            },
-            "pageimage": "Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg",
-            "description": "American professional wrestler",
-            "descriptionsource": "central"
-        },
-        "List of planets with life": {
-            "ns": 0,
-            "title": "List of planets with life",
-            "missing": "",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr"
-        },
-        "#titles": {}
-    },
-    "titleinfo/es": {
-        "Número atómico": {
-            "pageid": 1980,
-            "ns": 0,
-            "title": "Número atómico",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2018-10-15T21:47:04Z",
-            "lastrevid": 111297029,
-            "length": 8669,
-            "thumbnail": {
-                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
-                "width": 80,
-                "height": 80
-            },
-            "pageimage": "Element_identity.png",
-            "description": "número total de protones que tiene el átomo",
-            "descriptionsource": "central"
-        },
-        "Oxígeno": {
-            "pageid": 3267,
-            "ns": 0,
-            "title": "Oxígeno",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2018-11-09T06:06:49Z",
-            "lastrevid": 111875280,
-            "length": 105886,
-            "thumbnail": {
-                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/O%2C8.jpg/80px-O%2C8.jpg",
-                "width": 80,
-                "height": 40
-            },
-            "pageimage": "O,8.jpg",
-            "description": "elemento químico",
-            "descriptionsource": "central"
-        },
-        "Charles Wright (luchador)": {
-            "pageid": 2834764,
-            "ns": 0,
-            "title": "Charles Wright (luchador)",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2018-11-06T02:17:28Z",
-            "lastrevid": 111260678,
-            "length": 24756,
-            "thumbnail": {
-                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Paul_Wright_AKA_%28The_Godfather%29.jpg/50px-Paul_Wright_AKA_%28The_Godfather%29.jpg",
-                "width": 50,
-                "height": 80
-            },
-            "pageimage": "Paul_Wright_AKA_(The_Godfather).jpg"
         },
         "#titles": {}
     }

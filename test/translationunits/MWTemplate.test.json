@@ -337,10 +337,10 @@
 									"href": "./Template:London Gazette"
 								},
 								"params": {
-									"issue":{"wt":"57855"},
-									"date":{"wt":"31 December 2005"},
-									"pages":{"wt":"23"},
-									"supp":{"wt":"1"}
+									"issue-x":{"wt":"57855"},
+									"date-x":{"wt":"31 December 2005"},
+									"pages-x":{"wt":"23"},
+									"supp-x":{"wt":"1"}
 								},
 								"i": 0
 							}
@@ -365,6 +365,64 @@
 									"href": "./Plantilla:London Gazette"
 								},
 								"params": {},
+								"i": 0
+							}
+						}
+					]
+				}
+			}
+		}
+	},
+	{
+		"desc": "Equivalient template exist, templatedata exists only for source language. Use that as hint for extracting params from template source code in target language",
+		"from": "en",
+		"to": "or",
+		"source": {
+			"attributes": {
+				"id": "mwPL",
+				"typeof": "mw:Transclusion",
+				"data-mw": {
+					"parts": [
+						{
+							"template": {
+								"target": {
+									"wt": "Infobox medical condition (new)",
+									"href": "./Template:Infobox medical condition (new)"
+								},
+								"params": {
+									"name": {"wt": "Miosis"},
+									"Synonyms": {"wt": "Myosis"},
+									"image": {"wt": "Myosis due to opiate use.jpg"},
+									"caption": {"wt": "Miosis due to [[opiate]] use"}
+								},
+								"i": 0
+							}
+						}
+					]
+				}
+			}
+		},
+		"result": {
+			"attributes": {
+				"data-cx": [
+					{
+						"adapted": true
+					}
+				],
+				"data-mw": {
+					"parts": [
+						{
+							"template": {
+								"target": {
+									"wt": "Infobox medical condition (new)",
+									"href": "./ଛାଞ୍ଚ:Infobox medical condition (new)"
+								},
+								"params": {
+									"name": {"wt": "Miosis"},
+									"Synonyms": {"wt": "Myosis"},
+									"image": {"wt": "Myosis due to opiate use.jpg"},
+									"caption": {"wt": "Miosis due to [[opiate]] use"}
+								},
 								"i": 0
 							}
 						}
