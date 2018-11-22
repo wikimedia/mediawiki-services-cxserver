@@ -33,7 +33,7 @@ describe( 'Template adaptation', () => {
 			return translationunit.adapt( test.source ).then( ( adaptedNode ) => {
 				const actualDataCX = JSON.parse( adaptedNode.attributes[ 'data-cx' ] );
 				const expectedDataCX = test.result.attributes[ 'data-cx' ];
-				assert.deepEqual( actualDataCX.adapted, expectedDataCX.adapted, 'Adaptation status matches' );
+				assert.deepEqual( actualDataCX, expectedDataCX, 'Adaptation status matches' );
 
 				const actualDataMW = JSON.parse( adaptedNode.attributes[ 'data-mw' ] );
 				const expectedDataMW = test.result.attributes[ 'data-mw' ];
