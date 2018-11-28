@@ -27,7 +27,8 @@
 			"attributes": {
 				"data-cx": [
 					{
-						"adapted": false
+						"adapted": false,
+						"targetExists": false
 					}
 				],
 				"data-mw": {
@@ -79,7 +80,9 @@
 			"attributes": {
 				"data-cx": [
 					{
-						"adapted": true
+						"adapted": true,
+						"partial": false,
+						"targetExists": true
 					}
 				],
 				"data-mw": {
@@ -154,7 +157,9 @@
 			"attributes": {
 				"data-cx": [
 					{
-						"adapted": true
+						"adapted": true,
+						"partial": false,
+						"targetExists": true
 					}
 				],
 				"data-mw": {
@@ -257,18 +262,22 @@
 			"attributes": {
 				"data-cx": [
 					{
-						"adapted": true
+						"adapted": true,
+						"targetExists": true
 					},
 					{
-						"adapted": true
-					},
-					null,
-					{
-						"adapted": true
+						"adapted": true,
+						"targetExists": true
 					},
 					null,
 					{
-						"adapted": true
+						"adapted": true,
+						"targetExists": true
+					},
+					null,
+					{
+						"adapted": true,
+						"targetExists": true
 					}
 				],
 				"data-mw": {
@@ -353,7 +362,9 @@
 			"attributes": {
 				"data-cx": [
 					{
-						"adapted": false
+						"adapted": false,
+						"partial": false,
+						"targetExists": true
 					}
 				],
 				"data-mw": {
@@ -406,7 +417,9 @@
 			"attributes": {
 				"data-cx": [
 					{
-						"adapted": true
+						"adapted": true,
+						"partial": false,
+						"targetExists": true
 					}
 				],
 				"data-mw": {
@@ -423,6 +436,60 @@
 									"image": {"wt": "Myosis due to opiate use.jpg"},
 									"caption": {"wt": "Miosis due to [[opiate]] use"}
 								},
+								"i": 0
+							}
+						}
+					]
+				}
+			}
+		}
+	},
+	{
+		"desc": "Template with equivalents, but not able to map mandatory params",
+		"from": "en",
+		"to": "es",
+		"source": {
+			"attributes": {
+				"id": "mwPL",
+				"typeof": "mw:Transclusion",
+				"data-mw": {
+					"parts": [
+						{
+							"template": {
+								"target": {
+
+									"wt": "Infobox album",
+									"href": "./Template:Infobox album"
+								},
+								"params": {
+									"artist":{"wt":"The Great Artist"},
+									"name":{"wt":"The great album"}
+								},
+								"i": 0
+							}
+						}
+					]
+				}
+			}
+		},
+		"result": {
+			"attributes": {
+				"data-cx": [
+					{
+						"adapted": false,
+						"targetExists": true,
+						"partial": true
+					}
+				],
+				"data-mw": {
+					"parts": [
+						{
+							"template": {
+								"target": {
+									"href": "./Plantilla:Ficha de álbum",
+									"wt": "Ficha de álbum"
+								},
+								"params": {},
 								"i": 0
 							}
 						}

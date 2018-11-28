@@ -1,74 +1,707 @@
 {
-    "templatedata/or": {
-        "ଛାଞ୍ଚ:Infobox medical condition (new)": {
-            "title": "ଛାଞ୍ଚ:Infobox medical condition (new)",
+    "templatedata/es": {
+        "Plantilla:Ficha de álbum": {
+            "title": "Plantilla:Ficha de álbum",
             "params": {
-                "background": {},
-                "Background": {},
-                "name": {},
-                "Name": {},
-                "image": {},
-                "Image": {},
-                "image_size": {},
-                "Width": {},
-                "width": {},
-                "alt": {},
-                "Alt": {},
-                "caption": {},
-                "Caption": {},
-                "Synonym": {},
-                "synonym": {},
-                "Synonyms": {},
-                "synonyms": {},
-                "pronounce": {},
-                "Pronounce": {},
-                "pronounce comment": {},
-                "pronounce ref": {},
-                "pronounce 2": {},
-                "field": {},
-                "Field": {},
-                "specialty": {},
-                "Specialty": {},
-                "Speciality": {},
-                "speciality": {},
-                "style": {},
-                "symptoms": {},
-                "Symptoms": {},
-                "onset": {},
-                "Onset": {},
-                "duration": {},
-                "Duration": {},
-                "causes": {},
-                "Causes": {},
-                "cause": {},
-                "Cause": {},
-                "risks": {},
-                "Risks": {},
-                "risk": {},
-                "Risk": {},
-                "diagnosis": {},
-                "Diagnosis": {},
-                "differential": {},
-                "Differential": {},
-                "Differential diagnosis": {},
-                "differential diagnosis": {},
-                "diff": {},
-                "Diff": {},
-                "prevention": {},
-                "Prevention": {},
-                "medication": {},
-                "Medication": {},
-                "treatment": {},
-                "Treatment": {},
-                "frequency": {},
-                "Frequency": {},
-                "Deaths": {},
-                "deaths": {}
-            }
+                "tipo": {
+                    "required": false,
+                    "label": {
+                        "es": "Tipo"
+                    },
+                    "type": "string",
+                    "description": {
+                        "es": "Tipo de álbum, por ejemplo \"álbum en vivo\", \"álbum de estudio\", \"EP\", \"grandes éxitos\". Para más información véase [[Plantilla:Ficha de álbum/color]]"
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "nombre": {
+                    "required": true,
+                    "label": {
+                        "es": "Nombre"
+                    },
+                    "type": "string",
+                    "description": {
+                        "es": "Nombre del álbum."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "carátula": {
+                    "required": false,
+                    "label": {
+                        "es": "Carátula"
+                    },
+                    "type": "wiki-file-name",
+                    "aliases": [
+                        "cover"
+                    ],
+                    "description": {
+                        "es": "Nombre de archivo de la carátula (si existe)"
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "artista": {
+                    "required": true,
+                    "label": {
+                        "es": "Artista"
+                    },
+                    "aliases": [
+                        "grupo"
+                    ],
+                    "description": {
+                        "es": "Artista o grupo intérprete."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "publicación": {
+                    "required": false,
+                    "label": {
+                        "es": "Publicación"
+                    },
+                    "aliases": [
+                        "lanzamiento"
+                    ],
+                    "description": {
+                        "es": "Fecha(s) de publicación."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "grabación": {
+                    "required": false,
+                    "label": {
+                        "es": "Grabación"
+                    },
+                    "aliases": [
+                        "grabacion"
+                    ],
+                    "description": {
+                        "es": "Fecha(s) de grabación."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "género": {
+                    "required": false,
+                    "label": {
+                        "es": "Género"
+                    },
+                    "aliases": [
+                        "estilo"
+                    ],
+                    "description": {
+                        "es": "Géneros musicales que presenta el álbum (pop, rock, dance, etc.)."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "formato": {
+                    "required": false,
+                    "label": {
+                        "es": "Formato"
+                    },
+                    "description": {
+                        "es": "vinilo, casete, disco compacto, DVD, etc."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "duración": {
+                    "required": false,
+                    "label": {
+                        "es": "Duración"
+                    },
+                    "aliases": [
+                        "duracion"
+                    ],
+                    "description": {
+                        "es": "Duración del álbum, escrito en este formato mm:ss (minutos:segundos, ejemplo: 44:30)."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "discográfica": {
+                    "required": false,
+                    "label": {
+                        "es": "Discográfica"
+                    },
+                    "aliases": [
+                        "discografica"
+                    ],
+                    "description": {
+                        "es": "Discográfica (ejemplo: Sire, Warner Music, Epic, etc.)."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "catálogo": {
+                    "required": false,
+                    "label": {
+                        "es": "Catálogo"
+                    },
+                    "description": {
+                        "es": "Catálogo del álbum, dependiente de la discográfica. Útil para identificar álbumes poco conocidos o de edición limitada."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "productor": {
+                    "required": false,
+                    "label": {
+                        "es": "Productor"
+                    },
+                    "description": {
+                        "es": " Productor(es) del álbum."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "compilador": {
+                    "required": false,
+                    "label": {
+                        "es": "Compilador"
+                    },
+                    "description": {
+                        "es": "Compilador(es) del álbum recopilatorio (si son diferentes del artista)."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "certificación": {
+                    "required": false,
+                    "label": {
+                        "es": "Certificación"
+                    },
+                    "aliases": [
+                        "certificacion"
+                    ],
+                    "description": {
+                        "es": "(avanzado) para la certificación de ventas."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "calificación": {
+                    "required": false,
+                    "label": {
+                        "es": "Calificación"
+                    },
+                    "aliases": [
+                        "calificación"
+                    ],
+                    "description": {
+                        "es": "Calificación profesional de algunas tiendas o revistas musicales, puedes utilizar las imágenes o la plantilla {{rating}}. Recuerda dar un enlace para probar su veracidad!"
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "posicionamiento": {
+                    "required": false,
+                    "label": {
+                        "es": "Posicionamiento"
+                    },
+                    "description": {
+                        "es": "Posicionamiento en listas "
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "anterior": {
+                    "required": false,
+                    "label": {
+                        "es": "Álbum Anterior"
+                    },
+                    "description": {
+                        "es": "Álbum anterior del cantante o grupo."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "posterior": {
+                    "required": false,
+                    "label": {
+                        "es": "Álbum Posterior"
+                    },
+                    "description": {
+                        "es": "Álbum posterior del cantante o grupo."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "añoA": {
+                    "required": false,
+                    "label": {
+                        "es": "Año Anterior"
+                    },
+                    "type": "number",
+                    "description": {
+                        "es": "Año del álbum anterior"
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "añoAc": {
+                    "required": false,
+                    "label": {
+                        "es": "Año Actual"
+                    },
+                    "description": {
+                        "es": "Año de publicación del álbum"
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "actual": {
+                    "required": false,
+                    "label": {
+                        "es": "Actual"
+                    },
+                    "default": {
+                        "es": "{{PAGENAME}}"
+                    },
+                    "description": {
+                        "es": "Álbum actual."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "type": "unknown"
+                },
+                "añoP": {
+                    "required": false,
+                    "label": {
+                        "es": "Año Posterior"
+                    },
+                    "description": {
+                        "es": "Año del álbum posterior"
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "misceláneo": {
+                    "required": false,
+                    "label": {
+                        "es": "Misceláneo"
+                    },
+                    "description": {
+                        "es": "Para usar otras plantillas adicionales (por ejemplo: {{Cronología extra}}, {{Ficha de álbum/Sencillos}}, {{Ficha de álbum/Sencillos digitales}}, {{Ficha de álbum/Sencillos promocionales}} y {{Ficha de álbum/Sencillos-avance}})."
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "tamaño": {
+                    "required": false,
+                    "label": {
+                        "es": "Tamaño de la imagen"
+                    },
+                    "description": {
+                        "es": "Tamaño de la imagen (ej: 200px)"
+                    },
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                }
+            },
+            "description": {
+                "es": "Esta plantilla se utiliza para entregar información acerca de un álbum musical de manera compacta"
+            },
+            "format": null,
+            "paramOrder": [
+                "tipo",
+                "nombre",
+                "carátula",
+                "artista",
+                "publicación",
+                "grabación",
+                "género",
+                "formato",
+                "duración",
+                "discográfica",
+                "catálogo",
+                "productor",
+                "compilador",
+                "certificación",
+                "calificación",
+                "posicionamiento",
+                "anterior",
+                "posterior",
+                "añoA",
+                "añoAc",
+                "actual",
+                "añoP",
+                "misceláneo",
+                "tamaño"
+            ],
+            "sets": [],
+            "maps": {}
         },
         "#titles": {}
     },
     "templatedata/en": {
+        "Template:London Gazette": {
+            "title": "Template:London Gazette",
+            "params": {
+                "issue": {
+                    "label": {
+                        "en": "Issue"
+                    },
+                    "description": {
+                        "en": "The issue number of the referenced Gazette (to find this from the date, consult WP:London Gazette Index)"
+                    },
+                    "example": {
+                        "en": "33000"
+                    },
+                    "type": "number",
+                    "required": true,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "date": {
+                    "label": {
+                        "en": "Date"
+                    },
+                    "description": {
+                        "en": "The publication date of the referenced Gazette. This should be in the format day month year."
+                    },
+                    "example": {
+                        "en": "9 December 1924"
+                    },
+                    "type": "date",
+                    "required": true,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "page": {
+                    "label": {
+                        "en": "Page"
+                    },
+                    "description": {
+                        "en": "The page of the referenced Gazette on which the citation is found - Except when citing a whole issue, for example for the Birthday Honours List."
+                    },
+                    "example": {
+                        "en": "123"
+                    },
+                    "type": "wiki-page-name",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "pages": {
+                    "label": {
+                        "en": "Pages"
+                    },
+                    "description": {
+                        "en": "The page range of the reference Gazette in the form number–number where the two page numbers are separated by a ndash"
+                    },
+                    "example": {
+                        "en": "123–124"
+                    },
+                    "type": "wiki-page-name",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "supp": {
+                    "label": {
+                        "en": "Supplement"
+                    },
+                    "description": {
+                        "en": "For a link in a supplement to a Gazette - To correctly format the URL to link to a page in a Gazette supplement, set this parameter to the number of the supplement (typically, supp=1); otherwise omit it."
+                    },
+                    "example": {
+                        "en": "1"
+                    },
+                    "type": "number",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "display-supp": {
+                    "label": {
+                        "en": "Display-supppement"
+                    },
+                    "description": {
+                        "en": "Some supplements are accessed without an alteration to the standard ULR in which case use this parameter and not the supp parameter."
+                    },
+                    "example": {
+                        "en": "1"
+                    },
+                    "type": "number",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "nolink": {
+                    "description": {
+                        "en": "To display the name of the Gazette without a wikilink (e.g. if there are multiple uses of the template on the same page, allow the link on the first but disable the rest)"
+                    },
+                    "example": {
+                        "en": "y"
+                    },
+                    "type": "string",
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "city": {
+                    "label": {
+                        "en": "City"
+                    },
+                    "description": {
+                        "en": "Either |city=e for Edinburgh Gazette, |city=b for Belfast Gazette or |city=o for the Oxford Gazette as the first 23 issues of the London Gazette were titled. The city names may also be spelt out in full if you prefer, e.g. |city=Edinburgh"
+                    },
+                    "example": {
+                        "en": "e"
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "London"
+                    },
+                    "autovalue": "",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": []
+                },
+                "title": {
+                    "label": {
+                        "en": "Title"
+                    },
+                    "description": {
+                        "en": "Sets a title"
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "No. <code>issue</code>"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null
+                },
+                "quote": {
+                    "label": {
+                        "en": "Quote"
+                    },
+                    "description": {
+                        "en": "Appends a quote to the end of the template."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "ref": {
+                    "label": {
+                        "en": "Ref"
+                    },
+                    "description": {
+                        "en": "Used in conjunction with the harv template. It can be altered to any value"
+                    },
+                    "default": {
+                        "en": "Gazette <code>issue</code>"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "type": "unknown"
+                },
+                "mode": {
+                    "label": {
+                        "en": "Mode"
+                    },
+                    "description": {
+                        "en": "Setting ''mode=cs2'' changes the style to ensure consistency with Citation style 2, as produced by the Citation template"
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "cs1"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null
+                },
+                "postscript": {
+                    "label": {
+                        "en": "Postscript"
+                    },
+                    "description": {
+                        "en": "To remove the final period, or change it to any other character — now semi-redundant use the <code>mode</code> parameter  instead."
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null
+                }
+            },
+            "description": {
+                "en": "This template is used to provide references to pages in the London Gazette online archive website. The London Gazette is the official newspaper of the British government for England and Wales in which all official notices are published. The template is provided to simplify the entering of addresses. An index by number/date (i.e. if you know the number or date you can find the document) is at WP:London Gazette Index.\n\nThe template may also be used to provide references to pages in the of the Edinburgh Gazette online archives and to Belfast Gazette online archives."
+            },
+            "paramOrder": [
+                "issue",
+                "date",
+                "page",
+                "pages",
+                "supp",
+                "display-supp",
+                "nolink",
+                "city",
+                "title",
+                "quote",
+                "ref",
+                "mode",
+                "postscript"
+            ],
+            "format": "block",
+            "sets": [],
+            "maps": {}
+        },
         "Template:Cite web": {
             "title": "Template:Cite web",
             "description": {
@@ -100,7 +733,7 @@
                         "en": "Title"
                     },
                     "description": {
-                        "en": "The title of the source page on the website; will display with quotation marks added. Usually found at the top of you web browser. Not the name of the website."
+                        "en": "The title of the source page on the website; will display with quotation marks added. Usually found at the top of your web browser. Not the name of the website."
                     },
                     "type": "string",
                     "required": true,
@@ -1366,13 +1999,11 @@
                         "en": "Given or first name, middle names, or initials of the sixth author; don't wikilink."
                     },
                     "type": "line",
-                    "aliases": [
-                        "author6-link"
-                    ],
                     "required": false,
                     "suggested": false,
                     "example": null,
                     "deprecated": false,
+                    "aliases": [],
                     "autovalue": null,
                     "default": null
                 },
@@ -1384,11 +2015,13 @@
                         "en": "Title of existing Wikipedia article about the sixth author."
                     },
                     "type": "wiki-page-name",
+                    "aliases": [
+                        "author6-link"
+                    ],
                     "required": false,
                     "suggested": false,
                     "example": null,
                     "deprecated": false,
-                    "aliases": [],
                     "autovalue": null,
                     "default": null
                 },
@@ -2550,264 +3183,6 @@
             "sets": [],
             "maps": {}
         },
-        "Template:London Gazette": {
-            "title": "Template:London Gazette",
-            "params": {
-                "issue": {
-                    "label": {
-                        "en": "Issue"
-                    },
-                    "description": {
-                        "en": "The issue number of the referenced Gazette (to find this from the date, consult WP:London Gazette Index)"
-                    },
-                    "example": {
-                        "en": "33000"
-                    },
-                    "type": "number",
-                    "required": true,
-                    "suggested": false,
-                    "deprecated": false,
-                    "aliases": [],
-                    "autovalue": null,
-                    "default": null
-                },
-                "date": {
-                    "label": {
-                        "en": "Date"
-                    },
-                    "description": {
-                        "en": "The publication date of the referenced Gazette. This should be in the format day month year."
-                    },
-                    "example": {
-                        "en": "9 December 1924"
-                    },
-                    "type": "date",
-                    "required": true,
-                    "suggested": false,
-                    "deprecated": false,
-                    "aliases": [],
-                    "autovalue": null,
-                    "default": null
-                },
-                "page": {
-                    "label": {
-                        "en": "Page"
-                    },
-                    "description": {
-                        "en": "The page of the referenced Gazette on which the citation is found - Except when citing a whole issue, for example for the Birthday Honours List."
-                    },
-                    "example": {
-                        "en": "123"
-                    },
-                    "type": "wiki-page-name",
-                    "required": false,
-                    "suggested": false,
-                    "deprecated": false,
-                    "aliases": [],
-                    "autovalue": null,
-                    "default": null
-                },
-                "pages": {
-                    "label": {
-                        "en": "Pages"
-                    },
-                    "description": {
-                        "en": "The page range of the reference Gazette in the form number–number where the two page numbers are separated by a ndash"
-                    },
-                    "example": {
-                        "en": "123–124"
-                    },
-                    "type": "wiki-page-name",
-                    "required": false,
-                    "suggested": false,
-                    "deprecated": false,
-                    "aliases": [],
-                    "autovalue": null,
-                    "default": null
-                },
-                "supp": {
-                    "label": {
-                        "en": "Supplement"
-                    },
-                    "description": {
-                        "en": "For a link in a supplement to a Gazette - To correctly format the URL to link to a page in a Gazette supplement, set this parameter to the number of the supplement (typically, supp=1); otherwise omit it."
-                    },
-                    "example": {
-                        "en": "1"
-                    },
-                    "type": "number",
-                    "required": false,
-                    "suggested": false,
-                    "deprecated": false,
-                    "aliases": [],
-                    "autovalue": null,
-                    "default": null
-                },
-                "display-supp": {
-                    "label": {
-                        "en": "Display-supppement"
-                    },
-                    "description": {
-                        "en": "Some supplements are accessed without an alteration to the standard ULR in which case use this parameter and not the supp parameter."
-                    },
-                    "example": {
-                        "en": "1"
-                    },
-                    "type": "number",
-                    "required": false,
-                    "suggested": false,
-                    "deprecated": false,
-                    "aliases": [],
-                    "autovalue": null,
-                    "default": null
-                },
-                "nolink": {
-                    "description": {
-                        "en": "To display the name of the Gazette without a wikilink (e.g. if there are multiple uses of the template on the same page, allow the link on the first but disable the rest)"
-                    },
-                    "example": {
-                        "en": "y"
-                    },
-                    "type": "string",
-                    "label": null,
-                    "required": false,
-                    "suggested": false,
-                    "deprecated": false,
-                    "aliases": [],
-                    "autovalue": null,
-                    "default": null
-                },
-                "city": {
-                    "label": {
-                        "en": "City"
-                    },
-                    "description": {
-                        "en": "Either |city=e for Edinburgh Gazette, |city=b for Belfast Gazette or |city=o for the Oxford Gazette as the first 23 issues of the London Gazette were titled. The city names may also be spelt out in full if you prefer, e.g. |city=Edinburgh"
-                    },
-                    "example": {
-                        "en": "e"
-                    },
-                    "type": "string",
-                    "default": {
-                        "en": "London"
-                    },
-                    "autovalue": "",
-                    "required": false,
-                    "suggested": false,
-                    "deprecated": false,
-                    "aliases": []
-                },
-                "title": {
-                    "label": {
-                        "en": "Title"
-                    },
-                    "description": {
-                        "en": "Sets a title"
-                    },
-                    "type": "string",
-                    "default": {
-                        "en": "No. <code>issue</code>"
-                    },
-                    "required": false,
-                    "suggested": false,
-                    "example": null,
-                    "deprecated": false,
-                    "aliases": [],
-                    "autovalue": null
-                },
-                "quote": {
-                    "label": {
-                        "en": "Quote"
-                    },
-                    "description": {
-                        "en": "Appends a quote to the end of the template."
-                    },
-                    "type": "string",
-                    "required": false,
-                    "suggested": false,
-                    "example": null,
-                    "deprecated": false,
-                    "aliases": [],
-                    "autovalue": null,
-                    "default": null
-                },
-                "ref": {
-                    "label": {
-                        "en": "Ref"
-                    },
-                    "description": {
-                        "en": "Used in conjunction with the harv template. It can be altered to any value"
-                    },
-                    "default": {
-                        "en": "Gazette <code>issue</code>"
-                    },
-                    "required": false,
-                    "suggested": false,
-                    "example": null,
-                    "deprecated": false,
-                    "aliases": [],
-                    "autovalue": null,
-                    "type": "unknown"
-                },
-                "mode": {
-                    "label": {
-                        "en": "Mode"
-                    },
-                    "description": {
-                        "en": "Setting ''mode=cs2'' changes the style to ensure consistency with Citation style 2, as produced by the Citation template"
-                    },
-                    "type": "string",
-                    "default": {
-                        "en": "cs1"
-                    },
-                    "required": false,
-                    "suggested": false,
-                    "example": null,
-                    "deprecated": false,
-                    "aliases": [],
-                    "autovalue": null
-                },
-                "postscript": {
-                    "label": {
-                        "en": "Postscript"
-                    },
-                    "description": {
-                        "en": "To remove the final period, or change it to any other character — now semi-redundant use the <code>mode</code> parameter  instead."
-                    },
-                    "type": "string",
-                    "default": {
-                        "en": "."
-                    },
-                    "required": false,
-                    "suggested": false,
-                    "example": null,
-                    "deprecated": false,
-                    "aliases": [],
-                    "autovalue": null
-                }
-            },
-            "description": {
-                "en": "This template is used to provide references to pages in the London Gazette online archive website. The London Gazette is the official newspaper of the British government for England and Wales in which all official notices are published. The template is provided to simplify the entering of addresses. An index by number/date (i.e. if you know the number or date you can find the document) is at WP:London Gazette Index.\n\nThe template may also be used to provide references to pages in the of the Edinburgh Gazette online archives and to Belfast Gazette online archives."
-            },
-            "paramOrder": [
-                "issue",
-                "date",
-                "page",
-                "pages",
-                "supp",
-                "display-supp",
-                "nolink",
-                "city",
-                "title",
-                "quote",
-                "ref",
-                "mode",
-                "postscript"
-            ],
-            "format": "block",
-            "sets": [],
-            "maps": {}
-        },
         "Template:Infobox medical condition (new)": {
             "title": "Template:Infobox medical condition (new)",
             "params": {
@@ -3163,6 +3538,638 @@
             "sets": [],
             "maps": {}
         },
+        "Template:Infobox album": {
+            "title": "Template:Infobox album",
+            "description": {
+                "en": "The standard infobox for album articles."
+            },
+            "params": {
+                "name": {
+                    "label": {
+                        "en": "Name"
+                    },
+                    "description": {
+                        "en": "Name of the album."
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "Nirvana"
+                    },
+                    "suggested": true,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "type": {
+                    "label": {
+                        "en": "Album type"
+                    },
+                    "description": {
+                        "en": "One of: 'studio', 'demo', 'ep', 'live', 'greatest' (for greatest hits), 'remix', 'box' (for box sets), 'compilation', 'mixtape', 'soundtrack', 'film', 'cast', 'video', 'other'. Determines the colour used for the infobox."
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "greatest"
+                    },
+                    "suggested": true,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "artist": {
+                    "label": {
+                        "en": "Artist"
+                    },
+                    "description": {
+                        "en": "Name of the artist; should be linked."
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "[[Nirvana (band)|Nirvana]]"
+                    },
+                    "required": true,
+                    "suggested": true,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "cover": {
+                    "aliases": [
+                        "image"
+                    ],
+                    "label": {
+                        "en": "Artwork"
+                    },
+                    "description": {
+                        "en": "An image of the official front cover of the original version of the album. The image should normally have a {{Non-free album cover}} image copyright tag and rationale on the image description page."
+                    },
+                    "type": "wiki-file-name",
+                    "example": {
+                        "en": "Nirvana album cover.svg"
+                    },
+                    "suggested": true,
+                    "required": false,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "alt": {
+                    "label": {
+                        "en": "Alt text"
+                    },
+                    "description": {
+                        "en": "Text describing the album cover for visually-impaired readers."
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "Black square with the gray word \"NIRVANA\" in the center"
+                    },
+                    "suggested": true,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "released": {
+                    "label": {
+                        "en": "Release date"
+                    },
+                    "description": {
+                        "en": "Original album release date. e.g. 'December 14, 2003' or '14 December 2003' depending on the article style."
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "{{Start date|2002|10|29}}"
+                    },
+                    "suggested": true,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "recorded": {
+                    "label": {
+                        "en": "Recorded"
+                    },
+                    "description": {
+                        "en": "Details on where and when the album was recorded."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "venue": {
+                    "label": {
+                        "en": "Venue"
+                    },
+                    "description": {
+                        "en": "Place where a live album was recorded."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "studio": {
+                    "label": {
+                        "en": "Studio"
+                    },
+                    "description": {
+                        "en": "Place where a studio album was recorded."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "genre": {
+                    "label": {
+                        "en": "Genre"
+                    },
+                    "description": {
+                        "en": "One or more music genres that the album reflects, delimited by a comma and linked to corresponding articles."
+                    },
+                    "type": "string",
+                    "suggested": true,
+                    "required": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "length": {
+                    "label": {
+                        "en": "Length"
+                    },
+                    "description": {
+                        "en": "The length of the album in minutes and seconds. Use Template:Duration."
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "{{Duration|m=49|s=38}}"
+                    },
+                    "suggested": true,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "label": {
+                    "label": {
+                        "en": "Label"
+                    },
+                    "description": {
+                        "en": "The record label that the album was originally released on."
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "[[DGC Records|DGC]]"
+                    },
+                    "suggested": true,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "producer": {
+                    "label": {
+                        "en": "Producer"
+                    },
+                    "description": {
+                        "en": "The name of the producer or producers. The names can be delimited by commas or {{flatlist}}."
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "[[George Martin]]"
+                    },
+                    "suggested": true,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "italic_title": {
+                    "label": {
+                        "en": "Italic title"
+                    },
+                    "description": {
+                        "en": "By default the infobox causes the page title to be in italics. Set this to 'no' to leave the page title in normal style."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "longtype": {
+                    "label": {
+                        "en": "Longtype"
+                    },
+                    "description": {
+                        "en": "Can be used if you wish to include information such as the title of the film that an album is the soundtrack to, or the name of the artist that a tribute album is in honor of."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "caption": {
+                    "label": {
+                        "en": "Caption"
+                    },
+                    "description": {
+                        "en": "If the album has been issued with different front covers, which version the image refers to should be noted here."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "border": {
+                    "label": {
+                        "en": "Border"
+                    },
+                    "description": {
+                        "en": "Setting to 'yes' here will insert a 1px grey border around the cover image."
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "yes"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "language": {
+                    "label": {
+                        "en": "Language"
+                    },
+                    "description": {
+                        "en": "Language or languages used in the lyrics of the album."
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "[[French language|French]]"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "director": {
+                    "label": {
+                        "en": "Director"
+                    },
+                    "description": {
+                        "en": "For video albums. The name of the director."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "compiler": {
+                    "label": {
+                        "en": "Compiler"
+                    },
+                    "description": {
+                        "en": "Only for compilations. The person or entity responsible for selecting the album's track."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "last_album": {
+                    "label": {
+                        "en": "Previous album"
+                    },
+                    "description": {
+                        "en": "The previous album. Name in italics and date."
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "''[[From the Muddy Banks of the Wishkah]]''<br />(1996)"
+                    },
+                    "deprecated": "Use \"previous release title\" and \"previous release date\" instead.",
+                    "required": false,
+                    "suggested": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "this_album": {
+                    "label": {
+                        "en": "This album"
+                    },
+                    "description": {
+                        "en": "This album for the chronology, bold and italic."
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "'''''Nirvana''''' <br /> (2002)"
+                    },
+                    "deprecated": "This parameter is no longer necessary.",
+                    "required": false,
+                    "suggested": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "next_album": {
+                    "label": {
+                        "en": "Next album"
+                    },
+                    "description": {
+                        "en": "The next album. Name in italics and date."
+                    },
+                    "type": "string",
+                    "example": {
+                        "en": "''[[With the Lights Out]]''<br />(2004)"
+                    },
+                    "deprecated": "Use \"next release title\" and \"next release date\" instead.",
+                    "required": false,
+                    "suggested": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "chronology": {
+                    "label": {
+                        "en": "Chronology"
+                    },
+                    "description": {
+                        "en": "Name used as heading for Chronology. Default is the artist's name."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "misc": {
+                    "label": {
+                        "en": "Miscellaneous"
+                    },
+                    "description": {
+                        "en": "Other details can include templates {{Extra chronology}}, {{Extra album cover}}, and {{Singles}}."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "prev_title": {
+                    "label": {
+                        "en": "Previous release title"
+                    },
+                    "description": {
+                        "en": "Title of the previous release in the artist's chronology. Link when appropriate."
+                    },
+                    "example": {
+                        "en": "[[From the Muddy Banks of the Wishkah]]"
+                    },
+                    "type": "string",
+                    "suggested": true,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "next_title": {
+                    "label": {
+                        "en": "Next release title"
+                    },
+                    "description": {
+                        "en": "Title of the next release in the artist's chronology. Link when appropriate."
+                    },
+                    "example": {
+                        "en": "[[With the Lights Out]]"
+                    },
+                    "type": "string",
+                    "suggested": true,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "prev_year": {
+                    "label": {
+                        "en": "Previous release year"
+                    },
+                    "description": {
+                        "en": "Year of the previous release in the artist's chronology."
+                    },
+                    "example": {
+                        "en": "1996"
+                    },
+                    "type": "date",
+                    "suggested": true,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "next_year": {
+                    "label": {
+                        "en": "Next release year"
+                    },
+                    "description": {
+                        "en": "Year of the next release in the artist's chronology."
+                    },
+                    "example": {
+                        "en": "2004"
+                    },
+                    "type": "date",
+                    "suggested": true,
+                    "required": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "year": {
+                    "label": {
+                        "en": "Year"
+                    },
+                    "description": {
+                        "en": "Year the album was released. Usually not necessary; release date should be in the \"release date\" parameter"
+                    },
+                    "example": {
+                        "en": "2002"
+                    },
+                    "type": "date",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                }
+            },
+            "format": "{{_\n| ____________ = _\n}}\n",
+            "paramOrder": [
+                "italic_title",
+                "name",
+                "type",
+                "longtype",
+                "artist",
+                "cover",
+                "border",
+                "alt",
+                "caption",
+                "released",
+                "recorded",
+                "venue",
+                "studio",
+                "genre",
+                "length",
+                "language",
+                "label",
+                "director",
+                "producer",
+                "compiler",
+                "prev_title",
+                "prev_year",
+                "year",
+                "next_title",
+                "next_year",
+                "last_album",
+                "this_album",
+                "next_album",
+                "chronology",
+                "misc"
+            ],
+            "sets": [],
+            "maps": {}
+        },
+        "#titles": {}
+    },
+    "titlepair/en/es": {
+        "Template:Infobox Finnish municipality": {
+            "sourceTitle": "Template:Infobox Finnish municipality"
+        },
+        "Category:Pages using div col with unknown parameters": {
+            "sourceTitle": "Category:Pages using div col with unknown parameters"
+        },
+        "Category:Food preservation": {
+            "sourceTitle": "Category:Food preservation",
+            "targetTitle": "Categoría:Preservación de alimentos",
+            "missing": false
+        },
+        "Category:Cooking techniques": {
+            "sourceTitle": "Category:Cooking techniques",
+            "targetTitle": "Categoría:Técnicas culinarias",
+            "missing": false
+        },
+        "Category:Pickles": {
+            "sourceTitle": "Category:Pickles",
+            "targetTitle": "Categoría:Encurtidos",
+            "missing": false
+        },
+        "Category:World cuisine": {
+            "sourceTitle": "Category:World cuisine"
+        },
+        "Category:Culinary terminology": {
+            "sourceTitle": "Category:Culinary terminology"
+        },
+        "Oxygen": {
+            "sourceTitle": "Oxygen",
+            "targetTitle": "Oxígeno",
+            "missing": false
+        },
+        "Atomic number": {
+            "sourceTitle": "Atomic number",
+            "targetTitle": "Número atómico",
+            "missing": false
+        },
+        "The Godfather (wrestler)": {
+            "sourceTitle": "The Godfather (wrestler)",
+            "targetTitle": "Charles Wright (luchador)",
+            "missing": false
+        },
+        "List of planets with life": {
+            "sourceTitle": "List of planets with life"
+        },
+        "Template:Infobox album": {
+            "sourceTitle": "Template:Infobox album",
+            "targetTitle": "Plantilla:Ficha de álbum",
+            "missing": false
+        },
+        "#titles": {}
+    },
+    "templatedata/or": {
+        "ଛାଞ୍ଚ:Infobox medical condition (new)": {
+            "title": "ଛାଞ୍ଚ:Infobox medical condition (new)",
+            "params": {
+                "name": {},
+                "Name": {},
+                "image": {},
+                "Image": {},
+                "caption": {},
+                "Caption": {},
+                "Synonyms": {},
+                "synonyms": {}
+            }
+        },
         "#titles": {}
     },
     "titlepair/en/or": {
@@ -3176,21 +4183,7 @@
     "templatedata/ca": {
         "Plantilla:London Gazette": {
             "title": "Plantilla:London Gazette",
-            "params": {
-                "1": {},
-                "2": {},
-                "issue": {},
-                "startpage": {},
-                "date": {},
-                "linkeddate": {},
-                "nolink": {},
-                "city": {},
-                "supp": {},
-                "separator": {},
-                "endpage": {},
-                "accessdate": {},
-                "ps": {}
-            }
+            "params": {}
         },
         "#titles": {}
     },
@@ -4234,117 +5227,7 @@
         "Predloga:Babilon": {
             "title": "Predloga:Babilon",
             "params": {
-                "1": {},
-                "2": {},
-                "3": {},
-                "4": {},
-                "5": {},
-                "6": {},
-                "7": {},
-                "8": {},
-                "9": {},
-                "10": {},
-                "11": {},
-                "12": {},
-                "13": {},
-                "14": {},
-                "15": {},
-                "16": {},
-                "17": {},
-                "18": {},
-                "19": {},
-                "20": {},
-                "21": {},
-                "22": {},
-                "23": {},
-                "24": {},
-                "25": {},
-                "26": {},
-                "27": {},
-                "28": {},
-                "29": {},
-                "30": {},
-                "31": {},
-                "32": {},
-                "33": {},
-                "34": {},
-                "35": {},
-                "36": {},
-                "37": {},
-                "38": {},
-                "39": {},
-                "40": {},
-                "41": {},
-                "42": {},
-                "43": {},
-                "44": {},
-                "45": {},
-                "46": {},
-                "47": {},
-                "48": {},
-                "49": {},
-                "50": {},
-                "51": {},
-                "52": {},
-                "53": {},
-                "54": {},
-                "55": {},
-                "56": {},
-                "57": {},
-                "58": {},
-                "59": {},
-                "60": {},
-                "61": {},
-                "62": {},
-                "63": {},
-                "64": {},
-                "65": {},
-                "66": {},
-                "67": {},
-                "68": {},
-                "69": {},
-                "70": {},
-                "71": {},
-                "72": {},
-                "73": {},
-                "74": {},
-                "75": {},
-                "76": {},
-                "77": {},
-                "78": {},
-                "79": {},
-                "80": {},
-                "81": {},
-                "82": {},
-                "83": {},
-                "84": {},
-                "85": {},
-                "86": {},
-                "87": {},
-                "88": {},
-                "89": {},
-                "90": {},
-                "91": {},
-                "92": {},
-                "93": {},
-                "94": {},
-                "95": {},
-                "96": {},
-                "97": {},
-                "98": {},
-                "99": {},
-                "100": {},
-                "align": {},
-                "left": {},
-                "bottom": {},
-                "width": {},
-                "bordercolor": {},
-                "solid": {},
-                "textcolor": {},
-                "extra-css": {},
-                "color": {},
-                "header": {},
-                "posebna-polja": {}
+                "1": {}
             }
         },
         "#titles": {}
@@ -4367,6 +5250,145 @@
     "titlepair/fi/ajt": {
         "Malline:Parasym": {
             "sourceTitle": "Malline:Parasym"
+        },
+        "#titles": {}
+    },
+    "titleinfo/en": {
+        "Atomic number": {
+            "pageid": 673,
+            "ns": 0,
+            "title": "Atomic number",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2018-11-27T18:56:57Z",
+            "lastrevid": 870846305,
+            "length": 13688,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Atomic_number_depiction.jpg/80px-Atomic_number_depiction.jpg",
+                "width": 80,
+                "height": 49
+            },
+            "pageimage": "Atomic_number_depiction.jpg",
+            "description": "number of protons found in the nucleus of an atom",
+            "descriptionsource": "central"
+        },
+        "Oxygen": {
+            "pageid": 22303,
+            "ns": 0,
+            "title": "Oxygen",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2018-11-27T18:57:01Z",
+            "lastrevid": 865817754,
+            "length": 101048,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Liquid_oxygen_in_a_beaker_4.jpg/66px-Liquid_oxygen_in_a_beaker_4.jpg",
+                "width": 66,
+                "height": 80
+            },
+            "pageimage": "Liquid_oxygen_in_a_beaker_4.jpg",
+            "description": "chemical element with atomic number 8",
+            "descriptionsource": "local"
+        },
+        "The Godfather (wrestler)": {
+            "pageid": 591648,
+            "ns": 0,
+            "title": "The Godfather (wrestler)",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2018-11-25T21:56:24Z",
+            "lastrevid": 869418993,
+            "length": 31385,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg/51px-Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg",
+                "width": 51,
+                "height": 80
+            },
+            "pageimage": "Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg",
+            "description": "American professional wrestler",
+            "descriptionsource": "central"
+        },
+        "List of planets with life": {
+            "ns": 0,
+            "title": "List of planets with life",
+            "missing": "",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr"
+        },
+        "#titles": {}
+    },
+    "titleinfo/es": {
+        "Oxígeno": {
+            "pageid": 3267,
+            "ns": 0,
+            "title": "Oxígeno",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2018-11-27T15:42:29Z",
+            "lastrevid": 112301157,
+            "length": 105886,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/O%2C8.jpg/80px-O%2C8.jpg",
+                "width": 80,
+                "height": 40
+            },
+            "pageimage": "O,8.jpg",
+            "description": "elemento químico",
+            "descriptionsource": "central"
+        },
+        "Número atómico": {
+            "pageid": 1980,
+            "ns": 0,
+            "title": "Número atómico",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2018-11-22T00:33:23Z",
+            "lastrevid": 112184421,
+            "length": 8669,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
+                "width": 80,
+                "height": 80
+            },
+            "pageimage": "Element_identity.png",
+            "description": "número total de protones que tiene el átomo",
+            "descriptionsource": "central"
+        },
+        "Charles Wright (luchador)": {
+            "pageid": 2834764,
+            "ns": 0,
+            "title": "Charles Wright (luchador)",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2018-11-20T20:39:14Z",
+            "lastrevid": 111260678,
+            "length": 24756,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Paul_Wright_AKA_%28The_Godfather%29.jpg/50px-Paul_Wright_AKA_%28The_Godfather%29.jpg",
+                "width": 50,
+                "height": 80
+            },
+            "pageimage": "Paul_Wright_AKA_(The_Godfather).jpg"
+        },
+        "#titles": {}
+    },
+    "titlepair/en/qqq": {
+        "Atomic number": {
+            "sourceTitle": "Atomic number"
         },
         "#titles": {}
     }

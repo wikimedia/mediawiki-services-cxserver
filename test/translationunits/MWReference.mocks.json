@@ -1,25 +1,287 @@
 {
-    "titleinfo/es": {
-        "Número atómico": {
-            "pageid": 1980,
-            "ns": 0,
-            "title": "Número atómico",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2018-10-15T21:47:04Z",
-            "lastrevid": 111297029,
-            "length": 8669,
-            "thumbnail": {
-                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
-                "width": 80,
-                "height": 80
-            },
-            "pageimage": "Element_identity.png",
-            "description": "número total de protones que tiene el átomo",
-            "descriptionsource": "central"
+    "templatedata/ca": {
+        "Plantilla:London Gazette": {
+            "title": "Plantilla:London Gazette",
+            "params": {}
         },
+        "#titles": {}
+    },
+    "templatedata/en": {
+        "Template:London Gazette": {
+            "title": "Template:London Gazette",
+            "params": {
+                "issue": {
+                    "label": {
+                        "en": "Issue"
+                    },
+                    "description": {
+                        "en": "The issue number of the referenced Gazette (to find this from the date, consult WP:London Gazette Index)"
+                    },
+                    "example": {
+                        "en": "33000"
+                    },
+                    "type": "number",
+                    "required": true,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "date": {
+                    "label": {
+                        "en": "Date"
+                    },
+                    "description": {
+                        "en": "The publication date of the referenced Gazette. This should be in the format day month year."
+                    },
+                    "example": {
+                        "en": "9 December 1924"
+                    },
+                    "type": "date",
+                    "required": true,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "page": {
+                    "label": {
+                        "en": "Page"
+                    },
+                    "description": {
+                        "en": "The page of the referenced Gazette on which the citation is found - Except when citing a whole issue, for example for the Birthday Honours List."
+                    },
+                    "example": {
+                        "en": "123"
+                    },
+                    "type": "wiki-page-name",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "pages": {
+                    "label": {
+                        "en": "Pages"
+                    },
+                    "description": {
+                        "en": "The page range of the reference Gazette in the form number–number where the two page numbers are separated by a ndash"
+                    },
+                    "example": {
+                        "en": "123–124"
+                    },
+                    "type": "wiki-page-name",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "supp": {
+                    "label": {
+                        "en": "Supplement"
+                    },
+                    "description": {
+                        "en": "For a link in a supplement to a Gazette - To correctly format the URL to link to a page in a Gazette supplement, set this parameter to the number of the supplement (typically, supp=1); otherwise omit it."
+                    },
+                    "example": {
+                        "en": "1"
+                    },
+                    "type": "number",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "display-supp": {
+                    "label": {
+                        "en": "Display-supppement"
+                    },
+                    "description": {
+                        "en": "Some supplements are accessed without an alteration to the standard ULR in which case use this parameter and not the supp parameter."
+                    },
+                    "example": {
+                        "en": "1"
+                    },
+                    "type": "number",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "nolink": {
+                    "description": {
+                        "en": "To display the name of the Gazette without a wikilink (e.g. if there are multiple uses of the template on the same page, allow the link on the first but disable the rest)"
+                    },
+                    "example": {
+                        "en": "y"
+                    },
+                    "type": "string",
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "city": {
+                    "label": {
+                        "en": "City"
+                    },
+                    "description": {
+                        "en": "Either |city=e for Edinburgh Gazette, |city=b for Belfast Gazette or |city=o for the Oxford Gazette as the first 23 issues of the London Gazette were titled. The city names may also be spelt out in full if you prefer, e.g. |city=Edinburgh"
+                    },
+                    "example": {
+                        "en": "e"
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "London"
+                    },
+                    "autovalue": "",
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": []
+                },
+                "title": {
+                    "label": {
+                        "en": "Title"
+                    },
+                    "description": {
+                        "en": "Sets a title"
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "No. <code>issue</code>"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null
+                },
+                "quote": {
+                    "label": {
+                        "en": "Quote"
+                    },
+                    "description": {
+                        "en": "Appends a quote to the end of the template."
+                    },
+                    "type": "string",
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "ref": {
+                    "label": {
+                        "en": "Ref"
+                    },
+                    "description": {
+                        "en": "Used in conjunction with the harv template. It can be altered to any value"
+                    },
+                    "default": {
+                        "en": "Gazette <code>issue</code>"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "type": "unknown"
+                },
+                "mode": {
+                    "label": {
+                        "en": "Mode"
+                    },
+                    "description": {
+                        "en": "Setting ''mode=cs2'' changes the style to ensure consistency with Citation style 2, as produced by the Citation template"
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "cs1"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null
+                },
+                "postscript": {
+                    "label": {
+                        "en": "Postscript"
+                    },
+                    "description": {
+                        "en": "To remove the final period, or change it to any other character — now semi-redundant use the <code>mode</code> parameter  instead."
+                    },
+                    "type": "string",
+                    "default": {
+                        "en": "."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null
+                }
+            },
+            "description": {
+                "en": "This template is used to provide references to pages in the London Gazette online archive website. The London Gazette is the official newspaper of the British government for England and Wales in which all official notices are published. The template is provided to simplify the entering of addresses. An index by number/date (i.e. if you know the number or date you can find the document) is at WP:London Gazette Index.\n\nThe template may also be used to provide references to pages in the of the Edinburgh Gazette online archives and to Belfast Gazette online archives."
+            },
+            "paramOrder": [
+                "issue",
+                "date",
+                "page",
+                "pages",
+                "supp",
+                "display-supp",
+                "nolink",
+                "city",
+                "title",
+                "quote",
+                "ref",
+                "mode",
+                "postscript"
+            ],
+            "format": "block",
+            "sets": [],
+            "maps": {}
+        },
+        "#titles": {}
+    },
+    "titlepair/en/ca": {
+        "Template:London Gazette": {
+            "sourceTitle": "Template:London Gazette",
+            "targetTitle": "Plantilla:London Gazette",
+            "missing": false
+        },
+        "#titles": {}
+    },
+    "titlepair/en/qqq": {
+        "Atomic number": {
+            "sourceTitle": "Atomic number"
+        },
+        "#titles": {}
+    },
+    "titleinfo/es": {
         "Oxígeno": {
             "pageid": 3267,
             "ns": 0,
@@ -28,8 +290,8 @@
             "pagelanguage": "es",
             "pagelanguagehtmlcode": "es",
             "pagelanguagedir": "ltr",
-            "touched": "2018-11-09T06:06:49Z",
-            "lastrevid": 111875280,
+            "touched": "2018-11-27T15:42:29Z",
+            "lastrevid": 112301157,
             "length": 105886,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/O%2C8.jpg/80px-O%2C8.jpg",
@@ -40,6 +302,26 @@
             "description": "elemento químico",
             "descriptionsource": "central"
         },
+        "Número atómico": {
+            "pageid": 1980,
+            "ns": 0,
+            "title": "Número atómico",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2018-11-22T00:33:23Z",
+            "lastrevid": 112184421,
+            "length": 8669,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
+                "width": 80,
+                "height": 80
+            },
+            "pageimage": "Element_identity.png",
+            "description": "número total de protones que tiene el átomo",
+            "descriptionsource": "central"
+        },
         "Charles Wright (luchador)": {
             "pageid": 2834764,
             "ns": 0,
@@ -48,7 +330,7 @@
             "pagelanguage": "es",
             "pagelanguagehtmlcode": "es",
             "pagelanguagedir": "ltr",
-            "touched": "2018-11-06T02:17:28Z",
+            "touched": "2018-11-20T20:39:14Z",
             "lastrevid": 111260678,
             "length": 24756,
             "thumbnail": {
@@ -69,8 +351,8 @@
             "pagelanguage": "en",
             "pagelanguagehtmlcode": "en",
             "pagelanguagedir": "ltr",
-            "touched": "2018-11-07T09:29:02Z",
-            "lastrevid": 867682942,
+            "touched": "2018-11-27T18:56:57Z",
+            "lastrevid": 870846305,
             "length": 13688,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Atomic_number_depiction.jpg/80px-Atomic_number_depiction.jpg",
@@ -89,7 +371,7 @@
             "pagelanguage": "en",
             "pagelanguagehtmlcode": "en",
             "pagelanguagedir": "ltr",
-            "touched": "2018-11-08T22:09:59Z",
+            "touched": "2018-11-27T18:57:01Z",
             "lastrevid": 865817754,
             "length": 101048,
             "thumbnail": {
@@ -109,9 +391,9 @@
             "pagelanguage": "en",
             "pagelanguagehtmlcode": "en",
             "pagelanguagedir": "ltr",
-            "touched": "2018-11-08T13:05:59Z",
-            "lastrevid": 867861380,
-            "length": 31331,
+            "touched": "2018-11-25T21:56:24Z",
+            "lastrevid": 869418993,
+            "length": 31385,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg/51px-Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg",
                 "width": 51,
@@ -160,14 +442,14 @@
         "Category:Culinary terminology": {
             "sourceTitle": "Category:Culinary terminology"
         },
-        "Atomic number": {
-            "sourceTitle": "Atomic number",
-            "targetTitle": "Número atómico",
-            "missing": false
-        },
         "Oxygen": {
             "sourceTitle": "Oxygen",
             "targetTitle": "Oxígeno",
+            "missing": false
+        },
+        "Atomic number": {
+            "sourceTitle": "Atomic number",
+            "targetTitle": "Número atómico",
             "missing": false
         },
         "The Godfather (wrestler)": {
