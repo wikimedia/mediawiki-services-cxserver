@@ -85,8 +85,9 @@ services:
           key: null
           languages: config/Yandex.yaml
         Youdao:
-          api: https://fanyi.youdao.com/paidapi/fanyiapi
-          key: null
+          api: https://openapi.youdao.com/api
+          appKey: null
+          appSecret: null
           languages: config/Youdao.yaml
         Matxin:
           api: http://matxin.elhuyar.eus/API

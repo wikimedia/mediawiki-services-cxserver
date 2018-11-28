@@ -89,8 +89,9 @@ services:
           key: null
           languages: config/Yandex.yaml
         Youdao:
-          api: https://fanyi.youdao.com/paidapi/fanyiapi
-          key: null
+          api: https://openapi.youdao.com/api
+          appKey: null
+          appSecret: null
           languages: config/Youdao.yaml
         LingoCloud:
           api: https://api.interpreter.caiyunai.com/v1

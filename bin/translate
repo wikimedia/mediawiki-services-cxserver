@@ -21,6 +21,11 @@ if ( !cxConfig ) {
 	process.exit( 1 );
 }
 
+// eslint-disable-next-line no-console
+cxConfig.logger = { log: console.log };
+// eslint-disable-next-line no-console
+cxConfig.metrics = { increment: console.log };
+
 function normalize( html ) {
 	const normalizer = new Normalizer();
 	normalizer.init();

@@ -9,13 +9,17 @@ if ( !config ) {
 	process.exit( 1 );
 }
 const cxConfig = config.services && Array.isArray( config.services ) &&
-	config.services.filter( function ( item ) {
-		return item && item.name === 'cxserver';
-	} )[ 0 ];
+	config.services.find( ( item ) => item && item.name === 'cxserver' );
+
 if ( !cxConfig ) {
 	process.stderr.write( 'Cannot find cxserver config' );
 	process.exit( 1 );
 }
+
+// eslint-disable-next-line no-console
+cxConfig.logger = { log: console.log };
+// eslint-disable-next-line no-console
+cxConfig.metrics = { increment: console.log };
 
 function showHelpAndExit() {
 	const script = process.argv[ 1 ];
