@@ -22,6 +22,11 @@ metrics:
   #host: localhost
   #port: 8125
 
+ratelimiter:
+  type: memory
+  rate: 10
+  key: X-Client-IP # The request header field that uniquely identify a request source
+
 services:
   - name: cxserver
     # a relative path or the name of an npm package, if different from name

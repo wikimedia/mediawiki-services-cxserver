@@ -22,6 +22,15 @@ metrics:
   host: statsd.eqiad.wmnet
   port: 8125
 
+ratelimiter:
+  key: X-Client-IP # The request header field that uniquely identify a request source
+  rate: 10
+  type: kademlia
+  # Cluster nodes
+  seeds:
+    # Port 3050 used by default
+    - 127.0.0.1
+
 services:
   - name: cxserver
     # a relative path or the name of an npm package, if different from name
