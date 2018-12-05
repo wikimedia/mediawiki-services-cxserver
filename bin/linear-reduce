@@ -15,7 +15,7 @@ if ( html.trim() === '' ) {
 const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
 parser.init();
 parser.write( html );
-const { reducedDoc, attrDump } = parser.builder.doc.reduce();
+const { reducedDoc, extractedData } = parser.builder.doc.reduce();
 process.stdout.write( reducedDoc.getHtml() );
 process.stdout.write( '\n== Attributes ==\n' );
-process.stdout.write( JSON.stringify( attrDump, null, 2 ) + '\n' );
+process.stdout.write( JSON.stringify( extractedData, null, 2 ) + '\n' );
