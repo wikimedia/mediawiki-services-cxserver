@@ -91,6 +91,12 @@ tests = [
 			'executive editor': 'editor ejecutivo',
 			'editorial page editor': 'editor de página del editorial'
 		}
+	},
+	{
+		title: 'Do not translate content inside the style tags',
+		source: '<p id="8"><style>b{color:red;}</style></p>',
+		target: '<p id="8"><style>b{color:red;}</style></p>',
+		textTranslations: {}
 	}
 ];
 
