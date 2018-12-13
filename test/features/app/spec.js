@@ -199,7 +199,9 @@ function validateTestResponse( testCase, res ) {
 		return true;
 	}
 	res.body = res.body || '';
-	if ( Buffer.isBuffer( res.body ) ) { res.body = res.body.toString(); }
+	if ( Buffer.isBuffer( res.body ) ) {
+		res.body = res.body.toString();
+	}
 	if ( expRes.body.constructor !== res.body.constructor ) {
 		if ( expRes.body.constructor === String ) {
 			res.body = JSON.stringify( res.body );
@@ -228,7 +230,7 @@ describe( 'Swagger spec', function () {
 	// default params, if given
 	let defParams = spec[ 'x-default-params' ] || {};
 
-	this.timeout( 20000 ); // eslint-disable-line no-invalid-this
+	this.timeout( 20000 );
 
 	before( () => {
 		return server.start();

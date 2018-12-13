@@ -25,7 +25,6 @@ function getParsedDoc( content ) {
 	return parser.builder.doc;
 }
 
-/* eslint-disable no-multi-str */
 const sourceHTML = `<body>
 	<section data-mw-section-id="0">
 	<p id="mwAb">Paragraph <b>bold</b> <a href="/wiki/Title">Title</a>.</p>

@@ -11,9 +11,11 @@ if ( !server.stopHookAdded ) {
 
 describe( 'express app', function () {
 
-	this.timeout( 200 ); // eslint-disable-line no-invalid-this
+	this.timeout( 200 );
 
-	before( () => { return server.start(); } );
+	before( () => {
+		return server.start();
+	} );
 
 	it( 'should get robots.txt', () => {
 		return preq.get( {

@@ -1,17 +1,11 @@
 {
-	"extends": "wikimedia",
-	"parserOptions": {
-		"ecmaVersion": 6
-	},
-	"env": {
-		"es6": true,
-		"node": true
-	},
+	"extends": "wikimedia/server",
 	"globals": {
 		"require": false
 	},
 	"rules": {
 		"one-var": [ "error", { "var": "always" } ],
-		"max-len": 0
+		"max-len": 0,
+		"no-restricted-syntax": 0
 	}
 }
