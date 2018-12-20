@@ -24,8 +24,6 @@ metrics:
 
 ratelimiter:
   type: memory
-  rate: 10
-  key: X-Client-IP # The request header field that uniquely identify a request source
 
 services:
   - name: cxserver
@@ -75,6 +73,8 @@ services:
         secret: ''
         algorithms:
           - HS256
+      ratelimiter_key: X-Client-IP # The request header field that uniquely identify a request source
+      ratelimiter_rate: 10
       languages: config/languages.yaml
       mt:
         Apertium:

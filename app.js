@@ -122,15 +122,14 @@ function initApp( options ) {
 		sUtil.initAndLogRequest( req, app );
 
 		if ( app.ratelimiter ) {
-			// eslint-disable-next-line no-underscore-dangle
-			let clientIp = req.headers[ app.ratelimiter._options.key ] ||
+			let clientIp = req.headers[ app.conf.ratelimiter_key ] ||
 				req.headers[ 'x-forwarded-for' ] ||
 				req.connection.remoteAddress;
 
-			// eslint-disable-next-line no-underscore-dangle
-			if ( app.ratelimiter.isAboveLimit( clientIp, app.ratelimiter._options.rate ) ) {
+			if ( app.ratelimiter.isAboveLimit( clientIp, app.conf.ratelimiter_rate ) ) {
 				// Too many requests, more than the configured maximum number requests per second.
 				app.metrics.increment( 'api.ratelimiter.hit' );
+				app.logger.log( 'warn', `Client ${clientIp} exceeded the configured api rate` );
 				return res.status( 429 );
 			}
 		}
