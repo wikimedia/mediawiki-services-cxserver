@@ -269,12 +269,16 @@
 						"adapted": true,
 						"targetExists": true
 					},
-					null,
+					{
+						"adapted": false
+					 },
 					{
 						"adapted": true,
 						"targetExists": true
 					},
-					null,
+					{
+						"adapted": false
+					},
 					{
 						"adapted": true,
 						"targetExists": true

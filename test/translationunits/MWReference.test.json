@@ -130,5 +130,12 @@
 		"to": "ca",
 		"source": "reference-adaptation-wth-template-test.html",
 		"result": "reference-adaptation-wth-template-result.html"
+	},
+	{
+		"desc": "Mark the reference adaptation failed when the content defined in template and it is unsupported by CXserver",
+		"from": "en",
+		"to": "ca",
+		"source": "reference-adaptation-wth-unsupported-template-test.html",
+		"result": "reference-adaptation-wth-unsupported-template-result.html"
 	}
 ]
