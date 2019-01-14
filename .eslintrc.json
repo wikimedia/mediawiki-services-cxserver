@@ -1,11 +1,17 @@
 {
-	"extends": "wikimedia/server",
+	"extends": [
+		"wikimedia",
+		"wikimedia/node",
+		"wikimedia/language/es2016"
+	],
+	"env": {
+		"es6": true
+	},
 	"globals": {
 		"require": false
 	},
 	"rules": {
 		"one-var": [ "error", { "var": "always" } ],
-		"max-len": 0,
-		"no-restricted-syntax": 0
+		"max-len": 0
 	}
 }
