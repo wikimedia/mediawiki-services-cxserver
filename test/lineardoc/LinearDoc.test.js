@@ -108,8 +108,8 @@ describe( 'LinearDoc', () => {
 			<span id="mwEz">Element with only id attribute is fine.</span>
 			</p>`;
 		const extractedData = {
-			1: { attributes: { id: 'mwEq', 'class': 'paragraph' } },
-			2: { attributes: { id: 'mwEs', 'class': 'bold' } }
+			1: { attributes: { id: 'mwEq', class: 'paragraph' } },
+			2: { attributes: { id: 'mwEs', class: 'bold' } }
 		};
 		const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
 		parser.init();

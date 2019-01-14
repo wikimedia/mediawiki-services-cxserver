@@ -34,8 +34,8 @@ describe( 'Reference adaptation', () => {
 						id: sourceDomAttributes.getNamedItem( 'id' ).value,
 						'data-mw': sourceDomAttributes.getNamedItem( 'data-mw' ).value,
 						rel: 'dc:references',
-						'typeof': 'mw:Extension/ref',
-						'class': 'mw-ref'
+						typeof: 'mw:Extension/ref',
+						class: 'mw-ref'
 					}
 				};
 			}
