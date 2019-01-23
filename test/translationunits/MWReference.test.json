@@ -64,6 +64,38 @@
 		}
 	},
 	{
+		"desc": "Adapting a reference with html content, sup tag",
+		"from": "en",
+		"to": "es",
+		"source": {
+			"name": "sup",
+			"attributes": {
+				"id": "trncttm-1sup",
+				"rel": "dc:references",
+				"typeof": "mw:Extension/ref",
+				"class": "mw-ref",
+				"data-mw": "{\"name\":\"ref\",\"body\":{\"html\":\"<a href='link'>html \\ncontent</a>\"}}"
+			}
+		},
+		"result": {
+			"attributes": {
+				"id": "trncttm-1sup",
+				"rel": "dc:references",
+				"typeof": "mw:Extension/ref",
+				"class": "mw-ref",
+				"data-mw": {
+					"name": "ref",
+					"body": {
+						"html": "<a href=\"link\">HTML \nCONTENT</a>"
+					}
+				},
+				"data-cx": {
+					"adapted": true
+				}
+			}
+		}
+	},
+	{
 		"desc": "Not adapting a reference with no data-mw.body",
 		"from": "en",
 		"to": "es",

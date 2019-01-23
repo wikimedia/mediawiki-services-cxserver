@@ -15,6 +15,7 @@ const tests = require( './MWReference.test.json' );
 
 describe( 'Reference adaptation', () => {
 	let config = server.config;
+	config.conf.reduce = true;
 	config.conf.mtClient = new TestClient( config );
 	const api = new MWApiRequestManager( config );
 	// TODO: Currently this is not making any api requests
