@@ -137,6 +137,7 @@ describe( 'LinearDoc', () => {
 		<style> a { background: url(https://en.wikipedia.org/css-background); } </style>
 		<script>original script</script>
 		<script type="module" src="main.js"></script>
+		<span id="mwKJ" typeof="mw:Entity">&ndash;</span>
 		</p>
 		</section>`;
 
@@ -145,6 +146,7 @@ describe( 'LinearDoc', () => {
 		<style id="2"></style>
 		<script id="3"></script>
 		<script id="4"></script>
+		<span id="5">&ndash;</span>
 		</p>
 		</section>`;
 		// MT result from external MT service. Assuming that it altered the style and script content.
@@ -153,6 +155,7 @@ describe( 'LinearDoc', () => {
 		<style id="2"> a { background: url(https://leaking.via/css-background); } </style>
 		<script id="3">Corrupted script</script>
 		<script id="4" src="https://bad.via/main.js"></script>
+		<span id="5">©</span>
 		</p>
 		</section>`;
 		// Expected final output after fixing all external modification
@@ -161,6 +164,7 @@ describe( 'LinearDoc', () => {
 		<style> a { background: url(https://en.wikipedia.org/css-background); } </style>
 		<script>original script</script>
 		<script type="module" src="main.js"></script>
+		<span id="mwKJ" typeof="mw:Entity">&ndash;</span>
 		</p>
 		</section>`;
 		let parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
@@ -172,9 +176,10 @@ describe( 'LinearDoc', () => {
 			normalize( expectedReducedDoc ),
 			'Expanded the corrupted document by removing all externally inserted attributes.'
 		);
-		assert.deepEqual( Object.keys( extractedData ).length, 4, 'Attributes for 2 tags extracted.' );
+		assert.deepEqual( Object.keys( extractedData ).length, 5, 'Attributes for 2 tags extracted.' );
 		assert.deepEqual( !!extractedData[ '2' ].content, true, 'Content extracted for style tag' );
 		assert.deepEqual( !!extractedData[ '3' ].content, true, 'Content extracted for script tag' );
+		assert.deepEqual( !!extractedData[ '5' ].content, true, 'Content extracted for tag with mw:Entity' );
 		parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
 		parser.init();
 		parser.write( corruptedMTInput );
