@@ -26,3 +26,4 @@ removableSections:
   - /^(.*-)?Stub$/
   - Short description
   - Void
+  - Italic title # T216044
