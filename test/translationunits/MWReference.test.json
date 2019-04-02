@@ -22,7 +22,7 @@
 				"data-mw": {
 					"name": "ref",
 					"body": {
-						"html": "[en→es]Hello reference"
+						"html": "Hello reference"
 					}
 				},
 				"data-cx": {
@@ -54,7 +54,7 @@
 				"data-mw": {
 					"name": "ref",
 					"body": {
-						"html": "[en→es]Hello sup reference"
+						"html": "Hello sup reference"
 					}
 				},
 				"data-cx": {
@@ -86,7 +86,7 @@
 				"data-mw": {
 					"name": "ref",
 					"body": {
-						"html": "<a href=\"link\">HTML \nCONTENT</a>"
+						"html": "<a href='link'>html \ncontent</a>"
 					}
 				},
 				"data-cx": {

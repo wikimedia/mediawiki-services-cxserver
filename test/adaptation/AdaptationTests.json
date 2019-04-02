@@ -752,8 +752,8 @@
 				"data-mw": {
 					"name": "ref",
 					"body": {
-						"html": "[en→es]Hello reference."
-					}
+						"html": "Hello reference."
+				}
 				},
 				"data-cx": {
 					"adapted": true
