@@ -27,7 +27,7 @@ const testDataWithWrappedResult = {
 describe( 'Machine translation with wrapped html result', function () {
 	it( 'Should throw error', () => {
 		const cxConfig = server.config.service;
-		// Fake the actual Yandex call
+		// Fake the actual call
 		const oldTranslateHTML = MTClient.prototype.translateHtml;
 		MTClient.prototype.translateHtml = () => {
 			return Promise.resolve( testDataWithWrappedResult.mtResult );
@@ -44,5 +44,33 @@ describe( 'Machine translation with wrapped html result', function () {
 				assert.ok( err instanceof Error );
 				assert.ok( /Unexpected content/.test( err.toString() ) );
 			} );
+	} );
+} );
+
+const testDataForSpaceIssue = {
+	input: '<section id="cxTargetSection0"><p><span data-segmentid="20" class="cx-segment"><b id="mwDA">Oktay Rifat</b>, June 1914. </span><span data-segmentid="20" class="cx-segment"><b id="mwDA">Oktay Rifat</b>, August 1914</span></p></section>',
+	mtIput: '<section id="cxTargetSection0"><p><div id="1"><span id="2"><b>Oktay Rifat</b>, June 1914. </span><span id="4"><b>Oktay Rifat</b>, August 1914</span></div></p></section>',
+	mtResult: '<section id="cxTargetSection0"><p><div id="1"><span id="2"><b>Oktay Rifat</b> , junio de 1914.</span>  <span id="4"><b>Oktay Rifat</b> , augusto 1914</span></div></p></section>',
+	sanitizedResult: '<section id="cxTargetSection0"><p><span data-segmentid="20" class="cx-segment"><b>Oktay Rifat</b>, junio de 1914.</span> <span data-segmentid="20" class="cx-segment"><b>Oktay Rifat</b>, augusto 1914</span></p></section>',
+	sourceLang: 'en',
+	targetLang: 'es'
+};
+
+describe( 'Machine translation result with extra spaces', function () {
+	it( 'Should be cleaned up', () => {
+		const cxConfig = server.config.service;
+		const oldTranslateHTML = MTClient.prototype.translateHtml;
+		MTClient.prototype.translateHtml = () => {
+			return Promise.resolve( testDataForSpaceIssue.mtResult );
+		};
+		const mtClient = new MTClient( cxConfig );
+		return mtClient.translateReducedHtml(
+			testDataForSpaceIssue.sourceLang,
+			testDataForSpaceIssue.targetLang,
+			testDataForSpaceIssue.input
+		).then( ( result )=>{
+			MTClient.prototype.translateHtml = oldTranslateHTML;
+			assert.deepEqual( result, testDataForSpaceIssue.sanitizedResult );
+		} );
 	} );
 } );
