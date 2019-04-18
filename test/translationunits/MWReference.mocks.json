@@ -7,6 +7,177 @@
         "#titles": {}
     },
     "templatedata/en": {
+        "Template:Sfn": {
+            "title": "Template:Sfn",
+            "params": {
+                "1": {
+                    "description": {
+                        "en": "Last name of first (or only) author"
+                    },
+                    "required": true,
+                    "example": {
+                        "en": "Smith"
+                    },
+                    "type": "line",
+                    "suggested": true,
+                    "label": {
+                        "en": "Author last name"
+                    },
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "2": {
+                    "description": {
+                        "en": "Year for citations with one author, or last name of second author for citations with two or more authors"
+                    },
+                    "required": true,
+                    "example": {
+                        "en": "2006"
+                    },
+                    "type": "string",
+                    "suggested": true,
+                    "label": {
+                        "en": "Second author or year"
+                    },
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "3": {
+                    "description": {
+                        "en": "Year for citations with two authors, or last name of third author for citations with three or more authors"
+                    },
+                    "type": "string",
+                    "label": {
+                        "en": "Third author or year"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "4": {
+                    "description": {
+                        "en": "Year for citations with three authors, or last name of fourth author for citations with four authors"
+                    },
+                    "type": "string",
+                    "label": {
+                        "en": "Fourth author or year"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "5": {
+                    "description": {
+                        "en": "Year for citations with four authors"
+                    },
+                    "type": "number",
+                    "label": {
+                        "en": "Year (if four authors included)"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "p": {
+                    "description": {
+                        "en": "Page number in source, if the relevant information is on one page (use the «pp» parameter for multiple pages, and the «loc» parameter for other location data)"
+                    },
+                    "suggested": true,
+                    "aliases": [
+                        "page"
+                    ],
+                    "example": {
+                        "en": "42"
+                    },
+                    "type": "line",
+                    "label": {
+                        "en": "Page"
+                    },
+                    "required": false,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "pp": {
+                    "description": {
+                        "en": "Page numbers in source"
+                    },
+                    "aliases": [
+                        "pages"
+                    ],
+                    "example": {
+                        "en": "23–24"
+                    },
+                    "type": "line",
+                    "label": {
+                        "en": "Pages"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null
+                },
+                "ps": {
+                    "description": {
+                        "en": "Additional quote or comment"
+                    },
+                    "example": {
+                        "en": "This is an additional comment."
+                    },
+                    "type": "string",
+                    "label": {
+                        "en": "Postscript"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                },
+                "loc": {
+                    "description": {
+                        "en": "Location in source"
+                    },
+                    "example": {
+                        "en": "section 7"
+                    },
+                    "type": "line",
+                    "label": {
+                        "en": "Location"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null
+                }
+            },
+            "description": {
+                "en": "This template creates a short author–date citation in a footnote. It allows you to link inline citation using Harvard citations (a form of short citations using parenthetical references) to their corresponding full bibliographic citations."
+            },
+            "format": "inline",
+            "sets": [],
+            "maps": {}
+        },
         "Template:London Gazette": {
             "title": "Template:London Gazette",
             "params": {
@@ -275,6 +446,309 @@
         },
         "#titles": {}
     },
+    "titlepair/en/ru": {
+        "Philo of Byzantium": {
+            "sourceTitle": "Philo of Byzantium",
+            "targetTitle": "Филон Византийский",
+            "missing": false
+        },
+        "Detective": {
+            "sourceTitle": "Detective",
+            "targetTitle": "Детектив (профессия)",
+            "missing": false
+        },
+        "#titles": {}
+    },
+    "titleinfo/ru": {
+        "Детектив (профессия)": {
+            "pageid": 315288,
+            "ns": 0,
+            "title": "Детектив (профессия)",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-14T14:08:01Z",
+            "lastrevid": 98585356,
+            "length": 19129,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Rippl_The_Detective.jpg/63px-Rippl_The_Detective.jpg",
+                "width": 63,
+                "height": 80
+            },
+            "pageimage": "Rippl_The_Detective.jpg",
+            "description": "человек, расследующий преступления",
+            "descriptionsource": "central"
+        },
+        "Филон Византийский": {
+            "pageid": 728732,
+            "ns": 0,
+            "title": "Филон Византийский",
+            "contentmodel": "wikitext",
+            "pagelanguage": "ru",
+            "pagelanguagehtmlcode": "ru",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-09T03:57:52Z",
+            "lastrevid": 98289303,
+            "length": 5065
+        },
+        "#titles": {}
+    },
+    "titlepair/en/he": {
+        "Philo of Byzantium": {
+            "sourceTitle": "Philo of Byzantium"
+        },
+        "Detective": {
+            "sourceTitle": "Detective"
+        },
+        "#titles": {}
+    },
+    "titlepair/en/ml": {
+        "Philo of Byzantium": {
+            "sourceTitle": "Philo of Byzantium"
+        },
+        "Detective": {
+            "sourceTitle": "Detective"
+        },
+        "#titles": {}
+    },
+    "titlepair/es/en": {
+        "Plantilla:Harvnp": {
+            "sourceTitle": "Plantilla:Harvnp",
+            "targetTitle": "Template:Sfn",
+            "missing": false
+        },
+        "#titles": {}
+    },
+    "templatedata/es": {
+        "Plantilla:Harvnp": {
+            "title": "Plantilla:Harvnp",
+            "params": {
+                "1": {
+                    "label": {
+                        "es": "apellido(s) del primer autor"
+                    },
+                    "description": {
+                        "es": "Apellido(s) del primer autor"
+                    },
+                    "required": true,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "2": {
+                    "label": {
+                        "es": "apellido(s) del segundo autor o año"
+                    },
+                    "description": {
+                        "es": "Apellido(s) del segundo autor o año si solo hay un autor"
+                    },
+                    "required": true,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "3": {
+                    "label": {
+                        "es": "apellido(s) del tercer autor o año"
+                    },
+                    "description": {
+                        "es": "Apellido(s) del tercer autor o año si solo hay dos autores"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "4": {
+                    "label": {
+                        "es": "apellido(s) del cuarto autor o año"
+                    },
+                    "description": {
+                        "es": "Apellido(s) del cuarto autor o año si solo hay tres autores"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "5": {
+                    "label": {
+                        "es": "apellido(s) del quinto autor o año"
+                    },
+                    "description": {
+                        "es": "Apellido(s) del quinto autor o año si hay cuatro autores"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "ref": {
+                    "label": {
+                        "es": "hipervínculo"
+                    },
+                    "description": {
+                        "es": "Si es igual a no, no se crea hipervínculo."
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "num": {
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "description": null,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "texto": {
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "description": null,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "loc": {
+                    "label": {
+                        "es": "localización"
+                    },
+                    "description": {
+                        "es": "Localización del material citado dentro de la referencia si no es una página, grupo de páginas o capítulo"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "capítulo": {
+                    "aliases": [
+                        "c",
+                        "cap"
+                    ],
+                    "description": {
+                        "es": "El capítulo en el que aparece la referencia."
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "p": {
+                    "label": {
+                        "es": "página"
+                    },
+                    "description": {
+                        "es": "La página en la que aparece la referencia. Si es más de una, se utiliza pp"
+                    },
+                    "suggested": true,
+                    "required": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "pp": {
+                    "label": {
+                        "es": "páginas"
+                    },
+                    "description": {
+                        "es": "páginas"
+                    },
+                    "suggested": true,
+                    "required": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "ps": {
+                    "description": {
+                        "es": "Comentarios o citas adicionales"
+                    },
+                    "label": null,
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                },
+                "group": {
+                    "label": {
+                        "es": "grupo"
+                    },
+                    "description": {
+                        "es": "Si se precisa que la plantilla no aparezca en la sección de referencias sino en otra con otro nombre, debe colocarse el nombre del grupo (por ejemplo nota)"
+                    },
+                    "required": false,
+                    "suggested": false,
+                    "example": null,
+                    "deprecated": false,
+                    "aliases": [],
+                    "autovalue": null,
+                    "default": null,
+                    "type": "unknown"
+                }
+            },
+            "description": {
+                "es": "Plantilla para realizar citas de estilo Harvard (autor-año) en una nota al pie."
+            },
+            "format": "inline",
+            "sets": [],
+            "maps": {}
+        },
+        "#titles": {}
+    },
     "titlepair/en/qqq": {
         "Atomic number": {
             "sourceTitle": "Atomic number"
@@ -282,6 +756,26 @@
         "#titles": {}
     },
     "titleinfo/es": {
+        "Número atómico": {
+            "pageid": 1980,
+            "ns": 0,
+            "title": "Número atómico",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-21T02:50:52Z",
+            "lastrevid": 115183585,
+            "length": 8716,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
+                "width": 80,
+                "height": 80
+            },
+            "pageimage": "Element_identity.png",
+            "description": "número total de protones que tiene el átomo",
+            "descriptionsource": "central"
+        },
         "Oxígeno": {
             "pageid": 3267,
             "ns": 0,
@@ -290,9 +784,9 @@
             "pagelanguage": "es",
             "pagelanguagehtmlcode": "es",
             "pagelanguagedir": "ltr",
-            "touched": "2018-11-27T15:42:29Z",
-            "lastrevid": 112301157,
-            "length": 105886,
+            "touched": "2019-04-21T00:33:00Z",
+            "lastrevid": 115258821,
+            "length": 105894,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/O%2C8.jpg/80px-O%2C8.jpg",
                 "width": 80,
@@ -302,24 +796,320 @@
             "description": "elemento químico",
             "descriptionsource": "central"
         },
-        "Número atómico": {
-            "pageid": 1980,
+        "Elemento químico": {
+            "pageid": 2832463,
             "ns": 0,
-            "title": "Número atómico",
+            "title": "Elemento químico",
             "contentmodel": "wikitext",
             "pagelanguage": "es",
             "pagelanguagehtmlcode": "es",
             "pagelanguagedir": "ltr",
-            "touched": "2018-11-22T00:33:23Z",
-            "lastrevid": 112184421,
-            "length": 8669,
+            "touched": "2019-04-21T09:43:26Z",
+            "lastrevid": 115411341,
+            "length": 40540,
             "thumbnail": {
-                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Periodic_table_large_2016-es.png/80px-Periodic_table_large_2016-es.png",
+                "width": 80,
+                "height": 44
+            },
+            "pageimage": "Periodic_table_large_2016-es.png",
+            "description": "tipo de materia constituida por átomos de la misma clase",
+            "descriptionsource": "central"
+        },
+        "Anfígeno": {
+            "pageid": 64114,
+            "ns": 0,
+            "title": "Anfígeno",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-01-23T03:40:38Z",
+            "lastrevid": 113469630,
+            "length": 4022
+        },
+        "Enlace químico": {
+            "pageid": 28221,
+            "ns": 0,
+            "title": "Enlace químico",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-19T19:10:20Z",
+            "lastrevid": 115373488,
+            "length": 42795,
+            "description": "proceso químico responsable de las interacciones atractivas entre átomos y moléculas",
+            "descriptionsource": "central"
+        },
+        "Reacción química": {
+            "pageid": 187195,
+            "ns": 0,
+            "title": "Reacción química",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-21T15:33:03Z",
+            "lastrevid": 115416709,
+            "length": 20158,
+            "description": "Un máquina el que redactó el artículo",
+            "descriptionsource": "central"
+        },
+        "Molécula diatómica": {
+            "pageid": 528756,
+            "ns": 0,
+            "title": "Molécula diatómica",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-02-14T19:23:52Z",
+            "lastrevid": 113567390,
+            "length": 16131,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Nitrogeno_-Molecular-.jpg/80px-Nitrogeno_-Molecular-.jpg",
+                "width": 80,
+                "height": 76
+            },
+            "pageimage": "Nitrogeno_-Molecular-.jpg"
+        },
+        "Hidrógeno": {
+            "pageid": 1404,
+            "ns": 0,
+            "title": "Hidrógeno",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-21T00:32:59Z",
+            "lastrevid": 115309670,
+            "length": 81955,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/H%2C1.jpg/80px-H%2C1.jpg",
+                "width": 80,
+                "height": 44
+            },
+            "pageimage": "H,1.jpg",
+            "description": "elemento químico con número atómico 1",
+            "descriptionsource": "central"
+        },
+        "Helio": {
+            "pageid": 22191,
+            "ns": 0,
+            "title": "Helio",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-17T00:08:22Z",
+            "lastrevid": 115211476,
+            "length": 93486,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/He%2C2.jpg/80px-He%2C2.jpg",
+                "width": 80,
+                "height": 40
+            },
+            "pageimage": "He,2.jpg",
+            "description": "elemento químicosmo",
+            "descriptionsource": "central"
+        },
+        "Óxido": {
+            "pageid": 19521,
+            "ns": 0,
+            "title": "Óxido",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-06T15:27:52Z",
+            "lastrevid": 115079906,
+            "length": 9493,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Oxid_door.jpg/80px-Oxid_door.jpg",
+                "width": 80,
+                "height": 60
+            },
+            "pageimage": "Oxid_door.jpg",
+            "description": "compuesto binario que contiene uno o varios átomos de oxígeno y otros elementos",
+            "descriptionsource": "central"
+        },
+        "Tabla periódica de los elementos": {
+            "pageid": 2797,
+            "ns": 0,
+            "title": "Tabla periódica de los elementos",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-21T02:50:52Z",
+            "lastrevid": 114354235,
+            "length": 129627,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Periodic_table_large-es-updated-2018.svg/80px-Periodic_table_large-es-updated-2018.svg.png",
+                "width": 80,
+                "height": 44
+            },
+            "pageimage": "Periodic_table_large-es-updated-2018.svg",
+            "description": "tabla que clasifica, organiza y distribuye los distintos elementos químicos, conforme a sus propiedades y características",
+            "descriptionsource": "central"
+        },
+        "Condiciones normalizadas de presión y temperatura": {
+            "pageid": 18757,
+            "ns": 0,
+            "title": "Condiciones normalizadas de presión y temperatura",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-03-30T23:32:51Z",
+            "lastrevid": 113841326,
+            "length": 10517,
+            "description": "valores de presión atmosférica y temperatura que imperan en un laboratorio",
+            "descriptionsource": "central"
+        },
+        "No metal": {
+            "pageid": 21340,
+            "ns": 0,
+            "title": "No metal",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T00:24:23Z",
+            "lastrevid": 115379720,
+            "length": 11022,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tabla_periodica.png/80px-Tabla_periodica.png",
+                "width": 80,
+                "height": 43
+            },
+            "pageimage": "Tabla_periodica.png",
+            "description": "categoría de elementos químicos opuestos a los metales",
+            "descriptionsource": "central"
+        },
+        "Corteza (geología)": {
+            "pageid": 6183280,
+            "ns": 0,
+            "title": "Corteza (geología)",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-21T22:41:00Z",
+            "lastrevid": 115191734,
+            "length": 22720,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Earth_poster.svg/80px-Earth_poster.svg.png",
+                "width": 80,
+                "height": 49
+            },
+            "pageimage": "Earth_poster.svg",
+            "description": "parte sólida externa de un cuerpo celeste",
+            "descriptionsource": "central"
+        },
+        "Oxidante": {
+            "pageid": 31853,
+            "ns": 0,
+            "title": "Oxidante",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-03-26T13:54:52Z",
+            "lastrevid": 114683703,
+            "length": 6840,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Hazard_O.svg/80px-Hazard_O.svg.png",
                 "width": 80,
                 "height": 80
             },
-            "pageimage": "Element_identity.png",
-            "description": "número total de protones que tiene el átomo",
+            "pageimage": "Hazard_O.svg",
+            "description": "compuesto químico que oxida a otra sustancia",
+            "descriptionsource": "central"
+        },
+        "Atmósfera terrestre": {
+            "pageid": 11503,
+            "ns": 0,
+            "title": "Atmósfera terrestre",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-17T00:08:18Z",
+            "lastrevid": 114846238,
+            "length": 25420,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Full_moon_partially_obscured_by_atmosphere.jpg/80px-Full_moon_partially_obscured_by_atmosphere.jpg",
+                "width": 80,
+                "height": 53
+            },
+            "pageimage": "Full_moon_partially_obscured_by_atmosphere.jpg",
+            "description": "parte gaseosa de la Tierra",
+            "descriptionsource": "central"
+        },
+        "Abundancia de los elementos químicos": {
+            "pageid": 4332636,
+            "ns": 0,
+            "title": "Abundancia de los elementos químicos",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-16T00:15:00Z",
+            "lastrevid": 115290558,
+            "length": 18636
+        },
+        "Alótropos del oxígeno": {
+            "pageid": 5296362,
+            "ns": 0,
+            "title": "Alótropos del oxígeno",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-03-21T06:53:09Z",
+            "lastrevid": 106243460,
+            "length": 997
+        },
+        "Gas": {
+            "pageid": 9124,
+            "ns": 0,
+            "title": "Gas",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-21T00:33:01Z",
+            "lastrevid": 114735602,
+            "length": 20326,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Translational_motion.gif/80px-Translational_motion.gif",
+                "width": 80,
+                "height": 70
+            },
+            "pageimage": "Translational_motion.gif",
+            "description": "Estado de la materia más conocido como gaseoso",
+            "descriptionsource": "central"
+        },
+        "Compuesto químico": {
+            "pageid": 10547,
+            "ns": 0,
+            "title": "Compuesto químico",
+            "contentmodel": "wikitext",
+            "pagelanguage": "es",
+            "pagelanguagehtmlcode": "es",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-21T12:47:48Z",
+            "lastrevid": 115413908,
+            "length": 8500,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/LightningVolt_Deep_Blue_Sea.jpg/64px-LightningVolt_Deep_Blue_Sea.jpg",
+                "width": 64,
+                "height": 80
+            },
+            "pageimage": "LightningVolt_Deep_Blue_Sea.jpg",
+            "description": "sustancia química formada por la unión de dos o más elementos de la tabla periódica",
             "descriptionsource": "central"
         },
         "Charles Wright (luchador)": {
@@ -330,7 +1120,7 @@
             "pagelanguage": "es",
             "pagelanguagehtmlcode": "es",
             "pagelanguagedir": "ltr",
-            "touched": "2018-11-20T20:39:14Z",
+            "touched": "2019-04-21T02:56:02Z",
             "lastrevid": 111260678,
             "length": 24756,
             "thumbnail": {
@@ -343,6 +1133,26 @@
         "#titles": {}
     },
     "titleinfo/en": {
+        "Oxygen": {
+            "pageid": 22303,
+            "ns": 0,
+            "title": "Oxygen",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:48:14Z",
+            "lastrevid": 888475502,
+            "length": 100705,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Liquid_oxygen_in_a_beaker_4.jpg/66px-Liquid_oxygen_in_a_beaker_4.jpg",
+                "width": 66,
+                "height": 80
+            },
+            "pageimage": "Liquid_oxygen_in_a_beaker_4.jpg",
+            "description": "Chemical element with atomic number 8",
+            "descriptionsource": "local"
+        },
         "Atomic number": {
             "pageid": 673,
             "ns": 0,
@@ -351,9 +1161,9 @@
             "pagelanguage": "en",
             "pagelanguagehtmlcode": "en",
             "pagelanguagedir": "ltr",
-            "touched": "2018-11-27T18:56:57Z",
-            "lastrevid": 870846305,
-            "length": 13688,
+            "touched": "2019-04-20T13:47:30Z",
+            "lastrevid": 887610324,
+            "length": 13705,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Atomic_number_depiction.jpg/80px-Atomic_number_depiction.jpg",
                 "width": 80,
@@ -363,25 +1173,451 @@
             "description": "number of protons found in the nucleus of an atom",
             "descriptionsource": "central"
         },
-        "Oxygen": {
-            "pageid": 22303,
+        "Chemical element": {
+            "pageid": 5659,
             "ns": 0,
-            "title": "Oxygen",
+            "title": "Chemical element",
             "contentmodel": "wikitext",
             "pagelanguage": "en",
             "pagelanguagehtmlcode": "en",
             "pagelanguagedir": "ltr",
-            "touched": "2018-11-27T18:57:01Z",
-            "lastrevid": 865817754,
-            "length": 101048,
+            "touched": "2019-04-20T13:47:39Z",
+            "lastrevid": 892741230,
+            "length": 67161,
             "thumbnail": {
-                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Liquid_oxygen_in_a_beaker_4.jpg/66px-Liquid_oxygen_in_a_beaker_4.jpg",
-                "width": 66,
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
+                "width": 80,
+                "height": 42
+            },
+            "pageimage": "Simple_Periodic_Table_Chart-en.svg",
+            "description": "a species of atoms having the same number of protons in the atomic nucleus",
+            "descriptionsource": "central"
+        },
+        "Chalcogen": {
+            "pageid": 5905,
+            "ns": 0,
+            "title": "Chalcogen",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:47:41Z",
+            "lastrevid": 880401171,
+            "length": 70671,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Sulfur-sample.jpg/80px-Sulfur-sample.jpg",
+                "width": 80,
+                "height": 60
+            },
+            "pageimage": "Sulfur-sample.jpg",
+            "description": "group of chemical elements",
+            "descriptionsource": "central"
+        },
+        "Group (periodic table)": {
+            "pageid": 86347,
+            "ns": 0,
+            "title": "Group (periodic table)",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:50:04Z",
+            "lastrevid": 891861022,
+            "length": 7753,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
+                "width": 80,
+                "height": 42
+            },
+            "pageimage": "Simple_Periodic_Table_Chart-en.svg",
+            "description": "column of elements in the periodic table of the chemical elements",
+            "descriptionsource": "central"
+        },
+        "Periodic table": {
+            "pageid": 23053,
+            "ns": 0,
+            "title": "Periodic table",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:48:16Z",
+            "lastrevid": 893139708,
+            "length": 122575,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
+                "width": 80,
+                "height": 42
+            },
+            "pageimage": "Simple_Periodic_Table_Chart-en.svg",
+            "description": "Tabular arrangement of the chemical elements ordered by atomic number",
+            "descriptionsource": "local"
+        },
+        "Chemical reaction": {
+            "pageid": 6271,
+            "ns": 0,
+            "title": "Chemical reaction",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:47:41Z",
+            "lastrevid": 891439600,
+            "length": 59441,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/ThermiteReaction.jpg/72px-ThermiteReaction.jpg",
+                "width": 72,
                 "height": 80
             },
-            "pageimage": "Liquid_oxygen_in_a_beaker_4.jpg",
-            "description": "chemical element with atomic number 8",
+            "pageimage": "ThermiteReaction.jpg",
+            "description": "Process that results in the interconversion of chemical species",
             "descriptionsource": "local"
+        },
+        "Nonmetal": {
+            "pageid": 102193,
+            "ns": 0,
+            "title": "Nonmetal",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-17T15:52:53Z",
+            "lastrevid": 892385196,
+            "length": 111841,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
+                "width": 80,
+                "height": 42
+            },
+            "pageimage": "Simple_Periodic_Table_Chart-en.svg",
+            "description": "term to classify chemical elements",
+            "descriptionsource": "central"
+        },
+        "Oxidizing agent": {
+            "pageid": 184882,
+            "ns": 0,
+            "title": "Oxidizing agent",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:54:22Z",
+            "lastrevid": 890181850,
+            "length": 7457,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/GHS-pictogram-rondflam.svg/80px-GHS-pictogram-rondflam.svg.png",
+                "width": 80,
+                "height": 80
+            },
+            "pageimage": "GHS-pictogram-rondflam.svg",
+            "description": "Chemical compound used to oxidize another substance in a chemical reaction",
+            "descriptionsource": "local"
+        },
+        "Oxide": {
+            "pageid": 22305,
+            "ns": 0,
+            "title": "Oxide",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-22T00:25:59Z",
+            "lastrevid": 885105162,
+            "length": 27092,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Rutile-unit-cell-3D-balls.png/80px-Rutile-unit-cell-3D-balls.png",
+                "width": 80,
+                "height": 57
+            },
+            "pageimage": "Rutile-unit-cell-3D-balls.png",
+            "description": "chemical compound with at least one oxygen atom",
+            "descriptionsource": "central"
+        },
+        "Chemical compound": {
+            "pageid": 21347411,
+            "ns": 0,
+            "title": "Chemical compound",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T15:17:03Z",
+            "lastrevid": 891922516,
+            "length": 13869,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/2006-02-13_Drop-impact.jpg/80px-2006-02-13_Drop-impact.jpg",
+                "width": 80,
+                "height": 77
+            },
+            "pageimage": "2006-02-13_Drop-impact.jpg",
+            "description": "Substance composed of multiple elements",
+            "descriptionsource": "local"
+        },
+        "Abundance of the chemical elements": {
+            "pageid": 392828,
+            "ns": 0,
+            "title": "Abundance of the chemical elements",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:58:18Z",
+            "lastrevid": 893050709,
+            "length": 35971,
+            "description": "Abundance at scales including the Universe, the Earth and the human body",
+            "descriptionsource": "local"
+        },
+        "Hydrogen": {
+            "pageid": 13255,
+            "ns": 0,
+            "title": "Hydrogen",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-22T03:59:27Z",
+            "lastrevid": 891801322,
+            "length": 90008,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Hexagonal.svg/70px-Hexagonal.svg.png",
+                "width": 70,
+                "height": 80
+            },
+            "pageimage": "Hexagonal.svg",
+            "description": "Chemical element with atomic number 1",
+            "descriptionsource": "local"
+        },
+        "Helium": {
+            "pageid": 13256,
+            "ns": 0,
+            "title": "Helium",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:47:55Z",
+            "lastrevid": 889640771,
+            "length": 122745,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Helium_discharge_tube.jpg/80px-Helium_discharge_tube.jpg",
+                "width": 80,
+                "height": 53
+            },
+            "pageimage": "Helium_discharge_tube.jpg",
+            "description": "Chemical element with atomic number 2",
+            "descriptionsource": "local"
+        },
+        "Standard temperature and pressure": {
+            "pageid": 27745,
+            "ns": 0,
+            "title": "Standard conditions for temperature and pressure",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:48:27Z",
+            "lastrevid": 889820858,
+            "length": 26126
+        },
+        "Chemical bond": {
+            "pageid": 5993,
+            "ns": 0,
+            "title": "Chemical bond",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:47:41Z",
+            "lastrevid": 892168460,
+            "length": 31783,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Electron_dot.svg/80px-Electron_dot.svg.png",
+                "width": 80,
+                "height": 65
+            },
+            "pageimage": "Electron_dot.svg",
+            "description": "lasting attraction between atoms that enables the formation of chemical compounds",
+            "descriptionsource": "central"
+        },
+        "Allotropes of oxygen": {
+            "pageid": 14553266,
+            "ns": 0,
+            "title": "Allotropes of oxygen",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T14:53:04Z",
+            "lastrevid": 884784028,
+            "length": 10254,
+            "description": "different chemical forms of oxygen",
+            "descriptionsource": "central"
+        },
+        "Diatomic molecule": {
+            "pageid": 7938,
+            "ns": 0,
+            "title": "Diatomic molecule",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:47:44Z",
+            "lastrevid": 892762851,
+            "length": 17684,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Dinitrogen-3D-vdW.png/80px-Dinitrogen-3D-vdW.png",
+                "width": 80,
+                "height": 61
+            },
+            "pageimage": "Dinitrogen-3D-vdW.png",
+            "description": "molecule composed of only two atoms of the same or different chemical elements",
+            "descriptionsource": "central"
+        },
+        "Gas": {
+            "pageid": 18993869,
+            "ns": 0,
+            "title": "Gas",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-21T03:51:16Z",
+            "lastrevid": 893407256,
+            "length": 40228,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Gas_particle_movement.svg/80px-Gas_particle_movement.svg.png",
+                "width": 80,
+                "height": 57
+            },
+            "pageimage": "Gas_particle_movement.svg",
+            "description": "gaseous object",
+            "descriptionsource": "central"
+        },
+        "Atmosphere of Earth": {
+            "pageid": 202898,
+            "ns": 0,
+            "title": "Atmosphere of Earth",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-22T04:00:26Z",
+            "lastrevid": 893516303,
+            "length": 50814,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Top_of_Atmosphere.jpg/80px-Top_of_Atmosphere.jpg",
+                "width": 80,
+                "height": 53
+            },
+            "pageimage": "Top_of_Atmosphere.jpg",
+            "description": "Layer of gases surrounding the planet Earth",
+            "descriptionsource": "local"
+        },
+        "Earth's atmosphere": {
+            "pageid": 202898,
+            "ns": 0,
+            "title": "Atmosphere of Earth",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-22T04:00:26Z",
+            "lastrevid": 893516303,
+            "length": 50814,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Top_of_Atmosphere.jpg/80px-Top_of_Atmosphere.jpg",
+                "width": 80,
+                "height": 53
+            },
+            "pageimage": "Top_of_Atmosphere.jpg",
+            "description": "Layer of gases surrounding the planet Earth",
+            "descriptionsource": "local"
+        },
+        "Earth's crust": {
+            "pageid": 145700,
+            "ns": 0,
+            "title": "Crust (geology)",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:53:15Z",
+            "lastrevid": 882914557,
+            "length": 19943,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Earth_poster.svg/80px-Earth_poster.svg.png",
+                "width": 80,
+                "height": 49
+            },
+            "pageimage": "Earth_poster.svg",
+            "description": "The outermost solid shell of a rocky planet, dwarf planet, or natural satellite",
+            "descriptionsource": "local"
+        },
+        "Standard conditions for temperature and pressure": {
+            "pageid": 27745,
+            "ns": 0,
+            "title": "Standard conditions for temperature and pressure",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:48:27Z",
+            "lastrevid": 889820858,
+            "length": 26126
+        },
+        "Crust (geology)": {
+            "pageid": 145700,
+            "ns": 0,
+            "title": "Crust (geology)",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:53:15Z",
+            "lastrevid": 882914557,
+            "length": 19943,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Earth_poster.svg/80px-Earth_poster.svg.png",
+                "width": 80,
+                "height": 49
+            },
+            "pageimage": "Earth_poster.svg",
+            "description": "The outermost solid shell of a rocky planet, dwarf planet, or natural satellite",
+            "descriptionsource": "local"
+        },
+        "Philo of Byzantium": {
+            "pageid": 1186281,
+            "ns": 0,
+            "title": "Philo of Byzantium",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T14:09:14Z",
+            "lastrevid": 856907155,
+            "length": 7660,
+            "description": "Ancient Greek engineer",
+            "descriptionsource": "central"
+        },
+        "Detective": {
+            "pageid": 118576,
+            "ns": 0,
+            "title": "Detective",
+            "contentmodel": "wikitext",
+            "pagelanguage": "en",
+            "pagelanguagehtmlcode": "en",
+            "pagelanguagedir": "ltr",
+            "touched": "2019-04-20T13:51:37Z",
+            "lastrevid": 889714223,
+            "length": 13079,
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Allan_Pinkerton-retouch.jpg/69px-Allan_Pinkerton-retouch.jpg",
+                "width": 69,
+                "height": 80
+            },
+            "pageimage": "Allan_Pinkerton-retouch.jpg",
+            "description": "investigator, either a member of a police agency or a private person",
+            "descriptionsource": "central"
         },
         "The Godfather (wrestler)": {
             "pageid": 591648,
@@ -391,9 +1627,9 @@
             "pagelanguage": "en",
             "pagelanguagehtmlcode": "en",
             "pagelanguagedir": "ltr",
-            "touched": "2018-11-25T21:56:24Z",
-            "lastrevid": 869418993,
-            "length": 31385,
+            "touched": "2019-04-20T21:16:49Z",
+            "lastrevid": 893363544,
+            "length": 35852,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg/51px-Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg",
                 "width": 51,
@@ -401,7 +1637,7 @@
             },
             "pageimage": "Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg",
             "description": "American professional wrestler",
-            "descriptionsource": "central"
+            "descriptionsource": "local"
         },
         "List of planets with life": {
             "ns": 0,
@@ -415,6 +1651,124 @@
         "#titles": {}
     },
     "titlepair/en/es": {
+        "Oxygen": {
+            "sourceTitle": "Oxygen",
+            "targetTitle": "Oxígeno",
+            "missing": false
+        },
+        "Atomic number": {
+            "sourceTitle": "Atomic number",
+            "targetTitle": "Número atómico",
+            "missing": false
+        },
+        "Chemical element": {
+            "sourceTitle": "Chemical element",
+            "targetTitle": "Elemento químico",
+            "missing": false
+        },
+        "Chalcogen": {
+            "sourceTitle": "Chalcogen",
+            "targetTitle": "Anfígeno",
+            "missing": false
+        },
+        "Group (periodic table)": {
+            "sourceTitle": "Group (periodic table)"
+        },
+        "Periodic table": {
+            "sourceTitle": "Periodic table",
+            "targetTitle": "Tabla periódica de los elementos",
+            "missing": false
+        },
+        "Chemical reaction": {
+            "sourceTitle": "Chemical reaction",
+            "targetTitle": "Reacción química",
+            "missing": false
+        },
+        "Nonmetal": {
+            "sourceTitle": "Nonmetal",
+            "targetTitle": "No metal",
+            "missing": false
+        },
+        "Oxidizing agent": {
+            "sourceTitle": "Oxidizing agent",
+            "targetTitle": "Oxidante",
+            "missing": false
+        },
+        "Oxide": {
+            "sourceTitle": "Oxide",
+            "targetTitle": "Óxido",
+            "missing": false
+        },
+        "Chemical compound": {
+            "sourceTitle": "Chemical compound",
+            "targetTitle": "Compuesto químico",
+            "missing": false
+        },
+        "Abundance of the chemical elements": {
+            "sourceTitle": "Abundance of the chemical elements",
+            "targetTitle": "Abundancia de los elementos químicos",
+            "missing": false
+        },
+        "Hydrogen": {
+            "sourceTitle": "Hydrogen",
+            "targetTitle": "Hidrógeno",
+            "missing": false
+        },
+        "Helium": {
+            "sourceTitle": "Helium",
+            "targetTitle": "Helio",
+            "missing": false
+        },
+        "Standard temperature and pressure": {
+            "sourceTitle": "Standard conditions for temperature and pressure",
+            "targetTitle": "Condiciones normalizadas de presión y temperatura",
+            "missing": false
+        },
+        "Chemical bond": {
+            "sourceTitle": "Chemical bond",
+            "targetTitle": "Enlace químico",
+            "missing": false
+        },
+        "Allotropes of oxygen": {
+            "sourceTitle": "Allotropes of oxygen",
+            "targetTitle": "Alótropos del oxígeno",
+            "missing": false
+        },
+        "Diatomic molecule": {
+            "sourceTitle": "Diatomic molecule",
+            "targetTitle": "Molécula diatómica",
+            "missing": false
+        },
+        "Gas": {
+            "sourceTitle": "Gas",
+            "targetTitle": "Gas",
+            "missing": false
+        },
+        "Atmosphere of Earth": {
+            "sourceTitle": "Atmosphere of Earth",
+            "targetTitle": "Atmósfera terrestre",
+            "missing": false
+        },
+        "Earth's atmosphere": {
+            "sourceTitle": "Atmosphere of Earth",
+            "targetTitle": "Atmósfera terrestre",
+            "missing": false
+        },
+        "Earth's crust": {
+            "sourceTitle": "Crust (geology)",
+            "targetTitle": "Corteza (geología)",
+            "missing": false
+        },
+        "Standard conditions for temperature and pressure": {
+            "sourceTitle": "Standard conditions for temperature and pressure",
+            "targetTitle": "Condiciones normalizadas de presión y temperatura",
+            "missing": false
+        },
+        "Crust (geology)": {
+            "sourceTitle": "Crust (geology)",
+            "targetTitle": "Corteza (geología)",
+            "missing": false
+        },
         "Template:Infobox Finnish municipality": {
             "sourceTitle": "Template:Infobox Finnish municipality"
         },
@@ -441,16 +1795,6 @@
         },
         "Category:Culinary terminology": {
             "sourceTitle": "Category:Culinary terminology"
-        },
-        "Oxygen": {
-            "sourceTitle": "Oxygen",
-            "targetTitle": "Oxígeno",
-            "missing": false
-        },
-        "Atomic number": {
-            "sourceTitle": "Atomic number",
-            "targetTitle": "Número atómico",
-            "missing": false
         },
         "The Godfather (wrestler)": {
             "sourceTitle": "The Godfather (wrestler)",

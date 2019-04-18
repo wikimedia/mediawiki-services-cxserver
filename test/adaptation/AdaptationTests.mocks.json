@@ -17,7 +17,7 @@
                 "height": 80
             },
             "pageimage": "Liquid_oxygen_in_a_beaker_4.jpg",
-            "description": "chemical element with atomic number 8",
+            "description": "Chemical element with atomic number 8",
             "descriptionsource": "local"
         },
         "Atomic number": {
@@ -117,7 +117,7 @@
                 "height": 42
             },
             "pageimage": "Simple_Periodic_Table_Chart-en.svg",
-            "description": "tabular display of the chemical elements",
+            "description": "Tabular arrangement of the chemical elements ordered by atomic number",
             "descriptionsource": "central"
         },
         "Chemical reaction": {
@@ -137,7 +137,7 @@
                 "height": 80
             },
             "pageimage": "ThermiteReaction.jpg",
-            "description": "process that results in the interconversion of chemical species",
+            "description": "Process that results in the interconversion of chemical species",
             "descriptionsource": "central"
         },
         "Nonmetal": {
@@ -751,7 +751,7 @@
             "touched": "2018-09-03T22:23:07Z",
             "lastrevid": 110401458,
             "length": 20093,
-            "description": "proceso termodinámico en el cual una o más sustancias químicas son transformadas",
+            "description": "Un máquina el que redactó el artículo",
             "descriptionsource": "central"
         },
         "Molécula diatómica": {
@@ -1041,6 +1041,11 @@
             "lastrevid": 91790379,
             "length": 18921,
             "description": "человек, расследующий преступления",
+            "thumbnail": {
+                "height": 80,
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Rippl_The_Detective.jpg/63px-Rippl_The_Detective.jpg",
+                "width": 63
+            },
             "descriptionsource": "central"
         },
         "Филон Византийский": {
@@ -1068,6 +1073,14 @@
             "./Philo_of_Byzantium": "Philo of Byzantium",
             "./Detective": "Detective"
         }
+    },
+    "titlepair/es/en": {
+        "Plantilla:Harvnp": {
+            "sourceTitle": "Plantilla:Harvnp",
+            "targetTitle": "Template:Sfn",
+            "missing": false
+        },
+        "#titles": {}
     },
     "titlepair/en/ml": {
         "Philo of Byzantium": {

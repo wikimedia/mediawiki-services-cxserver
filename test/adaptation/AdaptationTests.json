@@ -28,7 +28,7 @@
 							"width": 66,
 							"height": 80
 						},
-						"description": "chemical element with atomic number 8"
+						"description": "Chemical element with atomic number 8"
 					}
 				}
 			}
@@ -180,7 +180,7 @@
 							"width": 80,
 							"height": 42
 						},
-						"description": "tabular display of the chemical elements"
+						"description": "Tabular arrangement of the chemical elements ordered by atomic number"
 					}
 				}
 			},
@@ -192,7 +192,7 @@
 					"targetTitle": {
 						"title": "Reacción química",
 						"pagelanguage": "es",
-						"description": "proceso termodinámico en el cual una o más sustancias químicas son transformadas"
+						"description": "Un máquina el que redactó el artículo"
 					},
 					"sourceTitle": {
 						"title": "Chemical reaction",
@@ -202,7 +202,7 @@
 							"width": 72,
 							"height": 80
 						},
-						"description": "process that results in the interconversion of chemical species"
+						"description": "Process that results in the interconversion of chemical species"
 					}
 				}
 			}
@@ -602,7 +602,12 @@
 					"targetTitle": {
 						"title": "Детектив (профессия)",
 						"pagelanguage": "ru",
-						"description": "человек, расследующий преступления"
+						"description": "человек, расследующий преступления",
+						"thumbnail": {
+							"height": 80,
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Rippl_The_Detective.jpg/63px-Rippl_The_Detective.jpg",
+							"width": 63
+						}
 					},
 					"sourceTitle": {
 						"title": "Detective",
@@ -758,6 +763,39 @@
 				"data-cx": {
 					"adapted": true
 				}
+			}
+		}
+	},
+	{
+		"desc": "Reference adaptation test where the content is reference and template at same time",
+		"from": "es",
+		"to": "en",
+		"source": "<p id='mwDA'>Text<sup about='#mwt3' class='mw-ref' data-mw='{&quot;parts&quot;:[{&quot;template&quot;:{&quot;target&quot;:{&quot;wt&quot;:&quot;Harvnp&quot;,&quot;href&quot;:&quot;./Plantilla:Harvnp&quot;},&quot;params&quot;:{&quot;1&quot;:{&quot;wt&quot;:&quot;Termes&quot;},&quot;2&quot;:{&quot;wt&quot;:&quot;2011&quot;},&quot;p&quot;:{&quot;wt&quot;:&quot;91&quot;}},&quot;i&quot;:0}}]}' id='cite_ref-FOOTNOTETermes201191_2-0' rel='dc:references' typeof='mw:Transclusion  mw:Extension/ref' data-ve-no-generated-contents='true'><a href='./La_Mano_Negra#cite_note-FOOTNOTETermes201191-2' style='counter-reset: mw-Ref 2;'><span class='mw-reflink-text'>[2]</span></a></sup></p>",
+		"resultAttributes": {
+			"cite_ref-FOOTNOTETermes201191_2-0": {
+				"data-mw": {
+					"parts": [ {
+						"template": {
+							"i": 0,
+							"params": {
+								"1": {
+								"wt": "Termes"
+								},
+								"2": { "wt": "2011" },
+								"p": { "wt": "91" }
+							},
+							"target": {
+								"href": "./Template:Sfn",
+								"wt": "Sfn"
+							}}
+						}
+					]
+				},
+				"data-cx": [{
+					"adapted": true,
+					"partial": false,
+					"targetExists": true
+				}]
 			}
 		}
 	}
