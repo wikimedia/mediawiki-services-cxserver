@@ -73,12 +73,11 @@ paths:
           type: string
           required: false
       x-amples:
-        - title: Fetch enwiki Oxygen page
+        - title: Fetch enwiki protected page
           request:
             params:
               language: en
-              title: Oxygen
-              revision: 702870951
+              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
           response:
             status: 200
             headers:
@@ -307,13 +306,12 @@ paths:
           type: string
           required: false
       x-amples:
-        - title: Fetch enwiki Oxygen page
+        - title: Translate enwiki protected page
           request:
             params:
               sourcelanguage: en
               targetlanguage: es
-              title: Pickling
-              revision: 825871454
+              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
           response:
             status: 200
             headers:
