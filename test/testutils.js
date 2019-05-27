@@ -19,7 +19,7 @@ class TestUtils {
 	dump( filename ) {
 		if ( fs.existsSync( 'DUMPREQUESTS' ) ) {
 			this.api.dumpCachedRequests().then( ( result ) => {
-				fs.writeFile( filename, JSON.stringify( result, null, 4 ) );
+				fs.writeFileSync( filename, JSON.stringify( result, null, 4 ) );
 			} );
 		}
 	}

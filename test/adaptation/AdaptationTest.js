@@ -20,6 +20,10 @@ describe( 'Adaptation tests', () => {
 		mocker.setup( mocks );
 	} );
 
+	after( function () {
+		mocker.dump( __dirname + '/AdaptationTests.mocks.json' );
+	} );
+
 	async.each( tests, ( test, done ) => {
 		it( 'should not have any errors when: ' + test.desc, function () {
 			const cxserver = server.config.conf.services[ server.config.conf.services.length - 1 ];
@@ -47,6 +51,6 @@ describe( 'Adaptation tests', () => {
 				}
 				done( null );
 			} );
-		}, mocker.dump.bind( mocker, 'test/adaptation/AdaptationTests.mocks.json' ) );
+		} );
 	} );
 } );

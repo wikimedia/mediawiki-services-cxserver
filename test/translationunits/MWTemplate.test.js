@@ -16,7 +16,14 @@ describe( 'Template adaptation', () => {
 	config.conf.mtClient = new TestClient( config );
 	const api = new MWApiRequestManager( config );
 	const mocker = new TestUtils( api );
-	mocker.setup( mocks );
+
+	before( function () {
+		mocker.setup( mocks );
+	} );
+
+	after( function () {
+		mocker.dump( __dirname + '/MWTemplate.mocks.json' );
+	} );
 
 	async.each( tests, ( test, done ) => {
 		it( test.desc, () => {
@@ -41,5 +48,5 @@ describe( 'Template adaptation', () => {
 				done( null );
 			} );
 		} );
-	}, mocker.dump.bind( mocker, 'test/translationunits/MWTemplate.mocks.json' ) );
+	} );
 } );

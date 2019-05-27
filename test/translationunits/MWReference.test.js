@@ -10,17 +10,23 @@ const server = require( '../utils/server.js' );
 const jsdom = require( 'jsdom' );
 const fs = require( 'fs' );
 
-// const mocks = require( './MWReference.mocks.json' );
+const mocks = require( './MWReference.mocks.json' );
 const tests = require( './MWReference.test.json' );
 
 describe( 'Reference adaptation', () => {
-	let config = server.config;
+	const config = server.config;
 	config.conf.reduce = true;
 	config.conf.mtClient = new TestClient( config );
 	const api = new MWApiRequestManager( config );
-	// TODO: Currently this is not making any api requests
 	const mocker = new TestUtils( api );
-	// mocker.setup( mocks );
+
+	before( function () {
+		mocker.setup( mocks );
+	} );
+
+	after( function () {
+		mocker.dump( __dirname + '/MWReference.mocks.json' );
+	} );
 
 	async.each( tests, ( test, done ) => {
 		it( test.desc, () => {
@@ -69,5 +75,5 @@ describe( 'Reference adaptation', () => {
 				done( null );
 			} );
 		} );
-	}, mocker.dump.bind( mocker, 'test/translationunits/MWReference.mocks.json' ) );
+	} );
 } );

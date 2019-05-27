@@ -13,7 +13,14 @@ const tests = require( './MWLink.test.json' );
 describe( 'Link Adaptation tests', function () {
 	const api = new MWApiRequestManager( server.config );
 	const mocker = new TestUtils( api );
-	mocker.setup( mocks );
+
+	before( function () {
+		mocker.setup( mocks );
+	} );
+
+	after( function () {
+		mocker.dump( __dirname + '/MWLink.mocks.json' );
+	} );
 
 	async.each( tests, function ( test, done ) {
 		it( 'should not have any errors when: ' + test.desc, function () {
@@ -58,5 +65,5 @@ describe( 'Link Adaptation tests', function () {
 				done( null );
 			} );
 		} );
-	}, mocker.dump.bind( mocker, 'test/translationunits/MWLink.mocks.json' ) );
+	} );
 } );

@@ -446,80 +446,6 @@
         },
         "#titles": {}
     },
-    "titlepair/en/ru": {
-        "Philo of Byzantium": {
-            "sourceTitle": "Philo of Byzantium",
-            "targetTitle": "Филон Византийский",
-            "missing": false
-        },
-        "Detective": {
-            "sourceTitle": "Detective",
-            "targetTitle": "Детектив (профессия)",
-            "missing": false
-        },
-        "#titles": {}
-    },
-    "titleinfo/ru": {
-        "Детектив (профессия)": {
-            "pageid": 315288,
-            "ns": 0,
-            "title": "Детектив (профессия)",
-            "contentmodel": "wikitext",
-            "pagelanguage": "ru",
-            "pagelanguagehtmlcode": "ru",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-14T14:08:01Z",
-            "lastrevid": 98585356,
-            "length": 19129,
-            "thumbnail": {
-                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Rippl_The_Detective.jpg/63px-Rippl_The_Detective.jpg",
-                "width": 63,
-                "height": 80
-            },
-            "pageimage": "Rippl_The_Detective.jpg",
-            "description": "человек, расследующий преступления",
-            "descriptionsource": "central"
-        },
-        "Филон Византийский": {
-            "pageid": 728732,
-            "ns": 0,
-            "title": "Филон Византийский",
-            "contentmodel": "wikitext",
-            "pagelanguage": "ru",
-            "pagelanguagehtmlcode": "ru",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-09T03:57:52Z",
-            "lastrevid": 98289303,
-            "length": 5065
-        },
-        "#titles": {}
-    },
-    "titlepair/en/he": {
-        "Philo of Byzantium": {
-            "sourceTitle": "Philo of Byzantium"
-        },
-        "Detective": {
-            "sourceTitle": "Detective"
-        },
-        "#titles": {}
-    },
-    "titlepair/en/ml": {
-        "Philo of Byzantium": {
-            "sourceTitle": "Philo of Byzantium"
-        },
-        "Detective": {
-            "sourceTitle": "Detective"
-        },
-        "#titles": {}
-    },
-    "titlepair/es/en": {
-        "Plantilla:Harvnp": {
-            "sourceTitle": "Plantilla:Harvnp",
-            "targetTitle": "Template:Sfn",
-            "missing": false
-        },
-        "#titles": {}
-    },
     "templatedata/es": {
         "Plantilla:Harvnp": {
             "title": "Plantilla:Harvnp",
@@ -749,6 +675,66 @@
         },
         "#titles": {}
     },
+    "titlepair/es/en": {
+        "Plantilla:Harvnp": {
+            "sourceTitle": "Plantilla:Harvnp",
+            "targetTitle": "Template:Sfn",
+            "missing": false
+        },
+        "#titles": {}
+    },
+    "titlepair/en/ml": {
+        "Philo of Byzantium": {
+            "sourceTitle": "Philo of Byzantium"
+        },
+        "Detective": {
+            "sourceTitle": "Detective"
+        },
+        "#titles": {}
+    },
+    "titlepair/en/he": {
+        "Philo of Byzantium": {
+            "sourceTitle": "Philo of Byzantium"
+        },
+        "Detective": {
+            "sourceTitle": "Detective"
+        },
+        "#titles": {}
+    },
+    "titleinfo/ru": {
+        "Детектив (профессия)": {
+            "pageid": 315288,
+            "ns": 0,
+            "title": "Детектив (профессия)",
+            "thumbnail": {
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Rippl_The_Detective.jpg/63px-Rippl_The_Detective.jpg",
+                "width": 63,
+                "height": 80
+            },
+            "pageimage": "Rippl_The_Detective.jpg",
+            "description": "человек, расследующий преступления",
+            "descriptionsource": "central"
+        },
+        "Филон Византийский": {
+            "pageid": 728732,
+            "ns": 0,
+            "title": "Филон Византийский"
+        },
+        "#titles": {}
+    },
+    "titlepair/en/ru": {
+        "Philo of Byzantium": {
+            "sourceTitle": "Philo of Byzantium",
+            "targetTitle": "Филон Византийский",
+            "missing": false
+        },
+        "Detective": {
+            "sourceTitle": "Detective",
+            "targetTitle": "Детектив (профессия)",
+            "missing": false
+        },
+        "#titles": {}
+    },
     "titlepair/en/qqq": {
         "Atomic number": {
             "sourceTitle": "Atomic number"
@@ -760,13 +746,6 @@
             "pageid": 1980,
             "ns": 0,
             "title": "Número atómico",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-21T02:50:52Z",
-            "lastrevid": 115183585,
-            "length": 8716,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
                 "width": 80,
@@ -780,13 +759,6 @@
             "pageid": 3267,
             "ns": 0,
             "title": "Oxígeno",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-21T00:33:00Z",
-            "lastrevid": 115258821,
-            "length": 105894,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/O%2C8.jpg/80px-O%2C8.jpg",
                 "width": 80,
@@ -800,13 +772,6 @@
             "pageid": 2832463,
             "ns": 0,
             "title": "Elemento químico",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-21T09:43:26Z",
-            "lastrevid": 115411341,
-            "length": 40540,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Periodic_table_large_2016-es.png/80px-Periodic_table_large_2016-es.png",
                 "width": 80,
@@ -819,26 +784,12 @@
         "Anfígeno": {
             "pageid": 64114,
             "ns": 0,
-            "title": "Anfígeno",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-01-23T03:40:38Z",
-            "lastrevid": 113469630,
-            "length": 4022
+            "title": "Anfígeno"
         },
         "Enlace químico": {
             "pageid": 28221,
             "ns": 0,
             "title": "Enlace químico",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-19T19:10:20Z",
-            "lastrevid": 115373488,
-            "length": 42795,
             "description": "proceso químico responsable de las interacciones atractivas entre átomos y moléculas",
             "descriptionsource": "central"
         },
@@ -846,13 +797,6 @@
             "pageid": 187195,
             "ns": 0,
             "title": "Reacción química",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-21T15:33:03Z",
-            "lastrevid": 115416709,
-            "length": 20158,
             "description": "Un máquina el que redactó el artículo",
             "descriptionsource": "central"
         },
@@ -860,13 +804,6 @@
             "pageid": 528756,
             "ns": 0,
             "title": "Molécula diatómica",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-02-14T19:23:52Z",
-            "lastrevid": 113567390,
-            "length": 16131,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Nitrogeno_-Molecular-.jpg/80px-Nitrogeno_-Molecular-.jpg",
                 "width": 80,
@@ -878,13 +815,6 @@
             "pageid": 1404,
             "ns": 0,
             "title": "Hidrógeno",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-21T00:32:59Z",
-            "lastrevid": 115309670,
-            "length": 81955,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/H%2C1.jpg/80px-H%2C1.jpg",
                 "width": 80,
@@ -898,13 +828,6 @@
             "pageid": 22191,
             "ns": 0,
             "title": "Helio",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-17T00:08:22Z",
-            "lastrevid": 115211476,
-            "length": 93486,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/He%2C2.jpg/80px-He%2C2.jpg",
                 "width": 80,
@@ -918,13 +841,6 @@
             "pageid": 19521,
             "ns": 0,
             "title": "Óxido",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-06T15:27:52Z",
-            "lastrevid": 115079906,
-            "length": 9493,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Oxid_door.jpg/80px-Oxid_door.jpg",
                 "width": 80,
@@ -938,13 +854,6 @@
             "pageid": 2797,
             "ns": 0,
             "title": "Tabla periódica de los elementos",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-21T02:50:52Z",
-            "lastrevid": 114354235,
-            "length": 129627,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Periodic_table_large-es-updated-2018.svg/80px-Periodic_table_large-es-updated-2018.svg.png",
                 "width": 80,
@@ -958,13 +867,6 @@
             "pageid": 18757,
             "ns": 0,
             "title": "Condiciones normalizadas de presión y temperatura",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-03-30T23:32:51Z",
-            "lastrevid": 113841326,
-            "length": 10517,
             "description": "valores de presión atmosférica y temperatura que imperan en un laboratorio",
             "descriptionsource": "central"
         },
@@ -972,13 +874,6 @@
             "pageid": 21340,
             "ns": 0,
             "title": "No metal",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T00:24:23Z",
-            "lastrevid": 115379720,
-            "length": 11022,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tabla_periodica.png/80px-Tabla_periodica.png",
                 "width": 80,
@@ -992,13 +887,6 @@
             "pageid": 6183280,
             "ns": 0,
             "title": "Corteza (geología)",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-21T22:41:00Z",
-            "lastrevid": 115191734,
-            "length": 22720,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Earth_poster.svg/80px-Earth_poster.svg.png",
                 "width": 80,
@@ -1012,13 +900,6 @@
             "pageid": 31853,
             "ns": 0,
             "title": "Oxidante",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-03-26T13:54:52Z",
-            "lastrevid": 114683703,
-            "length": 6840,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Hazard_O.svg/80px-Hazard_O.svg.png",
                 "width": 80,
@@ -1032,13 +913,6 @@
             "pageid": 11503,
             "ns": 0,
             "title": "Atmósfera terrestre",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-17T00:08:18Z",
-            "lastrevid": 114846238,
-            "length": 25420,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Full_moon_partially_obscured_by_atmosphere.jpg/80px-Full_moon_partially_obscured_by_atmosphere.jpg",
                 "width": 80,
@@ -1051,38 +925,17 @@
         "Abundancia de los elementos químicos": {
             "pageid": 4332636,
             "ns": 0,
-            "title": "Abundancia de los elementos químicos",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-16T00:15:00Z",
-            "lastrevid": 115290558,
-            "length": 18636
+            "title": "Abundancia de los elementos químicos"
         },
         "Alótropos del oxígeno": {
             "pageid": 5296362,
             "ns": 0,
-            "title": "Alótropos del oxígeno",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-03-21T06:53:09Z",
-            "lastrevid": 106243460,
-            "length": 997
+            "title": "Alótropos del oxígeno"
         },
         "Gas": {
             "pageid": 9124,
             "ns": 0,
             "title": "Gas",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-21T00:33:01Z",
-            "lastrevid": 114735602,
-            "length": 20326,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Translational_motion.gif/80px-Translational_motion.gif",
                 "width": 80,
@@ -1096,13 +949,6 @@
             "pageid": 10547,
             "ns": 0,
             "title": "Compuesto químico",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-21T12:47:48Z",
-            "lastrevid": 115413908,
-            "length": 8500,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/LightningVolt_Deep_Blue_Sea.jpg/64px-LightningVolt_Deep_Blue_Sea.jpg",
                 "width": 64,
@@ -1116,13 +962,6 @@
             "pageid": 2834764,
             "ns": 0,
             "title": "Charles Wright (luchador)",
-            "contentmodel": "wikitext",
-            "pagelanguage": "es",
-            "pagelanguagehtmlcode": "es",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-21T02:56:02Z",
-            "lastrevid": 111260678,
-            "length": 24756,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Paul_Wright_AKA_%28The_Godfather%29.jpg/50px-Paul_Wright_AKA_%28The_Godfather%29.jpg",
                 "width": 50,
@@ -1137,13 +976,6 @@
             "pageid": 22303,
             "ns": 0,
             "title": "Oxygen",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:48:14Z",
-            "lastrevid": 888475502,
-            "length": 100705,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Liquid_oxygen_in_a_beaker_4.jpg/66px-Liquid_oxygen_in_a_beaker_4.jpg",
                 "width": 66,
@@ -1157,13 +989,6 @@
             "pageid": 673,
             "ns": 0,
             "title": "Atomic number",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:47:30Z",
-            "lastrevid": 887610324,
-            "length": 13705,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Atomic_number_depiction.jpg/80px-Atomic_number_depiction.jpg",
                 "width": 80,
@@ -1177,13 +1002,6 @@
             "pageid": 5659,
             "ns": 0,
             "title": "Chemical element",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:47:39Z",
-            "lastrevid": 892741230,
-            "length": 67161,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
                 "width": 80,
@@ -1197,13 +1015,6 @@
             "pageid": 5905,
             "ns": 0,
             "title": "Chalcogen",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:47:41Z",
-            "lastrevid": 880401171,
-            "length": 70671,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Sulfur-sample.jpg/80px-Sulfur-sample.jpg",
                 "width": 80,
@@ -1217,13 +1028,6 @@
             "pageid": 86347,
             "ns": 0,
             "title": "Group (periodic table)",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:50:04Z",
-            "lastrevid": 891861022,
-            "length": 7753,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
                 "width": 80,
@@ -1237,13 +1041,6 @@
             "pageid": 23053,
             "ns": 0,
             "title": "Periodic table",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:48:16Z",
-            "lastrevid": 893139708,
-            "length": 122575,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
                 "width": 80,
@@ -1257,13 +1054,6 @@
             "pageid": 6271,
             "ns": 0,
             "title": "Chemical reaction",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:47:41Z",
-            "lastrevid": 891439600,
-            "length": 59441,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/ThermiteReaction.jpg/72px-ThermiteReaction.jpg",
                 "width": 72,
@@ -1277,13 +1067,6 @@
             "pageid": 102193,
             "ns": 0,
             "title": "Nonmetal",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-17T15:52:53Z",
-            "lastrevid": 892385196,
-            "length": 111841,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
                 "width": 80,
@@ -1297,13 +1080,6 @@
             "pageid": 184882,
             "ns": 0,
             "title": "Oxidizing agent",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:54:22Z",
-            "lastrevid": 890181850,
-            "length": 7457,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/GHS-pictogram-rondflam.svg/80px-GHS-pictogram-rondflam.svg.png",
                 "width": 80,
@@ -1317,13 +1093,6 @@
             "pageid": 22305,
             "ns": 0,
             "title": "Oxide",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-22T00:25:59Z",
-            "lastrevid": 885105162,
-            "length": 27092,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Rutile-unit-cell-3D-balls.png/80px-Rutile-unit-cell-3D-balls.png",
                 "width": 80,
@@ -1337,13 +1106,6 @@
             "pageid": 21347411,
             "ns": 0,
             "title": "Chemical compound",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T15:17:03Z",
-            "lastrevid": 891922516,
-            "length": 13869,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/2006-02-13_Drop-impact.jpg/80px-2006-02-13_Drop-impact.jpg",
                 "width": 80,
@@ -1357,13 +1119,6 @@
             "pageid": 392828,
             "ns": 0,
             "title": "Abundance of the chemical elements",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:58:18Z",
-            "lastrevid": 893050709,
-            "length": 35971,
             "description": "Abundance at scales including the Universe, the Earth and the human body",
             "descriptionsource": "local"
         },
@@ -1371,16 +1126,9 @@
             "pageid": 13255,
             "ns": 0,
             "title": "Hydrogen",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-22T03:59:27Z",
-            "lastrevid": 891801322,
-            "length": 90008,
             "thumbnail": {
-                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Hexagonal.svg/70px-Hexagonal.svg.png",
-                "width": 70,
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Hexagonal.svg/78px-Hexagonal.svg.png",
+                "width": 78,
                 "height": 80
             },
             "pageimage": "Hexagonal.svg",
@@ -1391,13 +1139,6 @@
             "pageid": 13256,
             "ns": 0,
             "title": "Helium",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:47:55Z",
-            "lastrevid": 889640771,
-            "length": 122745,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Helium_discharge_tube.jpg/80px-Helium_discharge_tube.jpg",
                 "width": 80,
@@ -1410,26 +1151,12 @@
         "Standard temperature and pressure": {
             "pageid": 27745,
             "ns": 0,
-            "title": "Standard conditions for temperature and pressure",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:48:27Z",
-            "lastrevid": 889820858,
-            "length": 26126
+            "title": "Standard conditions for temperature and pressure"
         },
         "Chemical bond": {
             "pageid": 5993,
             "ns": 0,
             "title": "Chemical bond",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:47:41Z",
-            "lastrevid": 892168460,
-            "length": 31783,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Electron_dot.svg/80px-Electron_dot.svg.png",
                 "width": 80,
@@ -1443,13 +1170,6 @@
             "pageid": 14553266,
             "ns": 0,
             "title": "Allotropes of oxygen",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T14:53:04Z",
-            "lastrevid": 884784028,
-            "length": 10254,
             "description": "different chemical forms of oxygen",
             "descriptionsource": "central"
         },
@@ -1457,13 +1177,6 @@
             "pageid": 7938,
             "ns": 0,
             "title": "Diatomic molecule",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:47:44Z",
-            "lastrevid": 892762851,
-            "length": 17684,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Dinitrogen-3D-vdW.png/80px-Dinitrogen-3D-vdW.png",
                 "width": 80,
@@ -1477,33 +1190,19 @@
             "pageid": 18993869,
             "ns": 0,
             "title": "Gas",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-21T03:51:16Z",
-            "lastrevid": 893407256,
-            "length": 40228,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Gas_particle_movement.svg/80px-Gas_particle_movement.svg.png",
                 "width": 80,
                 "height": 57
             },
             "pageimage": "Gas_particle_movement.svg",
-            "description": "gaseous object",
-            "descriptionsource": "central"
+            "description": "One of the four fundamental states of matter",
+            "descriptionsource": "local"
         },
         "Atmosphere of Earth": {
             "pageid": 202898,
             "ns": 0,
             "title": "Atmosphere of Earth",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-22T04:00:26Z",
-            "lastrevid": 893516303,
-            "length": 50814,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Top_of_Atmosphere.jpg/80px-Top_of_Atmosphere.jpg",
                 "width": 80,
@@ -1517,13 +1216,6 @@
             "pageid": 202898,
             "ns": 0,
             "title": "Atmosphere of Earth",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-22T04:00:26Z",
-            "lastrevid": 893516303,
-            "length": 50814,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Top_of_Atmosphere.jpg/80px-Top_of_Atmosphere.jpg",
                 "width": 80,
@@ -1537,13 +1229,6 @@
             "pageid": 145700,
             "ns": 0,
             "title": "Crust (geology)",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:53:15Z",
-            "lastrevid": 882914557,
-            "length": 19943,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Earth_poster.svg/80px-Earth_poster.svg.png",
                 "width": 80,
@@ -1556,26 +1241,12 @@
         "Standard conditions for temperature and pressure": {
             "pageid": 27745,
             "ns": 0,
-            "title": "Standard conditions for temperature and pressure",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:48:27Z",
-            "lastrevid": 889820858,
-            "length": 26126
+            "title": "Standard conditions for temperature and pressure"
         },
         "Crust (geology)": {
             "pageid": 145700,
             "ns": 0,
             "title": "Crust (geology)",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:53:15Z",
-            "lastrevid": 882914557,
-            "length": 19943,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Earth_poster.svg/80px-Earth_poster.svg.png",
                 "width": 80,
@@ -1589,13 +1260,6 @@
             "pageid": 1186281,
             "ns": 0,
             "title": "Philo of Byzantium",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T14:09:14Z",
-            "lastrevid": 856907155,
-            "length": 7660,
             "description": "Ancient Greek engineer",
             "descriptionsource": "central"
         },
@@ -1603,13 +1267,6 @@
             "pageid": 118576,
             "ns": 0,
             "title": "Detective",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T13:51:37Z",
-            "lastrevid": 889714223,
-            "length": 13079,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Allan_Pinkerton-retouch.jpg/69px-Allan_Pinkerton-retouch.jpg",
                 "width": 69,
@@ -1623,13 +1280,6 @@
             "pageid": 591648,
             "ns": 0,
             "title": "The Godfather (wrestler)",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr",
-            "touched": "2019-04-20T21:16:49Z",
-            "lastrevid": 893363544,
-            "length": 35852,
             "thumbnail": {
                 "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg/51px-Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg",
                 "width": 51,
@@ -1642,11 +1292,7 @@
         "List of planets with life": {
             "ns": 0,
             "title": "List of planets with life",
-            "missing": "",
-            "contentmodel": "wikitext",
-            "pagelanguage": "en",
-            "pagelanguagehtmlcode": "en",
-            "pagelanguagedir": "ltr"
+            "missing": ""
         },
         "#titles": {}
     },
@@ -1771,9 +1417,6 @@
         },
         "Template:Infobox Finnish municipality": {
             "sourceTitle": "Template:Infobox Finnish municipality"
-        },
-        "Category:Pages using div col with unknown parameters": {
-            "sourceTitle": "Category:Pages using div col with unknown parameters"
         },
         "Category:Food preservation": {
             "sourceTitle": "Category:Food preservation",
