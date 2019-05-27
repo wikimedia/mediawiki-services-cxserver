@@ -25,7 +25,7 @@ describe( 'Adaptation tests', () => {
 	} );
 
 	async.each( tests, ( test, done ) => {
-		it( 'should not have any errors when: ' + test.desc, function () {
+		it( test.desc, function () {
 			const cxserver = server.config.conf.services[ server.config.conf.services.length - 1 ];
 			cxserver.conf.mtClient = new TestClient( cxserver );
 			const adapter = new Adapter( test.from, test.to, api, cxserver );
@@ -42,10 +42,15 @@ describe( 'Adaptation tests', () => {
 						if ( typeof expectedAttributeValue === 'object' ) {
 							assert.deepEqual(
 								JSON.parse( actualAttributeValue ),
-								expectedAttributeValue
+								expectedAttributeValue,
+								`Comparing attribute ${attribute} for element ${id}`
 							);
 						} else {
-							assert.deepEqual( actualAttributeValue, expectedAttributeValue );
+							assert.deepEqual(
+								actualAttributeValue,
+								expectedAttributeValue,
+								`Comparing attribute ${attribute} for element ${id}`
+							);
 						}
 					}
 				}

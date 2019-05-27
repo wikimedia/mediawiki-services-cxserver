@@ -8,6 +8,8 @@ class TestUtils {
 	}
 
 	setup( mocks ) {
+		this.api.clearCaches();
+		this.api.setRequestCache( new Map() );
 		if ( fs.existsSync( 'DUMPREQUESTS' ) ) {
 			return;
 		}
@@ -20,7 +22,10 @@ class TestUtils {
 		if ( fs.existsSync( 'DUMPREQUESTS' ) ) {
 			this.api.dumpCachedRequests().then( ( result ) => {
 				fs.writeFileSync( filename, JSON.stringify( result, null, 4 ) );
+				this.api.clearCaches();
 			} );
+		} else {
+			this.api.clearCaches();
 		}
 	}
 }

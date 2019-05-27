@@ -1,69 +1,37 @@
 'use strict';
 
-var tests,
-	assert = require( '../utils/assert.js' ),
-	server = require( '../utils/server.js' ),
-	async = require( 'async' ),
-	TitlePairRequest = require( '../../lib/mw/TitlePairRequest' );
+const assert = require( '../utils/assert.js' );
+const server = require( '../utils/server.js' );
+const async = require( 'async' );
+const MWApiRequestManager = require( '../../lib/mw/ApiRequestManager' );
+const TitlePairRequest = require( '../../lib/mw/TitlePairRequest' );
+const TestUtils = require( '../testutils' );
 
-tests = [
-	{
-		source: 'Kerala',
-		result: 'കേരളം',
-		sourceLanguage: 'en',
-		targetLanguage: 'ml',
-		desc: 'Corresponding title exist in target language'
-	},
-	{
-		source: 'Sea',
-		result: 'Mar',
-		sourceLanguage: 'en',
-		targetLanguage: 'es',
-		desc: 'Corresponding title exist in target language'
-	},
-	{
-		source: 'Atomic number',
-		result: 'Número atómico',
-		sourceLanguage: 'en',
-		targetLanguage: 'es',
-		desc: 'Corresponding title exist in target language and given title need normalization'
-	},
-	{
-		source: 'This title does not exist in English wikipedia',
-		result: undefined,
-		sourceLanguage: 'en',
-		targetLanguage: 'es',
-		desc: 'Corresponding title does not exist in target language and given title need normalization'
-	},
-	{
-		source: 'Group_(periodic_table)',
-		result: 'ଶ୍ରେଣୀ (ପର୍ଯ୍ୟାୟ ସାରଣୀ)',
-		sourceLanguage: 'en',
-		targetLanguage: 'or',
-		desc: 'Corresponding title exist in target language and given title need normalization, has parenthesis'
-	},
-	{
-		source: 'Category:%22Related_ethnic_groups%22_needing_confirmation',
-		result: 'श्रेणी:पुष्टि की ज़रूरत वाले "सम्बंधित जाति समूह"',
-		sourceLanguage: 'en',
-		targetLanguage: 'hi',
-		desc: 'Source title is percentage encoded, but should not throw error, should return corresponding title'
-	}
-];
+const mocks = require( './TitlePairTests.mocks.json' );
+const tests = require( './TitlePairTests.json' );
 
-describe( 'Title pair tests', function () {
-	async.forEach( tests, function ( test ) {
-		var request;
+// FIXME: This tests title normalization of MWApiRequestManager
+describe( 'Title pair tests', () => {
+	const api = new MWApiRequestManager( server.config );
+	const mocker = new TestUtils( api );
 
-		request = new TitlePairRequest( {
-			sourceLanguage: test.sourceLanguage,
-			targetLanguage: test.targetLanguage,
-			context: server.config
-		} );
+	before( function () {
+		mocker.setup( mocks );
+	} );
+
+	after( function () {
+		mocker.dump( __dirname + '/TitlePairTests.mocks.json' );
+	} );
+
+	async.each( tests, ( test ) => {
+		const request = api.titlePairRequest(
+			test.source,
+			test.sourceLanguage,
+			test.targetLanguage
+		);
+
 		it( 'should adapt the title when: ' + test.desc, function () {
-			return request.get( test.source ).then( function ( result ) {
-				assert.deepEqual( result.targetTitle, test.result );
-			} );
+			return request.then( ( result ) => assert.deepEqual( result.targetTitle, test.result ) );
 		} );
 	} );
 } );

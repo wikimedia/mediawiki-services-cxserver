@@ -178,12 +178,39 @@
 		"result": {
 			"attributes": {
 				"rel": "mw:WikiLink",
-				"href": "./List_of_planets_with_life",
-				"title": "List of planets with life",
+				"href": "[en→es]List of planets with life",
+				"title": "[en→es]List of planets with life",
 				"data-cx": {
 					"adapted": false,
 					"sourceTitle": {
 						"title": "List of planets with life"
+					},
+					"targetTitle": {}
+				}
+			}
+		}
+	},
+	{
+		"desc": "Title with translation from Wikidata label",
+		"from": "en",
+		"to": "ar",
+		"source": {
+			"name": "a",
+			"attributes": {
+				"rel": "mw:WikiLink",
+				"href": "./Clara López Obregón",
+				"title": "Clara López Obregón"
+			}
+		},
+		"result": {
+			"attributes": {
+				"rel": "mw:WikiLink",
+				"href": "كلارا لوبيز",
+				"title": "كلارا لوبيز",
+				"data-cx": {
+					"adapted": false,
+					"sourceTitle": {
+						"title": "Clara López Obregón"
 					},
 					"targetTitle": {}
 				}

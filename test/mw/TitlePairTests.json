@@ -1,0 +1,44 @@
+[
+	{
+		"source": "Kerala",
+		"result": "കേരളം",
+		"sourceLanguage": "en",
+		"targetLanguage": "ml",
+		"desc": "Corresponding title exist in target language"
+	},
+	{
+		"source": "Sea",
+		"result": "Mar",
+		"sourceLanguage": "en",
+		"targetLanguage": "es",
+		"desc": "Corresponding title exist in target language"
+	},
+	{
+		"source": "Atomic number",
+		"result": "Número atómico",
+		"sourceLanguage": "en",
+		"targetLanguage": "es",
+		"desc": "Corresponding title exist in target language and given title need normalization"
+	},
+	{
+		"source": "This title does not exist in English wikipedia",
+		"result": "undefined",
+		"sourceLanguage": "en",
+		"targetLanguage": "es",
+		"desc": "Corresponding title does not exist in target language and given title need normalization"
+	},
+	{
+		"source": "Group_(periodic_table)",
+		"result": "ଶ୍ରେଣୀ (ପର୍ଯ୍ୟାୟ ସାରଣୀ)",
+		"sourceLanguage": "en",
+		"targetLanguage": "or",
+		"desc": "Corresponding title exist in target language and given title need normalization, has parenthesis"
+	},
+	{
+		"source": "Category:%22Related_ethnic_groups%22_needing_confirmation",
+		"result": "श्रेणी:पुष्टि की ज़रूरत वाले \"सम्बंधित जाति समूह\"",
+		"sourceLanguage": "en",
+		"targetLanguage": "hi",
+		"desc": "Source title is percentage encoded, but should not throw error, should return corresponding title"
+	}
+]

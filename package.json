@@ -51,7 +51,8 @@
   },
   "scripts": {
     "start": "service-runner",
-    "test": "npm run lint && PREQ_CONNECT_TIMEOUT=15 mocha",
+    "unittest": "PREQ_CONNECT_TIMEOUT=15 mocha",
+    "test": "npm run lint && npm run unittest",
     "lint": "eslint --report-unused-disable-directives .",
     "docker-start": "service-runner docker-start",
     "docker-test": "service-runner docker-test",

@@ -10,9 +10,13 @@
 				"title": "Oxígeno",
 				"data-cx": {
 					"adapted": true,
+					"targetFrom": "link",
 					"targetTitle": {
 						"title": "Oxígeno",
 						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q629"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/O%2C8.jpg/80px-O%2C8.jpg",
 							"width": 80,
@@ -23,6 +27,9 @@
 					"sourceTitle": {
 						"title": "Oxygen",
 						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q629"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Liquid_oxygen_in_a_beaker_4.jpg/66px-Liquid_oxygen_in_a_beaker_4.jpg",
 							"width": 66,
@@ -31,32 +38,39 @@
 						"description": "Chemical element with atomic number 8"
 					}
 				}
-			}
-		},
-		"mwAB": {
-			"href": "Número atómico",
-			"title": "Número atómico",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Número atómico",
-					"pagelanguage": "es",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
-						"width": 80,
-						"height": 80
+			},
+			"mwAB": {
+				"href": "Número atómico",
+				"title": "Número atómico",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Número atómico",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q23809"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
+							"width": 80,
+							"height": 80
+						},
+						"description": "número total de protones que tiene el átomo"
 					},
-					"description": "número total de protones que tiene el átomo"
-				},
-				"sourceTitle": {
-					"title": "Atomic number",
-					"pagelanguage": "en",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Atomic_number_depiction.jpg/80px-Atomic_number_depiction.jpg",
-						"width": 80,
-						"height": 49
-					},
-					"description": "number of protons found in the nucleus of an atom"
+					"sourceTitle": {
+						"title": "Atomic number",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q23809"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Atomic_number_depiction.jpg/80px-Atomic_number_depiction.jpg",
+							"width": 80,
+							"height": 49
+						},
+						"description": "number of protons found in the nucleus of an atom"
+					}
 				}
 			}
 		}
@@ -72,9 +86,13 @@
 				"href": "Elemento químico",
 				"data-cx": {
 					"adapted": true,
+					"targetFrom": "link",
 					"targetTitle": {
 						"title": "Elemento químico",
 						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q11344"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Periodic_table_large_2016-es.png/80px-Periodic_table_large_2016-es.png",
 							"width": 80,
@@ -85,6 +103,9 @@
 					"sourceTitle": {
 						"title": "Chemical element",
 						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q11344"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
 							"width": 80,
@@ -99,9 +120,13 @@
 				"title": "Número atómico",
 				"data-cx": {
 					"adapted": true,
+					"targetFrom": "link",
 					"targetTitle": {
 						"title": "Número atómico",
 						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q23809"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Element_identity.png/80px-Element_identity.png",
 							"width": 80,
@@ -112,6 +137,9 @@
 					"sourceTitle": {
 						"title": "Atomic number",
 						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q23809"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Atomic_number_depiction.jpg/80px-Atomic_number_depiction.jpg",
 							"width": 80,
@@ -126,13 +154,20 @@
 				"title": "Anfígeno",
 				"data-cx": {
 					"adapted": true,
+					"targetFrom": "link",
 					"targetTitle": {
 						"title": "Anfígeno",
-						"pagelanguage": "es"
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q104567"
+						}
 					},
 					"sourceTitle": {
 						"title": "Chalcogen",
 						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q104567"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Sulfur-sample.jpg/80px-Sulfur-sample.jpg",
 							"width": 80,
@@ -143,11 +178,17 @@
 				}
 			},
 			"mwDQ": {
+				"href": "grupo de la tabla periódica",
+				"title": "grupo de la tabla periódica",
 				"data-cx": {
 					"adapted": false,
+					"targetFrom": "label",
 					"sourceTitle": {
 						"title": "Group (periodic table)",
 						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q83306"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
 							"width": 80,
@@ -162,9 +203,13 @@
 				"title": "Tabla periódica de los elementos",
 				"data-cx": {
 					"adapted": true,
+					"targetFrom": "link",
 					"targetTitle": {
 						"title": "Tabla periódica de los elementos",
 						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q10693"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Periodic_table_large-es-updated-2018.svg/80px-Periodic_table_large-es-updated-2018.svg.png",
 							"width": 80,
@@ -175,6 +220,9 @@
 					"sourceTitle": {
 						"title": "Periodic table",
 						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q10693"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
 							"width": 80,
@@ -189,14 +237,21 @@
 				"title": "Reacción química",
 				"data-cx": {
 					"adapted": true,
+					"targetFrom": "link",
 					"targetTitle": {
 						"title": "Reacción química",
 						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q36534"
+						},
 						"description": "Un máquina el que redactó el artículo"
 					},
 					"sourceTitle": {
 						"title": "Chemical reaction",
 						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q36534"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/ThermiteReaction.jpg/72px-ThermiteReaction.jpg",
 							"width": 72,
@@ -205,370 +260,478 @@
 						"description": "Process that results in the interconversion of chemical species"
 					}
 				}
-			}
-		},
-		"mwEA": {
-			"href": "No metal",
-			"title": "No metal",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "No metal",
-					"pagelanguage": "es",
-					"description": "categoría de elementos químicos opuestos a los metales"
-				}
 			},
-			"sourceTitle": {
-				"title": "Nonmetal",
-				"pagelanguage": "en",
-				"thumbnail": {
-					"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Periodic_Table_Chart.png/80px-Periodic_Table_Chart.png",
-					"width": 80,
-					"height": 43
-				},
-				"description": "term to classify chemical elements"
-			}
-		},
-		"mwEQ": {
-			"href": "Oxidante",
-			"title": "Oxidante",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Oxidante",
-					"pagelanguage": "es",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Hazard_O.svg/80px-Hazard_O.svg.png",
-						"width": 80,
-						"height": 80
+			"mwEA": {
+				"href": "No metal",
+				"title": "No metal",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "No metal",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q19600"
+						},
+						"thumbnail": {
+							"height": 43,
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Tabla_periodica.png/80px-Tabla_periodica.png",
+							"width": 80
+						},
+						"description": "categoría de elementos químicos opuestos a los metales"
 					},
-					"description": "compuesto químico que oxida a otra sustancia"
-				},
-				"sourceTitle": {
-					"title": "Oxidizing agent",
-					"pagelanguage": "en",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/GHS-pictogram-rondflam.svg/80px-GHS-pictogram-rondflam.svg.png",
-						"width": 80,
-						"height": 80
-					},
-					"description": "chemical compound used to oxidize another substance in a chemical reaction"
-				}
-			}
-		},
-		"mwEg": {
-			"title": "Óxido",
-			"href": "Óxido",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Óxido",
-					"pagelanguage": "es",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Oxid_door.jpg/80px-Oxid_door.jpg",
-						"width": 80,
-						"height": 60
-					},
-					"description": "compuesto binario que contiene uno o varios átomos de oxígeno y otros elementos"
-				},
-				"sourceTitle": {
-					"title": "Oxide",
-					"pagelanguage": "en",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/A-quartz.png/80px-A-quartz.png",
-						"width": 80,
-						"height": 73
-					},
-					"description": "chemical compound with at least one oxygen atom"
-				}
-			}
-		},
-		"mwEw": {
-			"href": "Compuesto químico",
-			"title": "Compuesto químico",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Compuesto químico",
-					"pagelanguage": "es",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/LightningVolt_Deep_Blue_Sea.jpg/64px-LightningVolt_Deep_Blue_Sea.jpg",
-						"width": 64,
-						"height": 80
-					},
-					"description": "sustancia química formada por la unión de dos o más elementos de la tabla periódica"
-				},
-				"sourceTitle": {
-					"title": "Chemical compound",
-					"pagelanguage": "en",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/2006-02-13_Drop-impact.jpg/80px-2006-02-13_Drop-impact.jpg",
-						"width": 80,
-						"height": 77
-					},
-					"description": "pure chemical substance consisting of two or more different chemical elements"
-				}
-			}
-		},
-		"mwFA": {
-			"href": "Abundancia de los elementos químicos",
-			"title": "Abundancia de los elementos químicos",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Abundancia de los elementos químicos",
-					"pagelanguage": "es"
-				},
-				"sourceTitle": {
-					"title": "Abundance of the chemical elements",
-					"pagelanguage": "en",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Universe_content_bar_chart.svg/80px-Universe_content_bar_chart.svg.png",
-						"width": 80,
-						"height": 52
+					"sourceTitle": {
+						"title": "Nonmetal",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q19600"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/80px-Simple_Periodic_Table_Chart-en.svg.png",
+							"width": 80,
+							"height": 42
+						},
+						"description": "term to classify chemical elements"
 					}
 				}
-			}
-		},
-		"mwFQ": {
-			"href": "Hidrógeno",
-			"title": "Hidrógeno",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Hidrógeno",
-					"pagelanguage": "es",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/H%2C1.jpg/80px-H%2C1.jpg",
-						"width": 80,
-						"height": 44
+			},
+			"mwEQ": {
+				"href": "Oxidante",
+				"title": "Oxidante",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Oxidante",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q187689"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Hazard_O.svg/80px-Hazard_O.svg.png",
+							"width": 80,
+							"height": 80
+						},
+						"description": "compuesto químico que oxida a otra sustancia"
 					},
-					"description": "elemento químico con número atómico 1"
-				},
-				"sourceTitle": {
-					"title": "Hydrogen",
-					"pagelanguage": "en",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hydrogen_discharge_tube.jpg/80px-Hydrogen_discharge_tube.jpg",
-						"width": 80,
-						"height": 27
-					},
-					"description": "chemical element with symbol H and atomic number 1"
-				}
-			}
-		},
-		"mwFg": {
-			"href": "Helio",
-			"title": "Helio",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Helio",
-					"pagelanguage": "es",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/He%2C2.jpg/80px-He%2C2.jpg",
-						"width": 80,
-						"height": 40
-					},
-					"description": "elemento químico"
-				},
-				"sourceTitle": {
-					"title": "Helium",
-					"pagelanguage": "en",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Helium_discharge_tube.jpg/80px-Helium_discharge_tube.jpg",
-						"width": 80,
-						"height": 53
-					},
-					"description": "chemical element with the chemical symbol He and the atomic number of 2"
-				}
-			}
-		},
-		"mwFw": {
-			"href": "Condiciones normalizadas de presión y temperatura",
-			"title": "Condiciones normalizadas de presión y temperatura",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Condiciones normalizadas de presión y temperatura",
-					"pagelanguage": "es",
-					"description": "valores de presión atmosférica y temperatura que imperan en un laboratorio"
-				},
-				"sourceTitle": {
-					"title": "Standard conditions for temperature and pressure",
-					"pagelanguage": "en"
-				}
-			}
-		},
-		"mwGA": {
-			"href": "Enlace químico",
-			"title": "Enlace químico",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Enlace químico",
-					"pagelanguage": "es",
-					"description": "proceso químico responsable de las interacciones atractivas entre átomos y moléculas"
-				},
-				"sourceTitle": {
-					"title": "Chemical bond",
-					"pagelanguage": "en",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Electron_dot.svg/80px-Electron_dot.svg.png",
-						"width": 80,
-						"height": 65
-					},
-					"description": "lasting attraction between atoms that enables the formation of chemical compounds"
-				}
-			}
-		},
-		"mwGQ": {
-			"href": "Alótropos del oxígeno",
-			"title": "Alótropos del oxígeno",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Alótropos del oxígeno",
-					"pagelanguage": "es"
-				},
-				"sourceTitle": {
-					"title": "Allotropes of oxygen",
-					"pagelanguage": "en"
-				}
-			}
-		},
-		"mwGg": {
-			"href": "Molécula diatómica",
-			"title": "Molécula diatómica",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Molécula diatómica",
-					"pagelanguage": "es",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Nitrogeno_-Molecular-.jpg/80px-Nitrogeno_-Molecular-.jpg",
-						"width": 80,
-						"height": 76
+					"sourceTitle": {
+						"title": "Oxidizing agent",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q187689"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/GHS-pictogram-rondflam.svg/80px-GHS-pictogram-rondflam.svg.png",
+							"width": 80,
+							"height": 80
+						},
+						"description": "Chemical compound used to oxidize another substance in a chemical reaction"
 					}
-				},
-				"sourceTitle": {
-					"title": "Diatomic molecule",
-					"pagelanguage": "en",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Nitrogen-3D-vdW.png/80px-Nitrogen-3D-vdW.png",
-						"width": 80,
-						"height": 61
-					},
-					"description": "molecule composed of only two atoms of the same or different chemical elements"
-				}
-			}
-		},
-		"mwGw": {
-			"href": "Gas",
-			"title": "Gas",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Gas",
-					"pagelanguage": "es",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Translational_motion.gif/80px-Translational_motion.gif",
-						"width": 80,
-						"height": 70
-					},
-					"description": "estado de la materia"
-				},
-				"sourceTitle": {
-					"title": "Gas",
-					"pagelanguage": "en",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Gas_particle_movement.svg/80px-Gas_particle_movement.svg.png",
-						"width": 80,
-						"height": 57
-					},
-					"description": "gaseous object"
-				}
-			}
-		},
-		"mwHQ": {
-			"href": "Atmósfera terrestre",
-			"title": "Atmósfera terrestre",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Atmósfera terrestre",
-					"pagelanguage": "es",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Full_moon_partially_obscured_by_atmosphere.jpg/80px-Full_moon_partially_obscured_by_atmosphere.jpg",
-						"width": 80,
-						"height": 53
-					},
-					"description": "parte gaseosa de la Tierra"
-				},
-				"sourceTitle": {
-					"title": "Atmosphere of Earth",
-					"pagelanguage": "en",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Top_of_Atmosphere.jpg/80px-Top_of_Atmosphere.jpg",
-						"width": 80,
-						"height": 53
-					},
-					"description": "layer of gases surrounding the planet Earth"
-				}
-			}
-		},
-		"mwHg": {
-			"href": "Atmósfera terrestre",
-			"title": "Atmósfera terrestre",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Atmósfera terrestre",
-					"pagelanguage": "es",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Full_moon_partially_obscured_by_atmosphere.jpg/80px-Full_moon_partially_obscured_by_atmosphere.jpg",
-						"width": 80,
-						"height": 53
-					},
-					"description": "parte gaseosa de la Tierra"
-				},
-				"sourceTitle": {
-					"title": "Atmosphere of Earth",
-					"pagelanguage": "en",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Top_of_Atmosphere.jpg/80px-Top_of_Atmosphere.jpg",
-						"width": 80,
-						"height": 53
-					},
-					"description": "layer of gases surrounding the planet Earth"
-				}
-			}
-		},
-		"mwHw": {
-			"href": "Corteza terrestre",
-			"title": "Corteza terrestre",
-			"data-cx": {
-				"adapted": true,
-				"targetTitle": {
-					"title": "Corteza terrestre",
-					"pagelanguage": "es",
-					"thumbnail": {
-						"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Earth-crust-cutaway-spanish.svg/80px-Earth-crust-cutaway-spanish.svg.png",
-						"width": 80,
-						"height": 62
-					},
-					"description": "capa rocosa más externa de la Tierra"
 				}
 			},
-			"sourceTitle": {
-				"title": "Crust (geology)",
-				"pagelanguage": "en",
-				"thumbnail": {
-					"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/World_geologic_provinces.jpg/80px-World_geologic_provinces.jpg",
-					"width": 80,
-					"height": 42
-				},
-				"description": "crust"
+			"mwEg": {
+				"title": "Óxido",
+				"href": "Óxido",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Óxido",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q50690"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Oxid_door.jpg/80px-Oxid_door.jpg",
+							"width": 80,
+							"height": 60
+						},
+						"description": "compuesto binario que contiene uno o varios átomos de oxígeno y otros elementos"
+					},
+					"sourceTitle": {
+						"title": "Oxide",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q50690"
+						},
+						"thumbnail": {
+							"height": 57,
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Rutile-unit-cell-3D-balls.png/80px-Rutile-unit-cell-3D-balls.png",
+							"width": 80
+						},
+						"description": "chemical compound with at least one oxygen atom"
+					}
+				}
+			},
+			"mwEw": {
+				"href": "Compuesto químico",
+				"title": "Compuesto químico",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Compuesto químico",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q11173"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/LightningVolt_Deep_Blue_Sea.jpg/64px-LightningVolt_Deep_Blue_Sea.jpg",
+							"width": 64,
+							"height": 80
+						},
+						"description": "sustancia química formada por la unión de dos o más elementos de la tabla periódica"
+					},
+					"sourceTitle": {
+						"title": "Chemical compound",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q11173"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/2006-02-13_Drop-impact.jpg/80px-2006-02-13_Drop-impact.jpg",
+							"width": 80,
+							"height": 77
+						},
+						"description": "Substance composed of multiple elements"
+					}
+				}
+			},
+			"mwFA": {
+				"href": "Abundancia de los elementos químicos",
+				"title": "Abundancia de los elementos químicos",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Abundancia de los elementos químicos",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q428867"
+						}
+					},
+					"sourceTitle": {
+						"title": "Abundance of the chemical elements",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q428867"
+						},
+						"description": "Abundance at scales including the Universe, the Earth and the human body"
+					}
+				}
+			},
+			"mwFQ": {
+				"href": "Hidrógeno",
+				"title": "Hidrógeno",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Hidrógeno",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q556"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/H%2C1.jpg/80px-H%2C1.jpg",
+							"width": 80,
+							"height": 44
+						},
+						"description": "elemento químico con número atómico 1"
+					},
+					"sourceTitle": {
+						"title": "Hydrogen",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q556"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Hexagonal.svg/78px-Hexagonal.svg.png",
+							"width": 78,
+							"height": 80
+						},
+						"description": "Chemical element with atomic number 1"
+					}
+				}
+			},
+			"mwFg": {
+				"href": "Helio",
+				"title": "Helio",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Helio",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q560"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/He%2C2.jpg/80px-He%2C2.jpg",
+							"width": 80,
+							"height": 40
+						},
+						"description": "elemento químicosmo"
+					},
+					"sourceTitle": {
+						"title": "Helium",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q560"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Helium_discharge_tube.jpg/80px-Helium_discharge_tube.jpg",
+							"width": 80,
+							"height": 53
+						},
+						"description": "Chemical element with atomic number 2"
+					}
+				}
+			},
+			"mwFw": {
+				"href": "Condiciones normalizadas de presión y temperatura",
+				"title": "Condiciones normalizadas de presión y temperatura",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Condiciones normalizadas de presión y temperatura",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q102145"
+						},
+						"description": "valores de presión atmosférica y temperatura que imperan en un laboratorio"
+					},
+					"sourceTitle": {
+						"title": "Standard conditions for temperature and pressure",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q102145"
+						},
+						"description": "Abbreviation is 'STP' or 'NTP'"
+					}
+				}
+			},
+			"mwGA": {
+				"href": "Enlace químico",
+				"title": "Enlace químico",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Enlace químico",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q44424"
+						},
+						"description": "proceso químico responsable de las interacciones atractivas entre átomos y moléculas"
+					},
+					"sourceTitle": {
+						"title": "Chemical bond",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q44424"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Electron_dot.svg/80px-Electron_dot.svg.png",
+							"width": 80,
+							"height": 65
+						},
+						"description": "lasting attraction between atoms that enables the formation of chemical compounds"
+					}
+				}
+			},
+			"mwGQ": {
+				"href": "Alótropos del oxígeno",
+				"title": "Alótropos del oxígeno",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Alótropos del oxígeno",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q428653"
+						}
+					},
+					"sourceTitle": {
+						"title": "Allotropes of oxygen",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q428653"
+						},
+						"description": "different chemical forms of oxygen"
+					}
+				}
+			},
+			"mwGg": {
+				"href": "Molécula diatómica",
+				"title": "Molécula diatómica",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Molécula diatómica",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q1751859"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Nitrogeno_-Molecular-.jpg/80px-Nitrogeno_-Molecular-.jpg",
+							"width": 80,
+							"height": 76
+						}
+					},
+					"sourceTitle": {
+						"title": "Diatomic molecule",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q1751859"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Dinitrogen-3D-vdW.png/80px-Dinitrogen-3D-vdW.png",
+							"width": 80,
+							"height": 61
+						},
+						"description": "molecule composed of only two atoms of the same or different chemical elements"
+					}
+				}
+			},
+			"mwGw": {
+				"href": "Gas",
+				"title": "Gas",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Gas",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q11432"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Translational_motion.gif/80px-Translational_motion.gif",
+							"width": 80,
+							"height": 70
+						},
+						"description": "Estado de la materia más conocido como gaseoso"
+					},
+					"sourceTitle": {
+						"title": "Gas",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q11432"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Gas_particle_movement.svg/80px-Gas_particle_movement.svg.png",
+							"width": 80,
+							"height": 57
+						},
+						"description": "One of the four fundamental states of matter"
+					}
+				}
+			},
+			"mwHQ": {
+				"href": "Atmósfera terrestre",
+				"title": "Atmósfera terrestre",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Atmósfera terrestre",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q3230"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Full_moon_partially_obscured_by_atmosphere.jpg/80px-Full_moon_partially_obscured_by_atmosphere.jpg",
+							"width": 80,
+							"height": 53
+						},
+						"description": "parte gaseosa de la Tierra"
+					},
+					"sourceTitle": {
+						"title": "Atmosphere of Earth",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q3230"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Top_of_Atmosphere.jpg/80px-Top_of_Atmosphere.jpg",
+							"width": 80,
+							"height": 53
+						},
+						"description": "Layer of gases surrounding the planet Earth"
+					}
+				}
+			},
+			"mwHg": {
+				"href": "Atmósfera terrestre",
+				"title": "Atmósfera terrestre",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Atmósfera terrestre",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q3230"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Full_moon_partially_obscured_by_atmosphere.jpg/80px-Full_moon_partially_obscured_by_atmosphere.jpg",
+							"width": 80,
+							"height": 53
+						},
+						"description": "parte gaseosa de la Tierra"
+					},
+					"sourceTitle": {
+						"title": "Atmosphere of Earth",
+						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q3230"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Top_of_Atmosphere.jpg/80px-Top_of_Atmosphere.jpg",
+							"width": 80,
+							"height": 53
+						},
+						"description": "Layer of gases surrounding the planet Earth"
+					}
+				}
+			},
+			"mwHw": {
+				"href": "Corteza (geología)",
+				"title": "Corteza (geología)",
+				"data-cx": {
+					"adapted": true,
+					"targetFrom": "link",
+					"targetTitle": {
+						"title": "Corteza (geología)",
+						"pagelanguage": "es",
+						"pageprops": {
+							"wikibase_item": "Q4232578"
+						},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Earth_poster.svg/80px-Earth_poster.svg.png",
+							"width": 80,
+							"height": 49
+						},
+						"description": "parte sólida externa de un cuerpo celeste"
+					},
+					"sourceTitle": {
+						"title": "Crust (geology)",
+						"pagelanguage": "en",
+							"pageprops": {
+								"wikibase_item": "Q4232578"
+							},
+						"thumbnail": {
+							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Earth_poster.svg/80px-Earth_poster.svg.png",
+							"width": 80,
+							"height": 49
+						},
+						"description": "The outermost solid shell of a rocky planet, dwarf planet, or natural satellite"
+					}
+				}
 			}
 		}
 	},
@@ -583,13 +746,20 @@
 				"title": "Филон Византийский",
 				"data-cx": {
 					"adapted": true,
+					"targetFrom": "link",
 					"targetTitle": {
 						"title": "Филон Византийский",
-						"pagelanguage": "ru"
+						"pagelanguage": "ru",
+						"pageprops": {
+							"wikibase_item": "Q334570"
+						}
 					},
 					"sourceTitle": {
 						"title": "Philo of Byzantium",
 						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q334570"
+						},
 						"description": "Ancient Greek engineer"
 					}
 				}
@@ -599,9 +769,13 @@
 				"title": "Детектив (профессия)",
 				"data-cx": {
 					"adapted": true,
+					"targetFrom": "link",
 					"targetTitle": {
 						"title": "Детектив (профессия)",
 						"pagelanguage": "ru",
+						"pageprops": {
+							"wikibase_item": "Q842782"
+						},
 						"description": "человек, расследующий преступления",
 						"thumbnail": {
 							"height": 80,
@@ -612,6 +786,9 @@
 					"sourceTitle": {
 						"title": "Detective",
 						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q842782"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Allan_Pinkerton-retouch.jpg/69px-Allan_Pinkerton-retouch.jpg",
 							"width": 69,
@@ -664,9 +841,13 @@
 			"mwVQ": {
 				"data-cx": {
 					"adapted": false,
+					"targetFrom": "label",
 					"sourceTitle": {
 						"title": "Philo of Byzantium",
 						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q334570"
+						},
 						"description": "Ancient Greek engineer"
 					}
 				}
@@ -674,9 +855,13 @@
 			"mwVg": {
 				"data-cx": {
 					"adapted": false,
+					"targetFrom": "label",
 					"sourceTitle": {
 						"title": "Detective",
 						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q842782"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Allan_Pinkerton-retouch.jpg/69px-Allan_Pinkerton-retouch.jpg",
 							"width": 69,
@@ -704,9 +889,13 @@
 			"mwVQ": {
 				"data-cx": {
 					"adapted": false,
+					"targetFrom": "mt",
 					"sourceTitle": {
 						"title": "Philo of Byzantium",
 						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q334570"
+						},
 						"description": "Ancient Greek engineer"
 					}
 				}
@@ -714,9 +903,13 @@
 			"mwVg": {
 				"data-cx": {
 					"adapted": false,
+					"targetFrom": "mt",
 					"sourceTitle": {
 						"title": "Detective",
 						"pagelanguage": "en",
+						"pageprops": {
+							"wikibase_item": "Q842782"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Allan_Pinkerton-retouch.jpg/69px-Allan_Pinkerton-retouch.jpg",
 							"width": 69,
@@ -791,11 +984,11 @@
 						}
 					]
 				},
-				"data-cx": [{
+				"data-cx": [ {
 					"adapted": true,
 					"partial": false,
 					"targetExists": true
-				}]
+				} ]
 			}
 		}
 	}
