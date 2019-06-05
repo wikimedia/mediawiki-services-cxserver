@@ -3,12 +3,15 @@
 *.kate-swp
 .*.swp
 .idea
+.vscode
 .bundle/
 *.log
 config.yaml
 docs
+.nyc_output
 node_modules
 log/
+coverage
 
 # Dockerfile (used for deploy)
 Dockerfile
