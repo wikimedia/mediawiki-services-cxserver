@@ -291,6 +291,64 @@ const sectionWithMetaResult = `
 </body>"
 `;
 
+const sectionWithFigureInlineTemplate = `
+<html>
+	<body>
+	<h2 id="Enlaces_externos">Enlaces externos</h2>
+	<ul id="mwASA">
+		<li id="mwASE"><a rel="mw:ExtLink"
+				href="http://www.portaloaca.com/historia/otroshistoria/94-la-leyenda-de-la-mano-negra.html"
+				class="external text" id="mwASI">La leyenda de La Mano Negra</a></li>
+	</ul>
+	<span about="#mwt92" typeof="mw:Transclusion"
+		data-mw="{&quot;parts&quot;:[{&quot;template&quot;:{&quot;target&quot;:{&quot;wt&quot;:&quot;commonscat&quot;,&quot;href&quot;:&quot;./Plantilla:Commonscat&quot;},&quot;params&quot;:{&quot;1&quot;:{&quot;wt&quot;:&quot;La Mano Negra&quot;}},&quot;i&quot;:0}},&quot;\\n\\n[[Categoría:Historia de la provincia de Cádiz]]\\n[[Categoría:Derecho de Andalucía]]\\n[[Categoría:Casos judiciales de España]]\\n[[Categoría:Sociedades secretas]]\\n[[Categoría:Reinado de Alfonso XII]]\\n[[Categoría:Casos judiciales anarquistas]]\\n[[Categoría:Teorías conspirativas]]\\n[[Categoría:Historia del anarquismo]]\\n[[Categoría:Anarquismo en España]]\\n[[Categoría:España en 1882]]\\n[[Categoría:España en 1883]]\\n[[Categoría:España en 1884]]\\n[[Categoría:Política en 1882]]\\n[[Categoría:Política en 1883]]\\n[[Categoría:Política en 1884]]\\n[[Categoría:Atentados anarquistas]]&quot;]}"
+		id="mwASk">
+	</span>
+	<ul about="#mwt92">
+		<li>
+			<figure-inline typeof="mw:Image">
+			<span>
+				<img alt="" resource="./Archivo:Commons-logo.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/15px-Commons-logo.svg.png" data-file-width="1024" data-file-height="1376" data-file-type="drawing" height="20" width="15" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/30px-Commons-logo.svg.png 2x, //upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/23px-Commons-logo.svg.png 1.5x">
+			</span>
+			</figure-inline>
+			<a rel="mw:WikiLink" href="./Wikimedia_Commons" title="Wikimedia Commons">Wikimedia Commons</a> alberga una categoría multimedia sobre<b><a rel="mw:WikiLink/Interwiki" href="https://commons.wikimedia.org/wiki/Category:La%20Mano%20Negra" title="commons:Category:La Mano Negra">La Mano Negra</a></b>.
+			<link rel="mw:PageProp/Category" href="./Categoría:Historia_de_la_provincia_de_Cádiz">
+			<link rel="mw:PageProp/Category" href="./Categoría:Derecho_de_Andalucía">
+		</li>
+	</ul>
+</body>
+</html>
+`;
+
+const sectionWithFigureInlineTemplateResult = `
+<html>
+<body>
+	<section rel="cx:Section">
+	<h2 id="Enlaces_externos">Enlaces externos</h2>
+	</section>
+	<section rel="cx:Section">
+		<ul id="mwASA">
+			<li id="mwASE">
+				<a class="external text" href="http://www.portaloaca.com/historia/otroshistoria/94-la-leyenda-de-la-mano-negra.html" id="mwASI" rel="mw:ExtLink">La leyenda de La Mano Negra</a>
+			</li>
+		</ul>
+	</section>
+	<section rel="cx:Section">
+		<span about="#mwt92" data-mw="{&quot;parts&quot;:[{&quot;template&quot;:{&quot;target&quot;:{&quot;wt&quot;:&quot;commonscat&quot;,&quot;href&quot;:&quot;./Plantilla:Commonscat&quot;},&quot;params&quot;:{&quot;1&quot;:{&quot;wt&quot;:&quot;La Mano Negra&quot;}},&quot;i&quot;:0}},&quot;\\n\\n[[Categoría:Historia de la provincia de Cádiz]]\\n[[Categoría:Derecho de Andalucía]]\\n[[Categoría:Casos judiciales de España]]\\n[[Categoría:Sociedades secretas]]\\n[[Categoría:Reinado de Alfonso XII]]\\n[[Categoría:Casos judiciales anarquistas]]\\n[[Categoría:Teorías conspirativas]]\\n[[Categoría:Historia del anarquismo]]\\n[[Categoría:Anarquismo en España]]\\n[[Categoría:España en 1882]]\\n[[Categoría:España en 1883]]\\n[[Categoría:España en 1884]]\\n[[Categoría:Política en 1882]]\\n[[Categoría:Política en 1883]]\\n[[Categoría:Política en 1884]]\\n[[Categoría:Atentados anarquistas]]&quot;]}" id="mwASk" typeof="mw:Transclusion"></span>
+		<ul about="#mwt92">
+			<li>
+				<figure-inline typeof="mw:Image">
+				<span>
+					<img alt="" data-file-height="1376" data-file-type="drawing" data-file-width="1024" height="20" resource="./Archivo:Commons-logo.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/15px-Commons-logo.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/30px-Commons-logo.svg.png 2x, //upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/23px-Commons-logo.svg.png 1.5x" width="15"></img>
+				</span>
+				</figure-inline>
+				<a href="./Wikimedia_Commons" rel="mw:WikiLink" title="Wikimedia Commons">Wikimedia Commons</a> alberga una categoría multimedia sobre<b><a href="https://commons.wikimedia.org/wiki/Category:La%20Mano%20Negra" rel="mw:WikiLink/Interwiki" title="commons:Category:La Mano Negra">La Mano Negra</a></b>.
+			</li>
+		</ul>
+	</section>
+</body>
+</html>
+`;
 const tests = [
 	{
 		desc: 'section has common pattern of elements',
@@ -327,6 +385,12 @@ const tests = [
 		source: sectionWithMeta,
 		result: sectionWithMetaResult,
 		categories: 0
+	},
+	{
+		desc: 'Content has template fragments and one fragment is a section candidate. Section has categories too',
+		source: sectionWithFigureInlineTemplate,
+		result: sectionWithFigureInlineTemplateResult,
+		categories: 2
 	}
 ];
 

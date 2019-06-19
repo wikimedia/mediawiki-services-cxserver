@@ -28,12 +28,7 @@ cxtextchunk { border-right: solid #f88 1px }</style>
   <cxtextchunk>&#10;</cxtextchunk>
   <cxtextchunk tags="a:href=#cite_ref-5,rel=mw:referencedBy span:class=mw-linkback-text">↑ </cxtextchunk>
   <cxtextchunk>&#10;</cxtextchunk>
-  <cxinlineelement tags="span:id=mw-reference-text-cite_note-5,class=mw-reference-text,data-parsoid={}">
-    <a>
-    <cxtextblock>
-    </cxtextblock>
-    </a>
-  </cxinlineelement>
+  <cxtextchunk tags="span:id=mw-reference-text-cite_note-5,class=mw-reference-text,data-parsoid={} a:rel=mw:ExtLink,href=http://lhermanto-resepkeluarga.blogspot.com/2008/04/telor-bumbu-bali-bali-seasoning.html,data-parsoid={&#34;targetOff&#34;:4337,&#34;contentOffsets&#34;:[4337,4337],&#34;dsr&#34;:[4248,4338,89,1]}">link text</cxtextchunk>
   <cxtextchunk>&#10;</cxtextchunk>
 </cxtextblock>
 </li>
