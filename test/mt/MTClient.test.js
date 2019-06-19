@@ -74,3 +74,33 @@ describe( 'Machine translation result with extra spaces', function () {
 		} );
 	} );
 } );
+
+const subSequenceTests = [
+	{
+		text: 'They are subtropical and tropical flowers.',
+		subsequence: 'tropical',
+		language: 'en',
+		occurrence: 0,
+		expected: { start: 12, length: 8 }
+	},
+	{
+		text: 'This is test .[3]',
+		subsequence: '[3]',
+		language: 'en',
+		occurrence: 0,
+		expected: { start: 14, length: 3 }
+	}
+];
+describe( 'Subsequence match finding', () => {
+	it( 'Should return correct range mapping', () => {
+		const cxConfig = server.config.service;
+		const mtClient = new MTClient( cxConfig );
+		for ( let i = 0; i < subSequenceTests.length; i++ ) {
+			let test = subSequenceTests[ i ];
+			let sequencePos = mtClient.findSubSequence(
+				test.text, test.subsequence, test.language, test.occurrence
+			);
+			assert.deepEqual( sequencePos, test.expected, 'Subsequence position correctly spotted.' );
+		}
+	} );
+} );
