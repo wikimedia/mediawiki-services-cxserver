@@ -9,7 +9,7 @@
   },
   "license": "GPL-2.0+",
   "bugs": {
-    "url": "https://phabricator.wikimedia.org/tag/cxserver/"
+    "url": "https://phabricator.wikimedia.org/tag/cx-cxserver/"
   },
   "engines": {
     "node": ">=6.11.1"
