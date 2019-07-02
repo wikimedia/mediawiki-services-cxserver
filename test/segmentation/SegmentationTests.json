@@ -146,6 +146,11 @@
 			"desc": "Video tag in figure-inline tag",
 			"source": "video-inline-test.html",
 			"result": "video-inline-result.html"
+		},
+		{
+			"desc": "Do not segment content inside block templates",
+			"source": "test-blocklevel-template.html",
+			"result": "result-blocklevel-template.html"
 		}
 	],
 	"hi": [
