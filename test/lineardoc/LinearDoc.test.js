@@ -196,4 +196,25 @@ describe( 'LinearDoc', () => {
 		);
 	} );
 
+	it( 'test getRootItem for ignoring blockspaces', () => {
+		const sourceDoc = `<section data-mw-section-id="25" id="mwArE">
+		<p id="mwArI">Sestak voted for the <a rel="mw:WikiLink" href="./Improving_Head_Start_Act"
+				title="Improving Head Start Act" id="mwArM" class="new">Improving Head Start Act</a> and the <a
+				rel="mw:WikiLink" href="./College_Cost_Reduction_and_Access_Act"
+				title="College Cost Reduction and Access Act" id="mwArQ"
+				class="new">College Cost Reduction and Access Act</a>.
+			</p>
+		</section>`;
+
+		let parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer(), { isolateSegments: true } );
+		parser.init();
+		parser.write( sourceDoc );
+		const rootItem = parser.builder.doc.getRootItem();
+		assert.deepEqual(
+			rootItem.item.name,
+			'p',
+			'getRootItem should ignore the blockspaces in the beginning of the document'
+		);
+	} );
+
 } );
