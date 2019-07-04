@@ -358,7 +358,7 @@ paths:
               to: qqq
               provider: TestClient
             body:
-              html: <p><a rel="mw:WikiLink" href='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='Atomic number'>atomic number</a> 8.</p>
+              html: <p><a rel="mw:WikiLink" href='./Oxygen' title='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='./Atomic number' title='Atomic number'>atomic number</a> 8.</p>
           response:
             status: 200
             body:
