@@ -8,11 +8,15 @@ class TransformLanguages {
 
 	get languages() {
 		let matrix = {};
+		const englishVariants = [ 'en', 'simple' ];
 		for ( let i = 0, len = this.langs.length; i < len; i++ ) {
 			let lang = this.langs[ i ];
-			matrix[ lang ] = this.langs.filter(
-				( l ) => l !== lang && !this.notAsTarget.includes( l )
-			);
+			matrix[ lang ] = this.langs.filter( ( l ) => {
+				if ( englishVariants.includes( l ) && englishVariants.includes( lang ) ) {
+					return false;
+				}
+				return l !== lang && !this.notAsTarget.includes( l );
+			} );
 		}
 		return matrix;
 	}
