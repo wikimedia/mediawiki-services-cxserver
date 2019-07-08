@@ -7,10 +7,10 @@ class TransformLanguages {
 	}
 
 	get languages() {
-		let matrix = {};
+		const matrix = {};
 		const englishVariants = [ 'en', 'simple' ];
 		for ( let i = 0, len = this.langs.length; i < len; i++ ) {
-			let lang = this.langs[ i ];
+			const lang = this.langs[ i ];
 			matrix[ lang ] = this.langs.filter( ( l ) => {
 				if ( englishVariants.includes( l ) && englishVariants.includes( lang ) ) {
 					return false;

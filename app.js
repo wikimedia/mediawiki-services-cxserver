@@ -122,7 +122,7 @@ function initApp( options ) {
 		sUtil.initAndLogRequest( req, app );
 
 		if ( app.ratelimiter ) {
-			let clientIp = req.headers[ app.conf.ratelimiter_key ] ||
+			const clientIp = req.headers[ app.conf.ratelimiter_key ] ||
 				req.headers[ 'x-forwarded-for' ] ||
 				req.connection.remoteAddress;
 

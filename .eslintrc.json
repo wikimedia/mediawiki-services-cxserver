@@ -10,7 +10,6 @@
 	"rules": {
 		"one-var": [ "error", { "var": "always" } ],
 		"max-len": "off",
-		"prefer-template": "off",
-		"prefer-const": "off"
+		"prefer-template": "off"
 	}
 }

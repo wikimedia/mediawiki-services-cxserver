@@ -30,7 +30,7 @@ describe( 'Link Adaptation tests', function () {
 			translationunit = adapter.getAdapter( test.source );
 
 			return translationunit.adapt( test.source ).then( function ( adaptedNode ) {
-				for ( let attribute in [ 'href', 'rel', 'title' ] ) {
+				for ( const attribute in [ 'href', 'rel', 'title' ] ) {
 					assert.deepEqual(
 						adaptedNode.attributes[ attribute ],
 						test.result.attributes[ attribute ],
@@ -46,7 +46,7 @@ describe( 'Link Adaptation tests', function () {
 					'Property adapted of attribute data-cx matches'
 				);
 
-				for ( let attribute in [ 'thumbnail', 'pageimage', 'description' ] ) {
+				for ( const attribute in [ 'thumbnail', 'pageimage', 'description' ] ) {
 					assert.deepEqual(
 						actualDataCX.sourceTitle[ attribute ],
 						expectedDataCX.sourceTitle[ attribute ],
@@ -55,7 +55,7 @@ describe( 'Link Adaptation tests', function () {
 				}
 
 				if ( expectedDataCX.adapted ) {
-					for ( let attribute in [ 'pageid', 'thumbnail', 'pageimage', 'description' ] ) {
+					for ( const attribute in [ 'pageid', 'thumbnail', 'pageimage', 'description' ] ) {
 						assert.deepEqual(
 							actualDataCX.targetTitle[ attribute ],
 							expectedDataCX.targetTitle[ attribute ],

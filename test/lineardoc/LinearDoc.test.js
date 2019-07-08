@@ -72,7 +72,7 @@ describe( 'LinearDoc', () => {
 		parser.write( contentForReduce );
 		const { reducedDoc, extractedData } = parser.builder.doc.reduce();
 		assert.deepEqual( Object.keys( extractedData ).length, 16, 'Attributes for 16 tags extracted.' );
-		let expandedDoc = reducedDoc.expand( extractedData );
+		const expandedDoc = reducedDoc.expand( extractedData );
 		assert.deepEqual(
 			normalize( expandedDoc.getHtml() ),
 			normalize( contentForReduce ),
@@ -88,7 +88,7 @@ describe( 'LinearDoc', () => {
 		parser.write( contentForReduce );
 		const { reducedDoc, extractedData } = parser.builder.doc.reduce();
 		assert.deepEqual( Object.keys( extractedData ).length, 22, 'Attributes for 22 tags extracted.' );
-		let expandedDoc = reducedDoc.expand( extractedData );
+		const expandedDoc = reducedDoc.expand( extractedData );
 		assert.deepEqual(
 			normalize( expandedDoc.getHtml() ),
 			normalize( contentForReduce ),
@@ -114,7 +114,7 @@ describe( 'LinearDoc', () => {
 		const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
 		parser.init();
 		parser.write( corruptedDoc );
-		let expandedDoc = parser.builder.doc.expand( extractedData );
+		const expandedDoc = parser.builder.doc.expand( extractedData );
 		assert.deepEqual(
 			normalize( expandedDoc.getHtml() ),
 			normalize( sanitizedExpandedDoc ),
@@ -188,7 +188,7 @@ describe( 'LinearDoc', () => {
 		parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
 		parser.init();
 		parser.write( corruptedMTInput );
-		let expandedDoc = parser.builder.doc.expand( extractedData );
+		const expandedDoc = parser.builder.doc.expand( extractedData );
 		assert.deepEqual(
 			normalize( expandedDoc.getHtml() ),
 			normalize( sanitizedExpandedDoc ),
@@ -206,7 +206,7 @@ describe( 'LinearDoc', () => {
 			</p>
 		</section>`;
 
-		let parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer(), { isolateSegments: true } );
+		const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer(), { isolateSegments: true } );
 		parser.init();
 		parser.write( sourceDoc );
 		const rootItem = parser.builder.doc.getRootItem();

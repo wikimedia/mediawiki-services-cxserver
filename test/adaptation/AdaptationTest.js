@@ -33,9 +33,9 @@ describe( 'Adaptation tests', () => {
 			return adapter.adapt( test.source ).then( ( result ) => {
 				const actualDom = new jsdom.JSDOM( result.getHtml() );
 
-				for ( let id in test.resultAttributes ) {
+				for ( const id in test.resultAttributes ) {
 					assert.ok( actualDom.window.document.getElementById( id ), `Element with id ${id} exists in the result` );
-					for ( let attribute in test.resultAttributes[ id ] ) {
+					for ( const attribute in test.resultAttributes[ id ] ) {
 						const actualAttributeValue = actualDom.window.document
 							.getElementById( id ).getAttribute( attribute );
 						const expectedAttributeValue = test.resultAttributes[ id ][ attribute ];

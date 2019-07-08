@@ -96,8 +96,8 @@ describe( 'Subsequence match finding', () => {
 		const cxConfig = server.config.service;
 		const mtClient = new MTClient( cxConfig );
 		for ( let i = 0; i < subSequenceTests.length; i++ ) {
-			let test = subSequenceTests[ i ];
-			let sequencePos = mtClient.findSubSequence(
+			const test = subSequenceTests[ i ];
+			const sequencePos = mtClient.findSubSequence(
 				test.text, test.subsequence, test.language, test.occurrence
 			);
 			assert.deepEqual( sequencePos, test.expected, 'Subsequence position correctly spotted.' );

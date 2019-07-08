@@ -4,8 +4,8 @@ var bunyan = require( 'bunyan' );
 
 function logStream( logStdout ) {
 
-	let log = [];
-	let parrot = bunyan.createLogger( {
+	const log = [];
+	const parrot = bunyan.createLogger( {
 		name: 'test-logger',
 		level: 'warn'
 	} );
@@ -13,10 +13,10 @@ function logStream( logStdout ) {
 	// eslint-disable-next-line no-unused-vars
 	function write( chunk, encoding, callback ) {
 		try {
-			let entry = JSON.parse( chunk );
-			let levelMatch = /^(\w+)/.exec( entry.levelPath );
+			const entry = JSON.parse( chunk );
+			const levelMatch = /^(\w+)/.exec( entry.levelPath );
 			if ( logStdout && levelMatch ) {
-				let level = levelMatch[ 1 ];
+				const level = levelMatch[ 1 ];
 				if ( parrot[ level ] ) {
 					parrot[ level ]( entry );
 				}
@@ -40,7 +40,7 @@ function logStream( logStdout ) {
 
 	function slice() {
 
-		let begin = log.length;
+		const begin = log.length;
 		let end = null;
 
 		function halt() {

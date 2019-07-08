@@ -21,12 +21,12 @@ function getParsedDoc( content ) {
 }
 
 function runTest( test, lang ) {
-	let testData = fs.readFileSync( __dirname + '/data/' + test.source, 'utf8' );
-	let parsedDoc = getParsedDoc( testData );
-	let segmenter = new Segmenter();
-	let segmentedLinearDoc = segmenter.segment( parsedDoc, lang );
-	let result = normalize( segmentedLinearDoc.getHtml() );
-	let expectedResultData = normalize(
+	const testData = fs.readFileSync( __dirname + '/data/' + test.source, 'utf8' );
+	const parsedDoc = getParsedDoc( testData );
+	const segmenter = new Segmenter();
+	const segmentedLinearDoc = segmenter.segment( parsedDoc, lang );
+	const result = normalize( segmentedLinearDoc.getHtml() );
+	const expectedResultData = normalize(
 		fs.readFileSync( __dirname + '/data/' + test.result, 'utf8' )
 	);
 	it( 'should not have any errors when: ' + test.desc, () => {
@@ -34,10 +34,10 @@ function runTest( test, lang ) {
 	} );
 }
 
-for ( let lang in allTests ) {
+for ( const lang in allTests ) {
 	describe( 'Segmentation tests for ' + lang, () => {
-		let tests = allTests[ lang ];
-		let len = tests.length;
+		const tests = allTests[ lang ];
+		const len = tests.length;
 		for ( let i = 0; i < len; i++ ) {
 			if ( tests[ i ].skip ) {
 				continue;

@@ -23,10 +23,10 @@ describe( 'Adaptation tests', () => {
 		const cxserver = server.config.conf.services[ server.config.conf.services.length - 1 ];
 		cxserver.conf.mtClient = new TestClient( cxserver );
 		const adapter = new Adapter( test.from, test.to, api, cxserver );
-		let testData = fs.readFileSync( __dirname + '/data/' + test.source, 'utf8' );
+		const testData = fs.readFileSync( __dirname + '/data/' + test.source, 'utf8' );
 		adapter.adapt( testData ).then( ( result ) => {
 			const resultDom = new jsdom.JSDOM( result.getHtml() );
-			let elementWithDataCX = resultDom.window.document.querySelectorAll( '[data-cx]' );
+			const elementWithDataCX = resultDom.window.document.querySelectorAll( '[data-cx]' );
 			assert.deepEqual( elementWithDataCX.length, test.adaptationCount );
 			done();
 		} );

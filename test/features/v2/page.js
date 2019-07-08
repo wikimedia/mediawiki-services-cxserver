@@ -17,7 +17,7 @@ describe( 'v2 api - page gets', function () {
 	} );
 
 	// common URI prefix for the page
-	let uri = server.config.uri + 'v2/page/en/es/Pickling';
+	const uri = server.config.uri + 'v2/page/en/es/Pickling';
 
 	it( 'should get the whole page body', () => {
 		return preq.get( {

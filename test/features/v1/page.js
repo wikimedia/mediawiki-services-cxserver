@@ -17,7 +17,7 @@ describe( 'v1 api - page gets', function () {
 	} );
 
 	// common URI prefix for the page
-	let uri = server.config.uri + 'v1/page/en/Oxygen';
+	const uri = server.config.uri + 'v1/page/en/Oxygen';
 
 	it( 'should get the whole page body', () => {
 		return preq.get( {
