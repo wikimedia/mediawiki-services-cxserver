@@ -35,11 +35,13 @@
     "preq": "^0.5.11",
     "sax": "1.2.4",
     "service-runner": "^2.7.2",
+    "sqlite": "^3.0.3",
     "swagger-router": "^0.7.2",
     "swagger-ui": "git+https://github.com/wikimedia/swagger-ui.git#master"
   },
   "devDependencies": {
     "ajv": "^6.10.0",
+    "argparse": "^1.0.10",
     "async": "^2.6.2",
     "check-dependencies": "^1.1.0",
     "eslint": "^5.16.0",
