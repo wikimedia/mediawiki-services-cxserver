@@ -2,19 +2,15 @@
 	"extends": [
 		"wikimedia",
 		"wikimedia/node",
-		"wikimedia/language/es2016"
+		"wikimedia/language/es2017"
 	],
-	"env": {
-		"es6": true
-	},
-	"parserOptions": {
-		"ecmaVersion": 2017
-	},
 	"globals": {
 		"require": false
 	},
 	"rules": {
 		"one-var": [ "error", { "var": "always" } ],
-		"max-len": 0
+		"max-len": "off",
+		"prefer-template": "off",
+		"prefer-const": "off"
 	}
 }
