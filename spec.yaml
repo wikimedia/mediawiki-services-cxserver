@@ -366,6 +366,50 @@ paths:
             headers:
               content-type: application/json
 
+  /v2/suggest/source/{title}/{to}:
+    get:
+      tags:
+        - Suggestions
+      description: Suggest a source article to use for creating given article in given target language using translation
+      consumes:
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+      parameters:
+        - name: title
+          in: path
+          description: The target article title
+          type: string
+          required: true
+        - name: to
+          in: path
+          description: The target language code
+          type: string
+          required: true
+        - name: sourcelanguages
+          in: query
+          description: Comma-separated list of candidate source languages. By default English(en) is used as a source language unless that is the target language.
+          schema:
+            type: array
+            items:
+              type: string
+          style: form
+          explode: true
+          required: false
+      x-amples:
+        - title: Suggest a source title to use for translation
+          request:
+            params:
+              to: ca
+              title: Paneer
+              sourcelanguages: en
+          response:
+            status: 200
+            body:
+              suggestions: /^\[.+\]$/
+            headers:
+              content-type: application/json
+
   # from routes/info.js
   /_info:
     get:
