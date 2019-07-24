@@ -125,7 +125,8 @@ describe( 'LinearDoc', () => {
 	it( 'test if the content is block level template', () => {
 		const testFiles = [
 			'/data/test-block-template-section-1.html',
-			'/data/test-block-template-section-2.html'
+			'/data/test-block-template-section-2.html',
+			'/data/test-block-template-section-3.html'
 		];
 		for ( let i = 0; i < testFiles.length; i++ ) {
 			const contentForTest = fs.readFileSync( __dirname + testFiles[ i ], 'utf8' ).replace( /^\s+|\s+$/, '' );
