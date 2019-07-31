@@ -52,7 +52,7 @@ if ( !MTClients[ mtService ] ) {
 
 let mt = new MTClients[ mtService ]( cxConfig );
 
-return mt.translate(
+return mt.translateHtml(
 	sourceLang,
 	targetLang,
 	sourceHtml

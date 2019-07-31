@@ -1,0 +1,44 @@
+<section>
+<cxblockspace/>
+<p>
+<cxtextblock>
+  <cxtextchunk>&#10;</cxtextchunk>
+  <cxtextchunk tags="span:id=3">formula:</cxtextchunk>
+  <cxinlineelement tags="span:id=3">
+    <cxwrapper>
+    <cxtextblock>
+      <cxtextchunk>&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7 mstyle:id=8">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7 mstyle:id=8 mstyle:id=9">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7 mstyle:id=8 mstyle:id=9 mo:id=10">{</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7 mstyle:id=8 mstyle:id=9">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7 mstyle:id=8 mstyle:id=9 mo">,</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7 mstyle:id=8 mstyle:id=9">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7 mstyle:id=8 mstyle:id=9 mo">…</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7 mstyle:id=8 mstyle:id=9">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7 mstyle:id=8 mstyle:id=9 mo">,</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7 mstyle:id=8 mstyle:id=9">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7 mstyle:id=8 mstyle:id=9 mo:id=11">}</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7 mstyle:id=8 mstyle:id=9">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7 mstyle:id=8">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics mrow:id=7">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics annotation:id=12">{\\displaystyle \\scriptstyle\\{{\\hat {e}}_{1},\\dots ,{\\hat {e}}_{n}\\}}</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML semantics">&#10;</cxtextchunk>
+      <cxtextchunk tags="span:id=5 math:alttext={\displaystyle \scriptstyle \{{\hat {e}}_{1},\dots ,{\hat {e}}_{n}\}},xmlns=http://www.w3.org/1998/Math/MathML">&#10;</cxtextchunk>
+      <cxinlineelement>
+        <img/>
+      </cxinlineelement>
+      <cxtextchunk>&#10;</cxtextchunk>
+    </cxtextblock>
+    </cxwrapper>
+  </cxinlineelement>
+  <cxtextchunk tags="span:id=3">&#10;</cxtextchunk>
+</cxtextblock>
+</p>
+<cxblockspace/>
+</section>

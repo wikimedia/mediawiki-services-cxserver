@@ -14,12 +14,11 @@ function normalize( html ) {
 
 describe( 'LinearDoc', () => {
 	it( 'should be possible to linearise all kind of HTML inputs', () => {
-		const numTests = 7;
+		const numTests = 8;
 		for ( let i = 1; i <= numTests; i++ ) {
 			const testXhtmlFile = __dirname + '/data/test' + i + '.xhtml';
 			const resultXmlFile = __dirname + '/data/test' + i + '-result.xml';
 			const resultXhtmlFile = __dirname + '/data/test' + i + '-result.xhtml';
-
 			const testXhtml = fs.readFileSync( testXhtmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
 			const expectedXml = fs.readFileSync( resultXmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
 			const expectedXhtml = fs.readFileSync( resultXhtmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
@@ -212,7 +211,7 @@ describe( 'LinearDoc', () => {
 		parser.write( sourceDoc );
 		const rootItem = parser.builder.doc.getRootItem();
 		assert.deepEqual(
-			rootItem.item.name,
+			rootItem.name,
 			'p',
 			'getRootItem should ignore the blockspaces in the beginning of the document'
 		);
