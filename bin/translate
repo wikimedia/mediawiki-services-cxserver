@@ -3,7 +3,6 @@ const fs = require( 'fs' ),
 	yaml = require( 'js-yaml' ),
 	Adapter = require( __dirname + '/../lib/Adapter' ),
 	MTClients = require( __dirname + '/../lib/mt/' ),
-	Normalizer = require( __dirname + '/../lib/lineardoc' ).Normalizer,
 	MWApiRequestManager = require( __dirname + '/../lib/mw/ApiRequestManager' );
 
 const config = yaml.load( fs.readFileSync( __dirname + '/../config.yaml' ) );
@@ -25,13 +24,6 @@ if ( !cxConfig ) {
 cxConfig.logger = { log: console.log };
 // eslint-disable-next-line no-console
 cxConfig.metrics = { increment: console.log };
-
-function normalize( html ) {
-	const normalizer = new Normalizer();
-	normalizer.init();
-	normalizer.write( html.replace( /(\r\n|\n|\t|\r)/gm, '' ) );
-	return normalizer.getHtml();
-}
 
 const sourceHtml = fs.readFileSync( '/dev/stdin', 'utf8' );
 if ( sourceHtml.trim() === '' || process.argv.length !== 5 ) {
@@ -63,7 +55,6 @@ mt.translate(
 	const api = new MWApiRequestManager( cxConfig );
 	const adapter = new Adapter( sourceLang, targetLang, api, cxConfig );
 	adapter.adapt( targetHtml ).then( ( result ) => {
-		result = normalize( result.getHtml() );
-		process.stdout.write( result + '\n' );
+		process.stdout.write( result.getHtml() + '\n' );
 	} );
 } );
