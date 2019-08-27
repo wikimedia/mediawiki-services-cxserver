@@ -5,6 +5,166 @@
             "params": {}
         }
     },
+    "titlepair/en/bn": {
+        "Template:Cite journal": {
+            "sourceTitle": "Template:Cite journal",
+            "targetTitle": "টেমপ্লেট:সাময়িকী_উদ্ধৃতি",
+            "missing": false
+        }
+    },
+    "siteinfo/bn": {
+        "general": {
+            "mainpage": "\u09aa\u09cd\u09b0\u09a7\u09be\u09a8 \u09aa\u09be\u09a4\u09be",
+            "base": "https://bn.wikipedia.org/wiki/%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%A7%E0%A6%BE%E0%A6%A8_%E0%A6%AA%E0%A6%BE%E0%A6%A4%E0%A6%BE",
+            "sitename": "\u0989\u0987\u0995\u09bf\u09aa\u09bf\u09a1\u09bf\u09af\u09bc\u09be",
+            "logo": "//bn.wikipedia.org/static/images/project-logos/bnwiki.png",
+            "generator": "MediaWiki 1.34.0-wmf.19",
+            "phpversion": "5.6.99-hhvm",
+            "phpsapi": "srv",
+            "hhvmversion": "3.18.6-dev",
+            "dbtype": "mysql",
+            "dbversion": "10.1.39-MariaDB",
+            "langconversion": "",
+            "titleconversion": "",
+            "linkprefixcharset": "",
+            "linkprefix": "",
+            "linktrail": "/^([\\x{0980}-\\x{09FF}]+)(.*)$/sDu",
+            "legaltitlechars": " %!\"$&'()*,\\-.\\/0-9:;=?@A-Z\\\\^_`a-z~\\x80-\\xFF+",
+            "invalidusernamechars": "@:",
+            "fixarabicunicode": "",
+            "fixmalayalamunicode": "",
+            "git-hash": "5d54761bb099434397d9e2accb3a2d396c07989c",
+            "git-branch": "wmf/1.34.0-wmf.19",
+            "case": "first-letter",
+            "lang": "bn",
+            "fallback": [
+                {
+                    "code": "en"
+                }
+            ],
+            "fallback8bitEncoding": "windows-1252",
+            "writeapi": "",
+            "maxarticlesize": 2097152,
+            "timezone": "UTC",
+            "timeoffset": 0,
+            "articlepath": "/wiki/$1",
+            "scriptpath": "/w",
+            "script": "/w/index.php",
+            "variantarticlepath": false,
+            "server": "//bn.wikipedia.org",
+            "servername": "bn.wikipedia.org",
+            "wikiid": "bnwiki",
+            "time": "2019-09-02T19:29:27Z",
+            "misermode": "",
+            "uploadsenabled": "",
+            "maxuploadsize": 4294967296,
+            "minuploadchunksize": 1024,
+            "galleryoptions": {
+                "imagesPerRow": 0,
+                "imageWidth": 120,
+                "imageHeight": 120,
+                "captionLength": "",
+                "showBytes": "",
+                "mode": "traditional",
+                "showDimensions": ""
+            },
+            "thumblimits": [
+                120,
+                150,
+                180,
+                200,
+                220,
+                250,
+                300,
+                400
+            ],
+            "imagelimits": [
+                {
+                    "width": 320,
+                    "height": 240
+                },
+                {
+                    "width": 640,
+                    "height": 480
+                },
+                {
+                    "width": 800,
+                    "height": 600
+                },
+                {
+                    "width": 1024,
+                    "height": 768
+                },
+                {
+                    "width": 1280,
+                    "height": 1024
+                }
+            ],
+            "favicon": "//bn.wikipedia.org/static/favicon/wikipedia.ico",
+            "centralidlookupprovider": "CentralAuth",
+            "allcentralidlookupproviders": [
+                "CentralAuth",
+                "local"
+            ],
+            "interwikimagic": "",
+            "magiclinks": {
+                "ISBN": "",
+                "PMID": "",
+                "RFC": ""
+            },
+            "categorycollation": "numeric",
+            "wmf-config": {
+                "wmfMasterDatacenter": "eqiad",
+                "wmfEtcdLastModifiedIndex": 183191,
+                "wmgCirrusSearchDefaultCluster": "local",
+                "wgCirrusSearchDefaultCluster": "eqiad"
+            },
+            "linter": {
+                "high": [
+                    "deletable-table-tag",
+                    "html5-misnesting",
+                    "misc-tidy-replacement-issues",
+                    "multiline-html-table-in-list",
+                    "multiple-unclosed-formatting-tags",
+                    "pwrap-bug-workaround",
+                    "self-closed-tag",
+                    "tidy-font-bug",
+                    "tidy-whitespace-bug",
+                    "unclosed-quotes-in-heading"
+                ],
+                "medium": [
+                    "bogus-image-options",
+                    "fostered",
+                    "misnested-tag",
+                    "multi-colon-escape",
+                    "wikilink-in-extlink"
+                ],
+                "low": [
+                    "missing-end-tag",
+                    "obsolete-tag",
+                    "stripped-tag"
+                ]
+            },
+            "mobileserver": "https://bn.m.wikipedia.org",
+            "pageviewservice-supported-metrics": {
+                "pageviews": {
+                    "pageviews": ""
+                },
+                "siteviews": {
+                    "pageviews": "",
+                    "uniques": ""
+                },
+                "mostviewed": {
+                    "pageviews": ""
+                }
+            },
+            "readinglists-config": {
+                "maxListsPerUser": 100,
+                "maxEntriesPerList": 5000,
+                "deletedRetentionDays": 30
+            }
+        }
+    },
     "siteinfo/ca": {
         "general": {
             "mainpage": "Portada",
@@ -2448,6 +2608,2111 @@
             "format": "block",
             "sets": [],
             "maps": {}
+        },
+        "Template:Cite journal": {
+            "description": "This template formats a citation to an article in a magazine or journal, using the provided source information (e.g. journal name, author, title, issue, URL) and various formatting options.",
+            "params": {
+                "url": {
+                    "label": "URL",
+                    "description": "The URL of the online location where the text of the publication can be found. Requires schemes of the type \"http://...\" or maybe even the &nbsp;protocol relative scheme \"//...\"",
+                    "type": "line",
+                    "aliases": [
+                        "URL"
+                    ],
+                    "suggested": true,
+                    "example": "https://www.nytimes.com/..."
+                },
+                "title": {
+                    "label": "Title",
+                    "description": "The title of the article; can be wikilinked to an existing Wikipedia article or url may be used to add an external link, but not both. Displays in quotes.",
+                    "type": "content",
+                    "required": true
+                },
+                "last": {
+                    "label": "Last name",
+                    "description": "The surname of the author; don't wikilink, use 'authorlink'; can suffix with a numeral to add additional authors",
+                    "aliases": [
+                        "author",
+                        "author1",
+                        "authors",
+                        "last1"
+                    ],
+                    "type": "line",
+                    "suggested": true
+                },
+                "first": {
+                    "label": "First name",
+                    "description": "Given or first name, middle names, or initials of the author; don't wikilink, use 'authorlink'; can suffix with a numeral to add additional authors",
+                    "aliases": [
+                        "first1"
+                    ],
+                    "type": "line",
+                    "suggested": true
+                },
+                "last2": {
+                    "label": "Last name 2",
+                    "description": "The surname of the second author; don't wikilink, use 'authorlink2'.",
+                    "aliases": [
+                        "author2"
+                    ],
+                    "type": "line"
+                },
+                "first2": {
+                    "label": "First name 2",
+                    "description": "Given or first name, middle names, or initials of the second author; don't wikilink.",
+                    "type": "line"
+                },
+                "date": {
+                    "label": "Source date",
+                    "description": "Date of the source; do not wikilink. As listed in the publication",
+                    "type": "date",
+                    "suggested": true,
+                    "example": "Summer 2017"
+                },
+                "journal": {
+                    "label": "Journal",
+                    "description": "Name of the source journal; may be wikilinked; displays in italics; alias of 'work'",
+                    "type": "content",
+                    "required": true
+                },
+                "publisher": {
+                    "label": "Publisher",
+                    "description": "Name of the publisher; displays after title",
+                    "type": "content"
+                },
+                "issue": {
+                    "label": "Issue",
+                    "description": "Issue identifier when the source is part of a series that is published periodically",
+                    "type": "line"
+                },
+                "doi": {
+                    "label": "DOI",
+                    "description": "Digital Object Identifier; begins with '10.'",
+                    "type": "string"
+                },
+                "doi-broken-date": {
+                    "label": "DOI broken date",
+                    "description": "The date that the DOI was determined to be broken",
+                    "type": "date"
+                },
+                "others": {
+                    "label": "Others",
+                    "description": "Used to record other contributions to the work, such as 'Illustrated by John Smith' or 'Translated by John Smith'",
+                    "type": "content"
+                },
+                "year": {
+                    "label": "Year of publication",
+                    "description": "Year of the source being referenced; recommended only when date parameter format is YYYY-MM-DD and a CITEREF disambiguator is needed",
+                    "type": "number"
+                },
+                "orig-year": {
+                    "label": "Original year",
+                    "description": "Original year of publication; provide specifics",
+                    "type": "number",
+                    "aliases": [
+                        "origyear"
+                    ]
+                },
+                "editor-last": {
+                    "label": "Editor last name",
+                    "description": "The surname of the editor; don't wikilink, use 'editor-link'; can suffix with a numeral to add additional editors; alias of 'editor1-last', 'editor'",
+                    "aliases": [
+                        "editor1-last"
+                    ],
+                    "type": "line"
+                },
+                "editor-first": {
+                    "label": "Editor first name",
+                    "description": "Given or first name, middle names, or initials of the editor; don't wikilink, use 'editor-link'; can suffix with a numeral to add additional editors; alias of 'editor1-first'",
+                    "aliases": [
+                        "editor1-first"
+                    ],
+                    "type": "line"
+                },
+                "editor-link": {
+                    "label": "Editor link",
+                    "description": "Title of existing Wikipedia article about the editor; can suffix with a numeral to add additional editors; alias of 'editor1-link'",
+                    "type": "wiki-page-name"
+                },
+                "series": {
+                    "label": "Series",
+                    "description": "Series identifier when the source is part of a series, such as a book series or a journal; alias of 'version'",
+                    "type": "content",
+                    "aliases": [
+                        "version"
+                    ]
+                },
+                "department": {
+                    "label": "Department",
+                    "description": "Department within the periodical",
+                    "type": "string"
+                },
+                "location": {
+                    "label": "Location of publication",
+                    "description": "Geographical place of publication; usually not wikilinked; omit when the publication name includes place; alias of 'place'",
+                    "type": "string"
+                },
+                "publication-place": {
+                    "label": "Place of publication",
+                    "description": "Publication place shows after title; if 'place' or 'location' are also given, they are displayed before the title prefixed with 'written at'",
+                    "type": "content"
+                },
+                "publication-date": {
+                    "label": "Publication date",
+                    "description": "Date of publication when different from the date the work was written; do not wikilink",
+                    "type": "date"
+                },
+                "edition": {
+                    "label": "Edition",
+                    "description": "When the publication has more than one edition; for example: '2nd', 'Revised' etc.; suffixed with ' ed.'",
+                    "type": "line"
+                },
+                "volume": {
+                    "label": "Volume",
+                    "description": "For one publication published in several volumes",
+                    "type": "line",
+                    "suggested": true
+                },
+                "page": {
+                    "label": "Page",
+                    "description": "Page in the source that supports the content; displays after 'p.'",
+                    "type": "line"
+                },
+                "pages": {
+                    "label": "Pages",
+                    "description": "Pages in the source that support the content (not an indication of the number of pages in the source; displays after 'pp.'",
+                    "type": "line",
+                    "suggested": true
+                },
+                "nopp": {
+                    "label": "No pp",
+                    "description": "Set to 'y' to suppress the 'p.' or 'pp.' display with 'page' or 'pages' when inappropriate (such as 'Front cover')",
+                    "type": "line"
+                },
+                "at": {
+                    "label": "At",
+                    "description": "May be used instead of 'page' or 'pages' where a page number is inappropriate or insufficient",
+                    "type": "line"
+                },
+                "language": {
+                    "label": "Language",
+                    "description": "The language in which the source is written, if not English; use the full language name; do not use icons or templates",
+                    "type": "content"
+                },
+                "script-title": {
+                    "label": "Script title",
+                    "description": "For titles in languages that do not use a Latin-based alphabet (Arabic, Chinese, Cyrillic, Greek, Hebrew, Japanese, Korean, Vietnamese, etc). Prefix with two-character ISO639-1 language code followed by a colon. For Japanese use: |script-title=ja:...",
+                    "type": "line"
+                },
+                "trans-title": {
+                    "label": "Translated title",
+                    "description": "An English language title, if the source cited is in a foreign language; 'language' is recommended",
+                    "type": "content",
+                    "aliases": [
+                        "trans_title"
+                    ]
+                },
+                "type": {
+                    "label": "Type",
+                    "description": "Additional information about the media type of the source; format in sentence case",
+                    "type": "content"
+                },
+                "format": {
+                    "label": "Format",
+                    "description": "Format of the work referred to by 'url' ('url' is required when using 'format'); examples: PDF, DOC, XLS; do not specify HTML",
+                    "type": "content"
+                },
+                "arxiv": {
+                    "label": "arXiv identifier",
+                    "description": "An identifier for arXive electronic preprints of scientific papers",
+                    "type": "line"
+                },
+                "asin": {
+                    "label": "ASIN",
+                    "description": "Amazon Standard Identification Number; 10 characters",
+                    "type": "line"
+                },
+                "asin-tld": {
+                    "label": "ASIN TLD",
+                    "description": "ASIN top-level domain for Amazon sites other than the US",
+                    "type": "line"
+                },
+                "bibcode": {
+                    "label": "Bibcode",
+                    "description": "Bibliographic Reference Code (REFCODE); 19 characters",
+                    "type": "line"
+                },
+                "biorxiv": {
+                    "label": "biorXiv",
+                    "description": "biorXiv identifier; 6 digits",
+                    "type": "line"
+                },
+                "citeseerx": {
+                    "label": "CiteSeerX",
+                    "description": "CiteSeerX identifier; found after the 'doi=' query parameter",
+                    "type": "line"
+                },
+                "isbn": {
+                    "label": "ISBN",
+                    "description": "International Standard Book Number; use the 13-digit ISBN where possible",
+                    "type": "line"
+                },
+                "issn": {
+                    "label": "ISSN",
+                    "description": "International Standard Serial Number (print); 8 characters; usually split into two groups of four using a hyphen",
+                    "type": "line"
+                },
+                "eissn": {
+                    "label": "eISSN",
+                    "description": "International Standard Serial Number (online); 8 characters; usually split into two groups of four using a hyphen",
+                    "type": "line"
+                },
+                "jfm": {
+                    "label": "jfm code",
+                    "description": "Jahrbuch über die Fortschritte der Mathematik classification code",
+                    "type": "line"
+                },
+                "jstor": {
+                    "label": "JSTOR",
+                    "description": "JSTOR identifier",
+                    "type": "line"
+                },
+                "lccn": {
+                    "label": "LCCN",
+                    "description": "Library of Congress Control Number",
+                    "type": "line"
+                },
+                "mr": {
+                    "label": "MR",
+                    "description": "Mathematical Reviews identifier",
+                    "type": "line"
+                },
+                "oclc": {
+                    "label": "OCLC",
+                    "description": "Online Computer Library Center number",
+                    "type": "number"
+                },
+                "ol": {
+                    "label": "OL",
+                    "description": "Open Library identifier",
+                    "type": "line"
+                },
+                "osti": {
+                    "label": "OSTI",
+                    "description": "Office of Scientific and Technical Information identifier",
+                    "type": "line"
+                },
+                "pmc": {
+                    "label": "PMC",
+                    "description": "PubMed Center article number",
+                    "type": "number"
+                },
+                "pmid": {
+                    "label": "PMID",
+                    "description": "PubMed Unique Identifier",
+                    "type": "line"
+                },
+                "rfc": {
+                    "label": "RFC",
+                    "description": "Request for Comments number",
+                    "type": "number"
+                },
+                "ssrn": {
+                    "label": "SSRN",
+                    "description": "Social Science Research Network",
+                    "type": "line"
+                },
+                "zbl": {
+                    "label": "Zbl",
+                    "description": "Zentralblatt MATH journal identifier",
+                    "type": "line"
+                },
+                "id": {
+                    "label": "id",
+                    "description": "A unique identifier used where none of the specialized ones are applicable",
+                    "type": "line"
+                },
+                "quote": {
+                    "label": "Quote",
+                    "description": "Relevant text quoted from the source; displays last, enclosed in quotes; needs to include terminating punctuation",
+                    "type": "content"
+                },
+                "ref": {
+                    "label": "Ref",
+                    "description": "An anchor identifier; can be made the target of wikilinks to full references; special value 'harv' generates an anchor suitable for the harv and sfn templates",
+                    "type": "line"
+                },
+                "separator": {
+                    "label": "Separator",
+                    "description": "The punctuation used to separate lists of authors, editors, etc.; a space must be encoded as &#32; to suppress use reserved keyword 'none'",
+                    "type": "line",
+                    "default": "."
+                },
+                "postscript": {
+                    "label": "Postscript",
+                    "description": "The closing punctuation for the citation; ignored if 'quote' is defined; to suppress use reserved keyword 'none'",
+                    "type": "line",
+                    "default": "."
+                },
+                "last3": {
+                    "label": "Last name 3",
+                    "description": "The surname of the third author; don't wikilink, use 'authorlink3'.",
+                    "aliases": [
+                        "author3"
+                    ],
+                    "type": "line"
+                },
+                "first3": {
+                    "label": "First name 3",
+                    "description": "Given or first name, middle names, or initials of the third author; don't wikilink.",
+                    "type": "line"
+                },
+                "last4": {
+                    "label": "Last name 4",
+                    "description": "The surname of the forth author; don't wikilink, use 'authorlink4'.",
+                    "aliases": [
+                        "author4"
+                    ],
+                    "type": "line"
+                },
+                "first4": {
+                    "label": "First name 4",
+                    "description": "Given or first name, middle names, or initials of the forth author; don't wikilink.",
+                    "type": "line"
+                },
+                "last5": {
+                    "label": "Last name 5",
+                    "description": "The surname of the fifth author; don't wikilink, use 'authorlink5'.",
+                    "aliases": [
+                        "author5"
+                    ],
+                    "type": "line"
+                },
+                "first5": {
+                    "label": "First name 5",
+                    "description": "Given or first name, middle names, or initials of the fifth author; don't wikilink.",
+                    "type": "line"
+                },
+                "last6": {
+                    "label": "Last name 6",
+                    "description": "The surname of the sixth author; don't wikilink, use 'authorlink6'.",
+                    "aliases": [
+                        "author6"
+                    ],
+                    "type": "line"
+                },
+                "first6": {
+                    "label": "First name 6",
+                    "description": "Given or first name, middle names, or initials of the sixth author; don't wikilink.",
+                    "type": "line"
+                },
+                "last7": {
+                    "label": "Last name 7",
+                    "description": "The surname of the seventh author; don't wikilink, use 'authorlink7'.",
+                    "aliases": [
+                        "author7"
+                    ],
+                    "type": "line"
+                },
+                "first7": {
+                    "label": "First name 7",
+                    "description": "Given or first name, middle names, or initials of the seventh author; don't wikilink.",
+                    "type": "line"
+                },
+                "last8": {
+                    "label": "Last name 8",
+                    "description": "The surname of the eighth author; don't wikilink, use 'authorlink8'.",
+                    "aliases": [
+                        "author8"
+                    ],
+                    "type": "line"
+                },
+                "first8": {
+                    "label": "First name 8",
+                    "description": "Given or first name, middle names, or initials of the eighth author; don't wikilink.",
+                    "type": "line"
+                },
+                "last9": {
+                    "label": "Last name 9",
+                    "description": "The surname of the ninth author; don't wikilink, use 'authorlink9'. If nine authors are defined, then only eight will show and 'et al.' will show in place of the last author.",
+                    "aliases": [
+                        "author9"
+                    ],
+                    "type": "line"
+                },
+                "first9": {
+                    "label": "First name 9",
+                    "description": "Given or first name, middle names, or initials of the ninth author; don't wikilink.",
+                    "type": "line"
+                },
+                "editor2-last": {
+                    "label": "Editor last name 2",
+                    "description": "The surname of the second editor; don't wikilink, use 'editor2-link'.",
+                    "aliases": [
+                        "editor2"
+                    ],
+                    "type": "line"
+                },
+                "editor2-first": {
+                    "label": "Editor first name 2",
+                    "description": "Given or first name, middle names, or initials of the second editor; don't wikilink.",
+                    "type": "line"
+                },
+                "editor3-last": {
+                    "label": "Editor last name 3",
+                    "description": "The surname of the third editor; don't wikilink, use 'editor3-link'.",
+                    "aliases": [
+                        "editor3"
+                    ],
+                    "type": "line"
+                },
+                "editor3-first": {
+                    "label": "Editor first name 3",
+                    "description": "Given or first name, middle names, or initials of the third editor; don't wikilink.",
+                    "type": "line"
+                },
+                "editor4-last": {
+                    "label": "Editor last name 4",
+                    "description": "The surname of the fourth editor; don't wikilink, use 'editor4-link'.",
+                    "aliases": [
+                        "editor4"
+                    ],
+                    "type": "line"
+                },
+                "editor4-first": {
+                    "label": "Editor first name 4",
+                    "description": "Given or first name, middle names, or initials of the fourth editor; don't wikilink.",
+                    "type": "line"
+                },
+                "editor5-last": {
+                    "label": "Editor last name 5",
+                    "description": "The surname of the fifth editor; don't wikilink, use 'editor5-link'.",
+                    "aliases": [
+                        "editor5"
+                    ],
+                    "type": "line"
+                },
+                "editor5-first": {
+                    "label": "Editor first name 5",
+                    "description": "Given or first name, middle names, or initials of the fifth editor; don't wikilink.",
+                    "type": "line"
+                },
+                "editor6-last": {
+                    "label": "Editor last name 6",
+                    "description": "The surname of the sixth editor; don't wikilink, use 'editor6-link'.",
+                    "aliases": [
+                        "editor6"
+                    ],
+                    "type": "line"
+                },
+                "editor6-first": {
+                    "label": "Editor first name 6",
+                    "description": "Given or first name, middle names, or initials of the sixth editor; don't wikilink.",
+                    "type": "line"
+                },
+                "editor7-last": {
+                    "label": "Editor last name 7",
+                    "description": "The surname of the seventh editor; don't wikilink, use 'editor7-link'.",
+                    "aliases": [
+                        "editor7"
+                    ],
+                    "type": "line"
+                },
+                "editor7-first": {
+                    "label": "Editor first name 7",
+                    "description": "Given or first name, middle names, or initials of the seventh editor; don't wikilink.",
+                    "type": "line"
+                },
+                "editor8-last": {
+                    "label": "Editor last name 8",
+                    "description": "The surname of the eighth editor; don't wikilink, use 'editor8-link'.",
+                    "aliases": [
+                        "editor8"
+                    ],
+                    "type": "line"
+                },
+                "editor8-first": {
+                    "label": "Editor first name 8",
+                    "description": "Given or first name, middle names, or initials of the eighth editor; don't wikilink.",
+                    "type": "line"
+                },
+                "editor9-last": {
+                    "label": "Editor last name 9",
+                    "description": "The surname of the ninth editor; don't wikilink, use 'editor9-link'.",
+                    "aliases": [
+                        "editor9"
+                    ],
+                    "type": "line"
+                },
+                "editor9-first": {
+                    "label": "Editor first name 9",
+                    "description": "Given or first name, middle names, or initials of the ninth editor; don't wikilink.",
+                    "type": "line"
+                },
+                "author-mask": {
+                    "label": "Author mask",
+                    "description": "Replaces the name of the first author with em dashes or text; set to a numeric value 'n' to set the dash 'n' em spaces wide; set to a text value to display the text without a trailing author separator; for example, 'with' instead",
+                    "type": "string"
+                },
+                "author-name-separator": {
+                    "label": "Author name separator",
+                    "description": "Changes the separator between last and first names; defaults to a comma and space; a space must be encoded as &#32;",
+                    "type": "line",
+                    "default": ", "
+                },
+                "author-separator": {
+                    "label": "Author separator",
+                    "description": "Changes the separator between authors; defaults to a semicolon and space; a space must be encoded as &#32;",
+                    "type": "line",
+                    "default": "; "
+                },
+                "subscription": {
+                    "label": "Subscription",
+                    "description": "If the reference requires a subscription, type 'yes' to notify the reader.",
+                    "type": "string"
+                },
+                "author-link": {
+                    "label": "Author link",
+                    "description": "Title of existing Wikipedia article about the author; can suffix with a numeral to add additional authors",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "authorlink"
+                    ]
+                },
+                "author-link2": {
+                    "label": "Author link 2",
+                    "description": "Title of existing Wikipedia article about the second author.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author2-link",
+                        "authorlink2"
+                    ]
+                },
+                "access-date": {
+                    "label": "URL access date",
+                    "description": "The full date when the original URL was accessed; do not wikilink",
+                    "type": "date",
+                    "aliases": [
+                        "accessdate"
+                    ]
+                },
+                "archive-url": {
+                    "label": "Archive URL",
+                    "description": "The URL of an archived copy of a web page, if or in case the URL becomes unavailable; requires 'archivedate'",
+                    "type": "line",
+                    "aliases": [
+                        "archiveurl"
+                    ]
+                },
+                "archive-date": {
+                    "label": "Archive date",
+                    "description": "Date when the original URL was archived; do not wikilink",
+                    "type": "date",
+                    "aliases": [
+                        "archivedate"
+                    ]
+                },
+                "dead-url": {
+                    "label": "Dead URL",
+                    "description": "If set to 'no', the title display is adjusted; useful for when the URL is archived preemptively but still live",
+                    "type": "line",
+                    "aliases": [
+                        "deadurl"
+                    ]
+                },
+                "lay-url": {
+                    "label": "Lay summary URL",
+                    "description": "URL link to a non-technical summary or review of the source; alias of 'laysummary'",
+                    "type": "line",
+                    "aliases": [
+                        "layurl",
+                        "laysummary"
+                    ]
+                },
+                "lay-source": {
+                    "label": "Lay source",
+                    "description": "Name of the source of the laysummary; displays in italics, preceded by an en dash",
+                    "type": "string",
+                    "aliases": [
+                        "laysource"
+                    ]
+                },
+                "lay-date": {
+                    "label": "Lay date",
+                    "description": "Date of the summary; displays in parentheses",
+                    "type": "date",
+                    "aliases": [
+                        "laydate"
+                    ]
+                },
+                "author-link3": {
+                    "label": "Author link 3",
+                    "description": "Title of existing Wikipedia article about the third author.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author3-link",
+                        "authorlink3"
+                    ]
+                },
+                "author-link4": {
+                    "label": "Author link 4",
+                    "description": "Title of existing Wikipedia article about the forth author.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author4-link",
+                        "authorlink4"
+                    ]
+                },
+                "author-link5": {
+                    "label": "Author link 5",
+                    "description": "Title of existing Wikipedia article about the fifth author.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author5-link",
+                        "authorlink5"
+                    ]
+                },
+                "author-link6": {
+                    "label": "Author link 6",
+                    "description": "Title of existing Wikipedia article about the sixth author.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author6-link",
+                        "authorlink6"
+                    ]
+                },
+                "author-link7": {
+                    "label": "Author link 7",
+                    "description": "Title of existing Wikipedia article about the seventh author.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author7-link",
+                        "authorlink7"
+                    ]
+                },
+                "author-link8": {
+                    "label": "Author link 8",
+                    "description": "Title of existing Wikipedia article about the eighth author.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author8-link",
+                        "authorlink8"
+                    ]
+                },
+                "author-link9": {
+                    "label": "Author link 9",
+                    "description": "Title of existing Wikipedia article about the ninth author.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "author9-link",
+                        "authorlink9"
+                    ]
+                },
+                "editor2-link": {
+                    "label": "Editor link 2",
+                    "description": "Title of existing Wikipedia article about the second editor.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor2link",
+                        "editorlink2"
+                    ]
+                },
+                "editor3-link": {
+                    "label": "Editor link 3",
+                    "description": "Title of existing Wikipedia article about the third editor.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor3link",
+                        "editorlink3"
+                    ]
+                },
+                "editor4-link": {
+                    "label": "Editor link 4",
+                    "description": "Title of existing Wikipedia article about the fourth editor.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor4link",
+                        "editorlink4"
+                    ]
+                },
+                "editor5-link": {
+                    "label": "Editor link 5",
+                    "description": "Title of existing Wikipedia article about the fifth editor.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor5link",
+                        "editorlink5"
+                    ]
+                },
+                "editor6-link": {
+                    "label": "Editor link 6",
+                    "description": "Title of existing Wikipedia article about the sixth editor.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor6link",
+                        "editorlink6"
+                    ]
+                },
+                "editor7-link": {
+                    "label": "Editor link 7",
+                    "description": "Title of existing Wikipedia article about the seventh editor.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor7link",
+                        "editorlink7"
+                    ]
+                },
+                "editor8-link": {
+                    "label": "Editor link 8",
+                    "description": "Title of existing Wikipedia article about the eighth editor.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor8link",
+                        "editorlink8"
+                    ]
+                },
+                "editor9-link": {
+                    "label": "Editor link 9",
+                    "description": "Title of existing Wikipedia article about the ninth editor.",
+                    "type": "wiki-page-name",
+                    "aliases": [
+                        "editor9link",
+                        "editorlink9"
+                    ]
+                },
+                "displayauthors": {
+                    "label": "Display authors",
+                    "description": "number of authors to display before 'et al.' is used;",
+                    "type": "number",
+                    "aliases": [
+                        "display-authors"
+                    ]
+                },
+                "last-author-amp": {
+                    "label": "Last author ampersand",
+                    "description": "When set to any value, changes the separator between the last two names of the author list to 'space ampersand space'",
+                    "type": "boolean",
+                    "aliases": [
+                        "lastauthoramp"
+                    ]
+                },
+                "registration": {
+                    "label": "Registration",
+                    "description": "If the reference requires registration, type 'yes' to notify the reader.",
+                    "type": "string"
+                },
+                "chapter": {
+                    "label": "Chapter",
+                    "description": "The chapter heading of the source",
+                    "type": "string"
+                },
+                "via": {
+                    "label": "Content deliverer (i.e. Database)",
+                    "description": "Provider of the article (not the publisher), usually an aggregator of journal articles or a repository",
+                    "example": "JSTOR, Project MUSE, Elsevier Science Direct",
+                    "type": "string",
+                    "suggested": true
+                },
+                "url-access": {
+                    "label": "URL access level",
+                    "description": "Classification of the access restrictions on the URL ('registration', 'subscription' or 'limited')",
+                    "type": "string"
+                },
+                "bibcode-access": {
+                    "label": "Bibcode access level",
+                    "description": "If the full text is available from ADS via this Bibcode, type 'free'.",
+                    "type": "string"
+                },
+                "doi-access": {
+                    "label": "DOI access level",
+                    "description": "If the full text is free to read via the DOI, type 'free'.",
+                    "type": "string"
+                },
+                "hdl-access": {
+                    "label": "HDL access level",
+                    "description": "If the full text is free to read via the HDL, type 'free'.",
+                    "type": "string"
+                },
+                "jstor-access": {
+                    "label": "Jstor access level",
+                    "description": "If the full text is free to read on Jstor, type 'free'.",
+                    "type": "string"
+                },
+                "ol-access": {
+                    "label": "OpenLibrary access level",
+                    "description": "If the full text is free to read on OpenLibrary, type 'free'.",
+                    "type": "string"
+                },
+                "osti-access": {
+                    "label": "HDL access level",
+                    "description": "If the full text is free to read on OSTI, type 'free'.",
+                    "type": "string"
+                },
+                "vauthors": {
+                    "label": "Vancouver style authors",
+                    "description": "comma-separated list of author names in Vancouver style; enclose corporate or institutional author names in doubled parentheses",
+                    "type": "line"
+                }
+            },
+            "paramOrder": [
+                "last",
+                "first",
+                "author-link",
+                "last2",
+                "first2",
+                "author-link2",
+                "last3",
+                "first3",
+                "author-link3",
+                "last4",
+                "first4",
+                "author-link4",
+                "last5",
+                "first5",
+                "author-link5",
+                "last6",
+                "first6",
+                "author-link6",
+                "last7",
+                "first7",
+                "author-link7",
+                "last8",
+                "first8",
+                "author-link8",
+                "last9",
+                "first9",
+                "author-link9",
+                "displayauthors",
+                "author-mask",
+                "last-author-amp",
+                "author-separator",
+                "author-name-separator",
+                "vauthors",
+                "date",
+                "year",
+                "orig-year",
+                "editor-last",
+                "editor-first",
+                "editor-link",
+                "editor2-last",
+                "editor2-first",
+                "editor2-link",
+                "editor3-last",
+                "editor3-first",
+                "editor3-link",
+                "editor4-last",
+                "editor4-first",
+                "editor4-link",
+                "editor5-last",
+                "editor5-first",
+                "editor5-link",
+                "editor6-last",
+                "editor6-first",
+                "editor6-link",
+                "editor7-last",
+                "editor7-first",
+                "editor7-link",
+                "editor8-last",
+                "editor8-first",
+                "editor8-link",
+                "editor9-last",
+                "editor9-first",
+                "editor9-link",
+                "others",
+                "title",
+                "script-title",
+                "trans-title",
+                "url",
+                "dead-url",
+                "format",
+                "department",
+                "journal",
+                "chapter",
+                "type",
+                "series",
+                "language",
+                "edition",
+                "location",
+                "publisher",
+                "publication-place",
+                "publication-date",
+                "volume",
+                "issue",
+                "page",
+                "pages",
+                "at",
+                "nopp",
+                "arxiv",
+                "asin",
+                "asin-tld",
+                "bibcode",
+                "biorxiv",
+                "citeseerx",
+                "doi",
+                "doi-broken-date",
+                "isbn",
+                "issn",
+                "eissn",
+                "jfm",
+                "jstor",
+                "lccn",
+                "mr",
+                "oclc",
+                "ol",
+                "osti",
+                "pmc",
+                "pmid",
+                "rfc",
+                "ssrn",
+                "zbl",
+                "id",
+                "url-access",
+                "archive-url",
+                "archive-date",
+                "access-date",
+                "registration",
+                "subscription",
+                "lay-url",
+                "lay-source",
+                "lay-date",
+                "quote",
+                "postscript",
+                "ref",
+                "separator",
+                "via",
+                "bibcode-access",
+                "doi-access",
+                "hdl-access",
+                "jstor-access",
+                "ol-access",
+                "osti-access"
+            ],
+            "maps": {},
+            "format": "inline"
+        }
+    },
+    "templatedata/bn": {
+        "টেমপ্লেট:সাময়িকী উদ্ধৃতি": {
+            "description": "এই টেমপ্লেটটি একটি প্রদত্ত গ্রন্থের তথ্য ব্যবহার করে (উদাঃ লেখক, শিরোনাম) এবং বিভিন্ন বিন্যাসন বিকল্পগুলি ব্যবহার করে নিবন্ধের উদ্ধৃতিকে একটি বইয়ের উদ্ধৃতির বিন্যাসে সংকলন করে।",
+            "params": {
+                "nopp": {
+                    "label": "কোন পাতা নয়",
+                    "description": "অনুপযুক্ত ক্ষেত্রে (যেমন 'প্রধান পাতা') 'পাতা' বা 'পাতাসমূহ' দেখানো বাতিল করতে 'হ্যাঁ' দিন",
+                    "type": "string"
+                },
+                "at": {
+                    "label": "At",
+                    "description": "'পাতা' বা 'পাতাসমূহ'-এর পরিবর্তে ব্যবহার করা যেতে পারে যেখানে একটি পৃষ্ঠা নম্বর অনুপযুক্ত বা অপর্যাপ্ত",
+                    "type": "string"
+                },
+                "arxiv": {
+                    "label": "arXiv শনাক্তকারী",
+                    "description": "বৈজ্ঞানিক কাগজপত্রের ArXiv ইলেকট্রনিক প্রাকমুদ্রণের একটি শনাক্তকারী",
+                    "type": "string"
+                },
+                "asin": {
+                    "label": "ASIN",
+                    "description": "আমাজন স্ট্যান্ডার্ড আইডেন্টিফিকেশন নম্বর; ১০টি অক্ষর",
+                    "type": "string"
+                },
+                "asin-tld": {
+                    "label": "ASIN TLD",
+                    "description": "মার্কিন যুক্তরাষ্ট্র ছাড়া অন্য অ্যামাজন সাইটগুলির জন্য ASIN শীর্ষ-স্তরের ডোমেন",
+                    "type": "string"
+                },
+                "doi": {
+                    "label": "DOI",
+                    "description": "ডিজিটাল অবজেক্ট আইডেন্টিফায়ার; '10.' দিয়ে শুরু হবে",
+                    "type": "string"
+                },
+                "issn": {
+                    "label": "ISSN",
+                    "description": "ইন্টারন্যাশনাল স্ট্যান্ডার্ড সিরিয়াল নাম্বার; ৮টি সংখ্যা; একটি হাইফেন ব্যবহার করে চারটি দলের দুটি গ্রুপে ভাগ করা যেতে পারে",
+                    "type": "string",
+                    "aliases": [
+                        "ISSN"
+                    ]
+                },
+                "jfm": {
+                    "label": "jfm কোড",
+                    "description": "Jahrbuch über die Fortschritte der Mathematik classification কোড",
+                    "type": "string"
+                },
+                "jstor": {
+                    "label": "JSTOR",
+                    "description": "JSTOR শনাক্তকারী",
+                    "type": "string"
+                },
+                "lccn": {
+                    "label": "LCCN",
+                    "description": "লাইব্রেরি অফ কংগ্রেস কন্ট্রোল নম্বর",
+                    "type": "string"
+                },
+                "mr": {
+                    "label": "MR",
+                    "description": "ম্যাথমেটিকাল রিভিউসের শনাক্তকারী",
+                    "type": "string"
+                },
+                "oclc": {
+                    "label": "OCLC",
+                    "description": "অনলাইন কম্পিউটার লাইব্রেরির সেন্টার নম্বর",
+                    "type": "string"
+                },
+                "ol": {
+                    "label": "OL",
+                    "description": "ওপেন লাইব্রেরি শনাক্তকারী",
+                    "type": "string"
+                },
+                "osti": {
+                    "label": "OSTI",
+                    "description": "অফিস অফ সাইন্টিফিক এন্ড টেকনিকাল ইনফরমেশন শনাক্তকারী",
+                    "type": "string"
+                },
+                "pmc": {
+                    "label": "PMC",
+                    "description": "PubMed কেন্দ্রীয় নিবন্ধের নম্বর",
+                    "type": "string"
+                },
+                "pmid": {
+                    "label": "PMID",
+                    "description": "পাবমেডের স্বতন্ত্র শনাক্তকারী",
+                    "type": "string"
+                },
+                "rfc": {
+                    "label": "RFC",
+                    "description": "রিকোয়েস্ট ফর কমেন্টস নম্বর",
+                    "type": "string"
+                },
+                "ssrn": {
+                    "label": "SSRN",
+                    "description": "সোশ্যাল সাইন্স রিসার্চ নেটওয়ার্ক বা সামাজিক বিজ্ঞান গবেষণা নেটওয়ার্ক",
+                    "type": "string"
+                },
+                "zbl": {
+                    "label": "Zbl",
+                    "description": "জেন্ট্রাল্লাব্যাট গণিত সাময়িকী সনাক্তকারী",
+                    "type": "string"
+                },
+                "id": {
+                    "label": "id",
+                    "description": "একটি অনন্য শনাক্তকারী ব্যবহৃত হয় যেখানে বিশেষায়িত কোন কিছু প্রযোজ্য নয়",
+                    "type": "string"
+                },
+                "author-separator": {
+                    "label": "লেখক বিভাজক",
+                    "description": "লেখকদের মধ্যে বিভাজক পরিবর্তন করে; পূর্বনির্ধারিত মান হল অর্ধকোলন ও শূন্যস্থান; একটি শূন্যস্থান &#32; হিসেবে এনকোড করা আবশ্যক",
+                    "type": "string",
+                    "default": "; "
+                },
+                "lay-url": {
+                    "label": "Lay URL",
+                    "description": "উৎসের একটি অ-প্রযুক্তিগত বা পর্যালোচনায় ইউআরএলের সংযোগ'",
+                    "type": "string",
+                    "aliases": [
+                        "layurl"
+                    ]
+                },
+                "lay-source": {
+                    "label": "Lay source",
+                    "description": "lay সারাংশের উৎসের নাম; বাঁকা লেখায় প্রদর্শিত হবে, তাঁর পূর্বে একটি এন ড্যাশ থাকবে",
+                    "type": "string",
+                    "aliases": [
+                        "laysource"
+                    ]
+                },
+                "lay-date": {
+                    "label": "Lay date",
+                    "description": "সারাংশের তারিখ; বন্ধনী মধ্যে প্রদর্শন",
+                    "type": "string",
+                    "aliases": [
+                        "laydate"
+                    ]
+                },
+                "last-author-amp": {
+                    "label": "শেষ লেখক এম্পারসেন্ড",
+                    "description": "যখন কোন মান নির্ধারন করা হয়, লেখকদের তালিকার শেষ দুই নামের জন্য বিভাজক পরিবর্তন হয়ে 'space ampersand space' দেখাবে",
+                    "type": "string",
+                    "aliases": [
+                        "lastauthoramp"
+                    ]
+                },
+                "via": {
+                    "label": "via",
+                    "description": "ডিজিটাল সংস্করণ (সাধারণত একটি ডেটাবেস প্রদানকারী) সরবরাহকারী রিসোর্স সংগ্রাহককে চিহ্নিত করুন, যখন এটি প্রকাশক থেকে পৃথক হয় (উদা: উইকিপিডিয়া গ্রন্থাগারের জন্য)",
+                    "example": "EBSCOHost , Proquest, Newspapers.com"
+                },
+                "ইউআরএল": {
+                    "aliases": [
+                        "url",
+                        "URL"
+                    ],
+                    "label": "ইউআরএল",
+                    "description": "অনলাইন অবস্থানের ইউআরএল যেখানে প্রকাশনার পাঠ পাওয়া যেতে পারে। \"http://...\" ধরনের স্কিম বা এমনকি প্রোটোকল আপেক্ষিক স্কিম \"//...\" প্রয়োজন",
+                    "example": "http://www.uttaradhikar.banglaacademy.org.bd/...",
+                    "type": "string",
+                    "suggested": true
+                },
+                "শিরোনাম": {
+                    "label": "শিরোনাম",
+                    "description": "বইয়ের শিরোনাম",
+                    "type": "string",
+                    "required": true,
+                    "aliases": [
+                        "title"
+                    ]
+                },
+                "তারিখ": {
+                    "label": "উৎসের তারিখ",
+                    "description": "উৎসের পূর্ণ তারিখ; উইকিসংযোগ প্রদান করবেন না",
+                    "type": "string",
+                    "suggested": true,
+                    "aliases": [
+                        "date"
+                    ]
+                },
+                "শেষাংশ": {
+                    "aliases": [
+                        "শেষাংশ১",
+                        "লেখক",
+                        "লেখক১",
+                        "last"
+                    ],
+                    "label": "নামের শেষাংশ",
+                    "description": "লেখকের নামের শেষাংশ; উইকিসংযোগ প্রদান করবেন না, 'লেখকসংযোগ' ব্যবহার করুন.",
+                    "suggested": true
+                },
+                "প্রথমাংশ": {
+                    "aliases": [
+                        "প্রথমাংশ১",
+                        "first"
+                    ],
+                    "label": "নামের প্রথমাংশ",
+                    "description": "লেখকের প্রদত্ত নাম বা নামের প্রথমাংশ, মধ্যাংশ, বা শুরুর অংশ; উইকিসংযোগ প্রদান করবেন না, 'লেখকসংযোগ' ব্যবহার করুন.",
+                    "suggested": true
+                },
+                "সংগ্রহের-তারিখ": {
+                    "aliases": [
+                        "সংগ্রহেরতারিখ",
+                        "access-date",
+                        "accessdate"
+                    ],
+                    "label": "ইউআরএল সংগ্রহ করার তারিখ",
+                    "description": "মূল ইউআরএলে প্রবেশের পূর্ণ তারিখ; উইকিসংযোগ প্রদান করবেন না",
+                    "type": "string",
+                    "suggested": true
+                },
+                "আর্কাইভের-ইউআরএল": {
+                    "aliases": [
+                        "আর্কাইভেরইউআরএল",
+                        "archive-url",
+                        "archiveurl"
+                    ],
+                    "label": "আর্কাইভের ইউআরএল",
+                    "description": "ওয়েব পাতার আর্কাইভ অনুলিপির ইউআরএল, যদি বা কোন কারণে ইউআরএল না পাওয়া গেলে; 'আর্কাইভেরতারিখ' প্রয়োজন",
+                    "type": "string"
+                },
+                "আর্কাইভের-তারিখ": {
+                    "aliases": [
+                        "আর্কাইভেরতারিখ",
+                        "archive-date",
+                        "archivedate"
+                    ],
+                    "label": "আর্কাইভের তারিখ",
+                    "description": "মূল ইউআরএল আর্কাইভ করার তারিখ; উইকিসংযোগ প্রদান করবেন না",
+                    "type": "string"
+                },
+                "অকার্যকর-ইউআরএল": {
+                    "aliases": [
+                        "অকার্যকর-ইউআরএল",
+                        "dead-url",
+                        "deadurl"
+                    ],
+                    "label": "অকার্যকর ইউআরএল",
+                    "description": "যদি 'না' নির্ধারন করা হয়, শিরোনামের প্রদর্শন সমন্বিত করা হয়; সহায়ক যখন URLটি স্বতপ্রণোদিতভাবে আর্কাইভ করা হয় কিন্তু তা এখনো অকার্যকর বা মৃত নয়",
+                    "type": "string"
+                },
+                "প্রকাশক": {
+                    "aliases": [
+                        "পরিবেশক",
+                        "প্রতিষ্ঠান",
+                        "publisher"
+                    ],
+                    "label": "প্রকাশক",
+                    "description": "সংবাদপত্র, ম্যাগাজিন বা সাময়িকী প্রকাশ করে এমন মূল প্রতিষ্ঠান বা কোম্পানির নাম; প্রকাশনার নামের পর প্রদর্শিত হয়",
+                    "example": "সংবাদ সংস্থা",
+                    "type": "string"
+                },
+                "শেষাংশ২": {
+                    "aliases": [
+                        "লেখক২",
+                        "last2"
+                    ],
+                    "label": "নামের শেষাংশ ২",
+                    "description": "দ্বিতীয় লেখকের নামের শেষাংশ; উইকিসংযোগ প্রদান করবেন না, 'লেখকসংযোগ২' ব্যবহার করুন",
+                    "type": "string"
+                },
+                "প্রথমাংশ২": {
+                    "label": "নামের প্রথমাংশ ২",
+                    "description": "দ্বিতীয় লেখকের প্রদত্ত নাম বা নামের প্রথমাংশ, মধ্যাংশ, বা আদ্যক্ষর; উইকিসংযোগ প্রদান করবেন না",
+                    "aliases": [
+                        "first2"
+                    ],
+                    "type": "string"
+                },
+                "অন্যান্য": {
+                    "label": "অন্যান্য",
+                    "description": "কাজের অন্যান্য অবদান নথিভুক্ত করার জন্য ব্যবহৃত হয়, যেমন 'জন স্মিথ কর্তৃক অঙ্কিত' বা 'জন স্মিথ কর্তৃক অনূদিত'",
+                    "type": "string",
+                    "aliases": [
+                        "others"
+                    ]
+                },
+                "বছর": {
+                    "label": "প্রকাশনার বছর",
+                    "description": "তথ্যসূত্রের উৎসের বছর; যদি মাস ও দিন পাওয়া যায় তবে 'তারিখ' ব্যবহার করুন",
+                    "type": "string",
+                    "aliases": [
+                        "year"
+                    ]
+                },
+                "আইএসবিএন": {
+                    "aliases": [
+                        "ISBN",
+                        "isbn"
+                    ],
+                    "label": "আইএসবিএন",
+                    "description": "আন্তর্জাতিক মান পুস্তক সংখ্যা; সম্ভব হলে ১৩ সংখ্যার আইএসবিএন ব্যবহার করুন",
+                    "type": "string"
+                },
+                "ভাষা": {
+                    "label": "ভাষা",
+                    "description": "উৎসের লিখিত ভাষা যদি বাংলা না হয়, সম্পূর্ণ ভাষার নাম ব্যবহার করুন; আইকন বা টেমপ্লেট ব্যবহার করবেন না",
+                    "type": "string",
+                    "aliases": [
+                        "language"
+                    ]
+                },
+                "অনূদিত-শিরোনাম": {
+                    "label": "অনূদিত শিরোনাম",
+                    "description": "একটি বাংলা শিরোনাম, উত্স যদি একটি বিদেশী ভাষা উদ্ধৃত করে ",
+                    "type": "string"
+                },
+                "শেষাংশ৩": {
+                    "aliases": [
+                        "লেখক৩"
+                    ],
+                    "label": "নামের শেষাংশ ৩",
+                    "description": "তৃতীয় লেখকের নামের শেষাংশ বা বংশনাম; উইকিসংযোগ ব্যবহার করবেন না, 'লেখকসংযোগ৩' ব্যবহার করুন।"
+                },
+                "শেষাংশ৪": {
+                    "aliases": [
+                        "লেখক৪"
+                    ],
+                    "label": "নামের শেষাংশ ৪",
+                    "description": "চতুর্থ লেখকের নামের শেষাংশ বা বংশনাম; উইকিসংযোগ ব্যবহার করবেন না, 'লেখকসংযোগ৪' ব্যবহার করুন।"
+                },
+                "শেষাংশ৫": {
+                    "aliases": [
+                        "লেখক৫"
+                    ],
+                    "label": "নামের শেষাংশ ৫",
+                    "description": "পঞ্চম লেখকের নামের শেষাংশ বা বংশনাম; উইকিসংযোগ ব্যবহার করবেন না, 'লেখকসংযোগ৫' ব্যবহার করুন।"
+                },
+                "শেষাংশ৬": {
+                    "aliases": [
+                        "লেখক৬"
+                    ],
+                    "label": "নামের শেষাংশ ৬",
+                    "description": "ষষ্ঠ লেখকের নামের শেষাংশ বা বংশনাম; উইকিসংযোগ ব্যবহার করবেন না, 'লেখকসংযোগ৬' ব্যবহার করুন।"
+                },
+                "শেষাংশ৭": {
+                    "aliases": [
+                        "লেখক৭"
+                    ],
+                    "label": "নামের শেষাংশ ৭",
+                    "description": "সপ্তম লেখকের নামের শেষাংশ বা বংশনাম; উইকিসংযোগ ব্যবহার করবেন না, 'লেখকসংযোগ৭' ব্যবহার করুন।"
+                },
+                "শেষাংশ৮": {
+                    "aliases": [
+                        "লেখক৮"
+                    ],
+                    "label": "নামের শেষাংশ ৮",
+                    "description": "অষ্টম লেখকের নামের শেষাংশ বা বংশনাম; উইকিসংযোগ ব্যবহার করবেন না, 'লেখকসংযোগ৮' ব্যবহার করুন।"
+                },
+                "শেষাংশ৯": {
+                    "aliases": [
+                        "লেখক৯"
+                    ],
+                    "label": "নামের শেষাংশ ৯",
+                    "description": "নবম লেখকের নামের শেষাংশ বা বংশনাম; উইকিসংযোগ ব্যবহার করবেন না, 'লেখকসংযোগ৯' ব্যবহার করুন। যদি নয় জন লেখক দেয়া হয়, তাহলে শুধু আটজনকে প্রদর্শন করা হবে ও শেষ লেখকের পরিবর্তে 'ও অন্যান্য' দেখানো হবে।"
+                },
+                "প্রথমাংশ৩": {
+                    "label": "নামের প্রথমাংশ ৩",
+                    "description": "তৃতীয় লেখকের দেওয়া বা প্রথম নাম, মধ্যম নাম, বা আদ্যক্ষর; উইকিসংযোগ ব্যবহার করবেন না।"
+                },
+                "প্রথমাংশ৪": {
+                    "label": "নামের প্রথমাংশ ৪",
+                    "description": "চতুর্থ লেখকের দেওয়া বা প্রথম নাম, মধ্যম নাম, বা আদ্যক্ষর; উইকিসংযোগ ব্যবহার করবেন না।"
+                },
+                "প্রথমাংশ৫": {
+                    "label": "নামের প্রথমাংশ ৫",
+                    "description": "পঞ্চম লেখকের দেওয়া বা প্রথম নাম, মধ্যম নাম, বা আদ্যক্ষর; উইকিসংযোগ ব্যবহার করবেন না।"
+                },
+                "প্রথমাংশ৬": {
+                    "label": "নামের প্রথমাংশ ৬",
+                    "description": "ষষ্ঠ লেখকের দেওয়া বা প্রথম নাম, মধ্যম নাম, বা আদ্যক্ষর; উইকিসংযোগ ব্যবহার করবেন না।"
+                },
+                "প্রথমাংশ৭": {
+                    "label": "নামের প্রথমাংশ ৭",
+                    "description": "সপ্তম লেখকের দেওয়া বা প্রথম নাম, মধ্যম নাম, বা আদ্যক্ষর; উইকিসংযোগ ব্যবহার করবেন না।"
+                },
+                "প্রথমাংশ৮": {
+                    "label": "নামের প্রথমাংশ ৮",
+                    "description": "অষ্টম লেখকের দেওয়া বা প্রথম নাম, মধ্যম নাম, বা আদ্যক্ষর; উইকিসংযোগ ব্যবহার করবেন না।"
+                },
+                "প্রথমাংশ৯": {
+                    "label": "নামের প্রথমাংশ ৯",
+                    "description": "নবম লেখকের দেওয়া বা প্রথম নাম, মধ্যম নাম, বা আদ্যক্ষর; উইকিসংযোগ ব্যবহার করবেন না।"
+                },
+                "সূত্র": {
+                    "label": "সূত্র",
+                    "description": "একটি নোঙ্গর সনাক্তকারী; সম্পূর্ণ তথ্যসূত্রের উইকিলিঙ্কের লক্ষ্য তৈরি করা যেতে পারে",
+                    "type": "string",
+                    "aliases": [
+                        "ref"
+                    ]
+                },
+                "উক্তি": {
+                    "label": "উক্তি",
+                    "description": "সূত্র থেকে উল্লেখিত প্রাসঙ্গিক বার্তা; সবশেষে প্রদর্শিত হবে, উদ্ধরণ চিহ্নে আবদ্ধ; যতিচিহ্নের প্রয়োজন",
+                    "type": "string"
+                },
+                "পাতা": {
+                    "aliases": [
+                        "পৃষ্ঠা",
+                        "p",
+                        "page"
+                    ],
+                    "label": "পাতা",
+                    "description": "বিষয়বস্তুকে সমর্থন প্রদানকারী উৎসের পাতা; 'পৃ.' এর পর প্রদর্শিত",
+                    "type": "string"
+                },
+                "পাতাসমূহ": {
+                    "aliases": [
+                        "পৃষ্ঠাসমূহ",
+                        "pp",
+                        "pages"
+                    ],
+                    "label": "পাতাসমূহ",
+                    "description": "বিষয়বস্তুকে সমর্থন প্রদানকারী উৎসের পাতাসমূহ (উত্সের মধ্যে পাতার সংখ্যার একটি ইঙ্গিত নয়; 'পাতা'-এর পর প্রদর্শিত হবে",
+                    "type": "string"
+                },
+                "অবস্থান": {
+                    "aliases": [
+                        "স্থান"
+                    ],
+                    "label": "প্রকাশনার অবস্থান",
+                    "description": "প্রকাশনার ভৌগোলিক স্থান; সাধারণত উইকিসংযোগকৃত নয়; প্রকাশনার নামে স্থান অন্তর্ভুক্ত থাকলে বাদ দিন",
+                    "type": "string"
+                },
+                "প্রকাশনার-স্থান": {
+                    "label": "প্রকাশনার স্থান",
+                    "description": "প্রকাশনার স্থান শিরোনাম পরে দেখায়; যদি 'স্থান' বা 'অবস্থান' দেওয়া হয়, তা শিরোনামের আগে প্রদর্শিত হবে",
+                    "type": "string",
+                    "aliases": [
+                        "প্রকাশনারস্থান",
+                        "publication-place",
+                        "publicationplace"
+                    ],
+                    "example": "ঢাকা"
+                },
+                "প্রকাশনার-তারিখ": {
+                    "label": "প্রকাশনার তারিখ",
+                    "description": "প্রকাশনার তারিখ যখন কর্ম লিখনের তারিখ থেকে আলাদা; উইকিসংযোগ ব্যবহার করবেন না",
+                    "type": "string",
+                    "aliases": [
+                        "publication-date"
+                    ]
+                },
+                "সম্পাদক-প্রথমাংশ": {
+                    "aliases": [
+                        "সম্পাদক-প্রথমাংশ১",
+                        "সম্পাদক-প্রথমাংশ১",
+                        "সম্পাদক-প্রদত্ত",
+                        "সম্পাদক-প্রদত্ত১",
+                        "সম্পাদক১-প্রদত্ত"
+                    ],
+                    "label": "সম্পাদকের নামের প্রথমাংশ",
+                    "description": "সম্পাদকের নামের প্রথমাংশ বা প্রদত্ত নাম বা অধ্যাক্ষর, উইকিসংযোগ ব্যবহার করবেন না, 'সম্পাদক-সংযোগ' ব্যবহার করুন, অতিরিক্ত সম্পাদক যোগ করতে একটি সংখ্যা প্রত্যয় হিসেবে দেয়া যেতে পারে'"
+                },
+                "সম্পাদক-শেষাংশ": {
+                    "aliases": [
+                        "সম্পাদক-শেষাংশ১",
+                        "সম্পাদক-শেষাংশ১",
+                        "সম্পাদক-বংশনাম",
+                        "সম্পাদক-বংশনাম১",
+                        "সম্পাদক১-বংশনাম",
+                        "সম্পাদক",
+                        "সম্পাদক১"
+                    ],
+                    "label": "সম্পাদকের নামের শেষাংশ",
+                    "description": "সম্পাদকের নামের শেষাংশ বা বংশনাম, উইকিসংযোগ ব্যবহার করবেন না, 'সম্পাদক-সংযোগ' ব্যবহার করুন, অতিরিক্ত সম্পাদক যোগ করতে একটি সংখ্যা প্রত্যয় হিসেবে দেয়া যেতে পারে'"
+                },
+                "সম্পাদক-সংযোগ": {
+                    "aliases": [
+                        "সম্পাদক-সংযোগ১"
+                    ],
+                    "label": "সম্পাদকের নিবন্ধের সংযোগ",
+                    "description": "সম্পাদক সম্পর্কে বিদ্যমান উইকিপিডিয়া নিবন্ধের শিরোনাম; অতিরিক্ত সম্পাদক যোগ করতে একটি সংখ্যা প্রত্যয় হিসেবে দেয়া যেতে পারে",
+                    "type": "wiki-page-name"
+                },
+                "সংস্করণ": {
+                    "label": "সংস্করণ",
+                    "description": "যখন প্রকাশনার একাধিক সংস্করণ আছে; উদাহরণস্বরূপ: 'দ্বিতীয়', 'সংশোধিত' ইত্যাদি।; ",
+                    "type": "string",
+                    "aliases": [
+                        "edition"
+                    ]
+                },
+                "লিপির-শিরোনাম": {
+                    "label": "লিপির শিরোনাম",
+                    "description": "লাতিন ভিত্তিক বর্ণমালা ব্যবহার করে না এমন ভাষায় শিরোনামের জন্য (আরবি, চীনা, সিরিলিক, গ্রীক, হিব্রু, জাপানী, কোরীয়, ভিয়েতনামি ইত্যাদি)। দুই অক্ষর বিশিষ্ট আইএসও ৬৩৯-১ ভাষা কোড ও কোলন উপসর্গ হিসেবে দিতে হবে। উদাহরণস্বরুপ জাপানির জন্য ব্যবহার করুন: |লিপির-শিরোনাম=ja:...",
+                    "type": "string",
+                    "aliases": [
+                        "script-title"
+                    ]
+                },
+                "ধরন": {
+                    "label": "ধরন",
+                    "description": "উত্সের মিডিয়ার প্রকার সম্পর্কে অতিরিক্ত তথ্য",
+                    "type": "string",
+                    "aliases": [
+                        "type"
+                    ]
+                },
+                "বিন্যাস": {
+                    "label": "বিন্যাস",
+                    "description": "'ইউআরএল' দ্বারা চিহ্নিত কাজের বিন্যাস; উদাহরণ: PDF, DOC, XLS; এইচটিএমএল নির্দিষ্ট করবেন না",
+                    "type": "string",
+                    "aliases": [
+                        "format"
+                    ]
+                },
+                "বিবকোড": {
+                    "label": "বিবকোড",
+                    "description": "বিবলিওগ্রাফিক রেফারেন্স কোড (REFCODE); ১৯টি অক্ষর",
+                    "type": "string"
+                },
+                "পুনশ্চ": {
+                    "label": "পুনশ্চ",
+                    "description": "উদ্ধৃতির জন্য সমাপ্তিসূচক যতিচিহ্ন; 'উক্তি' সংজ্ঞায়িত করা হলে উপেক্ষা করা হবে; এটি বাদ করতে সংরক্ষিত কীওয়ার্ড 'none' ব্যবহার করুন",
+                    "type": "string",
+                    "default": "."
+                },
+                "নিবন্ধন": {
+                    "label": "নিবন্ধন",
+                    "description": "অনলাইন উৎসগুলির জন্য যেটির জন্য নিবন্ধন প্রয়োজন, 'হ্যাঁ' (বা 'y', বা 'true' বা 'yes') দিন; সদসাতা দেয়া হলে এটি দেখানো হবে না যদি উভয় দেয়া থাকে",
+                    "type": "string"
+                },
+                "সদস্যতা": {
+                    "aliases": [
+                        "সাবস্ক্রিপশন"
+                    ],
+                    "label": "সদস্যতা",
+                    "description": "অনলাইন উৎসগুলির জন্য যেটির জন্য সদস্যতা প্রয়োজন, 'হ্যাঁ' (বা 'y', বা 'true' বা 'yes') দিন",
+                    "type": "string"
+                },
+                "লেখক-ছদ্মনাম": {
+                    "label": "লেখক ছদ্মনাম",
+                    "description": "ড্যাশ বা পাঠ্য সহ প্রথম লেখকের নাম প্রতিস্থাপন করে; ড্যাশ em 'n' সংখ্যক বিস্তৃত করতে একটি সাংখ্যিক মান 'n' দিন; একটি লেখক বিভাজক ছাড়া পাঠ্য প্রদর্শন করতে একটি পাঠ্য মান দিন; উদাহরণস্বরূপ, 'এর সাথে' পরিবর্তে",
+                    "type": "string"
+                },
+                "প্রকৃত-বছর": {
+                    "aliases": [
+                        "প্রকৃতবছর"
+                    ],
+                    "label": "প্রকৃত বছর",
+                    "description": "প্রকাশনার মূল বা প্রকৃত বছর; সুনির্দিষ্ট প্রদান",
+                    "type": "string"
+                },
+                "লেখক-সংযোগ": {
+                    "aliases": [
+                        "লেখকসংযোগ",
+                        "লেখকসংযোগ১",
+                        "লেখক-সংযোগ১",
+                        "লেখক১-সংযোগ"
+                    ],
+                    "label": "লেখকের নিবন্ধের সংযোগ",
+                    "description": "লেখক সম্পর্কে বিদ্যমান উইকিপিডিয়ার নিবন্ধের শিরোনাম; একটি সংখ্যা উপসর্গ হিসেবে যোগ করে অতিরিক্ত লেখক যোগ করা যাবে",
+                    "type": "wiki-page-name"
+                },
+                "লেখক-সংযোগ৩": {
+                    "aliases": [
+                        "লেখকসংযোগ৩",
+                        "লেখক৩-সংযোগ"
+                    ],
+                    "label": "লেখকের নিবন্ধের সংযোগ ৩",
+                    "description": "তৃতীয় লেখক সম্পর্কে বিদ্যমান উইকিপিডিয়ার নিবন্ধের শিরোনাম।",
+                    "type": "wiki-page-name"
+                },
+                "লেখক-সংযোগ৪": {
+                    "aliases": [
+                        "লেখকসংযোগ৪",
+                        "লেখক৪-সংযোগ"
+                    ],
+                    "label": "লেখকের নিবন্ধের সংযোগ ৪",
+                    "description": "চতুর্থ লেখক সম্পর্কে বিদ্যমান উইকিপিডিয়ার নিবন্ধের শিরোনাম।",
+                    "type": "wiki-page-name"
+                },
+                "লেখক-সংযোগ৫": {
+                    "aliases": [
+                        "লেখকসংযোগ৫",
+                        "লেখক৫-সংযোগ"
+                    ],
+                    "label": "লেখকের নিবন্ধের সংযোগ ৫",
+                    "description": "পঞ্চম লেখক সম্পর্কে বিদ্যমান উইকিপিডিয়ার নিবন্ধের শিরোনাম।",
+                    "type": "wiki-page-name"
+                },
+                "লেখক-সংযোগ৬": {
+                    "aliases": [
+                        "লেখকসংযোগ৬",
+                        "লেখক৬-সংযোগ"
+                    ],
+                    "label": "লেখকের নিবন্ধের সংযোগ ৬",
+                    "description": "ষষ্ঠ লেখক সম্পর্কে বিদ্যমান উইকিপিডিয়ার নিবন্ধের শিরোনাম।",
+                    "type": "wiki-page-name"
+                },
+                "লেখক-সংযোগ৭": {
+                    "aliases": [
+                        "লেখকসংযোগ৭",
+                        "লেখক৭-সংযোগ"
+                    ],
+                    "label": "লেখকের নিবন্ধের সংযোগ ৭",
+                    "description": "সপ্তম লেখক সম্পর্কে বিদ্যমান উইকিপিডিয়ার নিবন্ধের শিরোনাম।",
+                    "type": "wiki-page-name"
+                },
+                "লেখক-সংযোগ৮": {
+                    "aliases": [
+                        "লেখকসংযোগ৮",
+                        "লেখক৮-সংযোগ"
+                    ],
+                    "label": "লেখকের নিবন্ধের সংযোগ ৮",
+                    "description": "অষ্টম লেখক সম্পর্কে বিদ্যমান উইকিপিডিয়ার নিবন্ধের শিরোনাম।",
+                    "type": "wiki-page-name"
+                },
+                "লেখক-সংযোগ৯": {
+                    "aliases": [
+                        "লেখকসংযোগ৯",
+                        "লেখক৯-সংযোগ"
+                    ],
+                    "label": "লেখকের নিবন্ধের সংযোগ ৯",
+                    "description": "নবম লেখক সম্পর্কে বিদ্যমান উইকিপিডিয়ার নিবন্ধের শিরোনাম।",
+                    "type": "wiki-page-name"
+                },
+                "লেখক-সংযোগ২": {
+                    "aliases": [
+                        "লেখকসংযোগ২"
+                    ],
+                    "label": "লেখকের নিবন্ধের সংযোগ ২",
+                    "description": "দ্বিতীয় লেখক সম্পর্কে বিদ্যমান উইকিপিডিয়ার নিবন্ধের শিরোনাম। (নয়জন পর্যন্ত লেখক তালিকাভুক্ত করা যেতে পারে)",
+                    "type": "wiki-page-name"
+                },
+                "লেখক-প্রদর্শন": {
+                    "aliases": [
+                        "লেখক প্রদর্শন"
+                    ],
+                    "label": "লেখক প্রদর্শন",
+                    "description": "'ও অন্যান্য' ব্যবহৃত হবার আগে মোট লেখক প্রদর্শিত হবার সংখ্যা;",
+                    "type": "number"
+                },
+                "ডিওআই-ভাঙ্গার-তারিখ": {
+                    "aliases": [
+                        "ডিওআই-নিষ্ক্রিয়র-তারিখ"
+                    ],
+                    "label": "ডিওআই ভাঙ্গার তারিখ",
+                    "description": "তারিখ যেদিন DOI ভাঙ্গা গেছে হিসেবে নির্ধারিত",
+                    "type": "string"
+                },
+                "লেখকগণ": {
+                    "aliases": [
+                        "ব্যক্তি",
+                        "স্বাগতিক",
+                        "কৃতিত্ব"
+                    ],
+                    "label": "লেখকের তালিকা"
+                },
+                "সম্পাদক-শেষাংশ২": {
+                    "aliases": [
+                        "সম্পাদক২"
+                    ],
+                    "label": "সম্পাদকের নামের শেষাংশ ২",
+                    "type": "line"
+                },
+                "সম্পাদক-প্রথমাংশ২": {
+                    "label": "সম্পাদকের নামের প্রথমাংশ ২",
+                    "type": "line"
+                },
+                "সম্পাদক২-সংযোগ": {
+                    "aliases": [
+                        "সম্পাদক২সংযোগ"
+                    ],
+                    "label": "সম্পাদকের নিবন্ধের সংযোগ ২",
+                    "type": "wiki-page-name"
+                },
+                "citeseerx": {},
+                "ইউআরএল-সংগ্রহ": {},
+                "সম্পাদক-শেষাংশ৩": {
+                    "aliases": [
+                        "সম্পাদক৩"
+                    ],
+                    "label": "সম্পাদকের নামের শেষাংশ ৩",
+                    "type": "line"
+                },
+                "সম্পাদক-শেষাংশ৪": {
+                    "aliases": [
+                        "সম্পাদক৪"
+                    ],
+                    "label": "সম্পাদকের নামের শেষাংশ ৪",
+                    "type": "line"
+                },
+                "সম্পাদক-শেষাংশ৫": {
+                    "aliases": [
+                        "সম্পাদক৫"
+                    ],
+                    "label": "সম্পাদকের নামের শেষাংশ ৫",
+                    "type": "line"
+                },
+                "সম্পাদক-শেষাংশ৬": {
+                    "aliases": [
+                        "সম্পাদক৬"
+                    ],
+                    "label": "সম্পাদকের নামের শেষাংশ ৬",
+                    "type": "line"
+                },
+                "সম্পাদক-শেষাংশ৭": {
+                    "aliases": [
+                        "সম্পাদক৭"
+                    ],
+                    "label": "সম্পাদকের নামের শেষাংশ ৭",
+                    "type": "line"
+                },
+                "সম্পাদক-শেষাংশ৮": {
+                    "aliases": [
+                        "সম্পাদক৮"
+                    ],
+                    "label": "সম্পাদকের নামের শেষাংশ ৮",
+                    "type": "line"
+                },
+                "সম্পাদক-শেষাংশ৯": {
+                    "aliases": [
+                        "সম্পাদক২"
+                    ],
+                    "label": "সম্পাদকের নামের শেষাংশ ৯",
+                    "type": "line"
+                },
+                "সম্পাদক-প্রথমাংশ৩": {
+                    "label": "সম্পাদকের নামের প্রথমাংশ ৩",
+                    "type": "line"
+                },
+                "সম্পাদক-প্রথমাংশ৪": {
+                    "label": "সম্পাদকের নামের প্রথমাংশ ৪",
+                    "type": "line"
+                },
+                "সম্পাদক-প্রথমাংশ৫": {
+                    "label": "সম্পাদকের নামের প্রথমাংশ ৫",
+                    "type": "line"
+                },
+                "সম্পাদক-প্রথমাংশ৬": {
+                    "label": "সম্পাদকের নামের প্রথমাংশ ৬",
+                    "type": "line"
+                },
+                "সম্পাদক-প্রথমাংশ৭": {
+                    "label": "সম্পাদকের নামের প্রথমাংশ ৭",
+                    "type": "line"
+                },
+                "সম্পাদক-প্রথমাংশ৮": {
+                    "label": "সম্পাদকের নামের প্রথমাংশ ৮",
+                    "type": "line"
+                },
+                "সম্পাদক-প্রথমাংশ৯": {
+                    "label": "সম্পাদকের নামের প্রথমাংশ ৯",
+                    "type": "line"
+                },
+                "সম্পাদক৩-সংযোগ": {
+                    "aliases": [
+                        "সম্পাদক৩সংযোগ"
+                    ],
+                    "label": "সম্পাদকের নিবন্ধের সংযোগ ৩",
+                    "type": "wiki-page-name"
+                },
+                "সম্পাদক৪-সংযোগ": {
+                    "aliases": [
+                        "সম্পাদক৪সংযোগ"
+                    ],
+                    "label": "সম্পাদকের নিবন্ধের সংযোগ ৪",
+                    "type": "wiki-page-name"
+                },
+                "সম্পাদক৫-সংযোগ": {
+                    "aliases": [
+                        "সম্পাদক৫সংযোগ"
+                    ],
+                    "label": "সম্পাদকের নিবন্ধের সংযোগ ৫",
+                    "type": "wiki-page-name"
+                },
+                "সম্পাদক৬-সংযোগ": {
+                    "aliases": [
+                        "সম্পাদক৬সংযোগ"
+                    ],
+                    "label": "সম্পাদকের নিবন্ধের সংযোগ ৬",
+                    "type": "wiki-page-name"
+                },
+                "সম্পাদক৭-সংযোগ": {
+                    "aliases": [
+                        "সম্পাদক৭সংযোগ"
+                    ],
+                    "label": "সম্পাদকের নিবন্ধের সংযোগ ৭",
+                    "type": "wiki-page-name"
+                },
+                "সম্পাদক৮-সংযোগ": {
+                    "aliases": [
+                        "সম্পাদক৮সংযোগ"
+                    ],
+                    "label": "সম্পাদকের নিবন্ধের সংযোগ ৮",
+                    "type": "wiki-page-name"
+                },
+                "সম্পাদক৯-সংযোগ": {
+                    "aliases": [
+                        "সম্পাদক৯সংযোগ"
+                    ],
+                    "label": "সম্পাদকের নিবন্ধের সংযোগ ৯",
+                    "type": "wiki-page-name"
+                },
+                "bibcode-access": {
+                    "type": "string"
+                },
+                "doi-access": {
+                    "type": "string"
+                },
+                "hdl-access": {
+                    "type": "string"
+                },
+                "jstor-access": {
+                    "type": "string"
+                },
+                "ol-access": {
+                    "type": "string"
+                },
+                "osti-access": {
+                    "type": "string"
+                },
+                "ধারাবাহিক": {
+                    "aliases": [
+                        "series",
+                        "version"
+                    ],
+                    "label": "ধারাবাহিকের শনাক্তকারী",
+                    "type": "string"
+                },
+                "খণ্ড": {
+                    "label": "খণ্ড",
+                    "description": "বিভিন্ন খণ্ডে প্রকাশিত একটি প্রকাশনার জন্য",
+                    "type": "string"
+                },
+                "লেখক-ছদ্মনাম২": {
+                    "label": "লেখকের ছদ্মনাম ২",
+                    "type": "string"
+                },
+                "লেখক-ছদ্মনাম৩": {
+                    "label": "লেখকের ছদ্মনাম ৩",
+                    "type": "string"
+                },
+                "লেখক-ছদ্মনাম৪": {
+                    "label": "লেখকের ছদ্মনাম ৪",
+                    "type": "string"
+                },
+                "লেখক-ছদ্মনাম৫": {
+                    "label": "লেখকের ছদ্মনাম ৫",
+                    "type": "string"
+                },
+                "লেখক-ছদ্মনাম৬": {
+                    "label": "লেখকের ছদ্মনাম ৬",
+                    "type": "string"
+                },
+                "লেখক-ছদ্মনাম৭": {
+                    "label": "লেখকের ছদ্মনাম ৭",
+                    "type": "string"
+                },
+                "লেখক-ছদ্মনাম৮": {
+                    "label": "লেখকের ছদ্মনাম ৮",
+                    "type": "string"
+                },
+                "লেখক-ছদ্মনাম৯": {
+                    "label": "লেখকের ছদ্মনাম ৯",
+                    "type": "string"
+                },
+                "সম্পাদক-ছদ্মনাম": {
+                    "label": "সম্পাদকের ছদ্মনাম",
+                    "type": "string"
+                },
+                "সম্পাদক-ছদ্মনাম২": {
+                    "label": "সম্পাদকের ছদ্মনাম ২",
+                    "type": "string"
+                },
+                "সম্পাদক-ছদ্মনাম৩": {
+                    "label": "সম্পাদকের ছদ্মনাম ৩",
+                    "type": "string"
+                },
+                "সম্পাদক-ছদ্মনাম৪": {
+                    "label": "সম্পাদকের ছদ্মনাম ৪",
+                    "type": "string"
+                },
+                "সম্পাদক-ছদ্মনাম৫": {
+                    "label": "সম্পাদকের ছদ্মনাম ৫",
+                    "type": "string"
+                },
+                "সম্পাদক-ছদ্মনাম৬": {
+                    "label": "সম্পাদকের ছদ্মনাম ৬",
+                    "type": "string"
+                },
+                "সম্পাদক-ছদ্মনাম৭": {
+                    "label": "সম্পাদকের ছদ্মনাম ৭",
+                    "type": "string"
+                },
+                "সম্পাদক-ছদ্মনাম৮": {
+                    "label": "সম্পাদকের ছদ্মনাম ৮",
+                    "type": "string"
+                },
+                "সম্পাদক-ছদ্মনাম৯": {
+                    "label": "সম্পাদকের ছদ্মনাম ৯",
+                    "type": "string"
+                },
+                "শিরোনাম-সংযোগ": {
+                    "aliases": [
+                        "শিরোনামসংযোগ",
+                        "title-link",
+                        "titlelink"
+                    ],
+                    "label": "শিরোনাম সংযোগ",
+                    "description": "উৎস সম্পর্কে বিদ্যমান উইকিপিডিয়া নিবন্ধের শিরোনাম - একটি ওয়েব ঠিকানা ব্যবহার করবেন না; উইকিসংযোগ করবেন না।",
+                    "type": "wiki-page-name"
+                },
+                "vauthors": {},
+                "সহযোগিতা": {
+                    "aliases": [
+                        "collaboration"
+                    ],
+                    "label": "সহযোগিতা",
+                    "type": "string"
+                },
+                "veditors": {},
+                "অধ্যায়": {
+                    "aliases": [
+                        "chapter"
+                    ],
+                    "label": "অধ্যায়",
+                    "type": "string"
+                },
+                "লিপির-অধ্যায়": {
+                    "aliases": [
+                        "script-chapter"
+                    ],
+                    "label": "লিপির অধ্যায়",
+                    "type": "string"
+                },
+                "অনূদিত-অধ্যায়": {
+                    "aliases": [
+                        "trans-chapter"
+                    ],
+                    "label": "অনূদিত অধ্যায়",
+                    "type": "string"
+                },
+                "মোড": {
+                    "aliases": [
+                        "mode"
+                    ]
+                },
+                "অধ্যায়ের-বিন্যাস": {
+                    "aliases": [
+                        "chapter-format"
+                    ],
+                    "label": "অধ্যায়ের বিন্যাস",
+                    "type": "string"
+                },
+                "অধ্যায়ের-ইউআরএল": {
+                    "aliases": [
+                        "chapter-url"
+                    ],
+                    "label": "অধ্যায়ের ইউআরএল",
+                    "type": "string"
+                },
+                "সাময়িকী": {
+                    "label": "সাময়িকী",
+                    "description": "উৎস সাময়িকীর নাম, উইকিসংযোগ করা যেতে পারে; বাঁকায় প্রদর্শিত হবে",
+                    "type": "content",
+                    "required": true
+                },
+                "সংখ্যা নং": {
+                    "label": "সংখ্যা নং",
+                    "description": "শনাক্তকারী সংখ্যা নং যখন সূত্র একটি ধারাবাহিকের অংশ যা পর্যায়ক্রমে প্রকাশিত হয়",
+                    "type": "line"
+                }
+            },
+            "maps": {},
+            "format": "inline",
+            "paramOrder": [
+                "ইউআরএল",
+                "শিরোনাম",
+                "শিরোনাম-সংযোগ",
+                "শেষাংশ",
+                "প্রথমাংশ",
+                "vauthors",
+                "লেখক-সংযোগ",
+                "লেখকগণ",
+                "শেষাংশ২",
+                "প্রথমাংশ২",
+                "লেখক-সংযোগ২",
+                "শেষাংশ৩",
+                "প্রথমাংশ৩",
+                "লেখক-সংযোগ৩",
+                "শেষাংশ৪",
+                "প্রথমাংশ৪",
+                "লেখক-সংযোগ৪",
+                "শেষাংশ৫",
+                "প্রথমাংশ৫",
+                "লেখক-সংযোগ৫",
+                "শেষাংশ৬",
+                "প্রথমাংশ৬",
+                "লেখক-সংযোগ৬",
+                "শেষাংশ৭",
+                "প্রথমাংশ৭",
+                "লেখক-সংযোগ৭",
+                "শেষাংশ৮",
+                "প্রথমাংশ৮",
+                "লেখক-সংযোগ৮",
+                "শেষাংশ৯",
+                "প্রথমাংশ৯",
+                "লেখক-সংযোগ৯",
+                "সহযোগিতা",
+                "veditors",
+                "মোড",
+                "অধ্যায়ের-বিন্যাস",
+                "অধ্যায়ের-ইউআরএল",
+                "তারিখ",
+                "বছর",
+                "সম্পাদক-শেষাংশ",
+                "সম্পাদক-প্রথমাংশ",
+                "সম্পাদক-সংযোগ",
+                "সম্পাদক-শেষাংশ২",
+                "সম্পাদক-প্রথমাংশ২",
+                "সম্পাদক২-সংযোগ",
+                "সাময়িকী",
+                "ধারাবাহিক",
+                "প্রকাশক",
+                "প্রকাশনার-স্থান",
+                "প্রকাশনার-তারিখ",
+                "খণ্ড",
+                "সংখ্যা নং",
+                "অবস্থান",
+                "পাতা",
+                "পাতাসমূহ",
+                "at",
+                "ভাষা",
+                "লিপির-শিরোনাম",
+                "অনূদিত-শিরোনাম",
+                "অধ্যায়",
+                "লিপির-অধ্যায়",
+                "অনূদিত-অধ্যায়",
+                "ধরন",
+                "বিন্যাস",
+                "অন্যান্য",
+                "প্রকৃত-বছর",
+                "via",
+                "nopp",
+                "arxiv",
+                "asin",
+                "asin-tld",
+                "বিবকোড",
+                "citeseerx",
+                "doi",
+                "ডিওআই-ভাঙ্গার-তারিখ",
+                "আইএসবিএন",
+                "issn",
+                "jfm",
+                "jstor",
+                "lccn",
+                "mr",
+                "oclc",
+                "ol",
+                "osti",
+                "pmc",
+                "pmid",
+                "rfc",
+                "ssrn",
+                "zbl",
+                "id",
+                "আর্কাইভের-ইউআরএল",
+                "আর্কাইভের-তারিখ",
+                "অকার্যকর-ইউআরএল",
+                "সংগ্রহের-তারিখ",
+                "উক্তি",
+                "সূত্র",
+                "পুনশ্চ",
+                "নিবন্ধন",
+                "সদস্যতা",
+                "lay-url",
+                "lay-source",
+                "lay-date",
+                "লেখক-ছদ্মনাম",
+                "লেখক-ছদ্মনাম২",
+                "লেখক-ছদ্মনাম৩",
+                "লেখক-ছদ্মনাম৪",
+                "লেখক-ছদ্মনাম৫",
+                "লেখক-ছদ্মনাম৬",
+                "লেখক-ছদ্মনাম৭",
+                "লেখক-ছদ্মনাম৮",
+                "লেখক-ছদ্মনাম৯",
+                "author-separator",
+                "লেখক-প্রদর্শন",
+                "last-author-amp",
+                "সংস্করণ",
+                "ইউআরএল-সংগ্রহ",
+                "সম্পাদক-শেষাংশ৩",
+                "সম্পাদক-প্রথমাংশ৩",
+                "সম্পাদক৩-সংযোগ",
+                "সম্পাদক-শেষাংশ৪",
+                "সম্পাদক-প্রথমাংশ৪",
+                "সম্পাদক৪-সংযোগ",
+                "সম্পাদক-শেষাংশ৫",
+                "সম্পাদক-প্রথমাংশ৫",
+                "সম্পাদক৫-সংযোগ",
+                "সম্পাদক-শেষাংশ৬",
+                "সম্পাদক-প্রথমাংশ৬",
+                "সম্পাদক৬-সংযোগ",
+                "সম্পাদক-শেষাংশ৭",
+                "সম্পাদক-প্রথমাংশ৭",
+                "সম্পাদক৭-সংযোগ",
+                "সম্পাদক-শেষাংশ৮",
+                "সম্পাদক-প্রথমাংশ৮",
+                "সম্পাদক৮-সংযোগ",
+                "সম্পাদক-শেষাংশ৯",
+                "সম্পাদক-প্রথমাংশ৯",
+                "সম্পাদক৯-সংযোগ",
+                "সম্পাদক-ছদ্মনাম",
+                "সম্পাদক-ছদ্মনাম২",
+                "সম্পাদক-ছদ্মনাম৩",
+                "সম্পাদক-ছদ্মনাম৪",
+                "সম্পাদক-ছদ্মনাম৫",
+                "সম্পাদক-ছদ্মনাম৬",
+                "সম্পাদক-ছদ্মনাম৭",
+                "সম্পাদক-ছদ্মনাম৮",
+                "সম্পাদক-ছদ্মনাম৯",
+                "bibcode-access",
+                "doi-access",
+                "hdl-access",
+                "jstor-access",
+                "ol-access",
+                "osti-access"
+            ]
         }
     },
     "siteinfo/en": {

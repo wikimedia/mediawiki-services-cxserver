@@ -26,7 +26,8 @@
 					}
 				},
 				"data-cx": {
-					"adapted": true
+					"adapted": true,
+					"partial": false
 				}
 			}
 		}
@@ -58,7 +59,8 @@
 					}
 				},
 				"data-cx": {
-					"adapted": true
+					"adapted": true,
+					"partial": false
 				}
 			}
 		}
@@ -90,7 +92,8 @@
 					}
 				},
 				"data-cx": {
-					"adapted": true
+					"adapted": true,
+					"partial": false
 				}
 			}
 		}
@@ -119,7 +122,8 @@
 					"name": "ref"
 				},
 				"data-cx": {
-					"adapted": false
+					"adapted": false,
+					"partial": false
 				}
 			}
 		}
@@ -137,5 +141,12 @@
 		"to": "ca",
 		"source": "reference-adaptation-wth-unsupported-template-test.html",
 		"result": "reference-adaptation-wth-unsupported-template-result.html"
+	},
+	{
+		"desc": "Partial reference adaptation, when mandatory params are not transferred successfully",
+		"from": "en",
+		"to": "bn",
+		"source": "partial-reference-adaptation.html",
+		"result": "partial-reference-adaptation-result.html"
 	}
 ]
