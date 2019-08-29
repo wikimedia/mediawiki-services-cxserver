@@ -349,6 +349,38 @@ const sectionWithFigureInlineTemplateResult = `
 </body>
 </html>
 `;
+
+const sectionWithIgnorableTransclusionFragment = `
+<body>
+	<section data-mw-section-id="0" id="mwAQ">
+		<span about="#mwt4" typeof="mw:Transclusion"
+			data-mw="{&quot;parts&quot;:[{&quot;template&quot;:{&quot;target&quot;:{&quot;wt&quot;:&quot;Generations Sidebar&quot;,&quot;href&quot;:&quot;./Template:Generations_Sidebar&quot;},&quot;params&quot;:{},&quot;i&quot;:0}}]}"
+			id="mwCA">
+		</span>
+		<table class="vertical-navbox nowraplinks plainlist"
+			about="#mwt4" id="mwCQ">
+			<tbody>
+			</tbody>
+		</table>
+	</section>
+	<section data-mw-section-id="1" id="mwFg">
+		<h2 id="Terminology">Terminology</h2>
+	</section>
+</body>
+`;
+const sectionWithIgnorableTransclusionFragmentResult = `
+<body>
+	<section rel="cx:Section">
+		<span about="#mwt4" typeof="mw:Transclusion"
+			data-mw="{&quot;parts&quot;:[{&quot;template&quot;:{&quot;target&quot;:{&quot;wt&quot;:&quot;Generations Sidebar&quot;,&quot;href&quot;:&quot;./Template:Generations_Sidebar&quot;},&quot;params&quot;:{},&quot;i&quot;:0}}]}"
+			id="mwCA">
+		</span>
+	</section>
+	<section rel="cx:Section">
+		<h2 id="Terminology">Terminology</h2>
+	</section>
+</body>
+`;
 const tests = [
 	{
 		desc: 'section has common pattern of elements',
@@ -391,6 +423,12 @@ const tests = [
 		source: sectionWithFigureInlineTemplate,
 		result: sectionWithFigureInlineTemplateResult,
 		categories: 2
+	},
+	{
+		desc: 'Content has transclusion and one of its fragment get removed since it is ignorable.',
+		source: sectionWithIgnorableTransclusionFragment,
+		result: sectionWithIgnorableTransclusionFragmentResult,
+		categories: 0
 	}
 ];
 
