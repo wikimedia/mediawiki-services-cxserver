@@ -216,5 +216,33 @@
 				}
 			}
 		}
+	},
+	{
+		"desc": "ISBN Link adaptation",
+		"from": "ru",
+		"to": "fr",
+		"source": {
+			"name": "a",
+			"attributes": {
+				"rel": "mw:WikiLink",
+				"href": "./Special:BookSources/9785211053274"
+			}
+		},
+		"result": {
+			"attributes": {
+				"rel": "mw:WikiLink",
+				"href": "./Special:BookSources/9785211053274",
+				"data-cx": {
+					"adapted": true,
+					"targetTitle": {
+						"title": "Special:BookSources/9785211053274",
+						"pagelanguage": "fr"
+					},
+					"sourceTitle": {
+						"title": "Special:BookSources/9785211053274"
+					}
+				}
+			}
+		}
 	}
 ]
