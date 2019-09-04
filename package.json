@@ -15,6 +15,7 @@
     "node": ">=10.16.0"
   },
   "dependencies": {
+    "@wikimedia/language-data": "^0.1.1",
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
     "bunyan": "^1.8.12",
@@ -29,7 +30,6 @@
     "js-yaml": "^3.13.1",
     "jsdom": "^12.2.0",
     "jsonwebtoken": "~8.3.0",
-    "language-data": "git+https://github.com/wikimedia/language-data.git#master",
     "lru-cache": "^4.1.5",
     "mediawiki-title": "^0.6.5",
     "preq": "^0.5.11",
