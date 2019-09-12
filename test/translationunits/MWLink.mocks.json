@@ -10,7 +10,7 @@
             "phpsapi": "srv",
             "hhvmversion": "3.18.6-dev",
             "dbtype": "mysql",
-            "dbversion": "10.1.39-MariaDB",
+            "dbversion": "10.1.38-MariaDB",
             "imagewhitelistenabled": false,
             "langconversion": true,
             "titleconversion": true,
@@ -41,7 +41,7 @@
             "server": "//en.wikipedia.org",
             "servername": "en.wikipedia.org",
             "wikiid": "enwiki",
-            "time": "2019-06-11T08:34:04Z",
+            "time": "2019-06-14T11:43:35Z",
             "misermode": true,
             "uploadsenabled": true,
             "maxuploadsize": 4294967296,
@@ -2033,7 +2033,7 @@
             "server": "//es.wikipedia.org",
             "servername": "es.wikipedia.org",
             "wikiid": "eswiki",
-            "time": "2019-06-11T08:34:04Z",
+            "time": "2019-06-14T11:43:36Z",
             "misermode": true,
             "uploadsenabled": false,
             "maxuploadsize": 4294967296,
@@ -4136,8 +4136,8 @@
                 "wikibase_item": "Q1066512"
             },
             "thumbnail": {
-                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Paul_Wright_AKA_%28The_Godfather%29.jpg/50px-Paul_Wright_AKA_%28The_Godfather%29.jpg",
-                "width": 50,
+                "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg/51px-Charles_Wright_AKA_The_Godfather_WrestleMania_32_Axxess.jpg",
+                "width": 51,
                 "height": 80
             }
         }

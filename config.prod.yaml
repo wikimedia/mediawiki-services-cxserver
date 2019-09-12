@@ -80,6 +80,8 @@ services:
       ratelimiter_key: X-Client-IP # The request header field that uniquely identify a request source
       ratelimiter_rate: 10
       languages: config/languages.yaml
+      templatemapping:
+        database: config/templatemapping.db
       mt:
         Apertium:
           api: http://apertium.wmflabs.org

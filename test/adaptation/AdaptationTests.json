@@ -992,5 +992,57 @@
 				} ]
 			}
 		}
+	},
+	{
+		"desc": "Reference adaptation test where source and target has no template data. Must use template mapping database",
+		"from": "es",
+		"to": "ca",
+		"source": "<p id=\"mwAQ\"><span id=\"CITAREFNaciones_Unidas2015\" class=\"citation conferencia\" about=\"#mwt1\" typeof=\"mw:Transclusion\" data-mw='{\"parts\":[{\"template\":{\"target\":{\"wt\":\"Cita conferencia \",\"href\":\"./Plantilla:Cita_conferencia\"},\"params\":{\"autor\":{\"wt\":\"Naciones Unidas\"},\"enlaceautor\":{\"wt\":\"Naciones Unidas\"},\"fecha\":{\"wt\":\"18 de marzo de 2015\"},\"año\":{\"wt\":\"2015\"},\"mes\":{\"wt\":\"marzo\"},\"título\":{\"wt\":\"Tercera Conferencia Mundial de las Naciones Unidas sobre la Reducción del Riesgo de Desastres (Manual de la Conferencia)\"},\"conferencia\":{\"wt\":\"Tercera Conferencia Mundial de las Naciones Unidas\"},\"editor\":{\"wt\":\"WCDRR\"},\"ubicación\":{\"wt\":\"Sendai, Japón\"},\"páginas\":{\"wt\":\"21\"},\"url\":{\"wt\":\"http://www.wcdrr.org/uploads/UN-WCDRR-CH-Es.pdf\"},\"formato\":{\"wt\":\"PDF\"},\"fechaacceso\":{\"wt\":\"8 de mayo de 2015\"}},\"i\":0}}]}'><a rel=\"mw:WikiLink\" href=\"./Naciones_Unidas\" title=\"Naciones Unidas\" class=\"mw-redirect\">Naciones Unidas</a> (18 de marzo de 2015).  WCDRR, ed. <a rel=\"mw:ExtLink\" href=\"http://www.wcdrr.org/uploads/UN-WCDRR-CH-Es.pdf\" class=\"external text\"><i>Tercera Conferencia Mundial de las Naciones Unidas sobre la Reducción del Riesgo de Desastres (Manual de la Conferencia)</i></a> <span style=\"color:#555;\">(PDF)</span>. Tercera Conferencia Mundial de las Naciones Unidas. Sendai, Japón. p.<span typeof=\"mw:Entity\"> </span>21<span class=\"reference-accessdate\">. Consultado el 8 de mayo de 2015</span>.</span><span title=\"ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fes.wikipedia.org%3AMain+Page&amp;rft.au=Naciones+Unidas&amp;rft.aulast=Naciones+Unidas&amp;rft.btitle=Tercera+Conferencia+Mundial+de+las+Naciones+Unidas+sobre+la+Reducci%C3%B3n+del+Riesgo+de+Desastres+%28Manual+de+la+Conferencia%29&amp;rft.date=18+de+marzo+de+2015&amp;rft.genre=book&amp;rft.pages=21&amp;rft.place=Sendai%2C+Jap%C3%B3n&amp;rft_id=http%3A%2F%2Fwww.wcdrr.org%2Fuploads%2FUN-WCDRR-CH-Es.pdf&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook\" class=\"Z3988\" about=\"#mwt1\"><span style=\"display:none;\"><span typeof=\"mw:Entity\"> </span></span></span><span about=\"#mwt1\"> </span><span style=\"display:none;font-size:100%\" class=\"error citation-comment\" about=\"#mwt1\">La referencia utiliza el parámetro obsoleto <code><span typeof=\"mw:Entity\">|</span>mes=</code> (<a rel=\"mw:WikiLink\" href=\"./Ayuda:Errores_en_las_referencias#deprecated_params\" title=\"Ayuda:Errores en las referencias\">ayuda</a>)</span><link rel=\"mw:PageProp/Category\" href=\"./Categoría:Wikipedia:Páginas_con_referencias_con_parámetros_obsoletos\" about=\"#mwt1\" id=\"mwAg\"/></p> ",
+		"resultAttributes": {
+			"CITAREFNaciones_Unidas2015": {
+				"data-mw": {
+					"parts": [ {
+						"template": {
+							"i": 0,
+							"params": {
+								"any": {
+									"wt": "2015"
+								},
+								"autor": {
+									"wt": "Naciones Unidas"
+								},
+								"conferència": {
+									"wt": "Tercera Conferencia Mundial de las Naciones Unidas"
+								},
+								"data": {
+									"wt": "18 de marzo de 2015"
+								},
+								"editor": {
+									"wt": "WCDRR"
+								},
+								"mes": {
+									"wt": "marzo"
+								},
+								"títol": {
+									"wt": "Tercera Conferencia Mundial de las Naciones Unidas sobre la Reducción del Riesgo de Desastres (Manual de la Conferencia)"
+								},
+								"url": {
+									"wt": "http://www.wcdrr.org/uploads/UN-WCDRR-CH-Es.pdf"
+								}
+							},
+							"target": {
+								"href": "./Plantilla:Citar conferència",
+								"wt": "Citar conferència"
+							}}
+						}
+					]
+				},
+				"data-cx": [ {
+					"adapted": true,
+					"partial": false,
+					"targetExists": true
+				} ]
+			}
+		}
 	}
 ]
