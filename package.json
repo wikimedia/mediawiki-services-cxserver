@@ -31,7 +31,7 @@
     "jsdom": "^12.2.0",
     "jsonwebtoken": "~8.3.0",
     "lru-cache": "^4.1.5",
-    "mediawiki-title": "^0.6.5",
+    "mediawiki-title": "^0.7.2",
     "preq": "^0.5.11",
     "sax": "1.2.4",
     "service-runner": "^2.7.2",
