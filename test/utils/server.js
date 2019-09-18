@@ -43,7 +43,6 @@ function start( _options ) {
 	_options = _options || {};
 
 	if ( !assert.isDeepEqual( options, _options ) ) {
-		// eslint-disable-next-line no-console
 		console.log( 'starting test server' );
 		return module.exports.stop().then( () => {
 			options = _options;
@@ -53,7 +52,6 @@ function start( _options ) {
 			return runner.start( config.conf )
 				.then( ( serviceReturns ) => {
 					module.exports.stop = () => {
-						// eslint-disable-next-line no-console
 						console.log( 'stopping test server' );
 						serviceReturns.forEach( ( servers ) =>
 							servers.forEach( ( server ) =>

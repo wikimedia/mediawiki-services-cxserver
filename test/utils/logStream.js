@@ -22,7 +22,6 @@ function logStream( logStdout ) {
 				}
 			}
 		} catch ( e ) {
-			// eslint-disable-next-line no-console
 			console.error( 'something went wrong trying to parrot a log entry', e, chunk );
 		}
 

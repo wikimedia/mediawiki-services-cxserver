@@ -1,7 +1,5 @@
 'use strict';
 
-/* eslint-disable no-console */
-
 var assert = require( 'assert' );
 
 function isDeepEqual( result, expected, message ) {
