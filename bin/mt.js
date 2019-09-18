@@ -16,9 +16,7 @@ if ( !cxConfig ) {
 	process.exit( 1 );
 }
 
-// eslint-disable-next-line no-console
 cxConfig.logger = { log: console.log };
-// eslint-disable-next-line no-console
 cxConfig.metrics = { increment: console.log };
 
 function showHelpAndExit() {
@@ -39,7 +37,7 @@ const mtService = args[ 0 ];
 const sourceLang = args[ 1 ];
 const targetLang = args[ 2 ];
 
-let sourceHtml = fs.readFileSync( '/dev/stdin', 'utf8' );
+const sourceHtml = fs.readFileSync( '/dev/stdin', 'utf8' );
 
 if ( sourceHtml.trim() === '' ) {
 	showHelpAndExit();
@@ -50,7 +48,7 @@ if ( !MTClients[ mtService ] ) {
 	process.exit( 1 );
 }
 
-let mt = new MTClients[ mtService ]( cxConfig );
+const mt = new MTClients[ mtService ]( cxConfig );
 
 return mt.translateHtml(
 	sourceLang,

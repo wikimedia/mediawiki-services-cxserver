@@ -5,13 +5,13 @@ const fs = require( 'fs' ),
 	TestClient = require( __dirname + '/../lib/mt' ).TestClient,
 	MWApiRequestManager = require( __dirname + '/../lib/mw/ApiRequestManager' );
 
-let config = yaml.load( fs.readFileSync( 'config.yaml' ) );
+const config = yaml.load( fs.readFileSync( 'config.yaml' ) );
 if ( !config ) {
 	process.stdout.write( 'Failed to load config' );
 	process.exit( 1 );
 }
 
-let cxConfig = config.services && Array.isArray( config.services ) &&
+const cxConfig = config.services && Array.isArray( config.services ) &&
 		config.services.filter( function ( item ) {
 			return item && item.name === 'cxserver';
 		} )[ 0 ];
@@ -20,9 +20,9 @@ if ( !cxConfig ) {
 	process.exit( 1 );
 }
 
-let xhtml = fs.readFileSync( '/dev/stdin', 'utf8' );
+const xhtml = fs.readFileSync( '/dev/stdin', 'utf8' );
 if ( xhtml.trim() === '' || process.argv.length !== 4 ) {
-	let script = process.argv[ 1 ];
+	const script = process.argv[ 1 ];
 	process.stderr.write(
 		'Usage: node ' + script + ' fromLang toLang < file\n'
 	);

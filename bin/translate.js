@@ -12,7 +12,7 @@ if ( !config ) {
 	process.exit( 1 );
 }
 
-let cxConfig = config.services && Array.isArray( config.services ) &&
+const cxConfig = config.services && Array.isArray( config.services ) &&
 	config.services.find( ( item ) => item && item.name === 'cxserver' );
 
 if ( !cxConfig ) {
@@ -20,9 +20,7 @@ if ( !cxConfig ) {
 	process.exit( 1 );
 }
 
-// eslint-disable-next-line no-console
 cxConfig.logger = { log: console.log };
-// eslint-disable-next-line no-console
 cxConfig.metrics = { increment: console.log };
 
 const sourceHtml = fs.readFileSync( '/dev/stdin', 'utf8' );

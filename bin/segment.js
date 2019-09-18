@@ -34,9 +34,9 @@ if ( html.trim() === '' ) {
 
 }
 
-let parsedDoc = getParsedDoc( html );
-let segmenter = new Segmenter();
-let segmentedLinearDoc = segmenter.segment( parsedDoc, 'en' );
+const parsedDoc = getParsedDoc( html );
+const segmenter = new Segmenter();
+const segmentedLinearDoc = segmenter.segment( parsedDoc, 'en' );
 const result = normalize( segmentedLinearDoc.getHtml() );
 process.stdout.write( result + '\n' );
 process.stdout.write( '==Categories==\n' );
