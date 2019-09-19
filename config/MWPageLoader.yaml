@@ -10,6 +10,7 @@ removableSections:
   - vertical-navbox
   rdfa:
   - mw:Extension/indicator
+  - mw:Extension/templatestyles
   templates:
   - /^pp(-.*)?$/
   - /^Articles (for|with|needing|containing).*$/
