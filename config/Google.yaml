@@ -1,8 +1,6 @@
 handler: transform.js
 notAsTarget:
   - be-tarask
-  - de
-  - en
 languages:
   - af
   - ar
