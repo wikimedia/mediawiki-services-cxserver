@@ -381,6 +381,57 @@ const sectionWithIgnorableTransclusionFragmentResult = `
 	</section>
 </body>
 `;
+
+const sectionWithTemplateAndTemplateStyles = `
+<body>
+	<section data-mw-section-id="0" id="mwAQ">
+	<ul>
+	<li>
+		<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r886058088" about="#mwt79"
+		typeof="mw:Extension/templatestyles mw:Transclusion"
+		data-mw="{&quot;parts&quot;:[{&quot;template&quot;:{&quot;target&quot;:{&quot;wt&quot;:&quot;ISBN&quot;,&quot;href&quot;:&quot;./Template:ISBN&quot;},&quot;params&quot;:{&quot;1&quot;:{&quot;wt&quot;:&quot;0-7100-9224-5&quot;}},&quot;i&quot;:0}}]}"
+		id="mwAQE">
+
+		<a rel="mw:WikiLink" href="./International_Standard_Book_Number"
+		title="International Standard Book Number" about="#mwt79">ISBN</a>
+
+		<span typeof="mw:Entity"
+		about="#mwt79">&nbsp;</span>
+
+		<a rel="mw:WikiLink" href="./Special:BookSources/0-7100-9224-5"
+		title="Special:BookSources/0-7100-9224-5" about="#mwt79" id="mwAQI">0-7100-9224-5</a>
+
+	</li>
+	</ul>
+	</section>
+</body>
+`;
+
+const sectionWithTemplateAndTemplateStylesResult = `
+<body>
+	<section rel="cx:Section">
+	<ul>
+	<li>
+		<link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r886058088" about="#mwt79"
+		typeof="mw:Extension/templatestyles mw:Transclusion"
+		data-mw="{&quot;parts&quot;:[{&quot;template&quot;:{&quot;target&quot;:{&quot;wt&quot;:&quot;ISBN&quot;,&quot;href&quot;:&quot;./Template:ISBN&quot;},&quot;params&quot;:{&quot;1&quot;:{&quot;wt&quot;:&quot;0-7100-9224-5&quot;}},&quot;i&quot;:0}}]}"
+		id="mwAQE">
+		</link>
+		<a rel="mw:WikiLink" href="./International_Standard_Book_Number"
+		title="International Standard Book Number" about="#mwt79">ISBN</a>
+
+		<span typeof="mw:Entity"
+		about="#mwt79">&nbsp;</span>
+
+		<a rel="mw:WikiLink" href="./Special:BookSources/0-7100-9224-5"
+		title="Special:BookSources/0-7100-9224-5" about="#mwt79" id="mwAQI">0-7100-9224-5</a>
+
+	</li>
+	</ul>
+	</section>
+</body>
+`;
+
 const tests = [
 	{
 		desc: 'section has common pattern of elements',
@@ -428,6 +479,12 @@ const tests = [
 		desc: 'Content has transclusion and one of its fragment get removed since it is ignorable.',
 		source: sectionWithIgnorableTransclusionFragment,
 		result: sectionWithIgnorableTransclusionFragmentResult,
+		categories: 0
+	},
+	{
+		desc: 'Content has transclusion and same element is removable templatestyle. So do not remove',
+		source: sectionWithTemplateAndTemplateStyles,
+		result: sectionWithTemplateAndTemplateStylesResult,
 		categories: 0
 	}
 ];
