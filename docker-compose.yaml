@@ -1,0 +1,14 @@
+
+version: '3'
+
+services:
+  cxserver:
+    image: node:10-buster
+    user: node # Run everything with unprivileged user that comes with image.
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 4000:8080
+      - 9229:9229 # Debug port
+    command: npm run dev

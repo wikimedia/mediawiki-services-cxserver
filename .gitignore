@@ -12,6 +12,3 @@ docs
 node_modules
 log/
 coverage
-
-# Dockerfile (used for deploy)
-Dockerfile
