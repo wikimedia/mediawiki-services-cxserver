@@ -196,6 +196,25 @@ describe( 'LinearDoc', () => {
 		);
 	} );
 
+	it( 'test HTML compaction roundtrip with template with empty content', () => {
+		const testXhtmlFile = __dirname + '/data/text-inline-template-empty-content.html';
+		const contentForReduce = fs.readFileSync( testXhtmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
+		const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
+		parser.init();
+		parser.write( contentForReduce );
+		const { reducedDoc, extractedData } = parser.builder.doc.reduce();
+		const reducedParser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
+		reducedParser.init();
+		reducedParser.write( reducedDoc.getHtml() );
+		assert.deepEqual( Object.keys( extractedData ).length, 6, 'Attributes for 6 tags extracted.' );
+		const expandedDoc = reducedParser.builder.doc.expand( extractedData );
+		assert.deepEqual(
+			normalize( expandedDoc.getHtml() ),
+			normalize( contentForReduce ),
+			'Restored the original html after reduce and expand.'
+		);
+	} );
+
 	it( 'test getRootItem for ignoring blockspaces', () => {
 		const sourceDoc = `<section data-mw-section-id="25" id="mwArE">
 		<p id="mwArI">Sestak voted for the <a rel="mw:WikiLink" href="./Improving_Head_Start_Act"
