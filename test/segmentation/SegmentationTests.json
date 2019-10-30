@@ -156,6 +156,11 @@
 			"desc": "about attribute alone does not initiate a transclusion context",
 			"source": "test-transclusioncontext-about.html",
 			"result": "result-transclusioncontext-about.html"
+		},
+		{
+			"desc": "Do not consider style tag with transclusion as block tag",
+			"source": "test-template-styles.html",
+			"result": "result-template-styles.html"
 		}
 	],
 	"hi": [
