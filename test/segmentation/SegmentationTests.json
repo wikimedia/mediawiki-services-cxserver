@@ -151,6 +151,11 @@
 			"desc": "Do not segment content inside block templates",
 			"source": "test-blocklevel-template.html",
 			"result": "result-blocklevel-template.html"
+		},
+		{
+			"desc": "about attribute alone does not initiate a transclusion context",
+			"source": "test-transclusioncontext-about.html",
+			"result": "result-transclusioncontext-about.html"
 		}
 	],
 	"hi": [
