@@ -217,4 +217,40 @@ describe( 'LinearDoc', () => {
 		);
 	} );
 
+	it( 'test getRootItem for not ignoring non-whitespace content in textblock', () => {
+		const sourceDoc = `<p id="mwFg">The tensor product of <span about="#mwt10" class="texhtml "
+		data-mw="{}" id="mwFw" typeof="mw:Transclusion"><i>V</i></span> and.
+		</p>`;
+
+		const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer(), { isolateSegments: true } );
+		parser.init();
+		parser.write( sourceDoc );
+		const parsedDoc = parser.builder.doc;
+		const textblock = parsedDoc.items.find( ( item )=>item.type === 'textblock' );
+		const rootItem = textblock.item.getRootItem();
+		assert.deepEqual(
+			rootItem,
+			null,
+			'getRootItem of textblock should consider non-whitespace content inside its textchunks'
+		);
+	} );
+
+	it( 'test getRootItem for ignoring whitespace content in textblock', () => {
+		const sourceDoc = `<p id="mwFg">
+		 <span about="#mwt10" class="texhtml "
+		data-mw="{}" id="mwFw" typeof="mw:Transclusion"><i>V</i></span> and.
+		</p>`;
+
+		const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer(), { isolateSegments: true } );
+		parser.init();
+		parser.write( sourceDoc );
+		const parsedDoc = parser.builder.doc;
+		const textblock = parsedDoc.items.find( ( item )=>item.type === 'textblock' );
+		const rootItem = textblock.item.getRootItem();
+		assert.deepEqual(
+			rootItem.name,
+			'span',
+			'getRootItem of textblock should ignore whitespace content inside its textchunks'
+		);
+	} );
 } );
