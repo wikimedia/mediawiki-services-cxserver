@@ -34,6 +34,8 @@ services:
     # per-service config
     conf:
       port: 8080
+      # private_key: path to private key file for enabling https
+      # certificate: path to certificate file for enabling https
       # interface: localhost # uncomment to only listen on localhost
       # More per-service config settings
       # The location of the spec, defaults to spec.yaml if not specified

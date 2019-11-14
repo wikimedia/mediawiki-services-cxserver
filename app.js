@@ -1,6 +1,7 @@
 'use strict';
 
 const http = require( 'http' );
+const https = require( 'https' );
 const BBPromise = require( 'bluebird' );
 const express = require( 'express' );
 const compression = require( 'compression' );
@@ -214,20 +215,27 @@ function loadRoutes( app ) {
  * @return {bluebird} a promise creating the web server
  */
 function createServer( app ) {
-	// return a promise which creates an HTTP server,
+	// return a promise which creates an HTTP or HTTPS server,
 	// attaches the app to it, and starts accepting
 	// incoming client requests
 	var server;
+	const isHttps = app.conf.private_key && app.conf.certificate;
+	if ( isHttps ) {
+		const credentials = {
+			key: fs.readFileSync( app.conf.private_key ),
+			cert: fs.readFileSync( app.conf.certificate )
+		};
+		server = https.createServer( credentials, app );
+	} else {
+		server = http.createServer( app );
+	}
+
 	return new BBPromise( ( resolve ) => {
-		server = http.createServer( app ).listen(
-			app.conf.port,
-			app.conf.interface,
-			resolve
-		);
+		server = server.listen( app.conf.port, app.conf.interface, resolve );
 		server = addShutdown( server );
 	} ).then( () => {
 		app.logger.log( 'info',
-			`Worker ${process.pid} listening on ${app.conf.interface || '*'}:${app.conf.port}` );
+			`Worker ${process.pid} listening on http${isHttps ? 's' : ''}://${app.conf.interface || '*'}:${app.conf.port}` );
 		return server;
 	} );
 }
