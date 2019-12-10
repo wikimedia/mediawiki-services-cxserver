@@ -163,6 +163,13 @@
 			"result": "result-template-styles.html"
 		}
 	],
+	"de": [
+		{
+			"desc": "Avoid segmenting inside a transclusion textblock",
+			"source": "test-transclusion-textblock.html",
+			"result": "result-transclusion-textblock.html"
+		}
+	],
 	"hi": [
 		{
 			"desc": "Hindi segmentation - basic test",
