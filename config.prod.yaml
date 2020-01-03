@@ -108,6 +108,9 @@ services:
           account: wikimedia
           key: null
           languages: config/LingoCloud.yaml
+        OpusMT:
+          api: https://opusmt.wmflabs.org/api/translate
+          languages: config/OpusMT.yaml
         defaults: config/mt-defaults.wikimedia.yaml
       dictionary:
         JsonDict:

@@ -175,6 +175,7 @@ paths:
           enum:
            - Apertium
            - Matxin
+           - OpusMT
         - name: html
           in: formData
           description: The HTML or plaintext content to translate
@@ -344,6 +345,7 @@ paths:
           enum:
            - Apertium
            - Matxin
+           - OpusMT
         - name: html
           in: formData
           description: The HTML content to translate
