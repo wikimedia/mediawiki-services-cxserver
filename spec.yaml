@@ -35,7 +35,7 @@ paths:
         - title: root with no query params
           request: {}
           response:
-            status: 404
+            status: 302
         - title: spec from root
           request:
             query:
@@ -47,7 +47,7 @@ paths:
             query:
               fooo: true
           response:
-            status: 404
+            status: 302
   # from routes/v1.js
   /v1/page/{language}/{title}{/revision}:
     get:
