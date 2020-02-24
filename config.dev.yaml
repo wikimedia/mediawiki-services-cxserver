@@ -80,6 +80,8 @@ services:
       languages: config/languages.yaml
       templatemapping:
         database: config/templatemapping.db
+      sectionmapping:
+        database: config/cx-section-titles-aligned.db
       mt:
         Apertium:
           api: http://apertium.wmflabs.org
