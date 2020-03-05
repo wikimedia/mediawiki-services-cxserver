@@ -404,6 +404,7 @@ paths:
             params:
               to: ca
               title: Paneer
+            query:
               sourcelanguages: en
           response:
             status: 200
