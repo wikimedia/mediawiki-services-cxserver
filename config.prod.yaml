@@ -55,7 +55,7 @@ services:
       #   - domain1.com
       #   - domain2.org
       user_agent: cxserver
-      # Mediawiki host name. Example {lang}.wikisource.org which get expanded internaly to
+      # Mediawiki host name. Example {lang}.wikisource.org which get expanded internally to
       # es.wikisource.org in a spanish language context.
       # Do not prefix with http or https://
       # mw_host: '{lang}.wikipedia.org'
@@ -82,18 +82,20 @@ services:
       languages: config/languages.yaml
       templatemapping:
         database: config/templatemapping.db
+      sectionmapping:
+        database: config/cx-section-titles-aligned.db
       mt:
         Apertium:
           api: http://apertium.wmflabs.org
           languages: config/Apertium.yaml
-        Matxin:
-          api: http://matxin.elhuyar.eus/API
-          key: null
-          languages: config/Matxin.yaml
         Google:
           api: https://www.googleapis.com/language/translate/v2
           key: null
           languages: config/Google.yaml
+        Matxin:
+          api: http://matxin.elhuyar.eus/API
+          key: null
+          languages: config/Matxin.yaml
         Yandex:
           api: https://translate.yandex.net
           key: null
