@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://phabricator.wikimedia.org/diffusion/GCXS/cxserver.git"
   },
-  "license": "GPL-2.0+",
+  "license": "GPL-2.0-or-later",
   "bugs": {
     "url": "https://phabricator.wikimedia.org/tag/cx-cxserver/"
   },
