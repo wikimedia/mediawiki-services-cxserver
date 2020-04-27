@@ -3,6 +3,7 @@ notAsTarget:
   - be-tarask
 languages:
   - af
+  - am
   - ar
   - az
   - be
@@ -27,6 +28,7 @@ languages:
   - fr
   - fy
   - ga
+  - gd
   - gl
   - gu
   - ha
@@ -49,7 +51,9 @@ languages:
   - kn
   - ko
   - ku
+  - ky
   - la
+  - lb
   - lo
   - lt
   - lv
@@ -96,6 +100,7 @@ languages:
   - ur
   - uz
   - vi
+  - xh
   - yi
   - yo
   - zh
