@@ -7,7 +7,7 @@ const async = require( 'async' ),
 	yaml = require( 'js-yaml' );
 
 function normalize( html ) {
-	var normalizer = new LinearDoc.Normalizer();
+	const normalizer = new LinearDoc.Normalizer();
 	normalizer.init();
 	normalizer.write( html.replace( /[\t\r\n]+/g, '' ) );
 	return normalizer.getHtml();

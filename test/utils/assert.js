@@ -1,6 +1,6 @@
 'use strict';
 
-var assert = require( 'assert' );
+const assert = require( 'assert' );
 
 function isDeepEqual( result, expected, message ) {
 
@@ -54,7 +54,7 @@ function status( res, expected ) {
  */
 function contentType( res, expected ) {
 
-	var actual = res.headers[ 'content-type' ];
+	const actual = res.headers[ 'content-type' ];
 	deepEqual( actual, expected,
 		'Expected content-type to be ' + expected + ', but was ' + actual );
 
@@ -74,7 +74,7 @@ function notDeepEqual( result, expected, message ) {
 
 function fails( promise, onRejected ) {
 
-	var failed = false;
+	let failed = false;
 
 	function trackFailure( e ) {
 		failed = true;

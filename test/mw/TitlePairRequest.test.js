@@ -37,21 +37,20 @@ describe( 'Title pair tests', () => {
 } );
 
 describe( 'Title pair tests - batching', function () {
-	var oldGetRequestPromise;
+	let oldGetRequestPromise;
 
 	it( 'should have the queue size 50', function () {
-		var i, titlePairRequest;
 		oldGetRequestPromise = TitlePairRequest.prototype.getRequestPromise;
 		TitlePairRequest.prototype.getRequestPromise = function ( subqueue ) {
 			assert.deepEqual( subqueue.length, 50 );
 			return Promise.resolve( {} );
 		};
-		titlePairRequest = new TitlePairRequest( {
+		const titlePairRequest = new TitlePairRequest( {
 			sourceLanguage: 'en',
 			targetLanguage: 'es',
 			context: server.config
 		} );
-		for ( i = 0; i < 50; i++ ) {
+		for ( let i = 0; i < 50; i++ ) {
 			titlePairRequest.get( 'Title' + i );
 		}
 		return Promise.all( titlePairRequest.promises );

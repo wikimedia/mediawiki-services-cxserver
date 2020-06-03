@@ -1,6 +1,6 @@
 'use strict';
 
-var assert = require( '../utils/assert.js' ),
+const assert = require( '../utils/assert.js' ),
 	server = require( '../utils/server.js' ),
 	Dictionary = require( '../../lib/dictionary' );
 

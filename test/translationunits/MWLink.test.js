@@ -24,10 +24,8 @@ describe( 'Link Adaptation tests', function () {
 
 	async.each( tests, function ( test, done ) {
 		it( test.desc, function () {
-			var translationunit, adapter;
-
-			adapter = new Adapter( test.from, test.to, api, server.config );
-			translationunit = adapter.getAdapter( test.source );
+			const adapter = new Adapter( test.from, test.to, api, server.config );
+			const translationunit = adapter.getAdapter( test.source );
 
 			return translationunit.adapt( test.source ).then( function ( adaptedNode ) {
 				for ( const attribute in [ 'href', 'rel', 'title' ] ) {

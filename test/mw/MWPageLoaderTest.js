@@ -9,7 +9,7 @@ const fs = require( 'fs' ),
 	MWPageLoader = require( '../../lib/mw/MWPageLoader' );
 
 function normalize( html ) {
-	var normalizer = new LinearDoc.Normalizer();
+	const normalizer = new LinearDoc.Normalizer();
 	normalizer.init();
 	normalizer.write( html.replace( /[\t\r\n]+/gm, '' ) );
 	return normalizer.getHtml();

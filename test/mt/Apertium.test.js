@@ -1,7 +1,6 @@
 'use strict';
 
-var tests,
-	assert = require( '../utils/assert.js' ),
+const assert = require( '../utils/assert.js' ),
 	server = require( '../utils/server.js' ),
 	BBPromise = require( 'bluebird' ),
 	async = require( 'async' ),
@@ -12,7 +11,7 @@ var tests,
 // They are pre-cached (Apertium is not actually called during the test), so that:
 // 1. Unit testing does not depend on Apertium
 // 2. Tests will not break if an Apertium upgrade changes some translations
-tests = [
+const tests = [
 	{
 		title: 'All caps words',
 		source: '<p>A <b>Japanese</b> <i>BBC</i> article</p>',
@@ -103,19 +102,17 @@ tests = [
 describe( 'Apertium machine translation', function () {
 	async.forEach( tests, function ( test ) {
 		it( 'Test: ' + test.title, function () {
-			var textTranslations, apertium;
-			textTranslations = test.textTranslations;
+			const textTranslations = test.textTranslations;
 			// Fake the actual Apertium call
 			Apertium.prototype.translateLines = function ( sourceLang, targetLang, sourceLines ) {
 				return BBPromise.delay( 0 ).then( function () {
-					var targetLines;
-					targetLines = sourceLines.map( function ( line ) {
+					const targetLines = sourceLines.map( function ( line ) {
 						return textTranslations[ line ] || 'X' + line + 'X';
 					} );
 					return targetLines;
 				} );
 			};
-			apertium = new Apertium( server );
+			const apertium = new Apertium( server );
 			return apertium.translate( 'en', 'es', test.source ).then( function ( target ) {
 				assert.deepEqual( target, test.target, test.title );
 			} );

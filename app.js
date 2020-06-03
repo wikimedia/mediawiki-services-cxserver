@@ -23,7 +23,7 @@ const addShutdown = require( 'http-shutdown' );
  * @return {Promise} the promise resolving to the app object
  */
 function initApp( options ) {
-	var app = express();
+	const app = express();
 
 	// get the options and make them available in the app
 	app.logger = options.logger; // the logging device
@@ -222,7 +222,7 @@ function createServer( app ) {
 	// return a promise which creates an HTTP or HTTPS server,
 	// attaches the app to it, and starts accepting
 	// incoming client requests
-	var server;
+	let server;
 	const isHttps = app.conf.private_key && app.conf.certificate;
 	if ( isHttps ) {
 		const credentials = {
