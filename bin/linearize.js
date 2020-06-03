@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+
+'use strict';
+
 const fs = require( 'fs' ),
 	LinearDoc = require( __dirname + '/../lib/lineardoc' );
 
@@ -10,7 +13,6 @@ if ( xhtml.trim() === '' ) {
 		'Input must be wrapped in a block element such as <p>...</p> or <div>..</div>.\n'
 	);
 	process.exit( 1 );
-
 }
 
 const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );

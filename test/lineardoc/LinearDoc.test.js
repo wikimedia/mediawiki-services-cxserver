@@ -245,7 +245,7 @@ describe( 'LinearDoc', () => {
 		parser.init();
 		parser.write( sourceDoc );
 		const parsedDoc = parser.builder.doc;
-		const textblock = parsedDoc.items.find( ( item )=>item.type === 'textblock' );
+		const textblock = parsedDoc.items.find( ( item ) => item.type === 'textblock' );
 		const rootItem = textblock.item.getRootItem();
 		assert.deepEqual(
 			rootItem,
@@ -264,7 +264,7 @@ describe( 'LinearDoc', () => {
 		parser.init();
 		parser.write( sourceDoc );
 		const parsedDoc = parser.builder.doc;
-		const textblock = parsedDoc.items.find( ( item )=>item.type === 'textblock' );
+		const textblock = parsedDoc.items.find( ( item ) => item.type === 'textblock' );
 		const rootItem = textblock.item.getRootItem();
 		assert.deepEqual(
 			rootItem.name,

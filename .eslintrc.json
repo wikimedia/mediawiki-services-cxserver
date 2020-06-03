@@ -1,14 +1,11 @@
 {
 	"extends": [
-		"wikimedia",
-		"wikimedia/node",
-		"wikimedia/language/es2017"
+		"wikimedia/server"
 	],
-	"globals": {
-		"require": false
-	},
 	"rules": {
-		"one-var": [ "error", { "var": "always" } ],
-		"max-len": "off"
+		"max-len": "off",
+		"prefer-const": "off",
+		"no-var": "off",
+		"prefer-regex-literals": "off"
 	}
 }

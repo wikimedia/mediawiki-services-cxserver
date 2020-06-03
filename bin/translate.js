@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+
+'use strict';
+
 const fs = require( 'fs' ),
 	yaml = require( 'js-yaml' ),
 	Adapter = require( __dirname + '/../lib/Adapter' ),

@@ -1,3 +1,5 @@
+'use strict';
+
 const fs = require( 'fs' ),
 	ArgumentParser = require( 'argparse' ).ArgumentParser,
 	sqlite = require( 'sqlite' );

@@ -489,7 +489,7 @@ const tests = [
 	}
 ];
 
-describe( 'Section wrap tests', ()=> {
+describe( 'Section wrap tests', () => {
 	async.forEach( tests, ( test ) => {
 		const parsedDoc = getParsedDoc( test.source );
 		const wrappedSectionDoc = parsedDoc.wrapSections();

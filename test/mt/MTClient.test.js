@@ -68,7 +68,7 @@ describe( 'Machine translation result with extra spaces', function () {
 			testDataForSpaceIssue.sourceLang,
 			testDataForSpaceIssue.targetLang,
 			testDataForSpaceIssue.input
-		).then( ( result )=>{
+		).then( ( result ) => {
 			MTClient.prototype.translateHtml = oldTranslateHTML;
 			assert.deepEqual( result, testDataForSpaceIssue.sanitizedResult );
 		} );

@@ -1,5 +1,9 @@
 'use strict';
 
+/**
+ * @external Application
+ */
+
 const http = require( 'http' );
 const https = require( 'https' );
 const BBPromise = require( 'bluebird' );
@@ -16,7 +20,7 @@ const addShutdown = require( 'http-shutdown' );
  * Creates an express app and initialises it
  *
  * @param {Object} options the options to initialise the app with
- * @return {bluebird} the promise resolving to the app object
+ * @return {Promise} the promise resolving to the app object
  */
 function initApp( options ) {
 	var app = express();
@@ -161,7 +165,7 @@ function initApp( options ) {
  * Loads all routes declared in routes/ into the app
  *
  * @param {Application} app the application object to load routes into
- * @return {bluebird} a promise resolving to the app object
+ * @return {Promise} a promise resolving to the app object
  */
 function loadRoutes( app ) {
 	// get the list of files in routes/
@@ -212,7 +216,7 @@ function loadRoutes( app ) {
  * Creates and starts the service's web server
  *
  * @param {Application} app the app object to use in the service
- * @return {bluebird} a promise creating the web server
+ * @return {Promise} a promise creating the web server
  */
 function createServer( app ) {
 	// return a promise which creates an HTTP or HTTPS server,

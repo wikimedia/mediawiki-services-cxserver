@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+
+'use strict';
+
 const fs = require( 'fs' );
 const LinearDoc = require( __dirname + '/../lib/lineardoc' );
 const html = fs.readFileSync( '/dev/stdin', 'utf8' );

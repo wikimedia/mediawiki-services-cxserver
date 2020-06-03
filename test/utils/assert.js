@@ -35,6 +35,7 @@ function deepEqual( result, expected, message ) {
 
 /**
  * Asserts whether the return status was as expected
+ *
  * @param {Object} res
  * @param {string} expected
  */
@@ -46,10 +47,11 @@ function status( res, expected ) {
 }
 
 /**
-	 * Asserts whether content type was as expected
-	 * @param {Object} res
-	 * @param {string} expected
-	 */
+ * Asserts whether content type was as expected
+ *
+ * @param {Object} res
+ * @param {string} expected
+ */
 function contentType( res, expected ) {
 
 	var actual = res.headers[ 'content-type' ];

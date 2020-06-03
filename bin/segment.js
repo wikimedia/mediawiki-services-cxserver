@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+
+'use strict';
+
 const fs = require( 'fs' ),
 	Segmenter = require( __dirname + '/../lib/segmentation/CXSegmenter' ),
 	LinearDoc = require( __dirname + '/../lib/lineardoc' ),

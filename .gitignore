@@ -4,6 +4,7 @@
 .*.swp
 .idea
 .vscode
+.eslintcache
 .bundle/
 *.log
 config.yaml
