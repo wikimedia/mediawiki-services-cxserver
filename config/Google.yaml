@@ -70,12 +70,14 @@ languages:
   - nl
   - no
   - ny
+  - or
   - pa
   - pl
   - ps
   - pt
   - ro
   - ru
+  - rw
   - sd
   - si
   - simple
@@ -94,8 +96,11 @@ languages:
   - te
   - tg
   - th
+  - tk
   - tl
   - tr
+  - tt
+  - ug
   - uk
   - ur
   - uz
