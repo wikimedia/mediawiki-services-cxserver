@@ -28,6 +28,17 @@ const tests = [
 			sourceTitle: 'Sitar',
 			targetLanguage: 'ml',
 			targetTitle: 'സിത്താർ',
+			sourceSections: [
+				'Etymology',
+				'History',
+				'Playing',
+				'See also',
+				'External links',
+				'References'
+			],
+			targetSections: [
+				'അവലംബം'
+			],
 			present: {
 				References: 'അവലംബം'
 			},
