@@ -1,19 +1,27 @@
 en:
   - zh
+  - wuu
 es:
   - zh
+  - wuu
 fr:
   - zh
+  - wuu
 ja:
   - zh
+  - wuu
 ko:
   - zh
+  - wuu
 pt:
   - zh
+  - wuu
 ru:
   - zh
+  - wuu
 simple:
   - zh
+  - wuu
 zh:
   - es
   - fr
@@ -22,3 +30,4 @@ zh:
   - pt
   - ru
   - simple
+  - wuu
