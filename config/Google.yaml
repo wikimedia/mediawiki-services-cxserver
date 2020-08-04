@@ -28,6 +28,7 @@ languages:
   - fr
   - fy
   - ga
+  - gan
   - gd
   - gl
   - gu
@@ -110,5 +111,6 @@ languages:
   - xh
   - yi
   - yo
+  - yue
   - zh
   - zu
