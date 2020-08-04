@@ -1,12 +1,11 @@
 handler: transform.js
-notAsTarget:
-  - be-tarask
 languages:
   - af
   - am
   - ar
   - az
   - be
+  - be-tarask
   - bg
   - bn
   - bs
