@@ -3,11 +3,12 @@ version: '3'
 
 services:
   cxserver:
-    image: node:10-buster
-    user: node # Run everything with unprivileged user that comes with image.
-    working_dir: /usr/src/app
+    build:
+      context: ./
     volumes:
-      - .:/usr/src/app
+      # map local to remote folder, exclude node_modules
+      - .:/opt/cxserver
+      - /opt/cxserver/node_modules
     ports:
       - 4000:8080
       - 9229:9229 # Debug port
