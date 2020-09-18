@@ -39,22 +39,22 @@ function logStream( logStdout ) {
 
 	function slice() {
 
-		const begin = log.length;
-		let end = null;
+		const beginPos = log.length;
+		let endPos = null;
 
 		function halt() {
-			if ( end === null ) {
-				end = log.length;
+			if ( endPos === null ) {
+				endPos = log.length;
 			}
 		}
 
-		function get() {
-			return log.slice( begin, end );
+		function getLog() {
+			return log.slice( beginPos, endPos );
 		}
 
 		return {
 			halt: halt,
-			get: get
+			get: getLog
 		};
 
 	}
