@@ -1047,5 +1047,42 @@
 				} ]
 			}
 		}
+	},
+	{
+		"desc": "Style tags holding template definition should not be ignored and used for template adaptation",
+		"from": "en",
+		"to": "ca",
+		"source": "<section data-mw-section-id=\"0\" id=\"mwAQ\"><style data-mw-deduplicate=\"TemplateStyles:r960796168\" typeof=\"mw:Extension/templatestyles mw:Transclusion\" about=\"#mwt1\" data-mw='{\"parts\":[{\"template\":{\"target\":{\"wt\":\"Quote\",\"href\":\"./Template:Quote\"},\"params\":{\"1\":{\"wt\":\"To be or not to be\"},\"2\":{\"wt\":\"William Shakespeare\"},\"3\":{\"wt\":\"Hamlet\"}},\"i\":0}}]}' id=\"mwAg\">.mw-parser-output .templatequote{ overflow:hidden; margin:1em 0; padding:0 40px } </style> <blockquote class=\"templatequote\" about=\"#mwt1\" id=\"mwAw\"><p>To be or not to be</p><div class=\"templatequotecite\">—<span typeof=\"mw:Entity\"> </span><cite>William Shakespeare, Hamlet</cite></div></blockquote></section>",
+		"resultAttributes": {
+			"mwAg": {
+				"data-mw": {
+					"parts": [ {
+						"template": {
+							"i": 0,
+							"params": {
+								"1": {
+									"wt": "To be or not to be"
+								},
+								"2": {
+									"wt": "William Shakespeare"
+								},
+								"3": {
+									"wt": "Hamlet"
+								}
+							},
+							"target": {
+								"href": "./Plantilla:Citació",
+								"wt": "Citació"
+							}}
+						}
+					]
+				},
+				"data-cx": [ {
+					"adapted": true,
+					"partial": false,
+					"targetExists": true
+				} ]
+			}
+		}
 	}
 ]

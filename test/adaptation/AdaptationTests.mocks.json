@@ -9700,6 +9700,13 @@
             "missing": false
         }
     },
+    "titlepair/en/ca": {
+        "Template:Quote": {
+            "sourceTitle": "Template:Quote",
+            "targetTitle": "Plantilla:Citació",
+            "missing": false
+        }
+    },
     "siteinfo/ca": {
         "general": {
             "mainpage": "Portada",
@@ -11914,6 +11921,14 @@
                 "mes": {},
                 "url": {},
                 "editor": {}
+            }
+        },
+        "Plantilla:Citació": {
+            "title": "Plantilla:Citació",
+            "params": {
+                "1": {},
+                "2": {},
+                "3": {}
             }
         }
     },
