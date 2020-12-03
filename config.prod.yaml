@@ -88,7 +88,7 @@ services:
         database: config/cx-section-titles-aligned.db
       mt:
         Apertium:
-          api: http://apertium.wmflabs.org
+          api: https://apertium.wmflabs.org
           languages: config/Apertium.yaml
         Google:
           api: https://www.googleapis.com/language/translate/v2
