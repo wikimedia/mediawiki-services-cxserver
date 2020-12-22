@@ -1,7 +1,7 @@
 'use strict';
 
 const Adapter = require( '../../lib/Adapter' );
-const MWApiRequestManager = require( '../../lib/mw/ApiRequestManager' );
+const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
 const TestClient = require( '../../lib/mt' ).TestClient;
 const TestUtils = require( '../testutils' );
 const assert = require( 'assert' );

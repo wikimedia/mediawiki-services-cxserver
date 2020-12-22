@@ -3,7 +3,7 @@
 const assert = require( '../utils/assert.js' );
 const server = require( '../utils/server.js' );
 const async = require( 'async' );
-const MWApiRequestManager = require( '../../lib/mw/ApiRequestManager' );
+const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
 const TitlePairRequest = require( '../../lib/mw/TitlePairRequest' );
 const TestUtils = require( '../testutils' );
 

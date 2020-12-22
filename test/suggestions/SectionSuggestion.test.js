@@ -4,7 +4,7 @@ const assert = require( '../utils/assert.js' ),
 	async = require( 'async' ),
 	server = require( '../utils/server.js' ),
 	SectionSuggester = require( '../../lib/suggestion/SectionSuggester' ),
-	MWApiRequestManager = require( '../../lib/mw/ApiRequestManager' );
+	MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
 
 const tests = [
 	{
