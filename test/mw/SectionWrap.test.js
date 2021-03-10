@@ -14,7 +14,7 @@ function normalize( html ) {
 }
 
 function getParsedDoc( content ) {
-	const pageloaderConfig = yaml.safeLoad( fs.readFileSync( __dirname + '/../../config/MWPageLoader.yaml' ) );
+	const pageloaderConfig = yaml.load( fs.readFileSync( __dirname + '/../../config/MWPageLoader.yaml' ) );
 	const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer(
 		{ removableSections: pageloaderConfig.removableSections }
 	), {
