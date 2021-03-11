@@ -413,6 +413,49 @@ paths:
             headers:
               content-type: application/json
 
+  /v2/suggest/sections/titles/{from}/{to}:
+    get:
+      tags:
+        - Suggestions
+      description: Suggest target section titles based on provided source section titles. Titles are provided as URL params under the key "titles"
+      produces:
+        - application/json
+      parameters:
+        - name: from
+          in: path
+          description: The source language code
+          type: string
+          required: true
+        - name: to
+          in: path
+          description: The target language code
+          type: string
+          required: true
+        - name: titles
+          in: query
+          description: List of source section titles separated by pipe ("|") delimiter, based on which target section suggestions will be given. Should be passed as array inside URL params (e.g. titles=test1|test2)
+          schema:
+            type: array
+            items:
+              type: string
+          required: true
+      x-amples:
+        - title: Suggest target section titles for given source sections
+          request:
+            params:
+              from: en
+              to: es
+            query:
+              titles: References|Notes|External Links
+          response:
+            status: 200
+            body:
+              References: [Referencias]
+              Notes: [Referencias, Notas]
+              External Links: [Enlaces externos]
+            headers:
+              content-type: application/json
+
   /v2/suggest/sections/{title}/{from}/{to}:
     get:
       tags:
