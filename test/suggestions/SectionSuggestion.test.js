@@ -55,7 +55,7 @@ const tests = [
 
 describe( 'SectionSuggester tests', () => {
 	async.forEach( tests, ( test ) => {
-		it( 'should extract correct number of categories when ' + test.desc, () => {
+		it( 'should find present and missing sections', () => {
 			const cxConfig = server.config.service;
 			const api = new MWApiRequestManager( cxConfig );
 			SectionSuggester.prototype.getSections = ( language ) => {

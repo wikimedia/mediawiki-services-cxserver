@@ -450,7 +450,7 @@ paths:
           response:
             status: 200
             body:
-              References: [Referencias]
+              References: [Referencias, Bibliografía]
               Notes: [Referencias, Notas]
               External Links: [Enlaces externos]
             headers:
