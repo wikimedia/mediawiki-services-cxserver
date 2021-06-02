@@ -90,6 +90,11 @@ services:
         Apertium:
           api: https://apertium.wmflabs.org
           languages: config/Apertium.yaml
+        Elia:
+          api: https://mt-api.elhuyar.eus/translate_string
+          languages: config/Elia.yaml
+          key: null
+          apiId: null
         Google:
           api: https://www.googleapis.com/language/translate/v2
           key: null
