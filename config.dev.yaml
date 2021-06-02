@@ -107,10 +107,6 @@ services:
           appKey: null
           appSecret: null
           languages: config/Youdao.yaml
-        Matxin:
-          api: http://matxin.elhuyar.eus/API
-          languages: config/Matxin.yaml
-          key: null
         LingoCloud:
           api: https://api.interpreter.caiyunai.com/v1
           account: wikimedia
