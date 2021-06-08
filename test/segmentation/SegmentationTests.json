@@ -161,6 +161,11 @@
 			"desc": "Do not consider style tag with transclusion as block tag",
 			"source": "test-template-styles.html",
 			"result": "result-template-styles.html"
+		},
+		{
+			"desc": "Sections with singe paragraph and a transclusion based reference at th end - T283513",
+			"source": "test-T283513.html",
+			"result": "result-T283513.html"
 		}
 	],
 	"de": [
