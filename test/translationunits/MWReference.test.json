@@ -129,6 +129,39 @@
 		}
 	},
 	{
+		"desc": "Partially adapting a reference with named reference",
+		"from": "en",
+		"to": "es",
+		"source": {
+			"name": "span",
+			"attributes": {
+				"id": "trncttm-2",
+				"rel": "dc:references",
+				"typeof": "mw:Extension/ref",
+				"class": "mw-ref",
+				"data-mw": "{\"name\":\"ref\", \"attrs\": {\"name\": \"Stat2020\"} }"
+			}
+		},
+		"result": {
+			"attributes": {
+				"id": "trncttm-2",
+				"rel": "dc:references",
+				"typeof": "mw:Extension/ref",
+				"class": "mw-ref",
+				"data-mw": {
+					"name": "ref",
+					"attrs": {
+						"name": "Stat2020"
+					}
+				},
+				"data-cx": {
+					"adapted": true,
+					"partial": true
+				}
+			}
+		}
+	},
+	{
 		"desc": "Mark the reference adaptation failed when the content defined in template not adapted",
 		"from": "en",
 		"to": "ca",
