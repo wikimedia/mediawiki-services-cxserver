@@ -2,7 +2,6 @@ ca:
   - es
   - eu
   - fr
-  - gl
   - simple
 en:
   - ca
@@ -11,10 +10,8 @@ en:
   - fr
   - gl
 es:
-  - ca
   - eu
   - fr
-  - gl
   - simple
 eu:
   - ca
@@ -29,8 +26,6 @@ fr:
   - gl
   - simple
 gl:
-  - ca
-  - es
   - eu
   - fr
   - simple
