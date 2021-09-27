@@ -12,7 +12,7 @@
 		"url": "https://phabricator.wikimedia.org/tag/cx-cxserver/"
 	},
 	"engines": {
-		"node": ">=10.16.0"
+		"node": ">=12.21.0"
 	},
 	"dependencies": {
 		"@wikimedia/language-data": "^1.0.3",
@@ -58,7 +58,7 @@
 	},
 	"main": "./app.js",
 	"deploy": {
-		"node": "10.16.0",
+		"node": "12.21.0",
 		"target": "debian",
 		"dependencies": {
 			"_all": []
