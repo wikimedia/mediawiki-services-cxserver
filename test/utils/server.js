@@ -2,7 +2,6 @@
 
 // mocha defines to avoid JSHint breakage
 
-const BBPromise = require( 'bluebird' );
 const ServiceRunner = require( 'service-runner' );
 const logStream = require( './logStream' );
 const fs = require( 'fs' );
@@ -33,7 +32,7 @@ config.conf.logging = {
 const origConfig = extend( true, {}, config );
 
 module.exports.stop = () => {
-	return BBPromise.resolve();
+	return Promise.resolve();
 };
 let options = null;
 const runner = new ServiceRunner();
@@ -58,7 +57,7 @@ function start( _options ) {
 								server.shutdown() ) );
 						return runner.stop().then( () => {
 							module.exports.stop = () => {
-								return BBPromise.resolve();
+								return Promise.resolve();
 							};
 						} );
 					};
@@ -66,7 +65,7 @@ function start( _options ) {
 				} );
 		} );
 	} else {
-		return BBPromise.resolve();
+		return Promise.resolve();
 	}
 }
 

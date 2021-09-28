@@ -6,11 +6,10 @@
 
 const http = require( 'http' );
 const https = require( 'https' );
-const BBPromise = require( 'bluebird' );
 const express = require( 'express' );
 const compression = require( 'compression' );
 const bodyParser = require( 'body-parser' );
-const fs = BBPromise.promisifyAll( require( 'fs' ) );
+const fs = require( 'fs' );
 const sUtil = require( './lib/util' );
 const packageInfo = require( './package.json' );
 const yaml = require( 'js-yaml' );
@@ -158,7 +157,7 @@ function initApp( options ) {
 	app.use( bodyParser.json( {
 		limit: 500000
 	} ) );
-	return BBPromise.resolve( app );
+	return Promise.resolve( app );
 }
 
 /**
@@ -169,46 +168,43 @@ function initApp( options ) {
  */
 function loadRoutes( app ) {
 	// get the list of files in routes/
-	return fs.readdirAsync( `${__dirname}/lib/routes` ).map( ( fname ) => {
-		return BBPromise.try( function () {
-			// ... and then load each route
-			// but only if it's a js file
-			if ( !/\.js$/.test( fname ) ) {
-				return undefined;
-			}
-			// import the route file
-			const route = require( `${__dirname}/lib/routes/${fname}` );
-			return route.create ? route.create( app ) : route( app );
-		} ).then( ( route ) => {
-			if ( route === undefined ) {
-				return undefined;
-			}
-			// check that the route exports the object we need
-			if ( route.constructor !== Object || !route.path || !route.router ||
-					!( route.api_version || route.skip_domain )
-			) {
-				throw new TypeError( `routes/${fname} does not export the correct object!` );
-			}
-			// normalise the path to be used as the mount point
-			if ( route.path[ 0 ] !== '/' ) {
-				route.path = `/${route.path}`;
-			}
-			if ( route.path[ route.path.length - 1 ] !== '/' ) {
-				route.path = `${route.path}/`;
-			}
-			if ( !route.skip_domain ) {
-				route.path = `/:domain/v${route.api_version}${route.path}`;
-			}
-			// wrap the route handlers with Promise.try() blocks
-			sUtil.wrapRouteHandlers( route, app );
-			// all good, use that route
-			app.use( route.path, route.router );
-		} );
+	return fs.readdirAsync( `${__dirname}/lib/routes` ).map( async ( fname ) => {
+		// ... and then load each route
+		// but only if it's a js file
+		if ( !/\.js$/.test( fname ) ) {
+			return undefined;
+		}
+		// import the route file
+		const routeDef = require( `${__dirname}/lib/routes/${fname}` );
+		const route = await ( routeDef.create ? routeDef.create( app ) : routeDef( app ) );
+		if ( route === undefined ) {
+			return undefined;
+		}
+		// check that the route exports the object we need
+		if ( route.constructor !== Object || !route.path || !route.router ||
+			!( route.api_version || route.skip_domain )
+		) {
+			throw new TypeError( `routes/${fname} does not export the correct object!` );
+		}
+		// normalise the path to be used as the mount point
+		if ( route.path[ 0 ] !== '/' ) {
+			route.path = `/${route.path}`;
+		}
+		if ( route.path[ route.path.length - 1 ] !== '/' ) {
+			route.path = `${route.path}/`;
+		}
+		if ( !route.skip_domain ) {
+			route.path = `/:domain/v${route.api_version}${route.path}`;
+		}
+		// wrap the route handlers with Promise.try() blocks
+		sUtil.wrapRouteHandlers( route, app );
+		// all good, use that route
+		app.use( route.path, route.router );
 	} ).then( () => {
 		// Catch and handle propagated errors
 		sUtil.setErrorHandler( app );
 		// route loading is now complete, return the app object
-		return BBPromise.resolve( app );
+		return Promise.resolve( app );
 	} );
 }
 
@@ -234,7 +230,7 @@ function createServer( app ) {
 		server = http.createServer( app );
 	}
 
-	return new BBPromise( ( resolve ) => {
+	return new Promise( ( resolve ) => {
 		server = server.listen( app.conf.port, app.conf.interface, resolve );
 		server = addShutdown( server );
 	} ).then( () => {

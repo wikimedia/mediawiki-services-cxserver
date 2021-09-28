@@ -3,7 +3,6 @@
 const fs = require( 'fs' ),
 	assert = require( '../utils/assert.js' ),
 	server = require( '../utils/server.js' ),
-	BBPromise = require( 'bluebird' ),
 	async = require( 'async' ),
 	LinearDoc = require( '../../lib/lineardoc' ),
 	MWPageLoader = require( '../../lib/mw/MWPageLoader' );
@@ -30,8 +29,7 @@ describe( 'MWPageLoader tests', () => {
 			// Fake the actual MWPageLoader fetch call
 			MWPageLoader.prototype.fetch = () => {
 				const sourceContent = fs.readFileSync( __dirname + '/data/' + test.source, 'utf8' );
-				return BBPromise.delay( 0 ).then( () => ( { body: sourceContent } )
-				);
+				return Promise.resolve( { body: sourceContent } );
 			};
 			const pageloader = new MWPageLoader( {
 				context: server.config,

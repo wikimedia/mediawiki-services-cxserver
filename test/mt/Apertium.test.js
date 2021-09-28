@@ -2,7 +2,6 @@
 
 const assert = require( '../utils/assert.js' ),
 	server = require( '../utils/server.js' ),
-	BBPromise = require( 'bluebird' ),
 	async = require( 'async' ),
 	Apertium = require( '../../lib/mt' ).Apertium;
 
@@ -105,12 +104,10 @@ describe( 'Apertium machine translation', function () {
 			const textTranslations = test.textTranslations;
 			// Fake the actual Apertium call
 			Apertium.prototype.translateLines = function ( sourceLang, targetLang, sourceLines ) {
-				return BBPromise.delay( 0 ).then( function () {
-					const targetLines = sourceLines.map( function ( line ) {
-						return textTranslations[ line ] || 'X' + line + 'X';
-					} );
-					return targetLines;
+				const targetLines = sourceLines.map( function ( line ) {
+					return textTranslations[ line ] || 'X' + line + 'X';
 				} );
+				return Promise.resolve( targetLines );
 			};
 			const apertium = new Apertium( server );
 			return apertium.translate( 'en', 'es', test.source ).then( function ( target ) {
