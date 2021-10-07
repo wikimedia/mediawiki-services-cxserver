@@ -1,4 +1,4 @@
-swagger: '2.0'
+openapi: 3.0.1
 info:
   version: 0.2.1
   title: Content translation service
@@ -12,13 +12,24 @@ info:
     url: http://opensource.org/licenses/GPL-2.0
 x-default-params:
   domain: en.wikipedia.org
+
 paths:
   # from routes/root.js
   /robots.txt:
     get:
       tags:
         - Root
+        - Robots
       description: Gets robots.txt
+      responses:
+        200:
+          description: Success
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
       x-amples:
         - title: robots.txt check
           request: {}
@@ -29,8 +40,15 @@ paths:
       tags:
         - Root
       description: The root service end-point
-      produces:
-        - application/json
+      responses:
+        200:
+          description: Success
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
       x-amples:
         - title: root with no query params
           request: {}
@@ -42,6 +60,12 @@ paths:
               spec: true
           response:
             status: 200
+        - title: doc from root
+          request:
+            query:
+              doc: true
+          response:
+            status: 302
         - title: root with wrong query param
           request:
             query:
@@ -49,29 +73,24 @@ paths:
           response:
             status: 302
   # from routes/v1.js
-  /v1/page/{language}/{title}{/revision}:
+  /v1/page/{language}/{title}:
     get:
       tags:
         - Page content
       description: Fetches segmented mediawiki page
-      produces:
-        - application/json
       parameters:
-        - name: language
-          in: path
-          description: The language code or the domain of the wiki
-          type: string
-          required: true
-        - name: title
-          in: path
-          description: The page title
-          type: string
-          required: true
-        - name: revision
-          in: path
-          description: The page revision id
-          type: string
-          required: false
+        - $ref: '#/components/parameters/language'
+        - $ref: '#/components/parameters/title'
+      responses:
+        200:
+          description: Page fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        404:
+          description: Page not found
+          content: {}
       x-amples:
         - title: Fetch enwiki protected page
           request:
@@ -82,37 +101,54 @@ paths:
             status: 200
             headers:
               content-type: application/json
-  /v1/dictionary/{word}/{from}/{to}{/provider}:
+  /v1/page/{language}/{title}/{revision}:
+    get:
+      tags:
+        - Page content
+      description: Fetches segmented mediawiki page
+      parameters:
+        - $ref: '#/components/parameters/language'
+        - $ref: '#/components/parameters/title'
+        - $ref: '#/components/parameters/revision'
+      responses:
+        200:
+          description: Page fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        404:
+          description: Page not found
+          content: {}
+      x-amples:
+        - title: Fetch enwiki protected page
+          request:
+            params:
+              language: en
+              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+  /v1/dictionary/{word}/{from}/{to}:
     get:
       tags:
         - Dictionary
       description: Fetches the dictionary meaning of a word.
-      produces:
-        - application/json
       parameters:
-        - name: word
-          in: path
-          description: The word to lookup
-          type: string
-          required: true
-        - name: from
-          in: path
-          description: The source language code
-          type: string
-          required: true
-        - name: to
-          in: path
-          description: The target language code
-          type: string
-          required: true
-        - name: provider
-          in: path
-          description: The dictionary provider id
-          type: string
-          required: false
-          enum:
-           - JsonDict
-           - Dictd
+        - $ref: '#/components/parameters/word'
+        - $ref: '#/components/parameters/from'
+        - $ref: '#/components/parameters/to'
+      responses:
+        200:
+          description: Dictionary meaning of a word fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        404:
+          description: Word not found in the dictionary
+          content: {}
       x-amples:
         - title: Fetch dictionary meaning with a given provider
           request:
@@ -147,40 +183,111 @@ paths:
                     - fd-eng-spa
             headers:
               content-type: application/json
-  /v1/mt/{from}/{to}{/provider}:
+  /v1/dictionary/{word}/{from}/{to}/{provider}:
+    get:
+      tags:
+        - Dictionary
+      description: Fetches the dictionary meaning of a word.
+      parameters:
+        - $ref: '#/components/parameters/word'
+        - $ref: '#/components/parameters/from'
+        - $ref: '#/components/parameters/to'
+        - $ref: '#/components/parameters/provider'
+      responses:
+        200:
+          description: Dictionary meaning of a word fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        404:
+          description: Word not found in the dictionary
+          content: {}
+      x-amples:
+        - title: Fetch dictionary meaning with a given provider
+          request:
+            params:
+              word: water
+              from: en
+              to: es
+              provider: JsonDict
+          response:
+            status: 200
+            body:
+              source: water
+              translations:
+                - phrase: /.+/
+                  sources:
+                    - fd-eng-spa
+            headers:
+              content-type: application/json
+        - title: Fetch dictionary meaning without specifying a provider
+          request:
+            params:
+              word: water
+              from: en
+              to: es
+          response:
+            status: 200
+            body:
+              source: water
+              translations:
+                - phrase: /.+/
+                  sources:
+                    - fd-eng-spa
+            headers:
+              content-type: application/json
+  /v1/mt/{from}/{to}:
     post:
       tags:
         - Machine translation
       description: Fetches the machine translation. Some providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
-      consumes:
-        - application/x-www-form-urlencoded
-      produces:
-        - application/json
       parameters:
-        - name: from
-          in: path
-          description: The source language code
-          type: string
-          required: true
-        - name: to
-          in: path
-          description: The target language code
-          type: string
-          required: true
-        - name: provider
-          in: path
-          description: The machine translation provider id
-          type: string
-          required: false
-          enum:
-           - Apertium
-           - OpusMT
-        - name: html
-          in: formData
-          description: The HTML or plaintext content to translate
-          type: string
-          required: true
-          x-textarea: true
+        - $ref: '#/components/parameters/from'
+        - $ref: '#/components/parameters/to'
+      responses:
+        200:
+          description: Machine translation fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        500:
+          description: Internal error
+          content: {}
+      x-amples:
+        - title: Machine translate an HTML fragment using TestClient.
+          request:
+            params:
+              from: en
+              to: qqq
+            body:
+              html: <p><a href='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a href='Atomic number'>atomic number</a> 8.</p>
+          response:
+            status: 200
+            body:
+              contents: /.+/
+            headers:
+              content-type: application/json
+  /v1/mt/{from}/{to}/{provider}:
+    post:
+      tags:
+        - Machine translation
+      description: Fetches the machine translation. Some providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
+      parameters:
+        - $ref: '#/components/parameters/from'
+        - $ref: '#/components/parameters/to'
+        - $ref: '#/components/parameters/provider'
+      responses:
+        200:
+          description: Machine translation fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        500:
+          description: Internal error
+          content: {}
       x-amples:
         - title: Machine translate an HTML fragment using TestClient.
           request:
@@ -201,19 +308,19 @@ paths:
       tags:
         - Tools
       description: Lists the tools for a given language pair
-      produces:
-        - application/json
       parameters:
-        - name: from
-          in: path
-          description: The source language code
-          type: string
-          required: true
-        - name: to
-          in: path
-          description: The target language code
-          type: string
-          required: true
+        - $ref: '#/components/parameters/from'
+        - $ref: '#/components/parameters/to'
+      responses:
+        200:
+          description: Lists the tools for a given language pair fetched successfully
+          content:
+            application/json:
+              schema:
+                type: string
+        500:
+          description: Internal error
+          content: {}
       x-amples:
         - title: Get the tools between two language pairs
           request:
@@ -230,41 +337,91 @@ paths:
         - Languages
         - Service information
       description: Lists the language pairs supported by the server
-      produces:
-        - application/json
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
       x-amples:
         - title: Get all the language pairs
           response:
             status: 200
             headers:
               content-type: application/json
-  /v1/list/{tool}{/from}{/to}:
+  /v1/list/{tool}:
     get:
       tags:
         - Tools
         - Service information
-      description: Lists all language pairs that tool supports. If language pairs are given, list the providers for the tool in that language pair.
-      produces:
-        - application/json
+      description: Lists all language pairs that tool supports.
       parameters:
-        - name: tool
-          in: path
-          description: The tool name
-          type: string
-          required: true
-          enum:
-           - mt
-           - dictionary
-        - name: from
-          in: path
-          description: The source language code
-          type: string
-          required: false
-        - name: to
-          in: path
-          description: The target language code
-          type: string
-          required: false
+        - $ref: '#/components/parameters/tool'
+      responses:
+        200:
+          description: List of all language pairs
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+      x-amples:
+        - title: Get the MT tool between two language pairs
+          request:
+            params:
+              tool: mt
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+
+  /v1/list/{tool}/{from}/{to}:
+    get:
+      tags:
+        - Tools
+        - Service information
+      description: Lists the providers for the tool in that language pair.
+      parameters:
+        - $ref: '#/components/parameters/tool'
+        - $ref: '#/components/parameters/from'
+        - $ref: '#/components/parameters/to'
+      responses:
+        200:
+          description: List of all language pairs
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
       x-amples:
         - title: Get the MT tool between two language pairs
           request:
@@ -277,34 +434,37 @@ paths:
             headers:
               content-type: application/json
   # from routes/v2.js
-  /v2/page/{sourcelanguage}/{targetlanguage}/{title}{/revision}:
+  /v2/page/{sourcelanguage}/{targetlanguage}/{title}:
     get:
       tags:
         - Page content
       description: Fetches segmented mediawiki page
-      produces:
-        - application/json
       parameters:
-        - name: sourcelanguage
-          in: path
-          description: The language code or the domain of the source wiki
-          type: string
-          required: true
-        - name: targetlanguage
-          in: path
-          description: The language code or the domain of the target wiki
-          type: string
-          required: true
-        - name: title
-          in: path
-          description: The page title
-          type: string
-          required: true
-        - name: revision
-          in: path
-          description: The page revision id
-          type: string
-          required: false
+        - $ref: '#/components/parameters/sourcelanguage'
+        - $ref: '#/components/parameters/targetlanguage'
+        - $ref: '#/components/parameters/title'
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+
       x-amples:
         - title: Translate enwiki protected page
           request:
@@ -316,40 +476,91 @@ paths:
             status: 200
             headers:
               content-type: application/json
-  /v2/translate/{from}/{to}{/provider}:
+  /v2/page/{sourcelanguage}/{targetlanguage}/{title}/{revision}:
+    get:
+      tags:
+        - Page content
+      description: Fetches segmented mediawiki page
+      parameters:
+        - $ref: '#/components/parameters/sourcelanguage'
+        - $ref: '#/components/parameters/targetlanguage'
+        - $ref: '#/components/parameters/title'
+        - $ref: '#/components/parameters/revision'
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+
+      x-amples:
+        - title: Translate enwiki protected page
+          request:
+            params:
+              sourcelanguage: en
+              targetlanguage: es
+              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+          response:
+            status: 200
+            headers:
+              content-type: application/json
+  /v2/translate/{from}/{to}/{provider}:
     post:
       tags:
         - Machine translation
       description: Translate the given content from source language to target language. Also adapt the content for the target language wiki. Some machine translation providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
-      consumes:
-        - application/x-www-form-urlencoded
-      produces:
-        - application/json
       parameters:
-        - name: from
-          in: path
-          description: The source language code
-          type: string
-          required: true
-        - name: to
-          in: path
-          description: The target language code
-          type: string
-          required: true
-        - name: provider
-          in: path
-          description: The machine translation provider id
-          type: string
-          required: false
-          enum:
-           - Apertium
-           - OpusMT
-        - name: html
-          in: formData
-          description: The HTML content to translate
-          type: string
-          required: true
-          x-textarea: true
+        - $ref: '#/components/parameters/from'
+        - $ref: '#/components/parameters/to'
+        - $ref: '#/components/parameters/provider'
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              required:
+              - html
+              properties:
+                html:
+                  type: string
+                  description: The HTML content to translate
+                  x-textarea: true
+        required: true
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
       x-amples:
         - title: Machine translate an HTML fragment using TestClient, adapt the links to target language wiki.
           request:
@@ -371,21 +582,9 @@ paths:
       tags:
         - Suggestions
       description: Suggest a source article to use for creating given article in given target language using translation
-      consumes:
-        - application/x-www-form-urlencoded
-      produces:
-        - application/json
       parameters:
-        - name: title
-          in: path
-          description: The target article title
-          type: string
-          required: true
-        - name: to
-          in: path
-          description: The target language code
-          type: string
-          required: true
+        - $ref: '#/components/parameters/title'
+        - $ref: '#/components/parameters/to'
         - name: sourcelanguages
           in: query
           description: Comma-separated list of candidate source languages. By default English(en) is used as a source language unless that is the target language.
@@ -396,6 +595,27 @@ paths:
           style: form
           explode: true
           required: false
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
       x-amples:
         - title: Suggest a source title to use for translation
           request:
@@ -416,19 +636,9 @@ paths:
       tags:
         - Suggestions
       description: Suggest target section titles based on provided source section titles. Titles are provided as URL params under the key "titles"
-      produces:
-        - application/json
       parameters:
-        - name: from
-          in: path
-          description: The source language code
-          type: string
-          required: true
-        - name: to
-          in: path
-          description: The target language code
-          type: string
-          required: true
+        - $ref: '#/components/parameters/from'
+        - $ref: '#/components/parameters/to'
         - name: titles
           in: query
           description: List of source section titles separated by pipe ("|") delimiter, based on which target section suggestions will be given. Should be passed as array inside URL params (e.g. titles=test1|test2)
@@ -437,6 +647,27 @@ paths:
             items:
               type: string
           required: true
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
       x-amples:
         - title: Suggest target section titles for given source sections
           request:
@@ -459,32 +690,37 @@ paths:
       tags:
         - Suggestions
       description: Suggest sections to translate from a source article to its corresponding article in target language.
-      consumes:
-        - application/x-www-form-urlencoded
-      produces:
-        - application/json
       parameters:
-        - name: title
-          in: path
-          description: The source article title
-          type: string
-          required: true
-        - name: from
-          in: path
-          description: The source language code
-          type: string
-          required: true
-        - name: to
-          in: path
-          description: The target language code
-          type: string
-          required: true
+        - $ref: '#/components/parameters/title'
+        - $ref: '#/components/parameters/from'
+        - $ref: '#/components/parameters/to'
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
       x-amples:
         - title: Suggest source sections to translate
           request:
             params:
               from: en
-              to: es
+              to: ml
               title: Sitar
           response:
             status: 200
@@ -505,8 +741,9 @@ paths:
       tags:
         - Service information
       description: Gets information about the service
-      produces:
-        - application/json
+      responses:
+        200:
+          description: OK
       x-amples:
         - title: retrieve service info
           request: {}
@@ -523,9 +760,11 @@ paths:
     get:
       tags:
         - Service information
+        - Service name
       description: Gets the name of the service
-      produces:
-        - application/json
+      responses:
+        200:
+          description: OK
       x-amples:
         - title: retrieve service name
           request: {}
@@ -539,9 +778,11 @@ paths:
     get:
       tags:
         - Service information
+        - Service version
       description: Gets the running version of the service
-      produces:
-        - application/json
+      responses:
+        200:
+          description: OK
       x-amples:
         - title: retrieve service version
           request: {}
@@ -555,9 +796,129 @@ paths:
     get:
       tags:
         - Service information
+        - Service homepage
       description: Redirects to the home page
+      responses:
+        301:
+          description: Redirect
       x-amples:
         - title: redirect to the home page
           request: {}
           response:
             status: 301
+components:
+  schemas:
+    # A https://tools.ietf.org/html/draft-nottingham-http-problem
+    problem:
+      required:
+        - type
+      properties:
+        status:
+          type: integer
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        method:
+          type: string
+        uri:
+          type: string
+  parameters:
+    domain:
+      in: path
+      name: domain
+      required: true
+      schema:
+        type: string
+      description: |
+        Project domain for the requested data.
+    language:
+      in: path
+      name: language
+      required: true
+      schema:
+        type: string
+      description: |
+        Valid language code
+    revision:
+      in: path
+      name: revision
+      required: true
+      schema:
+        type: string
+      description: |
+        Revision Id
+    title:
+      in: path
+      name: title
+      required: true
+      schema:
+        type: string
+      description: |
+        Page title. Use underscores instead of spaces. Example: `Main_Page`
+    prop:
+      in: path
+      name: prop
+      required: true
+      schema:
+        type: string
+      description: |
+        Site info prop.
+    from:
+      name: from
+      in: path
+      description: The source language code
+      schema:
+        type: string
+      required: true
+    sourcelanguage:
+      name: sourcelanguage
+      in: path
+      description: The source language code
+      schema:
+        type: string
+      required: true
+    to:
+      name: to
+      in: path
+      description: The target language code
+      schema:
+        type: string
+      required: true
+    targetlanguage:
+      name: targetlanguage
+      in: path
+      description: The target language code
+      schema:
+        type: string
+      required: true
+    word:
+      name: word
+      in: path
+      description: The word to lookup
+      schema:
+        type: string
+      required: true
+    provider:
+      name: provider
+      in: path
+      description: The dictionary provider id
+      required: true
+      schema:
+        type: string
+        enum:
+          - JsonDict
+          - Dictd
+          - null
+    tool:
+        name: tool
+        in: path
+        description: The tool name
+        schema:
+          type: string
+          enum:
+            - mt
+            - dictionary
+        required: true
