@@ -11,11 +11,7 @@ if ( !server.stopHookAdded ) {
 
 describe( 'express app', function () {
 
-	this.timeout( 200 );
-
-	before( () => {
-		return server.start();
-	} );
+	before( async () => await server.start() );
 
 	it( 'should get robots.txt', () => {
 		return preq.get( {

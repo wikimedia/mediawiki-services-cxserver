@@ -34,7 +34,7 @@
 		"service-runner": "^3.0.0",
 		"sqlite": "^3.0.6",
 		"swagger-router": "^0.7.4",
-		"swagger-ui": "git+https://github.com/wikimedia/swagger-ui.git#master"
+		"swagger-ui-dist": "^3.52.3"
 	},
 	"devDependencies": {
 		"argparse": "^2.0.1",
@@ -42,7 +42,8 @@
 		"eslint-config-wikimedia": "0.20.0",
 		"mocha": "^8.4.0",
 		"nodemon": "^2.0.13",
-		"nyc": "^15.1.0"
+		"nyc": "^15.1.0",
+		"openapi-schema-validator": "^3.0.3"
 	},
 	"scripts": {
 		"start": "service-runner",
