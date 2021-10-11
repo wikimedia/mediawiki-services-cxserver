@@ -92,4 +92,4 @@ debugger port as explained above.
 
 To run the tests:
 
-```$ npm test```
+```npm test```
