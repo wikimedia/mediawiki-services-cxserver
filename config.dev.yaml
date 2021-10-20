@@ -94,6 +94,10 @@ services:
           languages: config/Elia.yaml
           key: null
           apiId: null
+        Flores:
+          api: https://y5la1d7qw7.execute-api.us-west-2.amazonaws.com/default/translate
+          key: null
+          languages: config/Flores.yaml
         Google:
           api: https://www.googleapis.com/language/translate/v2
           key: null
