@@ -192,7 +192,7 @@ paths:
         - $ref: '#/components/parameters/word'
         - $ref: '#/components/parameters/from'
         - $ref: '#/components/parameters/to'
-        - $ref: '#/components/parameters/provider'
+        - $ref: '#/components/parameters/dictprovider'
       responses:
         200:
           description: Dictionary meaning of a word fetched successfully
@@ -245,6 +245,18 @@ paths:
       parameters:
         - $ref: '#/components/parameters/from'
         - $ref: '#/components/parameters/to'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - html
+              properties:
+                html:
+                  type: string
+                  description: The HTML content to translate
+                  x-textarea: true
+        required: true
       responses:
         200:
           description: Machine translation fetched successfully
@@ -277,7 +289,19 @@ paths:
       parameters:
         - $ref: '#/components/parameters/from'
         - $ref: '#/components/parameters/to'
-        - $ref: '#/components/parameters/provider'
+        - $ref: '#/components/parameters/mtprovider'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - html
+              properties:
+                html:
+                  type: string
+                  description: The HTML content to translate
+                  x-textarea: true
+        required: true
       responses:
         200:
           description: Machine translation fetched successfully
@@ -519,6 +543,62 @@ paths:
             status: 200
             headers:
               content-type: application/json
+  /v2/translate/{from}/{to}:
+    post:
+      tags:
+        - Machine translation
+      description: Translate the given content from source language to target language using default MT provider. Also adapt the content for the target language wiki. Some machine translation providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
+      parameters:
+        - $ref: '#/components/parameters/from'
+        - $ref: '#/components/parameters/to'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+              - html
+              properties:
+                html:
+                  type: string
+                  description: The HTML content to translate
+                  x-textarea: true
+        required: true
+      responses:
+        200:
+          description: Success
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/problem'
+      x-amples:
+        - title: Machine translate an HTML fragment using TestClient, adapt the links to target language wiki.
+          request:
+            params:
+              from: en
+              to: qqq
+            body:
+              html: <p><a rel="mw:WikiLink" href='./Oxygen' title='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='./Atomic number' title='Atomic number'>atomic number</a> 8.</p>
+          response:
+            status: 200
+            body:
+              contents: /.+/
+            headers:
+              content-type: application/json
+
   /v2/translate/{from}/{to}/{provider}:
     post:
       tags:
@@ -527,10 +607,10 @@ paths:
       parameters:
         - $ref: '#/components/parameters/from'
         - $ref: '#/components/parameters/to'
-        - $ref: '#/components/parameters/provider'
+        - $ref: '#/components/parameters/mtprovider'
       requestBody:
         content:
-          application/x-www-form-urlencoded:
+          application/json:
             schema:
               required:
               - html
@@ -901,7 +981,7 @@ components:
       schema:
         type: string
       required: true
-    provider:
+    dictprovider:
       name: provider
       in: path
       description: The dictionary provider id
@@ -911,6 +991,16 @@ components:
         enum:
           - JsonDict
           - Dictd
+          - null
+    mtprovider:
+      name: provider
+      in: path
+      description: The machine translation provider id
+      required: true
+      schema:
+        type: string
+        enum:
+          - Apertium
           - null
     tool:
         name: tool
