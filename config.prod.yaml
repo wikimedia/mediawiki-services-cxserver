@@ -96,8 +96,9 @@ services:
           key: null
           apiId: null
         Flores:
-          api: https://y5la1d7qw7.execute-api.us-west-2.amazonaws.com/default/translate
+          api: https://ofv2f85z7g.execute-api.us-east-1.amazonaws.com/default/getTranslation
           key: null
+          secret: null
           languages: config/Flores.yaml
         Google:
           api: https://www.googleapis.com/language/translate/v2
