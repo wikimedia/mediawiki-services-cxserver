@@ -107,7 +107,7 @@ const args = argparser.parseArgs();
 
 const input = args.input;
 if ( !fs.existsSync( input ) ) {
-	throw Error( `File ${input} does not exist` );
+	throw new Error( `File ${input} does not exist` );
 }
 
 main(

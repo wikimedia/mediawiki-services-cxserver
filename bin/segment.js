@@ -26,8 +26,8 @@ function getParsedDoc( content ) {
 	return parser.builder.doc;
 }
 
-const html = fs.readFileSync( '/dev/stdin', 'utf8' );
-if ( html.trim() === '' ) {
+const inputHtml = fs.readFileSync( '/dev/stdin', 'utf8' );
+if ( inputHtml.trim() === '' ) {
 	const script = process.argv[ 1 ];
 	process.stderr.write(
 		'Usage: node ' + script + ' < file\n' +
@@ -37,7 +37,7 @@ if ( html.trim() === '' ) {
 
 }
 
-const parsedDoc = getParsedDoc( html );
+const parsedDoc = getParsedDoc( inputHtml );
 const segmenter = new Segmenter();
 const segmentedLinearDoc = segmenter.segment( parsedDoc, 'en' );
 const result = normalize( segmentedLinearDoc.getHtml() );

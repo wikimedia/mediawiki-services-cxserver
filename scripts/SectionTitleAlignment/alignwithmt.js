@@ -18,12 +18,13 @@ const MTClients = require( __dirname + '/../../lib/mt/' );
 class AlignWithMT {
 	/**
 	 * Creates an instance of AlignWithMT.
-	 * @param {Object} cxConfig
+	 *
+	 * @param {Object} cxConf
 	 * @memberof AlignWithMT
 	 */
-	constructor( cxConfig ) {
-		this.cxConfig = cxConfig;
-		this.sectionMappingDatabase = cxConfig.conf.sectionmapping.database;
+	constructor( cxConf ) {
+		this.cxConfig = cxConf;
+		this.sectionMappingDatabase = cxConf.conf.sectionmapping.database;
 		if ( !this.sectionMappingDatabase ) {
 			throw new Error( 'Section mapping database is not configured' );
 		}
