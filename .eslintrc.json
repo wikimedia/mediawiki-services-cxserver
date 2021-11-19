@@ -6,6 +6,5 @@
 	],
 	"rules": {
 		"max-len": "off"
-	},
-	"ignorePatterns": ["*.json"]
+	}
 }

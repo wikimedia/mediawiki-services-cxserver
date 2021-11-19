@@ -115,7 +115,7 @@
 				"id": "mwSQ",
 				"typeof": "mw:Transclusion",
 				"data-mw": {
-					"parts": [{
+					"parts": [ {
 						"template": {
 							"target": {
 								"wt": "cite web",
@@ -149,7 +149,7 @@
 							},
 							"i": 0
 						}
-					   }]
+					} ]
 				}
 			}
 		},
@@ -271,7 +271,7 @@
 					},
 					{
 						"adapted": false
-					 },
+					},
 					{
 						"adapted": true,
 						"targetExists": true
@@ -350,10 +350,10 @@
 									"href": "./Template:London Gazette"
 								},
 								"params": {
-									"issue-x":{"wt":"57855"},
-									"date-x":{"wt":"31 December 2005"},
-									"pages-x":{"wt":"23"},
-									"supp-x":{"wt":"1"}
+									"issue-x": { "wt": "57855" },
+									"date-x": { "wt": "31 December 2005" },
+									"pages-x": { "wt": "23" },
+									"supp-x": { "wt": "1" }
 								},
 								"i": 0
 							}
@@ -405,10 +405,10 @@
 									"href": "./Template:Infobox medical condition (new)"
 								},
 								"params": {
-									"name": {"wt": "Miosis"},
-									"Synonyms": {"wt": "Myosis"},
-									"image": {"wt": "Myosis due to opiate use.jpg"},
-									"caption": {"wt": "Miosis due to [[opiate]] use"}
+									"name": { "wt": "Miosis" },
+									"Synonyms": { "wt": "Myosis" },
+									"image": { "wt": "Myosis due to opiate use.jpg" },
+									"caption": { "wt": "Miosis due to [[opiate]] use" }
 								},
 								"i": 0
 							}
@@ -435,10 +435,10 @@
 									"href": "./ଛାଞ୍ଚ:Infobox medical condition (new)"
 								},
 								"params": {
-									"name": {"wt": "Miosis"},
-									"Synonyms": {"wt": "Myosis"},
-									"image": {"wt": "Myosis due to opiate use.jpg"},
-									"caption": {"wt": "Miosis due to [[opiate]] use"}
+									"name": { "wt": "Miosis" },
+									"Synonyms": { "wt": "Myosis" },
+									"image": { "wt": "Myosis due to opiate use.jpg" },
+									"caption": { "wt": "Miosis due to [[opiate]] use" }
 								},
 								"i": 0
 							}
@@ -466,8 +466,8 @@
 									"href": "./Template:Infobox album"
 								},
 								"params": {
-									"artist":{"wt":"The Great Artist"},
-									"name":{"wt":"The great album"}
+									"artist": { "wt": "The Great Artist" },
+									"name": { "wt": "The great album" }
 								},
 								"i": 0
 							}

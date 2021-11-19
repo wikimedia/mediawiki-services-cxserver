@@ -4,7 +4,7 @@
 		"groups": [
 			{
 				"name": "Segmentation",
-				"classes": ["CXParserFactory", "CXSegmenter", "CXParser", "CXParserHi"]
+				"classes": [ "CXParserFactory", "CXSegmenter", "CXParser", "CXParserHi" ]
 			}
 		]
 	},

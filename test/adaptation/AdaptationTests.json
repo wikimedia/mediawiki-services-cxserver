@@ -721,9 +721,9 @@
 					"sourceTitle": {
 						"title": "Crust (geology)",
 						"pagelanguage": "en",
-							"pageprops": {
-								"wikibase_item": "Q4232578"
-							},
+						"pageprops": {
+							"wikibase_item": "Q4232578"
+						},
 						"thumbnail": {
 							"source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Earth_poster.svg/80px-Earth_poster.svg.png",
 							"width": 80,
@@ -954,7 +954,7 @@
 					"name": "ref",
 					"body": {
 						"html": "Hello reference."
-				}
+					}
 				},
 				"data-cx": {
 					"adapted": true,
@@ -976,7 +976,7 @@
 							"i": 0,
 							"params": {
 								"1": {
-								"wt": "Termes"
+									"wt": "Termes"
 								},
 								"2": { "wt": "2011" },
 								"p": { "wt": "91" }
@@ -984,8 +984,8 @@
 							"target": {
 								"href": "./Template:Sfn",
 								"wt": "Sfn"
-							}}
-						}
+							} }
+					}
 					]
 				},
 				"data-cx": [ {
@@ -1036,8 +1036,8 @@
 							"target": {
 								"href": "./Plantilla:Citar conferència",
 								"wt": "Citar conferència"
-							}}
-						}
+							} }
+					}
 					]
 				},
 				"data-cx": [ {
@@ -1073,8 +1073,8 @@
 							"target": {
 								"href": "./Plantilla:Citació",
 								"wt": "Citació"
-							}}
-						}
+							} }
+					}
 					]
 				},
 				"data-cx": [ {
