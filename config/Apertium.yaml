@@ -61,6 +61,7 @@ fr:
   - ca
   - eo
   - es
+  - oc
 gl:
   - en
   - es
@@ -104,6 +105,8 @@ pt:
   - ca
   - es
   - gl
+pl:
+  - szl
 ro:
   - es
 ru:
@@ -129,6 +132,8 @@ sv:
   - is
   - nb
   - nn
+szl:
+  - pl
 tt:
   - kk
 ur:
