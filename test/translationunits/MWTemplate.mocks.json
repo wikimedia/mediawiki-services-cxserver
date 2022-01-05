@@ -15931,6 +15931,13 @@
 			],
 			"format": null,
 			"sets": []
+		},
+		"Modèle:Source-attribution": {
+			"title": "Modèle:Source-attribution",
+			"description": {
+				"fr": "Cet article contient des extraits d'une publication dont le contenu se trouve dans le domaine public."
+			},
+			"params": {}
 		}
 	},
 	"siteinfo/fr": {
@@ -18283,6 +18290,11 @@
 		"Template:Cite web": {
 			"sourceTitle": "Template:Cite web",
 			"targetTitle": "Modèle:Lien web",
+			"missing": false
+		},
+		"Template:PD-notice": {
+			"sourceTitle": "Template:PD-notice",
+			"targetTitle": "Modèle:Source-attribution",
 			"missing": false
 		}
 	},
