@@ -6,7 +6,7 @@ const fs = require( 'fs' ),
 	yaml = require( 'js-yaml' ),
 	Adapter = require( __dirname + '/../lib/Adapter' ),
 	MTClients = require( __dirname + '/../lib/mt/' ),
-	MWApiRequestManager = require( __dirname + '/../lib/mw/ApiRequestManager' );
+	MWApiRequestManager = require( __dirname + '/../lib/mw/MWApiRequestManager' );
 
 const config = yaml.load( fs.readFileSync( __dirname + '/../config.yaml' ) );
 
