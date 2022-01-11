@@ -20,6 +20,7 @@
 		"body-parser": "^1.19.0",
 		"bunyan": "^1.8.15",
 		"cassandra-uuid": "^0.1.0",
+		"colors": "1.4.0",
 		"compression": "^1.7.4",
 		"dompurify": "^2.3.3",
 		"express": "^4.17.1",
