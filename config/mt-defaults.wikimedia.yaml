@@ -4,6 +4,7 @@
 'bg-mk': Apertium
 'ca-es': Apertium
 'ca-fr': Apertium
+'ca-oc': Apertium
 'ca-pt': Apertium
 'ca-sc': Apertium
 'en-ca': Apertium
@@ -43,6 +44,7 @@
 'sv-is': Apertium
 'tt-kk': Apertium
 'ur-hi': Apertium
+'en-oc': Flores
 'af-zh': Google
 'ar-zh': Google
 'az-zh': Google
