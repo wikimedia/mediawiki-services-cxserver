@@ -87,7 +87,11 @@ class AlignWithMT {
 	 */
 	async findFrequentSectionTitles( sectionMappingDatabase, sourceLanguage ) {
 		const titles = [];
-		const db = await sqlite.open( sectionMappingDatabase, { mode: sqlite3.OPEN_READONLY, Promise } );
+		const db = await sqlite.open( {
+			filename: sectionMappingDatabase,
+			driver: sqlite3.Database,
+			mode: sqlite3.OPEN_READONLY
+		} );
 		const query = `select source_title,
 			count(source_title) as occurrences
 			from titles where source_language=?
@@ -115,7 +119,11 @@ class AlignWithMT {
 	async findMissingAlignment( sectionMappingDatabase, sourceLanguage, targetLanguage, sectionTitles ) {
 		// Clone the sectionTitles for local modification
 		const titles = [ ...sectionTitles ];
-		const db = await sqlite.open( sectionMappingDatabase, { mode: sqlite3.OPEN_READONLY, Promise } );
+		const db = await sqlite.open( {
+			filename: sectionMappingDatabase,
+			driver: sqlite3.Database,
+			mode: sqlite3.OPEN_READONLY
+		} );
 		const query = `SELECT DISTINCT source_title
 			from titles
 			where source_language=?
@@ -143,13 +151,19 @@ class AlignWithMT {
 	 */
 	async findTargetLanguages( sectionMappingDatabase ) {
 		const languages = [];
-		const db = await sqlite.open( sectionMappingDatabase, { mode: sqlite3.OPEN_READONLY, Promise } );
+		const db = await sqlite.open( {
+			filename: sectionMappingDatabase,
+			driver: sqlite3.Database,
+			mode: sqlite3.OPEN_READONLY
+		} );
+		console.log( 'findTargetLanguages' );
 		const query = `select target_language, count(source_title) as occurrences
 			FROM titles
 			GROUP BY target_language
 			ORDER BY occurrences desc
 			limit 200;`;
 		const results = await db.all( query );
+		console.log( results.length );
 		for ( let i = 0; i < results.length; i++ ) {
 			// Skip English
 			if ( results[ i ].target_language === 'en' ) {
@@ -170,10 +184,12 @@ class AlignWithMT {
 	 * @param {Object} titleMapping
 	 */
 	async addTitleAlignmentToDb( sectionMappingDatabase, sourceLanguage, targetLanguage, titleMapping ) {
-		const db = await sqlite.open( sectionMappingDatabase, {
-			mode: sqlite3.OPEN_READWRITE,
-			Promise
+		const db = await sqlite.open( {
+			filename: sectionMappingDatabase,
+			driver: sqlite3.Database,
+			mode: sqlite3.OPEN_READWRITE
 		} );
+
 		const query = 'INSERT INTO titles VALUES(?,?,?,?, ?)';
 		// We set a special frequency value for MT calculated alignment. This is actually
 		// arbitrary, but somewhat close to a possibly valid translation in comparison with

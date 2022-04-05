@@ -2,7 +2,8 @@
 
 const fs = require( 'fs' ),
 	ArgumentParser = require( 'argparse' ).ArgumentParser,
-	sqlite = require( 'sqlite' );
+	sqlite = require( 'sqlite' ),
+	sqlite3 = require( 'sqlite3' );
 
 async function createTemplate( db, from, to, templateName ) {
 	const mapping = await db.get(
@@ -22,7 +23,7 @@ async function createTemplate( db, from, to, templateName ) {
 }
 
 async function main( databaseFile, mapping, from, to ) {
-	const db = await sqlite.open( databaseFile, { Promise } );
+	const db = await sqlite.open( { filename: databaseFile, driver: sqlite3.Database } );
 
 	await db.run(
 		`CREATE TABLE IF NOT EXISTS templates (
