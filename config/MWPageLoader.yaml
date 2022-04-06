@@ -29,3 +29,5 @@ removableSections:
   - Void
   - Italic title # T216044
   - About
+  - See also # T300958
+  - Redirect # T300958
