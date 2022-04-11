@@ -44,7 +44,10 @@
 'sv-is': Apertium
 'tt-kk': Apertium
 'ur-hi': Apertium
+'en-ig': Flores
+'en-is': Flores
 'en-oc': Flores
+'en-zu': Flores
 'af-zh': Google
 'ar-zh': Google
 'az-zh': Google
@@ -65,11 +68,8 @@
 'el-zh': Google
 'en-eu': Google
 'en-fr': Google
-'en-ig': Google
-'en-is': Google
 'en-sh': Google
 'en-zh': Google
-'en-zu': Google
 'eo-zh': Google
 'es-eu': Google
 'es-simple': Google
