@@ -5,6 +5,7 @@
 		"wikimedia/jsduck"
 	],
 	"rules": {
-		"max-len": "off"
+		"max-len": "off",
+		"yml/no-empty-mapping-value": "warn"
 	}
 }

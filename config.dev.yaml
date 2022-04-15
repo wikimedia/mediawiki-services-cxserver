@@ -11,8 +11,8 @@ worker_heap_limit_mb: 250
 logging:
   level: trace
   streams:
-  - type: stdout # log to stdout
-    named_levels: true # emit log level name instead of index. e.g. INFO vs 30
+    - type: stdout # log to stdout
+      named_levels: true # emit log level name instead of index. e.g. INFO vs 30
 #  # Use gelf-stream -> logstash
 #    - type: gelf
 #      host: logstash1003.eqiad.wmnet
@@ -20,9 +20,9 @@ logging:
 
 # Statsd metrics reporter
 metrics:
-  #type: log
-  #host: localhost
-  #port: 8125
+# type: log
+# host: localhost
+# port: 8125
 
 ratelimiter:
   type: memory
@@ -43,7 +43,7 @@ services:
       # The location of the spec, defaults to spec.yaml if not specified
       # spec: ./spec.yaml
       # allow cross-domain requests to the API (default *)
-      cors: '*'
+      cors: "*"
       # to disable use:
       # cors: false
       # to restrict to a particular domain, use:
@@ -68,13 +68,13 @@ services:
         method: post
         uri: "https://{{domain}}/w/api.php"
       restbase_req:
-        method: '{{request.method}}'
+        method: "{{request.method}}"
         uri: https://{{domain}}/api/rest_v1/{+path}
-        query: '{{ default(request.query, {}) }}'
-        headers: '{{request.headers}}'
-        body: '{{request.body}}'
+        query: "{{ default(request.query, {}) }}"
+        headers: "{{request.headers}}"
+        body: "{{request.body}}"
       jwt:
-        secret: ''
+        secret: ""
         algorithms:
           - HS256
       ratelimiter_key: x-client-ip # The request header field that uniquely identify a request source

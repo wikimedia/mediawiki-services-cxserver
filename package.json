@@ -42,7 +42,7 @@
 	"devDependencies": {
 		"argparse": "^2.0.1",
 		"async": "^3.2.3",
-		"eslint-config-wikimedia": "0.21.0",
+		"eslint-config-wikimedia": "0.22.1",
 		"mocha": "^8.4.0",
 		"nodemon": "^2.0.13",
 		"nyc": "^15.1.0",

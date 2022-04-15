@@ -29,7 +29,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
       x-amples:
         - title: robots.txt check
           request: {}
@@ -48,7 +48,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
       x-amples:
         - title: root with no query params
           request: {}
@@ -79,8 +79,8 @@ paths:
         - Page content
       description: Fetches segmented mediawiki page
       parameters:
-        - $ref: '#/components/parameters/language'
-        - $ref: '#/components/parameters/title'
+        - $ref: "#/components/parameters/language"
+        - $ref: "#/components/parameters/title"
       responses:
         200:
           description: Page fetched successfully
@@ -107,9 +107,9 @@ paths:
         - Page content
       description: Fetches segmented mediawiki page
       parameters:
-        - $ref: '#/components/parameters/language'
-        - $ref: '#/components/parameters/title'
-        - $ref: '#/components/parameters/revision'
+        - $ref: "#/components/parameters/language"
+        - $ref: "#/components/parameters/title"
+        - $ref: "#/components/parameters/revision"
       responses:
         200:
           description: Page fetched successfully
@@ -136,9 +136,9 @@ paths:
         - Dictionary
       description: Fetches the dictionary meaning of a word.
       parameters:
-        - $ref: '#/components/parameters/word'
-        - $ref: '#/components/parameters/from'
-        - $ref: '#/components/parameters/to'
+        - $ref: "#/components/parameters/word"
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
       responses:
         200:
           description: Dictionary meaning of a word fetched successfully
@@ -189,10 +189,10 @@ paths:
         - Dictionary
       description: Fetches the dictionary meaning of a word.
       parameters:
-        - $ref: '#/components/parameters/word'
-        - $ref: '#/components/parameters/from'
-        - $ref: '#/components/parameters/to'
-        - $ref: '#/components/parameters/dictprovider'
+        - $ref: "#/components/parameters/word"
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+        - $ref: "#/components/parameters/dictprovider"
       responses:
         200:
           description: Dictionary meaning of a word fetched successfully
@@ -243,14 +243,14 @@ paths:
         - Machine translation
       description: Fetches the machine translation. Some providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
       parameters:
-        - $ref: '#/components/parameters/from'
-        - $ref: '#/components/parameters/to'
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
       requestBody:
         content:
           application/json:
             schema:
               required:
-              - html
+                - html
               properties:
                 html:
                   type: string
@@ -287,15 +287,15 @@ paths:
         - Machine translation
       description: Fetches the machine translation. Some providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
       parameters:
-        - $ref: '#/components/parameters/from'
-        - $ref: '#/components/parameters/to'
-        - $ref: '#/components/parameters/mtprovider'
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+        - $ref: "#/components/parameters/mtprovider"
       requestBody:
         content:
           application/json:
             schema:
               required:
-              - html
+                - html
               properties:
                 html:
                   type: string
@@ -333,8 +333,8 @@ paths:
         - Tools
       description: Lists the tools for a given language pair
       parameters:
-        - $ref: '#/components/parameters/from'
-        - $ref: '#/components/parameters/to'
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
       responses:
         200:
           description: Lists the tools for a given language pair fetched successfully
@@ -369,7 +369,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
       x-amples:
         - title: Get all the language pairs
           response:
@@ -383,7 +383,7 @@ paths:
         - Service information
       description: Lists all language pairs that tool supports.
       parameters:
-        - $ref: '#/components/parameters/tool'
+        - $ref: "#/components/parameters/tool"
       responses:
         200:
           description: List of all language pairs
@@ -392,19 +392,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         500:
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
       x-amples:
         - title: Get the MT tool between two language pairs
           request:
@@ -422,9 +422,9 @@ paths:
         - Service information
       description: Lists the providers for the tool in that language pair.
       parameters:
-        - $ref: '#/components/parameters/tool'
-        - $ref: '#/components/parameters/from'
-        - $ref: '#/components/parameters/to'
+        - $ref: "#/components/parameters/tool"
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
       responses:
         200:
           description: List of all language pairs
@@ -433,19 +433,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         500:
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
       x-amples:
         - title: Get the MT tool between two language pairs
           request:
@@ -464,9 +464,9 @@ paths:
         - Page content
       description: Fetches segmented mediawiki page
       parameters:
-        - $ref: '#/components/parameters/sourcelanguage'
-        - $ref: '#/components/parameters/targetlanguage'
-        - $ref: '#/components/parameters/title'
+        - $ref: "#/components/parameters/sourcelanguage"
+        - $ref: "#/components/parameters/targetlanguage"
+        - $ref: "#/components/parameters/title"
       responses:
         200:
           description: Success
@@ -475,19 +475,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         500:
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
 
       x-amples:
         - title: Translate enwiki protected page
@@ -506,10 +506,10 @@ paths:
         - Page content
       description: Fetches segmented mediawiki page
       parameters:
-        - $ref: '#/components/parameters/sourcelanguage'
-        - $ref: '#/components/parameters/targetlanguage'
-        - $ref: '#/components/parameters/title'
-        - $ref: '#/components/parameters/revision'
+        - $ref: "#/components/parameters/sourcelanguage"
+        - $ref: "#/components/parameters/targetlanguage"
+        - $ref: "#/components/parameters/title"
+        - $ref: "#/components/parameters/revision"
       responses:
         200:
           description: Success
@@ -518,19 +518,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         500:
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
 
       x-amples:
         - title: Translate enwiki protected page
@@ -549,14 +549,14 @@ paths:
         - Machine translation
       description: Translate the given content from source language to target language using default MT provider. Also adapt the content for the target language wiki. Some machine translation providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
       parameters:
-        - $ref: '#/components/parameters/from'
-        - $ref: '#/components/parameters/to'
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
       requestBody:
         content:
           application/json:
             schema:
               required:
-              - html
+                - html
               properties:
                 html:
                   type: string
@@ -571,19 +571,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         500:
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
       x-amples:
         - title: Machine translate an HTML fragment using TestClient, adapt the links to target language wiki.
           request:
@@ -605,15 +605,15 @@ paths:
         - Machine translation
       description: Translate the given content from source language to target language. Also adapt the content for the target language wiki. Some machine translation providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
       parameters:
-        - $ref: '#/components/parameters/from'
-        - $ref: '#/components/parameters/to'
-        - $ref: '#/components/parameters/mtprovider'
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+        - $ref: "#/components/parameters/mtprovider"
       requestBody:
         content:
           application/json:
             schema:
               required:
-              - html
+                - html
               properties:
                 html:
                   type: string
@@ -628,19 +628,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         500:
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
       x-amples:
         - title: Machine translate an HTML fragment using TestClient, adapt the links to target language wiki.
           request:
@@ -663,8 +663,8 @@ paths:
         - Suggestions
       description: Suggest a source article to use for creating given article in given target language using translation
       parameters:
-        - $ref: '#/components/parameters/title'
-        - $ref: '#/components/parameters/to'
+        - $ref: "#/components/parameters/title"
+        - $ref: "#/components/parameters/to"
         - name: sourcelanguages
           in: query
           description: Comma-separated list of candidate source languages. By default English(en) is used as a source language unless that is the target language.
@@ -683,19 +683,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         500:
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
       x-amples:
         - title: Suggest a source title to use for translation
           request:
@@ -717,8 +717,8 @@ paths:
         - Suggestions
       description: Suggest target section titles based on provided source section titles. Titles are provided as URL params under the key "titles"
       parameters:
-        - $ref: '#/components/parameters/from'
-        - $ref: '#/components/parameters/to'
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
         - name: titles
           in: query
           description: List of source section titles separated by pipe ("|") delimiter, based on which target section suggestions will be given. Should be passed as array inside URL params (e.g. titles=test1|test2)
@@ -735,19 +735,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         500:
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
       x-amples:
         - title: Suggest target section titles for given source sections
           request:
@@ -759,9 +759,9 @@ paths:
           response:
             status: 200
             body:
-              References: [Referencias, Bibliografía]
-              Notes: [Referencias, Notas]
-              External Links: [Enlaces externos]
+              References: [ Referencias, Bibliografía ]
+              Notes: [ Referencias, Notas ]
+              External Links: [ Enlaces externos ]
             headers:
               content-type: application/json
 
@@ -771,9 +771,9 @@ paths:
         - Suggestions
       description: Suggest sections to translate from a source article to its corresponding article in target language.
       parameters:
-        - $ref: '#/components/parameters/title'
-        - $ref: '#/components/parameters/from'
-        - $ref: '#/components/parameters/to'
+        - $ref: "#/components/parameters/title"
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
       responses:
         200:
           description: Success
@@ -782,19 +782,19 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         500:
           description: Server Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
         default:
           description: Error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/problem'
+                $ref: "#/components/schemas/problem"
       x-amples:
         - title: Suggest source sections to translate
           request:
@@ -1003,12 +1003,12 @@ components:
           - Apertium
           - null
     tool:
-        name: tool
-        in: path
-        description: The tool name
-        schema:
-          type: string
-          enum:
-            - mt
-            - dictionary
-        required: true
+      name: tool
+      in: path
+      description: The tool name
+      schema:
+        type: string
+        enum:
+          - mt
+          - dictionary
+      required: true
