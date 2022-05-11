@@ -7,5 +7,13 @@
 	"rules": {
 		"max-len": "off",
 		"yml/no-empty-mapping-value": "warn"
-	}
+	},
+	"overrides": [
+		{
+			"files": [ "scripts/template-mapping.js" ],
+			"rules": {
+				"camelcase": [ "off" ]
+			}
+		}
+	]
 }

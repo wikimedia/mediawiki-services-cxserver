@@ -72,39 +72,39 @@ async function main( databaseFile, mapping, from, to ) {
 }
 
 const argparser = new ArgumentParser( {
-	addHelp: true,
+	add_help: true,
 	description: 'Prepare template mapping database'
 } );
 
-argparser.addArgument(
-	[ '-d', '--database' ],
+argparser.add_argument(
+	'-d', '--database',
 	{
 		help: 'template mapping database file',
-		defaultValue: 'templatemapping.db'
+		default: 'templatemapping.db'
 	}
 );
-argparser.addArgument(
-	[ '-i', '--input' ],
+argparser.add_argument(
+	'-i', '--input',
 	{
 		help: 'JSON file with mapping.',
 		required: true
 	}
 );
-argparser.addArgument(
-	[ '--from' ],
+argparser.add_argument(
+	'--from',
 	{
 		help: 'Source language',
 		required: true
 	}
 );
-argparser.addArgument(
-	[ '--to' ],
+argparser.add_argument(
+	'--to',
 	{
 		help: 'Target language',
 		required: true
 	}
 );
-const args = argparser.parseArgs();
+const args = argparser.parse_args();
 
 const input = args.input;
 if ( !fs.existsSync( input ) ) {
