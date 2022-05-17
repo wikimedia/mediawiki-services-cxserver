@@ -8,6 +8,8 @@ import logging
 import argparse
 import requests
 import json
+import re
+
 
 log = logging.getLogger()
 
@@ -25,6 +27,8 @@ log = logging.getLogger()
 
 
 def get_all_language_pairs_in_CX():
+    # Minimum number of translations to consider a language pair
+    min_translations = 10
     api: str = "https://en.wikipedia.org/w/api.php?action=query&list=contenttranslationstats&format=json"
     languages = {}
     pages = json.loads(requests.get(api).text)["query"]["contenttranslationstats"][
@@ -33,7 +37,11 @@ def get_all_language_pairs_in_CX():
     pairCount: int = 0
     for page in pages:
         extistingTargetLanguages = languages.get(page["sourceLanguage"], [])
-        if page["targetLanguage"] not in extistingTargetLanguages and page["status"] != 'draft' and int(page["translators"]) > 1:
+        if (
+            page["targetLanguage"] not in extistingTargetLanguages
+            and page["status"] != "draft"
+            and int(page["translators"]) > min_translations
+        ):
             extistingTargetLanguages.append(page["targetLanguage"])
             languages[page["sourceLanguage"]] = extistingTargetLanguages
             pairCount = pairCount + 1
@@ -53,12 +61,21 @@ def get_section_titles(database, sourceLanguage, targetLanguage, rank):
         WHERE source_language=?
 			AND target_language=?
 			AND rank <= ?
+            AND source_title != ""
+            AND target_title != ""
+            AND probability > 0.6
 			AND source_title != target_title
         """,
         (sourceLanguage + "wiki", targetLanguage + "wiki", rank),
     )
 
     for (sourcetitle, targettitle) in pairs:
+        # Filter out titles with special characters since they are rare
+        if re.search(r"[,:\[\]<>\-'\\/\"+]+", sourcetitle) or re.search(r"[,:\[\]<>\-'\\/\"+]+", targettitle):
+            continue
+        if re.search(r"^[0-9:\-()\s\"]+$", sourcetitle) or re.search(r"^[0-9:\-()\s\"]+$", targettitle):
+            continue
+        # This takes care of duplicates too.
         titlepairs[sourcetitle] = targettitle
 
     connection.close()
@@ -91,7 +108,7 @@ def add_section_titles(database, sourceLanguage, targetLanguage, titleMapping):
 
 def main(options):
     languagePairs = get_all_language_pairs_in_CX()
-    #languagePairs = {"en": ["or"], "ml": ["en"]}
+    # languagePairs = {"en": ["or"], "ml": ["en"]}
     index = 0
     sourcedb = options.source.name
     targetdb = options.target.name
