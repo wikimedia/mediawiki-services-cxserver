@@ -85,7 +85,11 @@ services:
       templatemapping:
         database: config/templatemapping.db
       sectionmapping:
-        database: config/cx-section-titles-aligned.db
+        database: cxserver
+        host: m5-master.eqiad.wmnet
+        user: root
+        password: cxserverdbpassword
+        type: mysql
       mt:
         Apertium:
           api: https://apertium.wmflabs.org

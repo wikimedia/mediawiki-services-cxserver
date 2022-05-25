@@ -11,6 +11,18 @@ import json
 
 log = logging.getLogger()
 
+# The table titles should be present already. If not:
+# CREATE TABLE titles
+#             (source_language varbinary(63),
+#             target_language varbinary(63),
+#             source_title TEXT,
+#             target_title TEXT,
+#             frequency INTEGER);
+
+
+# CREATE INDEX title_source_target
+# ON titles (source_language, target_language);
+
 
 def get_all_language_pairs_in_CX():
     api: str = "https://en.wikipedia.org/w/api.php?action=query&list=contenttranslationstats&format=json"

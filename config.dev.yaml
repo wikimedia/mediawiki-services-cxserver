@@ -84,6 +84,7 @@ services:
         database: config/templatemapping.db
       sectionmapping:
         database: config/cx-section-titles-aligned.db
+        type: sqlite
       mt:
         Apertium:
           api: https://apertium.wmflabs.org
