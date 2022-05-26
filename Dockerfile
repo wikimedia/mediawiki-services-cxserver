@@ -1,4 +1,4 @@
-FROM node:12-bullseye
+FROM node:14-bullseye
 
 WORKDIR /opt/cxserver
 COPY . ./
