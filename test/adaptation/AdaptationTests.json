@@ -739,7 +739,7 @@
 		"desc": "Image adaptation basic test",
 		"from": "en",
 		"to": "ru",
-		"source": "<figure class='mw-default-size mw-halign-left' typeof='mw:Image/Thumb' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a><figcaption id='mwVA'><a rel='mw:WikiLink' href='./Philo_of_Byzantium' title='Philo of Byzantium' id='mwVQ'>Philo's</a> experiment inspired later <a rel='mw:WikiLink' href='./Detective' title='Detective' id='mwVg'>investigators</a>.</figcaption></figure>",
+		"source": "<figure class='mw-default-size mw-halign-left' typeof='mw:File/Thumb' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a><figcaption id='mwVA'><a rel='mw:WikiLink' href='./Philo_of_Byzantium' title='Philo of Byzantium' id='mwVQ'>Philo's</a> experiment inspired later <a rel='mw:WikiLink' href='./Detective' title='Detective' id='mwVg'>investigators</a>.</figcaption></figure>",
 		"resultAttributes": {
 			"mwVQ": {
 				"href": "Филон Византийский",
@@ -836,7 +836,7 @@
 		"desc": "Image adaptation - Source and target language directions differs",
 		"from": "en",
 		"to": "he",
-		"source": "<figure class='mw-default-size mw-halign-left' typeof='mw:Image/Thumb' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a><figcaption id='mwVA'><a rel='mw:WikiLink' href='./Philo_of_Byzantium' title='Philo of Byzantium' id='mwVQ'>Philo's</a> experiment inspired later <a rel='mw:WikiLink' href='./Detective' title='Detective' id='mwVg'>investigators</a>.</figcaption></figure>",
+		"source": "<figure class='mw-default-size mw-halign-left' typeof='mw:File/Thumb' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a><figcaption id='mwVA'><a rel='mw:WikiLink' href='./Philo_of_Byzantium' title='Philo of Byzantium' id='mwVQ'>Philo's</a> experiment inspired later <a rel='mw:WikiLink' href='./Detective' title='Detective' id='mwVg'>investigators</a>.</figcaption></figure>",
 		"resultAttributes": {
 			"mwUQ": {
 				"class": "mw-default-size mw-halign-right"
@@ -880,7 +880,7 @@
 		"desc": "Image adaptation - Image is not in commons",
 		"from": "en",
 		"to": "ml",
-		"source": "<figure class='mw-default-size mw-halign-left' typeof='mw:Image/Frame' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/mediawiki/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a><figcaption id='mwVA'><a rel='mw:WikiLink' href='./Philo_of_Byzantium' title='Philo of Byzantium' id='mwVQ'>Philo's</a> experiment inspired later <a rel='mw:WikiLink' href='./Detective' title='Detective' id='mwVg'>investigators</a>.</figcaption></figure>",
+		"source": "<figure class='mw-default-size mw-halign-left' typeof='mw:File/Frame' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/mediawiki/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a><figcaption id='mwVA'><a rel='mw:WikiLink' href='./Philo_of_Byzantium' title='Philo of Byzantium' id='mwVQ'>Philo's</a> experiment inspired later <a rel='mw:WikiLink' href='./Detective' title='Detective' id='mwVg'>investigators</a>.</figcaption></figure>",
 		"resultAttributes": {
 			"mwUQ": {
 				"data-cx": {

@@ -510,7 +510,7 @@
 			"name": "span",
 			"attributes": {
 				"id": "mwBjE",
-				"typeof": "mw:Transclusion mw:Image",
+				"typeof": "mw:Transclusion mw:File",
 				"data-mw": {
 					"parts": [
 						{

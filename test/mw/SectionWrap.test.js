@@ -53,7 +53,7 @@ const sourceHTML = `<body>
 	<span typeof="mw:Transclusion" about="#mwt5" data-mw="{}">Template 5: Some text content</span>
 	<table about="#mwt5"><tr><td>Template 5: value</td></tr></table>
 	</section>
-	<figure class="mw-default-size mw-halign-right" id="mweA" typeof="mw:Image/Thumb">
+	<figure class="mw-default-size mw-halign-right" id="mweA" typeof="mw:File/Thumb">
 	<a href="./File:PriestleyFuseli.jpg" id="mweQ">
 	<img alt="Alt text" data-file-height="587" data-file-type="bitmap" data-file-width="457" height="218" id="mweg" resource="./File:PriestleyFuseli.jpg" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/PriestleyFuseli.jpg/170px-PriestleyFuseli.jpg" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/PriestleyFuseli.jpg/340px-PriestleyFuseli.jpg 2x, //upload.wikimedia.org/wikipedia/commons/thumb/4/4a/PriestleyFuseli.jpg/255px-PriestleyFuseli.jpg 1.5x" width="170" /></a>
 	<figcaption id="mwew">
@@ -107,7 +107,7 @@ const expectedSectionWrappedHTML = `<body>
 	<table about="#mwt5"><tr><td>Template 5: value</td></tr></table>
 	</section>
 	<section rel="cx:Section">
-	<figure class="mw-default-size mw-halign-right" id="mweA" typeof="mw:Image/Thumb" rel="cx:Figure">
+	<figure class="mw-default-size mw-halign-right" id="mweA" typeof="mw:File/Thumb" rel="cx:Figure">
 	<a href="./File:PriestleyFuseli.jpg" id="mweQ"><img alt="Alt text" data-file-height="587" data-file-type="bitmap" data-file-width="457" height="218" id="mweg" resource="./File:PriestleyFuseli.jpg" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/PriestleyFuseli.jpg/170px-PriestleyFuseli.jpg" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/PriestleyFuseli.jpg/340px-PriestleyFuseli.jpg 2x, //upload.wikimedia.org/wikipedia/commons/thumb/4/4a/PriestleyFuseli.jpg/255px-PriestleyFuseli.jpg 1.5x" width="170" /></a>
 	<figcaption id="mwew">
 	<a href="./Joseph_Priestley" id="mwfA" rel="mw:WikiLink" title="Joseph Priestley">Joseph Priestley</a> is usually given priority in the discovery.
