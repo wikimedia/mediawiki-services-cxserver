@@ -68,10 +68,12 @@ de-zh: Google
 el-zh: Google
 en-eu: Google
 en-fr: Google
+en-ha: Google
 en-sh: Google
 en-zh: Google
 eo-zh: Google
 es-eu: Google
+es-ha: Google
 es-simple: Google
 es-zh: Google
 et-zh: Google
@@ -84,6 +86,7 @@ fa-zh: Google
 fi-zh: Google
 fr-eu: Google
 fr-gl: Google
+fr-ha: Google
 fr-simple: Google
 fr-zh: Google
 fy-zh: Google
@@ -170,3 +173,7 @@ vi-zh: Google
 yi-zh: Google
 yo-zh: Google
 zu-zh: Google
+en-ba: Yandex
+fr-ba: Yandex
+es-ba: Yandex
+ru-ba: Yandex
