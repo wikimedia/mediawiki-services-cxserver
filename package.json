@@ -38,13 +38,13 @@
 		"sqlite": "^4.0.25",
 		"sqlite3": "^5.0.2",
 		"swagger-router": "^0.7.4",
-		"swagger-ui-dist": "^3.52.3"
+		"swagger-ui-dist": "^4.11.1"
 	},
 	"devDependencies": {
 		"argparse": "^2.0.1",
 		"async": "^3.2.3",
 		"eslint-config-wikimedia": "0.22.1",
-		"mocha": "^8.4.0",
+		"mocha": "^10.0.0",
 		"nodemon": "^2.0.13",
 		"nyc": "^15.1.0",
 		"openapi-schema-validator": "^3.0.3"
