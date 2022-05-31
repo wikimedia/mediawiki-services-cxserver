@@ -85,9 +85,9 @@ services:
       templatemapping:
         database: config/templatemapping.db
       sectionmapping:
-        database: cxserver
-        host: m5-master.eqiad.wmnet
-        user: root
+        database: cxserverdb
+        host: m5-master.codfw.wmnet
+        user: cxserver
         password: cxserverdbpassword
         type: mysql
       mt:
