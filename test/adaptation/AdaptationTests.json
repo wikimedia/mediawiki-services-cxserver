@@ -884,9 +884,7 @@
 		"resultAttributes": {
 			"mwUQ": {
 				"data-cx": {
-					"adapted": false,
-					"imageSource": "//upload.wikimedia.org/wikipedia/mediawiki/e/e6/Philos_experiment_of_the_burning_candle.PNG",
-					"resource": "./File:Philos_experiment_of_the_burning_candle.PNG"
+					"adapted": false
 				}
 			},
 			"mwVQ": {
@@ -1082,6 +1080,62 @@
 					"partial": false,
 					"targetExists": true
 				} ]
+			}
+		}
+	},
+	{
+		"desc": "Audio adaptation",
+		"from": "en",
+		"to": "es",
+		"source": "<figure class=\"mw-default-size mw-default-audio-height\" typeof=\"mw:File\"><span><audio id='mwUQ' controls=\"\" preload=\"none\"   height=\"20\"  width=\"220\" resource=\"./File:Continuity_proof.ogg\"> <source src=\"https://upload.wikimedia.org/wikipedia/commons/4/4d/Continuity_proof.ogg\"/                     type='audio/ogg; codecs=\"vorbis\"' data-title=\"Original Ogg file (25 kbps)\"  data-shorttitle=\"Ogg source\"/></audio>       </span>    </figure>",
+		"resultAttributes": {
+			"mwUQ": {
+				"resource": "./Archivo:Continuity_proof.ogg",
+				"data-cx": {
+					"adapted": true
+				}
+			}
+		}
+	},
+	{
+		"desc": "Audio adaptation when audio is not in Commons",
+		"from": "en",
+		"to": "es",
+		"source": "<figure class=\"mw-default-size mw-default-audio-height\" typeof=\"mw:File\"><span><audio id='mwUQ' controls=\"\" preload=\"none\"   height=\"20\"  width=\"220\" resource=\"./File:Continuity_proof.ogg\"> <source src=\"https://upload.wikimedia.org/wikipedia/mediawiki/4/4d/Continuity_proof.ogg\"/                     type='audio/ogg; codecs=\"vorbis\"' data-title=\"Original Ogg file (25 kbps)\"  data-shorttitle=\"Ogg source\"/></audio>       </span>    </figure>",
+		"resultAttributes": {
+			"mwUQ": {
+				"resource": "./File:Continuity_proof.ogg",
+				"data-cx": {
+					"adapted": false
+				}
+			}
+		}
+	},
+	{
+		"desc": "Video adaptation",
+		"from": "en",
+		"to": "es",
+		"source": "<figure class='mw-default-size' typeof='mw:Video/Thumb' id='mwAQ'><span id='mwAg'><video poster='//upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm/220px--ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm.jpg' controls='' preload='none' height='124' width='220' resource='./File:ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm' id='mwAw'> <source src='//upload.wikimedia.org/wikipedia/commons/0/0b/ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm' type='video/webm; codecs='vp9, opus'' data-file-width='1920' data-file-height='1080'   data-title='Original WebM file, 1,920 × 1,080 (2.1 Mbps)' data-shorttitle='WebM source' id='mwBA' />  </video> </span><figcaption id='mwEw'>Fresh fruits and vegetables are grown in the ISS.</figcaption>  </figure>",
+		"resultAttributes": {
+			"mwAw": {
+				"resource": "./Archivo:ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm",
+				"data-cx": {
+					"adapted": true
+				}
+			}
+		}
+	},
+	{
+		"desc": "Inline Video adaptation",
+		"from": "en",
+		"to": "es",
+		"source": "<p><span class='mw-default-size' typeof='mw:File/Thumb' id='mwAQ'><span><video poster='//upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm/220px--ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm.jpg' controls='' preload='none' height='124' width='220' resource='./File:ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm' id='mwAw'> <source src='//upload.wikimedia.org/wikipedia/commons/0/0b/ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm' type='video/webm; codecs='vp9, opus'' data-file-width='1920' data-file-height='1080'   data-title='Original WebM file, 1,920 × 1,080 (2.1 Mbps)' data-shorttitle='WebM source' id='mwBA' />  </video> </span></span><p>",
+		"resultAttributes": {
+			"mwAw": {
+				"resource": "./Archivo:ScienceCasts-_Historic_Vegetable_Moment_on_the_Space_Station.webm",
+				"data-cx": {
+					"adapted": true
+				}
 			}
 		}
 	}
