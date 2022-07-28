@@ -9,7 +9,7 @@ languages:
   - be
   - be-tarask
   - bg
-  - bh
+  - bho
   - bm
   - bn
   - bs
@@ -38,6 +38,7 @@ languages:
   - gd
   - gl
   - gn
+  - gom
   - gu
   - ha
   - haw
@@ -59,7 +60,6 @@ languages:
   - km
   - kn
   - ko
-  - kon
   - ku
   - ky
   - la
