@@ -657,6 +657,69 @@ paths:
             headers:
               content-type: application/json
 
+  /v2/suggest/title/{title}/{from}/{to}:
+    get:
+      tags:
+        - Suggestions
+      description: Suggest a target title for the given source title and language pairs
+      parameters:
+        - $ref: "#/components/parameters/title"
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+      responses:
+        200:
+          description: Success
+        403:
+          description: Authentication error. The default MT provider for the given language pair needs authorization, and the given JWT is invalid.
+        404:
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        500:
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+        default:
+          description: Error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/problem"
+      x-amples:
+        - title: Suggest a target title for the given source title and language pairs
+          description: The invalid JWT key is not used, as default MT provider doesn't need authentication
+          request:
+            headers:
+              authorization: Test-auth
+            params:
+              title: Lemon
+              from: en
+              to: ca
+          response:
+            status: 200
+            body:
+              sourceLanguage: en
+              targetLanguage: ca
+              sourceTitle: Lemon
+              targetTitle: llimoner
+            headers:
+              content-type: application/json
+        - title: Return an authentication error HTTP status code, when default MT requires authentication and the given JWT is invalid
+          description: The invalid JWT key is used, as default MT provider needs authentication
+          request:
+            headers:
+              authorization: Test-auth
+            params:
+              title: Lemon
+              from: en
+              to: el
+          response:
+            status: 403
+
   /v2/suggest/source/{title}/{to}:
     get:
       tags:
