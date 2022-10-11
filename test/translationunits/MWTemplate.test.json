@@ -82,7 +82,9 @@
 					{
 						"adapted": true,
 						"partial": false,
-						"targetExists": true
+						"targetExists": true,
+						"mandatoryTargetParams": [],
+						"optionalTargetParams": []
 					}
 				],
 				"data-mw": {
@@ -159,7 +161,101 @@
 					{
 						"adapted": true,
 						"partial": false,
-						"targetExists": true
+						"targetExists": true,
+						"mandatoryTargetParams": [
+							"titre",
+							"url"
+						],
+						"optionalTargetParams": [
+							"langue",
+							"format",
+							"auteur1",
+							"date",
+							"nom1",
+							"prénom1",
+							"responsabilité1",
+							"directeur1",
+							"auteur2",
+							"auteur3",
+							"auteur4",
+							"auteur5",
+							"auteur6",
+							"auteur7",
+							"auteur8",
+							"auteur9",
+							"auteur10",
+							"auteur11",
+							"auteur12",
+							"auteur13",
+							"auteur14",
+							"nom2",
+							"prénom2",
+							"lien auteur2",
+							"responsabilité2",
+							"directeur2",
+							"nom3",
+							"prénom3",
+							"nom4",
+							"prénom4",
+							"nom5",
+							"prénom5",
+							"nom6",
+							"prénom6",
+							"nom7",
+							"prénom7",
+							"nom8",
+							"prénom8",
+							"nom9",
+							"prénom9",
+							"nom10",
+							"prénom10",
+							"nom11",
+							"prénom11",
+							"nom12",
+							"prénom12",
+							"nom13",
+							"prénom13",
+							"nom14",
+							"prénom14",
+							"et al.",
+							"auteur institutionnel",
+							"coauteurs",
+							"traducteur",
+							"photographe",
+							"sous-titre",
+							"série",
+							"site",
+							"périodique",
+							"lieu",
+							"éditeur",
+							"lien éditeur",
+							"jour",
+							"mois",
+							"année",
+							"isbn",
+							"issn",
+							"e-issn",
+							"oclc",
+							"pmid",
+							"pmcid",
+							"doi",
+							"jstor",
+							"bibcode",
+							"math reviews",
+							"zbl",
+							"arxiv",
+							"consulté le",
+							"extrait",
+							"page",
+							"id",
+							"libellé",
+							"traduction titre",
+							"description",
+							"archive-url",
+							"archive-date",
+							"brisé le",
+							"lien auteur1"
+						]
 					}
 				],
 				"data-mw": {
@@ -263,25 +359,33 @@
 				"data-cx": [
 					{
 						"adapted": true,
-						"targetExists": true
+						"targetExists": true,
+						"mandatoryTargetParams": [],
+						"optionalTargetParams": []
 					},
 					{
 						"adapted": true,
-						"targetExists": true
+						"targetExists": true,
+						"mandatoryTargetParams": [],
+						"optionalTargetParams": []
 					},
 					{
 						"adapted": false
 					},
 					{
 						"adapted": true,
-						"targetExists": true
+						"targetExists": true,
+						"mandatoryTargetParams": [],
+						"optionalTargetParams": []
 					},
 					{
 						"adapted": false
 					},
 					{
 						"adapted": true,
-						"targetExists": true
+						"targetExists": true,
+						"mandatoryTargetParams": [],
+						"optionalTargetParams": []
 					}
 				],
 				"data-mw": {
@@ -368,7 +472,9 @@
 					{
 						"adapted": false,
 						"partial": false,
-						"targetExists": true
+						"targetExists": true,
+						"mandatoryTargetParams": [],
+						"optionalTargetParams": []
 					}
 				],
 				"data-mw": {
@@ -389,7 +495,7 @@
 		}
 	},
 	{
-		"desc": "Equivalient template exist, templatedata exists only for source language. Use that as hint for extracting params from template source code in target language",
+		"desc": "Equivalent template exist, templatedata exists only for source language. Use that as hint for extracting params from template source code in target language",
 		"from": "en",
 		"to": "or",
 		"source": {
@@ -423,7 +529,9 @@
 					{
 						"adapted": true,
 						"partial": false,
-						"targetExists": true
+						"targetExists": true,
+						"mandatoryTargetParams": [],
+						"optionalTargetParams": []
 					}
 				],
 				"data-mw": {
@@ -482,7 +590,35 @@
 					{
 						"adapted": false,
 						"targetExists": true,
-						"partial": true
+						"partial": true,
+						"mandatoryTargetParams": [
+							"nombre",
+							"artista"
+						],
+						"optionalTargetParams": [
+							"tipo",
+							"carátula",
+							"publicación",
+							"grabación",
+							"género",
+							"formato",
+							"duración",
+							"discográfica",
+							"catálogo",
+							"productor",
+							"compilador",
+							"certificación",
+							"calificación",
+							"posicionamiento",
+							"anterior",
+							"posterior",
+							"añoA",
+							"añoAc",
+							"actual",
+							"añoP",
+							"misceláneo",
+							"tamaño"
+						]
 					}
 				],
 				"data-mw": {
@@ -533,7 +669,9 @@
 				"data-cx": [
 					{
 						"adapted": true,
-						"targetExists": true
+						"targetExists": true,
+						"mandatoryTargetParams": [],
+						"optionalTargetParams": []
 					}
 				],
 				"data-mw": {

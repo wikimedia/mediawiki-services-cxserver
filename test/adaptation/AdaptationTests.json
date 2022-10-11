@@ -989,7 +989,20 @@
 				"data-cx": [ {
 					"adapted": true,
 					"partial": false,
-					"targetExists": true
+					"targetExists": true,
+					"mandatoryTargetParams": [
+						"1",
+						"2"
+					],
+					"optionalTargetParams": [
+						"3",
+						"4",
+						"5",
+						"p",
+						"pp",
+						"ps",
+						"loc"
+					]
 				} ]
 			}
 		}
@@ -1041,7 +1054,9 @@
 				"data-cx": [ {
 					"adapted": true,
 					"partial": false,
-					"targetExists": true
+					"targetExists": true,
+					"mandatoryTargetParams": [],
+					"optionalTargetParams": []
 				} ]
 			}
 		}
@@ -1078,7 +1093,9 @@
 				"data-cx": [ {
 					"adapted": true,
 					"partial": false,
-					"targetExists": true
+					"targetExists": true,
+					"mandatoryTargetParams": [],
+					"optionalTargetParams": []
 				} ]
 			}
 		}
