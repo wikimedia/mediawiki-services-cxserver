@@ -741,6 +741,12 @@
 		"to": "ru",
 		"source": "<figure class='mw-default-size mw-halign-left' typeof='mw:File/Thumb' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a><figcaption id='mwVA'><a rel='mw:WikiLink' href='./Philo_of_Byzantium' title='Philo of Byzantium' id='mwVQ'>Philo's</a> experiment inspired later <a rel='mw:WikiLink' href='./Detective' title='Detective' id='mwVg'>investigators</a>.</figcaption></figure>",
 		"resultAttributes": {
+			"mwUg": {
+				"href": "./Файл:Philos_experiment_of_the_burning_candle.PNG"
+			},
+			"mwUw": {
+				"resource": "./Файл:Philos_experiment_of_the_burning_candle.PNG"
+			},
 			"mwVQ": {
 				"href": "Филон Византийский",
 				"title": "Филон Византийский",
@@ -838,6 +844,12 @@
 		"to": "he",
 		"source": "<figure class='mw-default-size mw-halign-left' typeof='mw:File/Thumb' id='mwUQ'><a href='./File:Philos_experiment_of_the_burning_candle.PNG' id='mwUg'><img alt='Drawing of a burning candle enclosed in a glass bulb.' resource='./File:Philos_experiment_of_the_burning_candle.PNG' src='//upload.wikimedia.org/wikipedia/commons/e/e6/Philos_experiment_of_the_burning_candle.PNG' data-file-width='125' data-file-height='248' data-file-type='bitmap' height='248' width='125' id='mwUw'/></a><figcaption id='mwVA'><a rel='mw:WikiLink' href='./Philo_of_Byzantium' title='Philo of Byzantium' id='mwVQ'>Philo's</a> experiment inspired later <a rel='mw:WikiLink' href='./Detective' title='Detective' id='mwVg'>investigators</a>.</figcaption></figure>",
 		"resultAttributes": {
+			"mwUg": {
+				"href": "./קובץ:Philos_experiment_of_the_burning_candle.PNG"
+			},
+			"mwUw": {
+				"resource": "./קובץ:Philos_experiment_of_the_burning_candle.PNG"
+			},
 			"mwUQ": {
 				"class": "mw-default-size mw-halign-right"
 			},
