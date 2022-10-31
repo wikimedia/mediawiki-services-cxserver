@@ -696,15 +696,15 @@ paths:
             headers:
               authorization: Test-auth
             params:
-              title: Lemon
-              from: en
+              title: Limonero
+              from: es
               to: ca
           response:
             status: 200
             body:
-              sourceLanguage: en
+              sourceLanguage: es
               targetLanguage: ca
-              sourceTitle: Lemon
+              sourceTitle: Limonero
               targetTitle: llimoner
             headers:
               content-type: application/json
