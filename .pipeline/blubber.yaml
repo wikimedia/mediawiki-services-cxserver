@@ -1,5 +1,5 @@
 version: v4
-base: docker-registry.wikimedia.org/nodejs16-slim
+base: docker-registry.wikimedia.org/nodejs18-slim
 lives:
   in: /srv/service
 runs:
@@ -8,7 +8,7 @@ runs:
 variants:
   build:
     copies: [local]
-    apt: { packages: [git, build-essential] }
+    apt: { packages: [git, npm, build-essential] }
     node: { requirements: [package.json]}
     runs: { environment: { LINK: g++ } }
   development:
