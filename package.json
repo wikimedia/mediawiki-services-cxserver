@@ -28,7 +28,7 @@
 		"http-shutdown": "^1.2.2",
 		"js-yaml": "^4.1.0",
 		"jsdom": "^17.0.0",
-		"jsonwebtoken": "^8.5.1",
+		"jsonwebtoken": "^9.0.0",
 		"lru-cache": "^6.0.0",
 		"mediawiki-title": "^0.7.5",
 		"mysql": "^2.18.1",
