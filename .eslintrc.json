@@ -6,13 +6,18 @@
 	],
 	"rules": {
 		"max-len": "off",
-		"yml/no-empty-mapping-value": "warn"
+		"yml/no-empty-mapping-value": "warn",
+		"es-x/no-hashbang": "warn"
 	},
 	"overrides": [
 		{
-			"files": [ "scripts/template-mapping.js" ],
+			"files": [
+				"scripts/template-mapping.js"
+			],
 			"rules": {
-				"camelcase": [ "off" ]
+				"camelcase": [
+					"off"
+				]
 			}
 		}
 	]

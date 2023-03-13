@@ -1,4 +1,4 @@
 {
-    "recursive": true,
-    "timeout": 100000
+	"recursive": true,
+	"timeout": 100000
 }
