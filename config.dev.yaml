@@ -120,6 +120,9 @@ services:
         OpusMT:
           api: https://opusmt.wmflabs.org/api/translate
           languages: config/OpusMT.yaml
+        MinT:
+          api: https://translate.wmcloud.org/api/translate
+          languages: config/MinT.yaml
         TestClient:
           languages: config/TestClient.yaml
       dictionary:
