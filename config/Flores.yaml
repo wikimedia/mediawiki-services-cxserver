@@ -18,7 +18,6 @@ en:
   - tn
   - ts
   - wo
-  - yue
   - zh
   - zu
 ca:
@@ -43,7 +42,6 @@ es:
   - ti
   - tn
   - ts
-  - yue
   - zh
   - zu
 fr:
@@ -67,12 +65,9 @@ fr:
   - tn
   - ts
   - wo
-  - yue
   - zh
   - zu
 pt:
   - oc
 ru:
   - ba
-zh:
-  - yue
