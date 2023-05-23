@@ -24,7 +24,11 @@ if ( !cxConfig ) {
 }
 
 cxConfig.logger = { log: console.log };
-cxConfig.metrics = { increment: console.log };
+cxConfig.metrics = {
+	makeMetric: () => {
+		return { increment: console.log };
+	}
+};
 
 const sourceHtml = fs.readFileSync( '/dev/stdin', 'utf8' );
 if ( sourceHtml.trim() === '' || process.argv.length !== 5 ) {
