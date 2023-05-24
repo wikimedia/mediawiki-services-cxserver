@@ -1,74 +1,45 @@
-en:
+handler: transform.js
+languages:
   - as
   - ast
   - ay
+  - azb
   - ba
-  - bcl
+  - ban
+  - bjn
+  - bo
+  - ca
   - ckb
+  - en
+  - es
+  - ff
+  - fr
   - ha
+  - id
   - ig
   - ilo
   - is
+  - kab
   - kg
+  - ks
   - ln
   - lg
   - nso
   - oc
   - om
-  - ss
-  - tn
-  - ts
-  - wo
-  - zh
-  - zu
-ca:
-  - oc
-es:
-  - as
-  - ast
-  - ay
-  - ba
-  - ckb
-  - ha
-  - ig
-  - ilo
-  - is
-  - kg
-  - ln
-  - lg
-  - nso
-  - oc
-  - om
+  - pag
+  - pt
+  - rs
+  - sat
   - ss
   - ti
   - tn
   - ts
-  - zh
-  - zu
-fr:
-  - as
-  - ast
-  - ay
-  - ba
-  - ckb
-  - ha
-  - ig
-  - ilo
-  - is
-  - kg
-  - ln
-  - lg
-  - nso
-  - oc
-  - om
-  - ss
-  - ti
-  - tn
-  - ts
+  - tum
   - wo
   - zh
   - zu
-pt:
-  - oc
-ru:
-  - ba
+# Specific language pairs
+pairs:
+  en:
+    - bcl # en->bcl is provided by OpusMT and it is single direction
