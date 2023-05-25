@@ -51,6 +51,44 @@ describe( 'Config transform tests', () => {
 				ca: [ 'af', 'fr' ],
 				fr: [ 'af' ]
 			}
+		},
+		{
+			description: 'Handle pairs in the configuration',
+			input: {
+				languages: [
+					'en',
+					'ig',
+					'tum',
+					'sat'
+				],
+				pairs: {
+					en: [ 'bcl' ]
+				}
+			},
+			output: {
+				en: [
+					'bcl',
+					'ig',
+					'tum',
+					'sat'
+				],
+				ig: [
+					'en',
+					'tum',
+					'sat'
+				],
+				sat: [
+					'en',
+					'ig',
+					'tum'
+				],
+				tum: [
+					'en',
+					'ig',
+					'sat'
+				]
+
+			}
 		}
 	];
 
