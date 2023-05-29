@@ -113,9 +113,6 @@ services:
           account: wikimedia
           key: null
           languages: config/LingoCloud.yaml
-        OpusMT:
-          api: https://opusmt.wmflabs.org/api/translate
-          languages: config/OpusMT.yaml
         MinT:
           api: https://translate.wmcloud.org/api/translate
           languages: config/MinT.yaml
