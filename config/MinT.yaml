@@ -10,10 +10,13 @@ languages:
   - bo
   - ca
   - ckb
+  - crh
   - en
   - es
   - ff
+  - fo
   - fr
+  - fur
   - ha
   - id
   - ig
@@ -22,6 +25,9 @@ languages:
   - kab
   - kg
   - ks
+  - li
+  - lij
+  - lmo
   - ln
   - lg
   - nso
@@ -31,11 +37,15 @@ languages:
   - pt
   - ru
   - sat
+  - shn
   - ss
+  - szl
   - ti
   - tn
   - ts
   - tum
+  - vec
+  - war
   - wo
   - zh
   - zu
