@@ -1,5 +1,6 @@
 handler: transform.js
 languages:
+  - ace
   - as
   - ast
   - ay
@@ -7,13 +8,17 @@ languages:
   - ba
   - ban
   - bjn
+  - bug
   - bo
   - ca
   - ckb
   - crh
+  - din
+  - dz
   - en
   - es
   - ff
+  - fj
   - fo
   - fr
   - fur
@@ -23,6 +28,7 @@ languages:
   - ilo
   - is
   - kab
+  - kbp
   - kg
   - ks
   - li
@@ -30,18 +36,22 @@ languages:
   - lmo
   - ln
   - lg
+  - ltg
   - nso
   - oc
   - om
   - pag
   - pt
+  - rn
   - ru
   - sat
+  - scn
   - shn
   - ss
   - szl
   - ti
   - tn
+  - tpi
   - ts
   - tum
   - vec
