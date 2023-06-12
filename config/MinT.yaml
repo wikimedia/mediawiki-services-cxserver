@@ -2,9 +2,12 @@ handler: transform.js
 languages:
   - ace
   - af
+  - ary
+  - arz
   - as
   - ast
   - ay
+  - awa
   - azb
   - ba
   - ban
@@ -38,6 +41,7 @@ languages:
   - kab
   - kbp
   - kg
+  - ki
   - ks
   - li
   - lij
@@ -56,6 +60,7 @@ languages:
   - ru
   - sat
   - scn
+  - sg
   - shn
   - ss
   - sw
