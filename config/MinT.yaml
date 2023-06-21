@@ -15,10 +15,12 @@ languages:
   - bn
   - bug
   - bo
+  - brx # No Wiki yet.
   - ca
   - ckb
   - crh
   - din
+  - doi # No Wiki yet.
   - dz
   - en
   - es
@@ -29,6 +31,8 @@ languages:
   - fr
   - fur
   - ga
+  - gom
+  - gu
   - ha
   - hi
   - ht
@@ -42,6 +46,7 @@ languages:
   - kbp
   - kg
   - ki
+  - kn
   - ks
   - li
   - lij
@@ -50,21 +55,32 @@ languages:
   - lg
   - lt
   - ltg
+  - mai
+  - ml
+  - mni
+  - mr
+  - ne
   - no
   - nso
   - oc
   - om
+  - or
+  - pa
   - pag
   - pt
   - rn
   - ru
+  - sa
   - sat
   - scn
+  - sd
   - sg
   - shn
   - ss
   - sw
   - szl
+  - ta
+  - te
   - th
   - ti
   - tn
@@ -73,6 +89,7 @@ languages:
   - tum
   - vec
   - ug
+  - ur
   - war
   - wo
   - zh
