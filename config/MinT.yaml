@@ -15,12 +15,10 @@ languages:
   - bn
   - bug
   - bo
-  - brx # No Wiki yet.
   - ca
   - ckb
   - crh
   - din
-  - doi # No Wiki yet.
   - dz
   - en
   - es
@@ -31,7 +29,6 @@ languages:
   - fr
   - fur
   - ga
-  - gom
   - gu
   - ha
   - hi
@@ -98,3 +95,12 @@ languages:
 pairs:
   en:
     - bcl # en->bcl is provided by OpusMT and it is single direction
+    - brx # IndicTrans2 only provides en<->brx, No wiki yet.
+    - doi # IndicTrans2 only provides en<->doi, No wiki yet.
+    - gom # IndicTrans2 only provides en<->gom
+  brx:
+    - en
+  doi:
+    - en
+  gom:
+    - en
