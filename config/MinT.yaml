@@ -68,7 +68,6 @@ languages:
   - rn
   - ru
   - sa
-  - sat
   - scn
   - sd
   - sg
@@ -98,9 +97,12 @@ pairs:
     - brx # IndicTrans2 only provides en<->brx, No wiki yet.
     - doi # IndicTrans2 only provides en<->doi, No wiki yet.
     - gom # IndicTrans2 only provides en<->gom
+    - sat # IndicTrans2 only provides en<->santali
   brx:
     - en
   doi:
     - en
   gom:
+    - en
+  sat:
     - en
