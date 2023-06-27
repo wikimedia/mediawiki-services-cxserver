@@ -2,36 +2,57 @@ handler: transform.js
 languages:
   - ace
   - af
+  - am
+  - ar
   - ary
   - arz
   - as
   - ast
-  - ay
   - awa
+  - ay
+  - az
   - azb
   - ba
   - ban
+  - be
+  - bg
+  - bho
   - bjn
+  - bm
   - bn
-  - bug
   - bo
+  - bs
+  - bug
   - ca
+  - ceb
   - ckb
   - crh
+  - cs
+  - cy
+  - da
   - din
   - dz
+  - ee
+  - el
   - en
+  - eo
   - es
   - et
+  - eu
+  - fa
   - ff
   - fj
   - fo
   - fr
   - fur
   - ga
+  - gl
+  - gn
   - gu
   - ha
+  - he
   - hi
+  - hr
   - ht
   - hy
   - id
@@ -39,55 +60,96 @@ languages:
   - ilo
   - is
   - jv
+  - ka
   - kab
   - kbp
   - kg
   - ki
+  - km
   - kn
+  - ko
   - ks
+  - ku
+  - lb
+  - lg
   - li
   - lij
   - lmo
   - ln
-  - lg
+  - lo
   - lt
   - ltg
+  - lv
   - mai
+  - mg
+  - mi
+  - mk
   - ml
+  - mn
   - mni
   - mr
+  - ms
+  - mt
+  - my
   - ne
+  - nn
   - no
   - nso
+  - ny
   - oc
   - om
   - or
   - pa
   - pag
+  - pap
+  - ps
   - pt
+  - qu
   - rn
+  - ro
   - ru
+  - rw
   - sa
   - scn
   - sd
   - sg
   - shn
+  - si
+  - sk
+  - sl
+  - sm
+  - sn
+  - so
+  - sq
+  - sr
   - ss
+  - st
+  - su
   - sw
   - szl
   - ta
   - te
+  - tg
   - th
   - ti
+  - tk
+  - tl
   - tn
   - tpi
+  - tr
   - ts
+  - tt
   - tum
-  - vec
+  - tw
   - ug
   - ur
+  - uz
+  - vec
   - war
   - wo
+  - xh
+  - yi
+  - yo
   - zh
   - zu
 # Specific language pairs
