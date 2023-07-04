@@ -16,7 +16,8 @@ languages:
   - ban
   - be
   - bg
-  - bho
+  - bh
+  - bho # This will get mapped to 'bh' while requesting to MinT server
   - bjn
   - bm
   - bn
@@ -91,6 +92,7 @@ languages:
   - ms
   - mt
   - my
+  - nb # This will get mapped to 'no' while requesting to MinT server
   - ne
   - nn
   - no
@@ -115,6 +117,7 @@ languages:
   - sg
   - shn
   - si
+  - simple # This will get mapped to 'en' while requesting to MinT server
   - sk
   - sl
   - sm
@@ -162,9 +165,19 @@ pairs:
     - sat # IndicTrans2 only provides en<->santali
   brx:
     - en
+    - simple
   doi:
     - en
+    - simple
   gom:
     - en
+    - simple
   sat:
     - en
+    - simple
+  simple:
+    - bcl
+    - brx
+    - doi
+    - gom
+    - sat
