@@ -42,11 +42,13 @@ languages:
   - eu
   - fa
   - ff
+  - fi
   - fj
   - fo
   - fr
   - fur
   - ga
+  - gd
   - gl
   - gn
   - gu
@@ -55,22 +57,26 @@ languages:
   - hi
   - hr
   - ht
+  - hu
   - hy
   - id
   - ig
   - ilo
   - is
+  - it
   - jv
   - ka
   - kab
   - kbp
   - kg
   - ki
+  - kk
   - km
   - kn
   - ko
   - ks
   - ku
+  - ky
   - lb
   - lg
   - li
@@ -84,6 +90,7 @@ languages:
   - mai
   - mg
   - mi
+  - min
   - mk
   - ml
   - mn
@@ -94,6 +101,7 @@ languages:
   - my
   - nb # This will get mapped to 'no' while requesting to MinT server
   - ne
+  - nl
   - nn
   - no
   - nso
@@ -104,6 +112,7 @@ languages:
   - pa
   - pag
   - pap
+  - pl
   - ps
   - pt
   - qu
@@ -112,6 +121,7 @@ languages:
   - ru
   - rw
   - sa
+  - sc
   - scn
   - sd
   - sg
@@ -128,6 +138,7 @@ languages:
   - ss
   - st
   - su
+  - sv
   - sw
   - szl
   - ta
@@ -145,9 +156,11 @@ languages:
   - tum
   - tw
   - ug
+  - uk
   - ur
   - uz
   - vec
+  - vi
   - war
   - wo
   - xh
