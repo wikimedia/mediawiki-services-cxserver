@@ -103,11 +103,6 @@ services:
           api: https://translate.yandex.net
           key: null
           languages: config/Yandex.yaml
-        Youdao:
-          api: https://openapi.youdao.com/api
-          appKey: null
-          appSecret: null
-          languages: config/Youdao.yaml
         LingoCloud:
           api: https://api.interpreter.caiyunai.com/v1
           account: wikimedia
