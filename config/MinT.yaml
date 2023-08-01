@@ -26,6 +26,7 @@ languages:
   - bug
   - ca
   - ceb
+  - chr
   - ckb
   - crh
   - cs
@@ -149,6 +150,7 @@ languages:
   - tk
   - tl
   - tn
+  - to
   - tpi
   - tr
   - ts
