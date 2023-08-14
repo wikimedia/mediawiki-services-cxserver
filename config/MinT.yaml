@@ -1,9 +1,15 @@
 handler: transform.js
 languages:
   - ace
+  - acm # No WP
+  - acq # No WP
+  - aeb # No WP
   - af
+  - ajp # No WP
   - am
+  - apc # No WP
   - ar
+  - ars # No WP
   - ary
   - arz
   - as
@@ -15,6 +21,7 @@ languages:
   - ba
   - ban
   - be
+  - bem # No WP
   - bg
   - bh
   - bho # This will get mapped to 'bh' while requesting to MinT server
@@ -27,12 +34,14 @@ languages:
   - ca
   - ceb
   - chr
+  - cjk # No WP
   - ckb
   - crh
   - cs
   - cy
   - da
   - din
+  - dyu # No WP
   - dz
   - ee
   - el
@@ -46,6 +55,7 @@ languages:
   - fi
   - fj
   - fo
+  - fon # No WP
   - fr
   - fur
   - ga
@@ -56,6 +66,7 @@ languages:
   - ha
   - he
   - hi
+  - hne # No WP
   - hr
   - ht
   - hu
@@ -68,13 +79,19 @@ languages:
   - jv
   - ka
   - kab
+  - kac # No WP
+  - kea # No WP
+  - kam # No WP
   - kbp
+  - kmb # No WP
+  - knc # No WP
   - kg
   - ki
   - kk
   - km
   - kn
   - ko
+  - kr
   - ks
   - ku
   - ky
@@ -87,7 +104,11 @@ languages:
   - lo
   - lt
   - ltg
+  - lua # No WP
+  - luo # No WP
+  - lus # No WP
   - lv
+  - mag # No WP
   - mai
   - mg
   - mi
@@ -96,6 +117,7 @@ languages:
   - ml
   - mn
   - mni
+  - mos # No WP
   - mr
   - ms
   - mt
@@ -106,6 +128,7 @@ languages:
   - nn
   - no
   - nso
+  - nus # No WP
   - ny
   - oc
   - om
@@ -143,6 +166,7 @@ languages:
   - sw
   - szl
   - ta
+  - taq # No WP
   - te
   - tg
   - th
@@ -157,8 +181,10 @@ languages:
   - tt
   - tum
   - tw
+  - tzm # No WP
   - ug
   - uk
+  - umb # No WP
   - ur
   - uz
   - vec
