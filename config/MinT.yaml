@@ -21,6 +21,7 @@ languages:
   - ba
   - ban
   - be
+  - be-tarask
   - bem # No WP
   - bg
   - bh
@@ -149,6 +150,7 @@ languages:
   - scn
   - sd
   - sg
+  - sh
   - shn
   - si
   - simple # This will get mapped to 'en' while requesting to MinT server
@@ -191,6 +193,7 @@ languages:
   - vi
   - war
   - wo
+  - wuu
   - xh
   - yi
   - yo
