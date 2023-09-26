@@ -34,6 +34,7 @@
 		"mysql": "^2.18.1",
 		"preq": "^0.5.14",
 		"sax": "1.2.4",
+		"sentencex": "^0.3.2",
 		"service-runner": "^3.1.0",
 		"sqlite": "^4.0.25",
 		"sqlite3": "^5.0.2",

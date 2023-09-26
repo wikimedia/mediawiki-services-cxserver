@@ -36,10 +36,10 @@ if ( inputHtml.trim() === '' ) {
 	process.exit( 1 );
 
 }
-
+const language = process.argv[ 2 ];
 const parsedDoc = getParsedDoc( inputHtml );
 const segmenter = new Segmenter();
-const segmentedLinearDoc = segmenter.segment( parsedDoc, 'en' );
+const segmentedLinearDoc = segmenter.segment( parsedDoc, language );
 const result = normalize( segmentedLinearDoc.getHtml() );
 process.stdout.write( result + '\n' );
 process.stdout.write( '==Categories==\n' );
