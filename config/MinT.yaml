@@ -60,6 +60,7 @@ languages:
   - fr
   - fur
   - ga
+  - gan # T343450
   - gd
   - gl
   - gn
