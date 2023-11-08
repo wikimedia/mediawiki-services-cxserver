@@ -20,5 +20,8 @@
 				]
 			}
 		}
-	]
+	],
+	"globals": {
+		"fetch": true
+	}
 }
