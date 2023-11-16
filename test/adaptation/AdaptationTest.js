@@ -39,7 +39,15 @@ describe( 'Adaptation tests', () => {
 						const actualAttributeValue = actualDom.window.document
 							.getElementById( id ).getAttribute( attribute );
 						const expectedAttributeValue = test.resultAttributes[ id ][ attribute ];
-						if ( typeof expectedAttributeValue === 'object' ) {
+						if ( attribute === 'text' ) {
+							const actualText = actualDom.window.document
+								.getElementById( id ).textContent;
+							assert.equal(
+								actualText,
+								test.resultAttributes[ id ][ attribute ],
+								`Comparing text value for element ${id}`
+							);
+						} else if ( typeof expectedAttributeValue === 'object' ) {
 							assert.deepEqual(
 								JSON.parse( actualAttributeValue ),
 								expectedAttributeValue,

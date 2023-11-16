@@ -938,18 +938,23 @@
 		"desc": "Gallery adaptation",
 		"from": "en",
 		"to": "es",
-		"source": "<ul class='gallery mw-gallery-packed' typeof='mw:Extension/gallery' about='#mwt2' data-mw='{\"name\":\"gallery\",\"attrs\":{\"mode\":\"packed\"},\"body\":{\"extsrc\":\"\\r\\nFile:Nilgiri Tahr 1.jpg|[[Nilgiri tahr]]\\r\\nFile:Malabar Giant Squirrel77.jpg|[[Malabar Giant Squirrel]], [[Silent Valley National Park]]\\r\\nFile:Periyar Thekkady.jpg|Elephants at Thekkady\\r\\nFile:Rhacophorus malabaricus.jpg|[[Rhacophorus malabaricus]]\\r\\nFile:Brahminy kite2.jpg|[[Brahminy kite]]\\r\\nFile:Goldenbacked woodpecker.jpg|[[Dinopium benghalense|Lesser golden-backed woodpecker]] water\\r\\n\"}}' id='mwAQ'></ul>",
+		"source": "<ul class='gallery mw-gallery-traditional' typeof='mw:Extension/gallery' about='#mwt2' data-mw='{\"name\":\"gallery\",\"attrs\":{},\"body\":{}}' id='mwAg'><li class='gallerycaption' id='mwAw'>caption-head</li><li class='gallerybox' style='width: 155px;' id='mwBA'><div class='thumb' style='width: 150px; height: 150px;' id='mwBQ'><span typeof='mw:File' id='mwBg'><a href='./File:Image.jpg' class='mw-file-description' title='caption-1' id='mwBw'><img alt='caption-1' resource='./File:Image.jpg' src='//upload.wikimedia.org/wikipedia/commons/thumb/7/78/Image.jpg/120px-Image.jpg' decoding='async' data-file-width='500' data-file-height='500' data-file-type='bitmap' height='120' width='120' srcset='//upload.wikimedia.org/wikipedia/commons/thumb/7/78/Image.jpg/180px-Image.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/78/Image.jpg/240px-Image.jpg 2x' class='mw-file-element' id='mwCA'/></a></span></div><div class='gallerytext' id='mwCQ'>caption-1</div></li><li class='gallerybox' style='width: 155px;' id='mwCg'><div class='thumb' style='width: 150px; height: 150px;' id='mwCw'><span typeof='mw:File' id='mwDA'><a href='./File:Image2.jpg' class='mw-file-description' title='Some caption Main Page' id='mwDQ'><img alt='Some caption Main Page' resource='./File:Image2.jpg' src='//upload.wikimedia.org/wikipedia/commons/thumb/1/15/Image2.jpg/120px-Image2.jpg' decoding='async' data-file-width='683' data-file-height='384' data-file-type='bitmap' height='67' width='120' srcset='//upload.wikimedia.org/wikipedia/commons/thumb/1/15/Image2.jpg/180px-Image2.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/15/Image2.jpg/240px-Image2.jpg 2x' class='mw-file-element' id='mwDg'/></a></span></div><div class='gallerytext' id='mwDw'>Some caption <a rel='mw:WikiLink' href='./Oxygen' title='Oxygen' id='mwEA'>Oxygen</a></div></li><li class='gallerybox' style='width: 155px;' id='mwEQ'><div class='thumb' style='width: 150px; height: 150px;' id='mwEg'><span typeof='mw:Error mw:File' data-mw='{}' id='mwEw'><a href='./Special:FilePath/ImageWithNoCaption.jpg' id='mwFA'><span class='mw-file-element mw-broken-media' resource='./File:ImageWithNoCaption.jpg' data-width='120' data-height='120' id='mwFQ'>File:ImageWithNoCaption.jpg</span></a></span></div><div class='gallerytext' id='mwFg'></div></li></ul>",
 		"resultAttributes": {
-			"mwAQ": {
+			"mwAg": {
 				"data-mw": {
 					"name": "gallery",
-					"attrs": {
-						"mode": "packed"
-					},
-					"body": {
-						"extsrc": "\nArchivo:Nilgiri Tahr 1.jpg|[[Nilgiri tahr|[en→es]Nilgiri tahr]]\nArchivo:Malabar Giant Squirrel77.jpg|[en→es]Malabar Giant Squirrel, [[Silent Valley National Park]]\nArchivo:Periyar Thekkady.jpg|[en→es]Elephants at Thekkady\nArchivo:Rhacophorus malabaricus.jpg|[[Rhacophorus malabaricus|[en→es]Rhacophorus malabaricus]]\nArchivo:Brahminy kite2.jpg|[[Brahminy kite|[en→es]Brahminy kite]]\nArchivo:Goldenbacked woodpecker.jpg|[en→es]Lesser golden-backed woodpecker water\n"
-					}
+					"attrs": {},
+					"body": {}
 				}
+			},
+			"mwAw": {
+				"text": "[en→es]caption-head"
+			},
+			"mwCQ": {
+				"text": "[en→es]caption-1"
+			},
+			"mwDw": {
+				"text": "[en→es]Some caption [en→es]Oxygen"
 			}
 		}
 	},
