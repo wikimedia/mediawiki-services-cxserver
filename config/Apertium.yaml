@@ -3,8 +3,6 @@ af:
 an:
   - ca
   - es
-ar:
-  - mt
 ast:
   - es
 be:
@@ -23,11 +21,6 @@ ca:
   - pt
   - simple
   - sc
-crh-latn:
-  - tr
-cy:
-  - en
-  - simple
 da:
   - nb
   - nn
@@ -61,7 +54,10 @@ fr:
   - ca
   - eo
   - es
+  - frp
   - oc
+frp:
+  - fr
 gl:
   - en
   - es
@@ -79,15 +75,12 @@ it:
   - ca
   - es
   - sc
-kk:
-  - tt
 mk:
   - bg
+  - en
   - sr
 ms:
   - id
-mt:
-  - ar
 nb:
   - da
   - nn
@@ -112,8 +105,6 @@ ro:
 ru:
   - be
   - uk
-se:
-  - nb
 sh:
   - en
   - simple
@@ -134,7 +125,5 @@ sv:
   - nn
 szl:
   - pl
-tt:
-  - kk
 ur:
   - hi
