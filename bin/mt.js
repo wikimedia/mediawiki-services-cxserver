@@ -47,7 +47,7 @@ if ( sourceHtml.trim() === '' ) {
 }
 
 if ( !MTClients[ mtService ] ) {
-	process.stderr.write( `Cannot find MT service: ${mtService}` );
+	process.stderr.write( `Cannot find MT service: ${ mtService }` );
 	process.exit( 1 );
 }
 

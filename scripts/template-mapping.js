@@ -51,7 +51,7 @@ async function main( databaseFile, mapping, from, to ) {
 			continue;
 		}
 		const mappingId = await createTemplate( db, from, to, templateName );
-		process.stdout.write( `${mappingId} ${from} -> ${to} ${templateName}\n` );
+		process.stdout.write( `${ mappingId } ${ from } -> ${ to } ${ templateName }\n` );
 		for ( const index in mappingData ) {
 			const paramMapping = mappingData[ index ];
 			if ( !mappingId || !paramMapping[ from ] || !paramMapping[ to ] ) {
@@ -65,7 +65,7 @@ async function main( databaseFile, mapping, from, to ) {
                 VALUES(?,?,?,?)`,
 				mappingId, paramMapping[ from ], paramMapping[ to ], score
 			);
-			process.stdout.write( `\t${paramMapping[ from ]} -> ${paramMapping[ to ]} (${score})\n` );
+			process.stdout.write( `\t${ paramMapping[ from ] } -> ${ paramMapping[ to ] } (${ score })\n` );
 		}
 	}
 	await db.close();
@@ -108,7 +108,7 @@ const args = argparser.parse_args();
 
 const input = args.input;
 if ( !fs.existsSync( input ) ) {
-	throw new Error( `File ${input} does not exist` );
+	throw new Error( `File ${ input } does not exist` );
 }
 
 main(

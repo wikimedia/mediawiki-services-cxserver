@@ -33,18 +33,18 @@ class AlignWithMT {
 	async run() {
 		// Find frequently used section titles in English.
 		const frequentSectionTitles = await this.findFrequentSectionTitles( this.sectionMappingDatabase, 'en' );
-		console.log( `Found ${frequentSectionTitles.length} frequent section titles` );
+		console.log( `Found ${ frequentSectionTitles.length } frequent section titles` );
 
 		// Find all target languages
 		const targetLanguages = await this.findTargetLanguages( this.sectionMappingDatabase );
-		console.log( `Found ${targetLanguages.length} target languages` );
+		console.log( `Found ${ targetLanguages.length } target languages` );
 
 		for ( let i = 0; i < targetLanguages.length; i++ ) {
 			const sourceLanguage = 'en';
 			const targetLanguage = targetLanguages[ i ];
 
 			const missingTitles = await this.findMissingAlignment( this.sectionMappingDatabase, 'en', targetLanguages[ i ], frequentSectionTitles );
-			console.log( `Missing titles for en -> ${targetLanguages[ i ]}: ${missingTitles.length}` );
+			console.log( `Missing titles for en -> ${ targetLanguages[ i ] }: ${ missingTitles.length }` );
 			if ( !missingTitles.length ) {
 				continue;
 			}
@@ -66,7 +66,7 @@ class AlignWithMT {
 					alignment[ missingTitles[ j ] ] = translation;
 				}
 			}
-			console.log( `[${serviceName}] ${sourceLanguage}->${targetLanguage}` );
+			console.log( `[${ serviceName }] ${ sourceLanguage }->${ targetLanguage }` );
 			if ( Object.keys( alignment ).length ) {
 				console.table( alignment );
 			} else {
@@ -128,7 +128,7 @@ class AlignWithMT {
 			from titles
 			where source_language=?
 			AND target_language=?
-			AND source_title IN (${sectionTitles.map( () => '?' )})
+			AND source_title IN (${ sectionTitles.map( () => '?' ) })
 			ORDER BY source_title, frequency DESC`;
 
 		const results = await db.all( query, [ sourceLanguage, targetLanguage, ...sectionTitles ] );
@@ -214,7 +214,7 @@ class AlignWithMT {
 		// But instantiating that is quite complex outside a server context.
 		// To save the effort, rely on public API endpoint of cxserver.
 		return await preq.get( {
-			uri: `https://cxserver.wikimedia.org/v2/list/mt/${sourceLanguage}/${targetLanguage}`
+			uri: `https://cxserver.wikimedia.org/v2/list/mt/${ sourceLanguage }/${ targetLanguage }`
 		} ).then( ( res ) => res.body.mt );
 	}
 

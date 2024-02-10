@@ -32,7 +32,7 @@ describe( 'Link Adaptation tests', function () {
 					assert.deepEqual(
 						adaptedNode.attributes[ attribute ],
 						test.result.attributes[ attribute ],
-						`Attribute ${attribute} matches`
+						`Attribute ${ attribute } matches`
 					);
 				}
 
@@ -48,7 +48,7 @@ describe( 'Link Adaptation tests', function () {
 					assert.deepEqual(
 						actualDataCX.sourceTitle[ attribute ],
 						expectedDataCX.sourceTitle[ attribute ],
-						`Property sourceTitle.${attribute} of attribute data-cx matches`
+						`Property sourceTitle.${ attribute } of attribute data-cx matches`
 					);
 				}
 
@@ -57,7 +57,7 @@ describe( 'Link Adaptation tests', function () {
 						assert.deepEqual(
 							actualDataCX.targetTitle[ attribute ],
 							expectedDataCX.targetTitle[ attribute ],
-							`Property targetTitle.${attribute} of attribute data-cx matches`
+							`Property targetTitle.${ attribute } of attribute data-cx matches`
 						);
 					}
 				}

@@ -18,7 +18,7 @@ function staticSpecLoad() {
 
 	let spec;
 	const myService = server.config.conf.services[ server.config.conf.services.length - 1 ].conf;
-	const specPath = `${__dirname}/../../../${myService.spec ? myService.spec : 'spec.yaml'}`;
+	const specPath = `${ __dirname }/../../../${ myService.spec ? myService.spec : 'spec.yaml' }`;
 
 	try {
 		spec = yaml.load( fs.readFileSync( specPath ) );
@@ -40,24 +40,24 @@ function validateExamples( pathStr, defParams, mSpec ) {
 			uri.expand( defParams );
 			return true;
 		} catch ( e ) {
-			throw new Error( `Missing parameter for route ${pathStr} : ${e.message}` );
+			throw new Error( `Missing parameter for route ${ pathStr } : ${ e.message }` );
 		}
 	}
 
 	if ( !Array.isArray( mSpec ) ) {
-		throw new Error( `Route ${pathStr} : x-amples must be an array!` );
+		throw new Error( `Route ${ pathStr } : x-amples must be an array!` );
 	}
 
 	mSpec.forEach( ( ex, idx ) => {
 		if ( !ex.title ) {
-			throw new Error( `Route ${pathStr}, example ${idx}: title missing!` );
+			throw new Error( `Route ${ pathStr }, example ${ idx }: title missing!` );
 		}
 		ex.request = ex.request || {};
 		try {
 			uri.expand( Object.assign( {}, defParams, ex.request.params || {} ) );
 		} catch ( e ) {
 			throw new Error(
-				`Route ${pathStr}, example ${idx} (${ex.title}): missing parameter: ${e.message}`
+				`Route ${ pathStr }, example ${ idx } (${ ex.title }): missing parameter: ${ e.message }`
 			);
 		}
 	} );
@@ -141,8 +141,8 @@ function cmp( result, expected, errMsg ) {
 		Object.keys( expected ).forEach( ( key ) => {
 			const val = expected[ key ];
 			assert.deepEqual( {}.hasOwnProperty.call( result, key ), true,
-				`Body field ${key} not found in response!` );
-			cmp( result[ key ], val, `${key} body field mismatch!` );
+				`Body field ${ key } not found in response!` );
+			cmp( result[ key ], val, `${ key } body field mismatch!` );
 		} );
 		return true;
 	} else if ( expected.constructor === Array ) {
@@ -193,8 +193,8 @@ function validateTestResponse( testCase, res ) {
 	Object.keys( expRes.headers ).forEach( ( key ) => {
 		const val = expRes.headers[ key ];
 		assert.deepEqual( {}.hasOwnProperty.call( res.headers, key ), true,
-			`Header ${key} not found in response!` );
-		cmp( res.headers[ key ], val, `${key} header mismatch!` );
+			`Header ${ key } not found in response!` );
+		cmp( res.headers[ key ], val, `${ key } header mismatch!` );
 	} );
 	// check the body
 	if ( !expRes.body ) {
@@ -214,7 +214,7 @@ function validateTestResponse( testCase, res ) {
 	// check that the body type is the same
 	if ( expRes.body.constructor !== res.body.constructor ) {
 		throw new Error(
-			`Expected body type ${expRes.body.constructor} but got ${res.body.constructor}`
+			`Expected body type ${ expRes.body.constructor } but got ${ res.body.constructor }`
 		);
 	}
 
@@ -239,7 +239,7 @@ describe( 'Swagger spec', function () {
 	} );
 
 	it( 'get the spec', () => {
-		return preq.get( `${server.config.uri}?spec` )
+		return preq.get( `${ server.config.uri }?spec` )
 			.then( ( res ) => {
 				assert.status( 200 );
 				assert.contentType( res, 'application/json' );
@@ -249,7 +249,7 @@ describe( 'Swagger spec', function () {
 	} );
 
 	it( 'should expose valid OpenAPI spec', () => {
-		return preq.get( { uri: `${server.config.uri}?spec` } )
+		return preq.get( { uri: `${ server.config.uri }?spec` } )
 			.then( ( res ) => {
 				assert.deepEqual( { errors: [] }, validator.validate( res.body ), 'Spec must have no validation errors' );
 			} );
@@ -261,7 +261,7 @@ describe( 'Swagger spec', function () {
 		}
 		// check the high-level attributes
 		[ 'info', 'openapi', 'paths' ].forEach( ( prop ) => {
-			assert.deepEqual( !!spec[ prop ], true, `No ${prop} field present!` );
+			assert.deepEqual( !!spec[ prop ], true, `No ${ prop } field present!` );
 		} );
 		// no paths - no love
 		assert.deepEqual( !!Object.keys( spec.paths ), true, 'No paths given in the spec!' );
@@ -269,7 +269,7 @@ describe( 'Swagger spec', function () {
 		Object.keys( spec.paths ).forEach( ( pathStr ) => {
 			assert.deepEqual( !!pathStr, true, 'A path cannot have a length of zero!' );
 			const path = spec.paths[ pathStr ];
-			assert.deepEqual( !!Object.keys( path ), true, `No methods defined for path: ${pathStr}` );
+			assert.deepEqual( !!Object.keys( path ), true, `No methods defined for path: ${ pathStr }` );
 			Object.keys( path ).forEach( ( method ) => {
 				const mSpec = path[ method ];
 				if ( {}.hasOwnProperty.call( mSpec, 'x-monitor' ) && !mSpec[ 'x-monitor' ] ) {

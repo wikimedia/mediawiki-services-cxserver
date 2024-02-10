@@ -133,7 +133,7 @@ describe( 'LinearDoc', () => {
 			const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer() );
 			parser.init();
 			parser.write( contentForTest );
-			assert.ok( LinearDoc.Utils.isIgnorableBlock( parser.builder.doc ), `File ${testFiles[ i ]} is section with block template` );
+			assert.ok( LinearDoc.Utils.isIgnorableBlock( parser.builder.doc ), `File ${ testFiles[ i ] } is section with block template` );
 		}
 	} );
 

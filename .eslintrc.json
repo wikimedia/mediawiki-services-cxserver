@@ -7,7 +7,8 @@
 	"rules": {
 		"max-len": "off",
 		"yml/no-empty-mapping-value": "warn",
-		"es-x/no-hashbang": "warn"
+		"es-x/no-hashbang": "warn",
+		"n/no-process-exit": "warn"
 	},
 	"overrides": [
 		{

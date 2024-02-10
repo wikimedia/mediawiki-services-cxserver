@@ -34,7 +34,7 @@ const sourceHtml = fs.readFileSync( '/dev/stdin', 'utf8' );
 if ( sourceHtml.trim() === '' || process.argv.length !== 5 ) {
 	const script = process.argv[ 1 ];
 	process.stderr.write(
-		`Usage: node ${script} Apertium fromLang toLang < file\n`
+		`Usage: node ${ script } Apertium fromLang toLang < file\n`
 	);
 	process.exit( 1 );
 
@@ -45,7 +45,7 @@ const sourceLang = process.argv[ 3 ];
 const targetLang = process.argv[ 4 ];
 
 if ( !MTClients[ mtService ] ) {
-	process.stderr.write( `Cannot find MT service: ${mtService}` );
+	process.stderr.write( `Cannot find MT service: ${ mtService }` );
 	process.exit( 1 );
 }
 

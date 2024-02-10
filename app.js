@@ -73,13 +73,13 @@ function initApp( options ) {
 	}
 
 	// eslint-disable-next-line camelcase
-	app.conf.log_header_whitelist = new RegExp( `^(?:${app.conf.log_header_whitelist.map( ( item ) => {
+	app.conf.log_header_whitelist = new RegExp( `^(?:${ app.conf.log_header_whitelist.map( ( item ) => {
 		return item.trim();
-	} ).join( '|' )})$`, 'i' );
+	} ).join( '|' ) })$`, 'i' );
 
 	// set up the spec
 	if ( !app.conf.spec ) {
-		app.conf.spec = `${__dirname}/spec.yaml`;
+		app.conf.spec = `${ __dirname }/spec.yaml`;
 
 	}
 
@@ -87,7 +87,7 @@ function initApp( options ) {
 		try {
 			app.conf.spec = yaml.load( fs.readFileSync( app.conf.spec ) );
 		} catch ( e ) {
-			app.logger.log( 'warn/spec', `Could not load the spec: ${e}` );
+			app.logger.log( 'warn/spec', `Could not load the spec: ${ e }` );
 			app.conf.spec = {};
 		}
 	}
@@ -133,7 +133,7 @@ function initApp( options ) {
 			if ( app.ratelimiter.isAboveLimit( clientIp, app.conf.ratelimiter_rate ) ) {
 				// Too many requests, more than the configured maximum number requests per second.
 				app.metrics.increment( 'api.ratelimiter.hit' );
-				app.logger.log( 'warn', `Client ${clientIp} exceeded the configured api rate` );
+				app.logger.log( 'warn', `Client ${ clientIp } exceeded the configured api rate` );
 				return res.status( 429 );
 			}
 		}
@@ -168,14 +168,14 @@ function initApp( options ) {
  */
 function loadRoutes( app ) {
 	// get the list of files in routes/
-	return fs.readdirAsync( `${__dirname}/lib/routes` ).map( async ( fname ) => {
+	return fs.readdirAsync( `${ __dirname }/lib/routes` ).map( async ( fname ) => {
 		// ... and then load each route
 		// but only if it's a js file
 		if ( !/\.js$/.test( fname ) ) {
 			return undefined;
 		}
 		// import the route file
-		const routeDef = require( `${__dirname}/lib/routes/${fname}` );
+		const routeDef = require( `${ __dirname }/lib/routes/${ fname }` );
 		const route = await ( routeDef.create ? routeDef.create( app ) : routeDef( app ) );
 		if ( route === undefined ) {
 			return undefined;
@@ -184,17 +184,17 @@ function loadRoutes( app ) {
 		if ( route.constructor !== Object || !route.path || !route.router ||
 			!( route.api_version || route.skip_domain )
 		) {
-			throw new TypeError( `routes/${fname} does not export the correct object!` );
+			throw new TypeError( `routes/${ fname } does not export the correct object!` );
 		}
 		// normalise the path to be used as the mount point
 		if ( route.path[ 0 ] !== '/' ) {
-			route.path = `/${route.path}`;
+			route.path = `/${ route.path }`;
 		}
 		if ( route.path[ route.path.length - 1 ] !== '/' ) {
-			route.path = `${route.path}/`;
+			route.path = `${ route.path }/`;
 		}
 		if ( !route.skip_domain ) {
-			route.path = `/:domain/v${route.api_version}${route.path}`;
+			route.path = `/:domain/v${ route.api_version }${ route.path }`;
 		}
 		// wrap the route handlers with Promise.try() blocks
 		sUtil.wrapRouteHandlers( route, app );
@@ -235,7 +235,7 @@ function createServer( app ) {
 		server = addShutdown( server );
 	} ).then( () => {
 		app.logger.log( 'info',
-			`Worker ${process.pid} listening on http${isHttps ? 's' : ''}://${app.conf.interface || '*'}:${app.conf.port}` );
+			`Worker ${ process.pid } listening on http${ isHttps ? 's' : '' }://${ app.conf.interface || '*' }:${ app.conf.port }` );
 		return server;
 	} );
 }

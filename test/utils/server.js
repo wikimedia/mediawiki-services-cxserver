@@ -11,13 +11,13 @@ const extend = require( 'extend' );
 
 // set up the configuration
 let config = {
-	conf: yaml.load( fs.readFileSync( `${__dirname}/../../config.dev.yaml` ) )
+	conf: yaml.load( fs.readFileSync( `${ __dirname }/../../config.dev.yaml` ) )
 };
 // build the API endpoint URI by supposing the actual service
 // is the last one in the 'services' list in the config file
 const myServiceIdx = config.conf.services.length - 1;
 const myService = config.conf.services[ myServiceIdx ];
-config.uri = `http://localhost:${myService.conf.port}/`;
+config.uri = `http://localhost:${ myService.conf.port }/`;
 config.service = myService;
 // no forking, run just one process when testing
 // eslint-disable-next-line camelcase

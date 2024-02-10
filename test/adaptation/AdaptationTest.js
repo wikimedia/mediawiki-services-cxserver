@@ -34,7 +34,7 @@ describe( 'Adaptation tests', () => {
 				const actualDom = new jsdom.JSDOM( result.getHtml() );
 
 				for ( const id in test.resultAttributes ) {
-					assert.ok( actualDom.window.document.getElementById( id ), `Element with id ${id} exists in the result` );
+					assert.ok( actualDom.window.document.getElementById( id ), `Element with id ${ id } exists in the result` );
 					for ( const attribute in test.resultAttributes[ id ] ) {
 						const actualAttributeValue = actualDom.window.document
 							.getElementById( id ).getAttribute( attribute );
@@ -45,19 +45,19 @@ describe( 'Adaptation tests', () => {
 							assert.equal(
 								actualText,
 								test.resultAttributes[ id ][ attribute ],
-								`Comparing text value for element ${id}`
+								`Comparing text value for element ${ id }`
 							);
 						} else if ( typeof expectedAttributeValue === 'object' ) {
 							assert.deepEqual(
 								JSON.parse( actualAttributeValue ),
 								expectedAttributeValue,
-								`Comparing attribute ${attribute} for element ${id}`
+								`Comparing attribute ${ attribute } for element ${ id }`
 							);
 						} else {
 							assert.deepEqual(
 								actualAttributeValue,
 								expectedAttributeValue,
-								`Comparing attribute ${attribute} for element ${id}`
+								`Comparing attribute ${ attribute } for element ${ id }`
 							);
 						}
 					}
