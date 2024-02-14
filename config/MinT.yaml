@@ -34,7 +34,6 @@ languages:
   - bug
   - ca
   - ceb
-  - chr
   - cjk # No WP
   - ckb
   - crh
@@ -178,7 +177,6 @@ languages:
   - tk
   - tl
   - tn
-  - to
   - tpi
   - tr
   - ts
@@ -207,11 +205,13 @@ pairs:
     - bcl # en->bcl is provided by OpusMT and it is single direction
     - bi # OpusMT single direction pair.
     - brx # IndicTrans2 only provides en<->brx, No wiki yet.
+    - chr # OpusMT single direction pair.
     - doi # IndicTrans2 only provides en<->doi, No wiki yet.
     - gom # IndicTrans2 only provides en<->gom
     - guw # OpusMT single direction pair.
     - sat # IndicTrans2 only provides en<->santali
     - srn # OpusMT single direction pair.
+    - to # OpusMT single direction pair.
     - ty # OpusMT single direction pair.
     - ve # OpusMT single direction pair.
   brx:
