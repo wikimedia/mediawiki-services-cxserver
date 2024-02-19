@@ -116,6 +116,3 @@ services:
           api: https://translate.wmcloud.org/api/translate
           languages: config/MinT.yaml
         defaults: config/mt-defaults.wikimedia.yaml
-      dictionary:
-        JsonDict:
-          languages: config/JsonDict.yaml

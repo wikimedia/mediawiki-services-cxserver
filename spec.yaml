@@ -140,113 +140,6 @@ paths:
             status: 200
             headers:
               content-type: application/json
-  /v1/dictionary/{word}/{from}/{to}:
-    get:
-      tags:
-        - Dictionary
-      description: Fetches the dictionary meaning of a word.
-      parameters:
-        - $ref: "#/components/parameters/word"
-        - $ref: "#/components/parameters/from"
-        - $ref: "#/components/parameters/to"
-      responses:
-        200:
-          description: Dictionary meaning of a word fetched successfully
-          content:
-            application/json:
-              schema:
-                type: string
-        404:
-          description: Word not found in the dictionary
-          content: {}
-      x-amples:
-        - title: Fetch dictionary meaning with a given provider
-          request:
-            params:
-              word: water
-              from: en
-              to: es
-              provider: JsonDict
-          response:
-            status: 200
-            body:
-              source: water
-              translations:
-                - phrase: /.+/
-                  sources:
-                    - fd-eng-spa
-            headers:
-              content-type: application/json
-        - title: Fetch dictionary meaning without specifying a provider
-          request:
-            params:
-              word: water
-              from: en
-              to: es
-          response:
-            status: 200
-            body:
-              source: water
-              translations:
-                - phrase: /.+/
-                  sources:
-                    - fd-eng-spa
-            headers:
-              content-type: application/json
-  /v1/dictionary/{word}/{from}/{to}/{provider}:
-    get:
-      tags:
-        - Dictionary
-      description: Fetches the dictionary meaning of a word.
-      parameters:
-        - $ref: "#/components/parameters/word"
-        - $ref: "#/components/parameters/from"
-        - $ref: "#/components/parameters/to"
-        - $ref: "#/components/parameters/dictprovider"
-      responses:
-        200:
-          description: Dictionary meaning of a word fetched successfully
-          content:
-            application/json:
-              schema:
-                type: string
-        404:
-          description: Word not found in the dictionary
-          content: {}
-      x-amples:
-        - title: Fetch dictionary meaning with a given provider
-          request:
-            params:
-              word: water
-              from: en
-              to: es
-              provider: JsonDict
-          response:
-            status: 200
-            body:
-              source: water
-              translations:
-                - phrase: /.+/
-                  sources:
-                    - fd-eng-spa
-            headers:
-              content-type: application/json
-        - title: Fetch dictionary meaning without specifying a provider
-          request:
-            params:
-              word: water
-              from: en
-              to: es
-          response:
-            status: 200
-            body:
-              source: water
-              translations:
-                - phrase: /.+/
-                  sources:
-                    - fd-eng-spa
-            headers:
-              content-type: application/json
   /v1/mt/{from}/{to}:
     post:
       tags:
@@ -1065,17 +958,6 @@ components:
       schema:
         type: string
       required: true
-    dictprovider:
-      name: provider
-      in: path
-      description: The dictionary provider id
-      required: true
-      schema:
-        type: string
-        enum:
-          - JsonDict
-          - Dictd
-          - null
     mtprovider:
       name: provider
       in: path
@@ -1095,5 +977,4 @@ components:
         type: string
         enum:
           - mt
-          - dictionary
       required: true

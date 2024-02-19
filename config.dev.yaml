@@ -113,8 +113,3 @@ services:
           languages: config/MinT.yaml
         TestClient:
           languages: config/TestClient.yaml
-      dictionary:
-        Dictd:
-          languages: config/Dictd.yaml
-        JsonDict:
-          languages: config/JsonDict.yaml
