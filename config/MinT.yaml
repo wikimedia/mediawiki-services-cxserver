@@ -226,6 +226,7 @@ pairs:
   en:
     - bcl # en->bcl is provided by OpusMT and it is single direction
     - bi # OpusMT single direction pair.
+    - br
     - brx # IndicTrans2 only provides en<->brx, No wiki yet.
     - chr # OpusMT single direction pair.
     - doi # IndicTrans2 only provides en<->doi, No wiki yet.
@@ -236,6 +237,8 @@ pairs:
     - to # OpusMT single direction pair.
     - ty # OpusMT single direction pair.
     - ve # OpusMT single direction pair.
+  fr:
+    - br
   brx:
     - en
     - simple
@@ -254,3 +257,5 @@ pairs:
     - doi
     - gom
     - sat
+  sv:
+    - fi
