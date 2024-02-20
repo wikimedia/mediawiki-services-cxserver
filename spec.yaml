@@ -101,11 +101,20 @@ paths:
             status: 200
             headers:
               content-type: application/json
+        - title: Fetch protected page with multi-word title
+          request:
+            params:
+              language: en
+              title: User:BSitzmann (WMF)/MCS/Test/Frankenstein
+          response:
+            status: 200
+            headers:
+              content-type: application/json
   /v1/page/{language}/{title}/{revision}:
     get:
       tags:
         - Page content
-      description: Fetches segmented mediawiki page
+      description: Fetches segmented mediawiki page with revision
       parameters:
         - $ref: "#/components/parameters/language"
         - $ref: "#/components/parameters/title"
@@ -121,11 +130,12 @@ paths:
           description: Page not found
           content: {}
       x-amples:
-        - title: Fetch enwiki protected page
+        - title: Fetch enwiki protected page with revision
           request:
             params:
               language: en
               title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+              revision: 1086816359
           response:
             status: 200
             headers:
@@ -500,11 +510,21 @@ paths:
             status: 200
             headers:
               content-type: application/json
+        - title: Translate enwiki protected page with multi-word title
+          request:
+            params:
+              sourcelanguage: en
+              targetlanguage: es
+              title: User:BSitzmann (WMF)/MCS/Test/Frankenstein
+          response:
+            status: 200
+            headers:
+              content-type: application/json
   /v2/page/{sourcelanguage}/{targetlanguage}/{title}/{revision}:
     get:
       tags:
         - Page content
-      description: Fetches segmented mediawiki page
+      description: Fetches segmented mediawiki page with revision
       parameters:
         - $ref: "#/components/parameters/sourcelanguage"
         - $ref: "#/components/parameters/targetlanguage"
@@ -533,12 +553,13 @@ paths:
                 $ref: "#/components/schemas/problem"
 
       x-amples:
-        - title: Translate enwiki protected page
+        - title: Translate enwiki protected page with revision
           request:
             params:
               sourcelanguage: en
               targetlanguage: es
               title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+              revision: 1086816359
           response:
             status: 200
             headers:
