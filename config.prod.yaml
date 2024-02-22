@@ -67,7 +67,7 @@ services:
         headers:
           host: "{{request.params.domain}}"
           user-agent: "{{user-agent}}"
-        method: post
+        method: "{{request.method}}"
         uri: "https://{{domain}}/w/api.php"
       restbase_req:
         method: "{{request.method}}"
