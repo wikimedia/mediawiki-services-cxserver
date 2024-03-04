@@ -2,3 +2,5 @@
 /i18n/**/*.json
 !/i18n/**/en.json
 !/i18n/**/qqq.json
+# Not in version control
+config.yaml

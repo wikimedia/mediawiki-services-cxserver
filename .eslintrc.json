@@ -1,13 +1,14 @@
 {
 	"root": true,
 	"extends": [
-		"wikimedia/server",
+		"wikimedia/common",
+		"wikimedia/node",
+		"wikimedia/language/es2022",
 		"wikimedia/jsduck"
 	],
 	"rules": {
 		"max-len": "off",
 		"yml/no-empty-mapping-value": "warn",
-		"es-x/no-hashbang": "warn",
 		"n/no-process-exit": "warn"
 	},
 	"overrides": [
