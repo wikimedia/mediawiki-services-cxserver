@@ -41,7 +41,7 @@ function deepEqual( result, expected, message ) {
  */
 function status( res, expected ) {
 
-	deepEqual( res.status, expected,
+	assert.deepEqual( res.status, expected,
 		'Expected status to be ' + expected + ', but was ' + res.status );
 
 }
@@ -54,8 +54,8 @@ function status( res, expected ) {
  */
 function contentType( res, expected ) {
 
-	const actual = res.headers[ 'content-type' ];
-	deepEqual( actual, expected,
+	const actual = res.headers.get( 'content-type' );
+	assert.deepEqual( actual, expected,
 		'Expected content-type to be ' + expected + ', but was ' + actual );
 
 }

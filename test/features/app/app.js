@@ -1,6 +1,5 @@
 'use strict';
 
-const preq = require( 'preq' );
 const assert = require( '../../utils/assert.js' );
 const server = require( '../../utils/server.js' );
 
@@ -13,41 +12,36 @@ describe( 'express app', function () {
 
 	before( async () => await server.start() );
 
-	it( 'should get robots.txt', () => {
-		return preq.get( {
-			uri: `${ server.config.uri }robots.txt`
-		} ).then( ( res ) => {
-			assert.deepEqual( res.status, 200 );
-		} );
+	it( 'should get robots.txt', async () => {
+		const response = await fetch( `${ server.config.uri }robots.txt` );
+		// check the status
+		assert.status( response, 200 );
 	} );
 
-	it( 'should set CORS headers', () => {
+	it( 'should set CORS headers', async () => {
 		if ( server.config.service.conf.cors === false ) {
 			return true;
 		}
-		return preq.get( {
-			uri: `${ server.config.uri }robots.txt`
-		} ).then( ( res ) => {
-			assert.deepEqual( res.headers[ 'access-control-allow-origin' ], '*' );
-			assert.deepEqual( !!res.headers[ 'access-control-allow-headers' ], true );
-			assert.deepEqual( !!res.headers[ 'access-control-expose-headers' ], true );
-		} );
+		const response = await fetch( `${ server.config.uri }robots.txt` );
+		assert.deepEqual( response.headers.get( 'access-control-allow-origin' ), '*' );
+		assert.deepEqual( !!response.headers.get( 'access-control-allow-headers' ), true );
+		assert.deepEqual( !!response.headers.get( 'access-control-expose-headers' ), true );
+
 	} );
 
-	it( 'should set CSP headers', () => {
+	it( 'should set CSP headers', async () => {
 		if ( server.config.service.conf.csp === false ) {
 			return true;
 		}
-		return preq.get( {
-			uri: `${ server.config.uri }robots.txt`
-		} ).then( ( res ) => {
-			assert.deepEqual( res.headers[ 'x-xss-protection' ], '1; mode=block' );
-			assert.deepEqual( res.headers[ 'x-content-type-options' ], 'nosniff' );
-			assert.deepEqual( res.headers[ 'x-frame-options' ], 'SAMEORIGIN' );
-			assert.deepEqual( res.headers[ 'content-security-policy' ], 'default-src' );
-			assert.deepEqual( res.headers[ 'x-content-security-policy' ], 'default-src' );
-			assert.deepEqual( res.headers[ 'x-webkit-csp' ], 'default-src' );
-		} );
+
+		const response = await fetch( `${ server.config.uri }robots.txt` );
+
+		assert.deepEqual( response.headers.get( 'x-xss-protection' ), '1; mode=block' );
+		assert.deepEqual( response.headers.get( 'x-content-type-options' ), 'nosniff' );
+		assert.deepEqual( response.headers.get( 'x-frame-options' ), 'SAMEORIGIN' );
+		assert.deepEqual( response.headers.get( 'content-security-policy' ), 'default-src' );
+		assert.deepEqual( response.headers.get( 'x-content-security-policy' ), 'default-src' );
+		assert.deepEqual( response.headers.get( 'x-webkit-csp' ), 'default-src' );
 	} );
 
 } );

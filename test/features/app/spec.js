@@ -1,6 +1,5 @@
 'use strict';
 
-const preq = require( 'preq' );
 const assert = require( '../../utils/assert.js' );
 const server = require( '../../utils/server.js' );
 const URI = require( 'swagger-router' ).URI;
@@ -73,7 +72,7 @@ function constructTestCase( title, path, method, request, response ) {
 		request: {
 			uri: server.config.uri + ( path[ 0 ] === '/' ? path.slice( 1 ) : path ),
 			method,
-			headers: request.headers || {},
+			headers: request.headers || { 'Content-Type': 'application/json' },
 			query: request.query,
 			body: request.body,
 			followRedirect: false
@@ -183,43 +182,44 @@ function cmp( result, expected, errMsg ) {
 
 }
 
-function validateTestResponse( testCase, res ) {
+async function validateTestResponse( testCase, response ) {
 
 	const expRes = testCase.response;
 
 	// check the status
-	assert.status( res, expRes.status );
+	assert.status( response, expRes.status );
 	// check the headers
 	Object.keys( expRes.headers ).forEach( ( key ) => {
 		const val = expRes.headers[ key ];
-		assert.deepEqual( {}.hasOwnProperty.call( res.headers, key ), true,
+		assert.deepEqual( !!response.headers.get( key ), true,
 			`Header ${ key } not found in response!` );
-		cmp( res.headers[ key ], val, `${ key } header mismatch!` );
+		cmp( response.headers.get( key ), val, `${ key } header mismatch!` );
 	} );
+
 	// check the body
 	if ( !expRes.body ) {
 		return true;
 	}
-	res.body = res.body || '';
-	if ( Buffer.isBuffer( res.body ) ) {
-		res.body = res.body.toString();
+	let body = await response.text() || '';
+	if ( Buffer.isBuffer( body ) ) {
+		body = body.toString();
 	}
-	if ( expRes.body.constructor !== res.body.constructor ) {
+	if ( expRes.body.constructor !== body.constructor ) {
 		if ( expRes.body.constructor === String ) {
-			res.body = JSON.stringify( res.body );
+			body = JSON.stringify( body );
 		} else {
-			res.body = JSON.parse( res.body );
+			body = JSON.parse( body );
 		}
 	}
 	// check that the body type is the same
-	if ( expRes.body.constructor !== res.body.constructor ) {
+	if ( expRes.body.constructor !== body.constructor ) {
 		throw new Error(
-			`Expected body type ${ expRes.body.constructor } but got ${ res.body.constructor }`
+			`Expected body type ${ expRes.body.constructor } but got ${ body.constructor }`
 		);
 	}
 
 	// compare the bodies
-	cmp( res.body, expRes.body, 'Body mismatch!' );
+	cmp( body, expRes.body, 'Body mismatch!' );
 
 	return true;
 
@@ -238,21 +238,20 @@ describe( 'Swagger spec', function () {
 		return server.start();
 	} );
 
-	it( 'get the spec', () => {
-		return preq.get( `${ server.config.uri }?spec` )
-			.then( ( res ) => {
-				assert.status( 200 );
-				assert.contentType( res, 'application/json' );
-				assert.notDeepEqual( res.body, undefined, 'No body received!' );
-				spec = res.body;
-			} );
+	it( 'get the spec', async () => {
+		const response = await fetch( `${ server.config.uri }?spec` );
+		const data = await response.json();
+		assert.status( response, 200 );
+		assert.contentType( response, 'application/json; charset=utf-8' );
+		assert.notDeepEqual( data, undefined, 'No body received!' );
+		spec = data;
 	} );
 
-	it( 'should expose valid OpenAPI spec', () => {
-		return preq.get( { uri: `${ server.config.uri }?spec` } )
-			.then( ( res ) => {
-				assert.deepEqual( { errors: [] }, validator.validate( res.body ), 'Spec must have no validation errors' );
-			} );
+	it( 'should expose valid OpenAPI spec', async () => {
+		const response = await fetch( `${ server.config.uri }?spec` );
+		const data = await response.json();
+		assert.deepEqual( { errors: [] }, validator.validate( data ), 'Spec must have no validation errors' );
+
 	} );
 
 	it( 'spec validation', () => {
@@ -283,13 +282,22 @@ describe( 'Swagger spec', function () {
 	describe( 'routes', () => {
 
 		constructTests( spec.paths, defParams ).forEach( ( testCase ) => {
-			it( testCase.title, () => {
-				return preq( testCase.request )
-					.then( ( res ) => {
-						validateTestResponse( testCase, res );
-					}, ( err ) => {
-						validateTestResponse( testCase, err );
-					} );
+			it( testCase.title, async () => {
+				let uri = testCase.request.uri;
+				const options = {
+					method: testCase.request.method.toUpperCase(),
+					headers: testCase.request.headers,
+					redirect: 'manual'
+				};
+				if ( options.method === 'POST' && testCase.request.body ) {
+					options.body = JSON.stringify( testCase.request.body );
+				} else {
+					uri = `${ uri }?${ new URLSearchParams( testCase.request.query ).toString() }`;
+				}
+				const res = await fetch( uri, options );
+				const result = await validateTestResponse( testCase, res );
+
+				return result;
 			} );
 		} );
 

@@ -1,6 +1,5 @@
 'use strict';
 
-const preq = require( 'preq' );
 const assert = require( '../../utils/assert.js' );
 const server = require( '../../utils/server.js' );
 
@@ -22,18 +21,16 @@ describe( 'service information', function () {
 
 	// common function used for generating requests
 	// and checking their return values
-	function checkRet( fieldName ) {
-		return preq.get( {
-			uri: infoUri + fieldName
-		} ).then( ( res ) => {
-			// check the returned Content-Type header
-			assert.contentType( res, 'application/json' );
-			// the status as well
-			assert.status( res, 200 );
-			// finally, check the body has the specified field
-			assert.notDeepEqual( res.body, undefined, 'No body returned!' );
-			assert.notDeepEqual( res.body[ fieldName ], undefined, `No ${ fieldName } field returned!` );
-		} );
+	async function checkRet( fieldName ) {
+		const response = await fetch( infoUri + fieldName );
+		const data = await response.json();
+		// check the returned Content-Type header
+		assert.contentType( response, 'application/json; charset=utf-8' );
+		// the status as well
+		assert.status( response, 200 );
+		// finally, check the body has the specified field
+		assert.notDeepEqual( data, undefined, 'No body returned!' );
+		assert.notDeepEqual( data[ fieldName ], undefined, `No ${ fieldName } field returned!` );
 	}
 
 	it( 'should get the service name', () => {
@@ -44,30 +41,24 @@ describe( 'service information', function () {
 		return checkRet( 'version' );
 	} );
 
-	it( 'should redirect to the service home page', () => {
-		return preq.get( {
-			uri: `${ infoUri }home`,
-			followRedirect: false
-		} ).then( ( res ) => {
-			// check the status
-			assert.status( res, 301 );
-		} );
+	it( 'should redirect to the service home page', async () => {
+		const response = await fetch( `${ infoUri }home`, { redirect: 'manual' } );
+		assert.status( response, 301 );
 	} );
 
-	it( 'should get the service info', () => {
-		return preq.get( {
-			uri: infoUri
-		} ).then( ( res ) => {
-			// check the status
-			assert.status( res, 200 );
-			// check the returned Content-Type header
-			assert.contentType( res, 'application/json' );
-			// inspect the body
-			assert.notDeepEqual( res.body, undefined, 'No body returned!' );
-			assert.notDeepEqual( res.body.name, undefined, 'No name field returned!' );
-			assert.notDeepEqual( res.body.version, undefined, 'No version field returned!' );
-			assert.notDeepEqual( res.body.description, undefined, 'No description field returned!' );
-			assert.notDeepEqual( res.body.home, undefined, 'No home field returned!' );
-		} );
+	it( 'should get the service info', async () => {
+		const response = await fetch( infoUri );
+		const data = await response.json();
+		// check the status
+		assert.status( response, 200 );
+		// check the returned Content-Type header
+		assert.contentType( response, 'application/json; charset=utf-8' );
+		// inspect the body
+		assert.notDeepEqual( data, undefined, 'No body returned!' );
+		assert.notDeepEqual( data.name, undefined, 'No name field returned!' );
+		assert.notDeepEqual( data.version, undefined, 'No version field returned!' );
+		assert.notDeepEqual( data.description, undefined, 'No description field returned!' );
+		assert.notDeepEqual( data.home, undefined, 'No home field returned!' );
 	} );
+
 } );
