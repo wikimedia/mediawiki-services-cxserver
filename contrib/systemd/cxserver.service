@@ -1,5 +1,5 @@
 [Unit]
-Description=Mediawiki Content Translation service
+Description=MediaWiki Content Translation service
 Documentation=https://www.mediawiki.org/wiki/ContentTranslation
 Wants=local-fs.target network.target
 After=local-fs.target network.target
