@@ -6,7 +6,6 @@ const sqlite = require( 'sqlite' );
 const sqlite3 = require( 'sqlite3' );
 const fs = require( 'fs' );
 const yaml = require( 'js-yaml' );
-const preq = require( 'preq' );
 const MTClients = require( __dirname + '/../../lib/mt/' );
 
 /**
@@ -213,9 +212,9 @@ class AlignWithMT {
 		// We can find the available MT services by using the cxserver registry.
 		// But instantiating that is quite complex outside a server context.
 		// To save the effort, rely on public API endpoint of cxserver.
-		return await preq.get( {
-			uri: `https://cxserver.wikimedia.org/v2/list/mt/${ sourceLanguage }/${ targetLanguage }`
-		} ).then( ( res ) => res.body.mt );
+		const response = await fetch( `https://cxserver.wikimedia.org/v2/list/mt/${ sourceLanguage }/${ targetLanguage }` );
+		const data = await response.json();
+		return data.mt;
 	}
 
 	/**
