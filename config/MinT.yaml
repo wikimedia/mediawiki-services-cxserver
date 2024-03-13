@@ -3,10 +3,12 @@ languages:
   - ace
   - acm # No WP
   - acq # No WP
+  - ady
   - aeb # No WP
   - af
   - ajp # No WP
   - am
+  - ang
   - apc # No WP
   - ar
   - ars # No WP
@@ -14,6 +16,7 @@ languages:
   - arz
   - as
   - ast
+  - av
   - awa
   - ay
   - az
@@ -21,8 +24,8 @@ languages:
   - ba
   - ban
   - be
-  - be-tarask
   - bem # No WP
+  - be-tarask
   - bg
   - bh
   - bho # This will get mapped to 'bh' while requesting to MinT server
@@ -33,7 +36,9 @@ languages:
   - bs
   - bug
   - ca
+  - ce
   - ceb
+  - ch
   - cjk # No WP
   - ckb
   - crh
@@ -57,16 +62,20 @@ languages:
   - fo
   - fon # No WP
   - fr
+  - frp
   - fur
   - ga
+  - gag
   - gan # T343450
   - gd
   - gl
   - gn
+  - gor
   - gu
   - ha
   - he
   - hi
+  - hif
   - hne # No WP
   - hr
   - ht
@@ -78,24 +87,29 @@ languages:
   - is
   - it
   - ja
+  - jam
   - jv
   - ka
   - kab
   - kac # No WP
-  - kea # No WP
   - kam # No WP
+  - kbd
   - kbp
-  - kmb # No WP
-  - knc # No WP
+  - kea # No WP
   - kg
   - ki
   - kk
   - km
+  - kmb # No WP
   - kn
+  - knc # No WP
   - ko
+  - koi
   - kr
+  - krc
   - ks
   - ku
+  - kv
   - ky
   - lb
   - lg
@@ -112,6 +126,7 @@ languages:
   - lv
   - mag # No WP
   - mai
+  - mdf
   - mg
   - mi
   - min
@@ -119,13 +134,16 @@ languages:
   - ml
   - mn
   - mni
+  - mnw
   - mos # No WP
   - mr
   - ms
   - mt
   - my
+  - myv
   - nb # This will get mapped to 'no' while requesting to MinT server
   - ne
+  - new
   - nl
   - nn
   - no
@@ -137,6 +155,7 @@ languages:
   - or
   - pa
   - pag
+  - pam
   - pap
   - pl
   - ps
@@ -170,7 +189,9 @@ languages:
   - szl
   - ta
   - taq # No WP
+  - tcy
   - te
+  - tet
   - tg
   - th
   - ti
@@ -194,9 +215,11 @@ languages:
   - war
   - wo
   - wuu
+  - xal
   - xh
   - yi
   - yo
+  - za
   - zh
   - zu
 # Specific language pairs
