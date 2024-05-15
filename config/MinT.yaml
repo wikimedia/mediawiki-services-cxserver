@@ -8,6 +8,7 @@ languages:
   - af
   - ajp # No WP
   - am
+  - an
   - ang
   - apc # No WP
   - ar
@@ -23,12 +24,14 @@ languages:
   - azb
   - ba
   - ban
+  - bar
   - be
   - bem # No WP
   - be-tarask
   - bg
   - bh
   - bho # This will get mapped to 'bh' while requesting to MinT server
+  - bi
   - bjn
   - bm
   - bn
@@ -41,6 +44,7 @@ languages:
   - ch
   - cjk # No WP
   - ckb
+  - cr
   - crh
   - cs
   - cy
@@ -72,6 +76,7 @@ languages:
   - gn
   - gor
   - gu
+  - gv
   - ha
   - he
   - hi
@@ -86,6 +91,7 @@ languages:
   - ilo
   - is
   - it
+  - iu
   - ja
   - jam
   - jv
@@ -141,7 +147,10 @@ languages:
   - mt
   - my
   - myv
+  - mwl
   - nb # This will get mapped to 'no' while requesting to MinT server
+  - nds
+  - nds-nl
   - ne
   - new
   - nl
@@ -153,6 +162,7 @@ languages:
   - oc
   - om
   - or
+  - os
   - pa
   - pag
   - pam
@@ -175,12 +185,14 @@ languages:
   - si
   - simple # This will get mapped to 'en' while requesting to MinT server
   - sk
+  - skr
   - sl
   - sm
   - sn
   - so
   - sq
   - sr
+  - srn
   - ss
   - st
   - su
@@ -204,12 +216,14 @@ languages:
   - tt
   - tum
   - tw
+  - tyv
   - tzm # No WP
   - ug
   - uk
   - umb # No WP
   - ur
   - uz
+  - ve
   - vec
   - vi
   - war
