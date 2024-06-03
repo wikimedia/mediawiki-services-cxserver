@@ -148,6 +148,7 @@ languages:
   - my
   - myv
   - mwl
+  - nan
   - nb # This will get mapped to 'no' while requesting to MinT server
   - nds
   - nds-nl
