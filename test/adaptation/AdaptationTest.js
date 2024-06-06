@@ -16,16 +16,16 @@ describe( 'Adaptation tests', () => {
 	const api = new MWApiRequestManager( server.config );
 	const mocker = new TestUtils( api );
 
-	before( function () {
+	before( () => {
 		mocker.setup( mocks );
 	} );
 
-	after( function () {
+	after( () => {
 		mocker.dump( __dirname + '/AdaptationTests.mocks.json' );
 	} );
 
 	async.each( tests, ( test, done ) => {
-		it( test.desc, function () {
+		it( test.desc, () => {
 			const cxserver = server.config.conf.services[ server.config.conf.services.length - 1 ];
 			cxserver.conf.mtClient = new TestClient( cxserver );
 			const adapter = new Adapter( test.from, test.to, api, cxserver );

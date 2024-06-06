@@ -25,7 +25,7 @@ const tests = [
 ];
 describe( 'MWPageLoader tests', () => {
 	async.each( tests, ( test ) => {
-		it( 'Test: ' + test.desc, function () {
+		it( 'Test: ' + test.desc, () => {
 			// Fake the actual MWPageLoader fetch call
 			MWPageLoader.prototype.fetch = () => {
 				const sourceContent = fs.readFileSync( __dirname + '/data/' + test.source, 'utf8' );

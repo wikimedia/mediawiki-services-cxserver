@@ -20,11 +20,11 @@ describe( 'Reference adaptation', () => {
 	const api = new MWApiRequestManager( config );
 	const mocker = new TestUtils( api );
 
-	before( function () {
+	before( () => {
 		mocker.setup( mocks );
 	} );
 
-	after( function () {
+	after( () => {
 		mocker.dump( __dirname + '/MWReference.mocks.json' );
 	} );
 

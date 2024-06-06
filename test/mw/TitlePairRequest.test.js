@@ -15,11 +15,11 @@ describe( 'Title pair tests', () => {
 	const api = new MWApiRequestManager( server.config );
 	const mocker = new TestUtils( api );
 
-	before( function () {
+	before( () => {
 		mocker.setup( mocks );
 	} );
 
-	after( function () {
+	after( () => {
 		mocker.dump( __dirname + '/TitlePairTests.mocks.json' );
 	} );
 
@@ -30,16 +30,14 @@ describe( 'Title pair tests', () => {
 			test.targetLanguage
 		);
 
-		it( 'should adapt the title when: ' + test.desc, function () {
-			return request.then( ( result ) => assert.deepEqual( result.targetTitle, test.result ) );
-		} );
+		it( 'should adapt the title when: ' + test.desc, () => request.then( ( result ) => assert.deepEqual( result.targetTitle, test.result ) ) );
 	} );
 } );
 
-describe( 'Title pair tests - batching', function () {
+describe( 'Title pair tests - batching', () => {
 	let oldGetRequestPromise;
 
-	it( 'should have the queue size 50', function () {
+	it( 'should have the queue size 50', () => {
 		oldGetRequestPromise = TitlePairRequest.prototype.getRequestPromise;
 		TitlePairRequest.prototype.getRequestPromise = function ( subqueue ) {
 			assert.deepEqual( subqueue.length, 50 );
@@ -55,7 +53,7 @@ describe( 'Title pair tests - batching', function () {
 		}
 		return Promise.all( titlePairRequest.promises );
 	} );
-	after( function () {
+	after( () => {
 		TitlePairRequest.prototype.getRequestPromise = oldGetRequestPromise;
 	} );
 } );

@@ -35,7 +35,7 @@ const testData = {
 	</section>`
 };
 
-describe( 'Yandex machine translation with corrupted result', function () {
+describe( 'Yandex machine translation with corrupted result', () => {
 	it( 'Should sanitize the MT output', () => {
 		const cxConfig = server.config.service;
 		// Fake the actual Yandex call
@@ -54,7 +54,7 @@ describe( 'Yandex machine translation with corrupted result', function () {
 	} );
 } );
 
-describe( 'Yandex machine translation', function () {
+describe( 'Yandex machine translation', () => {
 	it( 'Should fail because of wrong key ', () => {
 		const cxConfig = server.config.service;
 		cxConfig.conf.mt.Yandex.key = 'wrongkey';
@@ -62,7 +62,7 @@ describe( 'Yandex machine translation', function () {
 		const testSourceContent = '<p>This is a <a href="/Test">test</a></p>';
 		assert.fails(
 			yandex.translate( 'en', 'gu', testSourceContent ),
-			function ( err ) {
+			( err ) => {
 				if ( ( err instanceof Error ) && /value/.test( err ) ) {
 					return true;
 				}

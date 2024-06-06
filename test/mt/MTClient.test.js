@@ -24,14 +24,12 @@ const testDataWithWrappedResult = {
 	targetLang: 'es'
 };
 
-describe( 'Machine translation with wrapped html result', function () {
+describe( 'Machine translation with wrapped html result', () => {
 	it( 'Should throw error', () => {
 		const cxConfig = server.config.service;
 		// Fake the actual call
 		const oldTranslateHTML = MTClient.prototype.translateHtml;
-		MTClient.prototype.translateHtml = () => {
-			return Promise.resolve( testDataWithWrappedResult.mtResult );
-		};
+		MTClient.prototype.translateHtml = () => Promise.resolve( testDataWithWrappedResult.mtResult );
 		const mtClient = new MTClient( cxConfig );
 		assert.fails(
 			mtClient.translateReducedHtml(
@@ -39,7 +37,7 @@ describe( 'Machine translation with wrapped html result', function () {
 				testDataWithWrappedResult.targetLang,
 				testDataWithWrappedResult.input
 			),
-			function ( err ) {
+			( err ) => {
 				MTClient.prototype.translateHtml = oldTranslateHTML;
 				assert.ok( err instanceof Error );
 				assert.ok( /Unexpected content/.test( err.toString() ) );
@@ -56,13 +54,11 @@ const testDataForSpaceIssue = {
 	targetLang: 'es'
 };
 
-describe( 'Machine translation result with extra spaces', function () {
+describe( 'Machine translation result with extra spaces', () => {
 	it( 'Should be cleaned up', () => {
 		const cxConfig = server.config.service;
 		const oldTranslateHTML = MTClient.prototype.translateHtml;
-		MTClient.prototype.translateHtml = () => {
-			return Promise.resolve( testDataForSpaceIssue.mtResult );
-		};
+		MTClient.prototype.translateHtml = () => Promise.resolve( testDataForSpaceIssue.mtResult );
 		const mtClient = new MTClient( cxConfig );
 		return mtClient.translateReducedHtml(
 			testDataForSpaceIssue.sourceLang,

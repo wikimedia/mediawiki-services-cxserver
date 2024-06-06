@@ -19,7 +19,7 @@ const test = {
 describe( 'Adaptation tests', () => {
 	const api = new MWApiRequestManager( server.config );
 
-	it( 'should adapt section when: ' + test.desc, function ( done ) {
+	it( 'should adapt section when: ' + test.desc, ( done ) => {
 		const cxserver = server.config.conf.services[ server.config.conf.services.length - 1 ];
 		cxserver.conf.mtClient = new TestClient( cxserver );
 		const adapter = new Adapter( test.from, test.to, api, cxserver );

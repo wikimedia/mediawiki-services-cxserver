@@ -73,9 +73,7 @@ function initApp( options ) {
 	}
 
 	// eslint-disable-next-line camelcase
-	app.conf.log_header_whitelist = new RegExp( `^(?:${ app.conf.log_header_whitelist.map( ( item ) => {
-		return item.trim();
-	} ).join( '|' ) })$`, 'i' );
+	app.conf.log_header_whitelist = new RegExp( `^(?:${ app.conf.log_header_whitelist.map( ( item ) => item.trim() ).join( '|' ) })$`, 'i' );
 
 	// set up the spec
 	if ( !app.conf.spec ) {
@@ -108,7 +106,7 @@ function initApp( options ) {
 	}
 
 	// set the CORS and CSP headers.
-	app.all( '*', function ( req, res, next ) {
+	app.all( '*', ( req, res, next ) => {
 		if ( app.conf.cors !== false ) {
 			res.header( 'access-control-allow-origin', app.conf.cors );
 			res.header( 'access-control-allow-headers', 'accept, authorization, x-requested-with, content-type, x-wikimedia-debug' );

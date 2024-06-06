@@ -98,19 +98,17 @@ const tests = [
 	}
 ];
 
-describe( 'Apertium machine translation', function () {
-	async.forEach( tests, function ( test ) {
-		it( 'Test: ' + test.title, function () {
+describe( 'Apertium machine translation', () => {
+	async.forEach( tests, ( test ) => {
+		it( 'Test: ' + test.title, () => {
 			const textTranslations = test.textTranslations;
 			// Fake the actual Apertium call
 			Apertium.prototype.translateLines = function ( sourceLang, targetLang, sourceLines ) {
-				const targetLines = sourceLines.map( function ( line ) {
-					return textTranslations[ line ] || 'X' + line + 'X';
-				} );
+				const targetLines = sourceLines.map( ( line ) => textTranslations[ line ] || 'X' + line + 'X' );
 				return Promise.resolve( targetLines );
 			};
 			const apertium = new Apertium( server );
-			return apertium.translate( 'en', 'es', test.source ).then( function ( target ) {
+			return apertium.translate( 'en', 'es', test.source ).then( ( target ) => {
 				assert.deepEqual( target, test.target, test.title );
 			} );
 		} );

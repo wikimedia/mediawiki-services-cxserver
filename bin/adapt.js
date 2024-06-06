@@ -15,9 +15,7 @@ if ( !config ) {
 }
 
 const cxConfig = config.services && Array.isArray( config.services ) &&
-		config.services.filter( function ( item ) {
-			return item && item.name === 'cxserver';
-		} )[ 0 ];
+		config.services.filter( ( item ) => item && item.name === 'cxserver' )[ 0 ];
 if ( !cxConfig ) {
 	process.stdout.write( 'Cannot find cxserver config' );
 	process.exit( 1 );

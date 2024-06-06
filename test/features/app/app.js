@@ -8,7 +8,7 @@ if ( !server.stopHookAdded ) {
 	after( () => server.stop() );
 }
 
-describe( 'express app', function () {
+describe( 'express app', () => {
 
 	before( async () => await server.start() );
 

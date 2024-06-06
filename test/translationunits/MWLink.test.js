@@ -10,24 +10,24 @@ const server = require( '../utils/server' );
 const mocks = require( './MWLink.mocks.json' );
 const tests = require( './MWLink.test.json' );
 
-describe( 'Link Adaptation tests', function () {
+describe( 'Link Adaptation tests', () => {
 	const api = new MWApiRequestManager( server.config );
 	const mocker = new TestUtils( api );
 
-	before( function () {
+	before( () => {
 		mocker.setup( mocks );
 	} );
 
-	after( function () {
+	after( () => {
 		mocker.dump( __dirname + '/MWLink.mocks.json' );
 	} );
 
-	async.each( tests, function ( test, done ) {
-		it( test.desc, function () {
+	async.each( tests, ( test, done ) => {
+		it( test.desc, () => {
 			const adapter = new Adapter( test.from, test.to, api, server.config );
 			const translationunit = adapter.getAdapter( test.source );
 
-			return translationunit.adapt( test.source ).then( function ( adaptedNode ) {
+			return translationunit.adapt( test.source ).then( ( adaptedNode ) => {
 				for ( const attribute in [ 'href', 'rel', 'title' ] ) {
 					assert.deepEqual(
 						adaptedNode.attributes[ attribute ],

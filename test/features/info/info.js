@@ -12,9 +12,7 @@ describe( 'service information', function () {
 
 	this.timeout( 20000 );
 
-	before( () => {
-		return server.start();
-	} );
+	before( () => server.start() );
 
 	// common URI prefix for info tests
 	const infoUri = `${ server.config.uri }_info/`;
@@ -33,13 +31,9 @@ describe( 'service information', function () {
 		assert.notDeepEqual( data[ fieldName ], undefined, `No ${ fieldName } field returned!` );
 	}
 
-	it( 'should get the service name', () => {
-		return checkRet( 'name' );
-	} );
+	it( 'should get the service name', () => checkRet( 'name' ) );
 
-	it( 'should get the service version', () => {
-		return checkRet( 'version' );
-	} );
+	it( 'should get the service version', () => checkRet( 'version' ) );
 
 	it( 'should redirect to the service home page', async () => {
 		const response = await fetch( `${ infoUri }home`, { redirect: 'manual' } );

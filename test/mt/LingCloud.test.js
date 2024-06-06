@@ -4,7 +4,7 @@ const assert = require( '../utils/assert.js' );
 const server = require( '../utils/server.js' );
 const LingoCloud = require( '../../lib/mt' ).LingoCloud;
 
-describe( 'LingoCloud machine translation', function () {
+describe( 'LingoCloud machine translation', () => {
 	it( 'Should fail because of wrong key ', () => {
 		const cxConfig = server.config.service;
 		cxConfig.conf.mt.LingoCloud.key = 'wrongkey';
@@ -12,7 +12,7 @@ describe( 'LingoCloud machine translation', function () {
 		const testSourceContent = 'This is a random english text.';
 		assert.fails(
 			lingoCloud.translate( 'en', 'zh', testSourceContent ),
-			function ( err ) {
+			( err ) => {
 				if ( ( err instanceof Error ) && /value/.test( err ) ) {
 					return true;
 				}

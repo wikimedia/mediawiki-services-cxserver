@@ -234,9 +234,7 @@ describe( 'Swagger spec', function () {
 
 	this.timeout( 20000 );
 
-	before( () => {
-		return server.start();
-	} );
+	before( () => server.start() );
 
 	it( 'get the spec', async () => {
 		const response = await fetch( `${ server.config.uri }?spec` );

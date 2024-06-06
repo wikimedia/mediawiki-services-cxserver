@@ -9,7 +9,10 @@
 	"rules": {
 		"max-len": "off",
 		"yml/no-empty-mapping-value": "warn",
-		"n/no-process-exit": "warn"
+		"n/no-process-exit": "warn",
+		"no-mixed-spaces-and-tabs": "warn",
+		"implicit-arrow-linebreak": "warn",
+		"n/no-unsupported-features/node-builtins": "warn"
 	},
 	"overrides": [
 		{

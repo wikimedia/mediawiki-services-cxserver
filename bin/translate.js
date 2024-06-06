@@ -25,9 +25,7 @@ if ( !cxConfig ) {
 
 cxConfig.logger = { log: console.log };
 cxConfig.metrics = {
-	makeMetric: () => {
-		return { increment: console.log };
-	}
+	makeMetric: () => ( { increment: console.log } )
 };
 
 const sourceHtml = fs.readFileSync( '/dev/stdin', 'utf8' );

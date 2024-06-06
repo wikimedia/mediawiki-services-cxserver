@@ -11,9 +11,7 @@ if ( !server.stopHookAdded ) {
 describe( 'v2 api - page gets', function () {
 	this.timeout( 20000 );
 
-	before( function () {
-		return server.start();
-	} );
+	before( () => server.start() );
 
 	// common URI prefix for the page
 	const uri = server.config.uri + 'v2/page/en/es/Pickling';

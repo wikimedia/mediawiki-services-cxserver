@@ -31,9 +31,7 @@ config.conf.logging = {
 // make a deep copy of it for later reference
 const origConfig = extend( true, {}, config );
 
-module.exports.stop = () => {
-	return Promise.resolve();
-};
+module.exports.stop = () => Promise.resolve();
 let options = null;
 const runner = new ServiceRunner();
 
@@ -52,13 +50,9 @@ function start( _options ) {
 				.then( ( serviceReturns ) => {
 					module.exports.stop = () => {
 						console.log( 'stopping test server' );
-						serviceReturns.forEach( ( servers ) =>
-							servers.forEach( ( server ) =>
-								server.shutdown() ) );
+						serviceReturns.forEach( ( servers ) => servers.forEach( ( server ) => server.shutdown() ) );
 						return runner.stop().then( () => {
-							module.exports.stop = () => {
-								return Promise.resolve();
-							};
+							module.exports.stop = () => Promise.resolve();
 						} );
 					};
 					return true;

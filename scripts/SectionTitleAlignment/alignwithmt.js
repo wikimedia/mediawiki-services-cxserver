@@ -238,19 +238,15 @@ if ( !config ) {
 }
 
 const cxConfig = config.services && Array.isArray( config.services ) &&
-	config.services.filter( function ( item ) {
-		return item && item.name === 'cxserver';
-	} )[ 0 ];
+	config.services.filter( ( item ) => item && item.name === 'cxserver' )[ 0 ];
 if ( !cxConfig ) {
 	throw new Error( 'Cannot find cxserver config' );
 }
 // Mock the metrics
 cxConfig.metrics = {
-	makeMetric: () => {
-		return {
-			increment: () => { }
-		};
-	}
+	makeMetric: () => ( {
+		increment: () => { }
+	} )
 };
 
 const alignWithMT = new AlignWithMT( cxConfig );
