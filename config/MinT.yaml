@@ -251,6 +251,7 @@ pairs:
     - to # OpusMT single direction pair.
     - ty # OpusMT single direction pair.
     - ve # OpusMT single direction pair.
+    - zgh # Mapped with tzm in MinT (T364122).
   fr:
     - br
   brx:
