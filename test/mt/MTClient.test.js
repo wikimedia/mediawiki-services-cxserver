@@ -1,5 +1,6 @@
 'use strict';
 
+const { describe, it } = require( 'node:test' );
 const assert = require( '../utils/assert.js' );
 const server = require( '../utils/server.js' );
 const MTClient = require( '../../lib/mt/MTClient.js' );
@@ -26,7 +27,7 @@ const testDataWithWrappedResult = {
 
 describe( 'Machine translation with wrapped html result', () => {
 	it( 'Should throw error', () => {
-		const cxConfig = server.config.service;
+		const cxConfig = server.config;
 		// Fake the actual call
 		const oldTranslateHTML = MTClient.prototype.translateHtml;
 		MTClient.prototype.translateHtml = () => Promise.resolve( testDataWithWrappedResult.mtResult );
@@ -56,7 +57,7 @@ const testDataForSpaceIssue = {
 
 describe( 'Machine translation result with extra spaces', () => {
 	it( 'Should be cleaned up', () => {
-		const cxConfig = server.config.service;
+		const cxConfig = server.config;
 		const oldTranslateHTML = MTClient.prototype.translateHtml;
 		MTClient.prototype.translateHtml = () => Promise.resolve( testDataForSpaceIssue.mtResult );
 		const mtClient = new MTClient( cxConfig );
@@ -89,7 +90,7 @@ const subSequenceTests = [
 ];
 describe( 'Subsequence match finding', () => {
 	it( 'Should return correct range mapping', () => {
-		const cxConfig = server.config.service;
+		const cxConfig = server.config;
 		const mtClient = new MTClient( cxConfig );
 		for ( let i = 0; i < subSequenceTests.length; i++ ) {
 			const test = subSequenceTests[ i ];

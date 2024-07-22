@@ -7,6 +7,7 @@
 		"wikimedia/jsduck"
 	],
 	"rules": {
+		"no-unused-vars": "error",
 		"max-len": "off",
 		"yml/no-empty-mapping-value": "warn",
 		"n/no-process-exit": "warn",

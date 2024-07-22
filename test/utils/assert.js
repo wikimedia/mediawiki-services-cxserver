@@ -1,21 +1,6 @@
 'use strict';
 
-const assert = require( 'assert' );
-
-function isDeepEqual( result, expected, message ) {
-
-	try {
-		if ( typeof expected === 'string' ) {
-			assert.ok( result === expected || ( new RegExp( expected ).test( result ) ), message );
-		} else {
-			assert.deepEqual( result, expected, message );
-		}
-		return true;
-	} catch ( e ) {
-		return false;
-	}
-
-}
+const assert = require( 'node:assert/strict' );
 
 function deepEqual( result, expected, message ) {
 
@@ -54,7 +39,7 @@ function status( res, expected ) {
  */
 function contentType( res, expected ) {
 
-	const actual = res.headers.get( 'content-type' );
+	const actual = res.headers[ 'content-type' ];
 	assert.deepEqual( actual, expected,
 		'Expected content-type to be ' + expected + ', but was ' + actual );
 
@@ -94,7 +79,6 @@ function fails( promise, onRejected ) {
 module.exports.ok = assert.ok;
 module.exports.fails = fails;
 module.exports.deepEqual = deepEqual;
-module.exports.isDeepEqual = isDeepEqual;
 module.exports.notDeepEqual = notDeepEqual;
 module.exports.contentType = contentType;
 module.exports.status = status;

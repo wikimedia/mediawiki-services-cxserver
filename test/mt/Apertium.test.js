@@ -1,5 +1,6 @@
 'use strict';
 
+const { describe, it } = require( 'node:test' );
 const assert = require( '../utils/assert.js' ),
 	server = require( '../utils/server.js' ),
 	async = require( 'async' ),

@@ -1,5 +1,6 @@
 'use strict';
 
+const { describe, it } = require( 'node:test' );
 const assert = require( '../utils/assert' ),
 	LinearDoc = require( '../../lib/lineardoc' ),
 	fs = require( 'fs' ),

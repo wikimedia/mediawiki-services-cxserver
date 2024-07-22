@@ -1,10 +1,11 @@
 'use strict';
 
+const { describe, it, after, before } = require( 'node:test' );
 const Adapter = require( '../../lib/Adapter' );
 const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
 const TestClient = require( '../../lib/mt' ).TestClient;
 const TestUtils = require( '../testutils' );
-const assert = require( 'assert' );
+const assert = require( 'node:assert/strict' );
 const async = require( 'async' );
 const jsdom = require( 'jsdom' );
 const server = require( '../utils/server' );
@@ -24,27 +25,27 @@ describe( 'Adaptation tests', () => {
 		mocker.dump( __dirname + '/AdaptationTests.mocks.json' );
 	} );
 
-	async.each( tests, ( test, done ) => {
-		it( test.desc, () => {
-			const cxserver = server.config.conf.services[ server.config.conf.services.length - 1 ];
-			cxserver.conf.mtClient = new TestClient( cxserver );
-			const adapter = new Adapter( test.from, test.to, api, cxserver );
+	async.each( tests, ( testcase, done ) => {
+		it( testcase.desc, () => {
+			const cxConfig = server.config;
+			cxConfig.conf.mtClient = new TestClient( cxConfig );
+			const adapter = new Adapter( testcase.from, testcase.to, api, cxConfig );
 
-			return adapter.adapt( test.source ).then( ( result ) => {
+			return adapter.adapt( testcase.source ).then( ( result ) => {
 				const actualDom = new jsdom.JSDOM( result.getHtml() );
 
-				for ( const id in test.resultAttributes ) {
+				for ( const id in testcase.resultAttributes ) {
 					assert.ok( actualDom.window.document.getElementById( id ), `Element with id ${ id } exists in the result` );
-					for ( const attribute in test.resultAttributes[ id ] ) {
+					for ( const attribute in testcase.resultAttributes[ id ] ) {
 						const actualAttributeValue = actualDom.window.document
 							.getElementById( id ).getAttribute( attribute );
-						const expectedAttributeValue = test.resultAttributes[ id ][ attribute ];
+						const expectedAttributeValue = testcase.resultAttributes[ id ][ attribute ];
 						if ( attribute === 'text' ) {
 							const actualText = actualDom.window.document
 								.getElementById( id ).textContent;
 							assert.equal(
 								actualText,
-								test.resultAttributes[ id ][ attribute ],
+								testcase.resultAttributes[ id ][ attribute ],
 								`Comparing text value for element ${ id }`
 							);
 						} else if ( typeof expectedAttributeValue === 'object' ) {

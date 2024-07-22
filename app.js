@@ -30,6 +30,7 @@ function initApp( options ) {
 	app.ratelimiter = options.ratelimiter;
 	app.conf = options.config; // this app's config options
 	app.info = packageInfo; // this app's package info
+
 	// ensure some sane defaults
 	if ( !app.conf.port ) {
 		app.conf.port = 8888;
@@ -155,7 +156,8 @@ function initApp( options ) {
 	app.use( bodyParser.json( {
 		limit: 500000
 	} ) );
-	return Promise.resolve( app );
+
+	return loadRoutes( app );
 }
 
 /**
@@ -164,9 +166,12 @@ function initApp( options ) {
  * @param {Application} app the application object to load routes into
  * @return {Promise} a promise resolving to the app object
  */
-function loadRoutes( app ) {
+async function loadRoutes( app ) {
 	// get the list of files in routes/
-	return fs.readdirAsync( `${ __dirname }/lib/routes` ).map( async ( fname ) => {
+	const routeFiles = await fs.promises.readdir( `${ __dirname }/lib/routes`, { withFileTypes: true } );
+
+	routeFiles.forEach( ( file ) => {
+		const fname = file.name;
 		// ... and then load each route
 		// but only if it's a js file
 		if ( !/\.js$/.test( fname ) ) {
@@ -174,7 +179,7 @@ function loadRoutes( app ) {
 		}
 		// import the route file
 		const routeDef = require( `${ __dirname }/lib/routes/${ fname }` );
-		const route = await ( routeDef.create ? routeDef.create( app ) : routeDef( app ) );
+		const route = ( routeDef.create ? routeDef.create( app ) : routeDef( app ) );
 		if ( route === undefined ) {
 			return undefined;
 		}
@@ -198,12 +203,12 @@ function loadRoutes( app ) {
 		sUtil.wrapRouteHandlers( route, app );
 		// all good, use that route
 		app.use( route.path, route.router );
-	} ).then( () => {
-		// Catch and handle propagated errors
-		sUtil.setErrorHandler( app );
-		// route loading is now complete, return the app object
-		return Promise.resolve( app );
 	} );
+	// Catch and handle propagated errors
+	sUtil.setErrorHandler( app );
+	// route loading is now complete, return the app object
+	return Promise.resolve( app );
+
 }
 
 /**
@@ -249,6 +254,7 @@ function createServer( app ) {
  */
 module.exports = function ( options ) {
 	return initApp( options )
-		.then( loadRoutes )
 		.then( createServer );
 };
+
+module.exports.initApp = initApp;

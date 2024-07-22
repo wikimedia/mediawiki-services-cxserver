@@ -1,5 +1,6 @@
 'use strict';
 
+const { describe, it } = require( 'node:test' );
 const TemplateParameterMapper = require( '../../lib/adaptation/TemplateParameterMapper' );
 const assert = require( '../utils/assert' );
 

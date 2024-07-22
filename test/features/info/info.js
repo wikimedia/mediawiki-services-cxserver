@@ -1,31 +1,31 @@
 'use strict';
 
+const { describe, it, before } = require( 'node:test' );
 const assert = require( '../../utils/assert.js' );
 const server = require( '../../utils/server.js' );
+const { initApp } = require( '../../../app.js' );
+const request = require( 'supertest' );
 
-if ( !server.stopHookAdded ) {
-	server.stopHookAdded = true;
-	after( () => server.stop() );
-}
+describe( 'service information', async () => {
+	let app;
 
-describe( 'service information', function () {
-
-	this.timeout( 20000 );
-
-	before( () => server.start() );
+	before( async () => {
+		app = await initApp( server.options );
+	} );
 
 	// common URI prefix for info tests
-	const infoUri = `${ server.config.uri }_info/`;
+	const infoUri = '/_info/';
 
 	// common function used for generating requests
 	// and checking their return values
 	async function checkRet( fieldName ) {
-		const response = await fetch( infoUri + fieldName );
-		const data = await response.json();
+		const response = await request( app ).get( infoUri + fieldName );
+		const data = await response.body;
 		// check the returned Content-Type header
-		assert.contentType( response, 'application/json; charset=utf-8' );
+		assert.deepEqual( response.headers[ 'content-type' ], 'application/json; charset=utf-8' );
+
 		// the status as well
-		assert.status( response, 200 );
+		assert.deepEqual( response.statusCode, 200 );
 		// finally, check the body has the specified field
 		assert.notDeepEqual( data, undefined, 'No body returned!' );
 		assert.notDeepEqual( data[ fieldName ], undefined, `No ${ fieldName } field returned!` );
@@ -36,15 +36,15 @@ describe( 'service information', function () {
 	it( 'should get the service version', () => checkRet( 'version' ) );
 
 	it( 'should redirect to the service home page', async () => {
-		const response = await fetch( `${ infoUri }home`, { redirect: 'manual' } );
+		const response = await request( app ).get( `${ infoUri }home`, { redirect: 'manual' } );
 		assert.status( response, 301 );
 	} );
 
 	it( 'should get the service info', async () => {
-		const response = await fetch( infoUri );
-		const data = await response.json();
+		const response = await request( app ).get( infoUri );
+		const data = await response.body;
 		// check the status
-		assert.status( response, 200 );
+		assert.deepEqual( response.statusCode, 200 );
 		// check the returned Content-Type header
 		assert.contentType( response, 'application/json; charset=utf-8' );
 		// inspect the body

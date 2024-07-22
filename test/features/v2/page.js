@@ -1,27 +1,27 @@
 'use strict';
 
+const { describe, it, before } = require( 'node:test' );
 const assert = require( '../../utils/assert.js' );
 const server = require( '../../utils/server.js' );
+const { initApp } = require( '../../../app.js' );
+const request = require( 'supertest' );
 
-if ( !server.stopHookAdded ) {
-	server.stopHookAdded = true;
-	after( () => server.stop() );
-}
+describe( 'v2 api - page gets', () => {
+	let app;
 
-describe( 'v2 api - page gets', function () {
-	this.timeout( 20000 );
-
-	before( () => server.start() );
+	before( async () => {
+		app = await initApp( server.options );
+	} );
 
 	// common URI prefix for the page
-	const uri = server.config.uri + 'v2/page/en/es/Pickling';
+	const uri = '/v2/page/en/es/Pickling';
 
 	it( 'should get the whole page body', async () => {
-		const response = await fetch( uri );
-		const data = await response.json();
+		const response = await request( app ).get( uri );
+		const data = await response.body;
 
 		// check the status
-		assert.status( response, 200 );
+		assert.deepEqual( response.statusCode, 200 );
 		// check the returned Content-Type header
 		assert.contentType( response, 'application/json; charset=utf-8' );
 		// inspect the body
@@ -37,9 +37,9 @@ describe( 'v2 api - page gets', function () {
 	} );
 
 	it( 'should throw a 404 for a non-existent page', async () => {
-		const url = server.config.uri + 'v2/page/en/es/Wikipedia_content_translation_system';
-		const response = await fetch( url );
-		assert.status( response, 404 );
+		const url = '/v2/page/en/es/Wikipedia_content_translation_system';
+		const response = await request( app ).get( url );
+		assert.deepEqual( response.statusCode, 404 );
 	} );
 
 } );

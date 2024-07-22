@@ -1,6 +1,7 @@
 'use strict';
 
-const assert = require( 'assert' );
+const { describe, it } = require( 'node:test' );
+const assert = require( 'node:assert/strict' );
 const async = require( 'async' );
 const TransformLanguages = require( '../../config/transform' );
 
@@ -92,10 +93,10 @@ describe( 'Config transform tests', () => {
 		}
 	];
 
-	async.each( cases, ( test, done ) => {
-		it( test.description, () => {
-			const handler = new TransformLanguages( test.input );
-			assert.deepEqual( handler.languages, test.output );
+	async.each( cases, ( testcase, done ) => {
+		it( testcase.description, () => {
+			const handler = new TransformLanguages( testcase.input );
+			assert.deepEqual( handler.languages, testcase.output );
 			done();
 		} );
 	} );

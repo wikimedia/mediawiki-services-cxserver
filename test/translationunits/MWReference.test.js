@@ -1,5 +1,6 @@
 'use strict';
 
+const { describe, it, after, before } = require( 'node:test' );
 const Adapter = require( '../../lib/Adapter' );
 const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
 const TestClient = require( '../../lib/mt' ).TestClient;

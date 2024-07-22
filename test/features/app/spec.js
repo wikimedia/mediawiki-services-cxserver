@@ -1,22 +1,21 @@
 'use strict';
 
+const { describe, it, before } = require( 'node:test' );
 const assert = require( '../../utils/assert.js' );
 const server = require( '../../utils/server.js' );
 const URI = require( 'swagger-router' ).URI;
 const yaml = require( 'js-yaml' );
 const fs = require( 'fs' );
+const { initApp } = require( '../../../app.js' );
+const request = require( 'supertest' );
+
 const OpenAPISchemaValidator = require( 'openapi-schema-validator' ).default;
 const validator = new OpenAPISchemaValidator( { version: 3 } );
-
-if ( !server.stopHookAdded ) {
-	server.stopHookAdded = true;
-	after( () => server.stop() );
-}
 
 function staticSpecLoad() {
 
 	let spec;
-	const myService = server.config.conf.services[ server.config.conf.services.length - 1 ].conf;
+	const myService = server.config;
 	const specPath = `${ __dirname }/../../../${ myService.spec ? myService.spec : 'spec.yaml' }`;
 
 	try {
@@ -65,16 +64,16 @@ function validateExamples( pathStr, defParams, mSpec ) {
 
 }
 
-function constructTestCase( title, path, method, request, response ) {
+function constructTestCase( title, path, method, req, response ) {
 
 	return {
 		title,
 		request: {
-			uri: server.config.uri + ( path[ 0 ] === '/' ? path.slice( 1 ) : path ),
+			uri: '/' + ( path[ 0 ] === '/' ? path.slice( 1 ) : path ),
 			method,
-			headers: request.headers || { 'Content-Type': 'application/json' },
-			query: request.query,
-			body: request.body,
+			headers: req.headers || { 'Content-Type': 'application/json' },
+			query: req.query,
+			body: req.body,
 			followRedirect: false
 		},
 		response: {
@@ -187,20 +186,21 @@ async function validateTestResponse( testCase, response ) {
 	const expRes = testCase.response;
 
 	// check the status
-	assert.status( response, expRes.status );
+	assert.deepEqual( response.statusCode, expRes.status, 'Status mismatch!' );
+
 	// check the headers
 	Object.keys( expRes.headers ).forEach( ( key ) => {
 		const val = expRes.headers[ key ];
-		assert.deepEqual( !!response.headers.get( key ), true,
+		assert.deepEqual( !!response.headers[ key ], true,
 			`Header ${ key } not found in response!` );
-		cmp( response.headers.get( key ), val, `${ key } header mismatch!` );
+		cmp( response.headers[ key ], val, `${ key } header mismatch!` );
 	} );
 
 	// check the body
 	if ( !expRes.body ) {
 		return true;
 	}
-	let body = await response.text() || '';
+	let body = await response.body || '';
 	if ( Buffer.isBuffer( body ) ) {
 		body = body.toString();
 	}
@@ -225,20 +225,22 @@ async function validateTestResponse( testCase, response ) {
 
 }
 
-describe( 'Swagger spec', function () {
+describe( 'Swagger spec', async () => {
+	let app;
+
+	before( async () => {
+		app = await initApp( server.options );
+	} );
 
 	// the variable holding the spec
 	let spec = staticSpecLoad();
 	// default params, if given
 	let defParams = spec[ 'x-default-params' ] || {};
 
-	this.timeout( 20000 );
-
-	before( () => server.start() );
-
 	it( 'get the spec', async () => {
-		const response = await fetch( `${ server.config.uri }?spec` );
-		const data = await response.json();
+		const response = await request( app ).get( '?spec' );
+
+		const data = await response.body;
 		assert.status( response, 200 );
 		assert.contentType( response, 'application/json; charset=utf-8' );
 		assert.notDeepEqual( data, undefined, 'No body received!' );
@@ -246,8 +248,8 @@ describe( 'Swagger spec', function () {
 	} );
 
 	it( 'should expose valid OpenAPI spec', async () => {
-		const response = await fetch( `${ server.config.uri }?spec` );
-		const data = await response.json();
+		const response = await request( app ).get( '?spec' );
+		const data = await response.body;
 		assert.deepEqual( { errors: [] }, validator.validate( data ), 'Spec must have no validation errors' );
 
 	} );
@@ -277,11 +279,11 @@ describe( 'Swagger spec', function () {
 		} );
 	} );
 
-	describe( 'routes', () => {
-
+	describe( 'routes', async () => {
 		constructTests( spec.paths, defParams ).forEach( ( testCase ) => {
 			it( testCase.title, async () => {
 				let uri = testCase.request.uri;
+				let response;
 				const options = {
 					method: testCase.request.method.toUpperCase(),
 					headers: testCase.request.headers,
@@ -289,11 +291,15 @@ describe( 'Swagger spec', function () {
 				};
 				if ( options.method === 'POST' && testCase.request.body ) {
 					options.body = JSON.stringify( testCase.request.body );
+
+					response = await request( app ).post( uri ).send( options.body ).set( 'Content-Type', 'application/json' )
+						.set( 'Accept', 'application/json' );
 				} else {
 					uri = `${ uri }?${ new URLSearchParams( testCase.request.query ).toString() }`;
+					response = await request( app ).get( uri, options );
 				}
-				const res = await fetch( uri, options );
-				const result = await validateTestResponse( testCase, res );
+
+				const result = await validateTestResponse( testCase, response );
 
 				return result;
 			} );

@@ -1,5 +1,6 @@
 'use strict';
 
+const { describe, it } = require( 'node:test' );
 const assert = require( '../utils/assert.js' );
 const server = require( '../utils/server.js' );
 const TestClient = require( '../../lib/mt' ).TestClient;
@@ -17,13 +18,11 @@ const testSourceContent = `
 `;
 
 describe( 'Template translation', () => {
-	it( 'should not translate the fragement contents.', ( done ) => {
-		const cxConfig = server.config.service;
+	it( 'should not translate the fragement contents.', async () => {
+		const cxConfig = server.config;
 		const testClient = new TestClient( cxConfig );
-		testClient.translate( 'en', 'es', testSourceContent ).then( ( result ) => {
-			assert.notDeepEqual( result.includes( '[en→es]This is not translated' ), true );
-			assert.deepEqual( result.includes( '[en→es]This is translated' ), true );
-			done();
-		} );
+		const result = await testClient.translate( 'en', 'es', testSourceContent );
+		assert.notDeepEqual( result.includes( '[en→es]This is not translated' ), true );
+		assert.deepEqual( result.includes( '[en→es]This is translated' ), true );
 	} );
 } );

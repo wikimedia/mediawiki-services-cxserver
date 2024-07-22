@@ -1,5 +1,6 @@
 'use strict';
 
+const { describe, it, before, after } = require( 'node:test' );
 const Adapter = require( '../../lib/Adapter' );
 const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
 const TestUtils = require( '../testutils' );
@@ -11,7 +12,8 @@ const mocks = require( './MWLink.mocks.json' );
 const tests = require( './MWLink.test.json' );
 
 describe( 'Link Adaptation tests', () => {
-	const api = new MWApiRequestManager( server.config );
+	const config = server.config;
+	const api = new MWApiRequestManager( config );
 	const mocker = new TestUtils( api );
 
 	before( () => {
@@ -53,7 +55,12 @@ describe( 'Link Adaptation tests', () => {
 				}
 
 				if ( expectedDataCX.adapted ) {
-					for ( const attribute in [ 'pageid', 'thumbnail', 'pageimage', 'description' ] ) {
+					for ( const attribute in [
+						'pageid',
+						'thumbnail',
+						'pageimage',
+						'description'
+					] ) {
 						assert.deepEqual(
 							actualDataCX.targetTitle[ attribute ],
 							expectedDataCX.targetTitle[ attribute ],

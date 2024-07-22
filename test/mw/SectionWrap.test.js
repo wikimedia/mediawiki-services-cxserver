@@ -1,5 +1,6 @@
 'use strict';
 
+const { describe, it } = require( 'node:test' );
 const async = require( 'async' ),
 	assert = require( '../utils/assert.js' ),
 	LinearDoc = require( '../../lib/lineardoc' ),

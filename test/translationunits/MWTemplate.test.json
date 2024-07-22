@@ -557,7 +557,7 @@
 		}
 	},
 	{
-		"desc": "Template with equivalents, but not able to map mandatory params",
+		"desc": "Template with equivalents, all mandatory params mapped",
 		"from": "en",
 		"to": "es",
 		"source": {
@@ -588,9 +588,9 @@
 			"attributes": {
 				"data-cx": [
 					{
-						"adapted": false,
+						"adapted": true,
 						"targetExists": true,
-						"partial": true,
+						"partial": false,
 						"mandatoryTargetParams": [
 							"nombre",
 							"artista"
@@ -629,7 +629,14 @@
 									"href": "./Plantilla:Ficha de álbum",
 									"wt": "Ficha de álbum"
 								},
-								"params": {},
+								"params": {
+									"artista": {
+										"wt": "The Great Artist"
+									},
+									"nombre": {
+										"wt": "The great album"
+									}
+								},
 								"i": 0
 							}
 						}

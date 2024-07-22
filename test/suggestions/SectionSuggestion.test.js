@@ -1,5 +1,6 @@
 'use strict';
 
+const { describe, it } = require( 'node:test' );
 const assert = require( '../utils/assert.js' ),
 	async = require( 'async' ),
 	server = require( '../utils/server.js' ),
@@ -47,7 +48,7 @@ const tests = [
 				History: 'ചരിത്രം',
 				Playing: 'വായിക്കുന്ന രീതി',
 				'See also': 'ഇതും കാണുക',
-				'External links': 'പുറത്തേക്കുള്ള കണ്ണികൾ'
+				'External links': 'പുറം കണ്ണികൾ'
 			}
 		}
 	}
@@ -55,8 +56,9 @@ const tests = [
 
 describe( 'SectionSuggester tests', () => {
 	async.forEach( tests, ( test ) => {
-		it( 'should find present and missing sections', () => {
-			const cxConfig = server.config.service;
+		it( 'should find present and missing sections', async () => {
+			const cxConfig = server.config;
+
 			const api = new MWApiRequestManager( cxConfig );
 			SectionSuggester.prototype.getSections = ( language ) => {
 				if ( language === test.sourceLanguage ) {
@@ -69,10 +71,10 @@ describe( 'SectionSuggester tests', () => {
 
 			const sectionSuggestor = new SectionSuggester(
 				api,
-				cxConfig.conf.sectionmapping.database
+				cxConfig.conf.sectionmapping
 			);
 
-			sectionSuggestor.getMissingSections( test.sourceLanguage, test.sourceTitle, test.targetLanguage, test.targetTitle ).then( ( sections ) => {
+			await sectionSuggestor.getMissingSections( test.sourceLanguage, test.sourceTitle, test.targetLanguage, test.targetTitle ).then( ( sections ) => {
 				assert.deepEqual( sections, test.expectedResult );
 			} );
 		} );

@@ -1,8 +1,8 @@
 'use strict';
 
+const { describe, it, after, test } = require( 'node:test' );
 const assert = require( '../utils/assert.js' );
 const server = require( '../utils/server.js' );
-const async = require( 'async' );
 const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
 const TitlePairRequest = require( '../../lib/mw/TitlePairRequest' );
 const TestUtils = require( '../testutils' );
@@ -11,33 +11,35 @@ const mocks = require( './TitlePairTests.mocks.json' );
 const tests = require( './TitlePairTests.json' );
 
 // FIXME: This tests title normalization of MWApiRequestManager
-describe( 'Title pair tests', () => {
+test( 'Title pair tests', async ( t ) => {
 	const api = new MWApiRequestManager( server.config );
 	const mocker = new TestUtils( api );
 
-	before( () => {
+	t.before( () => {
 		mocker.setup( mocks );
 	} );
 
-	after( () => {
+	t.after( () => {
 		mocker.dump( __dirname + '/TitlePairTests.mocks.json' );
 	} );
 
-	async.each( tests, ( test ) => {
-		const request = api.titlePairRequest(
-			test.source,
-			test.sourceLanguage,
-			test.targetLanguage
-		);
-
-		it( 'should adapt the title when: ' + test.desc, () => request.then( ( result ) => assert.deepEqual( result.targetTitle, test.result ) ) );
-	} );
+	for ( const testcase of tests ) {
+		await t.test( `should adapt the title when: ${ testcase.desc }`, async () => {
+			const result = await api.titlePairRequest(
+				testcase.source,
+				testcase.sourceLanguage,
+				testcase.targetLanguage
+			);
+			assert.deepEqual( result.targetTitle, testcase.result );
+		} );
+	}
 } );
 
 describe( 'Title pair tests - batching', () => {
+
 	let oldGetRequestPromise;
 
-	it( 'should have the queue size 50', () => {
+	it( 'should have the queue size 50', async () => {
 		oldGetRequestPromise = TitlePairRequest.prototype.getRequestPromise;
 		TitlePairRequest.prototype.getRequestPromise = function ( subqueue ) {
 			assert.deepEqual( subqueue.length, 50 );
@@ -51,7 +53,7 @@ describe( 'Title pair tests - batching', () => {
 		for ( let i = 0; i < 50; i++ ) {
 			titlePairRequest.get( 'Title' + i );
 		}
-		return Promise.all( titlePairRequest.promises );
+		return await Promise.all( titlePairRequest.promises );
 	} );
 	after( () => {
 		TitlePairRequest.prototype.getRequestPromise = oldGetRequestPromise;
