@@ -18,12 +18,12 @@
 	"overrides": [
 		{
 			"files": [
-				"scripts/template-mapping.js"
+				"scripts/template-mapping.js",
+				"test/utils/server.js"
 			],
 			"rules": {
-				"camelcase": [
-					"off"
-				]
+				"camelcase": "off",
+				"n/no-process-exit": "off"
 			}
 		}
 	],
