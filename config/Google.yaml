@@ -1,28 +1,41 @@
 handler: transform.js
 languages:
+  - ace
   - af
   - am
   - ar
   - arz
   - as
+  - av
+  - awa
   - ay
   - az
+  - ba
+  - ban
   - be
   - be-tarask
+  - bew
   - bg
   - bho
   - bm
   - bn
+  - bo
+  - br
   - bs
   - ca
+  - ce
   - ceb
+  - ch
   - ckb
   - co
   - cs
+  - cv
   - cy
   - da
   - de
+  - din
   - dv
+  - dz
   - ee
   - el
   - en
@@ -32,7 +45,11 @@ languages:
   - eu
   - fa
   - fi
+  - fj
+  - fo
+  - fon
   - fr
+  - fur
   - fy
   - ga
   - gan
@@ -41,6 +58,7 @@ languages:
   - gn
   - gom
   - gu
+  - gv
   - ha
   - haw
   - he
@@ -55,6 +73,7 @@ languages:
   - is
   - it
   - ja
+  - jam
   - jv
   - ka
   - kk
@@ -62,17 +81,24 @@ languages:
   - kn
   - ko
   - ku
+  - kv
   - ky
   - la
   - lb
   - lg
+  - li
+  - lij
+  - lmo
   - ln
   - lo
   - lt
+  - ltg
   - lv
   - mai
   - mg
+  - mhr
   - mi
+  - min
   - mk
   - ml
   - mn
@@ -81,25 +107,37 @@ languages:
   - ms
   - mt
   - my
+  - nb
   - ne
+  - new
   - nl
   - no
-  - nb
   - nso
   - ny
+  - oc
   - om
   - or
+  - os
   - pa
+  - pag
+  - pam
+  - pap
   - pl
+  - pnb
   - ps
   - pt
   - qu
+  - rn
   - ro
   - ru
   - rw
   - sa
+  - sah
+  - scn
   - sd
+  - sg
   - sh
+  - shn
   - si
   - simple
   - sk
@@ -109,26 +147,41 @@ languages:
   - so
   - sq
   - sr
+  - ss
   - st
   - su
   - sv
   - sw
+  - szl
   - ta
+  - tcy
   - te
+  - tet
   - tg
   - th
   - ti
   - tk
   - tl
+  - tn
+  - to
+  - tpi
   - tr
   - ts
   - tt
+  - tum
   - tw
+  - ty
+  - tyv
+  - udm
   - ug
   - uk
   - ur
   - uz
+  - ve
+  - vec
   - vi
+  - war
+  - wo
   - wuu
   - xh
   - yi
