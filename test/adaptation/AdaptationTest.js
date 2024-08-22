@@ -8,13 +8,12 @@ const TestUtils = require( '../testutils' );
 const assert = require( 'node:assert/strict' );
 const async = require( 'async' );
 const jsdom = require( 'jsdom' );
-const server = require( '../utils/server' );
-
+const { getConfig } = require( '../../lib/util.js' );
 const mocks = require( './AdaptationTests.mocks.json' );
 const tests = require( './AdaptationTests.json' );
 
 describe( 'Adaptation tests', () => {
-	const api = new MWApiRequestManager( server.config );
+	const api = new MWApiRequestManager( getConfig() );
 	const mocker = new TestUtils( api );
 
 	before( () => {
@@ -27,8 +26,8 @@ describe( 'Adaptation tests', () => {
 
 	async.each( tests, ( testcase, done ) => {
 		it( testcase.desc, () => {
-			const cxConfig = server.config;
-			cxConfig.conf.mtClient = new TestClient( cxConfig );
+			const cxConfig = getConfig();
+			cxConfig.mtClient = new TestClient( cxConfig );
 			const adapter = new Adapter( testcase.from, testcase.to, api, cxConfig );
 
 			return adapter.adapt( testcase.source ).then( ( result ) => {

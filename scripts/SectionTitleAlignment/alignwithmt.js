@@ -7,6 +7,7 @@ const sqlite3 = require( 'sqlite3' );
 const fs = require( 'fs' );
 const yaml = require( 'js-yaml' );
 const MTClients = require( __dirname + '/../../lib/mt/' );
+const PrometheusClient = require( '../../lib/metric.js' );
 
 /**
  * Align section titles in one language with section titles in another language.
@@ -23,7 +24,7 @@ class AlignWithMT {
 	 */
 	constructor( cxConf ) {
 		this.cxConfig = cxConf;
-		this.sectionMappingDatabase = cxConf.conf.sectionmapping.database;
+		this.sectionMappingDatabase = cxConf.sectionmapping.database;
 		if ( !this.sectionMappingDatabase ) {
 			throw new Error( 'Section mapping database is not configured' );
 		}
@@ -242,12 +243,9 @@ const cxConfig = config.services && Array.isArray( config.services ) &&
 if ( !cxConfig ) {
 	throw new Error( 'Cannot find cxserver config' );
 }
-// Mock the metrics
-cxConfig.metrics = {
-	makeMetric: () => ( {
-		increment: () => { }
-	} )
-};
+cxConfig.metrics = new PrometheusClient( {
+	staticLabels: { service: 'cxserver' }
+} );
 
 const alignWithMT = new AlignWithMT( cxConfig );
 alignWithMT.run();

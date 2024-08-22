@@ -2,7 +2,7 @@
 
 const { describe, it } = require( 'node:test' );
 const assert = require( '../utils/assert.js' );
-const server = require( '../utils/server.js' );
+const getConfig = require( '../../lib/util' ).getConfig;
 const Yandex = require( '../../lib/mt' ).Yandex;
 
 const testData = {
@@ -38,7 +38,7 @@ const testData = {
 
 describe( 'Yandex machine translation with corrupted result', () => {
 	it( 'Should sanitize the MT output', () => {
-		const cxConfig = server.config;
+		const cxConfig = getConfig();
 		// Fake the actual Yandex call
 		const oldTranslateHTML = Yandex.prototype.translateHtml;
 		const normalize = ( html ) => html.replace( /[\t\r\n]+/g, '' );
@@ -57,8 +57,8 @@ describe( 'Yandex machine translation with corrupted result', () => {
 
 describe( 'Yandex machine translation', () => {
 	it( 'Should fail because of wrong key ', () => {
-		const cxConfig = server.config;
-		cxConfig.conf.mt.Yandex.key = 'wrongkey';
+		const cxConfig = getConfig();
+		cxConfig.mt.Yandex.key = 'wrongkey';
 		const yandex = new Yandex( cxConfig );
 		const testSourceContent = '<p>This is a <a href="/Test">test</a></p>';
 		assert.fails(

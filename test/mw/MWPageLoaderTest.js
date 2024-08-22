@@ -3,7 +3,7 @@
 const { describe, it } = require( 'node:test' );
 const fs = require( 'fs' ),
 	assert = require( '../utils/assert.js' ),
-	server = require( '../utils/server.js' ),
+	getConfig = require( '../../lib/util' ).getConfig,
 	async = require( 'async' ),
 	LinearDoc = require( '../../lib/lineardoc' ),
 	MWPageLoader = require( '../../lib/mw/MWPageLoader' );
@@ -33,7 +33,7 @@ describe( 'MWPageLoader tests', () => {
 				return Promise.resolve( { body: sourceContent } );
 			};
 			const pageloader = new MWPageLoader( {
-				context: server.config,
+				context: getConfig(),
 				sourceLanguage: test.sourceLanguage,
 				targetLanguage: test.targetLanguage
 			} );

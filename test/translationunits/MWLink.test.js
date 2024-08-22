@@ -6,13 +6,13 @@ const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
 const TestUtils = require( '../testutils' );
 const assert = require( '../utils/assert' );
 const async = require( 'async' );
-const server = require( '../utils/server' );
+const getConfig = require( '../../lib/util' ).getConfig;
 
 const mocks = require( './MWLink.mocks.json' );
 const tests = require( './MWLink.test.json' );
 
 describe( 'Link Adaptation tests', () => {
-	const config = server.config;
+	const config = getConfig();
 	const api = new MWApiRequestManager( config );
 	const mocker = new TestUtils( api );
 
@@ -26,7 +26,7 @@ describe( 'Link Adaptation tests', () => {
 
 	async.each( tests, ( test, done ) => {
 		it( test.desc, () => {
-			const adapter = new Adapter( test.from, test.to, api, server.config );
+			const adapter = new Adapter( test.from, test.to, api, getConfig() );
 			const translationunit = adapter.getAdapter( test.source );
 
 			return translationunit.adapt( test.source ).then( ( adaptedNode ) => {

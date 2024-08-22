@@ -2,7 +2,7 @@
 
 const { describe, it, before } = require( 'node:test' );
 const assert = require( '../../utils/assert.js' );
-const server = require( '../../utils/server.js' );
+const { getConfig } = require( '../../../lib/util.js' );
 const { initApp } = require( '../../../app.js' );
 const request = require( 'supertest' );
 
@@ -10,7 +10,7 @@ describe( 'service information', async () => {
 	let app;
 
 	before( async () => {
-		app = await initApp( server.options );
+		app = await initApp( getConfig() );
 	} );
 
 	// common URI prefix for info tests

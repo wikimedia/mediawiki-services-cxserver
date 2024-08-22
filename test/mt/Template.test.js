@@ -2,7 +2,7 @@
 
 const { describe, it } = require( 'node:test' );
 const assert = require( '../utils/assert.js' );
-const server = require( '../utils/server.js' );
+const getConfig = require( '../../lib/util' ).getConfig;
 const TestClient = require( '../../lib/mt' ).TestClient;
 
 const testSourceContent = `
@@ -19,7 +19,7 @@ const testSourceContent = `
 
 describe( 'Template translation', () => {
 	it( 'should not translate the fragement contents.', async () => {
-		const cxConfig = server.config;
+		const cxConfig = getConfig();
 		const testClient = new TestClient( cxConfig );
 		const result = await testClient.translate( 'en', 'es', testSourceContent );
 		assert.notDeepEqual( result.includes( '[en→es]This is not translated' ), true );

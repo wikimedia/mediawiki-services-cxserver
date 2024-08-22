@@ -2,7 +2,7 @@
 
 const { describe, it } = require( 'node:test' );
 const assert = require( '../utils/assert.js' ),
-	server = require( '../utils/server.js' ),
+	getConfig = require( '../../lib/util' ).getConfig,
 	async = require( 'async' ),
 	Apertium = require( '../../lib/mt' ).Apertium;
 
@@ -108,7 +108,7 @@ describe( 'Apertium machine translation', () => {
 				const targetLines = sourceLines.map( ( line ) => textTranslations[ line ] || 'X' + line + 'X' );
 				return Promise.resolve( targetLines );
 			};
-			const apertium = new Apertium( server );
+			const apertium = new Apertium( getConfig() );
 			return apertium.translate( 'en', 'es', test.source ).then( ( target ) => {
 				assert.deepEqual( target, test.target, test.title );
 			} );

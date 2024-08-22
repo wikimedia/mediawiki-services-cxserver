@@ -1,7 +1,7 @@
 'use strict';
 const { describe, it, before } = require( 'node:test' );
 const assert = require( '../../utils/assert.js' );
-const server = require( '../../utils/server.js' );
+const { getConfig } = require( '../../../lib/util.js' );
 const { initApp } = require( '../../../app.js' );
 const request = require( 'supertest' );
 
@@ -9,7 +9,7 @@ describe( 'express app', async () => {
 	let app;
 
 	before( async () => {
-		app = await initApp( server.options );
+		app = await initApp( getConfig() );
 	} );
 
 	it( 'should get robots.txt', async () => {
@@ -19,7 +19,7 @@ describe( 'express app', async () => {
 	} );
 
 	it( 'should set CORS headers', async () => {
-		if ( server.config.cors === false ) {
+		if ( getConfig().cors === false ) {
 			return true;
 		}
 		const response = await request( app ).get( '/robots.txt' );
@@ -31,7 +31,7 @@ describe( 'express app', async () => {
 	} );
 
 	it( 'should set CSP headers', async () => {
-		if ( server.config.csp === false ) {
+		if ( getConfig().csp === false ) {
 			return true;
 		}
 

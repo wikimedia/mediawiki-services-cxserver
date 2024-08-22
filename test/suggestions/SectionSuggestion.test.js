@@ -3,7 +3,7 @@
 const { describe, it } = require( 'node:test' );
 const assert = require( '../utils/assert.js' ),
 	async = require( 'async' ),
-	server = require( '../utils/server.js' ),
+	getConfig = require( '../../lib/util' ).getConfig,
 	SectionSuggester = require( '../../lib/suggestion/SectionSuggester' ),
 	MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
 
@@ -57,7 +57,7 @@ const tests = [
 describe( 'SectionSuggester tests', () => {
 	async.forEach( tests, ( test ) => {
 		it( 'should find present and missing sections', async () => {
-			const cxConfig = server.config;
+			const cxConfig = getConfig();
 
 			const api = new MWApiRequestManager( cxConfig );
 			SectionSuggester.prototype.getSections = ( language ) => {
@@ -71,7 +71,7 @@ describe( 'SectionSuggester tests', () => {
 
 			const sectionSuggestor = new SectionSuggester(
 				api,
-				cxConfig.conf.sectionmapping
+				cxConfig.sectionmapping
 			);
 
 			await sectionSuggestor.getMissingSections( test.sourceLanguage, test.sourceTitle, test.targetLanguage, test.targetTitle ).then( ( sections ) => {

@@ -6,14 +6,13 @@ const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
 const TestClient = require( '../../lib/mt' ).TestClient;
 const TestUtils = require( '../testutils' );
 const assert = require( '../utils/assert' );
-const server = require( '../utils/server' );
-
+const getConfig = require( '../../lib/util' ).getConfig;
 const mocks = require( './MWTemplate.mocks.json' );
 const tests = require( './MWTemplate.test.json' );
 
 test( 'Template adaptation', async ( t ) => {
-	const cxConfig = server.config;
-	cxConfig.conf.mtClient = new TestClient( cxConfig );
+	const cxConfig = getConfig();
+	cxConfig.mtClient = new TestClient( cxConfig );
 
 	const api = new MWApiRequestManager( cxConfig );
 	const mocker = new TestUtils( api );
@@ -28,7 +27,7 @@ test( 'Template adaptation', async ( t ) => {
 
 	for ( const testcase of tests ) {
 		await t.test( testcase.desc, async () => {
-			const adapter = new Adapter( testcase.from, testcase.to, api, server.config );
+			const adapter = new Adapter( testcase.from, testcase.to, api, cxConfig );
 			const translationunit = adapter.getAdapter( testcase.source );
 			assert.ok( adapter, 'There is an adapter for templates' );
 

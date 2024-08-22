@@ -2,7 +2,7 @@
 
 const { describe, it, after, test } = require( 'node:test' );
 const assert = require( '../utils/assert.js' );
-const server = require( '../utils/server.js' );
+const getConfig = require( '../../lib/util' ).getConfig;
 const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
 const TitlePairRequest = require( '../../lib/mw/TitlePairRequest' );
 const TestUtils = require( '../testutils' );
@@ -12,7 +12,7 @@ const tests = require( './TitlePairTests.json' );
 
 // FIXME: This tests title normalization of MWApiRequestManager
 test( 'Title pair tests', async ( t ) => {
-	const api = new MWApiRequestManager( server.config );
+	const api = new MWApiRequestManager( getConfig() );
 	const mocker = new TestUtils( api );
 
 	t.before( () => {
@@ -48,7 +48,7 @@ describe( 'Title pair tests - batching', () => {
 		const titlePairRequest = new TitlePairRequest( {
 			sourceLanguage: 'en',
 			targetLanguage: 'es',
-			context: server.config
+			context: getConfig()
 		} );
 		for ( let i = 0; i < 50; i++ ) {
 			titlePairRequest.get( 'Title' + i );

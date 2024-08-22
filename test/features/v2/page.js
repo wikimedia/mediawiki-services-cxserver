@@ -2,15 +2,15 @@
 
 const { describe, it, before } = require( 'node:test' );
 const assert = require( '../../utils/assert.js' );
-const server = require( '../../utils/server.js' );
 const { initApp } = require( '../../../app.js' );
+const { getConfig } = require( '../../../lib/util.js' );
 const request = require( 'supertest' );
 
 describe( 'v2 api - page gets', () => {
 	let app;
 
 	before( async () => {
-		app = await initApp( server.options );
+		app = await initApp( getConfig() );
 	} );
 
 	// common URI prefix for the page

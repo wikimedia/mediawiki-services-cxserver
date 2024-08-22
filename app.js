@@ -14,6 +14,23 @@ const sUtil = require( './lib/util' );
 const packageInfo = require( './package.json' );
 const yaml = require( 'js-yaml' );
 const addShutdown = require( 'http-shutdown' );
+const PrometheusClient = require( './lib/metric.js' );
+const { logger } = require( './lib/logging.js' );
+
+const defaultConfig = {
+	port: 8888,
+	interface: '0.0.0.0',
+	// eslint-disable-next-line camelcase
+	compression_level: 3,
+	cors: '*',
+	csp: 'default-src \'self\'; object-src \'none\'; media-src *; img-src *; style-src *; frame-ancestors \'self\'',
+	// eslint-disable-next-line camelcase
+	log_header_whitelist: [
+		'cache-control', 'content-type', 'content-length', 'if-match',
+		'user-agent', 'x-request-id'
+	],
+	specfile: `${ __dirname }/spec.yaml`
+};
 
 /**
  * Creates an express app and initialises it
@@ -24,31 +41,20 @@ const addShutdown = require( 'http-shutdown' );
 function initApp( options ) {
 	const app = express();
 
-	// get the options and make them available in the app
-	app.logger = options.logger; // the logging device
-	app.metrics = options.metrics; // the metrics
-	app.ratelimiter = options.ratelimiter;
-	app.conf = options.config; // this app's config options
-	app.info = packageInfo; // this app's package info
+	options = Object.assign( {}, defaultConfig, options );
 
-	// ensure some sane defaults
-	if ( !app.conf.port ) {
-		app.conf.port = 8888;
-	}
-	if ( !app.conf.interface ) {
-		app.conf.interface = '0.0.0.0';
-	}
-	if ( app.conf.compression_level === undefined ) {
-		// eslint-disable-next-line camelcase
-		app.conf.compression_level = 3;
-	}
-	if ( app.conf.cors === undefined ) {
-		app.conf.cors = '*';
-	}
-	if ( app.conf.csp === undefined ) {
-		app.conf.csp =
-			'default-src \'self\'; object-src \'none\'; media-src *; img-src *; style-src *; frame-ancestors \'self\'';
-	}
+	// get the options and make them available in the app
+	app.logger = logger(
+		options.name,
+		options.logging
+	);
+	app.logger.log( 'info', `Starting ${ options.name }` );
+	app.conf = options; // this app's config options
+	app.info = packageInfo; // this app's package info
+	app.metrics = new PrometheusClient( {
+		collectDefaultMetrics: true,
+		staticLabels: { service: options.name }
+	} ); // the metrics
 
 	// set outgoing proxy
 	if ( app.conf.proxy ) {
@@ -64,46 +70,14 @@ function initApp( options ) {
 		}
 	}
 
-	// set up header whitelisting for logging
-	if ( !app.conf.log_header_whitelist ) {
-		// eslint-disable-next-line camelcase
-		app.conf.log_header_whitelist = [
-			'cache-control', 'content-type', 'content-length', 'if-match',
-			'user-agent', 'x-request-id'
-		];
-	}
-
 	// eslint-disable-next-line camelcase
 	app.conf.log_header_whitelist = new RegExp( `^(?:${ app.conf.log_header_whitelist.map( ( item ) => item.trim() ).join( '|' ) })$`, 'i' );
 
-	// set up the spec
-	if ( !app.conf.spec ) {
-		app.conf.spec = `${ __dirname }/spec.yaml`;
-
-	}
-
-	if ( app.conf.spec.constructor !== Object ) {
-		try {
-			app.conf.spec = yaml.load( fs.readFileSync( app.conf.spec ) );
-		} catch ( e ) {
-			app.logger.log( 'warn/spec', `Could not load the spec: ${ e }` );
-			app.conf.spec = {};
-		}
-	}
-
-	if ( !app.conf.spec.openapi ) {
-		app.conf.spec.openapi = '3.0';
-	}
-	if ( !app.conf.spec.info ) {
-		app.conf.spec.info = {
-			version: app.info.version,
-			title: app.info.name,
-			description: app.info.description
-		};
-	}
-	app.conf.spec.info.version = app.info.version;
-	if ( !app.conf.spec.paths ) {
-		app.conf.spec.paths = {};
+	try {
+		app.conf.spec = yaml.load( fs.readFileSync( app.conf.specfile ) );
+	} catch ( e ) {
+		app.logger.log( 'warn/spec', `Could not load the spec: ${ e }` );
+		app.conf.spec = {};
 	}
 
 	// set the CORS and CSP headers.
@@ -122,20 +96,6 @@ function initApp( options ) {
 			res.header( 'x-webkit-csp', app.conf.csp );
 		}
 
-		sUtil.initAndLogRequest( req, app );
-
-		if ( app.ratelimiter ) {
-			const clientIp = req.headers[ app.conf.ratelimiter_key ] ||
-				req.headers[ 'x-forwarded-for' ] ||
-				req.connection.remoteAddress;
-
-			if ( app.ratelimiter.isAboveLimit( clientIp, app.conf.ratelimiter_rate ) ) {
-				// Too many requests, more than the configured maximum number requests per second.
-				app.metrics.increment( 'api.ratelimiter.hit' );
-				app.logger.log( 'warn', `Client ${ clientIp } exceeded the configured api rate` );
-				return res.status( 429 );
-			}
-		}
 		next();
 	} );
 
@@ -156,6 +116,17 @@ function initApp( options ) {
 	app.use( bodyParser.json( {
 		limit: 500000
 	} ) );
+
+	// Catch and handle propagated errors
+	app.use( ( err, req, res, next ) => {
+		app.logger.error( err ); // Log the error
+		next();
+	} );
+
+	app.use( ( req, res, next ) => {
+		app.logger.info( `${ req.method } ${ req.originalUrl } ${ res.statusCode }` );
+		next();
+	} );
 
 	return loadRoutes( app );
 }
@@ -204,8 +175,12 @@ async function loadRoutes( app ) {
 		// all good, use that route
 		app.use( route.path, route.router );
 	} );
-	// Catch and handle propagated errors
-	sUtil.setErrorHandler( app );
+
+	app.get( '/metrics', async ( req, res ) => {
+		res.set( 'Content-Type', app.metrics.client.register.contentType );
+		res.end( await app.metrics.metrics() );
+	} );
+
 	// route loading is now complete, return the app object
 	return Promise.resolve( app );
 

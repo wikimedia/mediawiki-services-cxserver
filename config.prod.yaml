@@ -1,118 +1,77 @@
-# Number of worker processes to spawn.
-# Set to 0 to run everything in a single process without clustering.
-# Use 'ncpu' to run as many workers as there are CPU units
-num_workers: ncpu
-
-# Log error messages and gracefully restart a worker if v8 reports that it
-# uses more heap (note: not RSS) than this many megabytes.
-worker_heap_limit_mb: 500
-
-# Logger info
-logging:
-  level: warn
-  streams:
-    - type: stdout # log to stdout
-      named_levels: true # emit log level name instead of index. e.g. INFO vs 30
-    # Use gelf-stream -> logstash
-    - type: gelf
-      host: logstash1003.eqiad.wmnet
-      port: 12201
-
-# Statsd metrics reporter
-metrics:
-  type: statsd
-  host: statsd.eqiad.wmnet
-  port: 8125
-
-ratelimiter:
-  type: kademlia
-  # Cluster nodes
-  seeds:
-    # Port 3050 used by default
-    - 127.0.0.1
-
-services:
-  - name: cxserver
-    # a relative path or the name of an npm package, if different from name
-    module: ./app.js
-    # optionally, a version constraint of the npm package
-    # version: ^0.4.0
-    # per-service config
-    conf:
-      port: 8080
-      # interface: localhost # uncomment to only listen on localhost
-      # More per-service config settings
-      # The location of the spec, defaults to spec.yaml if not specified
-      # spec: ./spec.yaml
-      # allow cross-domain requests to the API (default *)
-      cors: "*"
-      # to disable use:
-      # cors: false
-      # to restrict to a particular domain, use:
-      # cors: restricted.domain.org
-      # URL of the outbound proxy to use (complete with protocol)
-      # proxy: http://my.proxy.org:8080
-      # the list of domains for which not to use the proxy defined above
-      # no_proxy_list:
-      #   - domain1.com
-      #   - domain2.org
-      user_agent: cxserver
-      # MediaWiki host name. Example {lang}.wikisource.org which get expanded internally to
-      # es.wikisource.org in a spanish language context.
-      # Do not prefix with http or https://
-      # mw_host: '{lang}.wikipedia.org'
-      mwapi_req:
-        body: "{{request.body}}"
-        query: "{{ default(request.query, {}) }}"
-        headers:
-          host: "{{request.params.domain}}"
-          user-agent: "{{user-agent}}"
-        method: "{{request.method}}"
-        uri: "https://{{domain}}/w/api.php"
-      restbase_req:
-        method: "{{request.method}}"
-        uri: https://{{domain}}/w/rest.php/v1/{+path}
-        query: "{{ default(request.query, {}) }}"
-        headers: "{{request.headers}}"
-        body: "{{request.body}}"
-      jwt:
-        secret: ""
-        algorithms:
-          - HS256
-      ratelimiter_key: x-client-ip # The request header field that uniquely identify a request source
-      ratelimiter_rate: 10
-      languages: config/languages.yaml
-      templatemapping:
-        database: config/templatemapping.db
-      sectionmapping:
-        database: cxserverdb
-        host: m5-master.codfw.wmnet
-        user: cxserver
-        password: cxserverdbpassword
-        type: mysql
-      mt:
-        Apertium:
-          api: https://apertium.wmflabs.org
-          languages: config/Apertium.yaml
-        Elia:
-          api: https://mt-api.elhuyar.eus/translate_string
-          languages: config/Elia.yaml
-          key: null
-          apiId: null
-        Google:
-          api: https://www.googleapis.com/language/translate/v2
-          key: null
-          languages: config/Google.yaml
-        Yandex:
-          api: https://translate.yandex.net
-          key: null
-          languages: config/Yandex.yaml
-        LingoCloud:
-          api: https://api.interpreter.caiyunai.com/v1
-          account: wikimedia
-          key: null
-          languages: config/LingoCloud.yaml
-        MinT:
-          api: https://translate.wmcloud.org/api/translate
-          languages: config/MinT.yaml
-        defaults: config/mt-defaults.wikimedia.yaml
+port: 8080
+# interface: localhost # uncomment to only listen on localhost
+# More per-service config settings
+# The location of the spec, defaults to spec.yaml if not specified
+# spec: ./spec.yaml
+# allow cross-domain requests to the API (default *)
+cors: "*"
+# to disable use:
+# cors: false
+# to restrict to a particular domain, use:
+# cors: restricted.domain.org
+# URL of the outbound proxy to use (complete with protocol)
+# proxy: http://my.proxy.org:8080
+# the list of domains for which not to use the proxy defined above
+# no_proxy_list:
+#   - domain1.com
+#   - domain2.org
+user_agent: cxserver
+# MediaWiki host name. Example {lang}.wikisource.org which get expanded internally to
+# es.wikisource.org in a spanish language context.
+# Do not prefix with http or https://
+# mw_host: '{lang}.wikipedia.org'
+mwapi_req:
+  body: "{{request.body}}"
+  query: "{{ default(request.query, {}) }}"
+  headers:
+    host: "{{request.params.domain}}"
+    user-agent: "{{user-agent}}"
+  method: "{{request.method}}"
+  uri: "https://{{domain}}/w/api.php"
+restbase_req:
+  method: "{{request.method}}"
+  uri: https://{{domain}}/w/rest.php/v1/{+path}
+  query: "{{ default(request.query, {}) }}"
+  headers: "{{request.headers}}"
+  body: "{{request.body}}"
+jwt:
+  secret: ""
+  algorithms:
+    - HS256
+ratelimiter_key: x-client-ip # The request header field that uniquely identify a request source
+ratelimiter_rate: 10
+languages: config/languages.yaml
+templatemapping:
+  database: config/templatemapping.db
+sectionmapping:
+  database: cxserverdb
+  host: m5-master.codfw.wmnet
+  user: cxserver
+  password: cxserverdbpassword
+  type: mysql
+mt:
+  Apertium:
+    api: https://apertium.wmflabs.org
+    languages: config/Apertium.yaml
+  Elia:
+    api: https://mt-api.elhuyar.eus/translate_string
+    languages: config/Elia.yaml
+    key: null
+    apiId: null
+  Google:
+    api: https://www.googleapis.com/language/translate/v2
+    key: null
+    languages: config/Google.yaml
+  Yandex:
+    api: https://translate.yandex.net
+    key: null
+    languages: config/Yandex.yaml
+  LingoCloud:
+    api: https://api.interpreter.caiyunai.com/v1
+    account: wikimedia
+    key: null
+    languages: config/LingoCloud.yaml
+  MinT:
+    api: https://translate.wmcloud.org/api/translate
+    languages: config/MinT.yaml
+  defaults: config/mt-defaults.wikimedia.yaml

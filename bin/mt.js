@@ -4,25 +4,20 @@
 
 'use strict';
 
+const { logger } = require( '../lib/logging.js' );
+const { getConfig } = require( '../lib/util.js' );
+const PrometheusClient = require( '../lib/metric.js' );
 const fs = require( 'fs' ),
-	yaml = require( 'js-yaml' ),
 	MTClients = require( __dirname + '/../lib/mt/' );
 
-const config = yaml.load( fs.readFileSync( 'config.yaml' ) );
-if ( !config ) {
-	process.stderr.write( 'Failed to load config' );
-	process.exit( 1 );
-}
-const cxConfig = config.services && Array.isArray( config.services ) &&
-	config.services.find( ( item ) => item && item.name === 'cxserver' );
-
-if ( !cxConfig ) {
-	process.stderr.write( 'Cannot find cxserver config' );
-	process.exit( 1 );
-}
-
-cxConfig.logger = { log: console.log };
-cxConfig.metrics = { increment: console.log };
+const cxConfig = getConfig();
+cxConfig.logger = logger(
+	cxConfig.name,
+	cxConfig.logging
+);
+cxConfig.metrics = new PrometheusClient( {
+	staticLabels: { service: 'cxserver' }
+} );
 
 function showHelpAndExit() {
 	const script = process.argv[ 1 ];

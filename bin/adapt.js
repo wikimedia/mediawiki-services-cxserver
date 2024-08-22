@@ -4,24 +4,22 @@
 
 'use strict';
 
-const fs = require( 'fs' ),
-	yaml = require( 'js-yaml' ),
-	Adapter = require( __dirname + '/../lib/Adapter' ),
-	TestClient = require( __dirname + '/../lib/mt' ).TestClient,
-	MWApiRequestManager = require( __dirname + '/../lib/mw/MWApiRequestManager' );
+const { logger } = require( '../lib/logging.js' );
+const { getConfig } = require( '../lib/util.js' );
+const PrometheusClient = require( '../lib/metric.js' );
+const fs = require( 'fs' );
+const Adapter = require( __dirname + '/../lib/Adapter' );
+const TestClient = require( __dirname + '/../lib/mt' ).TestClient;
+const MWApiRequestManager = require( __dirname + '/../lib/mw/MWApiRequestManager' );
 
-const config = yaml.load( fs.readFileSync( 'config.yaml' ) );
-if ( !config ) {
-	process.stdout.write( 'Failed to load config' );
-	process.exit( 1 );
-}
-
-const cxConfig = config.services && Array.isArray( config.services ) &&
-		config.services.filter( ( item ) => item && item.name === 'cxserver' )[ 0 ];
-if ( !cxConfig ) {
-	process.stdout.write( 'Cannot find cxserver config' );
-	process.exit( 1 );
-}
+const cxConfig = getConfig();
+cxConfig.logger = logger(
+	cxConfig.name,
+	cxConfig.logging
+);
+cxConfig.metrics = new PrometheusClient( {
+	staticLabels: { service: 'cxserver' }
+} );
 
 const xhtml = fs.readFileSync( '/dev/stdin', 'utf8' );
 if ( xhtml.trim() === '' || process.argv.length !== 4 ) {
@@ -33,7 +31,7 @@ if ( xhtml.trim() === '' || process.argv.length !== 4 ) {
 
 }
 
-cxConfig.conf.mtClient = new TestClient( cxConfig );
+cxConfig.mtClient = new TestClient( cxConfig );
 
 const from = process.argv[ 2 ];
 const to = process.argv[ 3 ];

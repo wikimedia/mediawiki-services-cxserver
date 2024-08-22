@@ -2,7 +2,7 @@
 
 const { describe, it, before } = require( 'node:test' );
 const assert = require( '../../utils/assert.js' );
-const server = require( '../../utils/server.js' );
+const { getConfig } = require( '../../../lib/util.js' );
 const URI = require( 'swagger-router' ).URI;
 const yaml = require( 'js-yaml' );
 const fs = require( 'fs' );
@@ -15,14 +15,13 @@ const validator = new OpenAPISchemaValidator( { version: 3 } );
 function staticSpecLoad() {
 
 	let spec;
-	const myService = server.config;
+	const myService = getConfig();
 	const specPath = `${ __dirname }/../../../${ myService.spec ? myService.spec : 'spec.yaml' }`;
 
 	try {
 		spec = yaml.load( fs.readFileSync( specPath ) );
 	} catch ( e ) {
-		// this error will be detected later, so ignore it
-		spec = { paths: {}, 'x-default-params': {} };
+		throw new Error( `Cannot load spec file: ${ specPath }` );
 	}
 
 	return spec;
@@ -184,7 +183,9 @@ function cmp( result, expected, errMsg ) {
 async function validateTestResponse( testCase, response ) {
 
 	const expRes = testCase.response;
-
+	if ( response.statusCode === 500 ) {
+		console.error( response );
+	}
 	// check the status
 	assert.deepEqual( response.statusCode, expRes.status, 'Status mismatch!' );
 
@@ -229,7 +230,7 @@ describe( 'Swagger spec', async () => {
 	let app;
 
 	before( async () => {
-		app = await initApp( server.options );
+		app = await initApp( getConfig() );
 	} );
 
 	// the variable holding the spec
