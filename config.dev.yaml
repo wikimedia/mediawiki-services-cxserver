@@ -1,3 +1,4 @@
+name: cxserver-dev
 port: 8080
 # private_key: path to private key file for enabling https
 # certificate: path to certificate file for enabling https
