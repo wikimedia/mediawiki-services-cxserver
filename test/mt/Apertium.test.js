@@ -100,6 +100,8 @@ const tests = [
 ];
 
 describe( 'Apertium machine translation', () => {
+	const apertium = new Apertium( { conf: getConfig() } );
+	assert.ok( apertium.conf.mt.Apertium.api !== undefined, 'Apertium API can be read from configuration' );
 	async.forEach( tests, ( test ) => {
 		it( 'Test: ' + test.title, () => {
 			const textTranslations = test.textTranslations;
@@ -108,7 +110,7 @@ describe( 'Apertium machine translation', () => {
 				const targetLines = sourceLines.map( ( line ) => textTranslations[ line ] || 'X' + line + 'X' );
 				return Promise.resolve( targetLines );
 			};
-			const apertium = new Apertium( getConfig() );
+
 			return apertium.translate( 'en', 'es', test.source ).then( ( target ) => {
 				assert.deepEqual( target, test.target, test.title );
 			} );

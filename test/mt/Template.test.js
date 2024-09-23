@@ -20,7 +20,7 @@ const testSourceContent = `
 describe( 'Template translation', () => {
 	it( 'should not translate the fragement contents.', async () => {
 		const cxConfig = getConfig();
-		const testClient = new TestClient( cxConfig );
+		const testClient = new TestClient( { conf: cxConfig } );
 		const result = await testClient.translate( 'en', 'es', testSourceContent );
 		assert.notDeepEqual( result.includes( '[en→es]This is not translated' ), true );
 		assert.deepEqual( result.includes( '[en→es]This is translated' ), true );

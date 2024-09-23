@@ -31,7 +31,7 @@ describe( 'Machine translation with wrapped html result', () => {
 		// Fake the actual call
 		const oldTranslateHTML = MTClient.prototype.translateHtml;
 		MTClient.prototype.translateHtml = () => Promise.resolve( testDataWithWrappedResult.mtResult );
-		const mtClient = new MTClient( cxConfig );
+		const mtClient = new MTClient( { conf: cxConfig } );
 		assert.fails(
 			mtClient.translateReducedHtml(
 				testDataWithWrappedResult.sourceLang,
