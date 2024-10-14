@@ -7,16 +7,18 @@ const TestUtils = require( '../testutils' );
 const assert = require( '../utils/assert' );
 const async = require( 'async' );
 const getConfig = require( '../../lib/util' ).getConfig;
+const { initApp } = require( '../../app.js' );
 
 const mocks = require( './MWLink.mocks.json' );
 const tests = require( './MWLink.test.json' );
 
 describe( 'Link Adaptation tests', () => {
-	const config = getConfig();
-	const api = new MWApiRequestManager( config );
-	const mocker = new TestUtils( api );
+	let app, api, mocker;
 
-	before( () => {
+	before( async () => {
+		app = await initApp( getConfig() );
+		api = new MWApiRequestManager( app );
+		mocker = new TestUtils( api );
 		mocker.setup( mocks );
 	} );
 
@@ -26,9 +28,10 @@ describe( 'Link Adaptation tests', () => {
 
 	async.each( tests, ( test, done ) => {
 		it( test.desc, () => {
-			const adapter = new Adapter( test.from, test.to, api, getConfig() );
+			const adapter = new Adapter( test.from, test.to, api, app );
 			const translationunit = adapter.getAdapter( test.source );
 
+			assert.deepEqual( !!adapter.logger, true, 'Logger is set' );
 			return translationunit.adapt( test.source ).then( ( adaptedNode ) => {
 				for ( const attribute in [ 'href', 'rel', 'title' ] ) {
 					assert.deepEqual(

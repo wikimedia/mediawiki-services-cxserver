@@ -10,18 +10,18 @@ const async = require( 'async' );
 const { getConfig } = require( '../../lib/util' );
 const jsdom = require( 'jsdom' );
 const fs = require( 'fs' );
+const { initApp } = require( '../../app.js' );
 
 const mocks = require( './MWReference.mocks.json' );
 const tests = require( './MWReference.test.json' );
 
 describe( 'Reference adaptation', () => {
-	const config = getConfig();
-	config.reduce = true;
-	config.mtClient = new TestClient( config );
-	const api = new MWApiRequestManager( config );
-	const mocker = new TestUtils( api );
+	let app, api, mocker;
 
-	before( () => {
+	before( async () => {
+		app = await initApp( getConfig() );
+		api = new MWApiRequestManager( app );
+		mocker = new TestUtils( api );
 		mocker.setup( mocks );
 	} );
 
@@ -31,7 +31,9 @@ describe( 'Reference adaptation', () => {
 
 	async.each( tests, ( test, done ) => {
 		it( test.desc, () => {
-			const adapter = new Adapter( test.from, test.to, api, config );
+			app.mtClient = new TestClient( app );
+			app.reduce = true;
+			const adapter = new Adapter( test.from, test.to, api, app );
 			if ( typeof test.source === 'string' ) {
 				const content = fs.readFileSync( __dirname + '/data/' + test.source, 'utf8' );
 				const sourceDom = new jsdom.JSDOM( content );

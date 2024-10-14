@@ -11,13 +11,16 @@ const jsdom = require( 'jsdom' );
 const { getConfig } = require( '../../lib/util.js' );
 const mocks = require( './AdaptationTests.mocks.json' );
 const tests = require( './AdaptationTests.json' );
+const { initApp } = require( '../../app.js' );
 
 describe( 'Adaptation tests', () => {
 	const api = new MWApiRequestManager( getConfig() );
 	const mocker = new TestUtils( api );
+	let app;
 
-	before( () => {
+	before( async () => {
 		mocker.setup( mocks );
+		app = await initApp( getConfig() );
 	} );
 
 	after( () => {
@@ -26,9 +29,9 @@ describe( 'Adaptation tests', () => {
 
 	async.each( tests, ( testcase, done ) => {
 		it( testcase.desc, () => {
-			const cxConfig = getConfig();
-			cxConfig.mtClient = new TestClient( cxConfig );
-			const adapter = new Adapter( testcase.from, testcase.to, api, cxConfig );
+
+			app.mtClient = new TestClient( app );
+			const adapter = new Adapter( testcase.from, testcase.to, api, app );
 
 			return adapter.adapt( testcase.source ).then( ( result ) => {
 				const actualDom = new jsdom.JSDOM( result.getHtml() );

@@ -9,15 +9,15 @@ const assert = require( '../utils/assert' );
 const getConfig = require( '../../lib/util' ).getConfig;
 const mocks = require( './MWTemplate.mocks.json' );
 const tests = require( './MWTemplate.test.json' );
+const { initApp } = require( '../../app.js' );
 
 test( 'Template adaptation', async ( t ) => {
-	const cxConfig = getConfig();
-	cxConfig.mtClient = new TestClient( cxConfig );
+	let app, api, mocker;
 
-	const api = new MWApiRequestManager( cxConfig );
-	const mocker = new TestUtils( api );
-
-	t.before( () => {
+	t.before( async () => {
+		app = await initApp( getConfig() );
+		api = new MWApiRequestManager( app );
+		mocker = new TestUtils( api );
 		mocker.setup( mocks );
 	} );
 
@@ -26,8 +26,10 @@ test( 'Template adaptation', async ( t ) => {
 	} );
 
 	for ( const testcase of tests ) {
+		// eslint-disable-next-line no-loop-func
 		await t.test( testcase.desc, async () => {
-			const adapter = new Adapter( testcase.from, testcase.to, api, cxConfig );
+			app.mtClient = new TestClient( app );
+			const adapter = new Adapter( testcase.from, testcase.to, api, app );
 			const translationunit = adapter.getAdapter( testcase.source );
 			assert.ok( adapter, 'There is an adapter for templates' );
 
