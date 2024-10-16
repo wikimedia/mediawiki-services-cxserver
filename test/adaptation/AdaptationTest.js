@@ -14,13 +14,13 @@ const tests = require( './AdaptationTests.json' );
 const { initApp } = require( '../../app.js' );
 
 describe( 'Adaptation tests', () => {
-	const api = new MWApiRequestManager( getConfig() );
-	const mocker = new TestUtils( api );
-	let app;
+	let app, api, mocker;
 
 	before( async () => {
-		mocker.setup( mocks );
 		app = await initApp( getConfig() );
+		api = new MWApiRequestManager( app );
+		mocker = new TestUtils( api );
+		mocker.setup( mocks );
 	} );
 
 	after( () => {

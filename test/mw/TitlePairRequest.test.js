@@ -1,21 +1,24 @@
 'use strict';
 
-const { describe, it, after, test } = require( 'node:test' );
+const { after, test } = require( 'node:test' );
 const assert = require( '../utils/assert.js' );
 const getConfig = require( '../../lib/util' ).getConfig;
 const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
 const TitlePairRequest = require( '../../lib/mw/TitlePairRequest' );
 const TestUtils = require( '../testutils' );
+const { initApp } = require( '../../app.js' );
 
 const mocks = require( './TitlePairTests.mocks.json' );
 const tests = require( './TitlePairTests.json' );
 
 // FIXME: This tests title normalization of MWApiRequestManager
 test( 'Title pair tests', async ( t ) => {
-	const api = new MWApiRequestManager( getConfig() );
-	const mocker = new TestUtils( api );
+	let app, api, mocker, oldGetRequestPromise;
 
-	t.before( () => {
+	t.before( async () => {
+		app = await initApp( getConfig() );
+		api = new MWApiRequestManager( app );
+		mocker = new TestUtils( api );
 		mocker.setup( mocks );
 	} );
 
@@ -24,6 +27,7 @@ test( 'Title pair tests', async ( t ) => {
 	} );
 
 	for ( const testcase of tests ) {
+		// eslint-disable-next-line no-loop-func
 		await t.test( `should adapt the title when: ${ testcase.desc }`, async () => {
 			const result = await api.titlePairRequest(
 				testcase.source,
@@ -33,13 +37,8 @@ test( 'Title pair tests', async ( t ) => {
 			assert.deepEqual( result.targetTitle, testcase.result );
 		} );
 	}
-} );
 
-describe( 'Title pair tests - batching', () => {
-
-	let oldGetRequestPromise;
-
-	it( 'should have the queue size 50', async () => {
+	await t.test( 'should have the queue size 50', async () => {
 		oldGetRequestPromise = TitlePairRequest.prototype.getRequestPromise;
 		TitlePairRequest.prototype.getRequestPromise = function ( subqueue ) {
 			assert.deepEqual( subqueue.length, 50 );
@@ -48,7 +47,7 @@ describe( 'Title pair tests - batching', () => {
 		const titlePairRequest = new TitlePairRequest( {
 			sourceLanguage: 'en',
 			targetLanguage: 'es',
-			context: getConfig()
+			context: app
 		} );
 		for ( let i = 0; i < 50; i++ ) {
 			titlePairRequest.get( 'Title' + i );

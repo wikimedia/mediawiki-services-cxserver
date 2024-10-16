@@ -1,12 +1,13 @@
 'use strict';
 
-const { describe, it } = require( 'node:test' );
+const { describe, it, before } = require( 'node:test' );
 const fs = require( 'fs' ),
 	assert = require( '../utils/assert.js' ),
 	getConfig = require( '../../lib/util' ).getConfig,
 	async = require( 'async' ),
 	LinearDoc = require( '../../lib/lineardoc' ),
-	MWPageLoader = require( '../../lib/mw/MWPageLoader' );
+	MWPageLoader = require( '../../lib/mw/MWPageLoader' ),
+	{ initApp } = require( '../../app.js' );
 
 function normalize( html ) {
 	const normalizer = new LinearDoc.Normalizer();
@@ -25,6 +26,11 @@ const tests = [
 	}
 ];
 describe( 'MWPageLoader tests', () => {
+	let app;
+	before( async () => {
+		app = await initApp( getConfig() );
+	} );
+
 	async.each( tests, ( test ) => {
 		it( 'Test: ' + test.desc, () => {
 			// Fake the actual MWPageLoader fetch call
@@ -33,7 +39,7 @@ describe( 'MWPageLoader tests', () => {
 				return Promise.resolve( { body: sourceContent } );
 			};
 			const pageloader = new MWPageLoader( {
-				context: getConfig(),
+				context: app,
 				sourceLanguage: test.sourceLanguage,
 				targetLanguage: test.targetLanguage
 			} );
