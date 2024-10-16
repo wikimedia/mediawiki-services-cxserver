@@ -18,6 +18,7 @@ const PrometheusClient = require( './lib/metric.js' );
 const { logger } = require( './lib/logging.js' );
 
 const defaultConfig = {
+	name: packageInfo.name,
 	port: 8888,
 	interface: '0.0.0.0',
 	// eslint-disable-next-line camelcase
