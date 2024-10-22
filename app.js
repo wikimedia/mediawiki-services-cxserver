@@ -118,6 +118,9 @@ function initApp( options ) {
 		limit: 500000
 	} ) );
 
+	// Add a middleware to log the response time
+	app.use( sUtil.responseTimeMetricsMiddleware( app ) );
+
 	// Catch and handle propagated errors
 	app.use( ( err, req, res, next ) => {
 		app.logger.error( err ); // Log the error
@@ -171,8 +174,7 @@ async function loadRoutes( app ) {
 		if ( !route.skip_domain ) {
 			route.path = `/:domain/v${ route.api_version }${ route.path }`;
 		}
-		// wrap the route handlers with Promise.try() blocks
-		sUtil.wrapRouteHandlers( route, app );
+
 		// all good, use that route
 		app.use( route.path, route.router );
 	} );
