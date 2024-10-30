@@ -12,10 +12,15 @@ const bodyParser = require( 'body-parser' );
 const fs = require( 'fs' );
 const sUtil = require( './lib/util' );
 const packageInfo = require( './package.json' );
+const CXConfig = require( './lib/Config.js' );
 const yaml = require( 'js-yaml' );
 const addShutdown = require( 'http-shutdown' );
 const PrometheusClient = require( './lib/metric.js' );
 const { logger } = require( './lib/logging.js' );
+const infoRoutes = require( './lib/routes/info' );
+const rootRoutes = require( './lib/routes/root' );
+const v1Routes = require( './lib/routes/v1' ).router;
+const v2Routes = require( './lib/routes/v2' );
 
 const defaultConfig = {
 	name: packageInfo.name,
@@ -132,61 +137,19 @@ function initApp( options ) {
 		next();
 	} );
 
-	return loadRoutes( app );
-}
+	app.use( '/', rootRoutes );
+	app.use( '/v1', v1Routes );
+	app.use( '/v2', v2Routes );
 
-/**
- * Loads all routes declared in routes/ into the app
- *
- * @param {Application} app the application object to load routes into
- * @return {Promise} a promise resolving to the app object
- */
-async function loadRoutes( app ) {
-	// get the list of files in routes/
-	const routeFiles = await fs.promises.readdir( `${ __dirname }/lib/routes`, { withFileTypes: true } );
-
-	routeFiles.forEach( ( file ) => {
-		const fname = file.name;
-		// ... and then load each route
-		// but only if it's a js file
-		if ( !/\.js$/.test( fname ) ) {
-			return undefined;
-		}
-		// import the route file
-		const routeDef = require( `${ __dirname }/lib/routes/${ fname }` );
-		const route = ( routeDef.create ? routeDef.create( app ) : routeDef( app ) );
-		if ( route === undefined ) {
-			return undefined;
-		}
-		// check that the route exports the object we need
-		if ( route.constructor !== Object || !route.path || !route.router ||
-			!( route.api_version || route.skip_domain )
-		) {
-			throw new TypeError( `routes/${ fname } does not export the correct object!` );
-		}
-		// normalise the path to be used as the mount point
-		if ( route.path[ 0 ] !== '/' ) {
-			route.path = `/${ route.path }`;
-		}
-		if ( route.path[ route.path.length - 1 ] !== '/' ) {
-			route.path = `${ route.path }/`;
-		}
-		if ( !route.skip_domain ) {
-			route.path = `/:domain/v${ route.api_version }${ route.path }`;
-		}
-
-		// all good, use that route
-		app.use( route.path, route.router );
-	} );
-
+	app.use( '/_info', infoRoutes );
 	app.get( '/metrics', async ( req, res ) => {
 		res.set( 'Content-Type', app.metrics.client.register.contentType );
 		res.end( await app.metrics.metrics() );
 	} );
 
-	// route loading is now complete, return the app object
-	return Promise.resolve( app );
+	app.registry = new CXConfig( app );
 
+	return Promise.resolve( app );
 }
 
 /**
