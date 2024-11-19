@@ -42,7 +42,7 @@ const defaultConfig = {
  * Creates an express app and initialises it
  *
  * @param {Object} options the options to initialise the app with
- * @return {Promise} the promise resolving to the app object
+ * @return {Express} the express app object
  */
 function initApp( options ) {
 	const app = express();
@@ -126,12 +126,6 @@ function initApp( options ) {
 	// Add a middleware to log the response time
 	app.use( sUtil.responseTimeMetricsMiddleware( app ) );
 
-	// Catch and handle propagated errors
-	app.use( ( err, req, res, next ) => {
-		app.logger.error( err ); // Log the error
-		next();
-	} );
-
 	app.use( ( req, res, next ) => {
 		app.logger.info( `${ req.method } ${ req.originalUrl } ${ res.statusCode }` );
 		next();
@@ -140,16 +134,37 @@ function initApp( options ) {
 	app.use( '/', rootRoutes );
 	app.use( '/v1', v1Routes );
 	app.use( '/v2', v2Routes );
-
 	app.use( '/_info', infoRoutes );
 	app.get( '/metrics', async ( req, res ) => {
 		res.set( 'Content-Type', app.metrics.client.register.contentType );
 		res.end( await app.metrics.metrics() );
 	} );
 
+	// Catch and handle propagated errors
+	app.use( ( err, req, res, next ) => {
+		app.logger.error( 'Error details:', {
+			message: err.message,
+			stack: err.stack,
+			status: err.status
+		} );
+
+		if ( res.headersSent ) {
+			return next( err );
+		}
+		res.status( err.status || 500 );
+
+		res.json( {
+			error: {
+				message: err.message || 'Internal Server Error',
+				status: err.status
+			}
+		} );
+
+	} );
+
 	app.registry = new CXConfig( app );
 
-	return Promise.resolve( app );
+	return app;
 }
 
 /**
@@ -184,18 +199,16 @@ function createServer( app ) {
 	} );
 }
 
-/**
- * The service's entry point. It takes over the configuration
- * options and the logger and metrics-reporting objects from
- * service-runner and starts an HTTP server, attaching the application
- * object to it.
- *
- * @param {Object} options
- * @return {Promise} a promise for an http server.
- */
 module.exports = function ( options ) {
-	return initApp( options )
-		.then( createServer );
+	const app = initApp( options );
+	createServer( app );
+	process.on( 'unhandledRejection', ( reason /* promise */ ) => {
+		app.logger.error( 'Unhandled Promise Rejection', {
+			error: reason,
+			stack: reason.stack
+		} );
+	} );
+	return app;
 };
 
 module.exports.initApp = initApp;
