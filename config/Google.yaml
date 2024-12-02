@@ -1,6 +1,7 @@
 handler: transform.js
 languages:
   - ace
+  - ab
   - af
   - am
   - ar
@@ -12,6 +13,8 @@ languages:
   - az
   - ba
   - ban
+  - bbc
+  - bcl
   - be
   - be-tarask
   - bew
@@ -28,6 +31,7 @@ languages:
   - ch
   - ckb
   - co
+  - crh
   - cs
   - cv
   - cy
@@ -44,6 +48,7 @@ languages:
   - et
   - eu
   - fa
+  - ff
   - fi
   - fj
   - fo
@@ -76,7 +81,9 @@ languages:
   - jam
   - jv
   - ka
+  - kg
   - kk
+  - kl
   - km
   - kn
   - ko
@@ -94,6 +101,7 @@ languages:
   - lt
   - ltg
   - lv
+  - mad
   - mai
   - mg
   - mhr
@@ -107,6 +115,7 @@ languages:
   - ms
   - mt
   - my
+  - nah
   - nb
   - ne
   - new
@@ -129,6 +138,7 @@ languages:
   - qu
   - rn
   - ro
+  - rmy
   - ru
   - rw
   - sa
@@ -186,5 +196,6 @@ languages:
   - xh
   - yi
   - yo
+  - yue
   - zh
   - zu
