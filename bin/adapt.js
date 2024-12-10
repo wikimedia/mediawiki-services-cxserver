@@ -2,15 +2,13 @@
 
 /* eslint-disable n/no-process-exit */
 
-'use strict';
-
-const { logger } = require( '../lib/logging.js' );
-const { getConfig } = require( '../lib/util.js' );
-const PrometheusClient = require( '../lib/metric.js' );
-const fs = require( 'fs' );
-const Adapter = require( __dirname + '/../lib/Adapter' );
-const TestClient = require( __dirname + '/../lib/mt' ).TestClient;
-const MWApiRequestManager = require( __dirname + '/../lib/mw/MWApiRequestManager' );
+import { readFileSync } from 'fs';
+import { logger } from '../lib/logging.js';
+import Adapter from '../lib/Adapter.js';
+import PrometheusClient from '../lib/metric.js';
+import MWApiRequestManager from '../lib/mw/MWApiRequestManager.js';
+import TestClient from '../lib/mt/TestClient.js';
+import { getConfig } from '../lib/util.js';
 
 const cxConfig = getConfig();
 cxConfig.logger = logger(
@@ -21,7 +19,7 @@ cxConfig.metrics = new PrometheusClient( {
 	staticLabels: { service: 'cxserver' }
 } );
 
-const xhtml = fs.readFileSync( '/dev/stdin', 'utf8' );
+const xhtml = readFileSync( '/dev/stdin', 'utf8' );
 if ( xhtml.trim() === '' || process.argv.length !== 4 ) {
 	const script = process.argv[ 1 ];
 	process.stderr.write(

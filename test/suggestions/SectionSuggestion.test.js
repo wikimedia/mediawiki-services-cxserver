@@ -1,11 +1,9 @@
-'use strict';
-
-const { describe, it } = require( 'node:test' );
-const assert = require( '../utils/assert.js' ),
-	async = require( 'async' ),
-	getConfig = require( '../../lib/util' ).getConfig,
-	SectionSuggester = require( '../../lib/suggestion/SectionSuggester' ),
-	MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
+import { describe, it } from 'node:test';
+import { forEach } from 'async';
+import { deepEqual } from '../utils/assert.js';
+import { getConfig } from '../../lib/util.js';
+import SectionSuggester from '../../lib/suggestion/SectionSuggester.js';
+import MWApiRequestManager from '../../lib/mw/MWApiRequestManager.js';
 
 const tests = [
 	{
@@ -55,7 +53,7 @@ const tests = [
 ];
 
 describe( 'SectionSuggester tests', () => {
-	async.forEach( tests, ( test ) => {
+	forEach( tests, ( test ) => {
 		it( 'should find present and missing sections', async () => {
 			const cxConfig = getConfig();
 
@@ -75,7 +73,7 @@ describe( 'SectionSuggester tests', () => {
 			);
 
 			await sectionSuggestor.getMissingSections( test.sourceLanguage, test.sourceTitle, test.targetLanguage, test.targetTitle ).then( ( sections ) => {
-				assert.deepEqual( sections, test.expectedResult );
+				deepEqual( sections, test.expectedResult );
 			} );
 		} );
 	} );

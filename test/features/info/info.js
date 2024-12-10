@@ -1,10 +1,8 @@
-'use strict';
-
-const { describe, it, before } = require( 'node:test' );
-const assert = require( '../../utils/assert.js' );
-const { getConfig } = require( '../../../lib/util.js' );
-const { initApp } = require( '../../../app.js' );
-const request = require( 'supertest' );
+import { before, describe, it } from 'node:test';
+import request from 'supertest';
+import { contentType, deepEqual, notDeepEqual, status } from '../../utils/assert.js';
+import { getConfig } from '../../../lib/util.js';
+import { initApp } from '../../../app.js';
 
 describe( 'service information', async () => {
 	let app;
@@ -22,13 +20,13 @@ describe( 'service information', async () => {
 		const response = await request( app ).get( infoUri + fieldName );
 		const data = await response.body;
 		// check the returned Content-Type header
-		assert.deepEqual( response.headers[ 'content-type' ], 'application/json; charset=utf-8' );
+		deepEqual( response.headers[ 'content-type' ], 'application/json; charset=utf-8' );
 
 		// the status as well
-		assert.deepEqual( response.statusCode, 200 );
+		deepEqual( response.statusCode, 200 );
 		// finally, check the body has the specified field
-		assert.notDeepEqual( data, undefined, 'No body returned!' );
-		assert.notDeepEqual( data[ fieldName ], undefined, `No ${ fieldName } field returned!` );
+		notDeepEqual( data, undefined, 'No body returned!' );
+		notDeepEqual( data[ fieldName ], undefined, `No ${ fieldName } field returned!` );
 	}
 
 	it( 'should get the service name', () => checkRet( 'name' ) );
@@ -37,22 +35,22 @@ describe( 'service information', async () => {
 
 	it( 'should redirect to the service home page', async () => {
 		const response = await request( app ).get( `${ infoUri }home`, { redirect: 'manual' } );
-		assert.status( response, 301 );
+		status( response, 301 );
 	} );
 
 	it( 'should get the service info', async () => {
 		const response = await request( app ).get( infoUri );
 		const data = await response.body;
 		// check the status
-		assert.deepEqual( response.statusCode, 200 );
+		deepEqual( response.statusCode, 200 );
 		// check the returned Content-Type header
-		assert.contentType( response, 'application/json; charset=utf-8' );
+		contentType( response, 'application/json; charset=utf-8' );
 		// inspect the body
-		assert.notDeepEqual( data, undefined, 'No body returned!' );
-		assert.notDeepEqual( data.name, undefined, 'No name field returned!' );
-		assert.notDeepEqual( data.version, undefined, 'No version field returned!' );
-		assert.notDeepEqual( data.description, undefined, 'No description field returned!' );
-		assert.notDeepEqual( data.home, undefined, 'No home field returned!' );
+		notDeepEqual( data, undefined, 'No body returned!' );
+		notDeepEqual( data.name, undefined, 'No name field returned!' );
+		notDeepEqual( data.version, undefined, 'No version field returned!' );
+		notDeepEqual( data.description, undefined, 'No description field returned!' );
+		notDeepEqual( data.home, undefined, 'No home field returned!' );
 	} );
 
 } );

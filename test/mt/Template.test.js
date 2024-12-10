@@ -1,9 +1,7 @@
-'use strict';
-
-const { describe, it } = require( 'node:test' );
-const assert = require( '../utils/assert.js' );
-const getConfig = require( '../../lib/util' ).getConfig;
-const TestClient = require( '../../lib/mt' ).TestClient;
+import { describe, it } from 'node:test';
+import { deepEqual, notDeepEqual } from '../utils/assert.js';
+import { getConfig } from '../../lib/util.js';
+import TestClient from '../../lib/mt/TestClient.js';
 
 const testSourceContent = `
 <section id="cxTargetSection12" data-mw-cx-source="undefined">
@@ -22,7 +20,7 @@ describe( 'Template translation', () => {
 		const cxConfig = getConfig();
 		const testClient = new TestClient( { conf: cxConfig } );
 		const result = await testClient.translate( 'en', 'es', testSourceContent );
-		assert.notDeepEqual( result.includes( '[en→es]This is not translated' ), true );
-		assert.deepEqual( result.includes( '[en→es]This is translated' ), true );
+		notDeepEqual( result.includes( '[en→es]This is not translated' ), true );
+		deepEqual( result.includes( '[en→es]This is translated' ), true );
 	} );
 } );

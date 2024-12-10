@@ -1,26 +1,24 @@
-'use strict';
-
 /**
  * @external Application
  */
 
-const http = require( 'http' );
-const https = require( 'https' );
-const express = require( 'express' );
-const compression = require( 'compression' );
-const bodyParser = require( 'body-parser' );
-const fs = require( 'fs' );
-const sUtil = require( './lib/util' );
-const packageInfo = require( './package.json' );
-const CXConfig = require( './lib/Config.js' );
-const yaml = require( 'js-yaml' );
-const addShutdown = require( 'http-shutdown' );
-const PrometheusClient = require( './lib/metric.js' );
-const { logger } = require( './lib/logging.js' );
-const infoRoutes = require( './lib/routes/info' );
-const rootRoutes = require( './lib/routes/root' );
-const v1Routes = require( './lib/routes/v1' ).router;
-const v2Routes = require( './lib/routes/v2' );
+import { createServer as createHTTPServer } from 'http';
+import { createServer as createHTTPSServer } from 'https';
+import { readFileSync } from 'fs';
+import express from 'express';
+import compression from 'compression';
+import { load } from 'js-yaml';
+import bodyParser from 'body-parser';
+import addShutdown from 'http-shutdown';
+import { responseTimeMetricsMiddleware } from './lib/util.js';
+import packageInfo from './package.json' assert { type: 'json' };
+import CXConfig from './lib/Config.js';
+import PrometheusClient from './lib/metric.js';
+import { logger } from './lib/logging.js';
+import infoRoutes from './lib/routes/info.js';
+import rootRoutes from './lib/routes/root.js';
+import { router as v1Routes } from './lib/routes/v1.js';
+import v2Routes from './lib/routes/v2.js';
 
 const defaultConfig = {
 	name: packageInfo.name,
@@ -35,7 +33,7 @@ const defaultConfig = {
 		'cache-control', 'content-type', 'content-length', 'if-match',
 		'user-agent', 'x-request-id'
 	],
-	specfile: `${ __dirname }/spec.yaml`
+	specfile: './spec.yaml'
 };
 
 /**
@@ -44,7 +42,7 @@ const defaultConfig = {
  * @param {Object} options the options to initialise the app with
  * @return {Express} the express app object
  */
-function initApp( options ) {
+export async function initApp( options ) {
 	const app = express();
 
 	options = Object.assign( {}, defaultConfig, options );
@@ -80,7 +78,7 @@ function initApp( options ) {
 	app.conf.log_header_whitelist = new RegExp( `^(?:${ app.conf.log_header_whitelist.map( ( item ) => item.trim() ).join( '|' ) })$`, 'i' );
 
 	try {
-		app.conf.spec = yaml.load( fs.readFileSync( app.conf.specfile ) );
+		app.conf.spec = load( readFileSync( app.conf.specfile ) );
 	} catch ( e ) {
 		app.logger.log( 'warn/spec', `Could not load the spec: ${ e }` );
 		app.conf.spec = {};
@@ -124,7 +122,7 @@ function initApp( options ) {
 	} ) );
 
 	// Add a middleware to log the response time
-	app.use( sUtil.responseTimeMetricsMiddleware( app ) );
+	app.use( responseTimeMetricsMiddleware( app ) );
 
 	app.use( ( req, res, next ) => {
 		app.logger.info( `${ req.method } ${ req.originalUrl } ${ res.statusCode }` );
@@ -162,7 +160,9 @@ function initApp( options ) {
 
 	} );
 
-	app.registry = new CXConfig( app );
+	const config = new CXConfig( app );
+	await config.parseAndLoadConfig();
+	app.registry = config;
 
 	return app;
 }
@@ -181,12 +181,12 @@ function createServer( app ) {
 	const isHttps = app.conf.private_key && app.conf.certificate;
 	if ( isHttps ) {
 		const credentials = {
-			key: fs.readFileSync( app.conf.private_key ),
-			cert: fs.readFileSync( app.conf.certificate )
+			key: readFileSync( app.conf.private_key ),
+			cert: readFileSync( app.conf.certificate )
 		};
-		server = https.createServer( credentials, app );
+		server = createHTTPSServer( credentials, app );
 	} else {
-		server = http.createServer( app );
+		server = createHTTPServer( app );
 	}
 
 	return new Promise( ( resolve ) => {
@@ -199,8 +199,8 @@ function createServer( app ) {
 	} );
 }
 
-module.exports = function ( options ) {
-	const app = initApp( options );
+export default async function ( options ) {
+	const app = await initApp( options );
 	createServer( app );
 	process.on( 'unhandledRejection', ( reason /* promise */ ) => {
 		app.logger.error( 'Unhandled Promise Rejection', {
@@ -210,5 +210,3 @@ module.exports = function ( options ) {
 	} );
 	return app;
 };
-
-module.exports.initApp = initApp;

@@ -1,20 +1,20 @@
-'use strict';
+import { after, before, describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'fs';
+import { each } from 'async';
+import { JSDOM } from 'jsdom';
+import Adapter from '../../lib/Adapter.js';
+import MWApiRequestManager from '../../lib/mw/MWApiRequestManager.js';
+import TestClient from '../../lib/mt/TestClient.js';
+import TestUtils from '../testutils.js';
+import { deepEqual } from '../utils/assert.js';
+import { getConfig } from '../../lib/util.js';
+import { initApp } from '../../app.js';
 
-const { describe, it, after, before } = require( 'node:test' );
-const Adapter = require( '../../lib/Adapter' );
-const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
-const TestClient = require( '../../lib/mt' ).TestClient;
-const TestUtils = require( '../testutils' );
-const assert = require( '../utils/assert' );
-const async = require( 'async' );
-const { getConfig } = require( '../../lib/util' );
-const jsdom = require( 'jsdom' );
-const fs = require( 'fs' );
-const { initApp } = require( '../../app.js' );
+import mocks from './MWReference.mocks.json' assert { type: 'json' };
+import tests from './MWReference.test.json' assert { type: 'json' };
 
-const mocks = require( './MWReference.mocks.json' );
-const tests = require( './MWReference.test.json' );
-
+const dirname = new URL( '.', import.meta.url ).pathname;
 describe( 'Reference adaptation', () => {
 	let app, api, mocker;
 
@@ -26,17 +26,17 @@ describe( 'Reference adaptation', () => {
 	} );
 
 	after( () => {
-		mocker.dump( __dirname + '/MWReference.mocks.json' );
+		mocker.dump( dirname + '/MWReference.mocks.json' );
 	} );
 
-	async.each( tests, ( test, done ) => {
+	each( tests, ( test, done ) => {
 		it( test.desc, () => {
 			app.mtClient = new TestClient( app );
 			app.reduce = true;
 			const adapter = new Adapter( test.from, test.to, api, app );
 			if ( typeof test.source === 'string' ) {
-				const content = fs.readFileSync( __dirname + '/data/' + test.source, 'utf8' );
-				const sourceDom = new jsdom.JSDOM( content );
+				const content = readFileSync( dirname + '/data/' + test.source, 'utf8' );
+				const sourceDom = new JSDOM( content );
 				const sourceDomAttributes = sourceDom.window.document.querySelector( '[typeof="mw:Extension/ref"]' ).attributes;
 				test.source = {
 					name: 'span',
@@ -50,8 +50,8 @@ describe( 'Reference adaptation', () => {
 				};
 			}
 			if ( typeof test.result === 'string' ) {
-				const resultContent = fs.readFileSync( __dirname + '/data/' + test.result, 'utf8' );
-				const resultDom = new jsdom.JSDOM( resultContent );
+				const resultContent = readFileSync( dirname + '/data/' + test.result, 'utf8' );
+				const resultDom = new JSDOM( resultContent );
 				const resultsDomAttributes = resultDom.window.document.querySelector( '[typeof="mw:Extension/ref"]' ).attributes;
 				test.result = {
 					name: 'span',
@@ -67,12 +67,12 @@ describe( 'Reference adaptation', () => {
 			return translationunit.adapt( test.source ).then( ( adaptedNode ) => {
 				const actualDataCX = JSON.parse( adaptedNode.attributes[ 'data-cx' ] );
 				const expectedDataCX = test.result.attributes[ 'data-cx' ];
-				assert.deepEqual( actualDataCX, expectedDataCX, 'data-cx matches' );
+				deepEqual( actualDataCX, expectedDataCX, 'data-cx matches' );
 
 				if ( test.result.attributes[ 'data-mw' ] ) {
 					const expectedDataMW = test.result.attributes[ 'data-mw' ];
 					const actualDataMW = JSON.parse( adaptedNode.attributes[ 'data-mw' ] );
-					assert.deepEqual( actualDataMW, expectedDataMW, 'data-mw matches' );
+					deepEqual( actualDataMW, expectedDataMW, 'data-mw matches' );
 				}
 
 				done( null );

@@ -2,11 +2,9 @@
 
 /* eslint-disable n/no-process-exit */
 
-'use strict';
-
-const fs = require( 'fs' );
-const LinearDoc = require( __dirname + '/../lib/lineardoc' );
-const html = fs.readFileSync( '/dev/stdin', 'utf8' );
+import { readFileSync } from 'fs';
+import * as LinearDoc from '../lib/lineardoc/index.js';
+const html = readFileSync( '/dev/stdin', 'utf8' );
 if ( html.trim() === '' ) {
 	const script = process.argv[ 1 ];
 	process.stderr.write(

@@ -1,10 +1,9 @@
-'use strict';
-
-const { describe, it } = require( 'node:test' );
-const assert = require( '../utils/assert.js' ),
-	getConfig = require( '../../lib/util' ).getConfig,
-	async = require( 'async' ),
-	Apertium = require( '../../lib/mt' ).Apertium;
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+import { forEach } from 'async';
+import { deepEqual } from '../utils/assert.js';
+import { getConfig } from '../../lib/util.js';
+import Apertium from '../../lib/mt/Apertium.js';
 
 // In each case, below, just "source" and "textTranslations" should be sufficient for linearDoc
 // to derive "target".  // The plaintext strings in "textTranslations" are real Apertium output.
@@ -102,7 +101,7 @@ const tests = [
 describe( 'Apertium machine translation', () => {
 	const apertium = new Apertium( { conf: getConfig() } );
 	assert.ok( apertium.conf.mt.Apertium.api !== undefined, 'Apertium API can be read from configuration' );
-	async.forEach( tests, ( test ) => {
+	forEach( tests, ( test ) => {
 		it( 'Test: ' + test.title, () => {
 			const textTranslations = test.textTranslations;
 			// Fake the actual Apertium call
@@ -112,7 +111,7 @@ describe( 'Apertium machine translation', () => {
 			};
 
 			return apertium.translate( 'en', 'es', test.source ).then( ( target ) => {
-				assert.deepEqual( target, test.target, test.title );
+				deepEqual( target, test.target, test.title );
 			} );
 		} );
 	} );

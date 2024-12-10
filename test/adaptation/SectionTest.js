@@ -1,15 +1,14 @@
-'use strict';
+import { before, describe, it } from 'node:test';
+import { readFileSync } from 'fs';
+import { deepEqual } from 'node:assert/strict';
+import { JSDOM } from 'jsdom';
+import Adapter from '../../lib/Adapter.js';
+import MWApiRequestManager from '../../lib/mw/MWApiRequestManager.js';
+import { TestClient } from '../../lib/mt/index.js';
+import { getConfig } from '../../lib/util.js';
+import { initApp } from '../../app.js';
 
-const { describe, it, before } = require( 'node:test' );
-const fs = require( 'fs' );
-const Adapter = require( '../../lib/Adapter' );
-const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
-const TestClient = require( '../../lib/mt' ).TestClient;
-const assert = require( 'node:assert/strict' );
-const jsdom = require( 'jsdom' );
-const { getConfig } = require( '../../lib/util.js' );
-const { initApp } = require( '../../app.js' );
-
+const dirname = new URL( '.', import.meta.url ).pathname;
 const testcase = {
 	desc: 'section has lot of templates, but all are fragments of main template',
 	from: 'en',
@@ -29,10 +28,10 @@ describe( 'Adaptation tests', () => {
 		const api = new MWApiRequestManager( app );
 		app.mtClient = new TestClient( app );
 		const adapter = new Adapter( testcase.from, testcase.to, api, app );
-		const testData = fs.readFileSync( __dirname + '/data/' + testcase.source, 'utf8' );
+		const testData = readFileSync( dirname + '/data/' + testcase.source, 'utf8' );
 		const result = await adapter.adapt( testData );
-		const resultDom = new jsdom.JSDOM( result.getHtml() );
+		const resultDom = new JSDOM( result.getHtml() );
 		const elementWithDataCX = resultDom.window.document.querySelectorAll( '[data-cx]' );
-		assert.deepEqual( elementWithDataCX.length, testcase.adaptationCount );
+		deepEqual( elementWithDataCX.length, testcase.adaptationCount );
 	} );
 } );

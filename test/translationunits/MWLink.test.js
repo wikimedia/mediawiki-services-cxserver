@@ -1,17 +1,16 @@
-'use strict';
+import { after, before, describe, it } from 'node:test';
+import { each } from 'async';
+import Adapter from '../../lib/Adapter.js';
+import MWApiRequestManager from '../../lib/mw/MWApiRequestManager.js';
+import TestUtils from '../testutils.js';
+import { deepEqual } from '../utils/assert.js';
+import { getConfig } from '../../lib/util.js';
+import { initApp } from '../../app.js';
 
-const { describe, it, before, after } = require( 'node:test' );
-const Adapter = require( '../../lib/Adapter' );
-const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
-const TestUtils = require( '../testutils' );
-const assert = require( '../utils/assert' );
-const async = require( 'async' );
-const getConfig = require( '../../lib/util' ).getConfig;
-const { initApp } = require( '../../app.js' );
+import mocks from './MWLink.mocks.json' assert { type: 'json' };
+import tests from './MWLink.test.json' assert { type: 'json' };
 
-const mocks = require( './MWLink.mocks.json' );
-const tests = require( './MWLink.test.json' );
-
+const dirname = new URL( '.', import.meta.url ).pathname;
 describe( 'Link Adaptation tests', () => {
 	let app, api, mocker;
 
@@ -23,18 +22,18 @@ describe( 'Link Adaptation tests', () => {
 	} );
 
 	after( () => {
-		mocker.dump( __dirname + '/MWLink.mocks.json' );
+		mocker.dump( dirname + '/MWLink.mocks.json' );
 	} );
 
-	async.each( tests, ( test, done ) => {
+	each( tests, ( test, done ) => {
 		it( test.desc, () => {
 			const adapter = new Adapter( test.from, test.to, api, app );
 			const translationunit = adapter.getAdapter( test.source );
 
-			assert.deepEqual( !!adapter.logger, true, 'Logger is set' );
+			deepEqual( !!adapter.logger, true, 'Logger is set' );
 			return translationunit.adapt( test.source ).then( ( adaptedNode ) => {
 				for ( const attribute in [ 'href', 'rel', 'title' ] ) {
-					assert.deepEqual(
+					deepEqual(
 						adaptedNode.attributes[ attribute ],
 						test.result.attributes[ attribute ],
 						`Attribute ${ attribute } matches`
@@ -43,14 +42,14 @@ describe( 'Link Adaptation tests', () => {
 
 				const expectedDataCX = JSON.parse( adaptedNode.attributes[ 'data-cx' ] );
 				const actualDataCX = test.result.attributes[ 'data-cx' ];
-				assert.deepEqual(
+				deepEqual(
 					expectedDataCX.adapted,
 					actualDataCX.adapted,
 					'Property adapted of attribute data-cx matches'
 				);
 
 				for ( const attribute in [ 'thumbnail', 'pageimage', 'description' ] ) {
-					assert.deepEqual(
+					deepEqual(
 						actualDataCX.sourceTitle[ attribute ],
 						expectedDataCX.sourceTitle[ attribute ],
 						`Property sourceTitle.${ attribute } of attribute data-cx matches`
@@ -64,7 +63,7 @@ describe( 'Link Adaptation tests', () => {
 						'pageimage',
 						'description'
 					] ) {
-						assert.deepEqual(
+						deepEqual(
 							actualDataCX.targetTitle[ attribute ],
 							expectedDataCX.targetTitle[ attribute ],
 							`Property targetTitle.${ attribute } of attribute data-cx matches`

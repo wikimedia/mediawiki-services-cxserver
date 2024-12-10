@@ -1,22 +1,21 @@
-'use strict';
+import { describe, it } from 'node:test';
+import { readFileSync } from 'fs';
+import { forEach } from 'async';
+import { load } from 'js-yaml';
+import { deepEqual } from '../utils/assert.js';
+import { MwContextualizer, Normalizer, Parser } from '../../lib/lineardoc/index.js';
 
-const { describe, it } = require( 'node:test' );
-const async = require( 'async' ),
-	assert = require( '../utils/assert.js' ),
-	LinearDoc = require( '../../lib/lineardoc' ),
-	fs = require( 'fs' ),
-	yaml = require( 'js-yaml' );
-
+const dirname = new URL( '.', import.meta.url ).pathname;
 function normalize( html ) {
-	const normalizer = new LinearDoc.Normalizer();
+	const normalizer = new Normalizer();
 	normalizer.init();
 	normalizer.write( html.replace( /[\t\r\n]+/g, '' ) );
 	return normalizer.getHtml();
 }
 
 function getParsedDoc( content ) {
-	const pageloaderConfig = yaml.load( fs.readFileSync( __dirname + '/../../config/MWPageLoader.yaml' ) );
-	const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer(
+	const pageloaderConfig = load( readFileSync( dirname + '/../../config/MWPageLoader.yaml' ) );
+	const parser = new Parser( new MwContextualizer(
 		{ removableSections: pageloaderConfig.removableSections }
 	), {
 		wrapSections: true
@@ -491,16 +490,16 @@ const tests = [
 ];
 
 describe( 'Section wrap tests', () => {
-	async.forEach( tests, ( test ) => {
+	forEach( tests, ( test ) => {
 		const parsedDoc = getParsedDoc( test.source );
 		const wrappedSectionDoc = parsedDoc.wrapSections();
 		const result = normalize( wrappedSectionDoc.getHtml() );
 		const expectedResultData = normalize( test.result );
 		it( 'should parse correctly when ' + test.desc, () => {
-			assert.deepEqual( result, expectedResultData );
+			deepEqual( result, expectedResultData );
 		} );
 		it( 'should extract correct number of categories when ' + test.desc, () => {
-			assert.deepEqual( parsedDoc.categories.length, test.categories );
+			deepEqual( parsedDoc.categories.length, test.categories );
 		} );
 	} );
 } );

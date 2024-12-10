@@ -1,5 +1,3 @@
-'use strict';
-
 class TransformLanguages {
 	constructor( conf ) {
 		this.langs = conf.languages;
@@ -29,4 +27,4 @@ class TransformLanguages {
 
 }
 
-module.exports = TransformLanguages;
+export default TransformLanguages;

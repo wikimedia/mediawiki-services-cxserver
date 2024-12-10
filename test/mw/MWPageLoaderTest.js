@@ -1,16 +1,15 @@
-'use strict';
+import { before, describe, it } from 'node:test';
+import { readFileSync } from 'fs';
+import { each } from 'async';
+import { deepEqual } from '../utils/assert.js';
+import { getConfig } from '../../lib/util.js';
+import { Normalizer } from '../../lib/lineardoc/index.js';
+import MWPageLoader from '../../lib/mw/MWPageLoader.js';
+import { initApp } from '../../app.js';
 
-const { describe, it, before } = require( 'node:test' );
-const fs = require( 'fs' ),
-	assert = require( '../utils/assert.js' ),
-	getConfig = require( '../../lib/util' ).getConfig,
-	async = require( 'async' ),
-	LinearDoc = require( '../../lib/lineardoc' ),
-	MWPageLoader = require( '../../lib/mw/MWPageLoader' ),
-	{ initApp } = require( '../../app.js' );
-
+const dirname = new URL( '.', import.meta.url ).pathname;
 function normalize( html ) {
-	const normalizer = new LinearDoc.Normalizer();
+	const normalizer = new Normalizer();
 	normalizer.init();
 	normalizer.write( html.replace( /[\t\r\n]+/gm, '' ) );
 	return normalizer.getHtml();
@@ -31,11 +30,11 @@ describe( 'MWPageLoader tests', () => {
 		app = await initApp( getConfig() );
 	} );
 
-	async.each( tests, ( test ) => {
+	each( tests, ( test ) => {
 		it( 'Test: ' + test.desc, () => {
 			// Fake the actual MWPageLoader fetch call
 			MWPageLoader.prototype.fetch = () => {
-				const sourceContent = fs.readFileSync( __dirname + '/data/' + test.source, 'utf8' );
+				const sourceContent = readFileSync( dirname + '/data/' + test.source, 'utf8' );
 				return Promise.resolve( { body: sourceContent } );
 			};
 			const pageloader = new MWPageLoader( {
@@ -44,10 +43,10 @@ describe( 'MWPageLoader tests', () => {
 				targetLanguage: test.targetLanguage
 			} );
 			const expectedResultData = normalize(
-				fs.readFileSync( __dirname + '/data/' + test.result, 'utf8' )
+				readFileSync( dirname + '/data/' + test.result, 'utf8' )
 			);
 			return pageloader.getPage( 'mockPage', null, true ).then( ( processedPageContent ) => {
-				assert.deepEqual( normalize( processedPageContent.content ), expectedResultData, test.desc );
+				deepEqual( normalize( processedPageContent.content ), expectedResultData, test.desc );
 			} );
 		} );
 	} );

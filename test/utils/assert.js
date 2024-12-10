@@ -1,6 +1,4 @@
-'use strict';
-
-const assert = require( 'node:assert/strict' );
+import assert from 'node:assert/strict';
 
 function deepEqual( result, expected, message ) {
 
@@ -76,9 +74,10 @@ function fails( promise, onRejected ) {
 
 }
 
-module.exports.ok = assert.ok;
-module.exports.fails = fails;
-module.exports.deepEqual = deepEqual;
-module.exports.notDeepEqual = notDeepEqual;
-module.exports.contentType = contentType;
-module.exports.status = status;
+export {
+	deepEqual,
+	notDeepEqual,
+	fails,
+	status,
+	contentType
+};

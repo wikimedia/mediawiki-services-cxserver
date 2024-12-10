@@ -3,6 +3,7 @@
 	"version": "1.2.1",
 	"description": "The Content Translation Server",
 	"homepage": "https://mediawiki.org/wiki/CX",
+	"type": "module",
 	"repository": {
 		"type": "git",
 		"url": "https://phabricator.wikimedia.org/diffusion/GCXS/cxserver.git"
@@ -17,7 +18,7 @@
 	"dependencies": {
 		"@elastic/ecs-winston-format": "^1.5.3",
 		"@wikimedia/language-data": "^1.1.4",
-		"body-parser": "^1.20.2",
+		"body-parser": "^2.0.2",
 		"colors": "1.4.0",
 		"compression": "^1.7.4",
 		"dompurify": "^3.0.6",
@@ -41,11 +42,16 @@
 		"yargs": "^17.7.2"
 	},
 	"devDependencies": {
+		"@babel/eslint-parser": "^7.25.9",
+		"@babel/plugin-syntax-import-attributes": "^7.26.0",
+		"@babel/preset-env": "^7.26.0",
 		"@eslint/eslintrc": "^3.1.0",
 		"@eslint/js": "^9.12.0",
 		"argparse": "^2.0.1",
 		"async": "^3.2.3",
 		"eslint-config-wikimedia": "0.28.2",
+		"eslint-plugin-import": "^2.31.0",
+		"globals": "^15.12.0",
 		"nodemon": "^3.0.1",
 		"nyc": "^15.1.0",
 		"openapi-schema-validator": "^12.1.3",

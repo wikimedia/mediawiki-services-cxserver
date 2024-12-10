@@ -1,9 +1,8 @@
-'use strict';
-
-const { describe, it } = require( 'node:test' );
-const assert = require( '../utils/assert.js' );
-const getConfig = require( '../../lib/util' ).getConfig;
-const Elia = require( '../../lib/mt' ).Elia;
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+import { fails } from '../utils/assert.js';
+import { getConfig } from '../../lib/util.js';
+import Elia from '../../lib/mt/Elia.js';
 
 describe( 'Elia machine translation', () => {
 	const cxConfig = getConfig();
@@ -12,7 +11,7 @@ describe( 'Elia machine translation', () => {
 	assert.ok( elia.conf.mt.Elia.api !== undefined, 'Elia API can be read from configuration' );
 	it( 'Should fail because of wrong key ', () => {
 		const testSourceContent = '<p>Esta es una <a href="/prueba">prueba</a></p>';
-		assert.fails(
+		fails(
 			elia.translate( 'es', 'eu', testSourceContent ),
 			( err ) => {
 				if ( ( err instanceof Error ) && /value/.test( err ) ) {

@@ -1,9 +1,8 @@
-'use strict';
-
-const { describe, it } = require( 'node:test' );
-const assert = require( '../utils/assert.js' );
-const getConfig = require( '../../lib/util' ).getConfig;
-const MTClient = require( '../../lib/mt/MTClient.js' );
+import { describe, it } from 'node:test';
+import assert from 'node:assert/strict';
+import { deepEqual, fails } from '../utils/assert.js';
+import { getConfig } from '../../lib/util.js';
+import MTClient from '../../lib/mt/MTClient.js';
 
 const testDataWithWrappedResult = {
 	input: `<section id="cxTargetSection0">
@@ -32,7 +31,7 @@ describe( 'Machine translation with wrapped html result', () => {
 		const oldTranslateHTML = MTClient.prototype.translateHtml;
 		MTClient.prototype.translateHtml = () => Promise.resolve( testDataWithWrappedResult.mtResult );
 		const mtClient = new MTClient( { conf: cxConfig } );
-		assert.fails(
+		fails(
 			mtClient.translateReducedHtml(
 				testDataWithWrappedResult.sourceLang,
 				testDataWithWrappedResult.targetLang,
@@ -67,7 +66,7 @@ describe( 'Machine translation result with extra spaces', () => {
 			testDataForSpaceIssue.input
 		).then( ( result ) => {
 			MTClient.prototype.translateHtml = oldTranslateHTML;
-			assert.deepEqual( result, testDataForSpaceIssue.sanitizedResult );
+			deepEqual( result, testDataForSpaceIssue.sanitizedResult );
 		} );
 	} );
 } );
@@ -97,7 +96,7 @@ describe( 'Subsequence match finding', () => {
 			const sequencePos = mtClient.findSubSequence(
 				test.text, test.subsequence, test.language, test.occurrence
 			);
-			assert.deepEqual( sequencePos, test.expected, 'Subsequence position correctly spotted.' );
+			deepEqual( sequencePos, test.expected, 'Subsequence position correctly spotted.' );
 		}
 	} );
 } );

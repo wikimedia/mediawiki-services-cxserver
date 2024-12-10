@@ -1,16 +1,16 @@
-'use strict';
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import Adapter from '../../lib/Adapter.js';
+import MWApiRequestManager from '../../lib/mw/MWApiRequestManager.js';
+import TestClient from '../../lib/mt/TestClient.js';
+import TestUtils from '../testutils.js';
+import { deepEqual } from '../utils/assert.js';
+import { getConfig } from '../../lib/util.js';
+import { initApp } from '../../app.js';
+import mocks from './MWTemplate.mocks.json' assert { type: 'json' };
+import tests from './MWTemplate.test.json' assert { type: 'json' };
 
-const { test } = require( 'node:test' );
-const Adapter = require( '../../lib/Adapter' );
-const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
-const TestClient = require( '../../lib/mt' ).TestClient;
-const TestUtils = require( '../testutils' );
-const assert = require( '../utils/assert' );
-const getConfig = require( '../../lib/util' ).getConfig;
-const mocks = require( './MWTemplate.mocks.json' );
-const tests = require( './MWTemplate.test.json' );
-const { initApp } = require( '../../app.js' );
-
+const dirname = new URL( '.', import.meta.url ).pathname;
 test( 'Template adaptation', async ( t ) => {
 	let app, api, mocker;
 
@@ -22,7 +22,7 @@ test( 'Template adaptation', async ( t ) => {
 	} );
 
 	t.after( () => {
-		mocker.dump( __dirname + '/MWTemplate.mocks.json' );
+		mocker.dump( dirname + '/MWTemplate.mocks.json' );
 	} );
 
 	for ( const testcase of tests ) {
@@ -44,7 +44,7 @@ test( 'Template adaptation', async ( t ) => {
 			const adaptedNode = await translationunit.adapt( testcase.source );
 			const actualDataCX = JSON.parse( adaptedNode.attributes[ 'data-cx' ] );
 			const expectedDataCX = testcase.result.attributes[ 'data-cx' ];
-			assert.deepEqual(
+			deepEqual(
 				actualDataCX,
 				expectedDataCX,
 				'Adaptation status matches'
@@ -52,7 +52,7 @@ test( 'Template adaptation', async ( t ) => {
 
 			const actualDataMW = JSON.parse( adaptedNode.attributes[ 'data-mw' ] );
 			const expectedDataMW = testcase.result.attributes[ 'data-mw' ];
-			assert.deepEqual( actualDataMW, expectedDataMW, 'data-mw matches' );
+			deepEqual( actualDataMW, expectedDataMW, 'data-mw matches' );
 		} );
 	}
 } );

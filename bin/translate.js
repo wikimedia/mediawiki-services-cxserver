@@ -2,16 +2,14 @@
 
 /* eslint-disable n/no-process-exit */
 
-'use strict';
+import { readFileSync } from 'fs';
+import { logger } from '../lib/logging.js';
+import { getConfig } from '../lib/util.js';
 
-const { logger } = require( '../lib/logging.js' );
-const { getConfig } = require( '../lib/util.js' );
-
-const fs = require( 'fs' ),
-	Adapter = require( __dirname + '/../lib/Adapter' ),
-	MTClients = require( __dirname + '/../lib/mt/' ),
-	MWApiRequestManager = require( __dirname + '/../lib/mw/MWApiRequestManager' ),
-	PrometheusClient = require( '../lib/metric.js' );
+import Adapter from '../lib/Adapter.js';
+import * as MTClients from '../lib/mt/index.js';
+import MWApiRequestManager from '../lib/mw/MWApiRequestManager.js';
+import PrometheusClient from '../lib/metric.js';
 
 const cxConfig = getConfig();
 cxConfig.logger = logger(
@@ -22,7 +20,7 @@ cxConfig.metrics = new PrometheusClient( {
 	staticLabels: { service: 'cxserver' }
 } );
 
-const sourceHtml = fs.readFileSync( '/dev/stdin', 'utf8' );
+const sourceHtml = readFileSync( '/dev/stdin', 'utf8' );
 if ( sourceHtml.trim() === '' || process.argv.length !== 5 ) {
 	const script = process.argv[ 1 ];
 	process.stderr.write(

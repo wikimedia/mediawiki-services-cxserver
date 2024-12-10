@@ -1,9 +1,7 @@
-'use strict';
-
-const fs = require( 'fs' ),
-	ArgumentParser = require( 'argparse' ).ArgumentParser,
-	sqlite = require( 'sqlite' ),
-	sqlite3 = require( 'sqlite3' );
+import { existsSync, readFileSync } from 'fs';
+import { ArgumentParser } from 'argparse';
+import { open } from 'sqlite';
+import { Database } from 'sqlite3';
 
 async function createTemplate( db, from, to, templateName ) {
 	const mapping = await db.get(
@@ -23,7 +21,7 @@ async function createTemplate( db, from, to, templateName ) {
 }
 
 async function main( databaseFile, mapping, from, to ) {
-	const db = await sqlite.open( { filename: databaseFile, driver: sqlite3.Database } );
+	const db = await open( { filename: databaseFile, driver: Database } );
 
 	await db.run(
 		`CREATE TABLE IF NOT EXISTS templates (
@@ -107,13 +105,13 @@ argparser.add_argument(
 const args = argparser.parse_args();
 
 const input = args.input;
-if ( !fs.existsSync( input ) ) {
+if ( !existsSync( input ) ) {
 	throw new Error( `File ${ input } does not exist` );
 }
 
 main(
 	args.database,
-	JSON.parse( fs.readFileSync( input ) ),
+	JSON.parse( readFileSync( input ) ),
 	args.from,
 	args.to
 );

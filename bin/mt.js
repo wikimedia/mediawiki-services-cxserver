@@ -2,13 +2,11 @@
 
 /* eslint-disable n/no-process-exit */
 
-'use strict';
-
-const { logger } = require( '../lib/logging.js' );
-const { getConfig } = require( '../lib/util.js' );
-const PrometheusClient = require( '../lib/metric.js' );
-const fs = require( 'fs' ),
-	MTClients = require( __dirname + '/../lib/mt/' );
+import { readFileSync } from 'fs';
+import { logger } from '../lib/logging.js';
+import { getConfig } from '../lib/util.js';
+import PrometheusClient from '../lib/metric.js';
+import * as MTClients from '../lib/mt/index.js';
 
 const cxConfig = getConfig();
 cxConfig.logger = logger(
@@ -37,7 +35,7 @@ const mtService = args[ 0 ];
 const sourceLang = args[ 1 ];
 const targetLang = args[ 2 ];
 
-const sourceHtml = fs.readFileSync( '/dev/stdin', 'utf8' );
+const sourceHtml = readFileSync( '/dev/stdin', 'utf8' );
 
 if ( sourceHtml.trim() === '' ) {
 	showHelpAndExit();
@@ -50,7 +48,7 @@ if ( !MTClients[ mtService ] ) {
 
 const mt = new MTClients[ mtService ]( cxConfig );
 
-return mt.translateHtml(
+mt.translateHtml(
 	sourceLang,
 	targetLang,
 	sourceHtml

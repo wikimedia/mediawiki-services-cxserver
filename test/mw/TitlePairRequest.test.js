@@ -1,16 +1,15 @@
-'use strict';
+import { after, test } from 'node:test';
+import { deepEqual } from '../utils/assert.js';
+import { getConfig } from '../../lib/util.js';
+import MWApiRequestManager from '../../lib/mw/MWApiRequestManager.js';
+import TitlePairRequest from '../../lib/mw/TitlePairRequest.js';
+import TestUtils from '../testutils.js';
+import { initApp } from '../../app.js';
 
-const { after, test } = require( 'node:test' );
-const assert = require( '../utils/assert.js' );
-const getConfig = require( '../../lib/util' ).getConfig;
-const MWApiRequestManager = require( '../../lib/mw/MWApiRequestManager' );
-const TitlePairRequest = require( '../../lib/mw/TitlePairRequest' );
-const TestUtils = require( '../testutils' );
-const { initApp } = require( '../../app.js' );
+import mocks from './TitlePairTests.mocks.json' assert { type: 'json' };
+import tests from './TitlePairTests.json' assert { type: 'json' };
 
-const mocks = require( './TitlePairTests.mocks.json' );
-const tests = require( './TitlePairTests.json' );
-
+const dirname = new URL( '.', import.meta.url ).pathname;
 // FIXME: This tests title normalization of MWApiRequestManager
 test( 'Title pair tests', async ( t ) => {
 	let app, api, mocker, oldGetRequestPromise;
@@ -23,7 +22,7 @@ test( 'Title pair tests', async ( t ) => {
 	} );
 
 	t.after( () => {
-		mocker.dump( __dirname + '/TitlePairTests.mocks.json' );
+		mocker.dump( dirname + '/TitlePairTests.mocks.json' );
 	} );
 
 	for ( const testcase of tests ) {
@@ -34,14 +33,14 @@ test( 'Title pair tests', async ( t ) => {
 				testcase.sourceLanguage,
 				testcase.targetLanguage
 			);
-			assert.deepEqual( result.targetTitle, testcase.result );
+			deepEqual( result.targetTitle, testcase.result );
 		} );
 	}
 
 	await t.test( 'should have the queue size 50', async () => {
 		oldGetRequestPromise = TitlePairRequest.prototype.getRequestPromise;
 		TitlePairRequest.prototype.getRequestPromise = function ( subqueue ) {
-			assert.deepEqual( subqueue.length, 50 );
+			deepEqual( subqueue.length, 50 );
 			return Promise.resolve( {} );
 		};
 		const titlePairRequest = new TitlePairRequest( {

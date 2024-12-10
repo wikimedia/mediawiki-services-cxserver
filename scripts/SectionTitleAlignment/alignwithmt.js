@@ -1,13 +1,11 @@
-'use strict';
-
-const sqlite = require( 'sqlite' );
+import { open } from 'sqlite';
 // sqlite3 is a dependency of sqlite. We can use sqlite3 alone if we raise our
 // minimum node version support to 11+. Currently it is 10.
-const sqlite3 = require( 'sqlite3' );
-const fs = require( 'fs' );
-const yaml = require( 'js-yaml' );
-const MTClients = require( __dirname + '/../../lib/mt/' );
-const PrometheusClient = require( '../../lib/metric.js' );
+import { Database, OPEN_READONLY, OPEN_READWRITE } from 'sqlite3';
+import { readFileSync } from 'fs';
+import { load } from 'js-yaml';
+import * as MTClients from '../../lib/mt/index.js';
+import PrometheusClient from '../../lib/metric.js';
 
 /**
  * Align section titles in one language with section titles in another language.
@@ -87,10 +85,10 @@ class AlignWithMT {
 	 */
 	async findFrequentSectionTitles( sectionMappingDatabase, sourceLanguage ) {
 		const titles = [];
-		const db = await sqlite.open( {
+		const db = await open( {
 			filename: sectionMappingDatabase,
-			driver: sqlite3.Database,
-			mode: sqlite3.OPEN_READONLY
+			driver: Database,
+			mode: OPEN_READONLY
 		} );
 		const query = `select source_title,
 			count(source_title) as occurrences
@@ -119,10 +117,10 @@ class AlignWithMT {
 	async findMissingAlignment( sectionMappingDatabase, sourceLanguage, targetLanguage, sectionTitles ) {
 		// Clone the sectionTitles for local modification
 		const titles = [ ...sectionTitles ];
-		const db = await sqlite.open( {
+		const db = await open( {
 			filename: sectionMappingDatabase,
-			driver: sqlite3.Database,
-			mode: sqlite3.OPEN_READONLY
+			driver: Database,
+			mode: OPEN_READONLY
 		} );
 		const query = `SELECT DISTINCT source_title
 			from titles
@@ -151,10 +149,10 @@ class AlignWithMT {
 	 */
 	async findTargetLanguages( sectionMappingDatabase ) {
 		const languages = [];
-		const db = await sqlite.open( {
+		const db = await open( {
 			filename: sectionMappingDatabase,
-			driver: sqlite3.Database,
-			mode: sqlite3.OPEN_READONLY
+			driver: Database,
+			mode: OPEN_READONLY
 		} );
 		console.log( 'findTargetLanguages' );
 		const query = `select target_language, count(source_title) as occurrences
@@ -184,10 +182,10 @@ class AlignWithMT {
 	 * @param {Object} titleMapping
 	 */
 	async addTitleAlignmentToDb( sectionMappingDatabase, sourceLanguage, targetLanguage, titleMapping ) {
-		const db = await sqlite.open( {
+		const db = await open( {
 			filename: sectionMappingDatabase,
-			driver: sqlite3.Database,
-			mode: sqlite3.OPEN_READWRITE
+			driver: Database,
+			mode: OPEN_READWRITE
 		} );
 
 		const query = 'INSERT INTO titles VALUES(?,?,?,?, ?)';
@@ -233,7 +231,7 @@ class AlignWithMT {
 	}
 }
 
-const config = yaml.load( fs.readFileSync( 'config.yaml' ) );
+const config = load( readFileSync( 'config.yaml' ) );
 if ( !config ) {
 	throw new Error( 'Failed to load config' );
 }

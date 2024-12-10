@@ -1,9 +1,7 @@
-'use strict';
-
-const { describe, it } = require( 'node:test' );
-const assert = require( '../utils/assert.js' );
-const getConfig = require( '../../lib/util' ).getConfig;
-const Yandex = require( '../../lib/mt' ).Yandex;
+import { describe, it } from 'node:test';
+import { deepEqual, fails } from '../utils/assert.js';
+import { getConfig } from '../../lib/util.js';
+import Yandex from '../../lib/mt/Yandex.js';
 
 const testData = {
 	input: `<section id="cxTargetSection0">
@@ -43,13 +41,13 @@ describe( 'Yandex machine translation with corrupted result', () => {
 		const oldTranslateHTML = Yandex.prototype.translateHtml;
 		const normalize = ( html ) => html.replace( /[\t\r\n]+/g, '' );
 		Yandex.prototype.translateHtml = ( sourceLang, targetLang, mtInput ) => {
-			assert.deepEqual( normalize( mtInput ), normalize( testData.mtIput ) );
+			deepEqual( normalize( mtInput ), normalize( testData.mtIput ) );
 			return Promise.resolve( testData.mtResult );
 		};
 		const yandex = new Yandex( cxConfig );
 		return yandex.translate( testData.sourceLang, testData.targetLang, testData.input )
 			.then( ( result ) => {
-				assert.deepEqual( normalize( result ), normalize( testData.expectedResult ) );
+				deepEqual( normalize( result ), normalize( testData.expectedResult ) );
 				Yandex.prototype.translateHtml = oldTranslateHTML;
 			} );
 	} );
@@ -61,7 +59,7 @@ describe( 'Yandex machine translation', () => {
 		cxConfig.mt.Yandex.key = 'wrongkey';
 		const yandex = new Yandex( cxConfig );
 		const testSourceContent = '<p>This is a <a href="/Test">test</a></p>';
-		assert.fails(
+		fails(
 			yandex.translate( 'en', 'gu', testSourceContent ),
 			( err ) => {
 				if ( ( err instanceof Error ) && /value/.test( err ) ) {

@@ -2,23 +2,21 @@
 
 /* eslint-disable n/no-process-exit */
 
-'use strict';
-
-const fs = require( 'fs' ),
-	Segmenter = require( __dirname + '/../lib/segmentation/CXSegmenter' ),
-	LinearDoc = require( __dirname + '/../lib/lineardoc' ),
-	yaml = require( 'js-yaml' );
+import { readFileSync } from 'fs';
+import { load } from 'js-yaml';
+import Segmenter from '../lib/segmentation/CXSegmenter.js';
+import { Normalizer, Parser, MwContextualizer } from '../lib/lineardoc/index.js';
 
 function normalize( html ) {
-	const normalizer = new LinearDoc.Normalizer();
+	const normalizer = new Normalizer();
 	normalizer.init();
 	normalizer.write( html.replace( /[\t\r\n]+/g, '' ) );
 	return normalizer.getHtml();
 }
 
 function getParsedDoc( content ) {
-	const pageloaderConfig = yaml.load( fs.readFileSync( __dirname + '/../config/MWPageLoader.yaml' ) );
-	const parser = new LinearDoc.Parser( new LinearDoc.MwContextualizer(
+	const pageloaderConfig = load( readFileSync( __dirname + '/../config/MWPageLoader.yaml' ) );
+	const parser = new Parser( new MwContextualizer(
 		{ removableSections: pageloaderConfig.removableSections }
 	), {
 		wrapSections: true
@@ -28,7 +26,7 @@ function getParsedDoc( content ) {
 	return parser.builder.doc;
 }
 
-const inputHtml = fs.readFileSync( '/dev/stdin', 'utf8' );
+const inputHtml = readFileSync( '/dev/stdin', 'utf8' );
 if ( inputHtml.trim() === '' ) {
 	const script = process.argv[ 1 ];
 	process.stderr.write(

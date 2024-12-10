@@ -1,6 +1,4 @@
-'use strict';
-
-const fs = require( 'fs' );
+import { existsSync, writeFileSync } from 'fs';
 
 class TestUtils {
 	constructor( api ) {
@@ -10,7 +8,7 @@ class TestUtils {
 	setup( mocks ) {
 		this.api.clearCaches();
 		this.api.setRequestCache( new Map() );
-		if ( fs.existsSync( 'DUMPREQUESTS' ) ) {
+		if ( existsSync( 'DUMPREQUESTS' ) ) {
 			return;
 		}
 
@@ -19,9 +17,9 @@ class TestUtils {
 	}
 
 	dump( filename ) {
-		if ( fs.existsSync( 'DUMPREQUESTS' ) ) {
+		if ( existsSync( 'DUMPREQUESTS' ) ) {
 			this.api.dumpCachedRequests().then( ( result ) => {
-				fs.writeFileSync( filename, JSON.stringify( result, null, 4 ) );
+				writeFileSync( filename, JSON.stringify( result, null, 4 ) );
 				this.api.clearCaches();
 			} );
 		} else {
@@ -30,4 +28,4 @@ class TestUtils {
 	}
 }
 
-module.exports = TestUtils;
+export default TestUtils;

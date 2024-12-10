@@ -1,8 +1,6 @@
-'use strict';
-
-const { describe, it } = require( 'node:test' );
-const TemplateParameterMapper = require( '../../lib/adaptation/TemplateParameterMapper' );
-const assert = require( '../utils/assert' );
+import { describe, it } from 'node:test';
+import TemplateParameterMapper from '../../lib/adaptation/TemplateParameterMapper.js';
+import { deepEqual } from '../utils/assert.js';
 
 const test = {
 	sourceParams: {
@@ -78,6 +76,6 @@ describe( 'Template parameter mapping test', () => {
 		test.sourceParams, test.sourceTemplateData, test.targetTemplateData
 	);
 	it( 'should not have any errors while mapping params', () => {
-		assert.deepEqual( mapper.getParameterMap(), ( test.expectedParamMapping ) );
+		deepEqual( mapper.getParameterMap(), ( test.expectedParamMapping ) );
 	} );
 } );

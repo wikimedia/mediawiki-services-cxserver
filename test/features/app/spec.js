@@ -1,25 +1,24 @@
-'use strict';
+import { before, describe, it } from 'node:test';
+import { readFileSync } from 'fs';
+import swaggerrouter from 'swagger-router';
+import { load } from 'js-yaml';
+import request from 'supertest';
+import OpenAPISchemaValidator from 'openapi-schema-validator';
+import { status as assertStatus, contentType, deepEqual, notDeepEqual } from '../../utils/assert.js';
+import { getConfig } from '../../../lib/util.js';
+import { initApp } from '../../../app.js';
 
-const { describe, it, before } = require( 'node:test' );
-const assert = require( '../../utils/assert.js' );
-const { getConfig } = require( '../../../lib/util.js' );
-const URI = require( 'swagger-router' ).URI;
-const yaml = require( 'js-yaml' );
-const fs = require( 'fs' );
-const { initApp } = require( '../../../app.js' );
-const request = require( 'supertest' );
-
-const OpenAPISchemaValidator = require( 'openapi-schema-validator' ).default;
-const validator = new OpenAPISchemaValidator( { version: 3 } );
-
+const ValidatorClass = OpenAPISchemaValidator.default;
+const validator = new ValidatorClass( { version: 3 } );
+const dirname = new URL( '.', import.meta.url ).pathname;
 function staticSpecLoad() {
 
 	let spec;
 	const myService = getConfig();
-	const specPath = `${ __dirname }/../../../${ myService.spec ? myService.spec : 'spec.yaml' }`;
+	const specPath = `${ dirname }/../../../${ myService.spec ? myService.spec : 'spec.yaml' }`;
 
 	try {
-		spec = yaml.load( fs.readFileSync( specPath ) );
+		spec = load( readFileSync( specPath ) );
 	} catch ( e ) {
 		throw new Error( `Cannot load spec file: ${ specPath }` );
 	}
@@ -30,7 +29,7 @@ function staticSpecLoad() {
 
 function validateExamples( pathStr, defParams, mSpec ) {
 
-	const uri = new URI( pathStr, {}, true );
+	const uri = new swaggerrouter.URI( pathStr, {}, true );
 
 	if ( !mSpec ) {
 		try {
@@ -94,7 +93,7 @@ function constructTests( paths, defParams ) {
 			if ( {}.hasOwnProperty.call( p, 'x-monitor' ) && !p[ 'x-monitor' ] ) {
 				return;
 			}
-			const uri = new URI( pathStr, {}, true );
+			const uri = new swaggerrouter.URI( pathStr, {}, true );
 			if ( !p[ 'x-amples' ] ) {
 				ret.push( constructTestCase(
 					pathStr,
@@ -137,14 +136,14 @@ function cmp( result, expected, errMsg ) {
 	if ( expected.constructor === Object ) {
 		Object.keys( expected ).forEach( ( key ) => {
 			const val = expected[ key ];
-			assert.deepEqual( {}.hasOwnProperty.call( result, key ), true,
+			deepEqual( {}.hasOwnProperty.call( result, key ), true,
 				`Body field ${ key } not found in response!` );
 			cmp( result[ key ], val, `${ key } body field mismatch!` );
 		} );
 		return true;
 	} else if ( expected.constructor === Array ) {
 		if ( result.constructor !== Array ) {
-			assert.deepEqual( result, expected, errMsg );
+			deepEqual( result, expected, errMsg );
 			return true;
 		}
 		// only one item in expected - compare them all
@@ -156,7 +155,7 @@ function cmp( result, expected, errMsg ) {
 		}
 		// more than one item expected, check them one by one
 		if ( expected.length !== result.length ) {
-			assert.deepEqual( result, expected, errMsg );
+			deepEqual( result, expected, errMsg );
 			return true;
 		}
 		expected.forEach( ( item, idx ) => {
@@ -175,7 +174,7 @@ function cmp( result, expected, errMsg ) {
 		return true;
 	}
 
-	assert.deepEqual( result, expected, errMsg );
+	deepEqual( result, expected, errMsg );
 	return true;
 
 }
@@ -187,12 +186,12 @@ async function validateTestResponse( testCase, response ) {
 		console.error( response );
 	}
 	// check the status
-	assert.deepEqual( response.statusCode, expRes.status, 'Status mismatch!' );
+	deepEqual( response.statusCode, expRes.status, 'Status mismatch!' );
 
 	// check the headers
 	Object.keys( expRes.headers ).forEach( ( key ) => {
 		const val = expRes.headers[ key ];
-		assert.deepEqual( !!response.headers[ key ], true,
+		deepEqual( !!response.headers[ key ], true,
 			`Header ${ key } not found in response!` );
 		cmp( response.headers[ key ], val, `${ key } header mismatch!` );
 	} );
@@ -242,16 +241,16 @@ describe( 'Swagger spec', async () => {
 		const response = await request( app ).get( '?spec' );
 
 		const data = await response.body;
-		assert.status( response, 200 );
-		assert.contentType( response, 'application/json; charset=utf-8' );
-		assert.notDeepEqual( data, undefined, 'No body received!' );
+		assertStatus( response, 200 );
+		contentType( response, 'application/json; charset=utf-8' );
+		notDeepEqual( data, undefined, 'No body received!' );
 		spec = data;
 	} );
 
 	it( 'should expose valid OpenAPI spec', async () => {
 		const response = await request( app ).get( '?spec' );
 		const data = await response.body;
-		assert.deepEqual( { errors: [] }, validator.validate( data ), 'Spec must have no validation errors' );
+		deepEqual( { errors: [] }, validator.validate( data ), 'Spec must have no validation errors' );
 
 	} );
 
@@ -261,15 +260,15 @@ describe( 'Swagger spec', async () => {
 		}
 		// check the high-level attributes
 		[ 'info', 'openapi', 'paths' ].forEach( ( prop ) => {
-			assert.deepEqual( !!spec[ prop ], true, `No ${ prop } field present!` );
+			deepEqual( !!spec[ prop ], true, `No ${ prop } field present!` );
 		} );
 		// no paths - no love
-		assert.deepEqual( !!Object.keys( spec.paths ), true, 'No paths given in the spec!' );
+		deepEqual( !!Object.keys( spec.paths ), true, 'No paths given in the spec!' );
 		// now check each path
 		Object.keys( spec.paths ).forEach( ( pathStr ) => {
-			assert.deepEqual( !!pathStr, true, 'A path cannot have a length of zero!' );
+			deepEqual( !!pathStr, true, 'A path cannot have a length of zero!' );
 			const path = spec.paths[ pathStr ];
-			assert.deepEqual( !!Object.keys( path ), true, `No methods defined for path: ${ pathStr }` );
+			deepEqual( !!Object.keys( path ), true, `No methods defined for path: ${ pathStr }` );
 			Object.keys( path ).forEach( ( method ) => {
 				const mSpec = path[ method ];
 				if ( {}.hasOwnProperty.call( mSpec, 'x-monitor' ) && !mSpec[ 'x-monitor' ] ) {

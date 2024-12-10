@@ -1,17 +1,17 @@
-'use strict';
+import yargs from 'yargs';
+import app from './app.js';
+import { getConfig } from './lib/util.js';
 
-const app = require( './app.js' );
-const yargs = require( 'yargs' );
-const { getConfig } = require( './lib/util.js' );
+const argv = yargs( process.argv.slice( 2 ) )
+	.option( 'c', {
+		alias: 'config',
+		describe: 'Path to the config file',
+		type: 'string',
+		default: './config.yaml'
+	} )
+	.argv;
 
-yargs.option( 'c', {
-	alias: 'config',
-	describe: 'Path to the config file',
-	type: 'string',
-	coerce: ( arg ) => require( 'path' ).resolve( arg ),
-	default: `${ __dirname }/config.yaml`
-} );
-const configPath = yargs.argv.c;
+const configPath = argv.c;
 
 console.log( 'Using config file:', configPath );
 app( getConfig( configPath ) );
