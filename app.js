@@ -146,9 +146,20 @@ export async function initApp( options ) {
 			status: err.status
 		} );
 
+		if ( res.writableFinished ) {
+			// response has been sent and we've logged the error
+			// Avoid passing the error to Express error handler to have
+			// it be logged again by Express in a format that's not supported.
+			// See: T377966
+			return next();
+		}
+
 		if ( res.headersSent ) {
+			// Headers have been sent, but the response has not been flushed out.
+			// Send the error to Express to log and flush the response.
 			return next( err );
 		}
+
 		res.status( err.status || 500 );
 
 		res.json( {
