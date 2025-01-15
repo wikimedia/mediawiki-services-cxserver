@@ -10,6 +10,7 @@ import compression from 'compression';
 import { load } from 'js-yaml';
 import bodyParser from 'body-parser';
 import addShutdown from 'http-shutdown';
+import { inspect } from 'util';
 import { responseTimeMetricsMiddleware } from './lib/util.js';
 import packageInfo from './package.json' assert { type: 'json' };
 import CXConfig from './lib/Config.js';
@@ -143,7 +144,8 @@ export async function initApp( options ) {
 		app.logger.error( 'Error details:', {
 			message: err.message,
 			stack: err.stack,
-			status: err.status
+			status: err.status,
+			cause: err.cause ? inspect( err.cause ) : null
 		} );
 
 		if ( res.writableFinished ) {
