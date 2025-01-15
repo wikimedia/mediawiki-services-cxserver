@@ -5,12 +5,12 @@
 import { createServer as createHTTPServer } from 'http';
 import { createServer as createHTTPSServer } from 'https';
 import { readFileSync } from 'fs';
+import { inspect } from 'util';
 import express from 'express';
 import compression from 'compression';
 import { load } from 'js-yaml';
 import bodyParser from 'body-parser';
 import addShutdown from 'http-shutdown';
-import { inspect } from 'util';
 import { responseTimeMetricsMiddleware } from './lib/util.js';
 import packageInfo from './package.json' assert { type: 'json' };
 import CXConfig from './lib/Config.js';
