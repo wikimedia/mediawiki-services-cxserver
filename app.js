@@ -126,7 +126,16 @@ export async function initApp( options ) {
 	app.use( responseTimeMetricsMiddleware( app ) );
 
 	app.use( ( req, res, next ) => {
-		app.logger.info( `${ req.method } ${ req.originalUrl } ${ res.statusCode }` );
+		app.logger = app.logger.child( {
+			url: {
+				path: req.url
+			},
+			http: {
+				request: {
+					method: req.method
+				}
+			}
+		} );
 		next();
 	} );
 
