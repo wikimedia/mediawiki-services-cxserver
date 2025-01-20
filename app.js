@@ -11,6 +11,7 @@ import compression from 'compression';
 import { load } from 'js-yaml';
 import bodyParser from 'body-parser';
 import addShutdown from 'http-shutdown';
+import { randomUUID } from 'crypto';
 import { responseTimeMetricsMiddleware } from './lib/util.js';
 import packageInfo from './package.json' assert { type: 'json' };
 import CXConfig from './lib/Config.js';
@@ -132,7 +133,8 @@ export async function initApp( options ) {
 			},
 			http: {
 				request: {
-					method: req.method
+					method: req.method,
+					id: randomUUID()
 				}
 			}
 		} );
