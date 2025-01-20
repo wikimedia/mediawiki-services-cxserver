@@ -1,7 +1,7 @@
 port: 8080
 logging:
   level: info
-  format: json
+  format: ecs
 # interface: localhost # uncomment to only listen on localhost
 # More per-service config settings
 # The location of the spec, defaults to spec.yaml if not specified

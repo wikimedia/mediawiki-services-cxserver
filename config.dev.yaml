@@ -2,7 +2,7 @@ name: cxserver-dev
 port: 8080
 logging:
   level: debug
-  format: json
+  format: ecs
 # private_key: path to private key file for enabling https
 # certificate: path to certificate file for enabling https
 # interface: localhost # uncomment to only listen on localhost
