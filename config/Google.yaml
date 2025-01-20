@@ -1,10 +1,14 @@
 handler: transform.js
 languages:
+  - aa
   - ace
+  - ach
   - ab
   - af
+  - alz
   - am
   - ar
+  - arh
   - arz
   - as
   - av
@@ -14,9 +18,11 @@ languages:
   - ba
   - ban
   - bbc
+  - bci
   - bcl
   - be
   - be-tarask
+  - bem
   - bew
   - bg
   - bho
@@ -25,13 +31,19 @@ languages:
   - bo
   - br
   - bs
+  - bts
+  - btx
   - ca
   - ce
   - ceb
+  - cgg
   - ch
+  - chk
   - ckb
+  - cnh
   - co
   - crh
+  - crs
   - cs
   - cv
   - cy
@@ -39,6 +51,7 @@ languages:
   - de
   - din
   - dv
+  - dyu
   - dz
   - ee
   - el
@@ -57,6 +70,7 @@ languages:
   - fur
   - fy
   - ga
+  - gaa
   - gan
   - gd
   - gl
@@ -68,10 +82,13 @@ languages:
   - haw
   - he
   - hi
+  - hil
   - hr
+  - hrx
   - ht
   - hu
   - hy
+  - iba
   - id
   - ig
   - ilo
@@ -81,12 +98,18 @@ languages:
   - jam
   - jv
   - ka
+  - kac
+  - kek
   - kg
+  - kha
   - kk
   - kl
   - km
   - kn
   - ko
+  - kr
+  - kri
+  - ktu
   - ku
   - kv
   - ky
@@ -100,13 +123,19 @@ languages:
   - lo
   - lt
   - ltg
+  - lus
+  - luo
   - lv
   - mad
   - mai
+  - mak
+  - mam
   - mg
+  - mh
   - mhr
   - mi
   - min
+  - mfe
   - mk
   - ml
   - mn
@@ -117,11 +146,15 @@ languages:
   - my
   - nah
   - nb
+  - ndc
+  - ndq
   - ne
   - new
   - nl
   - no
+  - nr
   - nso
+  - nus
   - ny
   - oc
   - om
@@ -160,6 +193,7 @@ languages:
   - ss
   - st
   - su
+  - sus
   - sv
   - sw
   - szl
@@ -170,12 +204,14 @@ languages:
   - tg
   - th
   - ti
+  - tiv
   - tk
   - tl
   - tn
   - to
   - tpi
   - tr
+  - trp
   - ts
   - tt
   - tum
@@ -196,6 +232,8 @@ languages:
   - xh
   - yi
   - yo
+  - yua
   - yue
+  - zap
   - zh
   - zu
