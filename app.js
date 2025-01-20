@@ -152,12 +152,14 @@ export async function initApp( options ) {
 
 	// Catch and handle propagated errors
 	app.use( ( err, req, res, next ) => {
-		app.logger.error( 'Error details:', {
-			message: err.message,
-			stack: err.stack,
-			status: err.status,
-			cause: err.cause ? inspect( err.cause ) : null
-		} );
+		if ( err.cause ) {
+			// ECS doesn't support a "cause" field in error
+			// Log the error to a custom field.
+			// See: https://www.elastic.co/guide/en/ecs/current/ecs-custom-fields-in-ecs.html
+			err.Cause = inspect( err, { depth: 4 } );
+		}
+
+		app.logger.error( 'Error details:', err );
 
 		if ( res.writableFinished ) {
 			// response has been sent and we've logged the error
