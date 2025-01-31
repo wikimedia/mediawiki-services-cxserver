@@ -9,6 +9,7 @@ languages:
   - ajp # No WP
   - am
   - an
+  - ann
   - ang
   - apc # No WP
   - ar
@@ -51,6 +52,7 @@ languages:
   - da
   - de
   - din
+  - dtp
   - dyu # No WP
   - dz
   - ee
@@ -87,6 +89,7 @@ languages:
   - ht
   - hu
   - hy
+  - iba
   - id
   - ig
   - ilo
@@ -158,6 +161,7 @@ languages:
   - nl
   - nn
   - no
+  - nr
   - nso
   - nus # No WP
   - ny
