@@ -105,7 +105,7 @@ paths:
           request:
             params:
               language: en
-              title: User:BSitzmann (WMF)/MCS/Test/Frankenstein
+              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
           response:
             status: 200
             headers:
@@ -408,7 +408,7 @@ paths:
             params:
               sourcelanguage: en
               targetlanguage: es
-              title: User:BSitzmann (WMF)/MCS/Test/Frankenstein
+              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
           response:
             status: 200
             headers:
