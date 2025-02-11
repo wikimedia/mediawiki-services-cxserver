@@ -12,7 +12,7 @@ import { load } from 'js-yaml';
 import bodyParser from 'body-parser';
 import addShutdown from 'http-shutdown';
 import { randomUUID } from 'crypto';
-import { responseTimeMetricsMiddleware } from './lib/util.js';
+import { HTTPError, responseTimeMetricsMiddleware } from './lib/util.js';
 import packageInfo from './package.json' assert { type: 'json' };
 import CXConfig from './lib/Config.js';
 import PrometheusClient from './lib/metric.js';
@@ -159,7 +159,14 @@ export async function initApp( options ) {
 			err.Cause = inspect( err, { depth: 4 } );
 		}
 
-		app.logger.error( 'Error details:', err );
+		if ( err instanceof HTTPError ) {
+			// For HTTPError, only log errors with 500+ status codes
+			if ( err.status >= 500 ) {
+				app.logger.error( 'HTTP Error details:', err.title );
+			}
+		} else {
+			app.logger.error( 'Error details:', err );
+		}
 
 		if ( res.writableFinished ) {
 			// response has been sent and we've logged the error
