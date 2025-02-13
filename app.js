@@ -162,7 +162,7 @@ export async function initApp( options ) {
 		if ( err instanceof HTTPError ) {
 			// For HTTPError, only log errors with 500+ status codes
 			if ( err.status >= 500 ) {
-				app.logger.error( 'HTTP Error details:', err.title );
+				app.logger.error( 'HTTP Error details:', err );
 			}
 		} else {
 			app.logger.error( 'Error details:', err );
