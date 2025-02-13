@@ -13,6 +13,7 @@ import bodyParser from 'body-parser';
 import addShutdown from 'http-shutdown';
 import { randomUUID } from 'crypto';
 import { HTTPError, responseTimeMetricsMiddleware } from './lib/util.js';
+import MTClientError from './lib/mt/MTClientError.js';
 import packageInfo from './package.json' assert { type: 'json' };
 import CXConfig from './lib/Config.js';
 import PrometheusClient from './lib/metric.js';
@@ -163,6 +164,10 @@ export async function initApp( options ) {
 			// For HTTPError, only log errors with 500+ status codes
 			if ( err.status >= 500 ) {
 				app.logger.error( 'HTTP Error details:', err );
+			}
+		} else if ( err instanceof MTClientError ) {
+			if ( err.status >= 500 ) {
+				app.logger.error( 'MT Client Error', err );
 			}
 		} else {
 			app.logger.error( 'Error details:', err );
