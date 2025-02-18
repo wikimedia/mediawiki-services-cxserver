@@ -461,7 +461,7 @@ paths:
     post:
       tags:
         - Machine translation
-      description: Translate the given content from source language to target language using default MT provider. Also adapt the content for the target language wiki. Some machine translation providers require an authorization header and it is forbidden to use them outside the Content Translation tool.
+      description: Adapt the content for the target language wiki without performing any machine translation.
       parameters:
         - $ref: "#/components/parameters/from"
         - $ref: "#/components/parameters/to"
