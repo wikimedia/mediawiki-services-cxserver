@@ -49,6 +49,7 @@ languages:
   - cy
   - da
   - de
+  - dgo
   - din
   - dv
   - dyu
@@ -174,6 +175,7 @@ languages:
   - rmy
   - ru
   - rw
+  - rwr
   - sa
   - sah
   - scn
