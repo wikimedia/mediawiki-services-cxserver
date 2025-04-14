@@ -29,6 +29,7 @@ mwapi_req:
   headers:
     host: "{{request.params.domain}}"
     user-agent: "{{user-agent}}"
+    content-type: "{{content-type}}"
   method: "{{request.method}}"
   uri: "https://{{domain}}/w/api.php"
 restbase_req:
