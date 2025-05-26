@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+const { JSDOM } = await import( 'jsdom' );
 
 function deepEqual( result, expected, message ) {
 
@@ -74,10 +75,23 @@ function fails( promise, onRejected ) {
 
 }
 
+function compareHTML( actual, expected, message ) {
+	const domActual = new JSDOM( actual ).window.document.body;
+	const domExpected = new JSDOM( expected ).window.document.body;
+	const result = domActual.isEqualNode( domExpected );
+	if ( result === false ) {
+		// The DOM nodes are not equal, so do a deepEqual to output the actual/expected content
+		assert.deepEqual( actual, expected, message || 'HTML content does not match' );
+	} else {
+		assert.deepEqual( result, true, message || 'HTML content does not match' );
+	}
+}
+
 export {
 	deepEqual,
 	notDeepEqual,
 	fails,
 	status,
-	contentType
+	contentType,
+	compareHTML
 };

@@ -1,5 +1,5 @@
 import { describe, it } from 'node:test';
-import { deepEqual, fails } from '../utils/assert.js';
+import { compareHTML, fails } from '../utils/assert.js';
 import { getConfig } from '../../lib/util.js';
 import Yandex from '../../lib/mt/Yandex.js';
 
@@ -41,13 +41,13 @@ describe( 'Yandex machine translation with corrupted result', () => {
 		const oldTranslateHTML = Yandex.prototype.translateHtml;
 		const normalize = ( html ) => html.replace( /[\t\r\n]+/g, '' );
 		Yandex.prototype.translateHtml = ( sourceLang, targetLang, mtInput ) => {
-			deepEqual( normalize( mtInput ), normalize( testData.mtIput ) );
+			compareHTML( normalize( mtInput ), normalize( testData.mtIput ) );
 			return Promise.resolve( testData.mtResult );
 		};
 		const yandex = new Yandex( cxConfig );
 		return yandex.translate( testData.sourceLang, testData.targetLang, testData.input )
 			.then( ( result ) => {
-				deepEqual( normalize( result ), normalize( testData.expectedResult ) );
+				compareHTML( normalize( result ), normalize( testData.expectedResult ) );
 				Yandex.prototype.translateHtml = oldTranslateHTML;
 			} );
 	} );

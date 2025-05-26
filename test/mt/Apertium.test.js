@@ -1,7 +1,7 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { forEach } from 'async';
-import { deepEqual } from '../utils/assert.js';
+import { compareHTML } from '../utils/assert.js';
 import { getConfig } from '../../lib/util.js';
 import Apertium from '../../lib/mt/Apertium.js';
 
@@ -111,7 +111,7 @@ describe( 'Apertium machine translation', () => {
 			};
 
 			return apertium.translate( 'en', 'es', test.source ).then( ( target ) => {
-				deepEqual( target, test.target, test.title );
+				compareHTML( target, test.target, test.title );
 			} );
 		} );
 	} );

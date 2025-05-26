@@ -1,6 +1,6 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { deepEqual, fails } from '../utils/assert.js';
+import { compareHTML, deepEqual, fails } from '../utils/assert.js';
 import { getConfig } from '../../lib/util.js';
 import MTClient from '../../lib/mt/MTClient.js';
 
@@ -66,7 +66,7 @@ describe( 'Machine translation result with extra spaces', () => {
 			testDataForSpaceIssue.input
 		).then( ( result ) => {
 			MTClient.prototype.translateHtml = oldTranslateHTML;
-			deepEqual( result, testDataForSpaceIssue.sanitizedResult );
+			compareHTML( result, testDataForSpaceIssue.sanitizedResult );
 		} );
 	} );
 } );
