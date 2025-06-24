@@ -1708,13 +1708,6 @@
 				]
 			},
 			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"ContentTranslationStats",
-					"CXStats"
-				]
-			},
-			{
 				"realname": "ExternalGuidance",
 				"aliases": [
 					"ExternalGuidance"
@@ -4404,14 +4397,6 @@
 				]
 			},
 			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"Estadísticas_de_traducción_de_contenidos",
-					"ContentTranslationStats",
-					"CXStats"
-				]
-			},
-			{
 				"realname": "ExternalGuidance",
 				"aliases": [
 					"ExternalGuidance"
@@ -6794,13 +6779,7 @@
 					"CX"
 				]
 			},
-			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"ContentTranslationStats",
-					"CXStats"
-				]
-			},
+
 			{
 				"realname": "ExternalGuidance",
 				"aliases": [
@@ -9097,14 +9076,6 @@
 					"תרגום_תוכן",
 					"ContentTranslation",
 					"CX"
-				]
-			},
-			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"סטטיסטיקות_תרגום_תוכן",
-					"ContentTranslationStats",
-					"CXStats"
 				]
 			},
 			{
@@ -11747,13 +11718,6 @@
 				"aliases": [
 					"ContentTranslation",
 					"CX"
-				]
-			},
-			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"ContentTranslationStats",
-					"CXStats"
 				]
 			},
 			{

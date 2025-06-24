@@ -2208,13 +2208,6 @@
 				]
 			},
 			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"ContentTranslationStats",
-					"CXStats"
-				]
-			},
-			{
 				"realname": "ExternalGuidance",
 				"aliases": [
 					"ExternalGuidance"
@@ -6420,13 +6413,6 @@
 				"aliases": [
 					"ContentTranslation",
 					"CX"
-				]
-			},
-			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"ContentTranslationStats",
-					"CXStats"
 				]
 			},
 			{

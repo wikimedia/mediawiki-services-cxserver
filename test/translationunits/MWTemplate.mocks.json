@@ -2380,14 +2380,6 @@
 				]
 			},
 			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"Estadísticas_de_traducción_de_contenidos",
-					"ContentTranslationStats",
-					"CXStats"
-				]
-			},
-			{
 				"realname": "ExternalGuidance",
 				"aliases": [
 					"ExternalGuidance"
@@ -7863,13 +7855,6 @@
 				]
 			},
 			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"ContentTranslationStats",
-					"CXStats"
-				]
-			},
-			{
 				"realname": "ExternalGuidance",
 				"aliases": [
 					"ExternalGuidance"
@@ -9887,13 +9872,6 @@
 				"aliases": [
 					"ContentTranslation",
 					"CX"
-				]
-			},
-			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"ContentTranslationStats",
-					"CXStats"
 				]
 			},
 			{
@@ -12089,13 +12067,6 @@
 				]
 			},
 			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"ContentTranslationStats",
-					"CXStats"
-				]
-			},
-			{
 				"realname": "ExternalGuidance",
 				"aliases": [
 					"ExternalGuidance"
@@ -14094,14 +14065,6 @@
 					"Innehållsöversättning",
 					"ContentTranslation",
 					"CX"
-				]
-			},
-			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"Innehållsöversättningsstatistik",
-					"ContentTranslationStats",
-					"CXStats"
 				]
 			},
 			{
@@ -18139,13 +18102,6 @@
 				]
 			},
 			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"ContentTranslationStats",
-					"CXStats"
-				]
-			},
-			{
 				"realname": "ExternalGuidance",
 				"aliases": [
 					"ExternalGuidance"
@@ -20017,13 +19973,6 @@
 				"aliases": [
 					"ContentTranslation",
 					"CX"
-				]
-			},
-			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"ContentTranslationStats",
-					"CXStats"
 				]
 			},
 			{
@@ -22004,14 +21953,6 @@
 					"Sisällön_kääntäminen",
 					"ContentTranslation",
 					"CX"
-				]
-			},
-			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"Käännetyn_sisällön_tilastot",
-					"ContentTranslationStats",
-					"CXStats"
 				]
 			},
 			{

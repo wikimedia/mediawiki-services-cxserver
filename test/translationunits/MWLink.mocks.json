@@ -1708,13 +1708,6 @@
 				]
 			},
 			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"ContentTranslationStats",
-					"CXStats"
-				]
-			},
-			{
 				"realname": "ExternalGuidance",
 				"aliases": [
 					"ExternalGuidance"
@@ -3948,14 +3941,6 @@
 					"Traducción_de_contenidos",
 					"ContentTranslation",
 					"CX"
-				]
-			},
-			{
-				"realname": "ContentTranslationStats",
-				"aliases": [
-					"Estadísticas_de_traducción_de_contenidos",
-					"ContentTranslationStats",
-					"CXStats"
 				]
 			},
 			{
