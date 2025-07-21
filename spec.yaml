@@ -738,6 +738,7 @@ paths:
         - $ref: "#/components/parameters/title"
         - $ref: "#/components/parameters/from"
         - $ref: "#/components/parameters/to"
+        - $ref: "#/components/parameters/include_section_sizes"
       responses:
         200:
           description: Success
@@ -1065,3 +1066,15 @@ components:
         mt:
           value: mt
       required: true
+    include_section_sizes:
+      name: include_section_sizes
+      in: query
+      description: Whether to include section sizes in the response
+      schema:
+        type: boolean
+      examples:
+        true:
+          value: true
+        false:
+          value: false
+      required: false

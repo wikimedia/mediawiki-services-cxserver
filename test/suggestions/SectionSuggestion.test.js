@@ -52,6 +52,18 @@ const tests = [
 	}
 ];
 
+const sectionObjectsData = {
+	sections: [
+		{ title: 'Etymology', byteoffset: 1000 },
+		{ title: 'History', byteoffset: 3500 },
+		{ title: 'Playing', byteoffset: 8000 },
+		{ title: 'See also', byteoffset: 12000 },
+		{ title: 'External links', byteoffset: 13000 },
+		{ title: 'References', byteoffset: 14000 }
+	],
+	pageSize: 20000
+};
+
 describe( 'SectionSuggester tests', () => {
 	forEach( tests, ( test ) => {
 		it( 'should find present and missing sections', async () => {
@@ -74,6 +86,47 @@ describe( 'SectionSuggester tests', () => {
 
 			await sectionSuggestor.getMissingSections( test.sourceLanguage, test.sourceTitle, test.targetLanguage, test.targetTitle ).then( ( sections ) => {
 				deepEqual( sections, test.expectedResult );
+			} );
+		} );
+
+		it( 'should find present and missing sections with sizes when requested', async () => {
+			const cxConfig = getConfig();
+
+			const api = new MWApiRequestManager( cxConfig );
+			SectionSuggester.prototype.getSections = ( language ) => {
+				if ( language === test.sourceLanguage ) {
+					return Promise.resolve( test.sourceSections );
+				}
+				if ( language === test.targetLanguage ) {
+					return Promise.resolve( test.targetSections );
+				}
+			};
+
+			SectionSuggester.prototype.getSectionObjectsWithPageSize = ( language ) => {
+				if ( language === test.sourceLanguage ) {
+					return Promise.resolve( sectionObjectsData );
+				}
+			};
+
+			const sectionSuggestor = new SectionSuggester(
+				api,
+				cxConfig.sectionmapping
+			);
+
+			const expectedResultWithSizes = {
+				...test.expectedResult,
+				sourceSectionSizes: {
+					Etymology: 2500,
+					History: 4500,
+					Playing: 4000,
+					'See also': 1000,
+					'External links': 1000,
+					References: 6000
+				}
+			};
+
+			await sectionSuggestor.getMissingSections( test.sourceLanguage, test.sourceTitle, test.targetLanguage, test.targetTitle, true ).then( ( sections ) => {
+				deepEqual( sections, expectedResultWithSizes );
 			} );
 		} );
 	} );
