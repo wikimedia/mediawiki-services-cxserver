@@ -1,8 +1,8 @@
+import { readFileSync } from 'fs';
 import { open } from 'sqlite';
 // sqlite3 is a dependency of sqlite. We can use sqlite3 alone if we raise our
 // minimum node version support to 11+. Currently it is 10.
 import { Database, OPEN_READONLY, OPEN_READWRITE } from 'sqlite3';
-import { readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import * as MTClients from '../../lib/mt/index.js';
 import PrometheusClient from '../../lib/metric.js';
