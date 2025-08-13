@@ -37,7 +37,7 @@ Example:
 ```
 mt:
   Apertium:
-    api: http://apertium.wmflabs.org
+    api: https://apertium.wmcloud.org
     languages: config/Apertium.yaml
   Yandex:
     api: https://translate.yandex.net

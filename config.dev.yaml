@@ -55,7 +55,7 @@ sectionmapping:
   type: sqlite
 mt:
   Apertium:
-    api: https://apertium.wmflabs.org
+    api: https://apertium.wmcloud.org
     # For packaging reasons use separate configuration
     languages: config/Apertium.yaml
   Elia:

@@ -55,7 +55,7 @@ sectionmapping:
   type: mysql
 mt:
   Apertium:
-    api: https://apertium.wmflabs.org
+    api: https://apertium.wmcloud.org
     languages: config/Apertium.yaml
   Elia:
     api: https://mt-api.elhuyar.eus/translate_string
