@@ -8,8 +8,8 @@ import TestClient from '../../lib/mt/TestClient.js';
 import TestUtils from '../testutils.js';
 import { getConfig } from '../../lib/util.js';
 import { initApp } from '../../app.js';
-import mocks from './AdaptationTests.mocks.json' assert { type: 'json' };
-import tests from './AdaptationTests.json' assert { type: 'json' };
+import mocks from './AdaptationTests.mocks.json' with { type: 'json' };
+import tests from './AdaptationTests.json' with { type: 'json' };
 
 const dirname = new URL( '.', import.meta.url ).pathname;
 describe( 'Adaptation tests', () => {
@@ -28,7 +28,6 @@ describe( 'Adaptation tests', () => {
 
 	each( tests, ( testcase, done ) => {
 		it( testcase.desc, () => {
-
 			app.mtClient = new TestClient( app );
 			const adapter = new Adapter( testcase.from, testcase.to, api, app );
 
@@ -36,14 +35,19 @@ describe( 'Adaptation tests', () => {
 				const actualDom = new JSDOM( result.getHtml() );
 
 				for ( const id in testcase.resultAttributes ) {
-					ok( actualDom.window.document.getElementById( id ), `Element with id ${ id } exists in the result` );
+					ok(
+						actualDom.window.document.getElementById( id ),
+						`Element with id ${ id } exists in the result`
+					);
 					for ( const attribute in testcase.resultAttributes[ id ] ) {
 						const actualAttributeValue = actualDom.window.document
-							.getElementById( id ).getAttribute( attribute );
-						const expectedAttributeValue = testcase.resultAttributes[ id ][ attribute ];
+							.getElementById( id )
+							.getAttribute( attribute );
+						const expectedAttributeValue =
+							testcase.resultAttributes[ id ][ attribute ];
 						if ( attribute === 'text' ) {
-							const actualText = actualDom.window.document
-								.getElementById( id ).textContent;
+							const actualText =
+								actualDom.window.document.getElementById( id ).textContent;
 							equal(
 								actualText,
 								testcase.resultAttributes[ id ][ attribute ],
