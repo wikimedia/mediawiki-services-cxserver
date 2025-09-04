@@ -116,6 +116,7 @@ describe( 'SectionSuggester tests', () => {
 			const expectedResultWithSizes = {
 				...test.expectedResult,
 				sourceSectionSizes: {
+					__LEAD_SECTION__: 1000,
 					Etymology: 2500,
 					History: 4500,
 					Playing: 4000,
