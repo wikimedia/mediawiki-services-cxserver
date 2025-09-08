@@ -1,13 +1,9 @@
 import { describe, it } from 'node:test';
 import { readFileSync } from 'fs';
 import { deepEqual } from '../utils/assert.js';
-import {
-	MwContextualizer,
-	Normalizer,
-	Parser
-} from '../../lib/lineardoc/index.js';
+import { MwContextualizer, Normalizer, Parser } from '../../lib/lineardoc/index.js';
 import Segmenter from '../../lib/segmentation/CXSegmenter.js';
-import allTests from './SegmentationTests.json' with { type: 'json' };
+import allTests from './SegmentationTests.json' assert { type: 'json' };
 
 const dirname = new URL( '.', import.meta.url ).pathname;
 function normalize( html ) {

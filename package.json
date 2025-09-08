@@ -13,7 +13,7 @@
 		"url": "https://phabricator.wikimedia.org/tag/cx-cxserver/"
 	},
 	"engines": {
-		"node": ">=22"
+		"node": ">=20"
 	},
 	"dependencies": {
 		"@elastic/ecs-winston-format": "^1.5.3",
@@ -46,7 +46,7 @@
 		"@babel/plugin-syntax-import-attributes": "^7.26.0",
 		"@babel/preset-env": "^7.26.0",
 		"@eslint/eslintrc": "^3.1.0",
-		"@eslint/js": "^9.34.0",
+		"@eslint/js": "^9.12.0",
 		"argparse": "^2.0.1",
 		"async": "^3.2.3",
 		"eslint-config-wikimedia": "0.28.2",
@@ -60,7 +60,7 @@
 	"scripts": {
 		"start": "node ./server.js",
 		"dev": "nodemon --signal SIGHUP --legacy-watch --inspect=0.0.0.0 ./server.js -n 0",
-		"unittest": "NODE_ENV=test node --test",
+		"unittest": "NODE_ENV=test node --test test/",
 		"test": "npm run lint && npm run unittest",
 		"lint": "eslint .",
 		"coverage": "nyc --reporter=lcov _mocha"

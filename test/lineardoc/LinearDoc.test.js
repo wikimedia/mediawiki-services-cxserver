@@ -2,13 +2,9 @@ import { describe, it } from 'node:test';
 import { readFileSync } from 'fs';
 import assert from 'node:assert/strict';
 import { deepEqual } from '../utils/assert.js';
-import {
-	MwContextualizer,
-	Normalizer,
-	Parser
-} from '../../lib/lineardoc/index.js';
+import { MwContextualizer, Normalizer, Parser } from '../../lib/lineardoc/index.js';
 import { isIgnorableBlock } from '../../lib/lineardoc/Utils.js';
-import transTests from './translate.test.json' with { type: 'json' };
+import transTests from './translate.test.json' assert { type: 'json' };
 
 const dirname = new URL( '.', import.meta.url ).pathname;
 function normalize( html ) {
@@ -25,25 +21,13 @@ describe( 'LinearDoc', () => {
 			const testXhtmlFile = dirname + '/data/test' + i + '.xhtml';
 			const resultXmlFile = dirname + '/data/test' + i + '-result.xml';
 			const resultXhtmlFile = dirname + '/data/test' + i + '-result.xhtml';
-			const testXhtml = readFileSync( testXhtmlFile, 'utf8' ).replace(
-				/^\s+|\s+$/,
-				''
-			);
-			const expectedXml = readFileSync( resultXmlFile, 'utf8' ).replace(
-				/^\s+|\s+$/,
-				''
-			);
-			const expectedXhtml = readFileSync( resultXhtmlFile, 'utf8' ).replace(
-				/^\s+|\s+$/,
-				''
-			);
+			const testXhtml = readFileSync( testXhtmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
+			const expectedXml = readFileSync( resultXmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
+			const expectedXhtml = readFileSync( resultXhtmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
 			const parser = new Parser( new MwContextualizer() );
 			parser.init();
 			parser.write( testXhtml );
-			assert.ok(
-				!isIgnorableBlock( parser.builder.doc ),
-				'Not a section with block template'
-			);
+			assert.ok( !isIgnorableBlock( parser.builder.doc ), 'Not a section with block template' );
 			deepEqual(
 				normalize( parser.builder.doc.dumpXml() ),
 				normalize( expectedXml ),
@@ -64,30 +48,31 @@ describe( 'LinearDoc', () => {
 			parser.init();
 			parser.write( '<div>' + test.source + '</div>' );
 			const textBlock1 = parser.builder.doc.items[ 1 ].item;
-			deepEqual( textBlock1.getHtml(), test.source, 'Reconstructed source HTML' );
+			deepEqual(
+				textBlock1.getHtml(),
+				test.source,
+				'Reconstructed source HTML'
+			);
 			const textBlock2 = textBlock1.translateTags(
 				test.targetText,
 				test.rangeMappings
 			);
-			deepEqual( textBlock2.getHtml(), test.expect, 'Translated HTML' );
+			deepEqual(
+				textBlock2.getHtml(),
+				test.expect,
+				'Translated HTML'
+			);
 		}
 	} );
 
 	it( 'should be possible to reduce and expand a document', () => {
 		const testXhtmlFile = dirname + '/data/test-figure-inline.html';
-		const contentForReduce = readFileSync( testXhtmlFile, 'utf8' ).replace(
-			/^\s+|\s+$/,
-			''
-		);
+		const contentForReduce = readFileSync( testXhtmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
 		const parser = new Parser( new MwContextualizer() );
 		parser.init();
 		parser.write( contentForReduce );
 		const { reducedDoc, extractedData } = parser.builder.doc.reduce();
-		deepEqual(
-			Object.keys( extractedData ).length,
-			16,
-			'Attributes for 16 tags extracted.'
-		);
+		deepEqual( Object.keys( extractedData ).length, 16, 'Attributes for 16 tags extracted.' );
 		const expandedDoc = reducedDoc.expand( extractedData );
 		deepEqual(
 			normalize( expandedDoc.getHtml() ),
@@ -98,19 +83,12 @@ describe( 'LinearDoc', () => {
 
 	it( 'test HTML compaction roundtrip with inline chunks', () => {
 		const testXhtmlFile = dirname + '/data/test-chunks-inline.html';
-		const contentForReduce = readFileSync( testXhtmlFile, 'utf8' ).replace(
-			/^\s+|\s+$/,
-			''
-		);
+		const contentForReduce = readFileSync( testXhtmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
 		const parser = new Parser( new MwContextualizer() );
 		parser.init();
 		parser.write( contentForReduce );
 		const { reducedDoc, extractedData } = parser.builder.doc.reduce();
-		deepEqual(
-			Object.keys( extractedData ).length,
-			22,
-			'Attributes for 22 tags extracted.'
-		);
+		deepEqual( Object.keys( extractedData ).length, 22, 'Attributes for 22 tags extracted.' );
 		const expandedDoc = reducedDoc.expand( extractedData );
 		deepEqual(
 			normalize( expandedDoc.getHtml() ),
@@ -153,17 +131,11 @@ describe( 'LinearDoc', () => {
 			'/data/test-block-template-section-4.html'
 		];
 		for ( let i = 0; i < testFiles.length; i++ ) {
-			const contentForTest = readFileSync(
-				dirname + testFiles[ i ],
-				'utf8'
-			).replace( /^\s+|\s+$/, '' );
+			const contentForTest = readFileSync( dirname + testFiles[ i ], 'utf8' ).replace( /^\s+|\s+$/, '' );
 			const parser = new Parser( new MwContextualizer() );
 			parser.init();
 			parser.write( contentForTest );
-			assert.ok(
-				isIgnorableBlock( parser.builder.doc ),
-				`File ${ testFiles[ i ] } is section with block template`
-			);
+			assert.ok( isIgnorableBlock( parser.builder.doc ), `File ${ testFiles[ i ] } is section with block template` );
 		}
 	} );
 
@@ -212,26 +184,10 @@ describe( 'LinearDoc', () => {
 			normalize( expectedReducedDoc ),
 			'Expanded the corrupted document by removing all externally inserted attributes.'
 		);
-		deepEqual(
-			Object.keys( extractedData ).length,
-			5,
-			'Attributes for 2 tags extracted.'
-		);
-		deepEqual(
-			!!extractedData[ '2' ].content,
-			true,
-			'Content extracted for style tag'
-		);
-		deepEqual(
-			!!extractedData[ '3' ].content,
-			true,
-			'Content extracted for script tag'
-		);
-		deepEqual(
-			!!extractedData[ '5' ].content,
-			true,
-			'Content extracted for tag with mw:Entity'
-		);
+		deepEqual( Object.keys( extractedData ).length, 5, 'Attributes for 2 tags extracted.' );
+		deepEqual( !!extractedData[ '2' ].content, true, 'Content extracted for style tag' );
+		deepEqual( !!extractedData[ '3' ].content, true, 'Content extracted for script tag' );
+		deepEqual( !!extractedData[ '5' ].content, true, 'Content extracted for tag with mw:Entity' );
 		parser = new Parser( new MwContextualizer() );
 		parser.init();
 		parser.write( corruptedMTInput );
@@ -244,12 +200,8 @@ describe( 'LinearDoc', () => {
 	} );
 
 	it( 'test HTML compaction roundtrip with template with empty content', () => {
-		const testXhtmlFile =
-			dirname + '/data/text-inline-template-empty-content.html';
-		const contentForReduce = readFileSync( testXhtmlFile, 'utf8' ).replace(
-			/^\s+|\s+$/,
-			''
-		);
+		const testXhtmlFile = dirname + '/data/text-inline-template-empty-content.html';
+		const contentForReduce = readFileSync( testXhtmlFile, 'utf8' ).replace( /^\s+|\s+$/, '' );
 		const parser = new Parser( new MwContextualizer() );
 		parser.init();
 		parser.write( contentForReduce );
@@ -257,11 +209,7 @@ describe( 'LinearDoc', () => {
 		const reducedParser = new Parser( new MwContextualizer() );
 		reducedParser.init();
 		reducedParser.write( reducedDoc.getHtml() );
-		deepEqual(
-			Object.keys( extractedData ).length,
-			6,
-			'Attributes for 6 tags extracted.'
-		);
+		deepEqual( Object.keys( extractedData ).length, 6, 'Attributes for 6 tags extracted.' );
 		const expandedDoc = reducedParser.builder.doc.expand( extractedData );
 		deepEqual(
 			normalize( expandedDoc.getHtml() ),
@@ -280,9 +228,7 @@ describe( 'LinearDoc', () => {
 			</p>
 		</section>`;
 
-		const parser = new Parser( new MwContextualizer(), {
-			isolateSegments: true
-		} );
+		const parser = new Parser( new MwContextualizer(), { isolateSegments: true } );
 		parser.init();
 		parser.write( sourceDoc );
 		const rootItem = parser.builder.doc.getRootItem();
@@ -298,9 +244,7 @@ describe( 'LinearDoc', () => {
 		data-mw="{}" id="mwFw" typeof="mw:Transclusion"><i>V</i></span> and.
 		</p>`;
 
-		const parser = new Parser( new MwContextualizer(), {
-			isolateSegments: true
-		} );
+		const parser = new Parser( new MwContextualizer(), { isolateSegments: true } );
 		parser.init();
 		parser.write( sourceDoc );
 		const parsedDoc = parser.builder.doc;
@@ -319,9 +263,7 @@ describe( 'LinearDoc', () => {
 		data-mw="{}" id="mwFw" typeof="mw:Transclusion"><i>V</i></span> and.
 		</p>`;
 
-		const parser = new Parser( new MwContextualizer(), {
-			isolateSegments: true
-		} );
+		const parser = new Parser( new MwContextualizer(), { isolateSegments: true } );
 		parser.init();
 		parser.write( sourceDoc );
 		const parsedDoc = parser.builder.doc;

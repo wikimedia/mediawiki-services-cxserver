@@ -7,8 +7,8 @@ import TestUtils from '../testutils.js';
 import { deepEqual } from '../utils/assert.js';
 import { getConfig } from '../../lib/util.js';
 import { initApp } from '../../app.js';
-import mocks from './MWTemplate.mocks.json' with { type: 'json' };
-import tests from './MWTemplate.test.json' with { type: 'json' };
+import mocks from './MWTemplate.mocks.json' assert { type: 'json' };
+import tests from './MWTemplate.test.json' assert { type: 'json' };
 
 const dirname = new URL( '.', import.meta.url ).pathname;
 test( 'Template adaptation', async ( t ) => {
@@ -44,7 +44,11 @@ test( 'Template adaptation', async ( t ) => {
 			const adaptedNode = await translationunit.adapt( testcase.source );
 			const actualDataCX = JSON.parse( adaptedNode.attributes[ 'data-cx' ] );
 			const expectedDataCX = testcase.result.attributes[ 'data-cx' ];
-			deepEqual( actualDataCX, expectedDataCX, 'Adaptation status matches' );
+			deepEqual(
+				actualDataCX,
+				expectedDataCX,
+				'Adaptation status matches'
+			);
 
 			const actualDataMW = JSON.parse( adaptedNode.attributes[ 'data-mw' ] );
 			const expectedDataMW = testcase.result.attributes[ 'data-mw' ];
