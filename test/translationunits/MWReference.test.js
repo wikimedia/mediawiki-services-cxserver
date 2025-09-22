@@ -11,8 +11,8 @@ import { deepEqual } from '../utils/assert.js';
 import { getConfig } from '../../lib/util.js';
 import { initApp } from '../../app.js';
 
-import mocks from './MWReference.mocks.json' assert { type: 'json' };
-import tests from './MWReference.test.json' assert { type: 'json' };
+import mocks from './MWReference.mocks.json' with { type: 'json' };
+import tests from './MWReference.test.json' with { type: 'json' };
 
 const dirname = new URL( '.', import.meta.url ).pathname;
 describe( 'Reference adaptation', () => {
@@ -37,7 +37,9 @@ describe( 'Reference adaptation', () => {
 			if ( typeof test.source === 'string' ) {
 				const content = readFileSync( dirname + '/data/' + test.source, 'utf8' );
 				const sourceDom = new JSDOM( content );
-				const sourceDomAttributes = sourceDom.window.document.querySelector( '[typeof="mw:Extension/ref"]' ).attributes;
+				const sourceDomAttributes = sourceDom.window.document.querySelector(
+					'[typeof="mw:Extension/ref"]'
+				).attributes;
 				test.source = {
 					name: 'span',
 					attributes: {
@@ -50,13 +52,20 @@ describe( 'Reference adaptation', () => {
 				};
 			}
 			if ( typeof test.result === 'string' ) {
-				const resultContent = readFileSync( dirname + '/data/' + test.result, 'utf8' );
+				const resultContent = readFileSync(
+					dirname + '/data/' + test.result,
+					'utf8'
+				);
 				const resultDom = new JSDOM( resultContent );
-				const resultsDomAttributes = resultDom.window.document.querySelector( '[typeof="mw:Extension/ref"]' ).attributes;
+				const resultsDomAttributes = resultDom.window.document.querySelector(
+					'[typeof="mw:Extension/ref"]'
+				).attributes;
 				test.result = {
 					name: 'span',
 					attributes: {
-						'data-cx': JSON.parse( resultsDomAttributes.getNamedItem( 'data-cx' ).value )
+						'data-cx': JSON.parse(
+							resultsDomAttributes.getNamedItem( 'data-cx' ).value
+						)
 					}
 				};
 			}

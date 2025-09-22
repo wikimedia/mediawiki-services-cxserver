@@ -6,8 +6,8 @@ import TitlePairRequest from '../../lib/mw/TitlePairRequest.js';
 import TestUtils from '../testutils.js';
 import { initApp } from '../../app.js';
 
-import mocks from './TitlePairTests.mocks.json' assert { type: 'json' };
-import tests from './TitlePairTests.json' assert { type: 'json' };
+import mocks from './TitlePairTests.mocks.json' with { type: 'json' };
+import tests from './TitlePairTests.json' with { type: 'json' };
 
 const dirname = new URL( '.', import.meta.url ).pathname;
 // FIXME: This tests title normalization of MWApiRequestManager

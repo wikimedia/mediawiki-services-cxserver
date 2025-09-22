@@ -14,7 +14,7 @@ import bodyParser from 'body-parser';
 import addShutdown from 'http-shutdown';
 import { HTTPError, responseTimeMetricsMiddleware } from './lib/util.js';
 import MTClientError from './lib/mt/MTClientError.js';
-import packageInfo from './package.json' assert { type: 'json' };
+import packageInfo from './package.json' with { type: 'json' };
 import CXConfig from './lib/Config.js';
 import PrometheusClient from './lib/metric.js';
 import { logger } from './lib/logging.js';
@@ -30,11 +30,15 @@ const defaultConfig = {
 	// eslint-disable-next-line camelcase
 	compression_level: 3,
 	cors: '*',
-	csp: 'default-src \'self\'; object-src \'none\'; media-src *; img-src *; style-src *; frame-ancestors \'self\'',
+	csp: "default-src 'self'; object-src 'none'; media-src *; img-src *; style-src *; frame-ancestors 'self'",
 	// eslint-disable-next-line camelcase
 	log_header_whitelist: [
-		'cache-control', 'content-type', 'content-length', 'if-match',
-		'user-agent', 'x-request-id'
+		'cache-control',
+		'content-type',
+		'content-length',
+		'if-match',
+		'user-agent',
+		'x-request-id'
 	],
 	specfile: './spec.yaml'
 };
@@ -51,10 +55,7 @@ export async function initApp( options ) {
 	options = Object.assign( {}, defaultConfig, options );
 
 	// get the options and make them available in the app
-	app.logger = logger(
-		options.name,
-		options.logging
-	);
+	app.logger = logger( options.name, options.logging );
 	app.logger.log( 'info', `Starting ${ options.name }` );
 	app.conf = options; // this app's config options
 	app.info = packageInfo; // this app's package info
@@ -78,7 +79,10 @@ export async function initApp( options ) {
 	}
 
 	// eslint-disable-next-line camelcase
-	app.conf.log_header_whitelist = new RegExp( `^(?:${ app.conf.log_header_whitelist.map( ( item ) => item.trim() ).join( '|' ) })$`, 'i' );
+	app.conf.log_header_whitelist = new RegExp(
+		`^(?:${ app.conf.log_header_whitelist.map( ( item ) => item.trim() ).join( '|' ) })$`,
+		'i'
+	);
 
 	try {
 		app.conf.spec = load( readFileSync( app.conf.specfile ) );
@@ -91,7 +95,10 @@ export async function initApp( options ) {
 	app.all( '*', ( req, res, next ) => {
 		if ( app.conf.cors !== false ) {
 			res.header( 'access-control-allow-origin', app.conf.cors );
-			res.header( 'access-control-allow-headers', 'accept, authorization, x-requested-with, content-type, x-wikimedia-debug' );
+			res.header(
+				'access-control-allow-headers',
+				'accept, authorization, x-requested-with, content-type, x-wikimedia-debug'
+			);
 			res.header( 'access-control-expose-headers', 'etag' );
 		}
 		if ( app.conf.csp !== false ) {
@@ -111,18 +118,24 @@ export async function initApp( options ) {
 	// disable the ETag header.Yet to identify a valid need for cxserver.
 	app.set( 'etag', false );
 	// enable compression
-	app.use( compression( {
-		level: app.conf.compression_level
-	} ) );
+	app.use(
+		compression( {
+			level: app.conf.compression_level
+		} )
+	);
 	// use the application/x-www-form-urlencoded parser
-	app.use( bodyParser.urlencoded( {
-		extended: true,
-		limit: 500000 // 0.5 megabyte
-	} ) );
+	app.use(
+		bodyParser.urlencoded( {
+			extended: true,
+			limit: 500000 // 0.5 megabyte
+		} )
+	);
 	// use the JSON body parser
-	app.use( bodyParser.json( {
-		limit: 500000
-	} ) );
+	app.use(
+		bodyParser.json( {
+			limit: 500000
+		} )
+	);
 
 	// Add a middleware to log the response time
 	app.use( responseTimeMetricsMiddleware( app ) );
@@ -195,7 +208,6 @@ export async function initApp( options ) {
 				status: err.status
 			}
 		} );
-
 	} );
 
 	const config = new CXConfig( app );
@@ -231,8 +243,10 @@ function createServer( app ) {
 		server = server.listen( app.conf.port, app.conf.interface, resolve );
 		server = addShutdown( server );
 	} ).then( () => {
-		app.logger.log( 'info',
-			`Worker ${ process.pid } listening on http${ isHttps ? 's' : '' }://${ app.conf.interface || '*' }:${ app.conf.port }` );
+		app.logger.log(
+			'info',
+			`Worker ${ process.pid } listening on http${ isHttps ? 's' : '' }://${ app.conf.interface || '*' }:${ app.conf.port }`
+		);
 		return server;
 	} );
 }
@@ -247,4 +261,4 @@ export default async function ( options ) {
 		} );
 	} );
 	return app;
-};
+}

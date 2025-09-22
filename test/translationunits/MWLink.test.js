@@ -7,8 +7,8 @@ import { deepEqual } from '../utils/assert.js';
 import { getConfig } from '../../lib/util.js';
 import { initApp } from '../../app.js';
 
-import mocks from './MWLink.mocks.json' assert { type: 'json' };
-import tests from './MWLink.test.json' assert { type: 'json' };
+import mocks from './MWLink.mocks.json' with { type: 'json' };
+import tests from './MWLink.test.json' with { type: 'json' };
 
 const dirname = new URL( '.', import.meta.url ).pathname;
 describe( 'Link Adaptation tests', () => {
