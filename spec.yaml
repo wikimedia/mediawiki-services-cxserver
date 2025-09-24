@@ -614,6 +614,70 @@ paths:
               to: el
           response:
             status: 403
+  /v2/suggest/title/{title}/{from}/{to}/{mtprovider}:
+    get:
+      tags:
+        - Suggestions
+      summary: Suggest a target title for the given source title and language pairs with the given MT service
+      parameters:
+        - $ref: "#/components/parameters/title"
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+        - $ref: "#/components/parameters/mtprovider"
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  history:
+                    type: array
+                    items:
+                      type: string
+                      description: Suggested title
+              example:
+                items:
+                  - Histoire
+                  - Historique
+        403:
+          description: Authentication error. The default MT provider for the given language pair
+            needs authorization, and the given JWT is invalid.
+        404:
+          description: Not Found
+        500:
+          description: Server Error
+      x-amples:
+        - title: Suggest a target title for the given source title and language pairs
+          description: The invalid JWT key is not used, as default MT provider doesn't need authentication
+          request:
+            headers:
+              authorization: Test-auth
+            params:
+              title: Limonero
+              from: es
+              to: ca
+          response:
+            status: 200
+            body:
+              sourceLanguage: es
+              targetLanguage: ca
+              sourceTitle: Limonero
+              targetTitle: llimoner
+            headers:
+              content-type: application/json
+        - title: Return an authentication error HTTP status code, when default MT requires authentication and the given JWT is invalid
+          description: The invalid JWT key is used, as default MT provider needs authentication
+          request:
+            headers:
+              authorization: Test-auth
+            params:
+              title: Lemon
+              from: en
+              to: el
+          response:
+            status: 403
   /v2/suggest/source/{title}/{to}:
     get:
       tags:
@@ -1045,7 +1109,7 @@ components:
       name: mtprovider
       in: path
       description: The machine translation provider id
-      required: true
+      required: false
       schema:
         type: string
         enum:
