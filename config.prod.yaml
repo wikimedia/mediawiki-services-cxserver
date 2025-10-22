@@ -66,10 +66,6 @@ mt:
     api: https://www.googleapis.com/language/translate/v2
     key: null
     languages: config/Google.yaml
-  Yandex:
-    api: https://translate.yandex.net
-    key: null
-    languages: config/Yandex.yaml
   LingoCloud:
     api: https://api.interpreter.caiyunai.com/v1
     account: wikimedia

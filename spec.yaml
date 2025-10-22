@@ -270,7 +270,7 @@ paths:
                     type: array
                     items:
                       type: string
-                example: { mt: [ Google, Elia, MinT, Yandex ] }
+                example: { mt: [ Google, Elia, MinT ] }
         500:
           description: Internal error
       x-amples:
@@ -361,7 +361,7 @@ paths:
                     type: array
                     items:
                       type: string
-                example: { mt: [ Google, Elia, MinT, Yandex ] }
+                example: { mt: [ Google, Elia, MinT ] }
         404:
           description: Not Found
         500:

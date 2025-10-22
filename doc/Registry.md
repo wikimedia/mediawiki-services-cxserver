@@ -39,10 +39,10 @@ mt:
   Apertium:
     api: https://apertium.wmcloud.org
     languages: config/Apertium.yaml
-  Yandex:
-    api: https://translate.yandex.net
+  Google:
+    api: https://www.googleapis.com/language/translate/v2
     key: null
-    languages: config/Yandex.yaml
+    languages: config/Google.yaml
 ```
 
 Query
