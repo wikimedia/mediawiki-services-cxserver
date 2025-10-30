@@ -6,6 +6,7 @@ import { readFileSync } from 'fs';
 import { load } from 'js-yaml';
 import Segmenter from '../lib/segmentation/CXSegmenter.js';
 import { Normalizer, Parser, MwContextualizer } from '../lib/lineardoc/index.js';
+const dirname = import.meta.dirname;
 
 function normalize( html ) {
 	const normalizer = new Normalizer();
@@ -15,7 +16,7 @@ function normalize( html ) {
 }
 
 function getParsedDoc( content ) {
-	const pageloaderConfig = load( readFileSync( __dirname + '/../config/MWPageLoader.yaml' ) );
+	const pageloaderConfig = load( readFileSync( dirname + '/../config/MWPageLoader.yaml' ) );
 	const parser = new Parser( new MwContextualizer(
 		{ removableSections: pageloaderConfig.removableSections }
 	), {
