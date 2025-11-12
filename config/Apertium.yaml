@@ -29,11 +29,7 @@ en:
   - ca
   - eo
   - es
-  - gl
   - sh
-eo:
-  - en
-  - simple
 es:
   - an
   - ast
@@ -43,13 +39,10 @@ es:
   - fr
   - gl
   - it
-  - oc
   - pt
   - simple
 eu:
-  - en
   - es
-  - simple
 fr:
   - ca
   - eo
@@ -59,17 +52,13 @@ fr:
 frp:
   - fr
 gl:
-  - en
   - es
   - pt
-  - simple
 hi:
   - ur
 id:
   - ms
 is:
-  - en
-  - simple
   - sv
 it:
   - ca
@@ -93,15 +82,12 @@ nn:
   - sv
 oc:
   - ca
-  - es
 pt:
   - ca
   - es
   - gl
 pl:
   - szl
-ro:
-  - es
 ru:
   - be
 sh:
@@ -110,9 +96,7 @@ sh:
   - sl
 simple:
   - ca
-  - eo
   - es
-  - gl
   - sh
 sl:
   - sh
