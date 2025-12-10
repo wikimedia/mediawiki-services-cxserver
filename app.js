@@ -5,13 +5,14 @@
 import { createServer as createHTTPServer } from 'http';
 import { createServer as createHTTPSServer } from 'https';
 import { readFileSync } from 'fs';
-import { inspect } from 'util';
+import { inspect, promisify } from 'util';
 import { randomUUID } from 'crypto';
 import express from 'express';
 import compression from 'compression';
 import { load } from 'js-yaml';
 import bodyParser from 'body-parser';
 import addShutdown from 'http-shutdown';
+import { createPool } from 'mysql';
 import { HTTPError, responseTimeMetricsMiddleware } from './lib/util.js';
 import MTClientError from './lib/mt/MTClientError.js';
 import packageInfo from './package.json' with { type: 'json' };
@@ -214,6 +215,35 @@ export async function initApp( options ) {
 	await config.parseAndLoadConfig();
 	app.registry = config;
 
+	// Initialize database connection pool for section mapping
+	if ( app.conf.sectionmapping?.type === 'mysql' ) {
+		try {
+			app.dbPool = createPool( {
+				connectionLimit: 10,
+				host: app.conf.sectionmapping.host,
+				user: app.conf.sectionmapping.user,
+				password: app.conf.sectionmapping.password,
+				database: app.conf.sectionmapping.database,
+				acquireTimeout: 60000,
+				timeout: 60000,
+				reconnect: true,
+				multipleStatements: false
+			} );
+
+			app.logger.log(
+				'info',
+				'MySQL connection pool initialized for section mapping'
+			);
+
+			// Test the connection
+			const testQuery = promisify( app.dbPool.query ).bind( app.dbPool );
+			await testQuery( 'SELECT 1' );
+			app.logger.log( 'debug', 'Database connection pool test successful' );
+		} catch ( error ) {
+			app.logger.error( 'Failed to initialize MySQL connection pool:', error );
+			// Don't fail the entire app startup, just log the error
+		}
+	}
 	return app;
 }
 
@@ -242,6 +272,19 @@ function createServer( app ) {
 	return new Promise( ( resolve ) => {
 		server = server.listen( app.conf.port, app.conf.interface, resolve );
 		server = addShutdown( server );
+
+		// Add graceful database cleanup
+		const originalShutdown = server.shutdown;
+		server.shutdown = ( callback ) => {
+			if ( app.dbPool ) {
+				app.dbPool.end( () => {
+					app.logger.log( 'info', 'MySQL connection pool closed gracefully' );
+					return originalShutdown.call( server, callback );
+				} );
+			} else {
+				return originalShutdown.call( server, callback );
+			}
+		};
 	} ).then( () => {
 		app.logger.log(
 			'info',
