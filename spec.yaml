@@ -861,6 +861,91 @@ paths:
                 missing: /.+/
             headers:
               content-type: application/json
+  /v2/suggest/sections/{from}/{to}:
+    get:
+      tags:
+        - Suggestions
+      summary: Suggest sections to translate from source articles to their corresponding articles
+        in target language, for a given list of articles.
+      parameters:
+        - $ref: "#/components/parameters/from"
+        - $ref: "#/components/parameters/to"
+        - $ref: "#/components/parameters/titles"
+        - $ref: "#/components/parameters/include_section_sizes"
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        sourceLanguage:
+                          type: string
+                          example: en
+                        sourceTitle:
+                          type: string
+                          example: Albert Einstein
+                        targetLanguage:
+                          type: string
+                          example: fr
+                        targetTitle:
+                          type: string
+                          example: Albert Einstein
+                        sourceSections:
+                          type: array
+                          items:
+                            type: string
+                        targetSections:
+                          type: array
+                          items:
+                            type: string
+                        present:
+                          type: object
+                        missing:
+                          type: object
+        400:
+          description: Invalid language code
+        500:
+          description: Server Error
+      x-amples:
+        - title: Suggest source sections to translate for multiple titles
+          request:
+            params:
+              from: en
+              to: ml
+            query:
+              titles: Pizza|Spaghetti
+              include_section_sizes: true
+          response:
+            status: 200
+            body:
+              results:
+                - sourceLanguage: en
+                  targetLanguage: ml
+                  sourceTitle: Pizza
+                  targetTitle: /.+/
+                  sourceSections: /.+/
+                  targetSections: /.+/
+                  present: /.+/
+                  missing: /.+/
+                  sourceSectionSizes: /.+/
+                - sourceLanguage: en
+                  targetLanguage: ml
+                  sourceTitle: Spaghetti
+                  targetTitle: /.+/
+                  sourceSections: /.+/
+                  targetSections: /.+/
+                  present: /.+/
+                  missing: /.+/
+                  sourceSectionSizes: /.+/
+            headers:
+              content-type: application/json
 
   # from routes/info.js
   /_info:
