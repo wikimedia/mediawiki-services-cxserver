@@ -183,6 +183,8 @@ paths:
               examples:
                 hello world:
                   value: { html: <p>Bonjour le monde</p> }
+        400:
+          description: Invalid language code specified
         500:
           description: Internal error
       x-amples:
@@ -485,12 +487,14 @@ paths:
       responses:
         200:
           description: Success
+        400:
+          description: Invalid language code
         404:
           description: Not Found
         500:
           description: Server Error
       x-amples:
-        - title: Machine translate an HTML fragment using TestClient, adapt the links to target language wiki.
+        - title: Machine translate an HTML fragment without provider, and an invalid language pair
           request:
             params:
               from: en
@@ -498,11 +502,7 @@ paths:
             body:
               html: <p><a rel="mw:WikiLink" href='./Oxygen' title='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='./Atomic number' title='Atomic number'>atomic number</a> 8.</p>
           response:
-            status: 200
-            body:
-              contents: /.+/
-            headers:
-              content-type: application/json
+            status: 400
 
   /v2/translate/{from}/{to}/{mtprovider}:
     post:
@@ -542,7 +542,7 @@ paths:
             params:
               from: en
               to: qqq
-              provider: TestClient
+              mtprovider: TestClient
             body:
               html: <p><a rel="mw:WikiLink" href='./Oxygen' title='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='./Atomic number' title='Atomic number'>atomic number</a> 8.</p>
           response:
