@@ -585,7 +585,7 @@ paths:
         500:
           description: Server Error
       x-amples:
-        - title: Suggest a target title for the given source title and language pairs
+        - title: Return the target language link for the given source title and language pairs
           description: The invalid JWT key is not used, as default MT provider doesn't need authentication
           request:
             headers:
@@ -600,7 +600,7 @@ paths:
               sourceLanguage: es
               targetLanguage: ca
               sourceTitle: Limonero
-              targetTitle: llimoner
+              targetTitle: Llimoner
             headers:
               content-type: application/json
         - title: Return an authentication error HTTP status code, when default MT requires authentication and the given JWT is invalid
@@ -649,7 +649,7 @@ paths:
         500:
           description: Server Error
       x-amples:
-        - title: Suggest a target title for the given source title and language pairs
+        - title: Return the target language link for the given source title and language pairs
           description: The invalid JWT key is not used, as default MT provider doesn't need authentication
           request:
             headers:
@@ -664,7 +664,7 @@ paths:
               sourceLanguage: es
               targetLanguage: ca
               sourceTitle: Limonero
-              targetTitle: llimoner
+              targetTitle: Llimoner
             headers:
               content-type: application/json
         - title: Return an authentication error HTTP status code, when default MT requires authentication and the given JWT is invalid
