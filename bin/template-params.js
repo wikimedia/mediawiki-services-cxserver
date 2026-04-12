@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 // Extract template parameters from given template in a language wiki.
 import { logger } from '../lib/logging.js';
 import { getConfig } from '../lib/util.js';
