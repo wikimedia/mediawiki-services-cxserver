@@ -21,7 +21,7 @@ cors: "*"
 # no_proxy_list:
 #   - domain1.com
 #   - domain2.org
-user_agent: cxserver
+user_agent: wmf/cxserver (language-product-localization@wikimedia.org)
 # MediaWiki host name. Example {lang}.wikisource.org which get expanded internally to
 # es.wikisource.org in a spanish language context.
 # Do not prefix with http or https://
