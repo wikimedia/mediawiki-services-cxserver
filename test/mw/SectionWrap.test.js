@@ -432,6 +432,26 @@ const sectionWithTemplateAndTemplateStylesResult = `
 </body>
 `;
 
+// A section containing a templatestyles block that itself has a fragment of the *previous*
+// section's transclusion (same about="#mwt1"). Before the fix, wrapSections() would crash with
+// "Attempting to remove a non-section tag" because insertToPrevSection was called while a
+// non-section open tag (style) was the last item in the document, violating the precondition.
+const sectionWithTemplateStylesFragment = `
+<body>
+<section data-mw-section-id="0">
+<span about="#mwt1" typeof="mw:Transclusion" data-mw="{}">First</span>
+</section>
+<section data-mw-section-id="1">
+<style about="#mwt2" typeof="mw:Extension/templatestyles" data-mw="{}"><span about="#mwt1">Fragment inside style</span></style>
+</section>
+</body>`;
+
+const sectionWithTemplateStylesFragmentResult = `
+<body>
+<section rel="cx:Section"><span about="#mwt1" data-mw="{}" typeof="mw:Transclusion">First</span></section>
+<section rel="cx:Section"><style about="#mwt2" data-mw="{}" typeof="mw:Extension/templatestyles"><span about="#mwt1">Fragment inside style</span></style></section>
+</body>`;
+
 const tests = [
 	{
 		desc: 'section has common pattern of elements',
@@ -485,6 +505,12 @@ const tests = [
 		desc: 'Content has transclusion and same element is removable templatestyle. So do not remove',
 		source: sectionWithTemplateAndTemplateStyles,
 		result: sectionWithTemplateAndTemplateStylesResult,
+		categories: 0
+	},
+	{
+		desc: 'Content has templatestyles block containing a fragment of the previous section transclusion',
+		source: sectionWithTemplateStylesFragment,
+		result: sectionWithTemplateStylesFragmentResult,
 		categories: 0
 	}
 ];
