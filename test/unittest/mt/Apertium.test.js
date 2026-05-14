@@ -1,4 +1,4 @@
-import { describe, it } from 'node:test';
+import { describe, it, mock } from 'node:test';
 import assert from 'node:assert/strict';
 import { forEach } from 'async';
 import { compareHTML } from '../utils/assert.js';
@@ -111,7 +111,7 @@ describe( 'Apertium machine translation', () => {
 		it( 'Test: ' + test.title, () => {
 			const textTranslations = test.textTranslations;
 			// Fake the actual Apertium call
-			Apertium.prototype.translateLines = function (
+			mock.method( Apertium.prototype, 'translateLines', function (
 				sourceLang,
 				targetLang,
 				sourceLines
@@ -120,7 +120,7 @@ describe( 'Apertium machine translation', () => {
 					( line ) => textTranslations[ line ] || 'X' + line + 'X'
 				);
 				return Promise.resolve( targetLines );
-			};
+			} );
 
 			return apertium.translate( 'en', 'es', test.source ).then( ( target ) => {
 				compareHTML( target, test.target, test.title );

@@ -1,4 +1,4 @@
-import { before, describe, it } from 'node:test';
+import { before, describe, it, mock } from 'node:test';
 import { readFileSync } from 'fs';
 import { each } from 'async';
 import { deepEqual } from '../utils/assert.js';
@@ -33,10 +33,10 @@ describe( 'MWPageLoader tests', () => {
 	each( tests, ( test ) => {
 		it( 'Test: ' + test.desc, () => {
 			// Fake the actual MWPageLoader fetch call
-			MWPageLoader.prototype.fetch = () => {
+			mock.method( MWPageLoader.prototype, 'fetch', () => {
 				const sourceContent = readFileSync( dirname + '/data/' + test.source, 'utf8' );
 				return Promise.resolve( { body: sourceContent } );
-			};
+			} );
 			const pageloader = new MWPageLoader( {
 				context: app,
 				sourceLanguage: test.sourceLanguage,

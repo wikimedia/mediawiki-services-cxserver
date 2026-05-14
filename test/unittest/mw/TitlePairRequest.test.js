@@ -1,4 +1,4 @@
-import { after, test } from 'node:test';
+import { test } from 'node:test';
 import { deepEqual } from '../utils/assert.js';
 import { getConfig } from '../../../lib/util.js';
 import MWApiRequestManager from '../../../lib/mw/MWApiRequestManager.js';
@@ -12,13 +12,17 @@ import tests from './TitlePairTests.json' with { type: 'json' };
 const dirname = new URL( '.', import.meta.url ).pathname;
 // FIXME: This tests title normalization of MWApiRequestManager
 test( 'Title pair tests', async ( t ) => {
-	let app, api, mocker, oldGetRequestPromise;
+	let app, api, mocker;
 
 	t.before( async () => {
 		app = await initApp( getConfig() );
 		api = new MWApiRequestManager( app );
 		mocker = new TestUtils( api );
 		mocker.setup( mocks );
+		t.mock.method( TitlePairRequest.prototype, 'getRequestPromise', function ( subqueue ) {
+			deepEqual( subqueue.length, 50 );
+			return Promise.resolve( {} );
+		} );
 	} );
 
 	t.after( () => {
@@ -38,11 +42,6 @@ test( 'Title pair tests', async ( t ) => {
 	}
 
 	await t.test( 'should have the queue size 50', async () => {
-		oldGetRequestPromise = TitlePairRequest.prototype.getRequestPromise;
-		TitlePairRequest.prototype.getRequestPromise = function ( subqueue ) {
-			deepEqual( subqueue.length, 50 );
-			return Promise.resolve( {} );
-		};
 		const titlePairRequest = new TitlePairRequest( {
 			sourceLanguage: 'en',
 			targetLanguage: 'es',
@@ -53,7 +52,5 @@ test( 'Title pair tests', async ( t ) => {
 		}
 		return await Promise.all( titlePairRequest.promises );
 	} );
-	after( () => {
-		TitlePairRequest.prototype.getRequestPromise = oldGetRequestPromise;
-	} );
+
 } );

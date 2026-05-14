@@ -1,4 +1,4 @@
-import { describe, it } from 'node:test';
+import { describe, it, mock } from 'node:test';
 import assert from 'node:assert/strict';
 import { compareHTML, deepEqual, fails } from '../utils/assert.js';
 import { getConfig } from '../../../lib/util.js';
@@ -28,8 +28,7 @@ describe( 'Machine translation with wrapped html result', () => {
 	it( 'Should throw error', () => {
 		const cxConfig = getConfig();
 		// Fake the actual call
-		const oldTranslateHTML = MTClient.prototype.translateHtml;
-		MTClient.prototype.translateHtml = () => Promise.resolve( testDataWithWrappedResult.mtResult );
+		mock.method( MTClient.prototype, 'translateHtml', () => Promise.resolve( testDataWithWrappedResult.mtResult ) );
 		const mtClient = new MTClient( { conf: cxConfig } );
 		fails(
 			mtClient.translateReducedHtml(
@@ -38,10 +37,10 @@ describe( 'Machine translation with wrapped html result', () => {
 				testDataWithWrappedResult.input
 			),
 			( err ) => {
-				MTClient.prototype.translateHtml = oldTranslateHTML;
 				assert.ok( err instanceof Error );
 				assert.ok( /Unexpected content/.test( err.toString() ) );
-			} );
+			}
+		);
 	} );
 } );
 
@@ -57,17 +56,17 @@ const testDataForSpaceIssue = {
 describe( 'Machine translation result with extra spaces', () => {
 	it( 'Should be cleaned up', () => {
 		const cxConfig = getConfig();
-		const oldTranslateHTML = MTClient.prototype.translateHtml;
-		MTClient.prototype.translateHtml = () => Promise.resolve( testDataForSpaceIssue.mtResult );
+		mock.method( MTClient.prototype, 'translateHtml', () => Promise.resolve( testDataForSpaceIssue.mtResult ) );
 		const mtClient = new MTClient( cxConfig );
-		return mtClient.translateReducedHtml(
-			testDataForSpaceIssue.sourceLang,
-			testDataForSpaceIssue.targetLang,
-			testDataForSpaceIssue.input
-		).then( ( result ) => {
-			MTClient.prototype.translateHtml = oldTranslateHTML;
-			compareHTML( result, testDataForSpaceIssue.sanitizedResult );
-		} );
+		return mtClient
+			.translateReducedHtml(
+				testDataForSpaceIssue.sourceLang,
+				testDataForSpaceIssue.targetLang,
+				testDataForSpaceIssue.input
+			)
+			.then( ( result ) => {
+				compareHTML( result, testDataForSpaceIssue.sanitizedResult );
+			} );
 	} );
 } );
 
