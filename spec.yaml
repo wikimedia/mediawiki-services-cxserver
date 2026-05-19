@@ -1065,9 +1065,7 @@ components:
         type: string
       description: |
         Revision Id
-      example:
-        1274260387:
-          value: 1274260387
+      example: 1274260387
     title:
       in: path
       name: title
