@@ -18,7 +18,6 @@ class AlignWithMT {
 	 * Creates an instance of AlignWithMT.
 	 *
 	 * @param {Object} cxConf
-	 * @memberof AlignWithMT
 	 */
 	constructor( cxConf ) {
 		this.cxConfig = cxConf;

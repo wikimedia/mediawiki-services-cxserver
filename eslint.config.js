@@ -17,7 +17,6 @@ export default [ {
 }, ...compat.extends(
 	'wikimedia/common',
 	'wikimedia/node',
-	'wikimedia/jsduck',
 	'plugin:import/recommended'
 ), {
 	files: [ '**/*.js' ],
