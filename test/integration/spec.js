@@ -11,11 +11,12 @@ import { initApp } from '../../app.js';
 const ValidatorClass = OpenAPISchemaValidator.default;
 const validator = new ValidatorClass( { version: 3 } );
 const dirname = new URL( '.', import.meta.url ).pathname;
+
 function staticSpecLoad() {
 
 	let spec;
 	const myService = getConfig();
-	const specPath = `${ dirname }/../../../${ myService.spec ? myService.spec : 'spec.yaml' }`;
+	const specPath = `${ dirname }/../../${ myService.spec ? myService.spec : 'spec.yaml' }`;
 
 	try {
 		spec = load( readFileSync( specPath ) );
@@ -30,11 +31,26 @@ function staticSpecLoad() {
 
 }
 
-function validateExamples( pathStr, defParams, mSpec ) {
+function loadFixtures() {
+
+	const fixturesPath = `${ dirname }/fixtures.yaml`;
+
+	try {
+		return load( readFileSync( fixturesPath ) ) || {};
+	} catch ( err ) {
+		throw new Error(
+			`Cannot load fixtures file: ${ fixturesPath }`,
+			{ cause: err }
+		);
+	}
+
+}
+
+function validateExamples( pathStr, defParams, examples ) {
 
 	const uri = new swaggerrouter.URI( pathStr, {}, true );
 
-	if ( !mSpec ) {
+	if ( !examples ) {
 		try {
 			uri.expand( defParams );
 			return true;
@@ -43,11 +59,11 @@ function validateExamples( pathStr, defParams, mSpec ) {
 		}
 	}
 
-	if ( !Array.isArray( mSpec ) ) {
-		throw new Error( `Route ${ pathStr } : x-amples must be an array!` );
+	if ( !Array.isArray( examples ) ) {
+		throw new Error( `Route ${ pathStr } : fixtures entry must be an array!` );
 	}
 
-	mSpec.forEach( ( ex, idx ) => {
+	examples.forEach( ( ex, idx ) => {
 		if ( !ex.title ) {
 			throw new Error( `Route ${ pathStr }, example ${ idx }: title missing!` );
 		}
@@ -86,7 +102,7 @@ function constructTestCase( title, path, method, req, response ) {
 
 }
 
-function constructTests( paths, defParams ) {
+function constructTests( paths, fixtures, defParams ) {
 
 	const ret = [];
 
@@ -96,8 +112,10 @@ function constructTests( paths, defParams ) {
 			if ( {}.hasOwnProperty.call( p, 'x-monitor' ) && !p[ 'x-monitor' ] ) {
 				return;
 			}
+			const fixtureKey = `${ method } ${ pathStr }`;
+			const examples = fixtures[ fixtureKey ];
 			const uri = new swaggerrouter.URI( pathStr, {}, true );
-			if ( !p[ 'x-amples' ] ) {
+			if ( !examples ) {
 				ret.push( constructTestCase(
 					pathStr,
 					uri.toString( { params: defParams } ),
@@ -107,7 +125,7 @@ function constructTests( paths, defParams ) {
 				) );
 				return;
 			}
-			p[ 'x-amples' ].forEach( ( ex ) => {
+			examples.forEach( ( ex ) => {
 				ex.request = ex.request || {};
 				ret.push( constructTestCase(
 					ex.title,
@@ -239,6 +257,8 @@ describe( 'Swagger spec', async () => {
 	let spec = staticSpecLoad();
 	// default params, if given
 	let defParams = spec[ 'x-default-params' ] || {};
+	// test fixtures keyed by "method path"
+	const fixtures = loadFixtures();
 
 	it( 'get the spec', async () => {
 		const response = await request( app ).get( '?spec' );
@@ -277,13 +297,14 @@ describe( 'Swagger spec', async () => {
 				if ( {}.hasOwnProperty.call( mSpec, 'x-monitor' ) && !mSpec[ 'x-monitor' ] ) {
 					return;
 				}
-				validateExamples( pathStr, defParams, mSpec[ 'x-amples' ] );
+				const fixtureKey = `${ method } ${ pathStr }`;
+				validateExamples( pathStr, defParams, fixtures[ fixtureKey ] );
 			} );
 		} );
 	} );
 
 	describe( 'routes', async () => {
-		constructTests( spec.paths, defParams ).forEach( ( testCase ) => {
+		constructTests( spec.paths, fixtures, defParams ).forEach( ( testCase ) => {
 			it( testCase.title, async () => {
 				let uri = testCase.request.uri;
 				let response;

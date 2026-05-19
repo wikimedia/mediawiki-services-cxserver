@@ -28,11 +28,6 @@ paths:
             text/plain:
               example:
                 "User-agent: * \nDisallow: /"
-      x-amples:
-        - title: robots.txt check
-          request: {}
-          response:
-            status: 200
   /:
     get:
       tags:
@@ -41,29 +36,6 @@ paths:
       responses:
         200:
           description: Success
-      x-amples:
-        - title: root with no query params
-          request: {}
-          response:
-            status: 302
-        - title: spec from root
-          request:
-            query:
-              spec: true
-          response:
-            status: 200
-        - title: doc from root
-          request:
-            query:
-              doc: true
-          response:
-            status: 302
-        - title: root with wrong query param
-          request:
-            query:
-              fooo: true
-          response:
-            status: 302
   # from routes/v1.js
   /v1/page/{language}/{title}:
     get:
@@ -95,25 +67,6 @@ paths:
                     example: lorem ipsum
         404:
           description: Page not found
-      x-amples:
-        - title: Fetch enwiki protected page
-          request:
-            params:
-              language: en
-              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
-          response:
-            status: 200
-            headers:
-              content-type: application/json
-        - title: Fetch protected page with multi-word title
-          request:
-            params:
-              language: en
-              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
-          response:
-            status: 200
-            headers:
-              content-type: application/json
   /v1/page/{language}/{title}/{revision}:
     get:
       tags:
@@ -145,17 +98,6 @@ paths:
                     example: lorem ipsum
         404:
           description: Page not found
-      x-amples:
-        - title: Fetch enwiki protected page with revision
-          request:
-            params:
-              language: en
-              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
-              revision: 1086816359
-          response:
-            status: 200
-            headers:
-              content-type: application/json
   /v1/mt/{from}/{to}:
     post:
       tags:
@@ -171,7 +113,7 @@ paths:
             schema:
               required:
                 - html
-            example:
+            examples:
               hello world:
                 value: { html: <p>hello world</p> }
 
@@ -187,20 +129,6 @@ paths:
           description: Invalid language code specified
         500:
           description: Internal error
-      x-amples:
-        - title: Machine translate an HTML fragment using TestClient.
-          request:
-            params:
-              from: en
-              to: qqq
-            body:
-              html: <p><a href='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a href='Atomic number'>atomic number</a> 8.</p>
-          response:
-            status: 200
-            body:
-              contents: /.+/
-            headers:
-              content-type: application/json
   /v1/mt/{from}/{to}/{mtprovider}:
     post:
       tags:
@@ -237,21 +165,6 @@ paths:
                   value: { html: <p>Bonjour le monde</p> }
         400:
           description: Not found
-      x-amples:
-        - title: Machine translate an HTML fragment using TestClient.
-          request:
-            params:
-              from: en
-              to: qqq
-              provider: TestClient
-            body:
-              html: <p><a href='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a href='Atomic number'>atomic number</a> 8.</p>
-          response:
-            status: 200
-            body:
-              contents: /.+/
-            headers:
-              content-type: application/json
   /v1/list/pair/{from}/{to}:
     get:
       tags:
@@ -275,16 +188,6 @@ paths:
                 example: { mt: [ Google, Elia, MinT ] }
         500:
           description: Internal error
-      x-amples:
-        - title: Get the tools between two language pairs
-          request:
-            params:
-              from: en
-              to: es
-          response:
-            status: 200
-            headers:
-              content-type: application/json
   /v1/list/languagepairs:
     get:
       tags:
@@ -304,12 +207,6 @@ paths:
                     items:
                       type: string
                       description: Source language code
-      x-amples:
-        - title: Get all the language pairs
-          response:
-            status: 200
-            headers:
-              content-type: application/json
   /v1/list/{tool}:
     get:
       tags:
@@ -332,15 +229,6 @@ paths:
           description: Not Found
         500:
           description: Server Error
-      x-amples:
-        - title: Get the MT tool between two language pairs
-          request:
-            params:
-              tool: mt
-          response:
-            status: 200
-            headers:
-              content-type: application/json
   /v1/list/{tool}/{from}/{to}:
     get:
       tags:
@@ -368,17 +256,6 @@ paths:
           description: Not Found
         500:
           description: Server Error
-      x-amples:
-        - title: Get the MT tool between two language pairs
-          request:
-            params:
-              from: en
-              to: es
-              tool: mt
-          response:
-            status: 200
-            headers:
-              content-type: application/json
   # from routes/v2.js
   /v2/page/{sourcelanguage}/{targetlanguage}/{title}:
     get:
@@ -396,27 +273,6 @@ paths:
           description: Not Found
         500:
           description: Server Error
-      x-amples:
-        - title: Translate enwiki protected page
-          request:
-            params:
-              sourcelanguage: en
-              targetlanguage: es
-              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
-          response:
-            status: 200
-            headers:
-              content-type: application/json
-        - title: Translate enwiki protected page with multi-word title
-          request:
-            params:
-              sourcelanguage: en
-              targetlanguage: es
-              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
-          response:
-            status: 200
-            headers:
-              content-type: application/json
   /v2/page/{sourcelanguage}/{targetlanguage}/{title}/{revision}:
     get:
       tags:
@@ -443,7 +299,7 @@ paths:
                     example: es
                   revision:
                     type: string
-                    example: 1234565
+                    example: 1274260387
                   segmentedContent:
                     type: string
                     example: lorem ipsum
@@ -451,18 +307,6 @@ paths:
           description: Not Found
         500:
           description: Server Error
-      x-amples:
-        - title: Translate enwiki protected page with revision
-          request:
-            params:
-              sourcelanguage: en
-              targetlanguage: es
-              title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
-              revision: 1086816359
-          response:
-            status: 200
-            headers:
-              content-type: application/json
   /v2/translate/{from}/{to}:
     post:
       tags:
@@ -493,16 +337,6 @@ paths:
           description: Not Found
         500:
           description: Server Error
-      x-amples:
-        - title: Machine translate an HTML fragment without provider, and an invalid language pair
-          request:
-            params:
-              from: en
-              to: qqq
-            body:
-              html: <p><a rel="mw:WikiLink" href='./Oxygen' title='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='./Atomic number' title='Atomic number'>atomic number</a> 8.</p>
-          response:
-            status: 400
 
   /v2/translate/{from}/{to}/{mtprovider}:
     post:
@@ -536,21 +370,6 @@ paths:
           description: Not Found
         500:
           description: Server Error
-      x-amples:
-        - title: Machine translate an HTML fragment using TestClient, adapt the links to target language wiki.
-          request:
-            params:
-              from: en
-              to: qqq
-              mtprovider: TestClient
-            body:
-              html: <p><a rel="mw:WikiLink" href='./Oxygen' title='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='./Atomic number' title='Atomic number'>atomic number</a> 8.</p>
-          response:
-            status: 200
-            body:
-              contents: /.+/
-            headers:
-              content-type: application/json
   /v2/suggest/title/{title}/{from}/{to}:
     get:
       tags:
@@ -584,36 +403,6 @@ paths:
           description: Not Found
         500:
           description: Server Error
-      x-amples:
-        - title: Return the target language link for the given source title and language pairs
-          description: The invalid JWT key is not used, as default MT provider doesn't need authentication
-          request:
-            headers:
-              authorization: Test-auth
-            params:
-              title: Limonero
-              from: es
-              to: ca
-          response:
-            status: 200
-            body:
-              sourceLanguage: es
-              targetLanguage: ca
-              sourceTitle: Limonero
-              targetTitle: Llimoner
-            headers:
-              content-type: application/json
-        - title: Return an authentication error HTTP status code, when default MT requires authentication and the given JWT is invalid
-          description: The invalid JWT key is used, as default MT provider needs authentication
-          request:
-            headers:
-              authorization: Test-auth
-            params:
-              title: Lemon
-              from: en
-              to: el
-          response:
-            status: 403
   /v2/suggest/title/{title}/{from}/{to}/{mtprovider}:
     get:
       tags:
@@ -648,36 +437,6 @@ paths:
           description: Not Found
         500:
           description: Server Error
-      x-amples:
-        - title: Return the target language link for the given source title and language pairs
-          description: The invalid JWT key is not used, as default MT provider doesn't need authentication
-          request:
-            headers:
-              authorization: Test-auth
-            params:
-              title: Limonero
-              from: es
-              to: ca
-          response:
-            status: 200
-            body:
-              sourceLanguage: es
-              targetLanguage: ca
-              sourceTitle: Limonero
-              targetTitle: Llimoner
-            headers:
-              content-type: application/json
-        - title: Return an authentication error HTTP status code, when default MT requires authentication and the given JWT is invalid
-          description: The invalid JWT key is used, as default MT provider needs authentication
-          request:
-            headers:
-              authorization: Test-auth
-            params:
-              title: Lemon
-              from: en
-              to: el
-          response:
-            status: 403
   /v2/suggest/source/{title}/{to}:
     get:
       tags:
@@ -732,20 +491,6 @@ paths:
           description: Not Found
         500:
           description: Server Error
-      x-amples:
-        - title: Suggest a source title to use for translation
-          request:
-            params:
-              to: ca
-              title: Paneer
-            query:
-              sourcelanguages: en
-          response:
-            status: 200
-            body:
-              suggestions: /^\[.+\]$/
-            headers:
-              content-type: application/json
   /v2/suggest/sections/titles/{from}/{to}:
     get:
       tags:
@@ -776,22 +521,6 @@ paths:
           description: Not Found
         500:
           description: Server Error
-      x-amples:
-        - title: Suggest target section titles for given source sections
-          request:
-            params:
-              from: en
-              to: es
-            query:
-              titles: References|Notes|External Links
-          response:
-            status: 200
-            body:
-              References: [ Referencias, Bibliografía ]
-              Notes: [ Referencias, Notas ]
-              External Links: [ Enlaces externos ]
-            headers:
-              content-type: application/json
   /v2/suggest/sections/{title}/{from}/{to}:
     get:
       tags:
@@ -842,25 +571,6 @@ paths:
           description: Not Found
         500:
           description: Server Error
-      x-amples:
-        - title: Suggest source sections to translate
-          request:
-            params:
-              from: en
-              to: ml
-              title: Sitar
-          response:
-            status: 200
-            body:
-              sections:
-                sourceLanguage: /.+/
-                targetLanguage: /.+/
-                sourceTitle: /.+/
-                targetTitle: /.+/
-                present: /.+/
-                missing: /.+/
-            headers:
-              content-type: application/json
   /v2/suggest/sections/{from}/{to}:
     get:
       tags:
@@ -913,39 +623,6 @@ paths:
           description: Invalid language code
         500:
           description: Server Error
-      x-amples:
-        - title: Suggest source sections to translate for multiple titles
-          request:
-            params:
-              from: en
-              to: ml
-            query:
-              titles: Pizza|Spaghetti
-              include_section_sizes: true
-          response:
-            status: 200
-            body:
-              results:
-                - sourceLanguage: en
-                  targetLanguage: ml
-                  sourceTitle: Pizza
-                  targetTitle: /.+/
-                  sourceSections: /.+/
-                  targetSections: /.+/
-                  present: /.+/
-                  missing: /.+/
-                  sourceSectionSizes: /.+/
-                - sourceLanguage: en
-                  targetLanguage: ml
-                  sourceTitle: Spaghetti
-                  targetTitle: /.+/
-                  sourceSections: /.+/
-                  targetSections: /.+/
-                  present: /.+/
-                  missing: /.+/
-                  sourceSectionSizes: /.+/
-            headers:
-              content-type: application/json
 
   # from routes/info.js
   /_info:
@@ -956,18 +633,6 @@ paths:
       responses:
         200:
           description: OK
-      x-amples:
-        - title: retrieve service info
-          request: {}
-          response:
-            status: 200
-            headers:
-              content-type: application/json
-            body:
-              name: /.+/
-              description: /.+/
-              version: /.+/
-              home: /.+/
   /_info/name:
     get:
       tags:
@@ -985,15 +650,6 @@ paths:
                   name:
                     type: string
               example: { name: cxserver }
-      x-amples:
-        - title: retrieve service name
-          request: {}
-          response:
-            status: 200
-            headers:
-              content-type: application/json
-            body:
-              name: /.+/
   /_info/version:
     get:
       tags:
@@ -1011,15 +667,6 @@ paths:
                   version:
                     type: string
               example: { version: 1.2.1 }
-      x-amples:
-        - title: retrieve service version
-          request: {}
-          response:
-            status: 200
-            headers:
-              content-type: application/json
-            body:
-              version: /.+/
   /_info/home:
     get:
       tags:
@@ -1029,11 +676,6 @@ paths:
       responses:
         301:
           description: Redirect
-      x-amples:
-        - title: redirect to the home page
-          request: {}
-          response:
-            status: 301
 components:
   parameters:
     domain:

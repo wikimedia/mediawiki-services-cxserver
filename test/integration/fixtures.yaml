@@ -1,0 +1,385 @@
+# Integration test fixtures extracted from OpenAPI spec.
+# Each key is "<method> <path>" matching the spec path pattern.
+# Each value is an array of test cases (formerly x-amples).
+
+get /robots.txt:
+  - title: robots.txt check
+    request: {}
+    response:
+      status: 200
+
+get /:
+  - title: root with no query params
+    request: {}
+    response:
+      status: 302
+  - title: spec from root
+    request:
+      query:
+        spec: true
+    response:
+      status: 200
+  - title: doc from root
+    request:
+      query:
+        doc: true
+    response:
+      status: 302
+  - title: root with wrong query param
+    request:
+      query:
+        fooo: true
+    response:
+      status: 302
+
+get /v1/page/{language}/{title}:
+  - title: Fetch enwiki protected page
+    request:
+      params:
+        language: en
+        title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+    response:
+      status: 200
+      headers:
+        content-type: application/json
+  - title: Fetch protected page with multi-word title
+    request:
+      params:
+        language: en
+        title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+    response:
+      status: 200
+      headers:
+        content-type: application/json
+
+get /v1/page/{language}/{title}/{revision}:
+  - title: Fetch enwiki protected page with revision
+    request:
+      params:
+        language: en
+        title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+        revision: 1086816359
+    response:
+      status: 200
+      headers:
+        content-type: application/json
+
+post /v1/mt/{from}/{to}:
+  - title: Machine translate an HTML fragment using TestClient.
+    request:
+      params:
+        from: en
+        to: qqq
+      body:
+        html: <p><a href='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a href='Atomic number'>atomic number</a> 8.</p>
+    response:
+      status: 200
+      body:
+        contents: /.+/
+      headers:
+        content-type: application/json
+
+post /v1/mt/{from}/{to}/{mtprovider}:
+  - title: Machine translate an HTML fragment using TestClient.
+    request:
+      params:
+        from: en
+        to: qqq
+        provider: TestClient
+      body:
+        html: <p><a href='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a href='Atomic number'>atomic number</a> 8.</p>
+    response:
+      status: 200
+      body:
+        contents: /.+/
+      headers:
+        content-type: application/json
+
+get /v1/list/pair/{from}/{to}:
+  - title: Get the tools between two language pairs
+    request:
+      params:
+        from: en
+        to: es
+    response:
+      status: 200
+      headers:
+        content-type: application/json
+
+get /v1/list/languagepairs:
+  - title: Get all the language pairs
+    response:
+      status: 200
+      headers:
+        content-type: application/json
+
+get /v1/list/{tool}:
+  - title: Get the MT tool between two language pairs
+    request:
+      params:
+        tool: mt
+    response:
+      status: 200
+      headers:
+        content-type: application/json
+
+get /v1/list/{tool}/{from}/{to}:
+  - title: Get the MT tool between two language pairs
+    request:
+      params:
+        from: en
+        to: es
+        tool: mt
+    response:
+      status: 200
+      headers:
+        content-type: application/json
+
+get /v2/page/{sourcelanguage}/{targetlanguage}/{title}:
+  - title: Translate enwiki protected page
+    request:
+      params:
+        sourcelanguage: en
+        targetlanguage: es
+        title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+    response:
+      status: 200
+      headers:
+        content-type: application/json
+  - title: Translate enwiki protected page with multi-word title
+    request:
+      params:
+        sourcelanguage: en
+        targetlanguage: es
+        title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+    response:
+      status: 200
+      headers:
+        content-type: application/json
+
+get /v2/page/{sourcelanguage}/{targetlanguage}/{title}/{revision}:
+  - title: Translate enwiki protected page with revision
+    request:
+      params:
+        sourcelanguage: en
+        targetlanguage: es
+        title: User:BSitzmann_(WMF)/MCS/Test/Frankenstein
+        revision: 1086816359
+    response:
+      status: 200
+      headers:
+        content-type: application/json
+
+post /v2/translate/{from}/{to}:
+  - title: Machine translate an HTML fragment without provider, and an invalid language pair
+    request:
+      params:
+        from: en
+        to: qqq
+      body:
+        html: <p><a rel="mw:WikiLink" href='./Oxygen' title='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='./Atomic number' title='Atomic number'>atomic number</a> 8.</p>
+    response:
+      status: 400
+
+post /v2/translate/{from}/{to}/{mtprovider}:
+  - title: Machine translate an HTML fragment using TestClient, adapt the links to target language wiki.
+    request:
+      params:
+        from: en
+        to: qqq
+        mtprovider: TestClient
+      body:
+        html: <p><a rel="mw:WikiLink" href='./Oxygen' title='Oxygen'>Oxygen</a> is a chemical element with symbol O and <a rel="mw:WikiLink" href='./Atomic number' title='Atomic number'>atomic number</a> 8.</p>
+    response:
+      status: 200
+      body:
+        contents: /.+/
+      headers:
+        content-type: application/json
+
+get /v2/suggest/title/{title}/{from}/{to}:
+  - title: Return the target language link for the given source title and language pairs
+    description: The invalid JWT key is not used, as default MT provider doesn't need authentication
+    request:
+      headers:
+        authorization: Test-auth
+      params:
+        title: Limonero
+        from: es
+        to: ca
+    response:
+      status: 200
+      body:
+        sourceLanguage: es
+        targetLanguage: ca
+        sourceTitle: Limonero
+        targetTitle: Llimoner
+      headers:
+        content-type: application/json
+  - title: Return an authentication error HTTP status code, when default MT requires authentication and the given JWT is invalid
+    description: The invalid JWT key is used, as default MT provider needs authentication
+    request:
+      headers:
+        authorization: Test-auth
+      params:
+        title: Lemon
+        from: en
+        to: el
+    response:
+      status: 403
+
+get /v2/suggest/title/{title}/{from}/{to}/{mtprovider}:
+  - title: Return the target language link for the given source title and language pairs
+    description: The invalid JWT key is not used, as default MT provider doesn't need authentication
+    request:
+      headers:
+        authorization: Test-auth
+      params:
+        title: Limonero
+        from: es
+        to: ca
+    response:
+      status: 200
+      body:
+        sourceLanguage: es
+        targetLanguage: ca
+        sourceTitle: Limonero
+        targetTitle: Llimoner
+      headers:
+        content-type: application/json
+  - title: Return an authentication error HTTP status code, when default MT requires authentication and the given JWT is invalid
+    description: The invalid JWT key is used, as default MT provider needs authentication
+    request:
+      headers:
+        authorization: Test-auth
+      params:
+        title: Lemon
+        from: en
+        to: el
+    response:
+      status: 403
+
+get /v2/suggest/source/{title}/{to}:
+  - title: Suggest a source title to use for translation
+    request:
+      params:
+        to: ca
+        title: Paneer
+      query:
+        sourcelanguages: en
+    response:
+      status: 200
+      body:
+        suggestions: /^\[.+\]$/
+      headers:
+        content-type: application/json
+
+get /v2/suggest/sections/titles/{from}/{to}:
+  - title: Suggest target section titles for given source sections
+    request:
+      params:
+        from: en
+        to: es
+      query:
+        titles: References|Notes|External Links
+    response:
+      status: 200
+      body:
+        References: [ Referencias, Bibliografía ]
+        Notes: [ Referencias, Notas ]
+        External Links: [ Enlaces externos ]
+      headers:
+        content-type: application/json
+
+get /v2/suggest/sections/{title}/{from}/{to}:
+  - title: Suggest source sections to translate
+    request:
+      params:
+        from: en
+        to: ml
+        title: Sitar
+    response:
+      status: 200
+      body:
+        sections:
+          sourceLanguage: /.+/
+          targetLanguage: /.+/
+          sourceTitle: /.+/
+          targetTitle: /.+/
+          present: /.+/
+          missing: /.+/
+      headers:
+        content-type: application/json
+
+get /v2/suggest/sections/{from}/{to}:
+  - title: Suggest source sections to translate for multiple titles
+    request:
+      params:
+        from: en
+        to: ml
+      query:
+        titles: Pizza|Spaghetti
+        include_section_sizes: true
+    response:
+      status: 200
+      body:
+        results:
+          - sourceLanguage: en
+            targetLanguage: ml
+            sourceTitle: Pizza
+            targetTitle: /.+/
+            sourceSections: /.+/
+            targetSections: /.+/
+            present: /.+/
+            missing: /.+/
+            sourceSectionSizes: /.+/
+          - sourceLanguage: en
+            targetLanguage: ml
+            sourceTitle: Spaghetti
+            targetTitle: /.+/
+            sourceSections: /.+/
+            targetSections: /.+/
+            present: /.+/
+            missing: /.+/
+            sourceSectionSizes: /.+/
+      headers:
+        content-type: application/json
+
+get /_info:
+  - title: retrieve service info
+    request: {}
+    response:
+      status: 200
+      headers:
+        content-type: application/json
+      body:
+        name: /.+/
+        description: /.+/
+        version: /.+/
+        home: /.+/
+
+get /_info/name:
+  - title: retrieve service name
+    request: {}
+    response:
+      status: 200
+      headers:
+        content-type: application/json
+      body:
+        name: /.+/
+
+get /_info/version:
+  - title: retrieve service version
+    request: {}
+    response:
+      status: 200
+      headers:
+        content-type: application/json
+      body:
+        version: /.+/
+
+get /_info/home:
+  - title: redirect to the home page
+    request: {}
+    response:
+      status: 301
