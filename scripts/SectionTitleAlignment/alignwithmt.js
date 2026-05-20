@@ -1,11 +1,10 @@
 import { readFileSync } from 'fs';
-import { open } from 'sqlite';
-// sqlite3 is a dependency of sqlite. We can use sqlite3 alone if we raise our
-// minimum node version support to 11+. Currently it is 10.
-import { Database, OPEN_READONLY, OPEN_READWRITE } from 'sqlite3';
+import { DatabaseSync } from 'node:sqlite';
 import { load } from 'js-yaml';
 import * as MTClients from '../../lib/mt/index.js';
 import PrometheusClient from '../../lib/metric.js';
+
+let dbRead, dbWrite;
 
 /**
  * Align section titles in one language with section titles in another language.
@@ -83,25 +82,17 @@ class AlignWithMT {
 	 * @return {string[]}
 	 */
 	async findFrequentSectionTitles( sectionMappingDatabase, sourceLanguage ) {
-		const titles = [];
-		const db = await open( {
-			filename: sectionMappingDatabase,
-			driver: Database,
-			mode: OPEN_READONLY
-		} );
+		if ( !dbRead ) {
+			dbRead = new DatabaseSync( sectionMappingDatabase, { readOnly: true } );
+		}
 		const query = `select source_title,
 			count(source_title) as occurrences
 			from titles where source_language=?
 			group by source_title
 			order by occurrences desc
 			limit 200`;
-		const results = await db.all( query, [ sourceLanguage ] );
-		for ( let i = 0; i < results.length; i++ ) {
-			titles.push( results[ i ].source_title );
-		}
-		await db.close();
-
-		return titles;
+		const results = dbRead.prepare( query ).all( sourceLanguage );
+		return results.map( ( row ) => row.source_title );
 	}
 
 	/**
@@ -114,29 +105,24 @@ class AlignWithMT {
 	 * @return {string[]}
 	 */
 	async findMissingAlignment( sectionMappingDatabase, sourceLanguage, targetLanguage, sectionTitles ) {
-		// Clone the sectionTitles for local modification
 		const titles = [ ...sectionTitles ];
-		const db = await open( {
-			filename: sectionMappingDatabase,
-			driver: Database,
-			mode: OPEN_READONLY
-		} );
+		if ( !dbRead ) {
+			dbRead = new DatabaseSync( sectionMappingDatabase, { readOnly: true } );
+		}
 		const query = `SELECT DISTINCT source_title
 			from titles
 			where source_language=?
 			AND target_language=?
-			AND source_title IN (${ sectionTitles.map( () => '?' ) })
+			AND source_title IN (${ sectionTitles.map( () => '?' ).join( ',' ) })
 			ORDER BY source_title, frequency DESC`;
 
-		const results = await db.all( query, [ sourceLanguage, targetLanguage, ...sectionTitles ] );
+		const results = dbRead.prepare( query ).all( sourceLanguage, targetLanguage, ...sectionTitles );
 		for ( let i = 0; i < results.length; i++ ) {
 			const index = titles.indexOf( results[ i ].source_title );
 			if ( index >= 0 ) {
 				titles.splice( index, 1 );
 			}
 		}
-		await db.close();
-
 		return titles;
 	}
 
@@ -147,29 +133,19 @@ class AlignWithMT {
 	 * @return {string[]}
 	 */
 	async findTargetLanguages( sectionMappingDatabase ) {
-		const languages = [];
-		const db = await open( {
-			filename: sectionMappingDatabase,
-			driver: Database,
-			mode: OPEN_READONLY
-		} );
+		if ( !dbRead ) {
+			dbRead = new DatabaseSync( sectionMappingDatabase, { readOnly: true } );
+		}
 		console.log( 'findTargetLanguages' );
 		const query = `select target_language, count(source_title) as occurrences
 			FROM titles
 			GROUP BY target_language
 			ORDER BY occurrences desc
 			limit 200;`;
-		const results = await db.all( query );
-		console.log( results.length );
-		for ( let i = 0; i < results.length; i++ ) {
-			// Skip English
-			if ( results[ i ].target_language === 'en' ) {
-				continue;
-			}
-			languages.push( results[ i ].target_language );
-		}
-		await db.close();
-		return languages;
+		const results = dbRead.prepare( query ).all();
+		return results
+			.filter( ( row ) => row.target_language !== 'en' )
+			.map( ( row ) => row.target_language );
 	}
 
 	/**
@@ -181,22 +157,17 @@ class AlignWithMT {
 	 * @param {Object} titleMapping
 	 */
 	async addTitleAlignmentToDb( sectionMappingDatabase, sourceLanguage, targetLanguage, titleMapping ) {
-		const db = await open( {
-			filename: sectionMappingDatabase,
-			driver: Database,
-			mode: OPEN_READWRITE
-		} );
-
-		const query = 'INSERT INTO titles VALUES(?,?,?,?, ?)';
+		if ( !dbWrite ) {
+			dbWrite = new DatabaseSync( sectionMappingDatabase );
+		}
+		const stmt = dbWrite.prepare( 'INSERT INTO titles VALUES(?,?,?,?,?)' );
 		// We set a special frequency value for MT calculated alignment. This is actually
 		// arbitrary, but somewhat close to a possibly valid translation in comparison with
 		// high frequency translation by a human translations.
 		const frequency = 100;
 		for ( const sourceTitle in titleMapping ) {
-			const targetTitle = titleMapping[ sourceTitle ];
-			await db.run( query, [ sourceLanguage, targetLanguage, sourceTitle, targetTitle, frequency ] );
+			stmt.run( sourceLanguage, targetLanguage, sourceTitle, titleMapping[ sourceTitle ], frequency );
 		}
-		await db.close();
 	}
 
 	/**

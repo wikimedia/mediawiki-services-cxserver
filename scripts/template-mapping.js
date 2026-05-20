@@ -1,29 +1,26 @@
 import { existsSync, readFileSync } from 'fs';
 import { ArgumentParser } from 'argparse';
-import { open } from 'sqlite';
-import { Database } from 'sqlite3';
+import { DatabaseSync } from 'node:sqlite';
 
-async function createTemplate( db, from, to, templateName ) {
-	const mapping = await db.get(
+function createTemplate( db, from, to, templateName ) {
+	const mapping = db.prepare(
 		`SELECT id FROM templates
-        WHERE source_lang = ? AND target_lang = ? AND template = ?`,
-		from, to, templateName
-	);
-	if ( mapping && mapping.template_mapping_id ) {
-		return mapping.template_mapping_id;
+        WHERE source_lang = ? AND target_lang = ? AND template = ?`
+	).get( from, to, templateName );
+	if ( mapping && mapping.id ) {
+		return mapping.id;
 	}
-	const result = await db.run(
+	const result = db.prepare(
 		`INSERT OR IGNORE INTO templates
-        (source_lang, target_lang, template) VALUES(?,?,?)`,
-		from, to, templateName
-	);
-	return result.lastID;
+        (source_lang, target_lang, template) VALUES(?,?,?)`
+	).run( from, to, templateName );
+	return result.lastInsertRowid;
 }
 
 async function main( databaseFile, mapping, from, to ) {
-	const db = await open( { filename: databaseFile, driver: Database } );
+	const db = new DatabaseSync( databaseFile );
 
-	await db.run(
+	db.exec(
 		`CREATE TABLE IF NOT EXISTS templates (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             source_lang TEXT NOT NULL,
@@ -32,7 +29,7 @@ async function main( databaseFile, mapping, from, to ) {
             UNIQUE(source_lang, target_lang, template)
         )`
 	);
-	await db.run(
+	db.exec(
 		`CREATE TABLE IF NOT EXISTS mapping (
             template_mapping_id INTEGER NOT NULL,
             source_param TEXT NOT NULL,
@@ -43,12 +40,17 @@ async function main( databaseFile, mapping, from, to ) {
         )`
 	);
 
+	const insertMapping = db.prepare(
+		`INSERT OR IGNORE INTO mapping
+        (template_mapping_id, source_param, target_param, score)
+        VALUES(?,?,?,?)`
+	);
 	for ( const templateName in mapping ) {
 		const mappingData = mapping[ templateName ];
 		if ( !mappingData || !mappingData.length ) {
 			continue;
 		}
-		const mappingId = await createTemplate( db, from, to, templateName );
+		const mappingId = createTemplate( db, from, to, templateName );
 		process.stdout.write( `${ mappingId } ${ from } -> ${ to } ${ templateName }\n` );
 		for ( const index in mappingData ) {
 			const paramMapping = mappingData[ index ];
@@ -57,16 +59,10 @@ async function main( databaseFile, mapping, from, to ) {
 			}
 
 			const score = 1 - paramMapping.d;
-			db.run(
-				`INSERT OR IGNORE INTO mapping
-                (template_mapping_id, source_param, target_param, score)
-                VALUES(?,?,?,?)`,
-				mappingId, paramMapping[ from ], paramMapping[ to ], score
-			);
+			insertMapping.run( mappingId, paramMapping[ from ], paramMapping[ to ], score );
 			process.stdout.write( `\t${ paramMapping[ from ] } -> ${ paramMapping[ to ] } (${ score })\n` );
 		}
 	}
-	await db.close();
 }
 
 const argparser = new ArgumentParser( {
