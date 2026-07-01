@@ -58,11 +58,10 @@
 	"scripts": {
 		"start": "node ./server.js",
 		"dev": "nodemon --signal SIGHUP --legacy-watch --inspect=0.0.0.0 ./server.js -n 0",
-		"unittest": "NODE_ENV=test node --test 'test/unittest/**/*.js'",
+		"unittest": "NODE_ENV=test node --test --experimental-test-coverage --test-coverage-lines=77 'test/unittest/**/*.js'",
 		"integration": "NODE_ENV=test node --test 'test/integration/**/*.js'",
 		"test": "npm run lint && npm run unittest",
-		"lint": "eslint .",
-		"coverage": "nyc --reporter=lcov _mocha"
+		"lint": "eslint ."
 	},
 	"bin": {
 		"cxserver": "./server.js"
