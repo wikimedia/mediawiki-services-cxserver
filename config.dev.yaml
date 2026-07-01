@@ -48,6 +48,7 @@ jwt:
 ratelimiter_key: x-client-ip # The request header field that uniquely identify a request source
 ratelimiter_rate: 10
 languages: config/languages.yaml
+referencePunctuation: config/reference-punctuation.yaml
 templatemapping:
   database: config/templatemapping.db
 sectionmapping:

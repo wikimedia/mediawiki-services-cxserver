@@ -1,0 +1,11 @@
+# Reference marker position relative to sentence punctuation.
+#
+# Most wikis place reference markers after the punctuation (text.[1]).
+# The languages listed below place them before the punctuation (text[1].).
+before:
+  - fr
+  - pl
+# Punctuation marks the reference is repositioned around.
+punctuation:
+  - .
+  - ","
