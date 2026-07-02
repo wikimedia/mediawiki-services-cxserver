@@ -167,6 +167,20 @@ describe( 'LinearDoc', () => {
 		}
 	} );
 
+	it( 'should not ignore a section that begins with an inline template but has translatable prose', () => {
+		const contentForTest = readFileSync(
+			dirname + '/data/test-inline-template-section.html',
+			'utf8'
+		).replace( /^\s+|\s+$/, '' );
+		const parser = new Parser( new MwContextualizer() );
+		parser.init();
+		parser.write( contentForTest );
+		assert.ok(
+			!isIgnorableBlock( parser.builder.doc ),
+			'Section starting with an inline transclusion followed by prose is translatable'
+		);
+	} );
+
 	it( 'test HTML compaction roundtrip with inline style content', () => {
 		const sourceDoc = `<section><p>
 		<a href="Our title">ABC</a>
