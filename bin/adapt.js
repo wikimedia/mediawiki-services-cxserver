@@ -8,14 +8,7 @@ import MWApiRequestManager from '../lib/mw/MWApiRequestManager.js';
 import TestClient from '../lib/mt/TestClient.js';
 import { getConfig } from '../lib/util.js';
 
-const cxConfig = getConfig();
-cxConfig.logger = logger(
-	cxConfig.name,
-	cxConfig.logging
-);
-cxConfig.metrics = new PrometheusClient( {
-	staticLabels: { service: 'cxserver' }
-} );
+const cxConfig = getConfig( './config.yaml' );
 
 const xhtml = readFileSync( '/dev/stdin', 'utf8' );
 if ( xhtml.trim() === '' || process.argv.length !== 4 ) {
@@ -27,12 +20,17 @@ if ( xhtml.trim() === '' || process.argv.length !== 4 ) {
 
 }
 
-cxConfig.mtClient = new TestClient( cxConfig );
+const app = {
+	conf: cxConfig,
+	logger: logger( cxConfig.name, cxConfig.logging ),
+	metrics: new PrometheusClient( { staticLabels: { service: 'cxserver' } } )
+};
+app.mtClient = new TestClient( app );
 
 const from = process.argv[ 2 ];
 const to = process.argv[ 3 ];
-const api = new MWApiRequestManager( cxConfig );
-const adapter = new Adapter( from, to, api, cxConfig );
+const api = new MWApiRequestManager( app );
+const adapter = new Adapter( from, to, api, app );
 adapter.adapt( xhtml ).then( ( result ) => {
 	process.stdout.write( result.getHtml() + '\n' );
 } );

@@ -6,14 +6,7 @@ import { getConfig } from '../lib/util.js';
 import PrometheusClient from '../lib/metric.js';
 import * as MTClients from '../lib/mt/index.js';
 
-const cxConfig = getConfig();
-cxConfig.logger = logger(
-	cxConfig.name,
-	cxConfig.logging
-);
-cxConfig.metrics = new PrometheusClient( {
-	staticLabels: { service: 'cxserver' }
-} );
+const cxConfig = getConfig( './config.yaml' );
 
 function showHelpAndExit() {
 	const script = process.argv[ 1 ];
@@ -44,7 +37,12 @@ if ( !MTClients[ mtService ] ) {
 	process.exit( 1 );
 }
 
-const mt = new MTClients[ mtService ]( cxConfig );
+const app = {
+	conf: cxConfig,
+	logger: logger( cxConfig.name, cxConfig.logging ),
+	metrics: new PrometheusClient( { staticLabels: { service: 'cxserver' } } )
+};
+const mt = new MTClients[ mtService ]( app );
 
 mt.translateHtml(
 	sourceLang,
