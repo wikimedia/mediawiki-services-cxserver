@@ -44,7 +44,7 @@ const app = {
 };
 const mt = new MTClients[ mtService ]( app );
 
-mt.translateHtml(
+mt.translate(
 	sourceLang,
 	targetLang,
 	sourceHtml
