@@ -181,5 +181,64 @@
 		"to": "bn",
 		"source": "partial-reference-adaptation.html",
 		"result": "partial-reference-adaptation-result.html"
+	},
+	{
+		"desc": "Removing data-ve-ignore elements from reference body before adaptation",
+		"from": "en",
+		"to": "ca",
+		"source": {
+			"name": "span",
+			"attributes": {
+				"id": "cite_ref-ve-ignore",
+				"rel": "dc:references",
+				"typeof": "mw:Extension/ref",
+				"class": "mw-ref",
+				"data-mw": "{\"name\":\"ref\",\"attrs\":{},\"body\":{\"html\":\"<span about=\\\"#mwt126\\\" typeof=\\\"mw:Transclusion\\\" data-mw=\\\"{&quot;parts&quot;:[{&quot;template&quot;:{&quot;target&quot;:{&quot;wt&quot;:&quot;London Gazette\\\\n&quot;,&quot;href&quot;:&quot;./Template:London_Gazette&quot;},&quot;params&quot;:{&quot;issue-x&quot;:{&quot;wt&quot;:&quot;57855&quot;},&quot;date-x&quot;:{&quot;wt&quot;:&quot;31 December 2005&quot;},&quot;pages-x&quot;:{&quot;wt&quot;:&quot;23&quot;},&quot;supp-x&quot;:{&quot;wt&quot;:&quot;1&quot;}},&quot;i&quot;:0}}]}\\\">No. 578552</span><cite data-ve-ignore=\\\"\\\">rendered text with <a rel=\\\"mw:WikiLink\\\" href=\\\"./Some_page\\\" title=\\\"Some page\\\">a link</a></cite>\"}}"
+			}
+		},
+		"result": {
+			"attributes": {
+				"data-mw": {
+					"name": "ref",
+					"attrs": {},
+					"body": {
+						"html": "<span about=\"#mwt126\" data-cx=\"[{&#34;adapted&#34;:false,&#34;partial&#34;:false,&#34;targetExists&#34;:true,&#34;mandatoryTargetParams&#34;:[],&#34;optionalTargetParams&#34;:[]}]\" data-mw=\"{&#34;parts&#34;:[{&#34;template&#34;:{&#34;target&#34;:{&#34;wt&#34;:&#34;London Gazette&#34;,&#34;href&#34;:&#34;./Plantilla:London Gazette&#34;},&#34;params&#34;:{},&#34;i&#34;:0}}]}\" typeof=\"mw:Transclusion\">No. 578552</span>"
+					}
+				},
+				"data-cx": {
+					"adapted": false,
+					"partial": false
+				}
+			}
+		}
+	},
+	{
+		"desc": "Keeping reference body unchanged when it contains only data-ve-ignore content",
+		"from": "en",
+		"to": "es",
+		"source": {
+			"name": "span",
+			"attributes": {
+				"id": "cite_ref-ve-ignore-only",
+				"rel": "dc:references",
+				"typeof": "mw:Extension/ref",
+				"class": "mw-ref",
+				"data-mw": "{\"name\":\"ref\",\"body\":{\"html\":\"<cite data-ve-ignore=\\\"\\\">Throwaway rendered content</cite>\"}}"
+			}
+		},
+		"result": {
+			"attributes": {
+				"data-mw": {
+					"name": "ref",
+					"body": {
+						"html": "<cite data-ve-ignore=\"\">Throwaway rendered content</cite>"
+					}
+				},
+				"data-cx": {
+					"adapted": true,
+					"partial": false
+				}
+			}
+		}
 	}
 ]
