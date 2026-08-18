@@ -171,6 +171,16 @@
 			"desc": "Handle abbreviations such as Brown v. Board of education - T338689",
 			"source": "test-T338689.html",
 			"result": "result-T338689.html"
+		},
+		{
+			"desc": "T213262: inline transclusion about-group is not split",
+			"source": "test-T213262.html",
+			"result": "result-T213262.html"
+		},
+		{
+			"desc": "T253501: ISBN transclusion about-group in a list item is not split",
+			"source": "test-T253501.html",
+			"result": "result-T253501.html"
 		}
 	],
 	"de": [
