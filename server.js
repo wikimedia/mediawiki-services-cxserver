@@ -1,17 +1,15 @@
-import yargs from 'yargs';
+import { parseArgs } from 'node:util';
 import app from './app.js';
 import { getConfig } from './lib/util.js';
 
-const argv = yargs( process.argv.slice( 2 ) )
-	.option( 'c', {
-		alias: 'config',
-		describe: 'Path to the config file',
-		type: 'string',
-		default: './config.yaml'
-	} )
-	.argv;
+const { values } = parseArgs( {
+	options: {
+		config: { type: 'string', short: 'c', default: './config.yaml' }
+	},
+	strict: false
+} );
 
-const configPath = argv.c;
+const configPath = values.config;
 
 console.log( 'Using config file:', configPath );
 app( getConfig( configPath ) );

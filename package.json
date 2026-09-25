@@ -36,8 +36,7 @@
 		"swagger-router": "^0.7.4",
 		"swagger-ui-dist": "^5.9.0",
 		"undici": "^7.24.3",
-		"winston": "^3.14.2",
-		"yargs": "^17.7.2"
+		"winston": "^3.14.2"
 	},
 	"devDependencies": {
 		"@babel/eslint-parser": "^7.25.9",
