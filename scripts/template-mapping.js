@@ -1,6 +1,6 @@
 import { existsSync, readFileSync } from 'fs';
-import { ArgumentParser } from 'argparse';
 import { DatabaseSync } from 'node:sqlite';
+import { parseArgs } from 'node:util';
 
 function createTemplate( db, from, to, templateName ) {
 	const mapping = db.prepare(
@@ -65,40 +65,36 @@ async function main( databaseFile, mapping, from, to ) {
 	}
 }
 
-const argparser = new ArgumentParser( {
-	add_help: true,
-	description: 'Prepare template mapping database'
+const usage = `Prepare template mapping database
+
+Usage: node scripts/template-mapping.js -i <file> --from <lang> --to <lang> [-d <file>]
+
+Options:
+  -d, --database  template mapping database file (default: templatemapping.db)
+  -i, --input     JSON file with mapping (required)
+  --from          Source language (required)
+  --to            Target language (required)
+  -h, --help      Show this help message
+`;
+
+const { values: args } = parseArgs( {
+	options: {
+		database: { type: 'string', short: 'd', default: 'templatemapping.db' },
+		input: { type: 'string', short: 'i' },
+		from: { type: 'string' },
+		to: { type: 'string' },
+		help: { type: 'boolean', short: 'h' }
+	}
 } );
 
-argparser.add_argument(
-	'-d', '--database',
-	{
-		help: 'template mapping database file',
-		default: 'templatemapping.db'
-	}
-);
-argparser.add_argument(
-	'-i', '--input',
-	{
-		help: 'JSON file with mapping.',
-		required: true
-	}
-);
-argparser.add_argument(
-	'--from',
-	{
-		help: 'Source language',
-		required: true
-	}
-);
-argparser.add_argument(
-	'--to',
-	{
-		help: 'Target language',
-		required: true
-	}
-);
-const args = argparser.parse_args();
+if ( args.help ) {
+	process.stdout.write( usage );
+	process.exit( 0 );
+}
+if ( !args.input || !args.from || !args.to ) {
+	process.stderr.write( usage );
+	process.exit( 1 );
+}
 
 const input = args.input;
 if ( !existsSync( input ) ) {
