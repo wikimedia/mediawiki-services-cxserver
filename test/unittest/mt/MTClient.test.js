@@ -70,6 +70,37 @@ describe( 'Machine translation result with extra spaces', () => {
 	} );
 } );
 
+// T428590: Google adds spaces around inline tags and translates reference labels.
+// The first reference is template generated, the second one is a plain reference.
+const testDataForReferenceSpaceIssue = {
+	input: '<section id="cxTargetSection0"><p><span data-segmentid="1" class="cx-segment">Jews,<sup about="#mwt1" class="mw-ref reference" id="cite_ref-1" rel="dc:references" typeof="mw:Transclusion mw:Extension/ref" data-mw="{}"><a href="./Test#cite_note-1"><span class="mw-reflink-text"><span class="cite-bracket">[</span>d<span class="cite-bracket">]</span></span></a></sup><sup about="#mwt2" class="mw-ref reference" id="cite_ref-2" rel="dc:references" typeof="mw:Extension/ref" data-mw="{}"><a href="./Test#cite_note-2"><span class="mw-reflink-text">[1]</span></a></sup> some historians.</span></p></section>',
+	mtInput: '<section id="cxTargetSection0"><p><div id="1"><span id="2">Jews,<sup id="3" typeof="mw:Extension/ref"></sup><sup id="4" typeof="mw:Extension/ref"></sup> some historians.</span></div></p></section>',
+	mtResult: '<section id="cxTargetSection0"><p><div id="1"><span id="2">ജൂതന്മാർ, <sup id="3" typeof="mw:Extension/ref"></sup> <sup id="4" typeof="mw:Extension/ref"></sup> ചില ചരിത്രകാരന്മാർ.</span></div></p></section>',
+	expected: '<section id="cxTargetSection0"><p><span class="cx-segment" data-segmentid="1">ജൂതന്മാർ,<sup about="#mwt1" class="mw-ref reference" data-mw="{}" id="cite_ref-1" rel="dc:references" typeof="mw:Transclusion mw:Extension/ref"><a href="./Test#cite_note-1"><span class="mw-reflink-text"><span class="cite-bracket">[</span>d<span class="cite-bracket">]</span></span></a></sup><sup about="#mwt2" class="mw-ref reference" data-mw="{}" id="cite_ref-2" rel="dc:references" typeof="mw:Extension/ref"><a href="./Test#cite_note-2"><span class="mw-reflink-text">[1]</span></a></sup> ചില ചരിത്രകാരന്മാർ.</span></p></section>',
+	sourceLang: 'en',
+	targetLang: 'ml'
+};
+
+describe( 'Machine translation result with spaces around references', () => {
+	it( 'Should not add spaces before or between references, nor alter reference content', () => {
+		const cxConfig = getConfig();
+		mock.method( MTClient.prototype, 'translateHtml', ( sourceLang, targetLang, html ) => {
+			assert.equal( html, testDataForReferenceSpaceIssue.mtInput );
+			return Promise.resolve( testDataForReferenceSpaceIssue.mtResult );
+		} );
+		const mtClient = new MTClient( cxConfig );
+		return mtClient
+			.translateReducedHtml(
+				testDataForReferenceSpaceIssue.sourceLang,
+				testDataForReferenceSpaceIssue.targetLang,
+				testDataForReferenceSpaceIssue.input
+			)
+			.then( ( result ) => {
+				compareHTML( result, testDataForReferenceSpaceIssue.expected );
+			} );
+	} );
+} );
+
 const subSequenceTests = [
 	{
 		text: 'They are subtropical and tropical flowers.',

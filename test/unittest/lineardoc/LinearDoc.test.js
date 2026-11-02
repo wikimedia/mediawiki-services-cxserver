@@ -108,8 +108,8 @@ describe( 'LinearDoc', () => {
 		const { reducedDoc, extractedData } = parser.builder.doc.reduce();
 		deepEqual(
 			Object.keys( extractedData ).length,
-			22,
-			'Attributes for 22 tags extracted.'
+			12,
+			'Attributes for 7 tags and content of 5 references extracted.'
 		);
 		const expandedDoc = reducedDoc.expand( extractedData );
 		deepEqual(
