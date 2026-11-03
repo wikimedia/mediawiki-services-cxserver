@@ -1,4 +1,4 @@
-FROM node:24-trixie
+FROM node:26-trixie
 
 WORKDIR /opt/cxserver
 COPY . ./
