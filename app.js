@@ -101,6 +101,10 @@ export async function initApp( options ) {
 				'accept, authorization, x-requested-with, content-type, x-wikimedia-debug'
 			);
 			res.header( 'access-control-expose-headers', 'etag' );
+			res.header( 'access-control-allow-methods', 'GET, POST' );
+			// Let browsers cache the preflight response. Browsers cap this
+			// (Chrome: 2 hours, Firefox: 24 hours).
+			res.header( 'access-control-max-age', '86400' );
 		}
 		if ( app.conf.csp !== false ) {
 			res.header( 'x-xss-protection', '1; mode=block' );
